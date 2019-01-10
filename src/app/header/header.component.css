@@ -1,17 +1,17 @@
-.header-container{
+.header-container {
   padding: 10px;
   text-align: center;
   display: flex;
   margin: 0 auto;
-  background: #F2F3F5;
-  outline: 1px solid #B7B7B7;
-  }
-.info{
+  background: #f2f3f5;
+  outline: 1px solid #b7b7b7;
+}
+.info {
   margin: 0 auto;
-  }
-.email{
+}
+.email {
   padding: 0 25px;
-  }
-.phone{
+}
+.phone {
   padding: 0 20px;
-  }
+}
