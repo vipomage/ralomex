@@ -1,0 +1,37 @@
+footer{
+  font-size: 14px;
+  background-color: lightslategray;
+  height: 300px;
+  }
+.footer-container{
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  }
+.footer-container > div{
+  margin: 0 auto;
+  }
+h5{
+  text-transform: uppercase;
+  }
+.company-info{
+  width: 200px;
+  }
+.company-info > div{
+  padding: 5px 60px;
+  }
+ul{
+  list-style: none;
+  }
+.connections{
+  list-style: none;
+
+  }
+.connections li {
+  padding: 10px;
+  font-size: 1.5rem;
+  }
+a{
+  padding: 25px;
+  }

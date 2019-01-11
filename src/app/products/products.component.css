@@ -1,0 +1,25 @@
+.product-container{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  }
+
+h1{
+  font-size: 3rem;
+  text-align: center;
+  }
+aside{
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 100%;
+  }
+ul{
+  margin: 15px;
+  list-style: none;
+  text-align: center;
+
+  }
+ul li{
+  padding: 10px;
+  display: inline-block;
+  }

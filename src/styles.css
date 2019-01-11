@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  overflow-y: scroll;
+  }
 * {
   margin: 0;
   font-family: 'Roboto Slab', serif;
 }
 body{
   font-size: 14px;
+  }
+.router{
+  width: 95%;
+  min-height: 520px;
+  margin: 0 auto;
   }
