@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RippedCultivatorsComponent } from './ripped-cultivators.component';
+import { RippersComponent } from './rippers.component';
 
-describe('RippedCultivatorsComponent', () => {
-  let component: RippedCultivatorsComponent;
-  let fixture: ComponentFixture<RippedCultivatorsComponent>;
+describe('RippersComponent', () => {
+  let component: RippersComponent;
+  let fixture: ComponentFixture<RippersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RippedCultivatorsComponent ]
+      declarations: [ RippersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RippedCultivatorsComponent);
+    fixture = TestBed.createComponent(RippersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

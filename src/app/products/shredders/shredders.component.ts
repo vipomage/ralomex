@@ -10,6 +10,7 @@ export class ShreddersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.replaceState('', '', 'products/shredders');
   }
 
 }

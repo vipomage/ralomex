@@ -10,6 +10,7 @@ export class RollersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.replaceState('', '', 'products/rollers');
   }
 
 }

@@ -10,6 +10,7 @@ export class PartsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.replaceState('', '', 'products/parts');
   }
 
 }

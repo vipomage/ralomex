@@ -10,6 +10,7 @@ export class DisksComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.replaceState('', '', 'products/disks');
   }
 
 }

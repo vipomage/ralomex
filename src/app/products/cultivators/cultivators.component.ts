@@ -10,6 +10,7 @@ export class CultivatorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.replaceState('', '', 'products/cultivators');
   }
 
 }

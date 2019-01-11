@@ -10,6 +10,7 @@ export class SpecialComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.replaceState('', '', 'products/special');
   }
 
 }
