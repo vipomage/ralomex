@@ -1,6 +1,7 @@
 footer{
+  color: black;
   font-size: 14px;
-  background-color: lightslategray;
+  background-color: rgb(149, 149, 149);
   height: 300px;
   }
 .footer-container{
@@ -34,4 +35,11 @@ ul{
   }
 a{
   padding: 25px;
+  }
+a:visited{
+  color: inherit;
+  }
+a:hover{
+  color: white;
+  transition-duration: 300ms;
   }

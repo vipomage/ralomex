@@ -23,3 +23,8 @@ ul li{
   padding: 10px;
   display: inline-block;
   }
+a:hover{
+  color: black;
+  transition-duration: 300ms;
+  font-weight: bolder;
+  }
