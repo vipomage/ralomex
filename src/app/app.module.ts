@@ -1,29 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { ProductsComponent } from './products/products.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
 import { NewsComponent } from './news/news.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { HomeComponent } from './home/home.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: 'home', component: AppComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'products', component: ProductsComponent },
-  { path: 'news', component: NewsComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'news', component: NewsComponent },
 ];
 @NgModule({
   declarations: [
-    AppComponent,
+    ProductsComponent,
+    ProjectsComponent,
     HeaderComponent,
     NavbarComponent,
-    ProductsComponent,
+    FooterComponent,
     NewsComponent,
-    ProjectsComponent,
+    HomeComponent,
+    AppComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
   providers: [],

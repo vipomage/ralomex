@@ -1,6 +1,7 @@
 .nav-container {
   display: block;
   padding: 15px;
+  margin: 0 auto 10px;
   border-bottom: 1px solid lightgray;
 }
 
@@ -48,8 +49,16 @@ ul li {
   font-weight: bold;
   color: white;
 }
-ul li:hover {
-  font-weight: bolder;
-  -webkit-transform: scale(1.5);
-  color: black;
-}
+/*ul li:hover {*/
+  /*font-weight: bolder;*/
+  /*-webkit-transform: scale(1.5);*/
+  /*color: black;*/
+/*}*/
+a:hover{
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+  text-decoration: none;
+  outline: 0 solid transparent;
+  color: #111111;
+  }
