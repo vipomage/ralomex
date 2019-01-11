@@ -28,3 +28,7 @@ a:hover{
   transition-duration: 300ms;
   font-weight: bolder;
   }
+a.active{
+  font-weight: bold;
+  color: black;
+  }
