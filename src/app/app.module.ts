@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { FireService } from './fire.service';
 
 import { ProductsComponent } from './products/products.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -23,13 +24,24 @@ import { RippersComponent } from './products/rippers/rippers.component';
 import { AboutComponent } from './about/about.component';
 import { HistoryComponent } from './history/history.component';
 import { AwardsComponent } from './awards/awards.component';
+import { ProductTypeComponent } from './products/product-type/product-type.component';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'products', component: ProductsComponent,
+  {
+    path: 'products',
+    component: ProductsComponent,
     children: [
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
-      { path: 'cultivators', component: CultivatorsComponent, outlet: 'products'},
+      {
+        path: 'cultivators',
+        component: CultivatorsComponent,
+        outlet: 'products',
+      },
       { path: 'shredders', component: ShreddersComponent, outlet: 'products' },
       { path: 'ploughs', component: PloughsComponent, outlet: 'products' },
       { path: 'special', component: SpecialComponent, outlet: 'products' },
@@ -45,7 +57,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'awards', component: AwardsComponent },
+  { path: '**', redirectTo: '/home' },
 ];
+
 @NgModule({
   declarations: [
     ProductsComponent,
@@ -68,9 +82,16 @@ const routes: Routes = [
     AboutComponent,
     HistoryComponent,
     AwardsComponent,
+    ProductTypeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
-  providers: [],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+  ],
+  providers: [FireService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

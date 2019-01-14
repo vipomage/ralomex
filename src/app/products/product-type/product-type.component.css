@@ -1,0 +1,14 @@
+li{
+  margin: 10px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 100px;
+  list-style: none;
+  background: #91B4A5;
+  font-size: 2rem;
+  text-align: left;
+  line-height: 100px;
+  }
+li:hover{
+  cursor: pointer;
+  }
