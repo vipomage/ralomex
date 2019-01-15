@@ -25,14 +25,17 @@ import { AboutComponent } from './about/about.component';
 import { HistoryComponent } from './history/history.component';
 import { AwardsComponent } from './awards/awards.component';
 import { ProductTypeComponent } from './products/product-type/product-type.component';
-import {AccordionModule} from 'primeng/accordion';
+import { keyValueFilterPipe } from './key-value-filter.pipe';
 
+import { AccordionModule } from 'primeng/accordion';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AccordionComponent } from './products/accordion/accordion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableModule } from 'primeng/table';
 
 const routes: Routes = [
   {
@@ -65,6 +68,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    keyValueFilterPipe,
     ProductsComponent,
     ProjectsComponent,
     HeaderComponent,
@@ -86,7 +90,7 @@ const routes: Routes = [
     HistoryComponent,
     AwardsComponent,
     ProductTypeComponent,
-    AccordionComponent,
+    AccordionComponent
   ],
   imports: [
     HttpClientModule,
@@ -95,7 +99,8 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AccordionModule,
-    BrowserAnimationsModule
+    TableModule,
+    BrowserAnimationsModule,
   ],
   providers: [FireService],
   bootstrap: [AppComponent],

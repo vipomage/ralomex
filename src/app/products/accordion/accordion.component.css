@@ -1,9 +1,70 @@
-.a-tab{
+.a-tab {
   margin: 10px 0;
   height: 60px;
   list-style: none;
-  background: #91B4A5;
+  background: #91b4a5;
   font-size: 1.2rem;
   text-align: left;
   line-height: 60px;
+}
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: #bbb;
+  width: 100%;
+}
+.tg td {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #bbb;
+  color: #594f4f;
+  background-color: #e0ffeb;
+}
+.tg th {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #bbb;
+  color: #493f3f;
+  background-color: #9de0ad;
+  text-align: center;
+}
+.tg .tg-s268 {
+  text-align: left;
+}
+.tg .tg-0lax {
+  text-align: center;
+  vertical-align: top;
+}
+.tg .tg-v3ph {
+  background-color: #c2ffd6;
+  font-family: 'Lucida Console', Monaco, monospace !important;
+  text-align: left;
+  vertical-align: top;
+}
+.tg .tg-sjuo {
+  background-color: #c2ffd6;
+  text-align: center;
+  vertical-align: top;
+}
+
+#ui-accordiontab-0 {
+  background-color: #67A065;
+  color: #ffffff;
+  }
+
+.model{
+  font-weight: bold;
+  font-size: 1.1rem;
   }

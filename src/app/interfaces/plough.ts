@@ -1,13 +1,13 @@
 export interface Plough {
-  clearance: Number;
-  depthWork: [String];
   model: String;
-  productivity: [Number];
-  reqHp: [Number];
-  speed: [Number];
   type: String;
-  weight: Number;
+  reqHP: [Number];
+  depthWork: [String];
   widthWork: [Number];
+  speed: [Number];
+  productivity: [Number];
+  weight: Number;
+  clearance: Number;
   description?: String;
   image?: String;
 }
