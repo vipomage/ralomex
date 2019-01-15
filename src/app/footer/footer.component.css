@@ -2,25 +2,26 @@ footer{
   color: black;
   font-size: 14px;
   background-color: rgb(149, 149, 149);
-  height: 300px;
+  height: 100px;
   }
 .footer-container{
   display: flex;
   width: 100%;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 20px;
   }
 .footer-container > div{
   margin: 0 auto;
+  height: 100px;
   }
 h5{
   text-transform: uppercase;
   }
 .company-info{
-  width: 200px;
+  /*width: 200px;*/
   }
 .company-info > div{
-  padding: 5px 60px;
+  /*padding: 5px 60px;*/
   }
 ul{
   list-style: none;

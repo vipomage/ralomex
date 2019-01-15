@@ -1,0 +1,12 @@
+<p-accordion transitionOptions="500ms" class="wrapper">
+  <p-accordionTab (click)="getPloughs('pnr')" class="a-tab" header="Навесни">
+    <div *ngIf="data">{{ data | json }}</div>
+  </p-accordionTab>
+  <p-accordionTab
+    (click)="getPloughs('ppr')"
+    class="a-tab"
+    header="Полунавесни"
+  >
+    <div *ngIf="data">{{ data | json }}</div>
+  </p-accordionTab>
+</p-accordion>
