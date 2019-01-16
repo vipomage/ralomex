@@ -24,7 +24,6 @@ import { RippersComponent } from './products/rippers/rippers.component';
 import { AboutComponent } from './about/about.component';
 import { HistoryComponent } from './history/history.component';
 import { AwardsComponent } from './awards/awards.component';
-import { ProductTypeComponent } from './products/product-type/product-type.component';
 import { keyValueFilterPipe } from './key-value-filter.pipe';
 
 import { AccordionModule } from 'primeng/accordion';
@@ -89,7 +88,6 @@ const routes: Routes = [
     AboutComponent,
     HistoryComponent,
     AwardsComponent,
-    ProductTypeComponent,
     AccordionComponent
   ],
   imports: [
