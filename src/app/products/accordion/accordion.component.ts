@@ -1,26 +1,17 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { FireService } from '../../fire.service';
-import { Plough } from '../../interfaces/plough';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { PloughCategory } from '../../interfaces/plough-category';
 
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.css'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AccordionComponent {
-  data;
-  categoryInfo:{name:String,collection:[Plough]};
 
-  //todo create Category in DB and collection for it
-  //components setup
+  @Input() data:PloughCategory;
+  @Input() name;
 
-  constructor(private db: FireService) {}
+  constructor() {}
 
-  getPloughs = (type) =>
-    this.db
-      .getPloughs(type)
-      .subscribe(
-        (data) => (this.data = data)
-      );
 }

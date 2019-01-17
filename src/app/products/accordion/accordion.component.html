@@ -1,30 +1,16 @@
-<p-accordion  class="wrapper">
-  <p-accordionTab [transitionOptions]="'300ms'" (click)="getPloughs('pnr')" class="a-tab" header="Навесни">
+<!--suppress HtmlUnknownTarget -->
+<p-accordion *ngIf="data" class="wrapper">
+  <p-accordionTab
+    [transitionOptions]="'300ms'"
+    class="a-tab"
+    header="{{ name }}"
+  >
     <div class="plough-category-info">
-      <img
-        src="https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg"
-        alt=""
-      />
-      <h3>Навесни Плугове</h3>
-      <p>
-        Плуговете са три или четири корпусни, предназначени за дълбока оран до
-        33 - 37см на всички видове почви с изключение на каменистите, на терени
-        с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов
-        контур, наличието на предпазна планка на пълзеца, гърда сменяема,
-        ъглосним и срязващ се предпазен елемент при претоварване на корпуса.
-        Всичко това позволява висока скорост на работа и закриване на
-        растителните отпадъци с над 95%. Плуговете са конструирани с висок
-        просвет под рамата, който не позволява задръстване на плуга по време на
-        работа. Плужният корпус може да бъде с цяла или пластинчата дъска.
-        Възможността за регулиране на работната ширина на корпса е: 30см. -
-        35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт,
-        прецизно регулиране на захвата на първият корпус в зависимост от
-        работната ширина на корпуса и модела на трактора. Опорното колело
-        позволява прецизно регулиране на дълбочината на работа при трактори без
-        позиционна хидравлична система.
-      </p>
+      <img src="{{ data.image }}" alt="" />
+      <h3>{{ data.name }}</h3>
+      <p>{{ data.description }}</p>
     </div>
-    <table class="tg">
+    <table *ngIf="data" class="tg">
       <tr>
         <th class="tg-0lax">Model</th>
         <th class="tg-0lax">Type</th>
@@ -36,7 +22,7 @@
         <th class="tg-0lax">Weight</th>
         <th class="tg-0lax">Clearance</th>
       </tr>
-      <tr *ngFor="let plough of (data | keyValueFilter)">
+      <tr *ngFor="let plough of (data.collection | keyValueFilter)">
         <td class="tg-sjuo model">{{ plough.value.model }}</td>
         <td class="tg-sjuo">
           <em>{{ plough.value.type }}</em>
@@ -67,11 +53,11 @@
     </table>
   </p-accordionTab>
 
-  <p-accordionTab
-    (click)="getPloughs('ppr')"
-    class="a-tab"
-    header="Полунавесни"
-  >
-    <div *ngIf="data">{{ data | json }}</div>
-  </p-accordionTab>
+  <!--<p-accordionTab-->
+  <!--(click)="getPloughs('ppr')"-->
+  <!--class="a-tab"-->
+  <!--header="Полунавесни"-->
+  <!--&gt;-->
+  <!--<div *ngIf="data">{{ data | json }}</div>-->
+  <!--</p-accordionTab>-->
 </p-accordion>
