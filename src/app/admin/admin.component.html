@@ -1,0 +1,17 @@
+<div class="admin-wrapper">
+  <div class="user">
+    <button (click)="authService.logout()" *ngIf="(authService.user | async)">
+      Logout
+    </button>
+    <div *ngIf="!(authService.user | async)" class="button-wrapper">
+      <div (click)="authService.googleOAuth()" id="gSignInWrapper">
+        <div id="customBtn" class="customGPlusSignIn">
+          <span class="icon"></span> <span class="buttonText">Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="options">
+    OPTIONS WORK
+  </div>
+</div>
