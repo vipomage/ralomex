@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService } from '../../fire.service';
+import { PloughCategory } from '../../interfaces/plough-category';
 
 @Component({
   selector: 'app-ploughs',
@@ -6,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ploughs.component.css'],
 })
 export class PloughsComponent implements OnInit {
-  constructor() {}
+  data:PloughCategory;
+  categories:String[];
+
+  constructor(private db: FireService) {}
 
   ngOnInit() {
+    this.db.getCategory('ploughs').subscribe(response => {
+      this.data = response;
+      this.categories = Object.keys(response);
+    });
+
     history.replaceState('', '', 'products/ploughs');
   }
 }
