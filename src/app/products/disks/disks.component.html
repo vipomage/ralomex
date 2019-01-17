@@ -1,3 +1,8 @@
-<p>
-  disks works!
-</p>
+<div *ngIf="data" class="model-list">
+  <div *ngFor="let category of categories">
+    <app-category
+      [category]="category"
+      [collection]="data[category]"
+    ></app-category>
+  </div>
+</div>
