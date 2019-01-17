@@ -2,7 +2,7 @@ import { Plough } from './plough';
 
 export interface PloughCategory {
   name: 'Ploughs';
-  ploughs?: {
-    category:[Plough]
-  };
+  image: String;
+  description: String;
+  collection:Plough;
 }
