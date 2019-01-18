@@ -1,0 +1,10 @@
+.form-group{
+  vertical-align: bottom;
+  padding: 2px;
+  text-align: left;
+  display: flex;
+  }
+.form-group label{
+  margin-right: 50px;
+  width: 80px;
+  }
