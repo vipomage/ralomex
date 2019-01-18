@@ -10,54 +10,6 @@
       <h3>{{ data.name }}</h3>
       <p>{{ data.description }}</p>
     </div>
-    <table *ngIf="data" class="tg">
-      <tr>
-        <th class="tg-0lax">Model</th>
-        <th class="tg-0lax">Type</th>
-        <th class="tg-0lax">HP</th>
-        <th class="tg-0lax">Depth</th>
-        <th class="tg-0lax">Width</th>
-        <th class="tg-0lax">Speed</th>
-        <th class="tg-0lax">Productivity</th>
-        <th class="tg-0lax">Weight</th>
-        <th class="tg-0lax">Clearance</th>
-      </tr>
-      <tr *ngFor="let plough of (data.collection | keyValueFilter)">
-        <td class="tg-sjuo model">{{ plough.value.model }}</td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.type }}</em>
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.reqHP }}</em>
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.depthWork }}</em> cm
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.widthWork }}</em> cm
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.speed[0] }}</em> -
-          <em>{{ plough.value.speed[1] }}</em>
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.productivity }}</em> dk/h
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.weight }}</em> kg
-        </td>
-        <td class="tg-sjuo">
-          <em>{{ plough.value.clearance }}</em> cm
-        </td>
-      </tr>
-    </table>
+    <app-product-table [data]="data"></app-product-table>
   </p-accordionTab>
-
-  <!--<p-accordionTab-->
-  <!--(click)="getPloughs('ppr')"-->
-  <!--class="a-tab"-->
-  <!--header="Полунавесни"-->
-  <!--&gt;-->
-  <!--<div *ngIf="data">{{ data | json }}</div>-->
-  <!--</p-accordionTab>-->
 </p-accordion>

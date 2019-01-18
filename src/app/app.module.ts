@@ -38,6 +38,10 @@ import { TableModule } from 'primeng/table';
 import { CategoryComponent } from './products/category/category.component';
 import { AdminComponent } from './admin/admin.component';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { EditPloughsComponent } from './admin/controls/ploughs/edit-ploughs/edit-ploughs.component';
+import { AddPloughComponent } from './admin/controls/ploughs/add-plough/add-plough.component';
+import { PloughControlsComponent } from './admin/controls/ploughs/plough-controls/plough-controls.component';
+import { ProductTableComponent } from './products/product-table/product-table.component';
 
 const routes: Routes = [
   {
@@ -48,7 +52,7 @@ const routes: Routes = [
       {
         path: 'cultivators',
         component: CultivatorsComponent,
-        outlet: 'products'
+        outlet: 'products',
       },
       { path: 'shredders', component: ShreddersComponent, outlet: 'products' },
       { path: 'ploughs', component: PloughsComponent, outlet: 'products' },
@@ -56,17 +60,31 @@ const routes: Routes = [
       { path: 'rollers', component: RollersComponent, outlet: 'products' },
       { path: 'disks', component: DisksComponent, outlet: 'products' },
       { path: 'parts', component: PartsComponent, outlet: 'products' },
-      { path: 'tools', component: ToolsComponent, outlet: 'products' }
-    ]
+      { path: 'tools', component: ToolsComponent, outlet: 'products' },
+    ],
   },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'admin', component: AdminComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'ploughs',
+        component: PloughControlsComponent,
+        outlet: 'admin',
+        children: [
+          { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
+          { path: 'add', component: AddPloughComponent, outlet: 'controls' },
+        ],
+      },
+    ],
+  },
   { path: 'home', component: HomeComponent },
   { path: 'news', component: NewsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'awards', component: AwardsComponent },
-  { path: '**', redirectTo: '/home' }
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
@@ -94,7 +112,11 @@ const routes: Routes = [
     AwardsComponent,
     AccordionComponent,
     CategoryComponent,
-    AdminComponent
+    AdminComponent,
+    EditPloughsComponent,
+    AddPloughComponent,
+    PloughControlsComponent,
+    ProductTableComponent,
   ],
   imports: [
     HttpClientModule,
@@ -105,9 +127,9 @@ const routes: Routes = [
     AngularFireAuthModule,
     AccordionModule,
     TableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [FireService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

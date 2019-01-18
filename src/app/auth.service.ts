@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -26,7 +27,7 @@ export class AuthService {
           .signInWithPopup(new firebase.auth.GoogleAuthProvider())
           .then(
             (): void => {
-              console.log('Nice, it worked!');
+              console.log('Login Success!');
             }
           )
           .catch(err => {
@@ -36,6 +37,7 @@ export class AuthService {
   };
 
   logout() {
+    // noinspection JSIgnoredPromiseFromCall
     this.firebaseAuth.auth.signOut();
   }
 }
