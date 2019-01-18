@@ -1,0 +1,5 @@
+<label for="category"></label>
+<select name="cats" id="category">
+  <option  *ngFor="let category of categories" value="">{{category}}</option>
+</select>
+<app-product-table [data]="data"></app-product-table>
