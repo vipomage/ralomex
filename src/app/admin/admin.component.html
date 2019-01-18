@@ -1,17 +1,60 @@
-<div class="admin-wrapper">
-  <div class="user">
-    <button (click)="authService.logout()" *ngIf="(authService.user | async)">
-      Logout
-    </button>
-    <div *ngIf="!(authService.user | async)" class="button-wrapper">
-      <div (click)="authService.googleOAuth()" id="gSignInWrapper">
-        <div id="customBtn" class="customGPlusSignIn">
-          <span class="icon"></span> <span class="buttonText">Google</span>
+<div class="container-fluid">
+  <div class="col-md-12">
+    <div class="user text-center">
+      <button (click)="authService.logout()" *ngIf="(authService.user | async)">
+        Logout
+      </button>
+      <div *ngIf="!(authService.user | async)" class="button-wrapper">
+        <div (click)="authService.googleOAuth()" id="gSignInWrapper">
+          <div id="customBtn" class="customGPlusSignIn">
+            <span class="icon"></span> <span class="buttonText">Google</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="options">
-    OPTIONS WORK
+    <div *ngIf="(authService.user | async)">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-1">
+            <nav>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs']}}]">Плугове</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['disks']}}]">Дискови Брани</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['cultivators']}}]">Култиватори</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['rippers']}}]">Разрохвачи</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['rollers']}}]">Валяци</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['shredders']}}]">Раздробители</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['special']}}]">Специализирани</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['parts']}}]">Резервни Части</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['tools']}}]">Работни Органи</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-11 text-center">
+            <div class="container-fluid pl-5">
+              <router-outlet name="admin"></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
