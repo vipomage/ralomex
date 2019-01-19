@@ -1,5 +1,7 @@
-<label for="category"></label>
-<select name="cats" id="category">
-  <option  *ngFor="let category of categories" value="">{{category}}</option>
-</select>
-<app-product-table [data]="data"></app-product-table>
+<div class="form-group">
+  <label for="category">Категория</label>
+  <select (change)="onCategoryChange($event.target.value)" class="form-control" name="Изберете Категория" id="category">
+    <option *ngFor="let category of categories">{{ category }}</option>
+  </select>
+</div>
+<app-product-table *ngIf="data" [data]="data"></app-product-table>
