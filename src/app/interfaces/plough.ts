@@ -1,6 +1,5 @@
 export interface Plough {
   model: String;
-  type: String;
   reqHP: [Number];
   depthWork: [String];
   widthWork: [Number];

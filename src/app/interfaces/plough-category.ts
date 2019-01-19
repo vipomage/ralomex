@@ -4,5 +4,5 @@ export interface PloughCategory {
   name: 'Ploughs';
   image: String;
   description: String;
-  collection:Plough;
+  collection?:Plough[];
 }
