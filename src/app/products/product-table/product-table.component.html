@@ -1,0 +1,45 @@
+<div *ngIf="data" class="tg table table-sm table-hover table-bordered">
+  <div class="table-heading">
+    <div class="table-row">
+      <div class="tg-0lax table-cell">Модел</div>
+      <div class="tg-0lax table-cell">Тип</div>
+      <div class="tg-0lax table-cell">Необх. Конски Сили</div>
+      <div class="tg-0lax table-cell">Раб. Дълбочина</div>
+      <div class="tg-0lax table-cell">Раб. Широчина</div>
+      <div class="tg-0lax table-cell">Скорост</div>
+      <div class="tg-0lax table-cell">Производителност</div>
+      <div class="tg-0lax table-cell">Тегло</div>
+      <div class="tg-0lax table-cell">Просвет</div>
+    </div>
+  </div>
+    <div
+      class="table-row item"
+      *ngFor="let plough of (data.collection | keyValueFilter)"
+    >
+      <div class="tg-sjuo table-cell model">{{ plough.value.model }}</div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.type }}</em>
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.reqHP }}</em>
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.depthWork }}</em> см
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.widthWork }}</em> см
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.speed }}</em> км/ч
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.productivity }}</em> дк/ч
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.weight }}</em> кг
+      </div>
+      <div class="tg-sjuo table-cell">
+        <em>{{ plough.value.clearance }}</em> см
+      </div>
+    </div>
+</div>

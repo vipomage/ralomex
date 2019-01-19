@@ -30,6 +30,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {FormsModule} from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AccordionComponent } from './products/accordion/accordion.component';
@@ -42,6 +43,7 @@ import { EditPloughsComponent } from './admin/controls/ploughs/edit-ploughs/edit
 import { AddPloughComponent } from './admin/controls/ploughs/add-plough/add-plough.component';
 import { PloughControlsComponent } from './admin/controls/ploughs/plough-controls/plough-controls.component';
 import { ProductTableComponent } from './products/product-table/product-table.component';
+import { AddCategoryComponent } from './admin/controls/ploughs/add-category/add-category.component';
 
 const routes: Routes = [
   {
@@ -75,6 +77,7 @@ const routes: Routes = [
         children: [
           { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
           { path: 'add', component: AddPloughComponent, outlet: 'controls' },
+          { path: 'addCategory', component: AddCategoryComponent, outlet: 'controls' },
         ],
       },
     ],
@@ -117,6 +120,7 @@ const routes: Routes = [
     AddPloughComponent,
     PloughControlsComponent,
     ProductTableComponent,
+    AddCategoryComponent,
   ],
   imports: [
     HttpClientModule,
@@ -128,6 +132,7 @@ const routes: Routes = [
     AccordionModule,
     TableModule,
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [FireService],
   bootstrap: [AppComponent],
