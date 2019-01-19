@@ -1,0 +1,30 @@
+<div class="container">
+  <form
+    class="form"
+    #categoryDetails="ngForm"
+    (ngSubmit)="
+      this.addPloughCategory( categoryDetails.value.name,categoryDetails.value)
+    "
+  >
+    <div class="form-group">
+      <label for="categoryName">Име на Категория</label>
+      <input name="name" ngModel class="form-control" type="text" id="categoryName" />
+    </div>
+    <div class="form-group">
+      <label for="description">Описание</label>
+      <textarea
+        name="description"
+        ngModel
+        rows="4"
+        cols="50"
+        class="form-control"
+        id="description"
+      ></textarea>
+    </div>
+    <div class="form-control-plaintext">
+      <label for="catImage">Снимка</label>
+      <input name="image" ngModel class="form-control-file" type="file" id="catImage" />
+    </div>
+    <button class="btn btn-primary" type="submit">Запази</button>
+  </form>
+</div>
