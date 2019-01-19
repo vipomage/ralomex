@@ -1,49 +1,53 @@
 <div class="mt-5 wrapper">
-  <form>
+  <form #ploughData="ngForm" (ngSubmit)="this.savePlough(ploughData.value,this.category)">
     <div class="form-group">
       <label for="category">Категория</label>
-      <select class="form-control" name="Изберете Категория" id="category">
+      <select (change)="onCategoryChange($event.target.value)" class="form-control" name="Изберете Категория" id="category">
         <option *ngFor="let category of categories">{{ category }}</option>
       </select>
     </div>
     <div class="form-group">
       <label for="model">Модел</label>
-      <input class="form-control" type="text" id="model" />
-    </div>
-    <div class="form-group">
-      <label for="type">Тип</label>
-      <input class="form-control" type="text" id="type" />
+      <input name="model" ngModel class="form-control" type="text" id="model" />
     </div>
     <div class="form-group">
       <label for="hp">Необх. HP</label>
-      <input class="form-control" type="text" id="hp" />
+      <input name="reqHP" ngModel class="form-control" type="text" id="hp" />
     </div>
     <div class="form-group">
       <label for="depth">Дълбочина</label>
-      <input class="form-control" type="text" id="depth" />
+      <input name="depthWork" ngModel class="form-control" type="text" id="depth" />
     </div>
     <div class="form-group">
       <label for="width">Широчина</label>
-      <input class="form-control" type="text" id="width" />
+      <input name="widthWork" ngModel class="form-control" type="text" id="width" />
     </div>
     <div class="form-group">
       <label for="speed">Скорост</label>
-      <input class="form-control" type="text" id="speed" />
+      <input name="speed" ngModel class="form-control" type="text" id="speed" />
     </div>
     <div class="form-group">
       <label for="prod">Продуктивност</label>
-      <input class="form-control" type="text" id="prod" />
+      <input name="productivity" ngModel class="form-control" type="text" id="prod" />
     </div>
     <div class="form-group">
       <label for="weight">Тегло</label>
-      <input class="form-control" type="text" id="weight" />
+      <input name="weight" ngModel class="form-control" type="text" id="weight" />
     </div>
     <div class="form-group">
       <label for="clearance">Просвет</label>
-      <input class="form-control" type="text" id="clearance" />
+      <input name="clearance" ngModel class="form-control" type="text" id="clearance" />
     </div>
     <div class="form-group">
-      <a class="btn btn-success">Запази</a>
+      <label for="description">Описание?</label>
+      <input name="description" ngModel class="form-control" type="text" id="description" />
+    </div>
+    <div class="form-group">
+      <label for="image">Снимка/и</label>
+      <input name="image" ngModel class="form-control" type="file" multiple id="image" />
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Запази</button>
     </div>
   </form>
 </div>

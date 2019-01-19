@@ -2,9 +2,9 @@
   vertical-align: bottom;
   padding: 2px;
   text-align: left;
-  display: flex;
+  display: inline-block;
   }
 .form-group label{
   margin-right: 50px;
-  width: 80px;
+  /*width: 170px;*/
   }
