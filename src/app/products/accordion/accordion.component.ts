@@ -1,5 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { PloughCategory } from '../../interfaces/plough-category';
+import { PloughCategory } from '../../../tools/interfaces/plough-category';
+
+
 
 @Component({
   selector: 'app-accordion',
@@ -8,7 +10,6 @@ import { PloughCategory } from '../../interfaces/plough-category';
   encapsulation: ViewEncapsulation.None,
 })
 export class AccordionComponent {
-
   @Input() data:PloughCategory;
   @Input() name;
 
