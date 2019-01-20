@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PloughCategory } from '../../interfaces/plough-category';
-import { FireService } from '../../fire.service';
+import { PloughCategory } from '../../../tools/interfaces/plough-category';
+import { FireService } from '../../../tools/services/fire.service';
 
 @Component({
   selector: 'app-disks',
