@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { FireService } from './fire.service';
+import { FireService } from '../tools/services/fire.service';
 
 import { ProductsComponent } from './products/products.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -24,32 +24,42 @@ import { RippersComponent } from './products/rippers/rippers.component';
 import { AboutComponent } from './about/about.component';
 import { HistoryComponent } from './history/history.component';
 import { AwardsComponent } from './awards/awards.component';
-import { keyValueFilterPipe } from './key-value-filter.pipe';
-
-import { AccordionModule } from 'primeng/accordion';
-import { environment } from '../environments/environment';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {FormsModule} from '@angular/forms';
-
-import { HttpClientModule } from '@angular/common/http';
 import { AccordionComponent } from './products/accordion/accordion.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TableModule } from 'primeng/table';
 import { CategoryComponent } from './products/category/category.component';
 import { AdminComponent } from './admin/admin.component';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { EditPloughsComponent } from './admin/controls/ploughs/edit-ploughs/edit-ploughs.component';
 import { AddPloughComponent } from './admin/controls/ploughs/add-plough/add-plough.component';
 import { PloughControlsComponent } from './admin/controls/ploughs/plough-controls/plough-controls.component';
 import { ProductTableComponent } from './products/product-table/product-table.component';
 import { AddCategoryComponent } from './admin/controls/ploughs/add-category/add-category.component';
 
+import { keyValueFilterPipe } from '../tools/pipes/key-value-filter.pipe';
+
+import { environment } from '../environments/environment';
+import { AccordionModule } from 'primeng/accordion';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MdbFooterComponent } from './mdb-footer/mdb-footer.component';
+import { MdbNewsComponent } from './mdb-news/mdb-news.component';
+import { MdbAccordionComponent } from './products/mdb-accordion/mdb-accordion.component';
+import { MdbTableComponent } from './admin/mdb-table/mdb-table.component';
+import { DataTablesModule } from 'angular-datatables';
+
 const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
     children: [
+      { path: '', component: HomeComponent, outlet: 'products' },
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
       {
         path: 'cultivators',
@@ -77,13 +87,17 @@ const routes: Routes = [
         children: [
           { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
           { path: 'add', component: AddPloughComponent, outlet: 'controls' },
-          { path: 'addCategory', component: AddCategoryComponent, outlet: 'controls' },
+          {
+            path: 'addCategory',
+            component: AddCategoryComponent,
+            outlet: 'controls',
+          },
         ],
       },
     ],
   },
   { path: 'home', component: HomeComponent },
-  { path: 'news', component: NewsComponent },
+  { path: 'news', component: MdbNewsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'awards', component: AwardsComponent },
@@ -121,6 +135,10 @@ const routes: Routes = [
     PloughControlsComponent,
     ProductTableComponent,
     AddCategoryComponent,
+    MdbFooterComponent,
+    MdbNewsComponent,
+    MdbAccordionComponent,
+    MdbTableComponent,
   ],
   imports: [
     HttpClientModule,
@@ -129,10 +147,15 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     AccordionModule,
     TableModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule,
+    MDBBootstrapModule.forRoot()
+
   ],
   providers: [FireService],
   bootstrap: [AppComponent],
