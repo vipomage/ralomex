@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../fire.service';
-import { Plough } from '../../../../interfaces/plough';
+import { FireService } from '../../../../../tools/services/fire.service';
+import { Plough } from '../../../../../tools/interfaces/plough';
+import { ImageService } from '../../../../../tools/services/image.service';
 
 @Component({
   selector: 'app-add-plough',
@@ -12,13 +13,21 @@ export class AddPloughComponent implements OnInit {
   categories: String[];
   category: String;
   plough: Plough;
+  images: String[] = this.imgService.images;
 
-  constructor(private db: FireService) {}
+  constructor(private db: FireService,private imgService:ImageService) {}
 
   onCategoryChange = selectValue => (this.category = selectValue);
 
-  savePlough = (data: Plough, category: String) =>
+  savePlough = (data: Plough, category: String) =>{
+    data.images = this.images;
     this.db.addPlough(data, category);
+  };
+
+
+
+  startUpload = event => this.imgService.startUpload(event);
+
 
   ngOnInit() {
 

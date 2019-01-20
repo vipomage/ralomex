@@ -42,9 +42,18 @@
       <label for="description">Описание?</label>
       <input name="description" ngModel class="form-control" type="text" id="description" />
     </div>
-    <div class="form-group">
-      <label for="image">Снимка/и</label>
-      <input name="image" ngModel class="form-control" type="file" multiple id="image" />
+    <div class="form-control-plaintext">
+      <label for="catImage">Снимка</label>
+      <input
+        (change)="startUpload($event.target.files)"
+        [disabled]="this.imgService.preventEdit"
+        name="image"
+        ngModel
+        class="form-control-file"
+        type="file"
+        id="catImage"
+        multiple
+      />
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Запази</button>
