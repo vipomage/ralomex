@@ -1,14 +1,21 @@
-<div class="container">
+<!--suppress HtmlUnknownTarget -->
+<div class="container-fluid">
   <form
     class="form"
     #categoryDetails="ngForm"
     (ngSubmit)="
-      this.addPloughCategory( categoryDetails.value.name,categoryDetails.value)
+      this.addPloughCategory(categoryDetails.value.name, categoryDetails.value)
     "
   >
     <div class="form-group">
       <label for="categoryName">Име на Категория</label>
-      <input name="name" ngModel class="form-control" type="text" id="categoryName" />
+      <input
+        name="name"
+        ngModel
+        class="form-control"
+        type="text"
+        id="categoryName"
+      />
     </div>
     <div class="form-group">
       <label for="description">Описание</label>
@@ -23,7 +30,21 @@
     </div>
     <div class="form-control-plaintext">
       <label for="catImage">Снимка</label>
-      <input name="image" ngModel class="form-control-file" type="file" id="catImage" />
+      <input
+        (change)="startUpload($event.target.files)"
+        [disabled]="this.imgService.preventEdit"
+        name="image"
+        ngModel
+        class="form-control-file"
+        type="file"
+        id="catImage"
+        multiple
+      />
+    </div>
+    <div *ngIf="images">
+      <div *ngFor="let image of images">
+        <img class="img-thumbnail col-md-4" src="{{image}}" alt="">
+      </div>
     </div>
     <button class="btn btn-primary" type="submit">Запази</button>
   </form>
