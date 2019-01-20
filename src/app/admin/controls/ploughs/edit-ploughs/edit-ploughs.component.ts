@@ -1,33 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../fire.service';
+import { FireService } from '../../../../../tools/services/fire.service';
 
 @Component({
   selector: 'app-edit-ploughs',
   templateUrl: './edit-ploughs.component.html',
-  styleUrls: ['./edit-ploughs.component.css']
+  styleUrls: ['./edit-ploughs.component.css'],
 })
 export class EditPloughsComponent implements OnInit {
-  category:String;
-  categories:String[];
+  category: String;
+  categories: String[];
   data;
-  constructor(private db:FireService) { }
+  constructor(private db: FireService) {}
 
-
-  onCategoryChange = (selectValue:String) => {
+  onCategoryChange = (selectValue: String) => {
     this.category = selectValue;
-
+    this.db.getCategory('ploughs/'+selectValue).subscribe(res=>{
+      this.data= res.collection;
+    })
   };
 
-
   ngOnInit() {
-    this.db.getCategory('ploughs').subscribe(data=>{
-      this.category = Object.keys(data)[0];
-      this.categories = Object.keys(data);
-      this.db.getCategory(this.category).subscribe(res=>{
-        this.data = res;
-        console.log(this.data);
-      })
+    this.db.getCategory(`ploughs`).subscribe(res=>{
+      this.categories = Object.keys(res);
     })
   }
-
 }

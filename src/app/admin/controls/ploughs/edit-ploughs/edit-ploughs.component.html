@@ -3,5 +3,6 @@
   <select (change)="onCategoryChange($event.target.value)" class="form-control" name="Изберете Категория" id="category">
     <option *ngFor="let category of categories">{{ category }}</option>
   </select>
+  <app-mdb-table [data]="data" [category]="category"></app-mdb-table>
 </div>
-<app-product-table *ngIf="data" [data]="data"></app-product-table>
+
