@@ -1,0 +1,38 @@
+<!--suppress HtmlUnknownTag -->
+<table
+  id="dtBasicExample"
+  class="table table-striped table-bordered table-sm container"
+  cellspacing="0"
+>
+  <thead>
+    <tr>
+      <th scope="col">X</th>
+      <th scope="col">Модел</th>
+      <th scope="col">Необх.К.Сили</th>
+      <th scope="col">Раб.Дълбочина</th>
+      <th scope="col">Раб.Ширина</th>
+      <th scope="col">Скорост</th>
+      <th scope="col">Производителност</th>
+      <th scope="col">Тегло</th>
+      <th scope="col">Просвет</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let item of (data | keyValueFilter)"
+      (click)="editItem(item.key)"
+    >
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.model }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.reqHP }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.depthWork }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.widthWork }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.speed }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.productivity }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.weight }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.clearance }}</td>
+      <a (click)="this.db.removeItem()"><i class="far fa-trash-alt"></i></a>
+
+    </tr>
+
+  </tbody>
+</table>
