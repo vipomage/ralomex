@@ -1,5 +1,5 @@
 .product-container{
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   text-align: center;
   }
@@ -10,17 +10,17 @@ h1{
   }
 aside{
   border: 1px solid black;
+  border-radius: 10px;
   margin: 0 auto;
-  width: 100%;
+  width: 95%;
   }
 ul{
-  margin: 15px;
   list-style: none;
   text-align: center;
 
   }
 ul li{
-  padding: 10px;
+  padding:5px 10px;
   display: inline-block;
   }
 a:hover{
@@ -29,6 +29,9 @@ a:hover{
   font-weight: bolder;
   }
 a.active{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #67A065;
   font-weight: bold;
-  color: black;
+  color: white;
   }

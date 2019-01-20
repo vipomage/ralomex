@@ -12,5 +12,8 @@
       <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['tools']}}]">Working Tools</a></li>
     </ul>
   </aside>
-  <main><router-outlet name="products"></router-outlet></main>
+  <main>
+    <router-outlet name="products">
+    </router-outlet>
+  </main>
 </div>
