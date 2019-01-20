@@ -15,7 +15,7 @@
     <div *ngIf="(authService.user | async)">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-1">
+          <div class="col-md-2">
             <nav>
               <ul class="nav flex-column">
                 <li class="nav-item">
@@ -48,8 +48,8 @@
               </ul>
             </nav>
           </div>
-          <div class="col-md-11 text-center">
-            <div class="container-fluid pl-5">
+          <div class="col-md-10 text-center">
+            <div class="container-fluid pl-1">
               <router-outlet name="admin"></router-outlet>
             </div>
           </div>
