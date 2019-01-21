@@ -15,7 +15,7 @@ export class AddPloughComponent implements OnInit {
   plough: Plough;
   images: String[] = this.imgService.images;
 
-  constructor(private db: FireService,private imgService:ImageService) {}
+  constructor(public db: FireService,public imgService:ImageService) {}
 
   onCategoryChange = selectValue => (this.category = selectValue);
 

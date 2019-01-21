@@ -11,7 +11,7 @@ import { PloughCategory } from '../../../../../tools/interfaces/plough-category'
 export class AddCategoryComponent implements OnInit {
   images: String[] = this.imgService.images;
 
-  constructor(private db: FireService, private imgService: ImageService) {}
+  constructor(public db: FireService, public imgService: ImageService) {}
 
   addPloughCategory = (category, categoryDetails:PloughCategory) =>{
     categoryDetails.images = this.images;
