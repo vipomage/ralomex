@@ -16,7 +16,7 @@ export class PloughsComponent implements OnInit {
   ngOnInit() {
     this.db.getCategory('ploughs').subscribe(response => {
       this.data = response;
-      this.categories = Object.keys(response);
+      this.categories = Object.keys(response['types']);
     });
 
     history.replaceState('', '', 'products/ploughs');

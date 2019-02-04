@@ -53,6 +53,8 @@ import { MdbNewsComponent } from './mdb-news/mdb-news.component';
 import { MdbAccordionComponent } from './products/mdb-accordion/mdb-accordion.component';
 import { MdbTableComponent } from './admin/mdb-table/mdb-table.component';
 import { DataTablesModule } from 'angular-datatables';
+import { MdbCardComponent } from './mdb-card/mdb-card.component';
+import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
 
 const routes: Routes = [
   {
@@ -139,6 +141,8 @@ const routes: Routes = [
     MdbNewsComponent,
     MdbAccordionComponent,
     MdbTableComponent,
+    MdbCardComponent,
+    MdbJumbotronComponent,
   ],
   imports: [
     HttpClientModule,

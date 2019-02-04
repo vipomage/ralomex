@@ -30,7 +30,7 @@ export class FireService {
       name: categoryDetails.name,
     });
 
-  getCategory = (category): Observable<PloughCategory> =>
+  getCategory = (category): Observable<any> =>
     this.http.get<PloughCategory>(`${databaseUrl}/${category}.json`);
 
   editItem = (key:String,category:String)=>

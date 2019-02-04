@@ -1,8 +1,16 @@
+<app-mdb-jumbotron
+  [title]="Ploughs"
+  [productCategory]="data"
+></app-mdb-jumbotron>
 <div *ngIf="data" class="model-list">
   <div *ngFor="let category of categories">
-    <app-category
+    <app-mdb-accordion
+      [data]="data['types'][category]"
       [category]="category"
-      [collection]="data[category]"
-    ></app-category>
+    ></app-mdb-accordion>
+    <!--<app-category-->
+    <!--[category]="category"-->
+    <!--[collection]="data[category]"-->
+    <!--&gt;</app-category>-->
   </div>
 </div>
