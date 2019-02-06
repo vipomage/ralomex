@@ -1,24 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../tools/services/fire.service';
-import { PloughCategory } from '../../../tools/interfaces/plough-category';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ploughs',
-  templateUrl: './ploughs.component.html',
+  template: '<app-category [category]="\'ploughs\'"></app-category>',
   styleUrls: ['./ploughs.component.css'],
 })
 export class PloughsComponent implements OnInit {
-  data:PloughCategory;
-  categories:String[];
 
-  constructor(private db: FireService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.db.getCategory('ploughs').subscribe(response => {
-      this.data = response;
-      this.categories = Object.keys(response['types']);
-    });
-
-    history.replaceState('', '', 'products/ploughs');
-  }
+  ngOnInit() {}
 }
