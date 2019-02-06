@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, enableDebugTools } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -32,6 +32,15 @@ import { AddPloughComponent } from './admin/controls/ploughs/add-plough/add-plou
 import { PloughControlsComponent } from './admin/controls/ploughs/plough-controls/plough-controls.component';
 import { ProductTableComponent } from './products/product-table/product-table.component';
 import { AddCategoryComponent } from './admin/controls/ploughs/add-category/add-category.component';
+import { MdbFooterComponent } from './mdb-footer/mdb-footer.component';
+import { MdbNewsComponent } from './mdb-news/mdb-news.component';
+import { MdbAccordionComponent } from './products/mdb-accordion/mdb-accordion.component';
+import { MdbTableComponent } from './admin/mdb-table/mdb-table.component';
+import { DataTablesModule } from 'angular-datatables';
+import { MdbCardComponent } from './mdb-card/mdb-card.component';
+import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
+import { SubcategoryComponent } from './products/subcategory/subcategory.component';
+import { ProductComponent } from './products/product/product.component';
 
 import { keyValueFilterPipe } from '../tools/pipes/key-value-filter.pipe';
 
@@ -46,15 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { MdbFooterComponent } from './mdb-footer/mdb-footer.component';
-import { MdbNewsComponent } from './mdb-news/mdb-news.component';
-import { MdbAccordionComponent } from './products/mdb-accordion/mdb-accordion.component';
-import { MdbTableComponent } from './admin/mdb-table/mdb-table.component';
-import { DataTablesModule } from 'angular-datatables';
-import { MdbCardComponent } from './mdb-card/mdb-card.component';
-import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
+
+
 
 const routes: Routes = [
   {
@@ -63,21 +66,25 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent, outlet: 'products' },
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
-      {
-        path: 'cultivators',
-        component: CultivatorsComponent,
-        outlet: 'products',
-      },
+      { path: 'cultivators', component: CultivatorsComponent,outlet: 'products'},
       { path: 'shredders', component: ShreddersComponent, outlet: 'products' },
-      { path: 'ploughs', component: PloughsComponent, outlet: 'products' },
+      { path: 'ploughs', component: PloughsComponent, outlet: 'products'},
       { path: 'special', component: SpecialComponent, outlet: 'products' },
       { path: 'rollers', component: RollersComponent, outlet: 'products' },
       { path: 'disks', component: DisksComponent, outlet: 'products' },
       { path: 'parts', component: PartsComponent, outlet: 'products' },
       { path: 'tools', component: ToolsComponent, outlet: 'products' },
+
     ],
   },
+  { path: 'details/:type/:category/:subCategory',component:SubcategoryComponent},
   { path: 'projects', component: ProjectsComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'news', component: MdbNewsComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'history', component: HistoryComponent },
+  { path: 'awards', component: AwardsComponent },
+  { path: 'product/:type/:category/:subCategory/:id',component:ProductComponent},
   {
     path: 'admin',
     component: AdminComponent,
@@ -98,12 +105,8 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'home', component: HomeComponent },
-  { path: 'news', component: MdbNewsComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'history', component: HistoryComponent },
-  { path: 'awards', component: AwardsComponent },
   { path: '**', redirectTo: '/home' },
+
 ];
 
 @NgModule({
@@ -143,11 +146,13 @@ const routes: Routes = [
     MdbTableComponent,
     MdbCardComponent,
     MdbJumbotronComponent,
+    SubcategoryComponent,
+    ProductComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,{enableTracing:false}),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
