@@ -14,13 +14,13 @@ export class EditPloughsComponent implements OnInit {
 
   onCategoryChange = (selectValue: String) => {
     this.category = selectValue;
-    this.db.getCategory('ploughs/'+selectValue).subscribe(res=>{
-      this.data= res.collection;
+    this.db.getType('ploughs/'+selectValue).subscribe(res=>{
+      this.data= res['collection'];
     })
   };
 
   ngOnInit() {
-    this.db.getCategory(`ploughs`).subscribe(res=>{
+    this.db.getType(`ploughs`).subscribe(res=>{
       this.categories = Object.keys(res);
     })
   }

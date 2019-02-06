@@ -31,7 +31,7 @@ export class AddPloughComponent implements OnInit {
 
   ngOnInit() {
 
-    this.db.getCategory('ploughs').subscribe(data => {
+    this.db.getType('ploughs').subscribe(data => {
       this.category = Object.keys(data)[0];
       this.categories = Object.keys(data);
     });
