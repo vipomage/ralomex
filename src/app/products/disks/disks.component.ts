@@ -1,27 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { PloughCategory } from '../../../tools/interfaces/plough-category';
-import { FireService } from '../../../tools/services/fire.service';
 
 @Component({
   selector: 'app-disks',
-  templateUrl: './disks.component.html',
+  template: '<app-category [category]="\'disks\'"></app-category>',
   styleUrls: ['./disks.component.css']
 })
 export class DisksComponent implements OnInit {
 
-  data:PloughCategory;
+  data;
   categories:String[];
 
-  constructor(private db:FireService) { }
+  constructor() { }
 
   ngOnInit() {
 
-    this.db.getCategory('disks').subscribe(response => {
-      this.data = response;
-      this.categories = Object.keys(response);
-    });
 
-    history.replaceState('', '', 'products/disks');
+    //history.replaceState('', '', 'products/disks');
   }
 
 }
