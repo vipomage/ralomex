@@ -1,29 +1,26 @@
-<!--Accordion wrapper-->
 <div
+
   class="accordion md-accordion"
   id="accordionEx"
   role="tablist"
   aria-multiselectable="false"
->
-  <!-- Accordion card -->
-  <div class="card">
-    <!-- Card header -->
 
+>
+
+  <div class="card">
     <div class="card-header" role="tab" id="headingOne1">
       <a
         data-toggle="collapse"
         data-parent="#accordionEx"
         href="#collapse-{{ category }}"
         aria-expanded="false"
-        aria-controls="collapse"
-      >
+        aria-controls="collapse">
         <h5 class="mb-0">
-          {{ category }} <i class="fas fa-angle-down rotate-icon"></i>
+          {{ category }}
         </h5>
       </a>
     </div>
 
-    <!-- Card body -->
     <div
       id="collapse-{{ category }}"
       class="collapse"
@@ -32,11 +29,7 @@
       data-parent="#accordionEx"
     >
       <div class="container-fluid ">
-        <div
-          (click)="logging()"
-          class="row sub-category"
-          *ngFor="let subCat of subCategories"
-        >
+        <div class="row sub-category" *ngFor="let subCat of subCategories">
           <!--<div class="col-lg-4">-->
           <!--<img src="{{ data.collection[subCat].image }}" alt="" />-->
           <!--</div>-->
@@ -45,6 +38,8 @@
           <!--<p>{{data.collection[subCat].description}}</p>-->
           <!--</div>-->
           <app-mdb-card
+            [type]="type"
+            [category]="category"
             [description]="data.collection[subCat].description"
             [image]="data.collection[subCat].image"
             [heading]="subCat"
@@ -53,6 +48,4 @@
       </div>
     </div>
   </div>
-  <!-- Accordion card -->
 </div>
-<!-- Accordion wrapper -->

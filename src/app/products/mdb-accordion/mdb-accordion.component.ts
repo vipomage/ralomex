@@ -6,22 +6,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./mdb-accordion.component.css']
 })
 export class MdbAccordionComponent implements OnInit {
+
   multiple:boolean = true;
   @Input() data:any;
-  @Input() category:any;
+  @Input() type:String;
+  @Input() category:String;
   subCategories:String[];
 
-
   constructor() { }
-
-  logging = ()=>{
-    console.log('Works!');
-  }
 
 
   ngOnInit() {
     this.subCategories = Object.keys(this.data.collection);
-    console.log(this.subCategories);
   }
 
 }
