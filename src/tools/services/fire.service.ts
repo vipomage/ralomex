@@ -19,10 +19,16 @@ export class FireService {
     private http: HttpClient
   ) {}
 
+  getItem = (type: String, category: String, subCategory: String, id: String) =>
+    this.http.get(
+      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection/`.toLocaleLowerCase() +
+        `${id}.json`
+    );
+
   addPlough = (data: Plough, category: String) =>
     this.db.database.ref(`ploughs/${category}/collection`).push(data);
 
-  addPloughCategory = (category, categoryDetails:PloughCategory) =>
+  addPloughCategory = (category, categoryDetails: PloughCategory) =>
     this.db.database.ref(`ploughs/${category}`).set({
       collection: [],
       description: categoryDetails.description,
@@ -30,11 +36,17 @@ export class FireService {
       name: categoryDetails.name,
     });
 
-  getCategory = (category): Observable<any> =>
-    this.http.get<PloughCategory>(`${databaseUrl}/${category}.json`);
+  getType = (type: String) => this.http.get(`${databaseUrl}/${type}.json`);
 
-  editItem = (key:String,category:String)=>
-    this.http.get<Plough>(`${databaseUrl}/ploughs/${category}/collection/${key}.json`)
+  getSubCategoryData = (type, category, subCategory) =>
+    this.http.get(
+      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection.json`.toLocaleLowerCase()
+    );
+
+  editItem = (key: String, category: String) =>
+    this.http.get<Plough>(
+      `${databaseUrl}/ploughs/${category}/collection/${key}.json`
+    );
 
   removePlough = (id: String) =>
     this.db.database.ref(`ploughs/${id}`).remove(e => console.log(e.message));
