@@ -13,7 +13,7 @@ export class CategoryComponent implements OnInit {
   private categories:String[];
 
   constructor(private db: FireService) {
-
+    //todo FIX TYPE!
   }
 
   public get data() {
@@ -28,6 +28,5 @@ export class CategoryComponent implements OnInit {
       this.data = response;
       this.categories = Object.keys(response['types']);
     });
-    console.log(this.category)
   }
 }
