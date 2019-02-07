@@ -1,3 +1,59 @@
-<p *ngIf="item">
-  {{item|json}}
-</p>
+<div *ngIf="item" class="container-fluid"><!--Section: Blog v.4-->
+  <section class="my-5">
+    <!--Grid row-->
+    <div class="row">
+      <div class="col-md-12">
+        <!--Featured image-->
+        <mdb-card cascade="true" wider="true" reverse="true">
+          <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+            <app-mdb-carousel class="img-fluid" [images]="item.image"></app-mdb-carousel>
+          </div>
+
+          <!--Post data-->
+          <mdb-card-body cascade="true" class="text-center col-sm-10">
+            <h2>
+              <a class="font-weight-bold">Model: {{item.model}}</a>
+            </h2>
+            <p class="text-capitalize">{{category}}</p>
+
+            <div class="social-counters ">
+
+              <a mdbBtn class="waves-light" mdbWavesEffect>
+                <i class="fas fa-arrows-alt-v"></i>
+                Working Depth <br>
+                <span class="d-md-inline-block">{{item.depthWork}}</span>
+              </a>
+
+              <a mdbBtn class="btn-tw waves-light" mdbWavesEffect>
+                <i class="fas fa-tractor"></i>
+                HP Required <br>
+                <span class="d-md-inline-block">{{item.reqHP}}</span>
+              </a>
+
+              <a mdbBtn class="btn-gplus waves-light" mdbWavesEffect>
+                <i class="fas fa-running"></i>
+                Speed <br>
+                <span class="d-md-inline-block">{{item.speed}}+</span>
+              </a>
+
+              <a mdbBtn class="waves-light" mdbWavesEffect>
+                <i class="fas fa-weight-hanging"></i>
+                Weight <br>
+                <span class="d-md-inline-block">{{item.weight}}</span>
+              </a>
+
+
+            </div>
+
+          </mdb-card-body>
+          <!--Post data-->
+        </mdb-card>
+        <!--Excerpt-->
+      </div>
+    </div>
+
+
+    <!--Grid row-->
+    <hr class="mb-5 mt-4">
+  </section>
+  <!--Section: Blog v.4--></div>
