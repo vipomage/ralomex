@@ -1,6 +1,6 @@
 import { BrowserModule, enableDebugTools } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { FireService } from '../tools/services/fire.service';
 
@@ -38,6 +38,10 @@ import { DataTablesModule } from 'angular-datatables';
 import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
 import { SubcategoryComponent } from './products/subcategory/subcategory.component';
 import { ProductComponent } from './products/product/product.component';
+import { MdbSectionComponent } from './mdb-section/mdb-section.component';
+import { AccordionComponent } from './products/accordion_DEPRECATED/accordion.component';
+import { FooterComponent } from './footer_DEPRECATED/footer.component';
+import { MdbCarouselComponent } from './mdb-carousel/mdb-carousel.component';
 
 import { keyValueFilterPipe } from '../tools/pipes/key-value-filter.pipe';
 
@@ -53,12 +57,9 @@ import { TableModule } from 'primeng/table';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { MdbCardComponent} from './mdb-card_DEPRECATED/mdb-card.component';
-import { MdbSectionComponent } from './mdb-section/mdb-section.component';
-import { AccordionComponent } from './products/accordion_DEPRECATED/accordion.component';
-import { FooterComponent } from './footer_DEPRECATED/footer.component';
-import { MdbCarouselComponent } from './mdb-carousel/mdb-carousel.component';
-import routes from  './routes';
+import { MdbCardComponent } from './mdb-card_DEPRECATED/mdb-card.component';
+
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
@@ -100,12 +101,12 @@ import routes from  './routes';
     MdbCardComponent,
     AccordionComponent,
     FooterComponent,
-    MdbCarouselComponent
+    MdbCarouselComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{enableTracing:false}),
+    RouterModule.forRoot(routes, { enableTracing: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -116,8 +117,7 @@ import routes from  './routes';
     BrowserAnimationsModule,
     FormsModule,
     DataTablesModule,
-    MDBBootstrapModule.forRoot()
-
+    MDBBootstrapModule.forRoot(),
   ],
   providers: [FireService],
   bootstrap: [AppComponent],

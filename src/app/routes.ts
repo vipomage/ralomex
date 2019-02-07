@@ -23,32 +23,41 @@ import { EditPloughsComponent } from './admin/controls/ploughs/edit-ploughs/edit
 import { AddPloughComponent } from './admin/controls/ploughs/add-plough/add-plough.component';
 import { AddCategoryComponent } from './admin/controls/ploughs/add-category/add-category.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
     children: [
       { path: '', component: HomeComponent, outlet: 'products' },
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
-      { path: 'cultivators', component: CultivatorsComponent,outlet: 'products'},
+      {
+        path: 'cultivators',
+        component: CultivatorsComponent,
+        outlet: 'products',
+      },
       { path: 'shredders', component: ShreddersComponent, outlet: 'products' },
-      { path: 'ploughs', component: PloughsComponent, outlet: 'products'},
+      { path: 'ploughs', component: PloughsComponent, outlet: 'products' },
       { path: 'special', component: SpecialComponent, outlet: 'products' },
       { path: 'rollers', component: RollersComponent, outlet: 'products' },
       { path: 'disks', component: DisksComponent, outlet: 'products' },
       { path: 'parts', component: PartsComponent, outlet: 'products' },
       { path: 'tools', component: ToolsComponent, outlet: 'products' },
-
     ],
   },
-  { path: 'details/:type/:category/:subCategory',component:SubcategoryComponent},
+  {
+    path: 'details/:type/:category/:subCategory',
+    component: SubcategoryComponent,
+  },
   { path: 'projects', component: ProjectsComponent },
   { path: 'home', component: HomeComponent },
   { path: 'news', component: MdbNewsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'awards', component: AwardsComponent },
-  { path: 'product/:type/:category/:subCategory/:id',component:ProductComponent},
+  {
+    path: 'product/:type/:category/:subCategory/:id',
+    component: ProductComponent,
+  },
   {
     path: 'admin',
     component: AdminComponent,
@@ -60,17 +69,11 @@ const routes: Routes = [
         children: [
           { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
           { path: 'add', component: AddPloughComponent, outlet: 'controls' },
-          {
-            path: 'addCategory',
-            component: AddCategoryComponent,
-            outlet: 'controls',
+          { path: 'addCategory',component: AddCategoryComponent,outlet: 'controls',
           },
         ],
       },
     ],
   },
   { path: '**', redirectTo: '/home' },
-
 ];
-
-export default routes;
