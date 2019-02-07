@@ -1,6 +1,6 @@
 import { BrowserModule, enableDebugTools } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule} from '@angular/router';
 
 import { FireService } from '../tools/services/fire.service';
 
@@ -53,59 +53,12 @@ import { TableModule } from 'primeng/table';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MdbCardComponent} from './mdb-card_DEPRECATED/mdb-card.component';
 import { MdbSectionComponent } from './mdb-section/mdb-section.component';
-
-
-
-const routes: Routes = [
-  {
-    path: 'products',
-    component: ProductsComponent,
-    children: [
-      { path: '', component: HomeComponent, outlet: 'products' },
-      { path: 'rippers', component: RippersComponent, outlet: 'products' },
-      { path: 'cultivators', component: CultivatorsComponent,outlet: 'products'},
-      { path: 'shredders', component: ShreddersComponent, outlet: 'products' },
-      { path: 'ploughs', component: PloughsComponent, outlet: 'products'},
-      { path: 'special', component: SpecialComponent, outlet: 'products' },
-      { path: 'rollers', component: RollersComponent, outlet: 'products' },
-      { path: 'disks', component: DisksComponent, outlet: 'products' },
-      { path: 'parts', component: PartsComponent, outlet: 'products' },
-      { path: 'tools', component: ToolsComponent, outlet: 'products' },
-
-    ],
-  },
-  { path: 'details/:type/:category/:subCategory',component:SubcategoryComponent},
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'news', component: MdbNewsComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'history', component: HistoryComponent },
-  { path: 'awards', component: AwardsComponent },
-  { path: 'product/:type/:category/:subCategory/:id',component:ProductComponent},
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      {
-        path: 'ploughs',
-        component: PloughControlsComponent,
-        outlet: 'admin',
-        children: [
-          { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
-          { path: 'add', component: AddPloughComponent, outlet: 'controls' },
-          {
-            path: 'addCategory',
-            component: AddCategoryComponent,
-            outlet: 'controls',
-          },
-        ],
-      },
-    ],
-  },
-  { path: '**', redirectTo: '/home' },
-
-];
+import { AccordionComponent } from './products/accordion_DEPRECATED/accordion.component';
+import { FooterComponent } from './footer_DEPRECATED/footer.component';
+import { MdbCarouselComponent } from './mdb-carousel/mdb-carousel.component';
+import routes from  './routes';
 
 @NgModule({
   declarations: [
@@ -144,6 +97,10 @@ const routes: Routes = [
     SubcategoryComponent,
     ProductComponent,
     MdbSectionComponent,
+    MdbCardComponent,
+    AccordionComponent,
+    FooterComponent,
+    MdbCarouselComponent
   ],
   imports: [
     HttpClientModule,
