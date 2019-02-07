@@ -1,0 +1,8 @@
+.img-fluid{
+  background-size: cover;
+  margin: 0 auto;
+  padding: 20px 10px;
+  }
+.carousel-indicators{
+  display: none;
+  }

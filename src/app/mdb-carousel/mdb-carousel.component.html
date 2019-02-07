@@ -1,0 +1,17 @@
+<div *ngIf="isArray(images)">
+  <mdb-carousel
+    class="carousel slide carousel-fade"
+    [animation]="'fade'"
+  >
+    <mdb-carousel-item *ngFor="let image of images">
+      <img (contextmenu)="onRightClick($event)" class="d-block w-100 img-fluid" [src]="image" alt="First slide" />
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>
+<div *ngIf="!isArray(images)" class="container-fluid">
+  <mdb-carousel class="carousel slide carousel-fade">
+    <mdb-carousel-item>
+      <img class="d-block w-100 img-fluid" [src]="images" alt="First slide" />
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>
