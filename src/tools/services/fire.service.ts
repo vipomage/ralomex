@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import { Plough } from '../interfaces/plough';
 import { environment } from '../../environments/environment';
@@ -19,11 +18,24 @@ export class FireService {
     private http: HttpClient
   ) {}
 
-  getItem = (type: String, category: String, subCategory: String, id: String) =>
-    this.http.get(
-      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection/`.toLocaleLowerCase() +
+  getHomeProducts= () => this.http.get(`${databaseUrl}/homeProducts.json`);
+
+
+  getItem = (type: String, category: String, subCategory: String, id: String) => {
+    return this.http
+      .get(`${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection/`.toLocaleLowerCase() +
         `${id}.json`
+    )};
+
+  getType = (type: String) => this.http.get(`${databaseUrl}/${type}.json`);
+
+  getSubCategoryData = (type, category, subCategory) =>
+    this.http.get(
+      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection.json`.toLocaleLowerCase()
     );
+
+
+
 
   addPlough = (data: Plough, category: String) =>
     this.db.database.ref(`ploughs/${category}/collection`).push(data);
@@ -35,13 +47,6 @@ export class FireService {
       images: categoryDetails.images,
       name: categoryDetails.name,
     });
-
-  getType = (type: String) => this.http.get(`${databaseUrl}/${type}.json`);
-
-  getSubCategoryData = (type, category, subCategory) =>
-    this.http.get(
-      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection.json`.toLocaleLowerCase()
-    );
 
   editItem = (key: String, category: String) =>
     this.http.get<Plough>(
