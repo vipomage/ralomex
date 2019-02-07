@@ -1,10 +1,8 @@
 <div
-
   class="accordion md-accordion"
   id="accordionEx"
   role="tablist"
   aria-multiselectable="false"
-
 >
 
   <div class="card">
@@ -29,7 +27,7 @@
       data-parent="#accordionEx"
     >
       <div class="container-fluid ">
-        <div class="row sub-category" *ngFor="let subCat of subCategories">
+        <div class="row sub-category" *ngFor="let subCat of subCategories let i=index">
           <!--<div class="col-lg-4">-->
           <!--<img src="{{ data.collection[subCat].image }}" alt="" />-->
           <!--</div>-->
@@ -37,13 +35,14 @@
           <!--<h2>{{ subCat }}</h2>-->
           <!--<p>{{data.collection[subCat].description}}</p>-->
           <!--</div>-->
-          <app-mdb-card
+          <app-mdb-section
+            [index]="i"
             [type]="type"
             [category]="category"
             [description]="data.collection[subCat].description"
             [image]="data.collection[subCat].image"
             [heading]="subCat"
-          ></app-mdb-card>
+          ></app-mdb-section>
         </div>
       </div>
     </div>
