@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
+// @ts-ignore
 @Component({
   selector: 'app-mdb-card',
   templateUrl: './mdb-card.component.html',
