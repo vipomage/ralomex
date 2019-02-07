@@ -14,9 +14,16 @@ export class MdbSectionComponent implements OnInit {
   @Input() image:String;
   @Input() description:String;
 
-  private left:boolean;
+  private _left:boolean;
 
   constructor() { }
+
+  public get left(){
+    return this._left
+  }
+  public set left(newValue){
+    this._left = newValue
+  }
 
   ngOnInit() {
     this.left = this.index % 2 === 0 || this.index === 0
