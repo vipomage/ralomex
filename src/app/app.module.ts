@@ -9,7 +9,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { PloughsComponent } from './products/ploughs/ploughs.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
 import { NewsComponent } from './news/news.component';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
@@ -24,7 +23,6 @@ import { RippersComponent } from './products/rippers/rippers.component';
 import { AboutComponent } from './about/about.component';
 import { HistoryComponent } from './history/history.component';
 import { AwardsComponent } from './awards/awards.component';
-import { AccordionComponent } from './products/accordion/accordion.component';
 import { CategoryComponent } from './products/category/category.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditPloughsComponent } from './admin/controls/ploughs/edit-ploughs/edit-ploughs.component';
@@ -37,7 +35,6 @@ import { MdbNewsComponent } from './mdb-news/mdb-news.component';
 import { MdbAccordionComponent } from './products/mdb-accordion/mdb-accordion.component';
 import { MdbTableComponent } from './admin/mdb-table/mdb-table.component';
 import { DataTablesModule } from 'angular-datatables';
-import { MdbCardComponent } from './mdb-card/mdb-card.component';
 import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
 import { SubcategoryComponent } from './products/subcategory/subcategory.component';
 import { ProductComponent } from './products/product/product.component';
@@ -56,6 +53,7 @@ import { TableModule } from 'primeng/table';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MdbSectionComponent } from './mdb-section/mdb-section.component';
 
 
 
@@ -116,7 +114,6 @@ const routes: Routes = [
     ProjectsComponent,
     HeaderComponent,
     NavbarComponent,
-    FooterComponent,
     NewsComponent,
     HomeComponent,
     AppComponent,
@@ -132,7 +129,6 @@ const routes: Routes = [
     AboutComponent,
     HistoryComponent,
     AwardsComponent,
-    AccordionComponent,
     CategoryComponent,
     AdminComponent,
     EditPloughsComponent,
@@ -144,10 +140,10 @@ const routes: Routes = [
     MdbNewsComponent,
     MdbAccordionComponent,
     MdbTableComponent,
-    MdbCardComponent,
     MdbJumbotronComponent,
     SubcategoryComponent,
     ProductComponent,
+    MdbSectionComponent,
   ],
   imports: [
     HttpClientModule,

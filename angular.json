@@ -11,9 +11,9 @@
       "schematics": {},
       "architect": {
         "build": {
+//          "baseHref": "https://vipomage.github.io/ralomex/",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "https://vipomage.github.io/ralomex/",
             "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -61,6 +61,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+//            "baseHref": "localhost:4200",
             "browserTarget": "ralo:build"
           },
           "configurations": {
