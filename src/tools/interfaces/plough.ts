@@ -8,5 +8,5 @@ export interface Plough {
   weight: Number;
   clearance: Number;
   description?: String;
-  images?: String[];
+  image?: String[];
 }
