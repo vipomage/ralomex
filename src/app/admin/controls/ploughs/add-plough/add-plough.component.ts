@@ -12,28 +12,44 @@ export class AddPloughComponent implements OnInit {
 
   categories: String[];
   category: String;
-  plough: Plough;
+  subCategories:String[];
+  subCategory:String;
   images: String[] = this.imgService.images;
 
   constructor(public db: FireService,public imgService:ImageService) {}
 
-  onCategoryChange = selectValue => (this.category = selectValue);
-
-  savePlough = (data: Plough, category: String) =>{
-    data.images = this.images;
-    this.db.addPlough(data, category);
+  onCategoryChange = selectValue => {
+    this.category = selectValue;
+    this.db.getSubCategories('ploughs',selectValue).subscribe(data=>{
+      this.subCategory = Object.keys(data)[0];
+      this.subCategories = Object.keys(data);
+    });
   };
 
+  onSubCategoryChange = selectValue =>{
+    this.subCategory = selectValue;
+  };
+
+  savePlough = (data: Plough, category: String) =>{
+    data.image = this.images;
+    this.db.addPlough(data, category,this.subCategory);
+    //todo notification
+  };
 
 
   startUpload = event => this.imgService.startUpload(event);
 
-
   ngOnInit() {
-
-    this.db.getType('ploughs').subscribe(data => {
+    this.db.getType('ploughs/types').subscribe(data => {
       this.category = Object.keys(data)[0];
       this.categories = Object.keys(data);
+
+      this.db.getSubCategories('ploughs',this.category).subscribe(data=>{
+        this.subCategory = Object.keys(data)[0];
+        this.subCategories = Object.keys(data);
+      })
     });
+
+
   }
 }
