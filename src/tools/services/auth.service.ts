@@ -14,7 +14,6 @@ export class AuthService {
     this.user = firebaseAuth.authState;
   }
 
-
   googleOAuth = () => {
     firebase
       .auth()

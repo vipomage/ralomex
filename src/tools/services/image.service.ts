@@ -69,7 +69,5 @@ export class ImageService {
       this.percentage = this.task.percentageChanges();
       this.snapshot = this.task.snapshotChanges();
     }
-
-
   }
 }

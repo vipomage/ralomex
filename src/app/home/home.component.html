@@ -6,18 +6,18 @@
           (contextmenu)="onRightClick($event)"
           class="d-block w-100"
           src="{{ product.image }}"
-          alt="First slide"
-        />
+          alt="First slide"/>
         <a
-          (click)="navigate(product.href)"
+          routerLink ="/product/{{ product.href.slice(29) }}"
           class="mask rgba-black-light waves-light"
-          mdbWavesEffect
-        ></a>
+          mdbWavesEffect>
+        </a>
       </div>
       <div class="carousel-caption">
-        <a routerLink="/product/{{ product.href.slice(29) }}"
-          ><h3 class="h3-responsive">{{ product.heading }}</h3></a
-        >
+        <a
+          routerLink="/product/{{ product.href.slice(29) }}">
+          <h3 class="h3-responsive">{{ product.heading }}</h3>
+        </a>
       </div>
     </mdb-carousel-item>
   </mdb-carousel>

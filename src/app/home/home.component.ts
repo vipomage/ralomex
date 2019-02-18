@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FireService } from '../../tools/services/fire.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +10,11 @@ export class HomeComponent implements OnInit {
 
   public homeProducts;
 
-  constructor(private db: FireService,private router:Router) {}
-
+  constructor(private db: FireService) {}
 
   ngOnInit() {
    this.db
       .getHomeProducts()
       .subscribe(res=>this.homeProducts = res);
   }
-
 }
