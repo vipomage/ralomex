@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
-import { PloughCategory } from '../../../../../tools/interfaces/plough-category';
+
 
 @Component({
   selector: 'app-add-category',
@@ -9,17 +9,30 @@ import { PloughCategory } from '../../../../../tools/interfaces/plough-category'
   styleUrls: ['./add-category.component.css'],
 })
 export class AddCategoryComponent implements OnInit {
+  initial;
   images: String[] = this.imgService.images;
+  categories: String[];
+  category: String;
 
   constructor(public db: FireService, public imgService: ImageService) {}
 
-  addPloughCategory = (category, categoryDetails:PloughCategory) =>{
-    categoryDetails.images = this.images;
-    return this.db.addPloughCategory(category, categoryDetails);
+  change = (selectValue) => {
+    this.category = selectValue;
   };
 
-
-  ngOnInit() {}
+  addPloughCategory = (categoryDetails) => {
+    categoryDetails.value.image = this.images;
+    return this.db.addPloughCategory(this.category,categoryDetails.value);
+  };
 
   startUpload = event => this.imgService.startUpload(event);
+
+
+
+  ngOnInit() {
+    this.db.getType('ploughs').subscribe(response => {
+      this.categories = Object.keys(response['types']);
+      this.category = this.categories[0];
+    });
+  }
 }

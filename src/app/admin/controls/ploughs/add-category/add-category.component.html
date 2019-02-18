@@ -3,13 +3,24 @@
   <form
     class="form"
     #categoryDetails="ngForm"
-    (ngSubmit)="
-      this.addPloughCategory(categoryDetails.value.name, categoryDetails.value)
-    "
+    (ngSubmit)="this.addPloughCategory(categoryDetails)"
   >
+    <div class="form-group">
+      <label for="type">Тип </label>
+      <select
+        *ngIf="categories"
+        [(ngModel)]="category"
+        name="type"
+        id="type"
+        (change)="change($event.target.value)"
+      >
+        <option *ngFor="let cat of categories" >{{cat}}</option>
+      </select>
+    </div>
     <div class="form-group">
       <label for="categoryName">Име на Категория</label>
       <input
+        required
         name="name"
         ngModel
         class="form-control"
@@ -20,6 +31,7 @@
     <div class="form-group">
       <label for="description">Описание</label>
       <textarea
+        required
         name="description"
         ngModel
         rows="4"
@@ -31,6 +43,7 @@
     <div class="form-control-plaintext">
       <label for="catImage">Снимка</label>
       <input
+        required
         (change)="startUpload($event.target.files)"
         [disabled]="this.imgService.preventEdit"
         name="image"
@@ -38,14 +51,13 @@
         class="form-control-file"
         type="file"
         id="catImage"
-        multiple
       />
     </div>
     <div *ngIf="images">
       <div *ngFor="let image of images">
-        <img class="img-thumbnail col-md-4" src="{{image}}" alt="">
+        <img class="img-thumbnail col-md-4" src="{{ image }}" alt="" />
       </div>
     </div>
-    <button class="btn btn-primary" type="submit">Запази</button>
+    <button [disabled]="!categoryDetails.form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
   </form>
 </div>
