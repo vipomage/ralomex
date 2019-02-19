@@ -1,22 +1,22 @@
-<div class="container-fluid">
+<div *ngIf="homeProducts" class="container-fluid">
   <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-    <mdb-carousel-item *ngFor="let product of homeProducts">
+    <mdb-carousel-item *ngFor="let product of homeProducts |keyValueFilter">
       <div class="view w-100">
         <img
           (contextmenu)="onRightClick($event)"
           class="d-block w-100"
-          src="{{ product.image }}"
+          src="{{ product.value.image }}"
           alt="First slide"/>
         <a
-          routerLink ="/product/{{ product.href.slice(29) }}"
+          routerLink ="/product/{{ product.value.href.slice(29) }}"
           class="mask rgba-black-light waves-light"
           mdbWavesEffect>
         </a>
       </div>
       <div class="carousel-caption">
         <a
-          routerLink="/product/{{ product.href.slice(29) }}">
-          <h3 class="h3-responsive">{{ product.heading }}</h3>
+          routerLink="/product/{{ product.value.href.slice(29) }}">
+          <h3 class="h3-responsive">{{ product.value.heading }}</h3>
         </a>
       </div>
     </mdb-carousel-item>
