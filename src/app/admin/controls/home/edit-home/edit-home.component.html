@@ -1,0 +1,32 @@
+<div *ngIf="elements" class="card-group">
+  <mdb-card id="{{element.key}}" *ngFor="let element of elements|keyValueFilter">
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <mdb-card-img src="{{element.value.image}}" alt="Card image cap"></mdb-card-img>
+      <a><div class="mask"></div></a>
+    </div>
+    <mdb-card-body>
+      <mdb-card-title>
+        <h4>{{element.value.heading}}</h4>
+      </mdb-card-title>
+      <a (click)="setElement(element.key,element.value)" mdbBtn color="primary" mdbWavesEffect>Редактирай</a>
+      <a (click)="deleteElement(element.key)" mdbBtn color="danger" mdbWavesEffect>Изтрий</a>
+    </mdb-card-body>
+  </mdb-card>
+</div>
+
+
+<form *ngIf="homeElement" #form="ngForm" (ngSubmit)="editHomeElement(homeElementId,form.value)  ">
+  <div class="form-group">
+    <label for="heading">Заглавие</label>
+    <input [(ngModel)]="homeElement.heading" required class="form-control" type="text" id="heading" name="heading" />
+  </div>
+  <div class="form-group">
+    <label for="href">Връзка към продукта</label>
+    <input [(ngModel)]="homeElement.href" required class="form-control" type="text" id="href" name="href" />
+  </div>
+  <div class="form-group">
+    <label for="image">Връзка към снимка</label>
+    <input [(ngModel)]="homeElement.image" required class="form-control" type="text" id="image" name="image" />
+  </div>
+  <button [disabled]="!form.valid" class="btn btn-primary" type="submit">Запази</button>
+</form>
