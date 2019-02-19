@@ -37,3 +37,7 @@ span.buttonText {
   text-align: center;
   margin: 0 auto;
   }
+.nav,.secondary-nav{
+  outline: 1px solid black;
+  margin-bottom: 5px;
+  }
