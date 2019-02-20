@@ -1,3 +1,28 @@
-<p>
-  add-news works!
-</p>
+<form #form="ngForm" (ngSubmit)="saveNewsElement(form.value)">
+  <div class="form-group">
+    <label for="heading">Заглавие</label>
+    <input ngModel required class="form-control" type="text" id="heading" name="heading" />
+  </div>
+  <div class="form-group">
+    <label for="content">Съдържание на новината</label>
+    <textarea ngModel required class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+  </div>
+  <div class="form-control-plaintext">
+    <label for="catImage">Снимка</label>
+    <input
+      required
+      (change)="startUpload($event.target.files)"
+      [disabled]="this.imgService.preventEdit"
+      name="image"
+      ngModel
+      class="form-control-file"
+      type="file"
+      accept="image/*"
+      id="catImage"
+    />
+    <div>
+      <img *ngIf="image" class="img-thumbnail col-md-4" src="{{image}}" alt="news image preview" />
+    </div>
+  </div>
+  <button [disabled]="!form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
+</form>
