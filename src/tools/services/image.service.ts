@@ -39,8 +39,8 @@ export class ImageService {
 
       // Client-side validation
       if (file.type.split('/')[0] !== 'image') {
-        console.error('unsupported file type :( ');
-        return;
+        throw new TypeError('Unsupported File Type!')
+        this.preventEdit = false;
       }
 
       // The storage path
