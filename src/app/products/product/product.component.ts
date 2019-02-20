@@ -21,11 +21,14 @@ export class ProductComponent implements OnInit {
     private db:FireService
   ) { }
 
+  decode_utf8 = (s)=> decodeURI(s);
+
   ngOnInit() {
-    this.type = this.route.snapshot.params.type;
-    this.category = this.route.snapshot.params.category;
-    this.subCategory = this.route.snapshot.params.subCategory;
+    this.type = this.decode_utf8(this.route.snapshot.params.type);
+    this.category = this.decode_utf8(this.route.snapshot.params.category);
+    this.subCategory = this.decode_utf8(this.route.snapshot.params.subCategory);
     this.id = this.route.snapshot.params.id;
+
 
     this.db.getItem(this.type,this.category,this.subCategory,this.id)
       .subscribe(res=>this.item = res)

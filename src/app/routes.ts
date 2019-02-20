@@ -30,7 +30,6 @@ import { EditAwardsComponent } from './admin/controls/awards/edit-awards/edit-aw
 import { RemoveAwardsComponent } from './admin/controls/awards/remove-awards/remove-awards.component';
 import { NewsControlComponent } from './admin/controls/news/news-control/news-control.component';
 import { EditNewsComponent } from './admin/controls/news/edit-news/edit-news.component';
-import { RemoveNewsComponent } from './admin/controls/news/remove-news/remove-news.component';
 import { ProjectsControlComponent } from './admin/controls/projects/projects-control/projects-control.component';
 import { EditProjectsComponent } from './admin/controls/projects/edit-projects/edit-projects.component';
 import { RemoveProjectsComponent } from './admin/controls/projects/remove-projects/remove-projects.component';
@@ -109,8 +108,7 @@ export const routes: Routes = [
         outlet: 'admin',
         children: [
           { path: 'add', component: AddNewsComponent, outlet: 'controls' },
-          { path: 'edit', component: EditNewsComponent, outlet: 'controls' },
-          { path: 'remove', component: RemoveNewsComponent, outlet: 'controls' },
+          { path: 'edit', component: EditNewsComponent, outlet: 'controls' }
         ],
       },
       {
