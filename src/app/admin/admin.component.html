@@ -1,9 +1,7 @@
 <div class="container-fluid">
   <div class="col-md-12">
     <div class="user text-center">
-      <button (click)="authService.logout()" *ngIf="(authService.user | async)">
-        Logout
-      </button>
+     
       <div *ngIf="!(authService.user | async)" class="button-wrapper">
         <div (click)="authService.googleOAuth()" id="gSignInWrapper">
           <div id="customBtn" class="customGPlusSignIn">
@@ -17,22 +15,28 @@
         <div class="row">
           <div class="col-md-2">
             <nav>
+              <button
+                class="btn btn-warning"
+                (click)="authService.logout()"
+                *ngIf="(authService.user | async)">
+                Logout
+              </button>
               <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs']}}]">Плугове</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['disks']}}]">Дискови Брани</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['cultivators']}}]">Култиватори</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['rippers']}}]">Разрохвачи</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['rollers']}}]">Валяци</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['shredders']}}]">Раздробители</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['special']}}]">Специализирани</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['parts']}}]">Резервни Части</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['tools']}}]">Работни Органи</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs']}}]">Плугове</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['disks']}}]">Дискови Брани</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['cultivators']}}]">Култиватори</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['rippers']}}]">Разрохвачи</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['rollers']}}]">Валяци</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['shredders']}}]">Раздробители</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['special']}}]">Специализирани</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['parts']}}]">Резервни Части</a></li>
+                <li routerLinkActive="active" class="nav-item"><a class="nav-link" [routerLink]="[{ outlets: { admin: ['tools']}}]">Работни Органи</a></li>
               </ul>
               <ul class="secondary-nav">
-                <li class="nav-item"><a [routerLink]="[{ outlets: { admin: ['home']}}]"  class="nav-link">Начални Ел.</a></li>
-                <li class="nav-item"><a [routerLink]="[{ outlets: { admin: ['news']}}]"  class="nav-link">Новини</a></li>
-                <li class="nav-item"><a [routerLink]="[{ outlets: { admin: ['awards']}}]"  class="nav-link">Награди</a></li>
-                <li class="nav-item"><a [routerLink]="[{ outlets: { admin: ['projects']}}]"  class="nav-link">Проекти</a></li>
+                <li routerLinkActive="active" class="nav-item"><a [routerLink]="[{ outlets: { admin: ['home']}}]"  class="nav-link">Начални Ел.</a></li>
+                <li routerLinkActive="active" class="nav-item"><a [routerLink]="[{ outlets: { admin: ['news']}}]"  class="nav-link">Новини</a></li>
+                <li routerLinkActive="active" class="nav-item"><a [routerLink]="[{ outlets: { admin: ['awards']}}]"  class="nav-link">Награди</a></li>
+                <li routerLinkActive="active" class="nav-item"><a [routerLink]="[{ outlets: { admin: ['projects']}}]"  class="nav-link">Проекти</a></li>
               </ul>
             </nav>
           </div>
