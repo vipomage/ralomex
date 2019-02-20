@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Plough } from '../interfaces/plough';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
+import {News} from "../interfaces/news";
+import {HomeProduct} from "../interfaces/home-product";
 
 const databaseUrl: String = environment.firebase.databaseURL;
 
@@ -13,13 +15,28 @@ const databaseUrl: String = environment.firebase.databaseURL;
 export class FireService {
   constructor(private auth: AuthService, private db: AngularFireDatabase, private http: HttpClient) {}
 
-  getHomeProducts = () => this.http.get(`${databaseUrl}/homeProducts.json`);
+  HomeControls = {
+     addHomeProduct : (data:HomeProduct) => this.db.database.ref('homeProducts').push(data),
 
-  addHomeProduct = data => this.db.database.ref('homeProducts').push(data);
+     getHomeProducts : () => this.http.get(`${databaseUrl}/homeProducts.json`),
 
-  deleteHomeProduct = id => this.db.database.ref(`homeProducts/${id}`).remove();
+     deleteHomeProduct : (id) => this.db.database.ref(`homeProducts/${id}`).remove(),
 
-  updateHomeProduct = (id, newValue) => this.db.database.ref(`homeProducts/${id}`).update(newValue);
+     updateHomeProduct : (id, newValue) => this.db.database.ref(`homeProducts/${id}`).update(newValue)
+
+  };
+
+  NewsControls = {
+    addNewsElement: (data: News) => this.db.database.ref('news').push(data),
+
+    getNewsElements: () => this.http.get(`${databaseUrl}/news.json`),
+
+    deleteNewsElement: (id: String) => this.db.database.ref(`news/${id}`).remove(),
+
+    updateNewsElement: (id: String, newValue: News) => this.db.database.ref(`news/${id}`).update(newValue)
+
+  };
+
 
   getItem = (type: String, category: String, subCategory: String, id: String) =>
     this.http.get(
