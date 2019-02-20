@@ -1,12 +1,12 @@
 export interface Plough {
-  model: String;
-  reqHP: String;
-  depthWork: String;
-  widthWork: String;
-  speed: String;
-  productivity: String;
-  weight: Number;
   clearance: Number;
+  depthWork: String;
   description?: String;
-  image?: String[];
+  image?: String[] | String;
+  model: String;
+  productivity: String;
+  reqHP: String;
+  speed: String;
+  weight: Number;
+  widthWork: String;
 }
