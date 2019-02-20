@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../../../../tools/services/fire.service";
+import {HomeProduct} from "../../../../../tools/interfaces/home-product";
 
 @Component({
   selector: 'app-add-home',
@@ -10,8 +11,8 @@ export class AddHomeComponent implements OnInit {
 
   constructor(private db:FireService) { }
 
-  saveHomeElement = (formData)=>{
-    this.db.addHomeProduct(formData);
+  saveHomeElement = (formData:HomeProduct)=>{
+    this.db.HomeControls.addHomeProduct(formData);
   };
 
   ngOnInit() {

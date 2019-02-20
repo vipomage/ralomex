@@ -1,38 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../../../../tools/services/fire.service";
-import {element} from "protractor";
+import {HomeProduct} from "../../../../../tools/interfaces/home-product";
 
 @Component({
   selector: 'app-edit-home',
   templateUrl: './edit-home.component.html',
-  styleUrls: ['./edit-home.component.css']
+  styleUrls: ['./edit-home.component.css'],
 })
 export class EditHomeComponent implements OnInit {
-  elements;
-  homeElementId;
-  homeElement;
+  elements: HomeProduct[];
+  homeElementId: String;
+  homeElement: HomeProduct;
 
-  constructor(private db:FireService) { }
+  constructor(private db: FireService) {}
 
-  setElement = (id,element)=>{
+  setElement = (id: String, element: HomeProduct):void => {
     this.homeElementId = id;
     this.homeElement = element;
   };
 
-  deleteElement =(elementId) =>{
-    let confirm  =window.confirm('Сигурни ли сте че искате да изтриете този елемент');
+  deleteElement = (elementId: string) => {
+    let confirm = window.confirm('Сигурни ли сте че искате да изтриете този елемент');
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return  this.db.deleteHomeProduct(elementId)
+      return this.db.HomeControls.deleteHomeProduct(elementId);
     }
   };
 
-  editHomeElement = (id,formData)=>{
-    return this.db.updateHomeProduct(id,formData)
-  };
+  editHomeElement = (id:String, formData:HomeProduct) => this.db.HomeControls.updateHomeProduct(id, formData);
 
   ngOnInit() {
-    this.db.getHomeProducts().subscribe(data=>this.elements =data)
+    this.db.HomeControls.getHomeProducts().subscribe((data: HomeProduct[]) => (this.elements = data));
   }
-
 }
