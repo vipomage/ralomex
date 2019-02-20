@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
    this.db
+      .HomeControls
       .getHomeProducts()
       .subscribe(res=>this.homeProducts = res);
   }
