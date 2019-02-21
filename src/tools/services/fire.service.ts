@@ -29,7 +29,7 @@ export class FireService {
   NewsControls = {
     addNewsElement: (data: News) => this.db.database.ref('news').push(data),
 
-    getNewsElements: () => this.http.get(`${databaseUrl}/news.json`),
+    getNewsElements: () => this.http.get<News[]>(`${databaseUrl}/news.json`),
 
     deleteNewsElement: (id: String) => this.db.database.ref(`news/${id}`).remove(),
 
