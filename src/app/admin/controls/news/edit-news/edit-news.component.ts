@@ -30,6 +30,7 @@ export class EditNewsComponent implements OnInit {
 
   startUpload = (files) =>{
     try {
+      this.imgService.images = [];
       this.imgService.startUpload(files);
       this.newsElement.image = this.imgService.images
     }catch (e) {
@@ -42,8 +43,10 @@ export class EditNewsComponent implements OnInit {
     if (this.imgService.images.length>0) {
       formData.image = this.imgService.images[0];
     }else{
+      if (this.newsElement.image)
       formData.image = this.newsElement.image
     }
+
     return this.db.NewsControls.updateNewsElement(id, formData);
   };
 

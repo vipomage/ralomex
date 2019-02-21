@@ -1,7 +1,7 @@
 <div *ngIf="elements" class="card-group">
   <mdb-card id="{{element.key}}" *ngFor="let element of elements|keyValueFilter">
-    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-      <mdb-card-img src="{{element.value.image}}" alt="Card image cap"></mdb-card-img>
+    <div *ngIf="element.value.image" class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <mdb-card-img  src="{{element.value.image}}" alt="Card image cap"></mdb-card-img>
       <a><div class="mask"></div></a>
     </div>
     <mdb-card-body>

@@ -10,7 +10,6 @@
   <div class="form-control-plaintext">
     <label for="catImage">Снимка</label>
     <input
-      required
       (change)="startUpload($event.target.files)"
       [disabled]="this.imgService.preventEdit"
       name="image"
