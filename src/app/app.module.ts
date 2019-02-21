@@ -9,7 +9,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { PloughsComponent } from './products/ploughs/ploughs.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NewsComponent } from './news/news.component';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { DisksComponent } from './products/disks/disks.component';
@@ -82,7 +81,6 @@ import { EditHomeComponent } from './admin/controls/home/edit-home/edit-home.com
     ProjectsComponent,
     HeaderComponent,
     NavbarComponent,
-    NewsComponent,
     HomeComponent,
     AppComponent,
     PloughsComponent,
