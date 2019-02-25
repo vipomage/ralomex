@@ -14,7 +14,7 @@ import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
 export class ImageService {
   task: AngularFireUploadTask;
   status: String;
-  preventEdit: boolean = false;
+  public preventEdit: boolean = false;
   downloadUrl: String;
   images: String[] = [];
   private percentage: Observable<number | undefined>;

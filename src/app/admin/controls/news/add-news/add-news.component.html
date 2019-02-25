@@ -11,7 +11,7 @@
     <label for="catImage">Снимка</label>
     <input
       (change)="startUpload($event.target.files)"
-      [disabled]="this.imgService.preventEdit"
+      [disabled]="preventEdit"
       name="image"
       ngModel
       class="form-control-file"
@@ -23,5 +23,5 @@
       <img *ngIf="image" class="img-thumbnail col-md-4" src="{{image}}" alt="news image preview" />
     </div>
   </div>
-  <button [disabled]="!form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
+  <button [disabled]="!form.valid || this.preventEdit" class="btn btn-primary" type="submit">Запази</button>
 </form>

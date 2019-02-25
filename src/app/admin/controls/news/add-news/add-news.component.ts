@@ -11,6 +11,7 @@ import {FireService} from "../../../../../tools/services/fire.service";
 export class AddNewsComponent implements OnInit {
 
   image: String|String[];
+  preventEdit = this.imgService.preventEdit;
 
   constructor(
     private imgService:ImageService,
