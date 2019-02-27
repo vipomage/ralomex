@@ -1,5 +1,5 @@
 export interface HomeProduct {
-  heading: String;
-  href: String;
-  image: String;
+  heading: string;
+  href: string;
+  image: string;
 }

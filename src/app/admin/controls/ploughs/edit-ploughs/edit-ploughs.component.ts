@@ -7,12 +7,12 @@ import { FireService } from '../../../../../tools/services/fire.service';
   styleUrls: ['./edit-ploughs.component.css'],
 })
 export class EditPloughsComponent implements OnInit {
-  category: String;
-  categories: String[];
+  category: string;
+  categories: string[];
   data;
   constructor(private db: FireService) {}
 
-  onCategoryChange = (selectValue: String) => {
+  onCategoryChange = (selectValue: string) => {
     this.category = selectValue;
     this.db.getType('ploughs/'+selectValue).subscribe(res=>{
       this.data= res['collection'];

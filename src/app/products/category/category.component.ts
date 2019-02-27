@@ -10,7 +10,7 @@ export class CategoryComponent implements OnInit {
 
   @Input() category;
   private _data;
-  private categories:String[];
+  private categories:string[];
 
   constructor(private db: FireService) {
     //todo FIX TYPE!

@@ -8,11 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MdbSectionComponent implements OnInit {
 
   @Input() index;
-  @Input() type:String;
-  @Input() category:String;
-  @Input() heading:String;
-  @Input() image:String;
-  @Input() description:String;
+  @Input() type:string;
+  @Input() category:string;
+  @Input() heading:string;
+  @Input() image:string;
+  @Input() description:string;
 
   private _left:boolean;
 

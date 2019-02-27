@@ -10,12 +10,12 @@ import {ImageService} from "../../../../../tools/services/image.service";
 })
 export class EditNewsComponent implements OnInit {
   elements: News[];
-  newsElementId: String;
+  newsElementId: string;
   newsElement: News;
 
   constructor(private db: FireService,private imgService:ImageService) {}
 
-  setElement = (id: String, element: News): void => {
+  setElement = (id: string, element: News): void => {
     this.newsElementId = id;
     this.newsElement = element;
   };
@@ -39,12 +39,12 @@ export class EditNewsComponent implements OnInit {
     }
   };
 
-  editNewsElement = (id: String, formData: News) => {
+  editNewsElement = (id: string, formData: News) => {
     if (this.imgService.images.length>0) {
       formData.image = this.imgService.images[0];
     }else{
       if (this.newsElement.image)
-      formData.image = this.newsElement.image
+      formData.image = this.newsElement.image as string;
     }
 
     return this.db.NewsControls.updateNewsElement(id, formData);

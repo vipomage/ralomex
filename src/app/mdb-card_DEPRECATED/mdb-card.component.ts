@@ -7,11 +7,11 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation:ViewEncapsulation.None
 })
 export class MdbCardComponent implements OnInit {
-  @Input() type:String;
-  @Input() category:String;
-  @Input() heading:String;
-  @Input() image:String;
-  @Input() description:String;
+  @Input() type:string;
+  @Input() category:string;
+  @Input() heading:string;
+  @Input() image:string;
+  @Input() description:string;
   constructor() { }
 
   ngOnInit() {

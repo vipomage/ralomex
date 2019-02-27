@@ -9,10 +9,10 @@ import { FireService } from '../../../tools/services/fire.service';
 })
 export class ProductComponent implements OnInit {
 
-  private type:String;
-  private category:String;
-  private subCategory:String;
-  private id:String;
+  private type:string;
+  private category:string;
+  private subCategory:string;
+  private id:string;
 
   public item;
 
@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
     private db:FireService
   ) { }
 
-  decode_utf8 = (s)=> decodeURI(s);
+  decode_utf8 = (s:string)=> decodeURI(s);
 
   ngOnInit() {
     this.type = this.decode_utf8(this.route.snapshot.params.type);

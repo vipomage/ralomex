@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./mdb-carousel.component.css']
 })
 export class MdbCarouselComponent implements OnInit {
-  @Input() public images:String[]|String;
+  @Input() public images:string[]|string;
   constructor() { }
 
   isArray = (val) =>Array.isArray(val);

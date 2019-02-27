@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisksComponent implements OnInit {
 
   data;
-  categories:String[];
+  categories:string[];
 
   constructor() { }
 

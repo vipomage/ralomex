@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PloughControlsComponent implements OnInit {
 
-  category: String;
+  category: string;
 
   constructor() {}
 

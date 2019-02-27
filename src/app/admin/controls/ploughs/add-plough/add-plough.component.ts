@@ -10,11 +10,11 @@ import { ImageService } from '../../../../../tools/services/image.service';
 })
 export class AddPloughComponent implements OnInit {
 
-  categories: String[];
-  category: String;
-  subCategories:String[];
-  subCategory:String;
-  images: String[] = this.imgService.images;
+  categories: string[];
+  category: string;
+  subCategories:string[];
+  subCategory:string;
+  images: string[] = this.imgService.images;
 
   constructor(public db: FireService,public imgService:ImageService) {}
 
@@ -30,7 +30,7 @@ export class AddPloughComponent implements OnInit {
     this.subCategory = selectValue;
   };
 
-  savePlough = (data: Plough, category: String) =>{
+  savePlough = (data: Plough, category: string) =>{
     data.image = this.images;
     this.db.addPlough(data, category,this.subCategory);
     //todo notification

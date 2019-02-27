@@ -9,12 +9,12 @@ import {HomeProduct} from "../../../../../tools/interfaces/home-product";
 })
 export class EditHomeComponent implements OnInit {
   elements: HomeProduct[];
-  homeElementId: String;
+  homeElementId: string;
   homeElement: HomeProduct;
 
   constructor(private db: FireService) {}
 
-  setElement = (id: String, element: HomeProduct):void => {
+  setElement = (id: string, element: HomeProduct):void => {
     this.homeElementId = id;
     this.homeElement = element;
   };
@@ -27,7 +27,7 @@ export class EditHomeComponent implements OnInit {
     }
   };
 
-  editHomeElement = (id:String, formData:HomeProduct) => this.db.HomeControls.updateHomeProduct(id, formData);
+  editHomeElement = (id:string, formData:HomeProduct) => this.db.HomeControls.updateHomeProduct(id, formData);
 
   ngOnInit() {
     this.db.HomeControls.getHomeProducts().subscribe((data: HomeProduct[]) => (this.elements = data));

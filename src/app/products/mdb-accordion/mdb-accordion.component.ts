@@ -9,9 +9,9 @@ export class MdbAccordionComponent implements OnInit {
 
   multiple:boolean = true;
   @Input() data:any;
-  @Input() type:String;
-  @Input() category:String;
-  subCategories:String[];
+  @Input() type:string;
+  @Input() category:string;
+  subCategories:string[];
 
   constructor() { }
 

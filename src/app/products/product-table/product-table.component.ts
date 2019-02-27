@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductTableComponent implements OnInit {
   @Input() data;
 
-  private type:String;
-  private category:String;
-  private subCategory:String;
+  private type:string;
+  private category:string;
+  private subCategory:string;
 
   constructor(private route: ActivatedRoute) {}
 

@@ -10,9 +10,9 @@ import { ImageService } from '../../../../../tools/services/image.service';
 })
 export class AddCategoryComponent implements OnInit {
   initial;
-  images: String[] = this.imgService.images;
-  categories: String[];
-  category: String;
+  images: string[] = this.imgService.images;
+  categories: string[];
+  category: string;
 
   constructor(public db: FireService, public imgService: ImageService) {}
 

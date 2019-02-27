@@ -8,9 +8,9 @@ import { FireService } from '../../../tools/services/fire.service';
   styleUrls: ['./subcategory.component.css'],
 })
 export class SubcategoryComponent implements OnInit {
-  private type: String;
-  private category: String;
-  private subCategory: String;
+  private type: string;
+  private category: string;
+  private subCategory: string;
   public data;
 
   constructor(private activeRoute: ActivatedRoute, private db: FireService) {}

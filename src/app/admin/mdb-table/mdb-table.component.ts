@@ -33,7 +33,7 @@ export class MdbTableComponent implements OnInit {
     })
   }
 
-  editItem =(key:String) => this.db.editItem(key,this.category).subscribe(res=>{
+  editItem =(key:string) => this.db.editItem(key,this.category).subscribe(res=>{
     console.log(res);
   });
 
