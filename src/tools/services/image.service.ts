@@ -12,11 +12,11 @@ import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
   providedIn: 'root',
 })
 export class ImageService {
-  task: AngularFireUploadTask;
-  status: String;
+  public task: AngularFireUploadTask;
+  public status: string;
   public preventEdit: boolean = false;
-  downloadUrl: String;
-  images: String[] = [];
+  downloadUrl: string;
+  images: string[] = [];
   private percentage: Observable<number | undefined>;
   private snapshot: Observable<UploadTaskSnapshot | undefined>;
 
@@ -26,11 +26,11 @@ export class ImageService {
     private storage: AngularFireStorage
   ) {}
 
-  disableFileUpload = () => {
+  disableFileUpload = ():void => {
     this.preventEdit = !this.preventEdit;
   };
 
-  startUpload(event: FileList) {
+  startUpload = (event: FileList) => {
     this.status = 'Uploading please wait!';
     this.disableFileUpload();
     // The File object
@@ -39,8 +39,8 @@ export class ImageService {
 
       // Client-side validation
       if (file.type.split('/')[0] !== 'image') {
-        throw new TypeError('Unsupported File Type!')
         this.preventEdit = false;
+        throw new TypeError('Unsupported File Type!')
       }
 
       // The storage path
@@ -69,5 +69,17 @@ export class ImageService {
       this.percentage = this.task.percentageChanges();
       this.snapshot = this.task.snapshotChanges();
     }
-  }
+  };
+
+  prepToUploadSingle = (event:FileList,location) =>{
+    const file = event.item(0);
+    this.preventEdit = true;
+    if (file.type.split('/')[0] !== 'image' ){
+      this.preventEdit = false;
+      throw new TypeError('Unsupported File Type!');
+    }
+    const date = new Date().getTime();
+    const path = `${location}/${date}_${file.name}`;
+    return this.storage.upload(path,file);
+  };
 }

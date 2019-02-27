@@ -4,8 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { Plough } from '../interfaces/plough';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
-import {News} from "../interfaces/news";
-import {HomeProduct} from "../interfaces/home-product";
+import { News } from '../interfaces/news';
+import { HomeProduct } from '../interfaces/home-product';
+import { Award } from '../interfaces/award';
+import { Observable } from 'rxjs';
+import ThenableReference = firebase.database.ThenableReference;
 
 const databaseUrl: String = environment.firebase.databaseURL;
 
@@ -13,59 +16,94 @@ const databaseUrl: String = environment.firebase.databaseURL;
   providedIn: 'root',
 })
 export class FireService {
-  constructor(private auth: AuthService, private db: AngularFireDatabase, private http: HttpClient) {}
+  constructor(
+    private auth: AuthService,
+    private db: AngularFireDatabase,
+    private http: HttpClient
+  ) {}
 
   HomeControls = {
-     addHomeProduct : (data:HomeProduct) => this.db.database.ref('homeProducts').push(data),
+    addHomeProduct: (data: HomeProduct) =>
+      this.db.database.ref('homeProducts').push(data),
 
-     getHomeProducts : () => this.http.get(`${databaseUrl}/homeProducts.json`),
+    getHomeProducts: (): Observable<HomeProduct[]> =>
+      this.http.get<HomeProduct[]>(`${databaseUrl}/homeProducts.json`),
 
-     deleteHomeProduct : (id) => this.db.database.ref(`homeProducts/${id}`).remove(),
+    deleteHomeProduct: (id: string) =>
+      this.db.database.ref(`homeProducts/${id}`).remove(),
 
-     updateHomeProduct : (id, newValue) => this.db.database.ref(`homeProducts/${id}`).update(newValue)
-
+    updateHomeProduct: (id: string, newValue: HomeProduct) =>
+      this.db.database.ref(`homeProducts/${id}`).update(newValue),
   };
 
   NewsControls = {
     addNewsElement: (data: News) => this.db.database.ref('news').push(data),
 
-    getNewsElements: () => this.http.get<News[]>(`${databaseUrl}/news.json`),
+    getNewsElements: (): Observable<News[]> =>
+      this.http.get<News[]>(`${databaseUrl}/news.json`),
 
-    deleteNewsElement: (id: String) => this.db.database.ref(`news/${id}`).remove(),
+    deleteNewsElement: (id: string) =>
+      this.db.database.ref(`news/${id}`).remove(),
 
-    updateNewsElement: (id: String, newValue: News) => this.db.database.ref(`news/${id}`).update(newValue)
-
+    updateNewsElement: (id: string, newValue: News) =>
+      this.db.database.ref(`news/${id}`).update(newValue),
   };
 
+  AwardsControls = {
+    addAwardElement: (data: Award) => this.db.database.ref('awards').push(data),
 
-  getItem = (type: String, category: String, subCategory: String, id: String) =>
+    getAwardElements: (): Observable<Award[]> =>
+      this.http.get<Award[]>(`${databaseUrl}/awards.json`),
+
+    deleteAwardElementById: (id: string) =>
+      this.db.database.ref(`awards/${id}`).remove(),
+
+    updateAwardElementById: (id: string, newValue: Award) =>
+      this.db.database.ref(`awards/${id}`).update(newValue),
+  };
+
+  getItem = (type: string, category: string, subCategory: string, id: string) =>
     this.http.get(
       `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection/`.toLocaleLowerCase() +
         `${id}.json`
     );
 
-  getType = (type: String) => this.http.get(`${databaseUrl}/${type}.json`);
+  getType = (type: string) => this.http.get(`${databaseUrl}/${type}.json`);
 
-  getSubCategories = (type, category) => this.http.get(`${databaseUrl}/${type}/types/${category}/collection.json`);
+  getSubCategories = (type: string, category: string) =>
+    this.http.get(`${databaseUrl}/${type}/types/${category}/collection.json`);
 
   getSubCategoryData = (type, category, subCategory) =>
     this.http.get(
       `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection.json`.toLocaleLowerCase()
     );
 
-  addPlough = (data: Plough, category: String, subCategory: String) =>
-    this.db.database.ref(`ploughs/types/${category}/collection/${subCategory}/collection`).push(data);
+  addPlough = (
+    data: Plough,
+    category: string,
+    subCategory: string
+  ): ThenableReference =>
+    this.db.database
+      .ref(`ploughs/types/${category}/collection/${subCategory}/collection`)
+      .push(data);
 
-  addPloughCategory = (type, categoryDetails) =>
-    this.db.database.ref(`ploughs/types/${type}/collection/${categoryDetails.name.toLowerCase()}`).set({
-      collection: [],
-      description: categoryDetails.description,
-      image: categoryDetails.image,
-      name: categoryDetails.name,
-    });
+  addPloughCategory = (type: string, categoryDetails) =>
+    this.db.database
+      .ref(
+        `ploughs/types/${type}/collection/${categoryDetails.name.toLowerCase()}`
+      )
+      .set({
+        collection: [],
+        description: categoryDetails.description,
+        image: categoryDetails.image,
+        name: categoryDetails.name,
+      });
 
-  editItem = (key: String, category: String) =>
-    this.http.get<Plough>(`${databaseUrl}/ploughs/${category}/collection/${key}.json`);
+  editItem = (key: string, category: string) =>
+    this.http.get<Plough>(
+      `${databaseUrl}/ploughs/${category}/collection/${key}.json`
+    );
 
-  removePlough = (id: String) => this.db.database.ref(`ploughs/${id}`).remove(e => console.log(e.message));
+  removePlough = (id: string) =>
+    this.db.database.ref(`ploughs/${id}`).remove(e => console.log(e.message));
 }
