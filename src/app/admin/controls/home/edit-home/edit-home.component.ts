@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../../../../tools/services/fire.service";
 import {HomeProduct} from "../../../../../tools/interfaces/home-product";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-home',
@@ -8,7 +9,7 @@ import {HomeProduct} from "../../../../../tools/interfaces/home-product";
   styleUrls: ['./edit-home.component.css'],
 })
 export class EditHomeComponent implements OnInit {
-  elements: HomeProduct[];
+  elements: Observable<HomeProduct[]> = this.db.HomeControls.getHomeProducts();
   homeElementId: string;
   homeElement: HomeProduct;
 
@@ -29,7 +30,11 @@ export class EditHomeComponent implements OnInit {
 
   editHomeElement = (id:string, formData:HomeProduct) => this.db.HomeControls.updateHomeProduct(id, formData);
 
-  ngOnInit() {
-    this.db.HomeControls.getHomeProducts().subscribe((data: HomeProduct[]) => (this.elements = data));
+
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
+
+  ngOnInit() {}
 }

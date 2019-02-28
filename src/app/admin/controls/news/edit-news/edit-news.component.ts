@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { News } from '../../../../../tools/interfaces/news';
 import { FireService } from '../../../../../tools/services/fire.service';
 import {ImageService} from "../../../../../tools/services/image.service";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-news',
@@ -9,7 +10,7 @@ import {ImageService} from "../../../../../tools/services/image.service";
   styleUrls: ['./edit-news.component.css'],
 })
 export class EditNewsComponent implements OnInit {
-  elements: News[];
+  elements: Observable<News[]> = this.db.NewsControls.getNewsElements();
   newsElementId: string;
   newsElement: News;
 
@@ -50,7 +51,5 @@ export class EditNewsComponent implements OnInit {
     return this.db.NewsControls.updateNewsElement(id, formData);
   };
 
-  ngOnInit() {
-    this.db.NewsControls.getNewsElements().subscribe((data: News[]) => (this.elements = data));
-  }
+  ngOnInit() {}
 }

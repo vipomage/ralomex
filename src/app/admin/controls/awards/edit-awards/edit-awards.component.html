@@ -1,45 +1,44 @@
-<div *ngIf="elements" class="card-group">
-  <mdb-card id="{{element.key}}" *ngFor="let element of elements|keyValueFilter">
-    <div *ngIf="element.value.image" class="view rgba-white-slight waves-light" mdbWavesEffect>
-      <mdb-card-img  src="{{element.value.image}}" alt="Card image cap"></mdb-card-img>
-      <a><div class="mask"></div></a>
+<div class="container-fluid">
+  <div class="wrapper" *ngIf="elements">
+    <div class="card-group" *ngFor="let elementsArr of elements| async | keyValueFilter | objectSplitToArray:3">
+      <mdb-card *ngFor="let element of elementsArr" class="m-1" id="{{element.key}}">
+        <mdb-card-img src="{{element.value.image}}" alt="Card image cap"></mdb-card-img>
+        <mdb-card-title>
+          <h4>{{element.value.heading}}</h4>
+        </mdb-card-title>
+        <button (click)="setElement(element.key,element.value)" mdbBtn color="primary" mdbWavesEffect>Редактирай</button>
+        <button (click)="deleteElement(element.key)" mdbBtn color="danger" mdbWavesEffect>Изтрий</button>
+      </mdb-card>
     </div>
-    <mdb-card-body>
-      <mdb-card-title>
-        <h4>{{element.value.heading}}</h4>
-      </mdb-card-title>
-      <a (click)="setElement(element.key,element.value)" mdbBtn color="primary" mdbWavesEffect>Редактирай</a>
-      <a (click)="deleteElement(element.key)" mdbBtn color="danger" mdbWavesEffect>Изтрий</a>
-    </mdb-card-body>
-  </mdb-card>
+  </div>
+  
+  <form *ngIf="awardElement" #form="ngForm" (ngSubmit)="editAwardElement(awardElementId,form.value)">
+    <img class="img-thumbnail" src="{{awardElement.image}}" alt="">
+    <div class="form-group">
+      <label for="heading">Заглавие</label>
+      <input [(ngModel)]="awardElement.heading" required class="form-control" type="text" id="heading" name="heading"/>
+    </div>
+    <div class="form-group">
+      <label for="content">Съдържание на новината</label>
+      <textarea [(ngModel)]="awardElement.content" required class="form-control" name="content" id="content" cols="30"
+                rows="10"></textarea>
+    </div>
+    <div class="form-control-plaintext">
+      <label for="catImage">Качи нова Снимка?</label>
+      <input
+        (change)="startUpload($event.target.files)"
+        [disabled]="this.imgService.preventEdit"
+        name="image"
+        ngModel
+        class="form-control-file"
+        type="file"
+        accept="image/*"
+        id="catImage"
+      />
+      <div>
+        <img *ngIf="image" class="img-thumbnail col-md-4" src="{{image}}" alt="news image preview"/>
+      </div>
+    </div>
+    <button [disabled]="!form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
+  </form>
 </div>
-
-
-<form *ngIf="awardElement" #form="ngForm" (ngSubmit)="editAwardElement(awardElementId,form.value)">
-  <img class="img-thumbnail" src="{{awardElement.image}}" alt="">
-  <div class="form-group">
-    <label for="heading">Заглавие</label>
-    <input [(ngModel)]="awardElement.heading" required class="form-control" type="text" id="heading" name="heading" />
-  </div>
-  <div class="form-group">
-    <label for="content">Съдържание на новината</label>
-    <textarea [(ngModel)]="awardElement.content" required class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
-  </div>
-  <div class="form-control-plaintext">
-    <label for="catImage">Качи нова Снимка?</label>
-    <input
-      (change)="startUpload($event.target.files)"
-      [disabled]="this.imgService.preventEdit"
-      name="image"
-      ngModel
-      class="form-control-file"
-      type="file"
-      accept="image/*"
-      id="catImage"
-    />
-    <div>
-      <img *ngIf="image" class="img-thumbnail col-md-4" src="{{image}}" alt="news image preview" />
-    </div>
-  </div>
-  <button [disabled]="!form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
-</form>

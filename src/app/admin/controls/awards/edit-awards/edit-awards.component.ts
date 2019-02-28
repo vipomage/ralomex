@@ -3,6 +3,7 @@ import { News } from '../../../../../tools/interfaces/news';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Award } from '../../../../../tools/interfaces/award';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-awards',
@@ -11,7 +12,7 @@ import { Award } from '../../../../../tools/interfaces/award';
 })
 export class EditAwardsComponent implements OnInit {
 
-  elements: Award[];
+  elements: Observable<Award[]> = this.db.AwardsControls.getAwardElements();
   awardElementId: string;
   awardElement: News;
 
@@ -52,7 +53,5 @@ export class EditAwardsComponent implements OnInit {
     return this.db.AwardsControls.updateAwardElementById(id, formData);
   };
 
-  ngOnInit() {
-    this.db.AwardsControls.getAwardElements().subscribe((data: Award[]) => (this.elements = data));
-  }
+  ngOnInit() {}
 }
