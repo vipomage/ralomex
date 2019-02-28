@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService } from '../../tools/services/fire.service';
 
 @Component({
   selector: 'app-awards',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AwardsComponent implements OnInit {
 
-  constructor() { }
+  awards = this.db.AwardsControls.getAwardElements();
+
+  constructor(private db:FireService) { }
 
   ngOnInit() {
+
   }
 
 }
