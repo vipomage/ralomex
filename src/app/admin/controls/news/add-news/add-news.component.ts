@@ -13,7 +13,7 @@ export class AddNewsComponent implements OnInit {
   image: string = this.imgService.downloadUrl;
   preventEdit = this.imgService.preventEdit;
 
-  constructor(private imgService: ImageService, private db: FireService) {}
+  constructor(public imgService: ImageService, private db: FireService) {}
 
   startUpload = (files: FileList) => {
     this.imgService

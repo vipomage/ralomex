@@ -15,7 +15,7 @@ export class AddAwardsComponent implements OnInit {
   preventEdit = this.imgService.preventEdit;
 
   constructor(
-    private imgService: ImageService,
+    public imgService: ImageService,
     private db: FireService) {}
 
 
