@@ -22,17 +22,31 @@
       *ngFor="let item of (data | keyValueFilter)"
       (click)="editItem(item.key)"
     >
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.model }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.reqHP }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.depthWork }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.widthWork }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.speed }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.productivity }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.weight }}</td>
-      <td class="edit-row" (click)="editItem(item.key)">{{ item.value.clearance }}</td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.model }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.reqHP }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.depthWork }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.widthWork }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.speed }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.productivity }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.weight }}
+      </td>
+      <td class="edit-row" (click)="editItem(item.key)">
+        {{ item.value.clearance }}
+      </td>
       <a (click)="this.db.removeItem()"><i class="far fa-trash-alt"></i></a>
-
     </tr>
-
   </tbody>
 </table>

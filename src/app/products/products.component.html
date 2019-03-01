@@ -1,19 +1,70 @@
 <div class="products-container">
   <aside>
     <ul>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['ploughs']}}]">Ploughs</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['disks'] }}]">Disk Harrows</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['cultivators']}}]">Cultivators</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['rippers']}}]">Ripper Cultivators</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['rollers']}}]">Tillage Rollers</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['shredders']}}]">Shredders</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['special']}}]">Special Purpose</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['parts']}}]">Spare Parts</a></li>
-      <li><a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['tools']}}]">Working Tools</a></li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['ploughs'] } }]"
+          >Ploughs</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['disks'] } }]"
+          >Disk Harrows</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['cultivators'] } }]"
+          >Cultivators</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['rippers'] } }]"
+          >Ripper Cultivators</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['rollers'] } }]"
+          >Tillage Rollers</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['shredders'] } }]"
+          >Shredders</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['special'] } }]"
+          >Special Purpose</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['parts'] } }]"
+          >Spare Parts</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLink]="[{ outlets: { products: ['tools'] } }]"
+          >Working Tools</a
+        >
+      </li>
     </ul>
   </aside>
-  <main>
-    <router-outlet name="products">
-    </router-outlet>
-  </main>
+  <main><router-outlet name="products"> </router-outlet></main>
 </div>

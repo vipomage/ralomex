@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { FireService } from '../../../../../tools/services/fire.service';
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
-import {Award} from "../../../../../tools/interfaces/award";
+import { Award } from '../../../../../tools/interfaces/award';
 
 @Component({
   selector: 'app-add-awards',
@@ -10,16 +10,12 @@ import {Award} from "../../../../../tools/interfaces/award";
   styleUrls: ['./add-awards.component.css'],
 })
 export class AddAwardsComponent implements OnInit {
-
-  image:string;
+  image: string;
   preventEdit = this.imgService.preventEdit;
 
-  constructor(
-    public imgService: ImageService,
-    private db: FireService) {}
+  constructor(public imgService: ImageService, private db: FireService) {}
 
-
-  startUpload = (files:FileList) => {
+  startUpload = (files: FileList) => {
     this.imgService
       .prepToUploadSingle(files, 'awards')
       .then((taskSnap: UploadTaskSnapshot) => {
@@ -31,8 +27,8 @@ export class AddAwardsComponent implements OnInit {
   };
 
   saveAwardElement = (formData: Award) => {
-    formData.image= this.image;
-    this.db.AwardsControls.addAwardElement(formData).then(()=>{
+    formData.image = this.image;
+    this.db.AwardsControls.addAwardElement(formData).then(() => {
       //todo
       // saved notification
       // clear Form

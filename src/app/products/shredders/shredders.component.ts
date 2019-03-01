@@ -3,14 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-shredders',
   templateUrl: './shredders.component.html',
-  styleUrls: ['./shredders.component.css']
+  styleUrls: ['./shredders.component.css'],
 })
 export class ShreddersComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     history.replaceState('', '', 'products/shredders');
   }
-
 }

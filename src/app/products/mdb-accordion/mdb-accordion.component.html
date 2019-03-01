@@ -4,7 +4,6 @@
   role="tablist"
   aria-multiselectable="false"
 >
-
   <div class="card">
     <div class="card-header" role="tab" id="headingOne1">
       <a
@@ -12,10 +11,9 @@
         data-parent="#accordionEx"
         href="#collapse-{{ category }}"
         aria-expanded="false"
-        aria-controls="collapse">
-        <h5 class="mb-0">
-          {{ category }}
-        </h5>
+        aria-controls="collapse"
+      >
+        <h5 class="mb-0">{{ category }}</h5>
       </a>
     </div>
 
@@ -27,7 +25,10 @@
       data-parent="#accordionEx"
     >
       <div class="container-fluid ">
-        <div class="row sub-category" *ngFor="let subCat of subCategories let i=index">
+        <div
+          class="row sub-category"
+          *ngFor="let subCat of subCategories; let i = index"
+        >
           <!--<div class="col-lg-4">-->
           <!--<img src="{{ data.collection[subCat].image }}" alt="" />-->
           <!--</div>-->

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FireService} from "../../../../../tools/services/fire.service";
-import {HomeProduct} from "../../../../../tools/interfaces/home-product";
+import { FireService } from '../../../../../tools/services/fire.service';
+import { HomeProduct } from '../../../../../tools/interfaces/home-product';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,25 +15,31 @@ export class EditHomeComponent implements OnInit {
 
   constructor(private db: FireService) {}
 
-  setElement = (id: string, element: HomeProduct):void => {
+  setElement = (id: string, element: HomeProduct): void => {
     this.homeElementId = id;
     this.homeElement = element;
   };
 
   deleteElement = (elementId: string) => {
-    let confirm = window.confirm('Сигурни ли сте че искате да изтриете този елемент');
+    let confirm = window.confirm(
+      'Сигурни ли сте че искате да изтриете този елемент'
+    );
     if (confirm) {
       window.document.getElementById(elementId).remove();
       return this.db.HomeControls.deleteHomeProduct(elementId);
     }
   };
 
-  editHomeElement = (id:string, formData:HomeProduct) => this.db.HomeControls.updateHomeProduct(id, formData);
-
+  editHomeElement = (id: string, formData: HomeProduct) =>
+    this.db.HomeControls.updateHomeProduct(id, formData);
 
   scrollToElement($element): void {
     console.log($element);
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    $element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 
   ngOnInit() {}

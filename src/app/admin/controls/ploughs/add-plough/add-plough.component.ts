@@ -9,33 +9,31 @@ import { ImageService } from '../../../../../tools/services/image.service';
   styleUrls: ['./add-plough.component.css'],
 })
 export class AddPloughComponent implements OnInit {
-
   categories: string[];
   category: string;
-  subCategories:string[];
-  subCategory:string;
+  subCategories: string[];
+  subCategory: string;
   images: string[] = this.imgService.images;
 
-  constructor(public db: FireService,public imgService:ImageService) {}
+  constructor(public db: FireService, public imgService: ImageService) {}
 
   onCategoryChange = selectValue => {
     this.category = selectValue;
-    this.db.getSubCategories('ploughs',selectValue).subscribe(data=>{
+    this.db.getSubCategories('ploughs', selectValue).subscribe(data => {
       this.subCategory = Object.keys(data)[0];
       this.subCategories = Object.keys(data);
     });
   };
 
-  onSubCategoryChange = selectValue =>{
+  onSubCategoryChange = selectValue => {
     this.subCategory = selectValue;
   };
 
-  savePlough = (data: Plough, category: string) =>{
+  savePlough = (data: Plough, category: string) => {
     data.image = this.images;
-    this.db.addPlough(data, category,this.subCategory);
+    this.db.addPlough(data, category, this.subCategory);
     //todo notification
   };
-
 
   startUpload = event => this.imgService.startUpload(event);
 
@@ -44,12 +42,10 @@ export class AddPloughComponent implements OnInit {
       this.category = Object.keys(data)[0];
       this.categories = Object.keys(data);
 
-      this.db.getSubCategories('ploughs',this.category).subscribe(data=>{
+      this.db.getSubCategories('ploughs', this.category).subscribe(data => {
         this.subCategory = Object.keys(data)[0];
         this.subCategories = Object.keys(data);
-      })
+      });
     });
-
-
   }
 }

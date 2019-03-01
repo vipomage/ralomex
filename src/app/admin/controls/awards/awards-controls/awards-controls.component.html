@@ -2,8 +2,16 @@
 <div class="container-fluid">
   <div class="col-md-12 text-center buttons-container">
     <div>
-      <a class="btn btn-primary" [routerLink]="[{ outlets: { controls: ['add']}}]">Добави</a>
-      <a class="btn btn-deep-orange" [routerLink]="[{ outlets: { controls: ['edit']}}]">Редактирай</a>
+      <a
+        class="btn btn-primary"
+        [routerLink]="[{ outlets: { controls: ['add'] } }]"
+        >Добави</a
+      >
+      <a
+        class="btn btn-deep-orange"
+        [routerLink]="[{ outlets: { controls: ['edit'] } }]"
+        >Редактирай</a
+      >
     </div>
   </div>
   <router-outlet name="controls" class="container-fluid"></router-outlet>

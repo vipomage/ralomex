@@ -129,7 +129,8 @@ ul.dt-button-collection.f-dropdown .dt-button {
 ul.dt-button-collection.f-dropdown.fixed {
   max-width: none;
 }
-ul.dt-button-collection.f-dropdown.fixed:before, ul.dt-button-collection.f-dropdown.fixed:after {
+ul.dt-button-collection.f-dropdown.fixed:before,
+ul.dt-button-collection.f-dropdown.fixed:after {
   display: none;
 }
 

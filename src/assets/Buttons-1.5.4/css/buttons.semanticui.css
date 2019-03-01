@@ -126,7 +126,7 @@ div.dt-button-collection .dt-button {
 
 button.buttons-collection.ui.button span:after {
   display: inline-block;
-  content: "▾";
+  content: '▾';
   padding-left: 0.5em;
 }
 

@@ -68,7 +68,10 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'awards', component: AwardsComponent },
-  { path: 'product/:type/:category/:subCategory/:id', component: ProductComponent },
+  {
+    path: 'product/:type/:category/:subCategory/:id',
+    component: ProductComponent,
+  },
   {
     path: 'admin',
     component: AdminComponent,
@@ -80,7 +83,11 @@ export const routes: Routes = [
         children: [
           { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
           { path: 'add', component: AddPloughComponent, outlet: 'controls' },
-          { path: 'addCategory', component: AddCategoryComponent, outlet: 'controls' },
+          {
+            path: 'addCategory',
+            component: AddCategoryComponent,
+            outlet: 'controls',
+          },
         ],
       },
       {
@@ -99,7 +106,11 @@ export const routes: Routes = [
         children: [
           { path: 'add', component: AddAwardsComponent, outlet: 'controls' },
           { path: 'edit', component: EditAwardsComponent, outlet: 'controls' },
-          { path: 'remove', component: RemoveAwardsComponent, outlet: 'controls' },
+          {
+            path: 'remove',
+            component: RemoveAwardsComponent,
+            outlet: 'controls',
+          },
         ],
       },
       {
@@ -108,7 +119,7 @@ export const routes: Routes = [
         outlet: 'admin',
         children: [
           { path: 'add', component: AddNewsComponent, outlet: 'controls' },
-          { path: 'edit', component: EditNewsComponent, outlet: 'controls' }
+          { path: 'edit', component: EditNewsComponent, outlet: 'controls' },
         ],
       },
       {
@@ -117,8 +128,16 @@ export const routes: Routes = [
         outlet: 'admin',
         children: [
           { path: 'add', component: AddProjectsComponent, outlet: 'controls' },
-          { path: 'edit', component: EditProjectsComponent, outlet: 'controls' },
-          { path: 'remove', component: RemoveProjectsComponent, outlet: 'controls' },
+          {
+            path: 'edit',
+            component: EditProjectsComponent,
+            outlet: 'controls',
+          },
+          {
+            path: 'remove',
+            component: RemoveProjectsComponent,
+            outlet: 'controls',
+          },
         ],
       },
     ],

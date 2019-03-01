@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "keyValueFilter"
+  name: 'keyValueFilter',
 })
 export class keyValueFilterPipe implements PipeTransform {
   transform(map: { [key: string]: any }, ...parameters: any[]) {

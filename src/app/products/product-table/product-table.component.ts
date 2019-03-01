@@ -9,12 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductTableComponent implements OnInit {
   @Input() data;
 
-  private type:string;
-  private category:string;
-  private subCategory:string;
+  private type: string;
+  private category: string;
+  private subCategory: string;
 
   constructor(private route: ActivatedRoute) {}
-
 
   ngOnInit() {
     this.route.params.subscribe(data => console.log(data));

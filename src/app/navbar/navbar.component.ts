@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  public visible:boolean = true;
+  public visible: boolean = true;
   constructor() {}
 
-  itemPicked = () =>this.visible =!this.visible;
+  itemPicked = () => (this.visible = !this.visible);
 
   ngOnInit() {}
 }

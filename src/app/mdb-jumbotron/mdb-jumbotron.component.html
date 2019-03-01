@@ -1,20 +1,16 @@
 <!-- Jumbotron -->
 <div *ngIf="productCategory" class="jumbotron text-center">
   <!-- Title -->
-  <h4 class="card-title h4 pb-2"><strong>{{title}}</strong></h4>
+  <h4 class="card-title h4 pb-2">
+    <strong>{{ title }}</strong>
+  </h4>
 
   <!-- Card image -->
   <div class="view overlay my-4">
-    <img
-      src="{{productCategory.image}}"
-      class="img-fluid"
-      alt=""
-    />
+    <img src="{{ productCategory.image }}" class="img-fluid" alt="" />
     <div class="mask rgba-white-slight"></div>
   </div>
 
-  <p class="card-text">
-    {{productCategory.description}}
-  </p>
+  <p class="card-text">{{ productCategory.description }}</p>
 </div>
 <!-- Jumbotron -->

@@ -1,11 +1,26 @@
 <form #form="ngForm" (ngSubmit)="saveAwardElement(form.value)">
   <div class="form-group">
     <label for="heading">Заглавие</label>
-    <input ngModel required class="form-control" type="text" id="heading" name="heading" />
+    <input
+      ngModel
+      required
+      class="form-control"
+      type="text"
+      id="heading"
+      name="heading"
+    />
   </div>
   <div class="form-group">
     <label for="content">Съдържание на наградата</label>
-    <textarea ngModel required class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+    <textarea
+      ngModel
+      required
+      class="form-control"
+      name="content"
+      id="content"
+      cols="30"
+      rows="10"
+    ></textarea>
   </div>
   <div class="form-control-plaintext">
     <label for="catImage">Снимка</label>
@@ -20,8 +35,19 @@
       id="catImage"
     />
     <div>
-      <img *ngIf="image" class="img-thumbnail col-md-4" src="{{image}}" alt="news image preview" />
+      <img
+        *ngIf="image"
+        class="img-thumbnail col-md-4"
+        src="{{ image }}"
+        alt="news image preview"
+      />
     </div>
   </div>
-  <button [disabled]="!form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
+  <button
+    [disabled]="!form.valid || this.imgService.preventEdit"
+    class="btn btn-primary"
+    type="submit"
+  >
+    Запази
+  </button>
 </form>

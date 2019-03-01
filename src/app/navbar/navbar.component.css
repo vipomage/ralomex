@@ -74,22 +74,21 @@ a:hover {
   }
   ul li {
     border-bottom: 1px solid gray;
-    }
+  }
   li.hidden {
-    display: none!important;
+    display: none !important;
   }
   li.visible {
-    display: flex!important;
+    display: flex !important;
   }
-  li:hover{
+  li:hover {
     background-color: #8ecb8c;
-    }
+  }
   ul {
     flex-direction: column-reverse;
     display: flex;
-    }
+  }
   .logo-item {
     order: 1;
-    }
+  }
 }
-

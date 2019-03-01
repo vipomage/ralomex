@@ -1,46 +1,45 @@
-footer{
+footer {
   color: black;
   font-size: 14px;
   background-color: rgb(149, 149, 149);
   height: 100px;
-  }
-.footer-container{
+}
+.footer-container {
   display: flex;
   width: 100%;
   margin: 0 auto;
   padding-top: 20px;
-  }
-.footer-container > div{
+}
+.footer-container > div {
   margin: 0 auto;
   height: 100px;
-  }
-h5{
+}
+h5 {
   text-transform: uppercase;
-  }
-.company-info{
+}
+.company-info {
   /*width: 200px;*/
-  }
-.company-info > div{
+}
+.company-info > div {
   /*padding: 5px 60px;*/
-  }
-ul{
+}
+ul {
   list-style: none;
-  }
-.connections{
+}
+.connections {
   list-style: none;
-
-  }
+}
 .connections li {
   padding: 10px;
   font-size: 1.5rem;
-  }
-a{
+}
+a {
   padding: 25px;
-  }
-a:visited{
+}
+a:visited {
   color: inherit;
-  }
-a:hover{
+}
+a:hover {
   color: white;
   transition-duration: 300ms;
-  }
+}

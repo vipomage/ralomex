@@ -14,7 +14,7 @@
         id="type"
         (change)="change($event.target.value)"
       >
-        <option *ngFor="let cat of categories" >{{cat}}</option>
+        <option *ngFor="let cat of categories">{{ cat }}</option>
       </select>
     </div>
     <div class="form-group">
@@ -58,6 +58,12 @@
         <img class="img-thumbnail col-md-4" src="{{ image }}" alt="" />
       </div>
     </div>
-    <button [disabled]="!categoryDetails.form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
+    <button
+      [disabled]="!categoryDetails.form.valid || this.imgService.preventEdit"
+      class="btn btn-primary"
+      type="submit"
+    >
+      Запази
+    </button>
   </form>
 </div>

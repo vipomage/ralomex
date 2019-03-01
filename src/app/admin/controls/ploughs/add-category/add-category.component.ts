@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 
-
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -16,18 +15,16 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(public db: FireService, public imgService: ImageService) {}
 
-  change = (selectValue) => {
+  change = selectValue => {
     this.category = selectValue;
   };
 
-  addPloughCategory = (categoryDetails) => {
+  addPloughCategory = categoryDetails => {
     categoryDetails.value.image = this.images;
-    return this.db.addPloughCategory(this.category,categoryDetails.value);
+    return this.db.addPloughCategory(this.category, categoryDetails.value);
   };
 
   startUpload = event => this.imgService.startUpload(event);
-
-
 
   ngOnInit() {
     this.db.getType('ploughs').subscribe(response => {

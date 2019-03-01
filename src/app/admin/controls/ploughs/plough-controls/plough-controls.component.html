@@ -1,10 +1,26 @@
 <div class="container-fluid">
   <div class="col-md-12 text-center buttons-container">
     <div>
-      <a class="btn btn-info"    [routerLink]="[{ outlets: { controls: ['addCategory']}}]">Добави Категория</a>
-      <a class="btn btn-primary" [routerLink]="[{ outlets: { controls: ['add']}}]">Добави</a>
-      <a class="btn btn-primary" [routerLink]="[{ outlets: { controls: ['edit']}}]">Редактирай</a>
-      <a class="btn btn-danger"  [routerLink]="[{ outlets: { controls: ['remove']}}]">Премахни</a>
+      <a
+        class="btn btn-info"
+        [routerLink]="[{ outlets: { controls: ['addCategory'] } }]"
+        >Добави Категория</a
+      >
+      <a
+        class="btn btn-primary"
+        [routerLink]="[{ outlets: { controls: ['add'] } }]"
+        >Добави</a
+      >
+      <a
+        class="btn btn-primary"
+        [routerLink]="[{ outlets: { controls: ['edit'] } }]"
+        >Редактирай</a
+      >
+      <a
+        class="btn btn-danger"
+        [routerLink]="[{ outlets: { controls: ['remove'] } }]"
+        >Премахни</a
+      >
     </div>
   </div>
   <router-outlet name="controls" class="container-fluid"></router-outlet>

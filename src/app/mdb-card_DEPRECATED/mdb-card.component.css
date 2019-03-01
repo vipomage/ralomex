@@ -1,12 +1,11 @@
-.img-fluid{
+.img-fluid {
   height: 250px;
   width: 100%;
   object-fit: cover;
-  }
-mdb-card-title > h4{
+}
+mdb-card-title > h4 {
   text-align: center;
   font-size: 1.2rem;
   text-transform: capitalize;
   margin: 5px;
-
-  }
+}

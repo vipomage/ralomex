@@ -1,10 +1,10 @@
-.form-group{
+.form-group {
   vertical-align: bottom;
   padding: 2px;
   text-align: left;
   display: inline-block;
-  }
-.form-group label{
+}
+.form-group label {
   margin-right: 50px;
   /*width: 170px;*/
-  }
+}

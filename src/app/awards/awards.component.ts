@@ -4,16 +4,12 @@ import { FireService } from '../../tools/services/fire.service';
 @Component({
   selector: 'app-awards',
   templateUrl: './awards.component.html',
-  styleUrls: ['./awards.component.css']
+  styleUrls: ['./awards.component.css'],
 })
 export class AwardsComponent implements OnInit {
-
   awards = this.db.AwardsControls.getAwardElements();
 
-  constructor(private db:FireService) { }
+  constructor(private db: FireService) {}
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }

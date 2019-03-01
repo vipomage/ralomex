@@ -30,7 +30,7 @@ export class AuthService {
               console.log('Login Success!');
             }
           )
-          .catch((err:ErrorEvent) => {
+          .catch((err: ErrorEvent) => {
             console.log('Something went wrong:', err.message);
           });
       });

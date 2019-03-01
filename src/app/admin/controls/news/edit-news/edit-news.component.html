@@ -1,27 +1,74 @@
 <div class="container-fluid">
   <div class="wrapper" *ngIf="elements">
-    <div class="card-group" *ngFor="let elementsArr of elements | async | keyValueFilter | objectSplitToArray:3">
-      <mdb-card *ngFor="let element of elementsArr" class="m-1" id="{{element.key}}">
-        <mdb-card-img src="{{element.value.image}}" alt="Card image cap"></mdb-card-img>
+    <div
+      class="card-group"
+      *ngFor="
+        let elementsArr of (elements
+          | async
+          | keyValueFilter
+          | objectSplitToArray: 3)
+      "
+    >
+      <mdb-card
+        *ngFor="let element of elementsArr"
+        class="m-1"
+        id="{{ element.key }}"
+      >
+        <mdb-card-img
+          src="{{ element.value.image }}"
+          alt="Card image cap"
+        ></mdb-card-img>
         <mdb-card-title>
-          <h4>{{element.value.heading}}</h4>
+          <h4>{{ element.value.heading }}</h4>
         </mdb-card-title>
-        <button (click)="setElement(element.key,element.value)" mdbBtn color="primary" mdbWavesEffect>Редактирай</button>
-        <button (click)="deleteElement(element.key)" mdbBtn color="danger" mdbWavesEffect>Изтрий</button>
+        <button
+          (click)="setElement(element.key, element.value)"
+          mdbBtn
+          color="primary"
+          mdbWavesEffect
+        >
+          Редактирай
+        </button>
+        <button
+          (click)="deleteElement(element.key)"
+          mdbBtn
+          color="danger"
+          mdbWavesEffect
+        >
+          Изтрий
+        </button>
       </mdb-card>
     </div>
   </div>
-  
-  <form *ngIf="newsElement" #form="ngForm" (ngSubmit)="editNewsElement(newsElementId,form.value)">
-    <img class="img-thumbnail" src="{{newsElement.image}}" alt="">
+
+  <form
+    *ngIf="newsElement"
+    #form="ngForm"
+    (ngSubmit)="editNewsElement(newsElementId, form.value)"
+  >
+    <img class="img-thumbnail" src="{{ newsElement.image }}" alt="" />
     <div class="form-group">
       <label for="heading">Заглавие</label>
-      <input [(ngModel)]="newsElement.heading" required class="form-control" type="text" id="heading" name="heading"/>
+      <input
+        [(ngModel)]="newsElement.heading"
+        required
+        class="form-control"
+        type="text"
+        id="heading"
+        name="heading"
+      />
     </div>
     <div class="form-group">
       <label for="content">Съдържание на новината</label>
-      <textarea [(ngModel)]="newsElement.content" required class="form-control" name="content" id="content" cols="30"
-                rows="10"></textarea>
+      <textarea
+        [(ngModel)]="newsElement.content"
+        required
+        class="form-control"
+        name="content"
+        id="content"
+        cols="30"
+        rows="10"
+      ></textarea>
     </div>
     <div class="form-control-plaintext">
       <label for="catImage">Качи нова Снимка?</label>
@@ -36,9 +83,20 @@
         id="catImage"
       />
       <div>
-        <img *ngIf="image" class="img-thumbnail col-md-4" src="{{image}}" alt="news image preview"/>
+        <img
+          *ngIf="image"
+          class="img-thumbnail col-md-4"
+          src="{{ image }}"
+          alt="news image preview"
+        />
       </div>
     </div>
-    <button [disabled]="!form.valid || this.imgService.preventEdit" class="btn btn-primary" type="submit">Запази</button>
+    <button
+      [disabled]="!form.valid || this.imgService.preventEdit"
+      class="btn btn-primary"
+      type="submit"
+    >
+      Запази
+    </button>
   </form>
 </div>

@@ -1,6 +1,6 @@
 export interface News {
-  heading:string;
-  image?:string|string[];
-  content:string;
-  timeStamp:number;
+  heading: string;
+  image?: string | string[];
+  content: string;
+  timeStamp: number;
 }

@@ -15,7 +15,9 @@ export class MdbNewsComponent implements OnInit {
 
   ngOnInit() {
     this.db.NewsControls.getNewsElements().subscribe(res => {
-      this.news = Object.values(res).sort((a: News, b: News) => b.timeStamp - a.timeStamp);
+      this.news = Object.values(res).sort(
+        (a: News, b: News) => b.timeStamp - a.timeStamp
+      );
       this.latestNewsElement = this.news.shift();
     });
   }

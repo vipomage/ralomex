@@ -1,53 +1,73 @@
 <div class="container-fluid sub-category">
   <section class="my-5 sub-category">
-      <div *ngIf="left" class="row">
-        <div class="col-lg-7">
-          <h3 class="font-weight-bold mb-3 heading"><strong>{{heading}}</strong></h3>
-          <p>{{description}}</p>
-          <!-- Read more button -->
-          <a mdbBtn color="success" routerLinkActive="active" routerLink="/details/{{type}}/{{category}}/{{heading}}"
-             mdbBtn
-             color="primary"
-             mdbWavesEffect
-          >View Products</a>
-        </div>
-        <div class="col-lg-5">
-          <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
-            <img
-              class="img-fluid"
-              src="{{image}}"
-              alt="Sample image"
-            >
-            <a>
-              <div class="mask rgba-white-slight" routerLinkActive="active" routerLink="/details/{{type}}/{{category}}/{{heading}}"></div>
-            </a>
-          </div>
+    <div *ngIf="left" class="row">
+      <div class="col-lg-7">
+        <h3 class="font-weight-bold mb-3 heading">
+          <strong>{{ heading }}</strong>
+        </h3>
+        <p>{{ description }}</p>
+        <!-- Read more button -->
+        <a
+          mdbBtn
+          color="success"
+          routerLinkActive="active"
+          routerLink="/details/{{ type }}/{{ category }}/{{ heading }}"
+          mdbBtn
+          color="primary"
+          mdbWavesEffect
+          >View Products</a
+        >
+      </div>
+      <div class="col-lg-5">
+        <div
+          class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light"
+          mdbWavesEffect
+        >
+          <img class="img-fluid" src="{{ image }}" alt="Sample image" />
+          <a>
+            <div
+              class="mask rgba-white-slight"
+              routerLinkActive="active"
+              routerLink="/details/{{ type }}/{{ category }}/{{ heading }}"
+            ></div>
+          </a>
         </div>
       </div>
-      <div *ngIf="!left" class="row">
-        <div class="col-lg-5">
-          <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
-            <img
-              class="img-fluid"
-              src="{{image}}"
-              alt="Sample image"
-            >
-            <a>
-              <div routerLinkActive="active" routerLink="/details/{{type}}/{{category}}/{{heading}}" class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <h3 class="font-weight-bold mb-3 heading"><strong>{{heading}}</strong></h3>
-          <p>{{description}}</p>
-          <!-- Read more button -->
-          <a mdbBtn color="success" routerLinkActive="active" routerLink="/details/{{type}}/{{category}}/{{heading}}"
-             mdbBtn
-             color="primary"
-             mdbWavesEffect
-          >View Products</a>
+    </div>
+    <div *ngIf="!left" class="row">
+      <div class="col-lg-5">
+        <div
+          class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light"
+          mdbWavesEffect
+        >
+          <img class="img-fluid" src="{{ image }}" alt="Sample image" />
+          <a>
+            <div
+              routerLinkActive="active"
+              routerLink="/details/{{ type }}/{{ category }}/{{ heading }}"
+              class="mask rgba-white-slight"
+            ></div>
+          </a>
         </div>
       </div>
-      <hr class="my-5">
+      <div class="col-lg-7">
+        <h3 class="font-weight-bold mb-3 heading">
+          <strong>{{ heading }}</strong>
+        </h3>
+        <p>{{ description }}</p>
+        <!-- Read more button -->
+        <a
+          mdbBtn
+          color="success"
+          routerLinkActive="active"
+          routerLink="/details/{{ type }}/{{ category }}/{{ heading }}"
+          mdbBtn
+          color="primary"
+          mdbWavesEffect
+          >View Products</a
+        >
+      </div>
+    </div>
+    <hr class="my-5" />
   </section>
 </div>

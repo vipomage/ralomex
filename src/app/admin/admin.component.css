@@ -16,8 +16,7 @@ span.label {
   font-weight: normal;
 }
 span.icon {
-  background: url('../../assets/img/g-normal.png') transparent 5px 50%
-    no-repeat;
+  background: url('../../assets/img/g-normal.png') transparent 5px 50% no-repeat;
   display: inline-block;
   vertical-align: middle;
   width: 42px;
@@ -33,16 +32,17 @@ span.buttonText {
   /* Use the Roboto font that is loaded in the <head> */
   font-family: 'Roboto', sans-serif;
 }
-.admin-wrapper{
+.admin-wrapper {
   text-align: center;
   margin: 0 auto;
-  }
-.nav,.secondary-nav{
+}
+.nav,
+.secondary-nav {
   outline: 1px solid black;
   margin-bottom: 5px;
-  }
+}
 li.active {
   font-weight: bold;
   color: black;
   text-decoration: underline;
-  }
+}

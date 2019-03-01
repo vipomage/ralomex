@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ploughs.component.css'],
 })
 export class PloughsComponent implements OnInit {
-
   constructor() {}
 
   ngOnInit() {}

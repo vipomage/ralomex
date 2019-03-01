@@ -2,11 +2,10 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { FireService } from '../../../tools/services/fire.service';
 
-
 @Component({
   selector: 'app-mdb-table',
   templateUrl: './mdb-table.component.html',
-  styleUrls: ['./mdb-table.component.css']
+  styleUrls: ['./mdb-table.component.css'],
 })
 export class MdbTableComponent implements OnInit {
   @ViewChild(DataTableDirective)
@@ -14,28 +13,28 @@ export class MdbTableComponent implements OnInit {
   min: number;
   max: number;
   @Input() category;
-  @Input() data:any;
+  @Input() data: any;
 
   dtOptions: DataTables.Settings = {
-    autoWidth:true
+    autoWidth: true,
   };
 
-  constructor(private db:FireService) { }
+  constructor(private db: FireService) {}
 
   ngOnInit() {
-
-    $(document).ready(function (){
-        $('#dtBasicExample').DataTable({
-          autoWidth:true,
-          ordering:true
-        });
-        $('.dataTables_length').addClass('bs-select')
-    })
+    $(document).ready(function() {
+      $('#dtBasicExample').DataTable({
+        autoWidth: true,
+        ordering: true,
+      });
+      $('.dataTables_length').addClass('bs-select');
+    });
   }
 
-  editItem =(key:string) => this.db.editItem(key,this.category).subscribe(res=>{
-    console.log(res);
-  });
+  editItem = (key: string) =>
+    this.db.editItem(key, this.category).subscribe(res => {
+      console.log(res);
+    });
 
   ngOnDestroy(): void {
     // We remove the last function in the global ext search array so we do not add the fn each time the component is drawn
@@ -49,5 +48,4 @@ export class MdbTableComponent implements OnInit {
       dtInstance.draw();
     });
   }
-
 }

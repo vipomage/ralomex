@@ -1,4 +1,4 @@
-.card-body{
+.card-body {
   z-index: 16;
   position: relative;
   bottom: 100px;
@@ -9,9 +9,9 @@
   border-radius: 5px;
   padding-bottom: 15px;
   margin-bottom: -75px;
-  }
+}
 @media only screen and (max-width: 600px) {
-  .card-body{
+  .card-body {
     z-index: 16;
     position: relative;
     bottom: 0px;
@@ -23,12 +23,12 @@
     padding-bottom: 15px;
     margin-bottom: -3px;
     height: 270px;
-    }
   }
+}
 /*div.card-cascade{*/
-  /*padding-bottom: 50px;*/
-  /*}*/
+/*padding-bottom: 50px;*/
+/*}*/
 /*div.view-cascade{*/
-  /*margin-top: 0px;*/
-  /*margin-bottom: 120px;*/
-  /*}*/
+/*margin-top: 0px;*/
+/*margin-bottom: 120px;*/
+/*}*/

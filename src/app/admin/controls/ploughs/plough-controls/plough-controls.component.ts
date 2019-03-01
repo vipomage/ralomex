@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plough-controls.component.css'],
 })
 export class PloughControlsComponent implements OnInit {
-
   category: string;
 
   constructor() {}

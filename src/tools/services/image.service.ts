@@ -26,7 +26,7 @@ export class ImageService {
     private storage: AngularFireStorage
   ) {}
 
-  disableFileUpload = ():void => {
+  disableFileUpload = (): void => {
     this.preventEdit = !this.preventEdit;
   };
 
@@ -40,7 +40,7 @@ export class ImageService {
       // Client-side validation
       if (file.type.split('/')[0] !== 'image') {
         this.preventEdit = false;
-        throw new TypeError('Unsupported File Type!')
+        throw new TypeError('Unsupported File Type!');
       }
 
       // The storage path
@@ -71,15 +71,15 @@ export class ImageService {
     }
   };
 
-  prepToUploadSingle = (event:FileList,location) =>{
+  prepToUploadSingle = (event: FileList, location) => {
     const file = event.item(0);
     this.preventEdit = true;
-    if (file.type.split('/')[0] !== 'image' ){
+    if (file.type.split('/')[0] !== 'image') {
       this.preventEdit = false;
       throw new TypeError('Unsupported File Type!');
     }
     const date = new Date().getTime();
     const path = `${location}/${date}_${file.name}`;
-    return this.storage.upload(path,file);
+    return this.storage.upload(path, file);
   };
 }

@@ -7,19 +7,18 @@ import { FireService } from '../../../tools/services/fire.service';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-
   @Input() category;
   private _data;
-  private categories:string[];
+  private categories: string[];
 
   constructor(private db: FireService) {
     //todo FIX TYPE!
   }
 
   public get data() {
-    return this._data
+    return this._data;
   }
-  public set data(newValue){
+  public set data(newValue) {
     this._data = newValue;
   }
 

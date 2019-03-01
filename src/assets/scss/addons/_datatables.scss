@@ -14,10 +14,11 @@
  *   DataTables 1.10.18
  */
 
- table.dataTable thead {
+table.dataTable thead {
   cursor: pointer;
   > tr > {
-    th:active, td:active {
+    th:active,
+    td:active {
       outline: none;
     }
   }
@@ -31,7 +32,8 @@ div.dataTables_wrapper div {
         margin-right: 1rem;
       }
       .select-wrapper.mdb-select {
-        span, .select-dropdown {
+        span,
+        .select-dropdown {
           margin-top: 1rem;
         }
       }
@@ -39,18 +41,19 @@ div.dataTables_wrapper div {
     label {
       text-align: left;
       font-weight: normal;
-      padding-top: .5rem;
-      padding-bottom: .5rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
   }
   &.dataTables_filter label {
     text-align: left;
     font-weight: normal;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
   &.dataTables_length {
-    select, input {
+    select,
+    input {
       width: auto;
     }
   }
@@ -60,7 +63,7 @@ div.dataTables_wrapper div {
     }
     input {
       width: auto;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
       display: inline-block;
     }
     text-align: right;
@@ -96,7 +99,10 @@ div.dataTables_wrapper div {
 
 @media (max-width: 767px) {
   div.dataTables_wrapper div {
-    .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate ul.pagination {
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate ul.pagination {
       text-align: center;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
@@ -113,25 +119,35 @@ div.dataTables_wrapper div {
 table.dataTable thead {
   > tr > {
     th {
-      &.sorting_asc, &.sorting_desc, &.sorting {
+      &.sorting_asc,
+      &.sorting_desc,
+      &.sorting {
         padding-right: 30px;
       }
     }
     td {
-      &.sorting_asc, &.sorting_desc, &.sorting {
+      &.sorting_asc,
+      &.sorting_desc,
+      &.sorting {
         padding-right: 30px;
       }
     }
-    th:active, td:active {
+    th:active,
+    td:active {
       outline: none;
     }
   }
-  .sorting, .sorting_asc, .sorting_desc, .sorting_asc_disabled, .sorting_desc_disabled {
+  .sorting,
+  .sorting_asc,
+  .sorting_desc,
+  .sorting_asc_disabled,
+  .sorting_desc_disabled {
     cursor: pointer;
     position: relative;
   }
   .sorting {
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       bottom: 0.9em;
       display: block;
@@ -139,7 +155,8 @@ table.dataTable thead {
     }
   }
   .sorting_asc {
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       bottom: 0.9em;
       display: block;
@@ -147,7 +164,8 @@ table.dataTable thead {
     }
   }
   .sorting_desc {
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       bottom: 0.9em;
       display: block;
@@ -155,7 +173,8 @@ table.dataTable thead {
     }
   }
   .sorting_asc_disabled {
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       bottom: 0.9em;
       display: block;
@@ -163,32 +182,43 @@ table.dataTable thead {
     }
   }
   .sorting_desc_disabled {
-    &:before, &:after {
+    &:before,
+    &:after {
       position: absolute;
       bottom: 0.9em;
       display: block;
       opacity: 0.3;
     }
   }
-  .sorting:before, .sorting_asc:before, .sorting_desc:before, .sorting_asc_disabled:before, .sorting_desc_disabled:before {
+  .sorting:before,
+  .sorting_asc:before,
+  .sorting_desc:before,
+  .sorting_asc_disabled:before,
+  .sorting_desc_disabled:before {
     right: 1em;
-    content: "\f0de";
+    content: '\f0de';
     font-family: 'Font Awesome\ 5 Free';
     font-weight: 900;
     font-size: 1rem;
   }
-  .sorting:after, .sorting_asc:after, .sorting_desc:after, .sorting_asc_disabled:after, .sorting_desc_disabled:after {
+  .sorting:after,
+  .sorting_asc:after,
+  .sorting_desc:after,
+  .sorting_asc_disabled:after,
+  .sorting_desc_disabled:after {
     right: 0.5em;
-    content: "\f0dd";
+    content: '\f0dd';
     font-family: 'Font Awesome\ 5 Free';
     font-weight: 900;
     right: 16px;
     font-size: 1rem;
   }
-  .sorting_asc:before, .sorting_desc:after {
+  .sorting_asc:before,
+  .sorting_desc:after {
     opacity: 1;
   }
-  .sorting_asc_disabled:before, .sorting_desc_disabled:after {
+  .sorting_asc_disabled:before,
+  .sorting_desc_disabled:after {
     opacity: 0;
   }
 }

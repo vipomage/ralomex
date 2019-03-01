@@ -178,7 +178,8 @@ ul.dt-button-collection .dt-button {
 ul.dt-button-collection.fixed {
   max-width: none;
 }
-ul.dt-button-collection.fixed:before, ul.dt-button-collection.fixed:after {
+ul.dt-button-collection.fixed:before,
+ul.dt-button-collection.fixed:after {
   display: none;
 }
 
