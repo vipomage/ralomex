@@ -7,13 +7,9 @@ import { FireService } from '../../tools/services/fire.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public homeProducts;
+  public homeProducts = this.db.Util.getElements('homeProducts');
 
   constructor(private db: FireService) {}
 
-  ngOnInit() {
-    this.db.HomeControls.getHomeProducts().subscribe(
-      res => (this.homeProducts = res)
-    );
-  }
+  ngOnInit() { }
 }
