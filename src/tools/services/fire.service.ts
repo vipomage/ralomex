@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { HttpClient } from '@angular/common/http';
-import { Plough } from '../interfaces/plough';
-import { environment } from '../../environments/environment';
-import { AuthService } from './auth.service';
-import { News } from '../interfaces/news';
-import { HomeProduct } from '../interfaces/home-product';
-import { Award } from '../interfaces/award';
-import { Observable } from 'rxjs';
 import ThenableReference = firebase.database.ThenableReference;
+import { AngularFireDatabase } from 'angularfire2/database';
+import { environment } from '../../environments/environment';
+import { HomeProduct } from '../interfaces/home-product';
+import { HttpClient } from '@angular/common/http';
+import { Project } from '../interfaces/project'
+import { Plough } from '../interfaces/plough';
+import { AuthService } from './auth.service';
+import { Award } from '../interfaces/award';
+import { Injectable } from '@angular/core';
+import { News } from '../interfaces/news';
+import { Observable } from 'rxjs';
 
 const databaseUrl: String = environment.firebase.databaseURL;
+
+export type IUnion = Award|Project|News|HomeProduct;
 
 @Injectable({
   providedIn: 'root',
@@ -22,44 +25,36 @@ export class FireService {
     private http: HttpClient
   ) {}
 
-  HomeControls = {
-    addHomeProduct: (data: HomeProduct) =>
-      this.db.database.ref('homeProducts').push(data),
 
-    getHomeProducts: (): Observable<HomeProduct[]> =>
-      this.http.get<HomeProduct[]>(`${databaseUrl}/homeProducts.json`),
+  Util = {
+    addElement: (
+      data: IUnion,
+      dbLocation: 'awards' | 'news' | 'homeProducts' | 'projects'
+    ) => this.db.database.ref(dbLocation).push(data).then(()=>{
+      //Notification
+    }),
 
-    deleteHomeProduct: (id: string) =>
-      this.db.database.ref(`homeProducts/${id}`).remove(),
+    getElements: (
+      elementType: 'awards' | 'news' | 'homeProducts' | 'projects'
+    ):Observable<IUnion> =>
+      this.http.get<IUnion>(
+        `${databaseUrl}/${elementType}.json`
+      ),
 
-    updateHomeProduct: (id: string, newValue: HomeProduct) =>
-      this.db.database.ref(`homeProducts/${id}`).update(newValue),
-  };
+    deleteElementById: (
+      id: string,
+      elementType: 'awards' | 'news' | 'homeProducts' | 'projects'
+    ) => this.db.database.ref(`${elementType}/${id}`).remove().then(()=>{
+      //Notification
+    }),
 
-  NewsControls = {
-    addNewsElement: (data: News) => this.db.database.ref('news').push(data),
-
-    getNewsElements: (): Observable<News[]> =>
-      this.http.get<News[]>(`${databaseUrl}/news.json`),
-
-    deleteNewsElement: (id: string) =>
-      this.db.database.ref(`news/${id}`).remove(),
-
-    updateNewsElement: (id: string, newValue: News) =>
-      this.db.database.ref(`news/${id}`).update(newValue),
-  };
-
-  AwardsControls = {
-    addAwardElement: (data: Award) => this.db.database.ref('awards').push(data),
-
-    getAwardElements: (): Observable<Award[]> =>
-      this.http.get<Award[]>(`${databaseUrl}/awards.json`),
-
-    deleteAwardElementById: (id: string) =>
-      this.db.database.ref(`awards/${id}`).remove(),
-
-    updateAwardElementById: (id: string, newValue: Award) =>
-      this.db.database.ref(`awards/${id}`).update(newValue),
+    updateElementById: (
+      id: string,
+      elementType: 'awards' | 'news' | 'homeProducts' | 'projects',
+      newValue: IUnion
+    ) => this.db.database.ref(`${elementType}/${id}`).update(newValue).then(()=>{
+      //Notification
+    }),
   };
 
   getItem = (type: string, category: string, subCategory: string, id: string) =>
