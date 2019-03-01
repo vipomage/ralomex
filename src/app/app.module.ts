@@ -1,4 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// noinspection ES6UnusedImports
 import { BrowserModule, enableDebugTools } from '@angular/platform-browser';
 import { keyValueFilterPipe } from '../tools/pipes/key-value-filter.pipe';
 import { objectSplitToArray } from '../tools/pipes/split-array.pipe';
@@ -68,7 +69,6 @@ import { AwardsComponent } from './awards/awards.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
-import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from './app.component';
 import { routes } from './routes';
 
@@ -138,7 +138,6 @@ import { routes } from './routes';
     BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    DataTablesModule,
     HttpClientModule,
     AccordionModule,
     BrowserModule,
