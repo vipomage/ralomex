@@ -1,5 +1,5 @@
 export interface Award {
   heading: string;
-  image: string;
+  image: string|string[];
   content: string;
 }

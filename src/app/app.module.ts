@@ -2,6 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule, enableDebugTools } from '@angular/platform-browser';
 import { keyValueFilterPipe } from '../tools/pipes/key-value-filter.pipe';
 import { objectSplitToArray } from '../tools/pipes/split-array.pipe';
+import { ArraySortPipe} from '../tools/pipes/array-sort.pipe';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -94,6 +95,7 @@ import { routes } from './routes';
     EditAwardsComponent,
     keyValueFilterPipe,
     objectSplitToArray,
+    ArraySortPipe,
     ShreddersComponent,
     AccordionComponent,
     AddAwardsComponent,
