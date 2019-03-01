@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from '../../../../../tools/interfaces/news';
-import { FireService } from '../../../../../tools/services/fire.service';
+import { FireService, IUnion } from '../../../../../tools/services/fire.service'
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./edit-news.component.css'],
 })
 export class EditNewsComponent implements OnInit {
-  elements: Observable<News[]> = this.db.NewsControls.getNewsElements();
+  elements:Observable<IUnion> = this.db.Util.getElements('news');
   newsElementId: string;
   newsElement: News;
 
@@ -27,7 +27,7 @@ export class EditNewsComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.NewsControls.deleteNewsElement(elementId);
+      return this.db.Util.deleteElementById(elementId,'news');
     }
   };
 
@@ -50,7 +50,7 @@ export class EditNewsComponent implements OnInit {
         formData.image = this.newsElement.image as string;
     }
 
-    return this.db.NewsControls.updateNewsElement(id, formData);
+    return this.db.Util.updateElementById(id,'news',formData);
   };
 
   ngOnInit() {}

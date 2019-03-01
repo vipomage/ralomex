@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService, IUnion } from '../../../../../tools/services/fire.service'
+import { ImageService } from '../../../../../tools/services/image.service'
+import { Observable } from 'rxjs'
+import { News } from '../../../../../tools/interfaces/news'
+import { Award } from '../../../../../tools/interfaces/award'
+import { Project } from '../../../../../tools/interfaces/project'
 
 @Component({
   selector: 'app-edit-projects',
@@ -6,7 +12,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-projects.component.css'],
 })
 export class EditProjectsComponent implements OnInit {
-  constructor() {}
+  constructor(private db: FireService, private imgService: ImageService) {}
+
+  elements:Observable<IUnion> = this.db.Util.getElements('projects');
+  projectElementId: string;
+  projectElement: Project;
+
+  setElement = (id: string, element: Project): void => {
+    this.projectElementId = id;
+    this.projectElement = element;
+  };
+
+  deleteElement = (elementId: string) => {
+    let confirm = window.confirm(
+      'Сигурни ли сте че искате да изтриете тази новина!'
+    );
+    if (confirm) {
+      window.document.getElementById(elementId).remove();
+      return this.db.Util.deleteElementById(elementId,'projects');
+    }
+  };
+
+  startUpload = files => {
+    try {
+      this.imgService.images = [];
+      this.imgService.startUpload(files);
+      this.projectElement.image = this.imgService.images;
+    } catch (e) {
+      console.log(e.message);
+      this.imgService.preventEdit = false;
+    }
+  };
+
+  editProjectElement = (id: string, formData: Project) => {
+    if (this.imgService.images.length > 0) {
+      formData.image = this.imgService.images[0];
+    } else {
+      if (this.projectElement.image)
+        formData.image = this.projectElement.image as string;
+    }
+
+    return this.db.Util.updateElementById(id,'projects', formData);
+  };
 
   ngOnInit() {}
 }

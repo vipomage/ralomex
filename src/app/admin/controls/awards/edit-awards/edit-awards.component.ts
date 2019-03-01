@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { News } from '../../../../../tools/interfaces/news';
-import { FireService } from '../../../../../tools/services/fire.service';
+import { FireService, IUnion } from '../../../../../tools/services/fire.service'
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Award } from '../../../../../tools/interfaces/award';
 import { Observable } from 'rxjs';
@@ -11,13 +10,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./edit-awards.component.css'],
 })
 export class EditAwardsComponent implements OnInit {
-  elements: Observable<Award[]> = this.db.AwardsControls.getAwardElements();
-  awardElementId: string;
-  awardElement: News;
-
   constructor(private db: FireService, private imgService: ImageService) {}
 
-  setElement = (id: string, element: News): void => {
+  elements:Observable<IUnion> = this.db.Util.getElements('awards');
+  awardElementId: string;
+  awardElement: Award;
+
+  setElement = (id: string, element: Award): void => {
     this.awardElementId = id;
     this.awardElement = element;
   };
@@ -28,7 +27,7 @@ export class EditAwardsComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.AwardsControls.deleteAwardElementById(elementId);
+      return this.db.Util.deleteElementById(elementId,'awards');
     }
   };
 
@@ -51,7 +50,7 @@ export class EditAwardsComponent implements OnInit {
         formData.image = this.awardElement.image as string;
     }
 
-    return this.db.AwardsControls.updateAwardElementById(id, formData);
+    return this.db.Util.updateElementById(id,'awards', formData);
   };
 
   ngOnInit() {}

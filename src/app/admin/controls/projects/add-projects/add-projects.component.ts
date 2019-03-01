@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageService } from '../../../../../tools/services/image.service';
+import { FireService } from '../../../../../tools/services/fire.service';
+import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
+import { Project } from '../../../../../tools/interfaces/project'
 
 @Component({
   selector: 'app-add-projects',
@@ -6,7 +10,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-projects.component.css'],
 })
 export class AddProjectsComponent implements OnInit {
-  constructor() {}
+  constructor(public imgService: ImageService, private db: FireService) {}
+
+  image: string;
+  preventEdit = this.imgService.preventEdit;
+
+  startUpload = (files: FileList) => {
+    this.imgService
+      .prepToUploadSingle(files, 'projects')
+      .then((taskSnap: UploadTaskSnapshot) => {
+        taskSnap.ref.getDownloadURL().then((imgUlr: string) => {
+          this.image = imgUlr;
+          this.imgService.preventEdit = false;
+        });
+      });
+  };
+
+  saveProjectElement = (formData: Project) => {
+    if (this.image) {
+      formData.image = this.image;
+    } else {
+      delete formData.image;
+    }
+    this.db.Util.addElement(formData, 'projects').then(() => {
+      //todo
+      // saved notification
+      // clear Form
+    });
+  };
 
   ngOnInit() {}
 }

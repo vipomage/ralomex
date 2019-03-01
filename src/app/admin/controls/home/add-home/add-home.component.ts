@@ -11,7 +11,7 @@ export class AddHomeComponent implements OnInit {
   constructor(private db: FireService) {}
 
   saveHomeElement = (formData: HomeProduct) => {
-    this.db.HomeControls.addHomeProduct(formData);
+    this.db.Util.addElement(formData,'homeProducts');
   };
 
   ngOnInit() {}

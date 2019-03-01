@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../../tools/services/fire.service';
+import { FireService, IUnion } from '../../../../../tools/services/fire.service'
 import { HomeProduct } from '../../../../../tools/interfaces/home-product';
 import { Observable } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./edit-home.component.css'],
 })
 export class EditHomeComponent implements OnInit {
-  elements: Observable<HomeProduct[]> = this.db.HomeControls.getHomeProducts();
+  elements:Observable<IUnion> = this.db.Util.getElements('homeProducts');
   homeElementId: string;
   homeElement: HomeProduct;
 
@@ -26,12 +26,12 @@ export class EditHomeComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.HomeControls.deleteHomeProduct(elementId);
+      return this.db.Util.deleteElementById(elementId,'homeProducts');
     }
   };
 
   editHomeElement = (id: string, formData: HomeProduct) =>
-    this.db.HomeControls.updateHomeProduct(id, formData);
+    this.db.Util.updateElementById(id,'homeProducts', formData);
 
   scrollToElement($element): void {
     console.log($element);

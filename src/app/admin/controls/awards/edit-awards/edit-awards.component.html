@@ -1,50 +1,8 @@
 <div class="container-fluid">
-  <div class="wrapper" *ngIf="elements">
-    <div
-      class="card-group"
-      *ngFor="
-        let elementsArr of (elements
-          | async
-          | keyValueFilter
-          | objectSplitToArray: 3)
-      "
-    >
-      <mdb-card
-        *ngFor="let element of elementsArr"
-        class="m-1"
-        id="{{ element.key }}"
-      >
-        <mdb-card-img
-          src="{{ element.value.image }}"
-          alt="Card image cap"
-        ></mdb-card-img>
-        <mdb-card-title>
-          <h4>{{ element.value.heading }}</h4>
-        </mdb-card-title>
-        <button
-          (click)="setElement(element.key, element.value)"
-          mdbBtn
-          color="primary"
-          mdbWavesEffect
-        >
-          Редактирай
-        </button>
-        <button
-          (click)="deleteElement(element.key)"
-          mdbBtn
-          color="danger"
-          mdbWavesEffect
-        >
-          Изтрий
-        </button>
-      </mdb-card>
-    </div>
-  </div>
-
   <form
     *ngIf="awardElement"
     #form="ngForm"
-    (ngSubmit)="editAwardElement(awardElementId, form.value)"
+    (ngSubmit)="editAwardElement(awardElementId, form.value).then(awardElement=null)"
   >
     <img class="img-thumbnail" src="{{ awardElement.image }}" alt="" />
     <div class="form-group">
@@ -99,4 +57,46 @@
       Запази
     </button>
   </form>
+  <div class="wrapper" *ngIf="elements">
+    <div
+      class="card-group"
+      *ngFor="
+        let elementsArr of (elements
+          | async
+          | keyValueFilter
+          | objectSplitToArray: 3)
+      "
+    >
+      <mdb-card
+        *ngFor="let element of elementsArr"
+        class="m-1"
+        id="{{ element.key }}"
+      >
+        <mdb-card-img
+          *ngIf="element.value.image"
+          src="{{ element.value.image }}"
+          alt="Card image cap"
+        ></mdb-card-img>
+        <mdb-card-title>
+          <h4>{{ element.value.heading }}</h4>
+        </mdb-card-title>
+        <button
+          (click)="setElement(element.key, element.value)"
+          mdbBtn
+          color="primary"
+          mdbWavesEffect
+        >
+          Редактирай
+        </button>
+        <button
+          (click)="deleteElement(element.key)"
+          mdbBtn
+          color="danger"
+          mdbWavesEffect
+        >
+          Изтрий
+        </button>
+      </mdb-card>
+    </div>
+  </div>
 </div>

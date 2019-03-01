@@ -28,7 +28,7 @@ export class AddAwardsComponent implements OnInit {
 
   saveAwardElement = (formData: Award) => {
     formData.image = this.image;
-    this.db.AwardsControls.addAwardElement(formData).then(() => {
+    this.db.Util.addElement(formData,'awards').then(() => {
       //todo
       // saved notification
       // clear Form
