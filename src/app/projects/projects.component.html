@@ -1,18 +1,17 @@
 <div class="container-fluid text-center">
-  <div class="wrapper">
+  <div class="wrapper w-auto" *ngFor="let project of projects | async | keyValueFilter ">
     <button
-      type="button"
       class="btn btn-primary "
+      [attr.data-target]="'#modal-'+project.key"
       data-toggle="modal"
-      data-target="#centralModalFluidSuccessDemo"
+      type="button"
     >
-      Иновативни технологии и продукти
+      {{project.value.heading}}
     </button>
-
     <!-- Modal -->
     <div
       class="modal fade"
-      id="centralModalFluidSuccessDemo"
+      id="modal-{{project.key}}"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel"
@@ -27,7 +26,7 @@
           <!--Header-->
           <div class="modal-header">
             <p class="heading lead text-center">
-              Въвеждане на иновативни технологии и продукти в Раломекс АД
+              {{project.value.heading}}
             </p>
 
             <button
@@ -44,22 +43,12 @@
           <div class="modal-body">
             <div class="text-center">
               <img
-                src="https://ralomex.com/Images/project/eu_project1.jpg"
+                src="{{project.value.image}}"
                 alt=""
               />
+              <hr>
               <p>
-                „Раломекс” АД сключи договор за безвъзмездна финансова помощ по
-                открита процедура за конкурентен подбор на проекти с определен
-                срок на кандидатстване BG161PO003-2.1.13 “Технологична
-                модернизация в малки и средни предприятия”. Наименованието на
-                проекта на фирмата по договор №
-                BG161PO003-2.1.13-0443-С0001/27.07.2012 е „Въвеждане на
-                иновативни технологии и продукти в „Раломекс” АД” и се реализира
-                с финансовата подкрепа на Европейски съюз и Република България,
-                Европейски фонд за регионално развитие, Оперативна програма
-                „Развитие на конкурентоспособността на българската икономика
-                2007-2013”, Операция BG161PO003-2.1.13 “Технологична
-                модернизация в малки и средни предприятия”
+                {{project.value.content}}
               </p>
             </div>
           </div>

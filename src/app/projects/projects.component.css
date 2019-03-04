@@ -1,3 +1,9 @@
 .modal {
   display: none;
 }
+img{
+  max-width: -webkit-fill-available;
+  }
+.btn-primary{
+  width: 60%;
+  }
