@@ -1,7 +1,11 @@
 // Buttons
 .btn {
   box-shadow: $z-depth-1;
-  @include button-size($btn-padding-y-basic, $btn-padding-x-basic, $btn-font-size-basic);
+  @include button-size(
+    $btn-padding-y-basic,
+    $btn-padding-x-basic,
+    $btn-font-size-basic
+  );
   transition: $btn-transition;
   margin: $btn-margin-basic;
   border: 0;
@@ -21,7 +25,9 @@
   &:not([disabled]):not(.disabled).active {
     box-shadow: $z-depth-1-half;
   }
-  .fas, .fab, .far {
+  .fas,
+  .fab,
+  .far {
     position: relative;
     font-size: $btn-icon-basic;
     &.right {
@@ -32,20 +38,38 @@
     }
   }
   &.btn-lg {
-    @include button-size($btn-padding-y-large, $btn-padding-x-large, $btn-font-size-large);
-    .fas, .fab, .far {
+    @include button-size(
+      $btn-padding-y-large,
+      $btn-padding-x-large,
+      $btn-font-size-large
+    );
+    .fas,
+    .fab,
+    .far {
       font-size: $btn-icon-large;
     }
   }
   &.btn-md {
-    @include button-size($btn-padding-y-medium, $btn-padding-x-medium, $btn-font-size-medium);
-    .fas, .fab, .far {
+    @include button-size(
+      $btn-padding-y-medium,
+      $btn-padding-x-medium,
+      $btn-font-size-medium
+    );
+    .fas,
+    .fab,
+    .far {
       font-size: $btn-icon-medium;
     }
   }
   &.btn-sm {
-    @include button-size($btn-padding-y-small, $btn-padding-x-small, $btn-font-size-small);
-    .fas, .fab, .far {
+    @include button-size(
+      $btn-padding-y-small,
+      $btn-padding-x-small,
+      $btn-font-size-small
+    );
+    .fas,
+    .fab,
+    .far {
       font-size: $btn-icon-small;
     }
   }
@@ -74,7 +98,7 @@
       background-color: transparent;
     }
   }
-  &[class*="btn-outline-"] {
+  &[class*='btn-outline-'] {
     padding-top: $btn-outline-padding-y-basic;
     padding-bottom: $btn-outline-padding-y-basic;
     &.btn-lg {
@@ -100,15 +124,15 @@
 .btn,
 .btn-floating {
   .fa-lg {
-    font-size: 1.33333em  !important;
+    font-size: 1.33333em !important;
   }
 
   .fa-xs {
-    font-size: .75em !important;
+    font-size: 0.75em !important;
   }
 
   .fa-sm {
-    font-size: .875em !important;
+    font-size: 0.875em !important;
   }
 
   .fa-1x {

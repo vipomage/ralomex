@@ -1,8 +1,16 @@
 // Mixins
 // Bootstrap Mixins
-@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+@function breakpoint-next(
+  $name,
+  $breakpoints: $grid-breakpoints,
+  $breakpoint-names: map-keys($breakpoints)
+) {
   $n: index($breakpoint-names, $name);
-  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+  @return if(
+    $n < length($breakpoint-names),
+    nth($breakpoint-names, $n + 1),
+    null
+  );
 }
 
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
@@ -12,7 +20,7 @@
 
 @function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
   $next: breakpoint-next($name, $breakpoints);
-  @return if($next, breakpoint-min($next, $breakpoints) - .02px, null);
+  @return if($next, breakpoint-min($next, $breakpoints) - 0.02px, null);
 }
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
@@ -23,8 +31,7 @@
     @media (min-width: $min) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
@@ -37,28 +44,29 @@
     @media (max-width: $max) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
-@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+@mixin media-breakpoint-between(
+  $lower,
+  $upper,
+  $breakpoints: $grid-breakpoints
+) {
   $min: breakpoint-min($lower, $breakpoints);
   $max: breakpoint-max($upper, $breakpoints);
   @if $min !=null and $max !=null {
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
-  }
-  @else if $max==null {
+  } @else if $max==null {
     @include media-breakpoint-up($lower, $breakpoints) {
       @content;
     }
-  }
-  @else if $min==null {
+  } @else if $min==null {
     @include media-breakpoint-down($upper, $breakpoints) {
       @content;
     }
@@ -75,13 +83,11 @@
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
-  }
-  @else if $max==null {
+  } @else if $max==null {
     @include media-breakpoint-up($name, $breakpoints) {
       @content;
     }
-  }
-  @else if $min==null {
+  } @else if $min==null {
     @include media-breakpoint-down($name, $breakpoints) {
       @content;
     }
@@ -89,7 +95,7 @@
 }
 
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
+  @return if(breakpoint-min($name, $breakpoints) ==null, '', '-#{$name}');
 }
 
 @mixin hover-focus {
@@ -127,7 +133,7 @@
 // Placeholder
 @mixin placeholder {
   &::placeholder {
-    @content
+    @content;
   }
 }
 
@@ -143,9 +149,11 @@
   margin-left: auto;
 }
 
-
 // For each breakpoint, define the maximum width of the container in a media query
-@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+@mixin make-container-max-widths(
+  $max-widths: $container-max-widths,
+  $breakpoints: $grid-breakpoints
+) {
   @each $breakpoint, $container-max-width in $max-widths {
     @include media-breakpoint-up($breakpoint, $breakpoints) {
       max-width: $container-max-width;
@@ -188,7 +196,7 @@
   &::after {
     display: block;
     clear: both;
-    content: "";
+    content: '';
   }
 }
 
@@ -259,14 +267,13 @@
 @function set-notification-text-color($color) {
   @if (lightness($color) > 80) {
     @return $black-base; // Lighter backgorund, return dark color
-  }
-  @else {
+  } @else {
     @return $white-base; // Darker background, return light color
   }
 }
 
 // Make button
-@mixin make-button ($name, $color) {
+@mixin make-button($name, $color) {
   .btn-#{$name} {
     background-color: $color !important;
     color: set-notification-text-color($color) !important;
@@ -291,13 +298,13 @@
     }
     &:not([disabled]):not(.disabled):active,
     &:not([disabled]):not(.disabled).active,
-    .show>&.dropdown-toggle {
+    .show > &.dropdown-toggle {
       box-shadow: $z-depth-1-half;
       background-color: darken($color, 20%) !important;
     }
     &:not([disabled]):not(.disabled):active:focus,
     &:not([disabled]):not(.disabled).active:focus,
-    .show>&.dropdown-toggle:focus {
+    .show > &.dropdown-toggle:focus {
       box-shadow: $z-depth-1-half;
     }
   }
@@ -311,7 +318,7 @@
 }
 
 // Make outline button
-@mixin make-outline-button ($name, $color) {
+@mixin make-outline-button($name, $color) {
   .btn-outline-#{$name} {
     border: 2px solid $color !important;
     background-color: transparent !important;
@@ -327,14 +334,14 @@
     }
     &:not([disabled]):not(.disabled):active,
     &:not([disabled]):not(.disabled).active,
-    .show>&.dropdown-toggle {
+    .show > &.dropdown-toggle {
       box-shadow: $z-depth-1-half;
       background-color: transparent !important;
       border-color: $color !important;
     }
     &:not([disabled]):not(.disabled):active:focus,
     &:not([disabled]):not(.disabled).active:focus,
-    .show>&.dropdown-toggle:focus {
+    .show > &.dropdown-toggle:focus {
       box-shadow: $z-depth-1-half;
     }
   }
@@ -342,15 +349,23 @@
 // Make gradient
 @mixin make-gradient($name, $value) {
   .#{$name}-gradient {
-    background: linear-gradient(40deg, map-get($value, start), map-get($value, end)) !important;
+    background: linear-gradient(
+      40deg,
+      map-get($value, start),
+      map-get($value, end)
+    ) !important;
   }
 }
 
-$opacity: .9;
+$opacity: 0.9;
 // Make gradient
 @mixin make-gradient-rgba($name, $value) {
   .#{$name}-gradient-rgba {
-    background: linear-gradient(40deg, map-get($value, start), map-get($value, end)) !important;
+    background: linear-gradient(
+      40deg,
+      map-get($value, start),
+      map-get($value, end)
+    ) !important;
   }
 }
 
@@ -358,13 +373,16 @@ $opacity: .9;
 @mixin make-gradient-button($name, $value) {
   .btn {
     &.#{$name}-gradient {
-      transition: .5s ease;
+      transition: 0.5s ease;
       color: $white-base;
       &:hover,
       &:focus,
       &:active,
       &:active:focus &.active {
-        background: linear-gradient(lighten(map-get($value, start), 5%), lighten(map-get($value, end), 5%));
+        background: linear-gradient(
+          lighten(map-get($value, start), 5%),
+          lighten(map-get($value, end), 5%)
+        );
       }
     }
   }
@@ -384,7 +402,16 @@ $opacity: .9;
 }
 
 // Make input
-@mixin make-input($margin-bottom, $label-font-size, $label-active-font-size, $top, $prefix-font-size, $margin-left, $width, $margin-left-2) {
+@mixin make-input(
+  $margin-bottom,
+  $label-font-size,
+  $label-active-font-size,
+  $top,
+  $prefix-font-size,
+  $margin-left,
+  $width,
+  $margin-left-2
+) {
   .validate {
     margin-bottom: $margin-bottom;
   }
@@ -397,15 +424,15 @@ $opacity: .9;
   .prefix {
     top: $top;
     font-size: $prefix-font-size;
-    ~input,
-    ~textarea {
+    ~ input,
+    ~ textarea {
       margin-left: $margin-left;
       width: $width;
     }
-    ~label {
+    ~ label {
       margin-left: $margin-left;
     }
-    ~.form-text {
+    ~ .form-text {
       margin-left: $margin-left-2;
     }
   }
@@ -439,7 +466,7 @@ $opacity: .9;
           color: $color-2;
         }
       }
-      &.active>.nav-link {
+      &.active > .nav-link {
         background-color: $color-3;
         &:hover {
           color: $color;
@@ -522,15 +549,20 @@ $opacity: .9;
 }
 
 // Make border-radius scrollspy 4rows
-@mixin scrollspy-border-radius-4rows($top-left, $top-right, $bottom-right, $bottom-left) {
+@mixin scrollspy-border-radius-4rows(
+  $top-left,
+  $top-right,
+  $bottom-right,
+  $bottom-left
+) {
   border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
 
 //Make animation for progresss
-@mixin progress-animation-default($animation...){
+@mixin progress-animation-default($animation...) {
   animation: $animation;
 }
 //Make transform
-@mixin transform($transform...){
+@mixin transform($transform...) {
   transform: $transform;
 }

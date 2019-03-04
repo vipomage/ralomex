@@ -1,18 +1,26 @@
-"use strict";
+'use strict';
 
 var _this = void 0;
 
-(function ($) {
-  var inputSelector = "".concat(['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
-    return "input[type=".concat(selector, "]");
-  }).join(', '), ", textarea");
+(function($) {
+  var inputSelector = ''.concat(
+    ['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md']
+      .map(function(selector) {
+        return 'input[type='.concat(selector, ']');
+      })
+      .join(', '),
+    ', textarea'
+  );
   var textAreaSelector = '.materialize-textarea';
 
   var updateTextFields = function updateTextFields($input) {
     var $labelAndIcon = $input.siblings('label, i');
     var hasValue = $input.val().length;
     var hasPlaceholder = $input.attr('placeholder');
-    var addOrRemove = "".concat(hasValue || hasPlaceholder ? 'add' : 'remove', "Class");
+    var addOrRemove = ''.concat(
+      hasValue || hasPlaceholder ? 'add' : 'remove',
+      'Class'
+    );
     $labelAndIcon[addOrRemove]('active');
   };
 
@@ -57,17 +65,20 @@ var _this = void 0;
         $hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
       }
 
-      $hiddenDiv.text("".concat($textarea.val(), "\n"));
+      $hiddenDiv.text(''.concat($textarea.val(), '\n'));
       var content = $hiddenDiv.html().replace(/\n/g, '<br>');
       $hiddenDiv.html(content); // When textarea is hidden, width goes crazy.
       // Approximate with half of window size
 
-      $hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
+      $hiddenDiv.css(
+        'width',
+        $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2
+      );
       $textarea.css('height', $hiddenDiv.height());
     }
   };
 
-  $(inputSelector).each(function (index, input) {
+  $(inputSelector).each(function(index, input) {
     var $this = $(input);
     var $labelAndIcon = $this.siblings('label, i');
     updateTextFields($this);
@@ -77,10 +88,12 @@ var _this = void 0;
       $labelAndIcon.addClass('active');
     }
   });
-  $(document).on('focus', inputSelector, function (e) {
-    $(e.target).siblings('label, i').addClass('active');
+  $(document).on('focus', inputSelector, function(e) {
+    $(e.target)
+      .siblings('label, i')
+      .addClass('active');
   });
-  $(document).on('blur', inputSelector, function (e) {
+  $(document).on('blur', inputSelector, function(e) {
     var $this = $(e.target);
     var noValue = !$this.val();
     var invalid = !e.target.validity.badInput;
@@ -92,27 +105,32 @@ var _this = void 0;
 
     validateField($this);
   });
-  $(document).on('change', inputSelector, function (e) {
+  $(document).on('change', inputSelector, function(e) {
     var $this = $(e.target);
     updateTextFields($this);
     validateField($this);
   });
-  $('input[autofocus]').siblings('label, i').addClass('active');
-  $(document).on('reset', function (e) {
+  $('input[autofocus]')
+    .siblings('label, i')
+    .addClass('active');
+  $(document).on('reset', function(e) {
     var $formReset = $(e.target);
 
     if ($formReset.is('form')) {
       var $formInputs = $formReset.find(inputSelector);
-      $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
-        var $this = $(input);
-        var noDefaultValue = !$this.val();
-        var noPlaceholder = !$this.attr('placeholder');
+      $formInputs
+        .removeClass('valid')
+        .removeClass('invalid')
+        .each(function(index, input) {
+          var $this = $(input);
+          var noDefaultValue = !$this.val();
+          var noPlaceholder = !$this.attr('placeholder');
 
-        if (noDefaultValue && noPlaceholder) {
-          $this.siblings('label, i').removeClass('active');
-        }
-      });
-      $formReset.find('select.initialized').each(function (index, select) {
+          if (noDefaultValue && noPlaceholder) {
+            $this.siblings('label, i').removeClass('active');
+          }
+        });
+      $formReset.find('select.initialized').each(function(index, select) {
         var $select = $(select);
         var $visibleInput = $select.siblings('input.select-dropdown');
         var defaultValue = $select.children('[selected]').val();
@@ -130,7 +148,7 @@ var _this = void 0;
 
       if (window.attachEvent) {
         observe = function observe(element, event, handler) {
-          element.attachEvent("on".concat(event), handler);
+          element.attachEvent('on'.concat(event), handler);
         };
       } else {
         observe = function observe(element, event, handler) {
@@ -138,12 +156,12 @@ var _this = void 0;
         };
       }
 
-      $text.each(function () {
+      $text.each(function() {
         var self = this;
 
         function resize() {
           self.style.height = 'auto';
-          self.style.height = "".concat(self.scrollHeight, "px");
+          self.style.height = ''.concat(self.scrollHeight, 'px');
         }
 
         function delayedResize() {
