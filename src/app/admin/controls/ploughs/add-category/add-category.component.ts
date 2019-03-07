@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../../tools/services/fire.service';
-import { ImageService } from '../../../../../tools/services/image.service';
+import { ImageService } from '../../../../tools/services/image.service';
+import { FireService } from '../../../../tools/services/fire.service';
 
 @Component({
   selector: 'app-add-category',

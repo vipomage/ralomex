@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../../../../../tools/services/image.service';
-import { FireService } from '../../../../../tools/services/fire.service';
+import { ImageService } from '../../../../tools/services/image.service';
+
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
-import { Award } from '../../../../../tools/interfaces/award';
+import { Award } from '../../../../tools/interfaces/award';
+import { FireService } from '../../../../tools/services/fire.service';
 
 @Component({
   selector: 'app-add-awards',

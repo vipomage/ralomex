@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService, IUnion } from '../../../../../tools/services/fire.service'
-import { ImageService } from '../../../../../tools/services/image.service'
+import { FireService, IUnion } from '../../../../tools/services/fire.service'
+import { ImageService } from '../../../../tools/services/image.service'
 import { Observable } from 'rxjs'
-import { News } from '../../../../../tools/interfaces/news'
-import { Award } from '../../../../../tools/interfaces/award'
-import { Project } from '../../../../../tools/interfaces/project'
+import { Project } from '../../../../tools/interfaces/project';
+
 
 @Component({
   selector: 'app-edit-projects',

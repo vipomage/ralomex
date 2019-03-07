@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { News } from '../../../../../tools/interfaces/news';
-import { FireService, IUnion } from '../../../../../tools/services/fire.service'
-import { ImageService } from '../../../../../tools/services/image.service';
+import { News } from '../../../../tools/interfaces/news';
+import { FireService, IUnion } from '../../../../tools/services/fire.service'
+import { ImageService } from '../../../../tools/services/image.service';
 import { Observable } from 'rxjs';
 
 @Component({

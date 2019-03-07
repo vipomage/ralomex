@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService, IUnion } from '../../../../../tools/services/fire.service'
-import { HomeProduct } from '../../../../../tools/interfaces/home-product';
 import { Observable } from 'rxjs';
+import { FireService, IUnion } from '../../../../tools/services/fire.service';
+import { HomeProduct } from '../../../../tools/interfaces/home-product';
 
 @Component({
   selector: 'app-edit-home',

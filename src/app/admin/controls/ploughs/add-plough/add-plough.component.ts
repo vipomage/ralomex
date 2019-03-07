@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../../tools/services/fire.service';
-import { Plough } from '../../../../../tools/interfaces/plough';
-import { ImageService } from '../../../../../tools/services/image.service';
+import { FireService } from '../../../../tools/services/fire.service';
+import { Plough } from '../../../../tools/interfaces/plough';
+import { ImageService } from '../../../../tools/services/image.service';
 
 @Component({
   selector: 'app-add-plough',
