@@ -1,6 +1,6 @@
 import ThenableReference = firebase.database.ThenableReference;
 import { AngularFireDatabase } from 'angularfire2/database';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { HomeProduct } from '../interfaces/home-product';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '../interfaces/project'
@@ -101,4 +101,9 @@ export class FireService {
 
   removePlough = (id: string) =>
     this.db.database.ref(`ploughs/${id}`).remove(e => console.log(e.message));
+
+
+
+
 }
+
