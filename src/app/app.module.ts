@@ -8,14 +8,17 @@ import { FireService } from './tools/services/fire.service';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AngularFireModule } from 'angularfire2';
 import { HttpClientModule } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
-import { AngularFireModule } from 'angularfire2';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
-import { NgModule } from '@angular/core';
+import { PipesModule } from './tools/pipes/pipes.module';
+import { AdminModule } from './admin/admin.module';
+import { routes } from './app-routes';
 
+import { NgModule } from '@angular/core';
 import { AccordionComponent } from './products/accordion_DEPRECATED/accordion.component';
 import { MdbAccordionComponent } from './products/mdb-accordion/mdb-accordion.component';
 import { ProductTableComponent } from './products/product-table/product-table.component';
@@ -47,9 +50,6 @@ import { AwardsComponent } from './awards/awards.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
-import { routes } from './routes';
-import { PipesModule } from './tools/pipes/pipes.module';
-import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
