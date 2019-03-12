@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --prod --base-href https://erayismail.online"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -28,11 +27,9 @@
     "core-js": "^2.6.5",
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
-    "express": "^4.16.4",
     "firebase": "^5.8.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-    "path": "^0.12.7",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.5",
     "rxjs": "~6.3.3",
@@ -61,9 +58,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "^3.2.4"
-  },
-  "engines": {
-    "node": "10.15.0",
-    "npm": "6.8.0"
   }
 }
