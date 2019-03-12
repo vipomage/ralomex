@@ -1,12 +1,29 @@
 <div class="form-group">
-  <label for="category">Категория</label>
+  <label for="category">Тип</label>
   <select
+    [disabled]="!categories"
     (change)="onCategoryChange($event.target.value)"
     class="form-control"
     name="Изберете Категория"
     id="category"
   >
+    <option disabled>Изберете Тип</option>
     <option *ngFor="let category of categories">{{ category }}</option>
   </select>
-  <!--<app-mdb-table [data]="data" [category]="category"></app-mdb-table>-->
+  <div *ngIf="subCategories">
+    <label for="subCat">Категория</label
+    ><select
+      [disabled]="!subCategories"
+      (change)="onSubCatChange($event.target.value)"
+      class="form-control"
+      name="subCat"
+      id="subCat"
+    >
+      <option disabled>Изберете Категория</option>
+      <option *ngFor="let subType of subCategories">{{ subType }}</option>
+    </select>
+  </div>
+  <div *ngIf="ploughList">
+    <app-mdb-editable-table [collection]="ploughList"></app-mdb-editable-table>
+  </div>
 </div>
