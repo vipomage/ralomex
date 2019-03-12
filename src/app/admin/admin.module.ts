@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../tools/pipes/pipes.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule, Routes } from '@angular/router';
+import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-editable-table.component';
 
 const routes: Routes = [
   {
@@ -103,7 +104,8 @@ const routes: Routes = [
     EditNewsComponent,
     ProjectsControlComponent,
     AddProjectsComponent,
-    EditProjectsComponent
+    EditProjectsComponent,
+    MdbEditableTableComponent
   ],
   exports: [RouterModule],
 })

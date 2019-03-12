@@ -1,0 +1,56 @@
+<!-- Editable table -->
+<div class="card">
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+        <tr>
+          <th scope="col">Model</th>
+          <th scope="col">Clearance</th>
+          <th scope="col">Working Depth</th>
+          <th scope="col">Productivity</th>
+          <th scope="col">required HP</th>
+          <th scope="col">Speed</th>
+          <th scope="col">Type</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Working Width</th>
+          <th scope="col" class="btn-warning">Изтриване</th>
+        </tr>
+        <tr *ngFor="let el of (collection | keyValueFilter )">
+          <td>
+            <span contenteditable="true" (focus)="changeValue(el.key, 'model', $event)" (blur)="updateList(el.key, 'model', $event)">{{el.value.model}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'clearance', $event)" (blur)="updateList(el.key, 'clearance', $event)">{{el.value.clearance}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'depthWork', $event)" (blur)="updateList(el.key, 'depthWork', $event)">{{el.value.depthWork}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'productivity', $event)" (blur)="updateList(el.key, 'productivity', $event)">{{el.value.productivity}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'reqHP', $event)" (blur)="updateList(el.key, 'reqHP', $event)">{{el.value.reqHP}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'speed', $event)" (blur)="updateList(el.key, 'speed', $event)">{{el.value.speed}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'type', $event)" (blur)="updateList(el.key, 'type', $event)">{{el.value.type}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'weight', $event)" (blur)="updateList(el.key, 'weight', $event)">{{el.value.weight}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(el.key, 'widthWork', $event)" (blur)="updateList(el.key, 'widthWork', $event)">{{el.value.widthWork}}</span>
+          </td>
+          <td>
+            <span class="table-remove">
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(el.key)">Remove</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
