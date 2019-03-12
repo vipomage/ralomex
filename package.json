@@ -2,6 +2,7 @@
   "name": "ralo",
   "version": "0.0.0",
   "scripts": {
+    "postinstall":"ng build --prod --base-href https://ralomex.herokuapp.com",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
