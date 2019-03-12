@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <table *ngIf="collection" mdbTable responsive="true">
+    <thead>
+      <tr>
+        <th scope="col">Model</th>
+        <th scope="col">Clearance</th>
+        <th scope="col">Working Depth</th>
+        <th scope="col">Productivity</th>
+        <th scope="col">required HP</th>
+        <th scope="col">Speed</th>
+        <th scope="col">Type</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Working Width</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="items-row"
+        (click)="editPlough(el.key)"
+        mdbTableCol
+        *ngFor="let el of (collection | keyValueFilter)"
+      >
+        <td contenteditable="true">{{ el.value.model }}</td>
+        <td>{{ el.value.clearance }}</td>
+        <td>{{ el.value.depthWork }}</td>
+        <td>{{ el.value.productivity }}</td>
+        <td>{{ el.value.reqHP }}</td>
+        <td>{{ el.value.speed }}</td>
+        <td>{{ el.value.type }}</td>
+        <td>{{ el.value.weight }}</td>
+        <td>{{ el.value.widthWork }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
