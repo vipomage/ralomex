@@ -29,7 +29,7 @@ export class AddNewsComponent implements OnInit {
   saveNewsElement = (formData: News) => {
     formData.timeStamp = Date.now();
     formData.image = this.image;
-    this.db.Util.addElement(formData,'news').then(() => {
+    this.db.AdminUtils.addElement(formData,'news').then(() => {
       //todo
       // saved notification
       // clear Form

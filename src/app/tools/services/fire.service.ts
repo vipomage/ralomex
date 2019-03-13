@@ -12,8 +12,8 @@ import { News } from '../interfaces/news';
 import { Observable } from 'rxjs';
 
 const databaseUrl: String = environment.firebase.databaseURL;
-
 export type IUnion = Award|Project|News|HomeProduct;
+export type ProductIUnion= Plough;
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,7 @@ export class FireService {
   ) {}
 
 
-  Util = {
+  AdminUtils = {
     addElement: (
       data: IUnion,
       dbLocation: 'awards' | 'news' | 'homeProducts' | 'projects'
@@ -57,8 +57,32 @@ export class FireService {
     }),
   };
 
-  getItem = (type: string, category: string, subCategory: string, id: string) =>
-    this.http.get(
+  PloughUtils = {
+
+    getPlough:(category:string,subCategory:string,id:string):Observable<Plough>=>
+      this.getSingleItem('ploughs',category,subCategory,id),
+
+    getPloughSubcategories:(category:string):Observable<Plough> =>
+      this.getSubCategories('ploughs',category),
+
+    getPloughTypes:()=> this.getType('ploughs'),
+
+    deletePlough:(category:string,subCategory:string,id:string)=>
+      this.removeItem('ploughs',category,subCategory,id),
+
+    addPlough:(data:Plough,category:string,subCategory:string)=>
+      this.addItem(data,'ploughs',category,subCategory),
+
+    updatePlough:(data,category:string,subCategory:string,id:string)=>
+      this.updateItem(data,'ploughs',category,subCategory,id),
+
+
+
+
+  };
+
+  getSingleItem = (type: string, category: string, subCategory: string, id: string) =>
+    this.http.get<ProductIUnion>(
       `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection/`.toLocaleLowerCase() +
         `${id}.json`
     );
@@ -66,20 +90,21 @@ export class FireService {
   getType = (type: string) => this.http.get(`${databaseUrl}/${type}.json`);
 
   getSubCategories = (type: string, category: string) =>
-    this.http.get(`${databaseUrl}/${type}/types/${category}/collection.json`);
+    this.http.get<ProductIUnion>(`${databaseUrl}/${type}/types/${category}/collection.json`);
 
   getSubCategoryData = (type, category, subCategory) =>
     this.http.get(
       `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection.json`.toLocaleLowerCase()
     );
 
-  addPlough = (
-    data: Plough,
+  addItem = (
+    data: ProductIUnion,
+    type:string,
     category: string,
     subCategory: string
   ): ThenableReference =>
     this.db.database
-      .ref(`ploughs/types/${category}/collection/${subCategory}/collection`)
+      .ref(`${type}/types/${category}/collection/${subCategory}/collection`)
       .push(data);
 
   addPloughCategory = (type: string, categoryDetails) =>
@@ -94,16 +119,12 @@ export class FireService {
         name: categoryDetails.name,
       });
 
-  editItem = (key: string, category: string) =>
-    this.http.get<Plough>(
-      `${databaseUrl}/ploughs/${category}/collection/${key}.json`
-    );
+  updateItem = (data:ProductIUnion,type:string,category:string,subCategory:string,id:string) =>
+    this.db.database.ref(`${type}/types/${category}/collection/${subCategory}/collection/${id}`).update(data);
 
-  removePlough = (id: string) =>
-    this.db.database.ref(`ploughs/${id}`).remove(e => console.log(e.message));
-
-
-
-
+  removeItem = (type: string, category: string, subCategory: string, id: string) =>
+    this.db.database
+      .ref(`${type}/types/${category}/collection/${subCategory}/collection/${id}`)
+      .remove()
 }
 

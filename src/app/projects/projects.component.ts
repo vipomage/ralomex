@@ -10,7 +10,7 @@ import { FireService, IUnion } from '../tools/services/fire.service';
 export class ProjectsComponent implements OnInit {
   constructor(private db:FireService) {}
 
-  projects:Observable<IUnion> = this.db.Util.getElements('projects');
+  projects:Observable<IUnion> = this.db.AdminUtils.getElements('projects');
 
   ngOnInit() {}
 }

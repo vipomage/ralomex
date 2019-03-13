@@ -9,7 +9,7 @@ import { HomeProduct } from '../../../../tools/interfaces/home-product';
   styleUrls: ['./edit-home.component.css'],
 })
 export class EditHomeComponent implements OnInit {
-  elements:Observable<IUnion> = this.db.Util.getElements('homeProducts');
+  elements:Observable<IUnion> = this.db.AdminUtils.getElements('homeProducts');
   homeElementId: string;
   homeElement: HomeProduct;
 
@@ -26,12 +26,12 @@ export class EditHomeComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.Util.deleteElementById(elementId,'homeProducts');
+      return this.db.AdminUtils.deleteElementById(elementId,'homeProducts');
     }
   };
 
   editHomeElement = (id: string, formData: HomeProduct) =>
-    this.db.Util.updateElementById(id,'homeProducts', formData);
+    this.db.AdminUtils.updateElementById(id,'homeProducts', formData);
 
   scrollToElement($element): void {
     console.log($element);

@@ -13,7 +13,7 @@ import { Project } from '../../../../tools/interfaces/project';
 export class EditProjectsComponent implements OnInit {
   constructor(private db: FireService, private imgService: ImageService) {}
 
-  elements:Observable<IUnion> = this.db.Util.getElements('projects');
+  elements:Observable<IUnion> = this.db.AdminUtils.getElements('projects');
   projectElementId: string;
   projectElement: Project;
 
@@ -28,7 +28,7 @@ export class EditProjectsComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.Util.deleteElementById(elementId,'projects');
+      return this.db.AdminUtils.deleteElementById(elementId,'projects');
     }
   };
 
@@ -51,7 +51,7 @@ export class EditProjectsComponent implements OnInit {
         formData.image = this.projectElement.image as string;
     }
 
-    return this.db.Util.updateElementById(id,'projects', formData);
+    return this.db.AdminUtils.updateElementById(id,'projects', formData);
   };
 
   ngOnInit() {}

@@ -7,7 +7,7 @@ import { FireService } from '../tools/services/fire.service';
   styleUrls: ['./awards.component.css'],
 })
 export class AwardsComponent implements OnInit {
-  awards = this.db.Util.getElements('awards');
+  awards = this.db.AdminUtils.getElements('awards');
 
   constructor(private db: FireService) {}
 

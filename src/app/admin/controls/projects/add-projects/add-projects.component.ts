@@ -32,7 +32,7 @@ export class AddProjectsComponent implements OnInit {
     } else {
       delete formData.image;
     }
-    this.db.Util.addElement(formData, 'projects').then(() => {
+    this.db.AdminUtils.addElement(formData, 'projects').then(() => {
       //todo
       // saved notification
       // clear Form

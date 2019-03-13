@@ -14,7 +14,7 @@ export class MdbNewsComponent implements OnInit {
   constructor(private db: FireService) {}
 
   ngOnInit() {
-    this.db.Util.getElements('news').subscribe(res => {
+    this.db.AdminUtils.getElements('news').subscribe(res => {
       this.news = Object.values(res).sort(
         (a: News, b: News) => b.timeStamp - a.timeStamp
       );

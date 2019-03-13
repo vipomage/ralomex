@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./edit-news.component.css'],
 })
 export class EditNewsComponent implements OnInit {
-  elements:Observable<IUnion> = this.db.Util.getElements('news');
+  elements:Observable<IUnion> = this.db.AdminUtils.getElements('news');
   newsElementId: string;
   newsElement: News;
 
@@ -27,7 +27,7 @@ export class EditNewsComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.Util.deleteElementById(elementId,'news');
+      return this.db.AdminUtils.deleteElementById(elementId,'news');
     }
   };
 
@@ -50,7 +50,7 @@ export class EditNewsComponent implements OnInit {
         formData.image = this.newsElement.image as string;
     }
 
-    return this.db.Util.updateElementById(id,'news',formData);
+    return this.db.AdminUtils.updateElementById(id,'news',formData);
   };
 
   ngOnInit() {}

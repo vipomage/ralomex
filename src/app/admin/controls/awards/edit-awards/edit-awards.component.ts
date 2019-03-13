@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class EditAwardsComponent implements OnInit {
   constructor(private db: FireService, private imgService: ImageService) {}
 
-  elements:Observable<IUnion> = this.db.Util.getElements('awards');
+  elements:Observable<IUnion> = this.db.AdminUtils.getElements('awards');
   awardElementId: string;
   awardElement: Award;
 
@@ -27,7 +27,7 @@ export class EditAwardsComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.Util.deleteElementById(elementId,'awards');
+      return this.db.AdminUtils.deleteElementById(elementId,'awards');
     }
   };
 
@@ -50,7 +50,7 @@ export class EditAwardsComponent implements OnInit {
         formData.image = this.awardElement.image as string;
     }
 
-    return this.db.Util.updateElementById(id,'awards', formData);
+    return this.db.AdminUtils.updateElementById(id,'awards', formData);
   };
 
   ngOnInit() {}

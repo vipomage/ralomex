@@ -7,7 +7,7 @@ import { FireService } from '../tools/services/fire.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public homeProducts = this.db.Util.getElements('homeProducts');
+  public homeProducts = this.db.AdminUtils.getElements('homeProducts');
 
   constructor(private db: FireService) {}
 
