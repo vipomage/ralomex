@@ -31,7 +31,7 @@ export class AddPloughComponent implements OnInit {
 
   savePlough = (data: Plough, category: string) => {
     data.image = this.images;
-    this.db.addPlough(data, category, this.subCategory);
+    this.db.PloughUtils.addPlough(data, category, this.subCategory);
     //todo notification
   };
 
