@@ -14,85 +14,77 @@
           <th scope="col">Speed</th>
           <th scope="col">Weight</th>
           <th scope="col">Working Width</th>
-          <th scope="col" class="btn-warning">Изтриване</th>
+          <th scope="col" class="btn-warning color-primary-0">Изтриване</th>
         </tr>
         <tr id="{{ el.key }}" *ngFor="let el of (collection | keyValueFilter)">
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'model', $event)"
               >{{ el.value.model }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'clearance', $event)"
               >{{ el.value.clearance }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'depthWork', $event)"
               >{{ el.value.depthWork }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'productivity', $event)"
               >{{ el.value.productivity }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'reqHP', $event)"
               >{{ el.value.reqHP }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'speed', $event)"
               >{{ el.value.speed }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'weight', $event)"
               >{{ el.value.weight }}</span
             >
           </td>
           <td>
             <span
-              attr.data-id="{{ el.key }}"
               contenteditable="true"
-              (paste)="changeValue($event)"
-              (keyup)="changeValue($event)"
+              (paste)="changeValue($event, el.key)"
+              (keyup)="changeValue($event, el.key)"
               (blur)="updateList(el.key, 'widthWork', $event)"
               >{{ el.value.widthWork }}</span
             >
@@ -108,7 +100,7 @@
                 class="my-0"
                 (click)="remove(el.key)"
               >
-                Remove
+                X
               </button>
             </span>
           </td>

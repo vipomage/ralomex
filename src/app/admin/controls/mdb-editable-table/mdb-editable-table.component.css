@@ -1,3 +1,4 @@
-td:has(span:focus) {
-  background-color: #00ff75;
+th {
+  font-weight: bold;
+  color: black;
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FireService } from '../../../tools/services/fire.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-mdb-editable-table',
@@ -12,21 +13,24 @@ export class MdbEditableTableComponent {
   @Input() collection;
   editField: string;
   changeExist: boolean = false;
+  updatedRow: HTMLElement;
 
-  constructor(private db: FireService) {}
+  constructor(private toastR: ToastrService, private db: FireService) {}
 
   updateList(id: string, property: string, event: any) {
     const editField = event.target.textContent;
     let val = {};
-    //check if value changed
     if (this.changeExist) {
-      //Value Changed
       val[property] = editField;
       this.db.PloughUtils.updatePlough(val, this.category, this.subCategory, id)
         .then(() => {
           this.collection[id][property] = editField;
           this.changeExist = false;
-          //todo notification
+          this.updatedRow.removeAttribute('style');
+          this.toastR.success(
+            `${property.toUpperCase()}: ${editField}`,
+            'Saved!'
+          );
         })
         .catch(e => console.log(e.message));
     }
@@ -36,15 +40,17 @@ export class MdbEditableTableComponent {
     if (window.confirm('Сигурни ли сте че искате да изтриете този продукт?'))
       this.db.PloughUtils.deletePlough(this.category, this.subCategory, id)
         .then(() => {
-          //notification
+          this.toastR.info('Item Deleted!');
           delete this.collection[id];
           document.getElementById(id).remove();
         })
         .catch((e: ErrorEvent) => console.log(e.message));
   }
 
-  changeValue(event: any) {
+  changeValue(event: any, id: string) {
     this.editField = event.target.textContent;
+    this.updatedRow = document.getElementById(id);
+    this.updatedRow.setAttribute('style', 'background-color:#00ff75;');
     this.changeExist = true;
   }
 }

@@ -3,6 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,10 @@ import { Observable } from 'rxjs';
 export class AuthService {
   user: Observable<firebase.User>;
   remember: boolean;
-  constructor(private firebaseAuth: AngularFireAuth) {
+  constructor(
+    private toastR: ToastrService,
+    private firebaseAuth: AngularFireAuth
+  ) {
     this.user = firebaseAuth.authState;
   }
 
@@ -25,11 +29,7 @@ export class AuthService {
       .then(() => {
         this.firebaseAuth.auth
           .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-          .then(
-            (): void => {
-              console.log('Login Success!');
-            }
-          )
+          .then(() => this.toastR.success('Login Success'))
           .catch((err: ErrorEvent) => {
             console.log('Something went wrong:', err.message);
           });
@@ -38,6 +38,8 @@ export class AuthService {
 
   logout() {
     // noinspection JSIgnoredPromiseFromCall
-    this.firebaseAuth.auth.signOut();
+    this.firebaseAuth.auth
+      .signOut()
+      .then(() => this.toastR.warning('Logout Success'));
   }
 }

@@ -1,3 +1,5 @@
+import { environment as devEnv } from './environment';
+
 export const environment = {
   production: true,
   firebase: {
@@ -8,5 +10,5 @@ export const environment = {
     storageBucket: 'ralomex-34693.appspot.com',
     messagingSenderId: '130489209852',
   },
-  baseHref: 'https://vipomage.github.io/ralomex/',
+  toastr:devEnv.toastr,
 };

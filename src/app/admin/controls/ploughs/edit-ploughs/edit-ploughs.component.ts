@@ -17,7 +17,6 @@ export class EditPloughsComponent implements OnInit {
   constructor(private db: FireService) {}
 
   onCategoryChange = (selectValue: string) => {
-    //todo reset subCategory
     this.subCategory = null;
     this.subCategories = null;
     this.ploughList = null;
