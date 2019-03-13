@@ -1,9 +1,9 @@
 .modal {
   display: none;
 }
-img{
+img {
   max-width: -webkit-fill-available;
-  }
-.btn-primary{
+}
+.btn-primary {
   width: 60%;
-  }
+}

@@ -8,7 +8,7 @@ import { FireService } from '../tools/services/fire.service';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent implements OnInit {
-  constructor(public authService: AuthService,private db:FireService) {}
+  constructor(public authService: AuthService, private db: FireService) {}
 
   ngOnInit() {}
 }

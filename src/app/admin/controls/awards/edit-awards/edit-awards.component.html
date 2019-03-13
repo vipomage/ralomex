@@ -2,7 +2,9 @@
   <form
     *ngIf="awardElement"
     #form="ngForm"
-    (ngSubmit)="editAwardElement(awardElementId, form.value).then(awardElement=null)"
+    (ngSubmit)="
+      editAwardElement(awardElementId, form.value).then((awardElement = null))
+    "
   >
     <img class="img-thumbnail" src="{{ awardElement.image }}" alt="" />
     <div class="form-group">

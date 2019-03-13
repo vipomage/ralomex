@@ -8,9 +8,9 @@ import { FireService, IUnion } from '../tools/services/fire.service';
   styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent implements OnInit {
-  constructor(private db:FireService) {}
+  constructor(private db: FireService) {}
 
-  projects:Observable<IUnion> = this.db.AdminUtils.getElements('projects');
+  projects: Observable<IUnion> = this.db.AdminUtils.getElements('projects');
 
   ngOnInit() {}
 }

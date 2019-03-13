@@ -2,7 +2,9 @@
 <div class="card">
   <div class="card-body">
     <div id="table" class="table-editable">
-      <table class="table table-bordered table-responsive-md table-striped text-center">
+      <table
+        class="table table-bordered table-responsive-md table-striped text-center"
+      >
         <tr>
           <th scope="col">Model</th>
           <th scope="col">Clearance</th>
@@ -14,17 +16,100 @@
           <th scope="col">Working Width</th>
           <th scope="col" class="btn-warning">Изтриване</th>
         </tr>
-        <tr id="{{el.key}}" *ngFor="let el of (collection | keyValueFilter )">
-          <td>    <span  attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'model', $event)">{{el.value.model}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'clearance', $event)">{{el.value.clearance}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'depthWork', $event)">{{el.value.depthWork}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'productivity', $event)">{{el.value.productivity}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'reqHP', $event)">{{el.value.reqHP}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'speed', $event)">{{el.value.speed}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'weight', $event)">{{el.value.weight}}</span>
-          </td><td><span attr.data-id="{{el.key}}" contenteditable="true" (paste)="changeValue($event)" (keyup)="changeValue($event)" (blur)="updateList(el.key, 'widthWork', $event)">{{el.value.widthWork}}</span>
-          </td><td><span class="table-remove">
-              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(el.key)">Remove</button>
+        <tr id="{{ el.key }}" *ngFor="let el of (collection | keyValueFilter)">
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'model', $event)"
+              >{{ el.value.model }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'clearance', $event)"
+              >{{ el.value.clearance }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'depthWork', $event)"
+              >{{ el.value.depthWork }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'productivity', $event)"
+              >{{ el.value.productivity }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'reqHP', $event)"
+              >{{ el.value.reqHP }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'speed', $event)"
+              >{{ el.value.speed }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'weight', $event)"
+              >{{ el.value.weight }}</span
+            >
+          </td>
+          <td>
+            <span
+              attr.data-id="{{ el.key }}"
+              contenteditable="true"
+              (paste)="changeValue($event)"
+              (keyup)="changeValue($event)"
+              (blur)="updateList(el.key, 'widthWork', $event)"
+              >{{ el.value.widthWork }}</span
+            >
+          </td>
+          <td>
+            <span class="table-remove">
+              <button
+                type="button"
+                mdbBtn
+                color="danger"
+                rounded="true"
+                size="sm"
+                class="my-0"
+                (click)="remove(el.key)"
+              >
+                Remove
+              </button>
             </span>
           </td>
         </tr>

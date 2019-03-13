@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../../../../tools/services/image.service';
 import { FireService } from '../../../../tools/services/fire.service';
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
-import { Project } from '../../../../tools/interfaces/project'
+import { Project } from '../../../../tools/interfaces/project';
 
 @Component({
   selector: 'app-add-projects',

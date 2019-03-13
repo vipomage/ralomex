@@ -2,7 +2,9 @@
   <form
     *ngIf="homeElement"
     #form="ngForm"
-    (ngSubmit)="editHomeElement(homeElementId, form.value).then(homeElement=null)"
+    (ngSubmit)="
+      editHomeElement(homeElementId, form.value).then((homeElement = null))
+    "
   >
     <div class="form-group">
       <label for="heading">Заглавие</label>

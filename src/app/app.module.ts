@@ -105,6 +105,6 @@ import { AppComponent } from './app.component';
 
   bootstrap: [AppComponent],
   providers: [FireService],
-  exports:[RouterModule]
+  exports: [RouterModule],
 })
 export class AppModule {}

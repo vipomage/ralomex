@@ -1,17 +1,20 @@
 <div class="container-fluid text-center">
-  <div class="wrapper w-auto" *ngFor="let project of projects | async | keyValueFilter ">
+  <div
+    class="wrapper w-auto"
+    *ngFor="let project of (projects | async | keyValueFilter)"
+  >
     <button
       class="btn btn-primary "
-      [attr.data-target]="'#modal-'+project.key"
+      [attr.data-target]="'#modal-' + project.key"
       data-toggle="modal"
       type="button"
     >
-      {{project.value.heading}}
+      {{ project.value.heading }}
     </button>
     <!-- Modal -->
     <div
       class="modal fade"
-      id="modal-{{project.key}}"
+      id="modal-{{ project.key }}"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel"
@@ -25,9 +28,7 @@
         <div class="modal-content">
           <!--Header-->
           <div class="modal-header">
-            <p class="heading lead text-center">
-              {{project.value.heading}}
-            </p>
+            <p class="heading lead text-center">{{ project.value.heading }}</p>
 
             <button
               type="button"
@@ -42,14 +43,9 @@
           <!--Body-->
           <div class="modal-body">
             <div class="text-center">
-              <img
-                src="{{project.value.image}}"
-                alt=""
-              />
-              <hr>
-              <p>
-                {{project.value.content}}
-              </p>
+              <img src="{{ project.value.image }}" alt="" />
+              <hr />
+              <p>{{ project.value.content }}</p>
             </div>
           </div>
 

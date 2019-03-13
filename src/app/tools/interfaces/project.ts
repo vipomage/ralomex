@@ -1,5 +1,5 @@
 export interface Project {
-  image?:string|string[];
-  content:string;
-  heading:string;
+  image?: string | string[];
+  content: string;
+  heading: string;
 }

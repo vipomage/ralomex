@@ -1,29 +1,28 @@
-.container-fluid{
+.container-fluid {
   border-radius: 5px 5px 0 0;
-  }
-.footer-copyright{
+}
+.footer-copyright {
   border-radius: 0 0 5px 5px;
-  }
+}
 
-.page-footer{
+.page-footer {
   border-radius: 10px 10px 0 0;
   padding: 30px;
 }
-.page-footer > *{
+.page-footer > * {
   background-color: rgba(102, 162, 96, 0.6);
-  }
-li{
+}
+li {
   display: inline-block;
   margin: 10px;
   text-align: center;
   font-size: 30px;
-  }
+}
 li a {
   font-size: 50px;
   margin: 10px;
-  line-height: 0.5rem
-  }
-a:hover{
+  line-height: 0.5rem;
+}
+a:hover {
   color: black;
-  }
-
+}

@@ -33,9 +33,12 @@ const routes: Routes = [
         component: PloughControlsComponent,
         outlet: 'admin',
         children: [
-          { path: 'edit',         component: EditPloughsComponent,   outlet: 'controls'},
-          { path: 'add',          component: AddPloughComponent,     outlet: 'controls'},
-          { path: 'addCategory',  component: AddCategoryComponent,   outlet: 'controls',
+          { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
+          { path: 'add', component: AddPloughComponent, outlet: 'controls' },
+          {
+            path: 'addCategory',
+            component: AddCategoryComponent,
+            outlet: 'controls',
           },
         ],
       },
@@ -44,7 +47,7 @@ const routes: Routes = [
         component: HomeControlsComponent,
         outlet: 'admin',
         children: [
-          { path: 'add',  component: AddHomeComponent,  outlet: 'controls' },
+          { path: 'add', component: AddHomeComponent, outlet: 'controls' },
           { path: 'edit', component: EditHomeComponent, outlet: 'controls' },
         ],
       },
@@ -53,7 +56,7 @@ const routes: Routes = [
         component: AwardsControlsComponent,
         outlet: 'admin',
         children: [
-          { path: 'add',  component: AddAwardsComponent,  outlet: 'controls' },
+          { path: 'add', component: AddAwardsComponent, outlet: 'controls' },
           { path: 'edit', component: EditAwardsComponent, outlet: 'controls' },
         ],
       },
@@ -62,7 +65,7 @@ const routes: Routes = [
         component: NewsControlComponent,
         outlet: 'admin',
         children: [
-          { path: 'add',  component: AddNewsComponent,  outlet: 'controls' },
+          { path: 'add', component: AddNewsComponent, outlet: 'controls' },
           { path: 'edit', component: EditNewsComponent, outlet: 'controls' },
         ],
       },
@@ -71,8 +74,12 @@ const routes: Routes = [
         component: ProjectsControlComponent,
         outlet: 'admin',
         children: [
-          { path: 'add', component: AddProjectsComponent,   outlet: 'controls' },
-          { path: 'edit',component: EditProjectsComponent,  outlet: 'controls',},
+          { path: 'add', component: AddProjectsComponent, outlet: 'controls' },
+          {
+            path: 'edit',
+            component: EditProjectsComponent,
+            outlet: 'controls',
+          },
         ],
       },
     ],
@@ -105,7 +112,7 @@ const routes: Routes = [
     ProjectsControlComponent,
     AddProjectsComponent,
     EditProjectsComponent,
-    MdbEditableTableComponent
+    MdbEditableTableComponent,
   ],
   exports: [RouterModule],
 })

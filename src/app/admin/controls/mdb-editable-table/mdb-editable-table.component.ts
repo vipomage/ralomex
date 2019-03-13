@@ -33,14 +33,14 @@ export class MdbEditableTableComponent {
   }
 
   remove(id: any) {
-    if(window.confirm('Сигурни ли сте че искате да изтриете този продукт?'))
-    this.db.PloughUtils.deletePlough(this.category, this.subCategory, id)
-      .then(() => {
-        //notification
-        delete this.collection[id]
-        document.getElementById(id).remove();
-      })
-      .catch((e: ErrorEvent) => console.log(e.message));
+    if (window.confirm('Сигурни ли сте че искате да изтриете този продукт?'))
+      this.db.PloughUtils.deletePlough(this.category, this.subCategory, id)
+        .then(() => {
+          //notification
+          delete this.collection[id];
+          document.getElementById(id).remove();
+        })
+        .catch((e: ErrorEvent) => console.log(e.message));
   }
 
   changeValue(event: any) {

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService, IUnion } from '../../../../tools/services/fire.service'
-import { ImageService } from '../../../../tools/services/image.service'
-import { Observable } from 'rxjs'
+import { FireService, IUnion } from '../../../../tools/services/fire.service';
+import { ImageService } from '../../../../tools/services/image.service';
+import { Observable } from 'rxjs';
 import { Project } from '../../../../tools/interfaces/project';
-
 
 @Component({
   selector: 'app-edit-projects',
@@ -13,7 +12,7 @@ import { Project } from '../../../../tools/interfaces/project';
 export class EditProjectsComponent implements OnInit {
   constructor(private db: FireService, private imgService: ImageService) {}
 
-  elements:Observable<IUnion> = this.db.AdminUtils.getElements('projects');
+  elements: Observable<IUnion> = this.db.AdminUtils.getElements('projects');
   projectElementId: string;
   projectElement: Project;
 
@@ -28,7 +27,7 @@ export class EditProjectsComponent implements OnInit {
     );
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.AdminUtils.deleteElementById(elementId,'projects');
+      return this.db.AdminUtils.deleteElementById(elementId, 'projects');
     }
   };
 
@@ -51,7 +50,7 @@ export class EditProjectsComponent implements OnInit {
         formData.image = this.projectElement.image as string;
     }
 
-    return this.db.AdminUtils.updateElementById(id,'projects', formData);
+    return this.db.AdminUtils.updateElementById(id, 'projects', formData);
   };
 
   ngOnInit() {}

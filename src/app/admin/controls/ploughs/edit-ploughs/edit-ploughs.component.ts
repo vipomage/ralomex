@@ -9,9 +9,9 @@ import { FireService } from '../../../../tools/services/fire.service';
 export class EditPloughsComponent implements OnInit {
   category: string;
   categories: string[];
-  subCategories:string[];
-  subCategory:string;
-  subCategoryData:string;
+  subCategories: string[];
+  subCategory: string;
+  subCategoryData: string;
   ploughList;
   data;
   constructor(private db: FireService) {}
@@ -29,14 +29,14 @@ export class EditPloughsComponent implements OnInit {
     });
   };
 
-  onSubCatChange = (selectValue:string)=>{
+  onSubCatChange = (selectValue: string) => {
     this.subCategory = selectValue;
     this.subCategoryData = this.data[this.subCategory];
     this.ploughList = this.data[selectValue]['collection'];
   };
 
   ngOnInit() {
-    this.db.getType(`ploughs`).subscribe((res:any) => {
+    this.db.getType(`ploughs`).subscribe((res: any) => {
       this.categories = Object.keys(res.types);
     });
   }
