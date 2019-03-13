@@ -11,12 +11,17 @@ export class EditPloughsComponent implements OnInit {
   categories: string[];
   subCategories:string[];
   subCategory:string;
+  subCategoryData:string;
   ploughList;
   data;
   constructor(private db: FireService) {}
 
   onCategoryChange = (selectValue: string) => {
     //todo reset subCategory
+    this.subCategory = null;
+    this.subCategories = null;
+    this.ploughList = null;
+
     this.category = selectValue;
     this.db.getType('ploughs/types/' + selectValue).subscribe(res => {
       this.data = res['collection'];
@@ -25,7 +30,8 @@ export class EditPloughsComponent implements OnInit {
   };
 
   onSubCatChange = (selectValue:string)=>{
-    this.subCategory = this.data[selectValue];
+    this.subCategory = selectValue;
+    this.subCategoryData = this.data[this.subCategory];
     this.ploughList = this.data[selectValue]['collection'];
   };
 

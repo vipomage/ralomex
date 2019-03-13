@@ -24,6 +24,10 @@
     </select>
   </div>
   <div *ngIf="ploughList">
-    <app-mdb-editable-table [collection]="ploughList"></app-mdb-editable-table>
+    <app-mdb-editable-table
+      [category]="category"
+      [subCategory]="subCategory"
+      [collection]="ploughList"
+    ></app-mdb-editable-table>
   </div>
 </div>
