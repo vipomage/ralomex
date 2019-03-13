@@ -10,5 +10,10 @@ export const environment = {
     storageBucket: 'ralomex-34693.appspot.com',
     messagingSenderId: '130489209852',
   },
-  toastr:devEnv.toastr,
+  toastr: {
+    timeOut: 4000,
+    positionClass: 'toast-bottom-right',
+    maxOpened: 3,
+    newestOnTop: true,
+  },
 };

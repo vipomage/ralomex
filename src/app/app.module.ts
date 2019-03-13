@@ -88,7 +88,7 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes, { enableTracing: false }),
+    RouterModule.forRoot(routes, { enableTracing: false}),
     AngularFireModule.initializeApp(environment.firebase),
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(environment.toastr),
