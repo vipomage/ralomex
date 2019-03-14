@@ -5,7 +5,6 @@
 }
 
 .logo-container {
-  /*float: left;*/
   margin: 0 15px;
   display: inline-flex;
 }
@@ -52,11 +51,6 @@ ul li {
   font-weight: bold;
   color: white;
 }
-/*ul li:hover {*/
-/*font-weight: bolder;*/
-/*-webkit-transform: scale(1.5);*/
-/*color: black;*/
-/*}*/
 a:hover {
   -webkit-transition-duration: 500ms;
   -o-transition-duration: 500ms;

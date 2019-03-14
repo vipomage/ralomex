@@ -1,5 +1,4 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// noinspection ES6UnusedImports
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
@@ -105,7 +104,6 @@ import { AppComponent } from './app.component';
     FormsModule,
     PipesModule,
   ],
-
   bootstrap: [AppComponent],
   providers: [FireService],
   exports: [RouterModule],

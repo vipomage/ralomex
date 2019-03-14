@@ -6,3 +6,6 @@
 .card {
   text-align: center;
 }
+.row{
+  display: block;
+  }

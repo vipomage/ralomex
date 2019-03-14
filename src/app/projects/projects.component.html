@@ -3,14 +3,14 @@
     class="wrapper w-auto"
     *ngFor="let project of (projects | async | keyValueFilter)"
   >
-    <button
-      class="btn btn-primary "
+    <a
+      class="btn btn-primary"
       [attr.data-target]="'#modal-' + project.key"
       data-toggle="modal"
       type="button"
     >
       {{ project.value.heading }}
-    </button>
+    </a>
     <!-- Modal -->
     <div
       class="modal fade"

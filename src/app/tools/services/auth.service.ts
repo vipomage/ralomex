@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class AuthService {
   user: Observable<firebase.User>;
   remember: boolean;
+  oAuthProvider:GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
   constructor(
     private toastR: ToastrService,
     private firebaseAuth: AngularFireAuth
@@ -28,8 +30,11 @@ export class AuthService {
       )
       .then(() => {
         this.firebaseAuth.auth
-          .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-          .then(() => this.toastR.success('Login Success'))
+          .signInWithPopup(this.oAuthProvider)
+          .then(() => {
+            console.log('Login Success');
+            this.toastR.success('Login Success')
+          })
           .catch((err: ErrorEvent) => {
             console.log('Something went wrong:', err.message);
           });
