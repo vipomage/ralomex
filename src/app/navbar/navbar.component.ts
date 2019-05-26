@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  public visible: boolean = true;
+  public visible = true;
   constructor() {}
 
   itemPicked = () => (this.visible = !this.visible);
