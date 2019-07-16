@@ -1,54 +1,85 @@
-<nav class="nav-container">
-  <ul (mouseleave)="visible = false" class="nav-items">
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="admin"
-        >Admin</a
-      >
-    </li>
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="products"
-        >Products</a
-      >
-    </li>
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="news"
-        >News</a
-      >
-    </li>
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="awards"
-        >Awards</a
-      >
-    </li>
-    <li
-      (mouseenter)="visible = true"
-      (click)="visible = true"
-      class="logo-item"
-    >
-      <a routerLinkActive="active" routerLink="home">
-        <div class="logo-container">
-          <img class="logo" src="./assets/img/logo.png" alt="ralomex logo" />
-          <div class="logo-text-container">
-            <p class="title">ralomex <i class="far fa-registered"></i></p>
-            <p class="follower">machines for modern agriculture</p>
-          </div>
-        </div>
-      </a>
-    </li>
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="projects"
-        >Projects</a
-      >
-    </li>
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="history"
-        >History</a
-      >
-    </li>
-    <li [className]="visible ? 'visible' : 'hidden'">
-      <a (click)="itemPicked()" routerLinkActive="active" routerLink="about"
-        >About Us</a
-      >
-    </li>
-  </ul>
+<nav class="nav-container container-fluid">
+  <div class="row">
+    <div routerLink="/" class="logo-container col-lg-5">
+      <div class="row">
+        <img src="../../assets/img/logo.png" alt="Ralomex logo"/>
+        <h1 class=" ralomex-heading">раломекс <span class="registered">&reg;</span></h1>
+        <span></span>
+      </div>
+    </div>
+    <div class="nav-link-wrapper col-lg-7">
+      <div class="row">
+        <a class="col-md-3" routerLinkActive="active" routerLink="products">Продукти</a>
+        <a class="col-md-3" routerLinkActive="active" routerLink="news">Новини</a>
+        <a class="col-md-3" routerLinkActive="active" routerLink="about">За нас</a>
+        <a class="col-md-3" routerLinkActive="active" routerLink="contacts">Контакти</a>
+      </div>
+    </div>
+  </div>
+  <div class="languages row">
+    <div class="col-lg-10"></div>
+    <div class="col-lg-2 row"><h1>ENG</h1>/<h1>BG</h1></div>
+  </div>
 </nav>
+
+<!--    <div class="col-8 nav-link-wrapper">-->
+<!--    </div>-->
+<!--  <ul class="nav-items navigation-bar row col-md-auto">-->
+<!--    <li class="nav-item"><a routerLinkActive="active" routerLink="Products">Products</a></li>-->
+<!--    <li class="nav-item"><a routerLinkActive="active" routerLink="news">News</a></li>-->
+<!--    <li class="nav-item"><a routerLinkActive="active" routerLink="about">About Us</a></li>-->
+<!--    <li class="nav-item"><a routerLinkActive="active" routerLink="contacts">About Us</a></li>-->
+<!--  </ul>-->
+
+<!--  <ul (mouseleave)="visible = false" class="nav-items">-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="admin"-->
+<!--        >Admin</a-->
+<!--      >-->
+<!--    </li>-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="products"-->
+<!--        >Products</a-->
+<!--      >-->
+<!--    </li>-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="news"-->
+<!--        >News</a-->
+<!--      >-->
+<!--    </li>-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="awards"-->
+<!--        >Awards</a-->
+<!--      >-->
+<!--    </li>-->
+<!--    <li-->
+<!--      (mouseenter)="visible = true"-->
+<!--      (click)="visible = true"-->
+<!--      class="logo-item"-->
+<!--    >-->
+<!--      <a routerLinkActive="active" routerLink="home">-->
+<!--        <div class="logo-container">-->
+<!--          <img class="logo" src="./assets/img/logo.png" alt="ralomex logo" />-->
+<!--          <div class="logo-text-container">-->
+<!--            <p class="title">ralomex <i class="far fa-registered"></i></p>-->
+<!--            <p class="follower">machines for modern agriculture</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="projects"-->
+<!--        >Projects</a-->
+<!--      >-->
+<!--    </li>-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="history"-->
+<!--        >History</a-->
+<!--      >-->
+<!--    </li>-->
+<!--    <li [className]="visible ? 'visible' : 'hidden'">-->
+<!--      <a (click)="itemPicked()" routerLinkActive="active" routerLink="about"-->
+<!--        >About Us</a-->
+<!--      >-->
+<!--    </li>-->
+<!--  </ul>-->

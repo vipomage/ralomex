@@ -25,7 +25,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: HomeComponent, outlet: 'products' },
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
-      { path: 'cultivators',component: CultivatorsComponent,outlet: 'products'},
+      { path: 'cultivators', component: CultivatorsComponent, outlet: 'products'},
       { path: 'shredders', component: ShreddersComponent, outlet: 'products' },
       { path: 'ploughs', component: PloughsComponent, outlet: 'products' },
       { path: 'special', component: SpecialComponent, outlet: 'products' },
@@ -42,6 +42,6 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'awards', component: AwardsComponent },
-  { path: 'product/:type/:category/:subCategory/:id',component: ProductComponent},
-  { path: '', redirectTo: 'home',pathMatch:'full' },
+  { path: 'product/:type/:category/:subCategory/:id', component: ProductComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
