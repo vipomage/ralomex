@@ -197,10 +197,7 @@
       // style.backgroundColor = '#f00'; // debug
       if (this.domElement) {
         this.domElement.appendChild(this.div);
-        this.div.innerHTML = this.getHTML(box.width, box.height).replace(
-          /&/g,
-          '&amp;'
-        );
+        this.div.innerHTML = this.getHTML(box.width, box.height).replace(/&/g, '&amp;');
       }
     },
 
@@ -308,9 +305,7 @@
       }
 
       if (this.domElement && this.div) {
-        var box = ZeroClipboard_TableTools.getDOMObjectPosition(
-          this.domElement
-        );
+        var box = ZeroClipboard_TableTools.getDOMObjectPosition(this.domElement);
         var style = this.div.style;
         style.left = '' + box.left + 'px';
         style.top = '' + box.top + 'px';
@@ -470,11 +465,7 @@
       } // switch eventName
 
       if (this.handlers[eventName]) {
-        for (
-          var idx = 0, len = this.handlers[eventName].length;
-          idx < len;
-          idx++
-        ) {
+        for (var idx = 0, len = this.handlers[eventName].length; idx < len; idx++) {
           var func = this.handlers[eventName][idx];
 
           if (typeof func == 'function') {
@@ -580,11 +571,7 @@
    * @return {string}        Newline character
    */
   var _newLine = function(config) {
-    return config.newline
-      ? config.newline
-      : navigator.userAgent.match(/Windows/)
-      ? '\r\n'
-      : '\n';
+    return config.newline ? config.newline : navigator.userAgent.match(/Windows/) ? '\r\n' : '\n';
   };
 
   /**
@@ -613,9 +600,7 @@
         }
 
         s += boundary
-          ? boundary +
-            ('' + a[i]).replace(reBoundary, escapeChar + boundary) +
-            boundary
+          ? boundary + ('' + a[i]).replace(reBoundary, escapeChar + boundary) + boundary
           : a[i];
       }
 
@@ -623,8 +608,7 @@
     };
 
     var header = config.header ? join(data.header) + newLine : '';
-    var footer =
-      config.footer && data.footer ? newLine + join(data.footer) : '';
+    var footer = config.footer && data.footer ? newLine + join(data.footer) : '';
     var body = [];
 
     for (var i = 0, ien = data.body.length; i < ien; i++) {
@@ -785,11 +769,11 @@
 
   var _serialiser = '';
   if (typeof window.XMLSerializer === 'undefined') {
-    _serialiser = new function() {
+    _serialiser = new (function() {
       this.serializeToString = function(input) {
         return input.xml;
       };
-    }();
+    })();
   } else {
     _serialiser = new XMLSerializer();
   }
@@ -806,9 +790,7 @@
       // drop attributes
       _ieExcel =
         _serialiser
-          .serializeToString(
-            $.parseXML(excelStrings['xl/worksheets/sheet1.xml'])
-          )
+          .serializeToString($.parseXML(excelStrings['xl/worksheets/sheet1.xml']))
           .indexOf('xmlns:r') === -1;
     }
 
@@ -838,9 +820,7 @@
           }
 
           for (i = 0, ien = attrs.length; i < ien; i++) {
-            var attr = val.createAttribute(
-              attrs[i].name.replace(':', '_dt_b_namespace_token_')
-            );
+            var attr = val.createAttribute(attrs[i].name.replace(':', '_dt_b_namespace_token_'));
             attr.value = attrs[i].value;
             worksheet.setAttributeNode(attr);
           }
@@ -852,8 +832,7 @@
         if (_ieExcel) {
           // IE doesn't include the XML declaration
           if (str.indexOf('<?xml') === -1) {
-            str =
-              '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' + str;
+            str = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' + str;
           }
 
           // Return namespace attributes to being as such
@@ -1144,9 +1123,7 @@
 
   // Set the default SWF path
   DataTable.Buttons.swfPath =
-    '//cdn.datatables.net/buttons/' +
-    DataTable.Buttons.version +
-    '/swf/flashExport.swf';
+    '//cdn.datatables.net/buttons/' + DataTable.Buttons.version + '/swf/flashExport.swf';
 
   // Method to allow Flash buttons to be resized when made visible - as they are
   // of zero height and width if initialised hidden
@@ -1237,9 +1214,7 @@
       var flash = config._flash;
       var data = _exportData(dt, config);
       var info = dt.buttons.exportInfo(config);
-      var output = config.customize
-        ? config.customize(data.str, config, dt)
-        : data.str;
+      var output = config.customize ? config.customize(data.str, config, dt) : data.str;
 
       flash.setAction('csv');
       flash.setFileName(info.filename);
@@ -1271,9 +1246,7 @@
         },
         xl: {
           _rels: {
-            'workbook.xml.rels': $.parseXML(
-              excelStrings['xl/_rels/workbook.xml.rels']
-            ),
+            'workbook.xml.rels': $.parseXML(excelStrings['xl/_rels/workbook.xml.rels']),
           },
           'workbook.xml': $.parseXML(excelStrings['xl/workbook.xml']),
           'styles.xml': $.parseXML(excelStrings['xl/styles.xml']),
@@ -1313,11 +1286,7 @@
             // TODO Need to provide the ability for the specials to say
             // if they are returning a string, since at the moment it is
             // assumed to be a number
-            if (
-              row[i].match &&
-              !row[i].match(/^0\d+/) &&
-              row[i].match(special.match)
-            ) {
+            if (row[i].match && !row[i].match(/^0\d+/) && row[i].match(special.match)) {
               var val = row[i].replace(/[^\d\.\-]/g, '');
 
               if (special.fmt) {
@@ -1339,9 +1308,7 @@
           if (!cell) {
             if (
               typeof row[i] === 'number' ||
-              (row[i].match &&
-                row[i].match(/^-?\d+(\.\d+)?$/) &&
-                !row[i].match(/^0\d+/))
+              (row[i].match && row[i].match(/^-?\d+(\.\d+)?$/) && !row[i].match(/^0\d+/))
             ) {
               // Detect numbers - don't match numbers with leading zeros
               // or a negative anywhere but the start
@@ -1383,10 +1350,7 @@
         rowPos++;
       };
 
-      $('sheets sheet', xlsx.xl['workbook.xml']).attr(
-        'name',
-        _sheetname(config)
-      );
+      $('sheets sheet', xlsx.xl['workbook.xml']).attr('name', _sheetname(config));
 
       if (config.customizeData) {
         config.customizeData(data);

@@ -20,10 +20,8 @@ var WOW;
             }
 
             if (
-              (windowHeight + scroll - 100 > getOffset(this) &&
-                scroll < getOffset(this)) ||
-              (windowHeight + scroll - 100 >
-                getOffset(this) + $(this).height() &&
+              (windowHeight + scroll - 100 > getOffset(this) && scroll < getOffset(this)) ||
+              (windowHeight + scroll - 100 > getOffset(this) + $(this).height() &&
                 scroll < getOffset(this) + $(this).height()) ||
               (windowHeight + scroll == $(document).height() &&
                 getOffset(this) + 100 > $(document).height())
@@ -113,10 +111,8 @@ var WOW;
 
           $('.wow.animated').each(function() {
             if (
-              (windowHeight + scroll - 100 > getOffset(this) &&
-                scroll > getOffset(this) + 100) ||
-              (windowHeight + scroll - 100 < getOffset(this) &&
-                scroll < getOffset(this) + 100) ||
+              (windowHeight + scroll - 100 > getOffset(this) && scroll > getOffset(this) + 100) ||
+              (windowHeight + scroll - 100 < getOffset(this) && scroll < getOffset(this) + 100) ||
               getOffset(this) + $(this).height > $(document).height() - 100
             ) {
               $(this).removeClass('animated');
@@ -154,8 +150,7 @@ var WOW;
           var body = document.body;
           var docEl = document.documentElement;
 
-          var scrollTop =
-            window.pageYOffset || docEl.scrollTop || body.scrollTop;
+          var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
 
           var clientTop = docEl.clientTop || body.clientTop || 0;
 

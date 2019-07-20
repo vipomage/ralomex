@@ -17,10 +17,7 @@ var _this = void 0;
     var $labelAndIcon = $input.siblings('label, i');
     var hasValue = $input.val().length;
     var hasPlaceholder = $input.attr('placeholder');
-    var addOrRemove = ''.concat(
-      hasValue || hasPlaceholder ? 'add' : 'remove',
-      'Class'
-    );
+    var addOrRemove = ''.concat(hasValue || hasPlaceholder ? 'add' : 'remove', 'Class');
     $labelAndIcon[addOrRemove]('active');
   };
 
@@ -70,10 +67,7 @@ var _this = void 0;
       $hiddenDiv.html(content); // When textarea is hidden, width goes crazy.
       // Approximate with half of window size
 
-      $hiddenDiv.css(
-        'width',
-        $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2
-      );
+      $hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
       $textarea.css('height', $hiddenDiv.height());
     }
   };

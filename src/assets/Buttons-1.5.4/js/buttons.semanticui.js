@@ -5,9 +5,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['jquery', 'datatables.net-se', 'datatables.net-buttons'], function(
-      $
-    ) {
+    define(['jquery', 'datatables.net-se', 'datatables.net-buttons'], function($) {
       return factory($, window, document);
     });
   } else if (typeof exports === 'object') {

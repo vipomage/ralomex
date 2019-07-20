@@ -5,9 +5,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['jquery', 'datatables.net-zf', 'datatables.net-buttons'], function(
-      $
-    ) {
+    define(['jquery', 'datatables.net-zf', 'datatables.net-buttons'], function($) {
       return factory($, window, document);
     });
   } else if (typeof exports === 'object') {
@@ -42,13 +40,11 @@
     DataTable.ext.foundationVersion === 6
       ? {
           tag: 'div',
-          className:
-            'dt-button-collection dropdown-pane is-open button-group stacked',
+          className: 'dt-button-collection dropdown-pane is-open button-group stacked',
         }
       : {
           tag: 'ul',
-          className:
-            'dt-button-collection f-dropdown open dropdown-pane is-open',
+          className: 'dt-button-collection f-dropdown open dropdown-pane is-open',
           button: {
             tag: 'li',
             className: 'small',

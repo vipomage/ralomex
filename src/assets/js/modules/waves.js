@@ -211,10 +211,7 @@
       var parent = element.parentNode;
 
       // If input already have parent just pass through
-      if (
-        parent.tagName.toLowerCase() === 'span' &&
-        parent.classList.contains('waves-effect')
-      ) {
+      if (parent.tagName.toLowerCase() === 'span' && parent.classList.contains('waves-effect')) {
         return;
       }
 
@@ -233,10 +230,7 @@
       var parent = element.parentNode;
 
       // If input already have parent just pass through
-      if (
-        parent.tagName.toLowerCase() === 'i' &&
-        parent.classList.contains('waves-effect')
-      ) {
+      if (parent.tagName.toLowerCase() === 'i' && parent.classList.contains('waves-effect')) {
         return;
       }
 
@@ -356,10 +350,7 @@
     var target = e.target || e.srcElement;
 
     while (target.parentElement) {
-      if (
-        !(target instanceof SVGElement) &&
-        target.classList.contains('waves-effect')
-      ) {
+      if (!(target instanceof SVGElement) && target.classList.contains('waves-effect')) {
         element = target;
         break;
       }

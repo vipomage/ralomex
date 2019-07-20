@@ -1,8 +1,5 @@
 <div class="container-fluid text-center">
-  <div
-    class="wrapper w-auto"
-    *ngFor="let project of (projects | async | keyValueFilter)"
-  >
+  <div class="wrapper w-auto" *ngFor="let project of projects | async | keyValueFilter">
     <a
       class="btn btn-primary"
       [attr.data-target]="'#modal-' + project.key"
@@ -20,22 +17,14 @@
       aria-labelledby="myModalLabel"
       aria-hidden="true"
     >
-      <div
-        class="modal-dialog modal-lg   modal-notify modal-success"
-        role="document"
-      >
+      <div class="modal-dialog modal-lg   modal-notify modal-success" role="document">
         <!--Content-->
         <div class="modal-content">
           <!--Header-->
           <div class="modal-header">
             <p class="heading lead text-center">{{ project.value.heading }}</p>
 
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true" class="white-text">×</span>
             </button>
           </div>
@@ -51,10 +40,7 @@
 
           <!--Footer-->
           <div class="modal-footer text-center">
-            <a
-              type="button"
-              class="btn btn-outline-danger waves-effect"
-              data-dismiss="modal"
+            <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal"
               >Затвори</a
             >
           </div>

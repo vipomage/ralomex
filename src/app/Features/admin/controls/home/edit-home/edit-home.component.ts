@@ -21,9 +21,7 @@ export class EditHomeComponent implements OnInit {
   };
 
   deleteElement = (elementId: string) => {
-    let confirm = window.confirm(
-      'Сигурни ли сте че искате да изтриете този елемент'
-    );
+    let confirm = window.confirm('Сигурни ли сте че искате да изтриете този елемент');
     if (confirm) {
       window.document.getElementById(elementId).remove();
       return this.db.AdminUtils.deleteElementById(elementId, 'homeProducts');

@@ -101,9 +101,7 @@
         for (var i = 0, ien = d.length; i < ien; i++) {
           // null and undefined aren't useful in the print output
           var dataOut = d[i] === null || d[i] === undefined ? '' : d[i];
-          var classAttr = columnClasses[i]
-            ? 'class="' + columnClasses[i] + '"'
-            : '';
+          var classAttr = columnClasses[i] ? 'class="' + columnClasses[i] + '"' : '';
 
           str += '<' + tag + ' ' + classAttr + '>' + dataOut + '</' + tag + '>';
         }

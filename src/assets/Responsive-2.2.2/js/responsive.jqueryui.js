@@ -5,11 +5,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define([
-      'jquery',
-      'datatables.net-jqui',
-      'datatables.net-responsive',
-    ], function($) {
+    define(['jquery', 'datatables.net-jqui', 'datatables.net-responsive'], function($) {
       return factory($, window, document);
     });
   } else if (typeof exports === 'object') {

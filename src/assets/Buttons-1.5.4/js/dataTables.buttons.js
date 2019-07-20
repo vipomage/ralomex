@@ -74,9 +74,7 @@
     };
 
     this.dom = {
-      container: $('<' + this.c.dom.container.tag + '/>').addClass(
-        this.c.dom.container.className
-      ),
+      container: $('<' + this.c.dom.container.tag + '/>').addClass(this.c.dom.container.className),
     };
 
     this._constructor();
@@ -294,15 +292,13 @@
       host.splice(idx, 1);
 
       return this;
-    }
+    },
     /**
      * Set the text for a button
      * @param  {int|string|function} node Button index
      * @param  {string} label Text
      * @return {Buttons} Self for chaining
-     */,
-
-    /**
+     */ /**
      * Get the text for a button
      * @param  {int|string} node Button index
      * @return {string} Button text
@@ -369,10 +365,7 @@
 
       // Global key event binding to listen for button keys
       $('body').on('keyup.' + this.s.namespace, function(e) {
-        if (
-          !document.activeElement ||
-          document.activeElement === document.body
-        ) {
+        if (!document.activeElement || document.activeElement === document.body) {
           // SUse a string of characters for fast lookup of if we need to
           // handle this
           var character = String.fromCharCode(e.keyCode).toLowerCase();
@@ -395,9 +388,7 @@
      */
     _addKey: function(conf) {
       if (conf.key) {
-        this.s.listenKeys += $.isPlainObject(conf.key)
-          ? conf.key.key
-          : conf.key;
+        this.s.listenKeys += $.isPlainObject(conf.key) ? conf.key.key : conf.key;
       }
     },
 
@@ -470,12 +461,7 @@
             .attr('role', 'menu');
           built.conf._collection = built.collection;
 
-          this._expandButton(
-            built.buttons,
-            built.conf.buttons,
-            true,
-            attachPoint
-          );
+          this._expandButton(built.buttons, built.conf.buttons, true, attachPoint);
         }
 
         // init call is made here, rather than buildButton as it needs to
@@ -1148,9 +1134,7 @@
 
         config._collection.find('.dt-button-collection-title').remove();
         config._collection.prepend(
-          '<div class="dt-button-collection-title">' +
-            config.collectionTitle +
-            '</div>'
+          '<div class="dt-button-collection-title">' + config.collectionTitle + '</div>'
         );
 
         config._collection
@@ -1173,12 +1157,8 @@
           });
 
           // calculate overflow when positioned beneath
-          var tableBottom =
-            tableContainer.offset().top + tableContainer.height();
-          var listBottom =
-            hostPosition.top +
-            host.outerHeight() +
-            config._collection.outerHeight();
+          var tableBottom = tableContainer.offset().top + tableContainer.height();
+          var listBottom = hostPosition.top + host.outerHeight() + config._collection.outerHeight();
           var bottomOverflow = listBottom - tableBottom;
 
           // calculate overflow when positioned above
@@ -1188,10 +1168,7 @@
 
           // if bottom overflow is larger, move to the top because it fits better, or if dropup is requested
           if (bottomOverflow > topOverflow || config.dropup) {
-            config._collection.css(
-              'top',
-              hostPosition.top - config._collection.outerHeight() - 5
-            );
+            config._collection.css('top', hostPosition.top - config._collection.outerHeight() - 5);
           }
 
           // Right alignment is enabled on a class, e.g. bootstrap:
@@ -1199,26 +1176,19 @@
           if (config._collection.hasClass(config.rightAlignClassName)) {
             config._collection.css(
               'left',
-              hostPosition.left +
-                host.outerWidth() -
-                config._collection.outerWidth()
+              hostPosition.left + host.outerWidth() - config._collection.outerWidth()
             );
           }
 
           // Right alignment in table container
           var listRight = hostPosition.left + config._collection.outerWidth();
-          var tableRight =
-            tableContainer.offset().left + tableContainer.width();
+          var tableRight = tableContainer.offset().left + tableContainer.width();
           if (listRight > tableRight) {
-            config._collection.css(
-              'left',
-              hostPosition.left - (listRight - tableRight)
-            );
+            config._collection.css('left', hostPosition.left - (listRight - tableRight));
           }
 
           // Right alignment to window
-          var listOffsetRight =
-            host.offset().left + config._collection.outerWidth();
+          var listOffsetRight = host.offset().left + config._collection.outerWidth();
           if (listOffsetRight > $(window).width()) {
             config._collection.css(
               'left',
@@ -1236,12 +1206,7 @@
         }
 
         if (config.background) {
-          Buttons.background(
-            true,
-            config.backgroundClassName,
-            config.fade,
-            insertPoint
-          );
+          Buttons.background(true, config.backgroundClassName, config.fade, insertPoint);
         }
 
         var close = function() {
@@ -1250,12 +1215,7 @@
           });
 
           $('div.dt-button-background').off('click.dtb-collection');
-          Buttons.background(
-            false,
-            config.backgroundClassName,
-            config.fade,
-            insertPoint
-          );
+          Buttons.background(false, config.backgroundClassName, config.fade, insertPoint);
 
           $('body').off('.dtb-collection');
           dt.off('buttons-action.b-internal');
@@ -1268,10 +1228,7 @@
           // background element, iOS Safari will ignore the body click
           // listener below. An empty function here is all that is
           // required to make it work...
-          $('div.dt-button-background').on(
-            'click.dtb-collection',
-            function() {}
-          );
+          $('div.dt-button-background').on('click.dtb-collection', function() {});
 
           $('body')
             .on('click.dtb-collection', function(e) {
@@ -1422,10 +1379,7 @@
       'table',
       function(ctx) {
         if (ctx._buttons) {
-          return Buttons.buttonSelector(
-            Buttons.instanceSelector(group, ctx._buttons),
-            selector
-          );
+          return Buttons.buttonSelector(Buttons.instanceSelector(group, ctx._buttons), selector);
         }
       },
       true
@@ -1448,97 +1402,74 @@
   });
 
   // Active buttons
-  DataTable.Api.registerPlural(
-    'buttons().active()',
-    'button().active()',
-    function(flag) {
-      if (flag === undefined) {
-        return this.map(function(set) {
-          return set.inst.active(set.node);
-        });
-      }
-
-      return this.each(function(set) {
-        set.inst.active(set.node, flag);
+  DataTable.Api.registerPlural('buttons().active()', 'button().active()', function(flag) {
+    if (flag === undefined) {
+      return this.map(function(set) {
+        return set.inst.active(set.node);
       });
     }
-  );
+
+    return this.each(function(set) {
+      set.inst.active(set.node, flag);
+    });
+  });
 
   // Get / set button action
-  DataTable.Api.registerPlural(
-    'buttons().action()',
-    'button().action()',
-    function(action) {
-      if (action === undefined) {
-        return this.map(function(set) {
-          return set.inst.action(set.node);
-        });
-      }
-
-      return this.each(function(set) {
-        set.inst.action(set.node, action);
+  DataTable.Api.registerPlural('buttons().action()', 'button().action()', function(action) {
+    if (action === undefined) {
+      return this.map(function(set) {
+        return set.inst.action(set.node);
       });
     }
-  );
+
+    return this.each(function(set) {
+      set.inst.action(set.node, action);
+    });
+  });
 
   // Enable / disable buttons
-  DataTable.Api.register(['buttons().enable()', 'button().enable()'], function(
-    flag
-  ) {
+  DataTable.Api.register(['buttons().enable()', 'button().enable()'], function(flag) {
     return this.each(function(set) {
       set.inst.enable(set.node, flag);
     });
   });
 
   // Disable buttons
-  DataTable.Api.register(
-    ['buttons().disable()', 'button().disable()'],
-    function() {
-      return this.each(function(set) {
-        set.inst.disable(set.node);
-      });
-    }
-  );
+  DataTable.Api.register(['buttons().disable()', 'button().disable()'], function() {
+    return this.each(function(set) {
+      set.inst.disable(set.node);
+    });
+  });
 
   // Get button nodes
-  DataTable.Api.registerPlural(
-    'buttons().nodes()',
-    'button().node()',
-    function() {
-      var jq = $();
+  DataTable.Api.registerPlural('buttons().nodes()', 'button().node()', function() {
+    var jq = $();
 
-      // jQuery will automatically reduce duplicates to a single entry
-      $(
-        this.each(function(set) {
-          jq = jq.add(set.inst.node(set.node));
-        })
-      );
+    // jQuery will automatically reduce duplicates to a single entry
+    $(
+      this.each(function(set) {
+        jq = jq.add(set.inst.node(set.node));
+      })
+    );
 
-      return jq;
-    }
-  );
+    return jq;
+  });
 
   // Get / set button processing state
-  DataTable.Api.registerPlural(
-    'buttons().processing()',
-    'button().processing()',
-    function(flag) {
-      if (flag === undefined) {
-        return this.map(function(set) {
-          return set.inst.processing(set.node);
-        });
-      }
-
-      return this.each(function(set) {
-        set.inst.processing(set.node, flag);
+  DataTable.Api.registerPlural('buttons().processing()', 'button().processing()', function(flag) {
+    if (flag === undefined) {
+      return this.map(function(set) {
+        return set.inst.processing(set.node);
       });
     }
-  );
+
+    return this.each(function(set) {
+      set.inst.processing(set.node, flag);
+    });
+  });
 
   // Get / set button text (i.e. the button labels)
-  DataTable.Api.registerPlural('buttons().text()', 'button().text()', function(
-    label
-  ) {
+  DataTable.Api.registerPlural('buttons().text()', 'button().text()', function(label) {
     if (label === undefined) {
       return this.map(function(set) {
         return set.inst.text(set.node);
@@ -1551,39 +1482,31 @@
   });
 
   // Trigger a button's action
-  DataTable.Api.registerPlural(
-    'buttons().trigger()',
-    'button().trigger()',
-    function() {
-      return this.each(function(set) {
-        set.inst.node(set.node).trigger('click');
-      });
-    }
-  );
+  DataTable.Api.registerPlural('buttons().trigger()', 'button().trigger()', function() {
+    return this.each(function(set) {
+      set.inst.node(set.node).trigger('click');
+    });
+  });
 
   // Get the container elements
-  DataTable.Api.registerPlural(
-    'buttons().containers()',
-    'buttons().container()',
-    function() {
-      var jq = $();
-      var groupSelector = this._groupSelector;
+  DataTable.Api.registerPlural('buttons().containers()', 'buttons().container()', function() {
+    var jq = $();
+    var groupSelector = this._groupSelector;
 
-      // We need to use the group selector directly, since if there are no buttons
-      // the result set will be empty
-      this.iterator(true, 'table', function(ctx) {
-        if (ctx._buttons) {
-          var insts = Buttons.instanceSelector(groupSelector, ctx._buttons);
+    // We need to use the group selector directly, since if there are no buttons
+    // the result set will be empty
+    this.iterator(true, 'table', function(ctx) {
+      if (ctx._buttons) {
+        var insts = Buttons.instanceSelector(groupSelector, ctx._buttons);
 
-          for (var i = 0, ien = insts.length; i < ien; i++) {
-            jq = jq.add(insts[i].container());
-          }
+        for (var i = 0, ien = insts.length; i < ien; i++) {
+          jq = jq.add(insts[i].container());
         }
-      });
+      }
+    });
 
-      return jq;
-    }
-  );
+    return jq;
+  });
 
   // Add a new button
   DataTable.Api.register('button().add()', function(idx, conf) {
@@ -1613,17 +1536,13 @@
   });
 
   // Remove a button
-  DataTable.Api.registerPlural(
-    'buttons().remove()',
-    'buttons().remove()',
-    function() {
-      this.each(function(set) {
-        set.inst.remove(set.node);
-      });
+  DataTable.Api.registerPlural('buttons().remove()', 'buttons().remove()', function() {
+    this.each(function(set) {
+      set.inst.remove(set.node);
+    });
 
-      return this;
-    }
-  );
+    return this;
+  });
 
   // Information box that can be used by buttons
   var _infoTimer;
@@ -1652,9 +1571,7 @@
 
     $('<div id="datatables_buttons_info" class="dt-button-info"/>')
       .html(title)
-      .append(
-        $('<div/>')[typeof message === 'string' ? 'html' : 'append'](message)
-      )
+      .append($('<div/>')[typeof message === 'string' ? 'html' : 'append'](message))
       .css('display', 'none')
       .appendTo('body')
       .fadeIn();
@@ -1819,10 +1736,7 @@
       }
 
       // Always remove script tags
-      str = str.replace(
-        /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
-        ''
-      );
+      str = str.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
 
       // Always remove comments
       str = str.replace(/<!\-\-.*?\-\->/g, '');
@@ -1871,11 +1785,7 @@
     // to the selected rows. If no rows are selected, all rows will be exported. Specify
     // a `selected` modifier to control directly.
     var modifier = $.extend({}, config.modifier);
-    if (
-      dt.select &&
-      typeof dt.select.info === 'function' &&
-      modifier.selected === undefined
-    ) {
+    if (dt.select && typeof dt.select.info === 'function' && modifier.selected === undefined) {
       if (dt.rows(config.rows, $.extend({ selected: true }, modifier)).any()) {
         $.extend(modifier, { selected: true });
       }
@@ -1898,12 +1808,7 @@
       var row = [columns];
 
       for (var j = 0; j < columns; j++) {
-        row[j] = config.format.body(
-          cells[cellCounter],
-          i,
-          j,
-          cellNodes[cellCounter]
-        );
+        row[j] = config.format.body(cells[cellCounter], i, j, cellNodes[cellCounter]);
         cellCounter++;
       }
 

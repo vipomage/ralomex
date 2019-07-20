@@ -16,14 +16,12 @@ export class AddNewsComponent implements OnInit {
   constructor(public imgService: ImageService, private db: FireService) {}
 
   startUpload = (files: FileList) => {
-    this.imgService
-      .prepToUploadSingle(files, 'news')
-      .then((taskSnap: UploadTaskSnapshot) => {
-        taskSnap.ref.getDownloadURL().then((imgUlr: string) => {
-          this.image = imgUlr;
-          this.imgService.preventEdit = false;
-        });
+    this.imgService.prepToUploadSingle(files, 'news').then((taskSnap: UploadTaskSnapshot) => {
+      taskSnap.ref.getDownloadURL().then((imgUlr: string) => {
+        this.image = imgUlr;
+        this.imgService.preventEdit = false;
       });
+    });
   };
 
   saveNewsElement = (formData: News) => {

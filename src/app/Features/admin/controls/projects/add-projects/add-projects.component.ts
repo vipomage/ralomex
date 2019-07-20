@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../../../../../Tools/services/image.service';
 import { FireService } from '../../../../../Tools/services/fire.service';
-import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
 import { Project } from '../../../../../Tools/interfaces/project';
+import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
 
 @Component({
   selector: 'app-add-projects',
@@ -16,14 +16,12 @@ export class AddProjectsComponent implements OnInit {
   preventEdit = this.imgService.preventEdit;
 
   startUpload = (files: FileList) => {
-    this.imgService
-      .prepToUploadSingle(files, 'projects')
-      .then((taskSnap: UploadTaskSnapshot) => {
-        taskSnap.ref.getDownloadURL().then((imgUlr: string) => {
-          this.image = imgUlr;
-          this.imgService.preventEdit = false;
-        });
+    this.imgService.prepToUploadSingle(files, 'projects').then((taskSnap: UploadTaskSnapshot) => {
+      taskSnap.ref.getDownloadURL().then((imgUlr: string) => {
+        this.image = imgUlr;
+        this.imgService.preventEdit = false;
       });
+    });
   };
 
   saveProjectElement = (formData: Project) => {

@@ -2,9 +2,7 @@
 <div class="card">
   <div class="card-body">
     <div id="table" class="table-editable">
-      <table
-        class="table table-bordered table-responsive-md table-striped text-center"
-      >
+      <table class="table table-bordered table-responsive-md table-striped text-center">
         <tr>
           <th scope="col">Model</th>
           <th scope="col">Clearance</th>
@@ -16,7 +14,7 @@
           <th scope="col">Working Width</th>
           <th scope="col" class="btn-warning color-primary-0">Изтриване</th>
         </tr>
-        <tr id="{{ el.key }}" *ngFor="let el of (collection | keyValueFilter)">
+        <tr id="{{ el.key }}" *ngFor="let el of collection | keyValueFilter">
           <td>
             <span
               contenteditable="true"

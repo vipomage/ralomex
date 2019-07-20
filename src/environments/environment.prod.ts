@@ -1,5 +1,3 @@
-import { environment as devEnv } from './environment';
-
 export const environment = {
   production: true,
   firebase: {

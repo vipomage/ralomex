@@ -13,8 +13,7 @@
   'use strict';
 
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
-  Popper =
-    Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
+  Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -160,9 +159,7 @@
           return null;
         }
       },
-      getTransitionDurationFromElement: function getTransitionDurationFromElement(
-        element
-      ) {
+      getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
         if (!element) {
           return 0;
         } // Get transition-duration of the element
@@ -190,27 +187,18 @@
       isElement: function isElement(obj) {
         return (obj[0] || obj).nodeType;
       },
-      typeCheckConfig: function typeCheckConfig(
-        componentName,
-        config,
-        configTypes
-      ) {
+      typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
         for (var property in configTypes) {
           if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
             var expectedTypes = configTypes[property];
             var value = config[property];
-            var valueType =
-              value && Util.isElement(value) ? 'element' : toType(value);
+            var valueType = value && Util.isElement(value) ? 'element' : toType(value);
 
             if (!new RegExp(expectedTypes).test(valueType)) {
               throw new Error(
                 componentName.toUpperCase() +
                   ': ' +
-                  ('Option "' +
-                    property +
-                    '" provided type "' +
-                    valueType +
-                    '" ') +
+                  ('Option "' + property + '" provided type "' + valueType + '" ') +
                   ('but expected type "' + expectedTypes + '".')
               );
             }
@@ -323,9 +311,7 @@
             return;
           }
 
-          var transitionDuration = Util.getTransitionDurationFromElement(
-            element
-          );
+          var transitionDuration = Util.getTransitionDurationFromElement(element);
           $$$1(element)
             .one(Util.TRANSITION_END, function(event) {
               return _this._destroyElement(element, event);
@@ -383,11 +369,7 @@
      * ------------------------------------------------------------------------
      */
 
-    $$$1(document).on(
-      Event.CLICK_DATA_API,
-      Selector.DISMISS,
-      Alert._handleDismiss(new Alert())
-    );
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
     /**
      * ------------------------------------------------------------------------
      * jQuery
@@ -439,11 +421,7 @@
     var Event = {
       CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY,
       FOCUS_BLUR_DATA_API:
-        'focus' +
-        EVENT_KEY +
-        DATA_API_KEY +
-        ' ' +
-        ('blur' + EVENT_KEY + DATA_API_KEY),
+        'focus' + EVENT_KEY + DATA_API_KEY + ' ' + ('blur' + EVENT_KEY + DATA_API_KEY),
       /**
        * ------------------------------------------------------------------------
        * Class Definition
@@ -464,24 +442,17 @@
         _proto.toggle = function toggle() {
           var triggerChangeEvent = true;
           var addAriaPressed = true;
-          var rootElement = $$$1(this._element).closest(
-            Selector.DATA_TOGGLE
-          )[0];
+          var rootElement = $$$1(this._element).closest(Selector.DATA_TOGGLE)[0];
 
           if (rootElement) {
             var input = this._element.querySelector(Selector.INPUT);
 
             if (input) {
               if (input.type === 'radio') {
-                if (
-                  input.checked &&
-                  this._element.classList.contains(ClassName.ACTIVE)
-                ) {
+                if (input.checked && this._element.classList.contains(ClassName.ACTIVE)) {
                   triggerChangeEvent = false;
                 } else {
-                  var activeElement = rootElement.querySelector(
-                    Selector.ACTIVE
-                  );
+                  var activeElement = rootElement.querySelector(Selector.ACTIVE);
 
                   if (activeElement) {
                     $$$1(activeElement).removeClass(ClassName.ACTIVE);
@@ -499,9 +470,7 @@
                   return;
                 }
 
-                input.checked = !this._element.classList.contains(
-                  ClassName.ACTIVE
-                );
+                input.checked = !this._element.classList.contains(ClassName.ACTIVE);
                 $$$1(input).trigger('change');
               }
 
@@ -570,14 +539,9 @@
 
         Button._jQueryInterface.call($$$1(button), 'toggle');
       })
-      .on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function(
-        event
-      ) {
+      .on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function(event) {
         var button = $$$1(event.target).closest(Selector.BUTTON)[0];
-        $$$1(button).toggleClass(
-          ClassName.FOCUS,
-          /^focus(in)?$/.test(event.type)
-        );
+        $$$1(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
       });
     /**
      * ------------------------------------------------------------------------
@@ -688,9 +652,7 @@
           this.touchTimeout = null;
           this._config = this._getConfig(config);
           this._element = $$$1(element)[0];
-          this._indicatorsElement = this._element.querySelector(
-            Selector.INDICATORS
-          );
+          this._indicatorsElement = this._element.querySelector(Selector.INDICATORS);
 
           this._addEventListeners();
         } // Getters
@@ -748,10 +710,7 @@
 
           if (this._config.interval && !this._isPaused) {
             this._interval = setInterval(
-              (document.visibilityState
-                ? this.nextWhenVisible
-                : this.next
-              ).bind(this),
+              (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
               this._config.interval
             );
           }
@@ -760,9 +719,7 @@
         _proto.to = function to(index) {
           var _this = this;
 
-          this._activeElement = this._element.querySelector(
-            Selector.ACTIVE_ITEM
-          );
+          this._activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
 
           var activeIndex = this._getItemIndex(this._activeElement);
 
@@ -871,17 +828,12 @@
         _proto._getItemIndex = function _getItemIndex(element) {
           this._items =
             element && element.parentNode
-              ? [].slice.call(
-                  element.parentNode.querySelectorAll(Selector.ITEM)
-                )
+              ? [].slice.call(element.parentNode.querySelectorAll(Selector.ITEM))
               : [];
           return this._items.indexOf(element);
         };
 
-        _proto._getItemByDirection = function _getItemByDirection(
-          direction,
-          activeElement
-        ) {
+        _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
           var isNextDirection = direction === Direction.NEXT;
           var isPrevDirection = direction === Direction.PREV;
 
@@ -898,20 +850,13 @@
 
           var delta = direction === Direction.PREV ? -1 : 1;
           var itemIndex = (activeIndex + delta) % this._items.length;
-          return itemIndex === -1
-            ? this._items[this._items.length - 1]
-            : this._items[itemIndex];
+          return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
         };
 
-        _proto._triggerSlideEvent = function _triggerSlideEvent(
-          relatedTarget,
-          eventDirectionName
-        ) {
+        _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
           var targetIndex = this._getItemIndex(relatedTarget);
 
-          var fromIndex = this._getItemIndex(
-            this._element.querySelector(Selector.ACTIVE_ITEM)
-          );
+          var fromIndex = this._getItemIndex(this._element.querySelector(Selector.ACTIVE_ITEM));
 
           var slideEvent = $$$1.Event(Event.SLIDE, {
             relatedTarget: relatedTarget,
@@ -923,18 +868,14 @@
           return slideEvent;
         };
 
-        _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(
-          element
-        ) {
+        _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
           if (this._indicatorsElement) {
             var indicators = [].slice.call(
               this._indicatorsElement.querySelectorAll(Selector.ACTIVE)
             );
             $$$1(indicators).removeClass(ClassName.ACTIVE);
 
-            var nextIndicator = this._indicatorsElement.children[
-              this._getItemIndex(element)
-            ];
+            var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
             if (nextIndicator) {
               $$$1(nextIndicator).addClass(ClassName.ACTIVE);
@@ -950,9 +891,7 @@
           var activeElementIndex = this._getItemIndex(activeElement);
 
           var nextElement =
-            element ||
-            (activeElement &&
-              this._getItemByDirection(direction, activeElement));
+            element || (activeElement && this._getItemByDirection(direction, activeElement));
 
           var nextElementIndex = this._getItemIndex(nextElement);
 
@@ -976,10 +915,7 @@
             return;
           }
 
-          var slideEvent = this._triggerSlideEvent(
-            nextElement,
-            eventDirectionName
-          );
+          var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
 
           if (slideEvent.isDefaultPrevented()) {
             return;
@@ -1010,20 +946,14 @@
             Util.reflow(nextElement);
             $$$1(activeElement).addClass(directionalClassName);
             $$$1(nextElement).addClass(directionalClassName);
-            var transitionDuration = Util.getTransitionDurationFromElement(
-              activeElement
-            );
+            var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
             $$$1(activeElement)
               .one(Util.TRANSITION_END, function() {
                 $$$1(nextElement)
                   .removeClass(directionalClassName + ' ' + orderClassName)
                   .addClass(ClassName.ACTIVE);
                 $$$1(activeElement).removeClass(
-                  ClassName.ACTIVE +
-                    ' ' +
-                    orderClassName +
-                    ' ' +
-                    directionalClassName
+                  ClassName.ACTIVE + ' ' + orderClassName + ' ' + directionalClassName
                 );
                 _this3._isSliding = false;
                 setTimeout(function() {
@@ -1088,11 +1018,7 @@
             return;
           }
 
-          var config = _objectSpread(
-            {},
-            $$$1(target).data(),
-            $$$1(this).data()
-          );
+          var config = _objectSpread({}, $$$1(target).data(), $$$1(this).data());
 
           var slideIndex = this.getAttribute('data-slide-to');
 
@@ -1134,15 +1060,9 @@
      * ------------------------------------------------------------------------
      */
 
-    $$$1(document).on(
-      Event.CLICK_DATA_API,
-      Selector.DATA_SLIDE,
-      Carousel._dataApiClickHandler
-    );
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
     $$$1(window).on(Event.LOAD_DATA_API, function() {
-      var carousels = [].slice.call(
-        document.querySelectorAll(Selector.DATA_RIDE)
-      );
+      var carousels = [].slice.call(document.querySelectorAll(Selector.DATA_RIDE));
 
       for (var i = 0, len = carousels.length; i < len; i++) {
         var $carousel = $$$1(carousels[i]);
@@ -1236,9 +1156,7 @@
                 ('[data-toggle="collapse"][data-target="#' + element.id + '"]')
             )
           );
-          var toggleList = [].slice.call(
-            document.querySelectorAll(Selector.DATA_TOGGLE)
-          );
+          var toggleList = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
           for (var i = 0, len = toggleList.length; i < len; i++) {
             var elem = toggleList[i];
@@ -1281,10 +1199,7 @@
         _proto.show = function show() {
           var _this = this;
 
-          if (
-            this._isTransitioning ||
-            $$$1(this._element).hasClass(ClassName.SHOW)
-          ) {
+          if (this._isTransitioning || $$$1(this._element).hasClass(ClassName.SHOW)) {
             return;
           }
 
@@ -1295,9 +1210,7 @@
             actives = [].slice
               .call(this._parent.querySelectorAll(Selector.ACTIVES))
               .filter(function(elem) {
-                return (
-                  elem.getAttribute('data-parent') === _this._config.parent
-                );
+                return elem.getAttribute('data-parent') === _this._config.parent;
               });
 
             if (actives.length === 0) {
@@ -1323,10 +1236,7 @@
           }
 
           if (actives) {
-            Collapse._jQueryInterface.call(
-              $$$1(actives).not(this._selector),
-              'hide'
-            );
+            Collapse._jQueryInterface.call($$$1(actives).not(this._selector), 'hide');
 
             if (!activesData) {
               $$$1(actives).data(DATA_KEY, null);
@@ -1360,12 +1270,9 @@
             $$$1(_this._element).trigger(Event.SHOWN);
           };
 
-          var capitalizedDimension =
-            dimension[0].toUpperCase() + dimension.slice(1);
+          var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
           var scrollSize = 'scroll' + capitalizedDimension;
-          var transitionDuration = Util.getTransitionDurationFromElement(
-            this._element
-          );
+          var transitionDuration = Util.getTransitionDurationFromElement(this._element);
           $$$1(this._element)
             .one(Util.TRANSITION_END, complete)
             .emulateTransitionEnd(transitionDuration);
@@ -1375,10 +1282,7 @@
         _proto.hide = function hide() {
           var _this2 = this;
 
-          if (
-            this._isTransitioning ||
-            !$$$1(this._element).hasClass(ClassName.SHOW)
-          ) {
+          if (this._isTransitioning || !$$$1(this._element).hasClass(ClassName.SHOW)) {
             return;
           }
 
@@ -1391,8 +1295,7 @@
 
           var dimension = this._getDimension();
 
-          this._element.style[dimension] =
-            this._element.getBoundingClientRect()[dimension] + 'px';
+          this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + 'px';
           Util.reflow(this._element);
           $$$1(this._element)
             .addClass(ClassName.COLLAPSING)
@@ -1406,9 +1309,7 @@
               var selector = Util.getSelectorFromElement(trigger);
 
               if (selector !== null) {
-                var $elem = $$$1(
-                  [].slice.call(document.querySelectorAll(selector))
-                );
+                var $elem = $$$1([].slice.call(document.querySelectorAll(selector)));
 
                 if (!$elem.hasClass(ClassName.SHOW)) {
                   $$$1(trigger)
@@ -1431,9 +1332,7 @@
           };
 
           this._element.style[dimension] = '';
-          var transitionDuration = Util.getTransitionDurationFromElement(
-            this._element
-          );
+          var transitionDuration = Util.getTransitionDurationFromElement(this._element);
           $$$1(this._element)
             .one(Util.TRANSITION_END, complete)
             .emulateTransitionEnd(transitionDuration);
@@ -1480,16 +1379,10 @@
             parent = document.querySelector(this._config.parent);
           }
 
-          var selector =
-            '[data-toggle="collapse"][data-parent="' +
-            this._config.parent +
-            '"]';
+          var selector = '[data-toggle="collapse"][data-parent="' + this._config.parent + '"]';
           var children = [].slice.call(parent.querySelectorAll(selector));
           $$$1(children).each(function(i, element) {
-            _this3._addAriaAndCollapsedClass(
-              Collapse._getTargetFromElement(element),
-              [element]
-            );
+            _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
           });
           return parent;
         };
@@ -1509,9 +1402,7 @@
           }
         }; // Static
 
-        Collapse._getTargetFromElement = function _getTargetFromElement(
-          element
-        ) {
+        Collapse._getTargetFromElement = function _getTargetFromElement(element) {
           var selector = Util.getSelectorFromElement(element);
           return selector ? document.querySelector(selector) : null;
         };
@@ -1570,9 +1461,7 @@
      * ------------------------------------------------------------------------
      */
 
-    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(
-      event
-    ) {
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(event) {
       // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
       if (event.currentTarget.tagName === 'A') {
         event.preventDefault();
@@ -1665,8 +1554,7 @@
       FORM_CHILD: '.dropdown form',
       MENU: '.dropdown-menu',
       NAVBAR_NAV: '.navbar-nav',
-      VISIBLE_ITEMS:
-        '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)',
+      VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)',
     };
     var AttachmentMap = {
       TOP: 'top-start',
@@ -1715,10 +1603,7 @@
 
         // Public
         _proto.toggle = function toggle() {
-          if (
-            this._element.disabled ||
-            $$$1(this._element).hasClass(ClassName.DISABLED)
-          ) {
+          if (this._element.disabled || $$$1(this._element).hasClass(ClassName.DISABLED)) {
             return;
           }
 
@@ -1748,9 +1633,7 @@
              * Popper - https://popper.js.org
              */
             if (typeof Popper === 'undefined') {
-              throw new TypeError(
-                'Bootstrap dropdown require Popper.js (https://popper.js.org)'
-              );
+              throw new TypeError('Bootstrap dropdown require Popper.js (https://popper.js.org)');
             }
 
             var referenceElement = this._element;
@@ -1771,11 +1654,7 @@
               $$$1(parent).addClass(ClassName.POSITION_STATIC);
             }
 
-            this._popper = new Popper(
-              referenceElement,
-              this._menu,
-              this._getPopperConfig()
-            );
+            this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
           } // If this is a touch-enabled device we add extra
           // empty mouseover listeners to the body's immediate children;
           // only needed because of broken event delegation on iOS
@@ -1833,12 +1712,7 @@
         };
 
         _proto._getConfig = function _getConfig(config) {
-          config = _objectSpread(
-            {},
-            this.constructor.Default,
-            $$$1(this._element).data(),
-            config
-          );
+          config = _objectSpread({}, this.constructor.Default, $$$1(this._element).data(), config);
           Util.typeCheckConfig(NAME, config, this.constructor.DefaultType);
           return config;
         };
@@ -1950,9 +1824,7 @@
             return;
           }
 
-          var toggles = [].slice.call(
-            document.querySelectorAll(Selector.DATA_TOGGLE)
-          );
+          var toggles = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
           for (var i = 0, len = toggles.length; i < len; i++) {
             var parent = Dropdown._getParentFromElement(toggles[i]);
@@ -1978,8 +1850,7 @@
 
             if (
               event &&
-              ((event.type === 'click' &&
-                /input|textarea/i.test(event.target.tagName)) ||
+              ((event.type === 'click' && /input|textarea/i.test(event.target.tagName)) ||
                 (event.type === 'keyup' && event.which === TAB_KEYCODE)) &&
               $$$1.contains(parent, event.target)
             ) {
@@ -2008,9 +1879,7 @@
           }
         };
 
-        Dropdown._getParentFromElement = function _getParentFromElement(
-          element
-        ) {
+        Dropdown._getParentFromElement = function _getParentFromElement(element) {
           var parent;
           var selector = Util.getSelectorFromElement(element);
 
@@ -2021,9 +1890,7 @@
           return parent || element.parentNode;
         }; // eslint-disable-next-line complexity
 
-        Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(
-          event
-        ) {
+        Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
           // If not input/textarea:
           //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
           // If input/textarea:
@@ -2035,8 +1902,7 @@
             /input|textarea/i.test(event.target.tagName)
               ? event.which === SPACE_KEYCODE ||
                 (event.which !== ESCAPE_KEYCODE &&
-                  ((event.which !== ARROW_DOWN_KEYCODE &&
-                    event.which !== ARROW_UP_KEYCODE) ||
+                  ((event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE) ||
                     $$$1(event.target).closest(Selector.MENU).length))
               : !REGEXP_KEYDOWN.test(event.which)
           ) {
@@ -2055,11 +1921,8 @@
           var isActive = $$$1(parent).hasClass(ClassName.SHOW);
 
           if (
-            (!isActive &&
-              (event.which !== ESCAPE_KEYCODE ||
-                event.which !== SPACE_KEYCODE)) ||
-            (isActive &&
-              (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE))
+            (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE)) ||
+            (isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE))
           ) {
             if (event.which === ESCAPE_KEYCODE) {
               var toggle = parent.querySelector(Selector.DATA_TOGGLE);
@@ -2070,9 +1933,7 @@
             return;
           }
 
-          var items = [].slice.call(
-            parent.querySelectorAll(Selector.VISIBLE_ITEMS)
-          );
+          var items = [].slice.call(parent.querySelectorAll(Selector.VISIBLE_ITEMS));
 
           if (items.length === 0) {
             return;
@@ -2127,20 +1988,9 @@
      */
 
     $$$1(document)
-      .on(
-        Event.KEYDOWN_DATA_API,
-        Selector.DATA_TOGGLE,
-        Dropdown._dataApiKeydownHandler
-      )
-      .on(
-        Event.KEYDOWN_DATA_API,
-        Selector.MENU,
-        Dropdown._dataApiKeydownHandler
-      )
-      .on(
-        Event.CLICK_DATA_API + ' ' + Event.KEYUP_DATA_API,
-        Dropdown._clearMenus
-      )
+      .on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, Dropdown._dataApiKeydownHandler)
+      .on(Event.KEYDOWN_DATA_API, Selector.MENU, Dropdown._dataApiKeydownHandler)
+      .on(Event.CLICK_DATA_API + ' ' + Event.KEYUP_DATA_API, Dropdown._clearMenus)
       .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -2288,13 +2138,9 @@
 
           this._setResizeEvent();
 
-          $$$1(this._element).on(
-            Event.CLICK_DISMISS,
-            Selector.DATA_DISMISS,
-            function(event) {
-              return _this.hide(event);
-            }
-          );
+          $$$1(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function(event) {
+            return _this.hide(event);
+          });
           $$$1(this._dialog).on(Event.MOUSEDOWN_DISMISS, function() {
             $$$1(_this._element).one(Event.MOUSEUP_DISMISS, function(event) {
               if ($$$1(event.target).is(_this._element)) {
@@ -2343,9 +2189,7 @@
           $$$1(this._dialog).off(Event.MOUSEDOWN_DISMISS);
 
           if (transition) {
-            var transitionDuration = Util.getTransitionDurationFromElement(
-              this._element
-            );
+            var transitionDuration = Util.getTransitionDurationFromElement(this._element);
             $$$1(this._element)
               .one(Util.TRANSITION_END, function(event) {
                 return _this2._hideModal(event);
@@ -2422,9 +2266,7 @@
           };
 
           if (transition) {
-            var transitionDuration = Util.getTransitionDurationFromElement(
-              this._element
-            );
+            var transitionDuration = Util.getTransitionDurationFromElement(this._element);
             $$$1(this._dialog)
               .one(Util.TRANSITION_END, transitionComplete)
               .emulateTransitionEnd(transitionDuration);
@@ -2507,9 +2349,7 @@
         _proto._showBackdrop = function _showBackdrop(callback) {
           var _this8 = this;
 
-          var animate = $$$1(this._element).hasClass(ClassName.FADE)
-            ? ClassName.FADE
-            : '';
+          var animate = $$$1(this._element).hasClass(ClassName.FADE) ? ClassName.FADE : '';
 
           if (this._isShown && this._config.backdrop) {
             this._backdrop = document.createElement('div');
@@ -2552,9 +2392,7 @@
               return;
             }
 
-            var backdropTransitionDuration = Util.getTransitionDurationFromElement(
-              this._backdrop
-            );
+            var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
             $$$1(this._backdrop)
               .one(Util.TRANSITION_END, callback)
               .emulateTransitionEnd(backdropTransitionDuration);
@@ -2618,12 +2456,8 @@
           if (this._isBodyOverflowing) {
             // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
             //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-            var fixedContent = [].slice.call(
-              document.querySelectorAll(Selector.FIXED_CONTENT)
-            );
-            var stickyContent = [].slice.call(
-              document.querySelectorAll(Selector.STICKY_CONTENT)
-            ); // Adjust fixed content padding
+            var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+            var stickyContent = [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT)); // Adjust fixed content padding
 
             $$$1(fixedContent).each(function(index, element) {
               var actualPadding = element.style.paddingRight;
@@ -2641,37 +2475,27 @@
               var calculatedMargin = $$$1(element).css('margin-right');
               $$$1(element)
                 .data('margin-right', actualMargin)
-                .css(
-                  'margin-right',
-                  parseFloat(calculatedMargin) - _this9._scrollbarWidth + 'px'
-                );
+                .css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + 'px');
             }); // Adjust body padding
 
             var actualPadding = document.body.style.paddingRight;
             var calculatedPadding = $$$1(document.body).css('padding-right');
             $$$1(document.body)
               .data('padding-right', actualPadding)
-              .css(
-                'padding-right',
-                parseFloat(calculatedPadding) + this._scrollbarWidth + 'px'
-              );
+              .css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + 'px');
           }
         };
 
         _proto._resetScrollbar = function _resetScrollbar() {
           // Restore fixed content padding
-          var fixedContent = [].slice.call(
-            document.querySelectorAll(Selector.FIXED_CONTENT)
-          );
+          var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
           $$$1(fixedContent).each(function(index, element) {
             var padding = $$$1(element).data('padding-right');
             $$$1(element).removeData('padding-right');
             element.style.paddingRight = padding ? padding : '';
           }); // Restore sticky content
 
-          var elements = [].slice.call(
-            document.querySelectorAll('' + Selector.STICKY_CONTENT)
-          );
+          var elements = [].slice.call(document.querySelectorAll('' + Selector.STICKY_CONTENT));
           $$$1(elements).each(function(index, element) {
             var margin = $$$1(element).data('margin-right');
 
@@ -2692,16 +2516,12 @@
           var scrollDiv = document.createElement('div');
           scrollDiv.className = ClassName.SCROLLBAR_MEASURER;
           document.body.appendChild(scrollDiv);
-          var scrollbarWidth =
-            scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+          var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
           document.body.removeChild(scrollDiv);
           return scrollbarWidth;
         }; // Static
 
-        Modal._jQueryInterface = function _jQueryInterface(
-          config,
-          relatedTarget
-        ) {
+        Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
           return this.each(function() {
             var data = $$$1(this).data(DATA_KEY);
 
@@ -2752,9 +2572,7 @@
      * ------------------------------------------------------------------------
      */
 
-    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(
-      event
-    ) {
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(event) {
       var _this10 = this;
 
       var target;
@@ -2908,9 +2726,7 @@
            * Popper - https://popper.js.org
            */
           if (typeof Popper === 'undefined') {
-            throw new TypeError(
-              'Bootstrap tooltips require Popper.js (https://popper.js.org)'
-            );
+            throw new TypeError('Bootstrap tooltips require Popper.js (https://popper.js.org)');
           } // private
 
           this._isEnabled = true;
@@ -2951,10 +2767,7 @@
             var context = $$$1(event.currentTarget).data(dataKey);
 
             if (!context) {
-              context = new this.constructor(
-                event.currentTarget,
-                this._getDelegateConfig()
-              );
+              context = new this.constructor(event.currentTarget, this._getDelegateConfig());
               $$$1(event.currentTarget).data(dataKey, context);
             }
 
@@ -3047,12 +2860,7 @@
                 : $$$1(document).find(this.config.container);
             $$$1(tip).data(this.constructor.DATA_KEY, this);
 
-            if (
-              !$$$1.contains(
-                this.element.ownerDocument.documentElement,
-                this.tip
-              )
-            ) {
+            if (!$$$1.contains(this.element.ownerDocument.documentElement, this.tip)) {
               $$$1(tip).appendTo(container);
             }
 
@@ -3108,9 +2916,7 @@
             };
 
             if ($$$1(this.tip).hasClass(ClassName.FADE)) {
-              var transitionDuration = Util.getTransitionDurationFromElement(
-                this.tip
-              );
+              var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
               $$$1(this.tip)
                 .one(Util.TRANSITION_END, complete)
                 .emulateTransitionEnd(transitionDuration);
@@ -3205,16 +3011,10 @@
           $$$1(tip).removeClass(ClassName.FADE + ' ' + ClassName.SHOW);
         };
 
-        _proto.setElementContent = function setElementContent(
-          $element,
-          content
-        ) {
+        _proto.setElementContent = function setElementContent($element, content) {
           var html = this.config.html;
 
-          if (
-            typeof content === 'object' &&
-            (content.nodeType || content.jquery)
-          ) {
+          if (typeof content === 'object' && (content.nodeType || content.jquery)) {
             // Content is a DOM node or a jQuery
             if (html) {
               if (
@@ -3298,9 +3098,7 @@
         };
 
         _proto._fixTitle = function _fixTitle() {
-          var titleType = typeof this.element.getAttribute(
-            'data-original-title'
-          );
+          var titleType = typeof this.element.getAttribute('data-original-title');
 
           if (this.element.getAttribute('title') || titleType !== 'string') {
             this.element.setAttribute(
@@ -3316,17 +3114,12 @@
           context = context || $$$1(event.currentTarget).data(dataKey);
 
           if (!context) {
-            context = new this.constructor(
-              event.currentTarget,
-              this._getDelegateConfig()
-            );
+            context = new this.constructor(event.currentTarget, this._getDelegateConfig());
             $$$1(event.currentTarget).data(dataKey, context);
           }
 
           if (event) {
-            context._activeTrigger[
-              event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER
-            ] = true;
+            context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
           }
 
           if (
@@ -3357,10 +3150,7 @@
           context = context || $$$1(event.currentTarget).data(dataKey);
 
           if (!context) {
-            context = new this.constructor(
-              event.currentTarget,
-              this._getDelegateConfig()
-            );
+            context = new this.constructor(event.currentTarget, this._getDelegateConfig());
             $$$1(event.currentTarget).data(dataKey, context);
           }
 
@@ -3449,9 +3239,7 @@
           }
         };
 
-        _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(
-          popperData
-        ) {
+        _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
           var popperInstance = popperData.instance;
           this.tip = popperInstance.popper;
 
@@ -3667,9 +3455,7 @@
         }; // Private
 
         _proto._getContent = function _getContent() {
-          return (
-            this.element.getAttribute('data-content') || this.config.content
-          );
+          return this.element.getAttribute('data-content') || this.config.content;
         };
 
         _proto._cleanTipClass = function _cleanTipClass() {
@@ -3869,16 +3655,12 @@
             this._scrollElement === this._scrollElement.window
               ? OffsetMethod.OFFSET
               : OffsetMethod.POSITION;
-          var offsetMethod =
-            this._config.method === 'auto' ? autoMethod : this._config.method;
-          var offsetBase =
-            offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
+          var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
+          var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
           this._offsets = [];
           this._targets = [];
           this._scrollHeight = this._getScrollHeight();
-          var targets = [].slice.call(
-            document.querySelectorAll(this._selector)
-          );
+          var targets = [].slice.call(document.querySelectorAll(this._selector));
           targets
             .map(function(element) {
               var target;
@@ -3893,10 +3675,7 @@
 
                 if (targetBCR.width || targetBCR.height) {
                   // TODO (fat): remove sketch reliance on jQuery position/offset
-                  return [
-                    $$$1(target)[offsetMethod]().top + offsetBase,
-                    targetSelector,
-                  ];
+                  return [$$$1(target)[offsetMethod]().top + offsetBase, targetSelector];
                 }
               }
 
@@ -3929,11 +3708,7 @@
         }; // Private
 
         _proto._getConfig = function _getConfig(config) {
-          config = _objectSpread(
-            {},
-            Default,
-            typeof config === 'object' && config ? config : {}
-          );
+          config = _objectSpread({}, Default, typeof config === 'object' && config ? config : {});
 
           if (typeof config.target !== 'string') {
             var id = $$$1(config.target).attr('id');
@@ -3959,10 +3734,7 @@
         _proto._getScrollHeight = function _getScrollHeight() {
           return (
             this._scrollElement.scrollHeight ||
-            Math.max(
-              document.body.scrollHeight,
-              document.documentElement.scrollHeight
-            )
+            Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
           );
         };
 
@@ -3977,8 +3749,7 @@
 
           var scrollHeight = this._getScrollHeight();
 
-          var maxScroll =
-            this._config.offset + scrollHeight - this._getOffsetHeight();
+          var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
 
           if (this._scrollHeight !== scrollHeight) {
             this.refresh();
@@ -3994,11 +3765,7 @@
             return;
           }
 
-          if (
-            this._activeTarget &&
-            scrollTop < this._offsets[0] &&
-            this._offsets[0] > 0
-          ) {
+          if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
             this._activeTarget = null;
 
             this._clear();
@@ -4012,8 +3779,7 @@
             var isActiveTarget =
               this._activeTarget !== this._targets[i] &&
               scrollTop >= this._offsets[i] &&
-              (typeof this._offsets[i + 1] === 'undefined' ||
-                scrollTop < this._offsets[i + 1]);
+              (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
             if (isActiveTarget) {
               this._activate(this._targets[i]);
@@ -4030,16 +3796,10 @@
 
           queries = queries.map(function(selector) {
             return (
-              selector +
-              '[data-target="' +
-              target +
-              '"],' +
-              (selector + '[href="' + target + '"]')
+              selector + '[data-target="' + target + '"],' + (selector + '[href="' + target + '"]')
             );
           });
-          var $link = $$$1(
-            [].slice.call(document.querySelectorAll(queries.join(',')))
-          );
+          var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
 
           if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
             $link
@@ -4121,9 +3881,7 @@
      */
 
     $$$1(window).on(Event.LOAD_DATA_API, function() {
-      var scrollSpys = [].slice.call(
-        document.querySelectorAll(Selector.DATA_SPY)
-      );
+      var scrollSpys = [].slice.call(document.querySelectorAll(Selector.DATA_SPY));
       var scrollSpysLength = scrollSpys.length;
 
       for (var i = scrollSpysLength; i--; ) {
@@ -4187,8 +3945,7 @@
       NAV_LIST_GROUP: '.nav, .list-group',
       ACTIVE: '.active',
       ACTIVE_UL: '> li > .active',
-      DATA_TOGGLE:
-        '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
+      DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
       DROPDOWN_TOGGLE: '.dropdown-toggle',
       DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active',
       /**
@@ -4222,16 +3979,11 @@
 
           var target;
           var previous;
-          var listElement = $$$1(this._element).closest(
-            Selector.NAV_LIST_GROUP
-          )[0];
+          var listElement = $$$1(this._element).closest(Selector.NAV_LIST_GROUP)[0];
           var selector = Util.getSelectorFromElement(this._element);
 
           if (listElement) {
-            var itemSelector =
-              listElement.nodeName === 'UL'
-                ? Selector.ACTIVE_UL
-                : Selector.ACTIVE;
+            var itemSelector = listElement.nodeName === 'UL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
             previous = $$$1.makeArray($$$1(listElement).find(itemSelector));
             previous = previous[previous.length - 1];
           }
@@ -4249,10 +4001,7 @@
 
           $$$1(this._element).trigger(showEvent);
 
-          if (
-            showEvent.isDefaultPrevented() ||
-            hideEvent.isDefaultPrevented()
-          ) {
+          if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
             return;
           }
 
@@ -4297,17 +4046,14 @@
           }
 
           var active = activeElements[0];
-          var isTransitioning =
-            callback && active && $$$1(active).hasClass(ClassName.FADE);
+          var isTransitioning = callback && active && $$$1(active).hasClass(ClassName.FADE);
 
           var complete = function complete() {
             return _this2._transitionComplete(element, active, callback);
           };
 
           if (active && isTransitioning) {
-            var transitionDuration = Util.getTransitionDurationFromElement(
-              active
-            );
+            var transitionDuration = Util.getTransitionDurationFromElement(active);
             $$$1(active)
               .one(Util.TRANSITION_END, complete)
               .emulateTransitionEnd(transitionDuration);
@@ -4316,16 +4062,10 @@
           }
         };
 
-        _proto._transitionComplete = function _transitionComplete(
-          element,
-          active,
-          callback
-        ) {
+        _proto._transitionComplete = function _transitionComplete(element, active, callback) {
           if (active) {
             $$$1(active).removeClass(ClassName.SHOW + ' ' + ClassName.ACTIVE);
-            var dropdownChild = $$$1(active.parentNode).find(
-              Selector.DROPDOWN_ACTIVE_CHILD
-            )[0];
+            var dropdownChild = $$$1(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
 
             if (dropdownChild) {
               $$$1(dropdownChild).removeClass(ClassName.ACTIVE);
@@ -4345,10 +4085,7 @@
           Util.reflow(element);
           $$$1(element).addClass(ClassName.SHOW);
 
-          if (
-            element.parentNode &&
-            $$$1(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)
-          ) {
+          if (element.parentNode && $$$1(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
             var dropdownElement = $$$1(element).closest(Selector.DROPDOWN)[0];
 
             if (dropdownElement) {
@@ -4403,9 +4140,7 @@
      * ------------------------------------------------------------------------
      */
 
-    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(
-      event
-    ) {
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function(event) {
       event.preventDefault();
 
       Tab._jQueryInterface.call($$$1(this), 'show');
@@ -4450,9 +4185,7 @@
 
     if (
       (version[0] < ltMajor && version[1] < minMinor) ||
-      (version[0] === minMajor &&
-        version[1] === minMinor &&
-        version[2] < minPatch) ||
+      (version[0] === minMajor && version[1] === minMinor && version[2] < minPatch) ||
       version[0] >= maxMajor
     ) {
       throw new Error(

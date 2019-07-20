@@ -13,9 +13,7 @@ jQuery.Velocity
           ? !1
           : 1 === e.nodeType && t
           ? !0
-          : 'array' === a ||
-            0 === t ||
-            ('number' == typeof t && t > 0 && t - 1 in e);
+          : 'array' === a || 0 === t || ('number' == typeof t && t > 0 && t - 1 in e);
       }
       if (!e.jQuery) {
         var r = function(e, t) {
@@ -38,8 +36,7 @@ jQuery.Velocity
             }),
           (r.isPlainObject = function(e) {
             var t;
-            if (!e || 'object' !== r.type(e) || e.nodeType || r.isWindow(e))
-              return !1;
+            if (!e || 'object' !== r.type(e) || e.nodeType || r.isWindow(e)) return !1;
             try {
               if (
                 e.constructor &&
@@ -61,10 +58,8 @@ jQuery.Velocity
             if (a) {
               if (s) for (; i > o && ((n = r.apply(e[o], a)), n !== !1); o++);
               else for (o in e) if (((n = r.apply(e[o], a)), n === !1)) break;
-            } else if (s)
-              for (; i > o && ((n = r.call(e[o], o, e[o])), n !== !1); o++);
-            else
-              for (o in e) if (((n = r.call(e[o], o, e[o])), n === !1)) break;
+            } else if (s) for (; i > o && ((n = r.call(e[o], o, e[o])), n !== !1); o++);
+            else for (o in e) if (((n = r.call(e[o], o, e[o])), n === !1)) break;
             return e;
           }),
           (r.data = function(e, t, n) {
@@ -124,8 +119,7 @@ jQuery.Velocity
                 null != e &&
                   (t(Object(e))
                     ? !(function(e, t) {
-                        for (var r = +t.length, a = 0, n = e.length; r > a; )
-                          e[n++] = t[a++];
+                        for (var r = +t.length, a = 0, n = e.length; r > a; ) e[n++] = t[a++];
                         if (r !== r) for (; void 0 !== t[a]; ) e[n++] = t[a++];
                         return (e.length = n), e;
                       })(a, 'string' == typeof e ? [e] : e)
@@ -136,9 +130,7 @@ jQuery.Velocity
             if (e) {
               a = (a || 'fx') + 'queue';
               var i = r.data(e, a);
-              return n
-                ? (!i || r.isArray(n) ? (i = r.data(e, a, o(n))) : i.push(n), i)
-                : i || [];
+              return n ? (!i || r.isArray(n) ? (i = r.data(e, a, o(n))) : i.push(n), i) : i || [];
             }
           }),
           (r.dequeue = function(e, t) {
@@ -164,23 +156,16 @@ jQuery.Velocity
                 ? this[0].getBoundingClientRect()
                 : { top: 0, left: 0 };
               return {
-                top:
-                  t.top +
-                  (e.pageYOffset || document.scrollTop || 0) -
-                  (document.clientTop || 0),
+                top: t.top + (e.pageYOffset || document.scrollTop || 0) - (document.clientTop || 0),
                 left:
-                  t.left +
-                  (e.pageXOffset || document.scrollLeft || 0) -
-                  (document.clientLeft || 0),
+                  t.left + (e.pageXOffset || document.scrollLeft || 0) - (document.clientLeft || 0),
               };
             },
             position: function() {
               function e() {
                 for (
                   var e = this.offsetParent || document;
-                  e &&
-                  'html' === !e.nodeType.toLowerCase &&
-                  'static' === e.style.position;
+                  e && 'html' === !e.nodeType.toLowerCase && 'static' === e.style.position;
 
                 )
                   e = e.offsetParent;
@@ -189,9 +174,7 @@ jQuery.Velocity
               var t = this[0],
                 e = e.apply(t),
                 a = this.offset(),
-                n = /^(?:body|html)$/i.test(e.nodeName)
-                  ? { top: 0, left: 0 }
-                  : r(e).offset();
+                n = /^(?:body|html)$/i.test(e.nodeName) ? { top: 0, left: 0 } : r(e).offset();
               return (
                 (a.top -= parseFloat(t.style.marginTop) || 0),
                 (a.left -= parseFloat(t.style.marginLeft) || 0),
@@ -208,9 +191,7 @@ jQuery.Velocity
           var n = {},
             o = n.hasOwnProperty,
             i = n.toString,
-            s = 'Boolean Number String Function Array Date RegExp Object Error'.split(
-              ' '
-            ),
+            s = 'Boolean Number String Function Array Date RegExp Object Error'.split(' '),
             l = 0;
           l < s.length;
           l++
@@ -235,10 +216,7 @@ jQuery.Velocity
           return a;
         }
         function o(e) {
-          return (
-            m.isWrapped(e) ? (e = [].slice.call(e)) : m.isNode(e) && (e = [e]),
-            e
-          );
+          return m.isWrapped(e) ? (e = [].slice.call(e)) : m.isNode(e) && (e = [e]), e;
         }
         function i(e) {
           var t = f.data(e, 'velocity');
@@ -281,10 +259,7 @@ jQuery.Velocity
             var o,
               i,
               s = 0;
-            do
-              (i = r + (n - r) / 2),
-                (o = l(i, e, a) - t),
-                o > 0 ? (n = i) : (r = i);
+            do (i = r + (n - r) / 2), (o = l(i, e, a) - t), o > 0 ? (n = i) : (r = i);
             while (Math.abs(o) > h && ++s < v);
             return i;
           }
@@ -308,29 +283,13 @@ jQuery.Velocity
             S = 'Float32Array' in t;
           if (4 !== arguments.length) return !1;
           for (var P = 0; 4 > P; ++P)
-            if (
-              'number' != typeof arguments[P] ||
-              isNaN(arguments[P]) ||
-              !isFinite(arguments[P])
-            )
+            if ('number' != typeof arguments[P] || isNaN(arguments[P]) || !isFinite(arguments[P]))
               return !1;
-          (e = Math.min(e, 1)),
-            (a = Math.min(a, 1)),
-            (e = Math.max(e, 0)),
-            (a = Math.max(a, 0));
+          (e = Math.min(e, 1)), (a = Math.min(a, 1)), (e = Math.max(e, 0)), (a = Math.max(a, 0));
           var w = S ? new Float32Array(b) : new Array(b),
             V = !1,
             C = function(t) {
-              return (
-                V || g(),
-                e === r && a === n
-                  ? t
-                  : 0 === t
-                  ? 0
-                  : 1 === t
-                  ? 1
-                  : l(d(t), r, n)
-              );
+              return V || g(), e === r && a === n ? t : 0 === t ? 0 : 1 === t ? 1 : l(d(t), r, n);
             };
           C.getControlPoints = function() {
             return [{ x: e, y: r }, { x: a, y: n }];
@@ -356,8 +315,7 @@ jQuery.Velocity
                     : m.isArray(e) && 4 === e.length
                     ? l.apply(null, e)
                     : !1),
-            r === !1 &&
-              (r = b.Easings[b.defaults.easing] ? b.defaults.easing : v),
+            r === !1 && (r = b.Easings[b.defaults.easing] ? b.defaults.easing : v),
             r
           );
         }
@@ -375,29 +333,14 @@ jQuery.Velocity
                   g = !!d,
                   y = null;
                 d || (d = b.State.calls[o][3] = t - 16);
-                for (
-                  var h = Math.min((t - d) / u.duration, 1),
-                    v = 0,
-                    x = l.length;
-                  x > v;
-                  v++
-                ) {
+                for (var h = Math.min((t - d) / u.duration, 1), v = 0, x = l.length; x > v; v++) {
                   var P = l[v],
                     V = P.element;
                   if (i(V)) {
                     var C = !1;
-                    if (
-                      u.display !== a &&
-                      null !== u.display &&
-                      'none' !== u.display
-                    ) {
+                    if (u.display !== a && null !== u.display && 'none' !== u.display) {
                       if ('flex' === u.display) {
-                        var T = [
-                          '-webkit-box',
-                          '-moz-box',
-                          '-ms-flexbox',
-                          '-webkit-flex',
-                        ];
+                        var T = ['-webkit-box', '-moz-box', '-ms-flexbox', '-webkit-flex'];
                         f.each(T, function(e, t) {
                           S.setPropertyValue(V, 'display', t);
                         });
@@ -411,16 +354,11 @@ jQuery.Velocity
                       if ('element' !== k) {
                         var A,
                           F = P[k],
-                          j = m.isString(F.easing)
-                            ? b.Easings[F.easing]
-                            : F.easing;
+                          j = m.isString(F.easing) ? b.Easings[F.easing] : F.easing;
                         if (1 === h) A = F.endValue;
                         else {
                           var E = F.endValue - F.startValue;
-                          if (
-                            ((A = F.startValue + E * j(h, u, E)),
-                            !g && A === F.currentValue)
-                          )
+                          if (((A = F.startValue + E * j(h, u, E)), !g && A === F.currentValue))
                             continue;
                         }
                         if (((F.currentValue = A), 'tween' === k)) y = A;
@@ -433,45 +371,29 @@ jQuery.Velocity
                           var L = S.setPropertyValue(
                             V,
                             k,
-                            F.currentValue +
-                              (0 === parseFloat(A) ? '' : F.unitType),
+                            F.currentValue + (0 === parseFloat(A) ? '' : F.unitType),
                             F.rootPropertyValue,
                             F.scrollData
                           );
                           S.Hooks.registered[k] &&
-                            (i(V).rootPropertyValueCache[H] = S.Normalizations
-                              .registered[H]
-                              ? S.Normalizations.registered[H](
-                                  'extract',
-                                  null,
-                                  L[1]
-                                )
+                            (i(V).rootPropertyValueCache[H] = S.Normalizations.registered[H]
+                              ? S.Normalizations.registered[H]('extract', null, L[1])
                               : L[1]),
                             'transform' === L[0] && (C = !0);
                         }
                       }
                     u.mobileHA &&
                       i(V).transformCache.translate3d === a &&
-                      ((i(V).transformCache.translate3d = '(0px, 0px, 0px)'),
-                      (C = !0)),
+                      ((i(V).transformCache.translate3d = '(0px, 0px, 0px)'), (C = !0)),
                       C && S.flushTransformCache(V);
                   }
                 }
-                u.display !== a &&
-                  'none' !== u.display &&
-                  (b.State.calls[o][2].display = !1),
+                u.display !== a && 'none' !== u.display && (b.State.calls[o][2].display = !1),
                   u.visibility !== a &&
                     'hidden' !== u.visibility &&
                     (b.State.calls[o][2].visibility = !1),
                   u.progress &&
-                    u.progress.call(
-                      s[1],
-                      s[1],
-                      h,
-                      Math.max(0, d + u.duration - t),
-                      d,
-                      y
-                    ),
+                    u.progress.call(s[1], s[1], h, Math.max(0, d + u.duration - t), d, y),
                   1 === h && p(o);
               }
           }
@@ -494,13 +416,10 @@ jQuery.Velocity
             if (
               (t ||
                 o.loop ||
-                ('none' === o.display &&
-                  S.setPropertyValue(p, 'display', o.display),
-                'hidden' === o.visibility &&
-                  S.setPropertyValue(p, 'visibility', o.visibility)),
+                ('none' === o.display && S.setPropertyValue(p, 'display', o.display),
+                'hidden' === o.visibility && S.setPropertyValue(p, 'visibility', o.visibility)),
               o.loop !== !0 &&
-                (f.queue(p)[1] === a ||
-                  !/\.velocityQueueEntryFlag/i.test(f.queue(p)[1])) &&
+                (f.queue(p)[1] === a || !/\.velocityQueueEntryFlag/i.test(f.queue(p)[1])) &&
                 i(p))
             ) {
               (i(p).isAnimating = !1), (i(p).rootPropertyValueCache = {});
@@ -512,8 +431,7 @@ jQuery.Velocity
                   new RegExp('^\\(' + r + '[^.]').test(n) &&
                   ((d = !0), delete i(p).transformCache[t]);
               }),
-                o.mobileHA &&
-                  ((d = !0), delete i(p).transformCache.translate3d),
+                o.mobileHA && ((d = !0), delete i(p).transformCache.translate3d),
                 d && S.flushTransformCache(p),
                 S.Values.removeClass(p, 'velocity-animating');
             }
@@ -547,10 +465,7 @@ jQuery.Velocity
               l = !0;
               break;
             }
-          l === !1 &&
-            ((b.State.isTicking = !1),
-            delete b.State.calls,
-            (b.State.calls = []));
+          l === !1 && ((b.State.isTicking = !1), delete b.State.calls, (b.State.calls = []));
         }
         var f,
           d = (function() {
@@ -558,8 +473,7 @@ jQuery.Velocity
             for (var e = 7; e > 4; e--) {
               var t = r.createElement('div');
               if (
-                ((t.innerHTML =
-                  '<!--[if IE ' + e + ']><span></span><![endif]-->'),
+                ((t.innerHTML = '<!--[if IE ' + e + ']><span></span><![endif]-->'),
                 t.getElementsByTagName('span').length)
               )
                 return (t = null), e;
@@ -606,8 +520,7 @@ jQuery.Velocity
                   Object.prototype.toString.call(e)
                 ) &&
                 e.length !== a &&
-                (0 === e.length ||
-                  ('object' == typeof e[0] && e[0].nodeType > 0))
+                (0 === e.length || ('object' == typeof e[0] && e[0].nodeType > 0))
               );
             },
             isWrapped: function(e) {
@@ -622,15 +535,8 @@ jQuery.Velocity
             },
           },
           y = !1;
-        if (
-          (e.fn && e.fn.jquery
-            ? ((f = e), (y = !0))
-            : (f = t.Velocity.Utilities),
-          8 >= d && !y)
-        )
-          throw new Error(
-            'Velocity: IE8 and below require jQuery to be loaded before Velocity.'
-          );
+        if ((e.fn && e.fn.jquery ? ((f = e), (y = !0)) : (f = t.Velocity.Utilities), 8 >= d && !y))
+          throw new Error('Velocity: IE8 and below require jQuery to be loaded before Velocity.');
         if (7 >= d) return void (jQuery.fn.velocity = jQuery.fn.animate);
         var h = 400,
           v = 'swing',
@@ -689,8 +595,7 @@ jQuery.Velocity
           ? ((b.State.scrollAnchor = t),
             (b.State.scrollPropertyLeft = 'pageXOffset'),
             (b.State.scrollPropertyTop = 'pageYOffset'))
-          : ((b.State.scrollAnchor =
-              r.documentElement || r.body.parentNode || r.body),
+          : ((b.State.scrollAnchor = r.documentElement || r.body.parentNode || r.body),
             (b.State.scrollPropertyLeft = 'scrollLeft'),
             (b.State.scrollPropertyTop = 'scrollTop'));
         var x = (function() {
@@ -819,13 +724,7 @@ jQuery.Velocity
               'skewY',
               'rotateZ',
             ],
-            transforms3D: [
-              'transformPerspective',
-              'translateZ',
-              'scaleZ',
-              'rotateX',
-              'rotateY',
-            ],
+            transforms3D: ['transformPerspective', 'translateZ', 'scaleZ', 'rotateX', 'rotateY'],
           },
           Hooks: {
             templates: {
@@ -839,12 +738,8 @@ jQuery.Velocity
             registered: {},
             register: function() {
               for (var e = 0; e < S.Lists.colors.length; e++) {
-                var t =
-                  'color' === S.Lists.colors[e] ? '0 0 0 1' : '255 255 255 1';
-                S.Hooks.templates[S.Lists.colors[e]] = [
-                  'Red Green Blue Alpha',
-                  t,
-                ];
+                var t = 'color' === S.Lists.colors[e] ? '0 0 0 1' : '255 255 255 1';
+                S.Hooks.templates[S.Lists.colors[e]] = ['Red Green Blue Alpha', t];
               }
               var r, a, n;
               if (d)
@@ -871,8 +766,7 @@ jQuery.Velocity
             },
             cleanRootPropertyValue: function(e, t) {
               return (
-                S.RegEx.valueUnwrap.test(t) &&
-                  (t = t.match(S.RegEx.valueUnwrap)[1]),
+                S.RegEx.valueUnwrap.test(t) && (t = t.match(S.RegEx.valueUnwrap)[1]),
                 S.Values.isCSSNullValue(t) && (t = S.Hooks.templates[e][1]),
                 t
               );
@@ -953,9 +847,7 @@ jQuery.Velocity
                         (t.style.zoom = 1),
                         parseFloat(r) >= 1
                           ? ''
-                          : 'alpha(opacity=' +
-                            parseInt(100 * parseFloat(r), 10) +
-                            ')'
+                          : 'alpha(opacity=' + parseInt(100 * parseFloat(r), 10) + ')'
                       );
                   }
                 else
@@ -972,9 +864,7 @@ jQuery.Velocity
             register: function() {
               9 >= d ||
                 b.State.isGingerbread ||
-                (S.Lists.transformsBase = S.Lists.transformsBase.concat(
-                  S.Lists.transforms3D
-                ));
+                (S.Lists.transformsBase = S.Lists.transformsBase.concat(S.Lists.transforms3D));
               for (var e = 0; e < S.Lists.transformsBase.length; e++)
                 !(function() {
                   var t = S.Lists.transformsBase[e];
@@ -996,10 +886,7 @@ jQuery.Velocity
                             break;
                           case 'scal':
                           case 'scale':
-                            b.State.isAndroid &&
-                              i(r).transformCache[t] === a &&
-                              1 > n &&
-                              (n = 1),
+                            b.State.isAndroid && i(r).transformCache[t] === a && 1 > n && (n = 1),
                               (o = !/(\d)$/i.test(n));
                             break;
                           case 'skew':
@@ -1009,8 +896,7 @@ jQuery.Velocity
                             o = !/(deg|\d)$/i.test(n);
                         }
                         return (
-                          o || (i(r).transformCache[t] = '(' + n + ')'),
-                          i(r).transformCache[t]
+                          o || (i(r).transformCache[t] = '(' + n + ')'), i(r).transformCache[t]
                         );
                     }
                   };
@@ -1038,17 +924,14 @@ jQuery.Velocity
                           /^[A-z]+$/i.test(n)
                             ? (i = s[n] !== a ? s[n] : s.black)
                             : S.RegEx.isHex.test(n)
-                            ? (i =
-                                'rgb(' + S.Values.hexToRgb(n).join(' ') + ')')
+                            ? (i = 'rgb(' + S.Values.hexToRgb(n).join(' ') + ')')
                             : /^rgba?\(/i.test(n) || (i = s.black),
                             (o = (i || n)
                               .toString()
                               .match(S.RegEx.valueUnwrap)[1]
                               .replace(/,(\s+)?/g, ' '));
                         }
-                        return (
-                          8 >= d || 3 !== o.split(' ').length || (o += ' 1'), o
-                        );
+                        return 8 >= d || 3 !== o.split(' ').length || (o += ' 1'), o;
                       case 'inject':
                         return (
                           8 >= d
@@ -1060,9 +943,7 @@ jQuery.Velocity
                             : 3 === n.split(' ').length && (n += ' 1'),
                           (8 >= d ? 'rgb' : 'rgba') +
                             '(' +
-                            n
-                              .replace(/\s+/g, ',')
-                              .replace(/\.(\d)+(?=,)/g, '') +
+                            n.replace(/\s+/g, ',').replace(/\.(\d)+(?=,)/g, '') +
                             ')'
                         );
                     }
@@ -1079,19 +960,13 @@ jQuery.Velocity
             SVGAttribute: function(e) {
               var t = 'width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2';
               return (
-                (d || (b.State.isAndroid && !b.State.isChrome)) &&
-                  (t += '|transform'),
+                (d || (b.State.isAndroid && !b.State.isChrome)) && (t += '|transform'),
                 new RegExp('^(' + t + ')$', 'i').test(e)
               );
             },
             prefixCheck: function(e) {
-              if (b.State.prefixMatches[e])
-                return [b.State.prefixMatches[e], !0];
-              for (
-                var t = ['', 'Webkit', 'Moz', 'ms', 'O'], r = 0, a = t.length;
-                a > r;
-                r++
-              ) {
+              if (b.State.prefixMatches[e]) return [b.State.prefixMatches[e], !0];
+              for (var t = ['', 'Webkit', 'Moz', 'ms', 'O'], r = 0, a = t.length; a > r; r++) {
                 var n;
                 if (
                   ((n =
@@ -1118,16 +993,11 @@ jQuery.Velocity
                   return t + t + r + r + a + a;
                 })),
                 (t = a.exec(e)),
-                t
-                  ? [parseInt(t[1], 16), parseInt(t[2], 16), parseInt(t[3], 16)]
-                  : [0, 0, 0]
+                t ? [parseInt(t[1], 16), parseInt(t[2], 16), parseInt(t[3], 16)] : [0, 0, 0]
               );
             },
             isCSSNullValue: function(e) {
-              return (
-                0 == e ||
-                /^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(e)
-              );
+              return 0 == e || /^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(e);
             },
             getUnitType: function(e) {
               return /^(rotate|skew)/i.test(e)
@@ -1165,10 +1035,7 @@ jQuery.Velocity
                 : (e.className = e.className
                     .toString()
                     .replace(
-                      new RegExp(
-                        '(^|\\s)' + t.split(' ').join('|') + '(\\s|$)',
-                        'gi'
-                      ),
+                      new RegExp('(^|\\s)' + t.split(' ').join('|') + '(\\s|$)', 'gi'),
                       ' '
                     ));
             },
@@ -1185,12 +1052,7 @@ jQuery.Velocity
                 if (
                   (/^(width|height)$/.test(r) &&
                     0 === S.getPropertyValue(e, 'display') &&
-                    ((u = !0),
-                    S.setPropertyValue(
-                      e,
-                      'display',
-                      S.Values.getDisplayType(e)
-                    )),
+                    ((u = !0), S.setPropertyValue(e, 'display', S.Values.getDisplayType(e))),
                   !o)
                 ) {
                   if (
@@ -1202,10 +1064,8 @@ jQuery.Velocity
                   ) {
                     var c =
                       e.offsetHeight -
-                      (parseFloat(S.getPropertyValue(e, 'borderTopWidth')) ||
-                        0) -
-                      (parseFloat(S.getPropertyValue(e, 'borderBottomWidth')) ||
-                        0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderTopWidth')) || 0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderBottomWidth')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingTop')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingBottom')) || 0);
                     return n(), c;
@@ -1219,10 +1079,8 @@ jQuery.Velocity
                   ) {
                     var p =
                       e.offsetWidth -
-                      (parseFloat(S.getPropertyValue(e, 'borderLeftWidth')) ||
-                        0) -
-                      (parseFloat(S.getPropertyValue(e, 'borderRightWidth')) ||
-                        0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderLeftWidth')) || 0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderRightWidth')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingLeft')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingRight')) || 0);
                     return n(), p;
@@ -1236,8 +1094,7 @@ jQuery.Velocity
                     ? i(e).computedStyle
                     : (i(e).computedStyle = t.getComputedStyle(e, null))),
                   'borderColor' === r && (r = 'borderTopColor'),
-                  (l =
-                    9 === d && 'filter' === r ? g.getPropertyValue(r) : g[r]),
+                  (l = 9 === d && 'filter' === r ? g.getPropertyValue(r) : g[r]),
                   ('' === l || null === l) && (l = e.style[r]),
                   n();
               }
@@ -1301,9 +1158,7 @@ jQuery.Velocity
               if (S.Hooks.registered[r]) {
                 var l = r,
                   u = S.Hooks.getRoot(r);
-                (n = n || S.getPropertyValue(e, u)),
-                  (a = S.Hooks.injectValue(l, a, n)),
-                  (r = u);
+                (n = n || S.getPropertyValue(e, u)), (a = S.Hooks.injectValue(l, a, n)), (r = u);
               }
               if (
                 (S.Normalizations.registered[r] &&
@@ -1315,10 +1170,7 @@ jQuery.Velocity
                 try {
                   e.style[s] = a;
                 } catch (c) {
-                  b.debug &&
-                    console.log(
-                      'Browser does not support [' + a + '] for [' + s + ']'
-                    );
+                  b.debug && console.log('Browser does not support [' + a + '] for [' + s + ']');
                 }
               else
                 i(e) && i(e).isSVG && S.Names.SVGAttribute(r)
@@ -1338,10 +1190,7 @@ jQuery.Velocity
                 translate: [t('translateX'), t('translateY')],
                 skewX: [t('skewX')],
                 skewY: [t('skewY')],
-                scale:
-                  1 !== t('scale')
-                    ? [t('scale'), t('scale')]
-                    : [t('scaleX'), t('scaleY')],
+                scale: 1 !== t('scale') ? [t('scale'), t('scale')] : [t('scaleX'), t('scaleY')],
                 rotate: [t('rotateZ'), 0, 0],
               };
               f.each(i(e).transformCache, function(e) {
@@ -1359,8 +1208,7 @@ jQuery.Velocity
                   (n = i(e).transformCache[t]),
                   'transformPerspective' === t
                     ? ((o = n), !0)
-                    : (9 === d && 'rotateZ' === t && (t = 'rotate'),
-                      void (r += t + n + ' '))
+                    : (9 === d && 'rotateZ' === t && (t = 'rotate'), void (r += t + n + ' '))
                 );
               }),
                 o && (r = 'perspective' + o + ' ' + r);
@@ -1402,10 +1250,8 @@ jQuery.Velocity
                       m.isFunction(e[1]) ||
                       S.RegEx.isHex.test(e[1])
                         ? (i = e[1])
-                        : ((m.isString(e[1]) && !S.RegEx.isHex.test(e[1])) ||
-                            m.isArray(e[1])) &&
-                          ((n = t ? e[1] : u(e[1], s.duration)),
-                          e[2] !== a && (i = e[2])))
+                        : ((m.isString(e[1]) && !S.RegEx.isHex.test(e[1])) || m.isArray(e[1])) &&
+                          ((n = t ? e[1] : u(e[1], s.duration)), e[2] !== a && (i = e[2])))
                     : (r = e),
                   t || (n = n || s.easing),
                   m.isFunction(r) && (r = r.call(o, V, w)),
@@ -1432,9 +1278,7 @@ jQuery.Velocity
                     position: S.getPropertyValue(o, 'position'),
                     fontSize: S.getPropertyValue(o, 'fontSize'),
                   },
-                  a =
-                    e.position === L.lastPosition &&
-                    e.myParent === L.lastParent,
+                  a = e.position === L.lastPosition && e.myParent === L.lastParent,
                   n = e.fontSize === L.lastFontSize;
                 (L.lastParent = e.myParent),
                   (L.lastPosition = e.position),
@@ -1451,52 +1295,37 @@ jQuery.Velocity
                     : r.createElement('div');
                   b.init(u),
                     e.myParent.appendChild(u),
-                    f.each(['overflow', 'overflowX', 'overflowY'], function(
-                      e,
-                      t
-                    ) {
+                    f.each(['overflow', 'overflowX', 'overflowY'], function(e, t) {
                       b.CSS.setPropertyValue(u, t, 'hidden');
                     }),
                     b.CSS.setPropertyValue(u, 'position', e.position),
                     b.CSS.setPropertyValue(u, 'fontSize', e.fontSize),
                     b.CSS.setPropertyValue(u, 'boxSizing', 'content-box'),
                     f.each(
-                      [
-                        'minWidth',
-                        'maxWidth',
-                        'width',
-                        'minHeight',
-                        'maxHeight',
-                        'height',
-                      ],
+                      ['minWidth', 'maxWidth', 'width', 'minHeight', 'maxHeight', 'height'],
                       function(e, t) {
                         b.CSS.setPropertyValue(u, t, s + '%');
                       }
                     ),
                     b.CSS.setPropertyValue(u, 'paddingLeft', s + 'em'),
                     (l.percentToPxWidth = L.lastPercentToPxWidth =
-                      (parseFloat(S.getPropertyValue(u, 'width', null, !0)) ||
-                        1) / s),
+                      (parseFloat(S.getPropertyValue(u, 'width', null, !0)) || 1) / s),
                     (l.percentToPxHeight = L.lastPercentToPxHeight =
-                      (parseFloat(S.getPropertyValue(u, 'height', null, !0)) ||
-                        1) / s),
+                      (parseFloat(S.getPropertyValue(u, 'height', null, !0)) || 1) / s),
                     (l.emToPx = L.lastEmToPx =
-                      (parseFloat(S.getPropertyValue(u, 'paddingLeft')) || 1) /
-                      s),
+                      (parseFloat(S.getPropertyValue(u, 'paddingLeft')) || 1) / s),
                     e.myParent.removeChild(u);
                 }
                 return (
                   null === L.remToPx &&
-                    (L.remToPx =
-                      parseFloat(S.getPropertyValue(r.body, 'fontSize')) || 16),
+                    (L.remToPx = parseFloat(S.getPropertyValue(r.body, 'fontSize')) || 16),
                   null === L.vwToPx &&
                     ((L.vwToPx = parseFloat(t.innerWidth) / 100),
                     (L.vhToPx = parseFloat(t.innerHeight) / 100)),
                   (l.remToPx = L.remToPx),
                   (l.vwToPx = L.vwToPx),
                   (l.vhToPx = L.vhToPx),
-                  b.debug >= 1 &&
-                    console.log('Unit ratios: ' + JSON.stringify(l), o),
+                  b.debug >= 1 && console.log('Unit ratios: ' + JSON.stringify(l), o),
                   l
                 );
               }
@@ -1523,9 +1352,7 @@ jQuery.Velocity
                   : ((P = b.State.scrollAnchor[b.State['scrollProperty' + F]]),
                     (C =
                       b.State.scrollAnchor[
-                        b.State[
-                          'scrollProperty' + ('Left' === F ? 'Top' : 'Left')
-                        ]
+                        b.State['scrollProperty' + ('Left' === F ? 'Top' : 'Left')]
                       ]),
                     (T = f(o).offset()[F.toLowerCase()] + j)),
                   (l = {
@@ -1544,13 +1371,11 @@ jQuery.Velocity
                     },
                     element: o,
                   }),
-                  b.debug &&
-                    console.log('tweensContainer (scroll): ', l.scroll, o);
+                  b.debug && console.log('tweensContainer (scroll): ', l.scroll, o);
               } else if ('reverse' === A) {
                 if (!i(o).tweensContainer) return void f.dequeue(o, s.queue);
                 'none' === i(o).opts.display && (i(o).opts.display = 'auto'),
-                  'hidden' === i(o).opts.visibility &&
-                    (i(o).opts.visibility = 'visible'),
+                  'hidden' === i(o).opts.visibility && (i(o).opts.visibility = 'visible'),
                   (i(o).opts.loop = !1),
                   (i(o).opts.begin = null),
                   (i(o).opts.complete = null),
@@ -1566,23 +1391,16 @@ jQuery.Velocity
                       m.isEmptyObject(v) || (E[H].easing = s.easing),
                       b.debug &&
                         console.log(
-                          'reverse tweensContainer (' +
-                            H +
-                            '): ' +
-                            JSON.stringify(E[H]),
+                          'reverse tweensContainer (' + H + '): ' + JSON.stringify(E[H]),
                           o
                         );
                   }
                 l = E;
               } else if ('start' === A) {
                 var E;
-                i(o).tweensContainer &&
-                  i(o).isAnimating === !0 &&
-                  (E = i(o).tweensContainer),
+                i(o).tweensContainer && i(o).isAnimating === !0 && (E = i(o).tweensContainer),
                   f.each(y, function(e, t) {
-                    if (
-                      RegExp('^' + S.Lists.colors.join('$|^') + '$').test(e)
-                    ) {
+                    if (RegExp('^' + S.Lists.colors.join('$|^') + '$').test(e)) {
                       var r = p(t, !0),
                         n = r[0],
                         o = r[1],
@@ -1597,9 +1415,7 @@ jQuery.Velocity
                           c++
                         ) {
                           var f = [l[c]];
-                          o && f.push(o),
-                            u !== a && f.push(u[c]),
-                            (y[e + s[c]] = f);
+                          o && f.push(o), u !== a && f.push(u[c]), (y[e + s[c]] = f);
                         }
                         delete y[e];
                       }
@@ -1619,9 +1435,7 @@ jQuery.Velocity
                     S.Names.prefixCheck(I)[1] !== !1 ||
                     S.Normalizations.registered[I] !== a
                   ) {
-                    ((s.display !== a &&
-                      null !== s.display &&
-                      'none' !== s.display) ||
+                    ((s.display !== a && null !== s.display && 'none' !== s.display) ||
                       (s.visibility !== a && 'hidden' !== s.visibility)) &&
                       /opacity|filter/.test(z) &&
                       !M &&
@@ -1632,8 +1446,7 @@ jQuery.Velocity
                           (B = i(o).rootPropertyValueCache[I]))
                         : S.Hooks.registered[z]
                         ? M === a
-                          ? ((B = S.getPropertyValue(o, I)),
-                            (M = S.getPropertyValue(o, z, B)))
+                          ? ((B = S.getPropertyValue(o, I)), (M = S.getPropertyValue(o, z, B)))
                           : (B = S.Hooks.templates[I][1])
                         : M === a && (M = S.getPropertyValue(o, z));
                     var W,
@@ -1656,8 +1469,7 @@ jQuery.Velocity
                           ? ((q /= 100), (G = 'em'))
                           : /^scale/.test(z)
                           ? ((q /= 100), (G = ''))
-                          : /(Red|Green|Blue)$/i.test(z) &&
-                            ((q = (q / 100) * 255), (G = ''))),
+                          : /(Red|Green|Blue)$/i.test(z) && ((q = (q / 100) * 255), (G = ''))),
                       /[\/*]/.test(D))
                     )
                       G = Y;
@@ -1666,19 +1478,14 @@ jQuery.Velocity
                       else {
                         n = n || h();
                         var Q =
-                          /margin|padding|left|right|width|text|word|letter/i.test(
-                            z
-                          ) ||
+                          /margin|padding|left|right|width|text|word|letter/i.test(z) ||
                           /X$/.test(z) ||
                           'x' === z
                             ? 'x'
                             : 'y';
                         switch (Y) {
                           case '%':
-                            M *=
-                              'x' === Q
-                                ? n.percentToPxWidth
-                                : n.percentToPxHeight;
+                            M *= 'x' === Q ? n.percentToPxWidth : n.percentToPxHeight;
                             break;
                           case 'px':
                             break;
@@ -1687,11 +1494,7 @@ jQuery.Velocity
                         }
                         switch (G) {
                           case '%':
-                            M *=
-                              1 /
-                              ('x' === Q
-                                ? n.percentToPxWidth
-                                : n.percentToPxHeight);
+                            M *= 1 / ('x' === Q ? n.percentToPxWidth : n.percentToPxHeight);
                             break;
                           case 'px':
                             break;
@@ -1721,18 +1524,10 @@ jQuery.Velocity
                       easing: $,
                     }),
                       b.debug &&
-                        console.log(
-                          'tweensContainer (' +
-                            z +
-                            '): ' +
-                            JSON.stringify(l[z]),
-                          o
-                        );
+                        console.log('tweensContainer (' + z + '): ' + JSON.stringify(l[z]), o);
                   } else
                     b.debug &&
-                      console.log(
-                        'Skipping [' + I + '] due to a lack of browser support.'
-                      );
+                      console.log('Skipping [' + I + '] due to a lack of browser support.');
                 }
                 l.element = o;
               }
@@ -1778,8 +1573,7 @@ jQuery.Velocity
             b.mock !== !1 &&
               (b.mock === !0
                 ? (s.duration = s.delay = 1)
-                : ((s.duration *= parseFloat(b.mock) || 1),
-                  (s.delay *= parseFloat(b.mock) || 1))),
+                : ((s.duration *= parseFloat(b.mock) || 1), (s.delay *= parseFloat(b.mock) || 1))),
               (s.easing = u(s.easing, s.duration)),
               s.begin && !m.isFunction(s.begin) && (s.begin = null),
               s.progress && !m.isFunction(s.progress) && (s.progress = null),
@@ -1787,13 +1581,11 @@ jQuery.Velocity
               s.display !== a &&
                 null !== s.display &&
                 ((s.display = s.display.toString().toLowerCase()),
-                'auto' === s.display &&
-                  (s.display = b.CSS.Values.getDisplayType(o))),
+                'auto' === s.display && (s.display = b.CSS.Values.getDisplayType(o))),
               s.visibility !== a &&
                 null !== s.visibility &&
                 (s.visibility = s.visibility.toString().toLowerCase()),
-              (s.mobileHA =
-                s.mobileHA && b.State.isMobile && !b.State.isGingerbread),
+              (s.mobileHA = s.mobileHA && b.State.isMobile && !b.State.isGingerbread),
               s.queue === !1
                 ? s.delay
                   ? setTimeout(e, s.delay)
@@ -1816,17 +1608,14 @@ jQuery.Velocity
             x =
               arguments[0] &&
               (arguments[0].p ||
-                (f.isPlainObject(arguments[0].properties) &&
-                  !arguments[0].properties.names) ||
+                (f.isPlainObject(arguments[0].properties) && !arguments[0].properties.names) ||
                 m.isString(arguments[0].properties));
           if (
             (m.isWrapped(this)
               ? ((s = !1), (d = 0), (g = this), (l = this))
               : ((s = !0),
                 (d = 1),
-                (g = x
-                  ? arguments[0].elements || arguments[0].e
-                  : arguments[0])),
+                (g = x ? arguments[0].elements || arguments[0].e : arguments[0])),
             (g = o(g)))
           ) {
             x
@@ -1840,8 +1629,7 @@ jQuery.Velocity
               v = {};
               for (var T = C; T < arguments.length; T++)
                 m.isArray(arguments[T]) ||
-                (!/^(fast|normal|slow)$/i.test(arguments[T]) &&
-                  !/^\d/.test(arguments[T]))
+                (!/^(fast|normal|slow)$/i.test(arguments[T]) && !/^\d/.test(arguments[T]))
                   ? m.isString(arguments[T]) || m.isArray(arguments[T])
                     ? (v.easing = arguments[T])
                     : m.isFunction(arguments[T]) && (v.complete = arguments[T])
@@ -1876,27 +1664,19 @@ jQuery.Velocity
                     t &&
                       f.each(t[1], function(r, n) {
                         var o = v === a ? '' : v;
-                        return o === !0 ||
-                          t[2].queue === o ||
-                          (v === a && t[2].queue === !1)
+                        return o === !0 || t[2].queue === o || (v === a && t[2].queue === !1)
                           ? void f.each(g, function(r, a) {
                               a === n &&
                                 ((v === !0 || m.isString(v)) &&
-                                  (f.each(
-                                    f.queue(a, m.isString(v) ? v : ''),
-                                    function(e, t) {
-                                      m.isFunction(t) && t(null, !0);
-                                    }
-                                  ),
+                                  (f.each(f.queue(a, m.isString(v) ? v : ''), function(e, t) {
+                                    m.isFunction(t) && t(null, !0);
+                                  }),
                                   f.queue(a, m.isString(v) ? v : '', [])),
                                 'stop' === y
                                   ? (i(a) &&
                                       i(a).tweensContainer &&
                                       o !== !1 &&
-                                      f.each(i(a).tweensContainer, function(
-                                        e,
-                                        t
-                                      ) {
+                                      f.each(i(a).tweensContainer, function(e, t) {
                                         t.endValue = t.currentValue;
                                       }),
                                     F.push(e))
@@ -1923,27 +1703,16 @@ jQuery.Velocity
                       f.each(g, function(e, t) {
                         parseFloat(j.stagger)
                           ? (j.delay = H + parseFloat(j.stagger) * e)
-                          : m.isFunction(j.stagger) &&
-                            (j.delay = H + j.stagger.call(t, e, w)),
+                          : m.isFunction(j.stagger) && (j.delay = H + j.stagger.call(t, e, w)),
                           j.drag &&
                             ((j.duration =
-                              parseFloat(E) ||
-                              (/^(callout|transition)/.test(y) ? 1e3 : h)),
+                              parseFloat(E) || (/^(callout|transition)/.test(y) ? 1e3 : h)),
                             (j.duration = Math.max(
-                              j.duration *
-                                (j.backwards ? 1 - e / w : (e + 1) / w),
+                              j.duration * (j.backwards ? 1 - e / w : (e + 1) / w),
                               0.75 * j.duration,
                               200
                             ))),
-                          b.Redirects[y].call(
-                            t,
-                            t,
-                            j || {},
-                            e,
-                            w,
-                            g,
-                            k.promise ? k : a
-                          );
+                          b.Redirects[y].call(t, t, j || {}, e, w, g, k.promise ? k : a);
                       }),
                       e()
                     );
@@ -1952,9 +1721,7 @@ jQuery.Velocity
                     'Velocity: First argument (' +
                     y +
                     ') was not a property map, a known action, or a registered redirect. Aborting.';
-                  return (
-                    k.promise ? k.rejecter(new Error(N)) : console.log(N), e()
-                  );
+                  return k.promise ? k.rejecter(new Error(N)) : console.log(N), e();
                 }
                 A = 'start';
             }
@@ -2003,8 +1770,7 @@ jQuery.Velocity
                 : (w = t.requestAnimationFrame || g);
             }),
           (e.Velocity = b),
-          e !== t &&
-            ((e.fn.velocity = P), (e.fn.velocity.defaults = b.defaults)),
+          e !== t && ((e.fn.velocity = P), (e.fn.velocity.defaults = b.defaults)),
           f.each(['Down', 'Up'], function(e, t) {
             b.Redirects['slide' + t] = function(e, r, n, o, i, s) {
               var l = f.extend({}, r),
@@ -2032,8 +1798,7 @@ jQuery.Velocity
                     var a = b.CSS.getPropertyValue(e, r);
                     p[r] = 'Down' === t ? [a, 0] : [0, a];
                   }
-                  (d.overflow = e.style.overflow),
-                    (e.style.overflow = 'hidden');
+                  (d.overflow = e.style.overflow), (e.style.overflow = 'hidden');
                 }),
                 (l.complete = function() {
                   for (var t in d) e.style[t] = d[t];

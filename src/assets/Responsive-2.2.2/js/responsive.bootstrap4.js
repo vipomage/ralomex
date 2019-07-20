@@ -5,11 +5,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define([
-      'jquery',
-      'datatables.net-bs4',
-      'datatables.net-responsive',
-    ], function($) {
+    define(['jquery', 'datatables.net-bs4', 'datatables.net-responsive'], function($) {
       return factory($, window, document);
     });
   } else if (typeof exports === 'object') {
@@ -64,9 +60,7 @@
 
             header
               .empty()
-              .append(
-                '<h4 class="modal-title">' + options.header(row) + '</h4>'
-              )
+              .append('<h4 class="modal-title">' + options.header(row) + '</h4>')
               .append(button);
           }
 

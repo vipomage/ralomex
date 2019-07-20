@@ -64,8 +64,8 @@ body {
     .modal-c-tabs {
       .md-tabs {
         box-shadow: $z-depth-1;
-        margin: $cascading-modal-tabs-margin-top $cascading-modal-tabs-margin-x
-          0 $cascading-modal-tabs-margin-x;
+        margin: $cascading-modal-tabs-margin-top $cascading-modal-tabs-margin-x 0
+          $cascading-modal-tabs-margin-x;
         display: flex;
         li {
           flex: 1;
@@ -105,8 +105,7 @@ body {
       .modal-header {
         box-shadow: none;
         @extend .img-fluid;
-        margin: $modal-avatar-header-margin-top 0
-          $modal-avatar-header-margin-bottom;
+        margin: $modal-avatar-header-margin-top 0 $modal-avatar-header-margin-bottom;
         img {
           width: $modal-avatar-img-width;
           box-shadow: $z-depth-2;

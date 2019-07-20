@@ -1,14 +1,7 @@
 <form #form="ngForm" (ngSubmit)="saveNewsElement(form.value)">
   <div class="form-group">
     <label for="heading">Заглавие</label>
-    <input
-      ngModel
-      required
-      class="form-control"
-      type="text"
-      id="heading"
-      name="heading"
-    />
+    <input ngModel required class="form-control" type="text" id="heading" name="heading" />
   </div>
   <div class="form-group">
     <label for="content">Съдържание на новината</label>
@@ -36,11 +29,7 @@
       id="catImage"
     />
     <div *ngIf="image">
-      <img
-        class="img-thumbnail col-md-4"
-        src="{{ [image] }}"
-        alt="award image preview"
-      />
+      <img class="img-thumbnail col-md-4" src="{{ [image] }}" alt="award image preview" />
     </div>
   </div>
   <button

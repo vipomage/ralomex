@@ -6,11 +6,7 @@
   $breakpoint-names: map-keys($breakpoints)
 ) {
   $n: index($breakpoint-names, $name);
-  @return if(
-    $n < length($breakpoint-names),
-    nth($breakpoint-names, $n + 1),
-    null
-  );
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
 }
 
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
@@ -51,11 +47,7 @@
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
-@mixin media-breakpoint-between(
-  $lower,
-  $upper,
-  $breakpoints: $grid-breakpoints
-) {
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($lower, $breakpoints);
   $max: breakpoint-max($upper, $breakpoints);
   @if $min !=null and $max !=null {
@@ -349,11 +341,7 @@
 // Make gradient
 @mixin make-gradient($name, $value) {
   .#{$name}-gradient {
-    background: linear-gradient(
-      40deg,
-      map-get($value, start),
-      map-get($value, end)
-    ) !important;
+    background: linear-gradient(40deg, map-get($value, start), map-get($value, end)) !important;
   }
 }
 
@@ -361,11 +349,7 @@ $opacity: 0.9;
 // Make gradient
 @mixin make-gradient-rgba($name, $value) {
   .#{$name}-gradient-rgba {
-    background: linear-gradient(
-      40deg,
-      map-get($value, start),
-      map-get($value, end)
-    ) !important;
+    background: linear-gradient(40deg, map-get($value, start), map-get($value, end)) !important;
   }
 }
 
@@ -549,12 +533,7 @@ $opacity: 0.9;
 }
 
 // Make border-radius scrollspy 4rows
-@mixin scrollspy-border-radius-4rows(
-  $top-left,
-  $top-right,
-  $bottom-right,
-  $bottom-left
-) {
+@mixin scrollspy-border-radius-4rows($top-left, $top-right, $bottom-right, $bottom-left) {
   border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
 

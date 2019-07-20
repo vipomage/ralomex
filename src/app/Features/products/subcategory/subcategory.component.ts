@@ -23,10 +23,8 @@ export class SubcategoryComponent implements OnInit {
     // this.category = data['category'];
     // this.subCategory = data['subCategory'];
 
-    this.db
-      .getSubCategoryData(this.type, this.category, this.subCategory)
-      .subscribe(data => {
-        this.data = data;
-      });
+    this.db.getSubCategoryData(this.type, this.category, this.subCategory).subscribe(data => {
+      this.data = data;
+    });
   }
 }

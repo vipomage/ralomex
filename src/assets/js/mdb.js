@@ -166,13 +166,7 @@ jQuery.extend(jQuery.easing, {
       a = c;
       var s = p / 4;
     } else var s = (p / (2 * Math.PI)) * Math.asin(c / a);
-    return (
-      -(
-        a *
-        Math.pow(2, 10 * (t -= 1)) *
-        Math.sin(((t * d - s) * (2 * Math.PI)) / p)
-      ) + b
-    );
+    return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin(((t * d - s) * (2 * Math.PI)) / p)) + b;
   },
   easeOutElastic: function(x, t, b, c, d) {
     var s = 1.70158;
@@ -185,11 +179,7 @@ jQuery.extend(jQuery.easing, {
       a = c;
       var s = p / 4;
     } else var s = (p / (2 * Math.PI)) * Math.asin(c / a);
-    return (
-      a * Math.pow(2, -10 * t) * Math.sin(((t * d - s) * (2 * Math.PI)) / p) +
-      c +
-      b
-    );
+    return a * Math.pow(2, -10 * t) * Math.sin(((t * d - s) * (2 * Math.PI)) / p) + c + b;
   },
   easeInOutElastic: function(x, t, b, c, d) {
     var s = 1.70158;
@@ -204,19 +194,10 @@ jQuery.extend(jQuery.easing, {
     } else var s = (p / (2 * Math.PI)) * Math.asin(c / a);
     if (t < 1)
       return (
-        -0.5 *
-          (a *
-            Math.pow(2, 10 * (t -= 1)) *
-            Math.sin(((t * d - s) * (2 * Math.PI)) / p)) +
-        b
+        -0.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin(((t * d - s) * (2 * Math.PI)) / p)) + b
       );
     return (
-      a *
-        Math.pow(2, -10 * (t -= 1)) *
-        Math.sin(((t * d - s) * (2 * Math.PI)) / p) *
-        0.5 +
-      c +
-      b
+      a * Math.pow(2, -10 * (t -= 1)) * Math.sin(((t * d - s) * (2 * Math.PI)) / p) * 0.5 + c + b
     );
   },
   easeInBack: function(x, t, b, c, d, s) {
@@ -229,8 +210,7 @@ jQuery.extend(jQuery.easing, {
   },
   easeInOutBack: function(x, t, b, c, d, s) {
     if (s == undefined) s = 1.70158;
-    if ((t /= d / 2) < 1)
-      return (c / 2) * (t * t * (((s *= 1.525) + 1) * t - s)) + b;
+    if ((t /= d / 2) < 1) return (c / 2) * (t * t * (((s *= 1.525) + 1) * t - s)) + b;
     return (c / 2) * ((t -= 2) * t * (((s *= 1.525) + 1) * t + s) + 2) + b;
   },
   easeInBounce: function(x, t, b, c, d) {
@@ -248,11 +228,8 @@ jQuery.extend(jQuery.easing, {
     }
   },
   easeInOutBounce: function(x, t, b, c, d) {
-    if (t < d / 2)
-      return jQuery.easing.easeInBounce(x, t * 2, 0, c, d) * 0.5 + b;
-    return (
-      jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b
-    );
+    if (t < d / 2) return jQuery.easing.easeInBounce(x, t * 2, 0, c, d) * 0.5 + b;
+    return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b;
   },
 });
 
@@ -303,9 +280,7 @@ jQuery.Velocity
           ? !1
           : 1 === e.nodeType && t
           ? !0
-          : 'array' === a ||
-            0 === t ||
-            ('number' == typeof t && t > 0 && t - 1 in e);
+          : 'array' === a || 0 === t || ('number' == typeof t && t > 0 && t - 1 in e);
       }
       if (!e.jQuery) {
         var r = function(e, t) {
@@ -328,8 +303,7 @@ jQuery.Velocity
             }),
           (r.isPlainObject = function(e) {
             var t;
-            if (!e || 'object' !== r.type(e) || e.nodeType || r.isWindow(e))
-              return !1;
+            if (!e || 'object' !== r.type(e) || e.nodeType || r.isWindow(e)) return !1;
             try {
               if (
                 e.constructor &&
@@ -351,10 +325,8 @@ jQuery.Velocity
             if (a) {
               if (s) for (; i > o && ((n = r.apply(e[o], a)), n !== !1); o++);
               else for (o in e) if (((n = r.apply(e[o], a)), n === !1)) break;
-            } else if (s)
-              for (; i > o && ((n = r.call(e[o], o, e[o])), n !== !1); o++);
-            else
-              for (o in e) if (((n = r.call(e[o], o, e[o])), n === !1)) break;
+            } else if (s) for (; i > o && ((n = r.call(e[o], o, e[o])), n !== !1); o++);
+            else for (o in e) if (((n = r.call(e[o], o, e[o])), n === !1)) break;
             return e;
           }),
           (r.data = function(e, t, n) {
@@ -414,8 +386,7 @@ jQuery.Velocity
                 null != e &&
                   (t(Object(e))
                     ? !(function(e, t) {
-                        for (var r = +t.length, a = 0, n = e.length; r > a; )
-                          e[n++] = t[a++];
+                        for (var r = +t.length, a = 0, n = e.length; r > a; ) e[n++] = t[a++];
                         if (r !== r) for (; void 0 !== t[a]; ) e[n++] = t[a++];
                         return (e.length = n), e;
                       })(a, 'string' == typeof e ? [e] : e)
@@ -426,9 +397,7 @@ jQuery.Velocity
             if (e) {
               a = (a || 'fx') + 'queue';
               var i = r.data(e, a);
-              return n
-                ? (!i || r.isArray(n) ? (i = r.data(e, a, o(n))) : i.push(n), i)
-                : i || [];
+              return n ? (!i || r.isArray(n) ? (i = r.data(e, a, o(n))) : i.push(n), i) : i || [];
             }
           }),
           (r.dequeue = function(e, t) {
@@ -454,23 +423,16 @@ jQuery.Velocity
                 ? this[0].getBoundingClientRect()
                 : { top: 0, left: 0 };
               return {
-                top:
-                  t.top +
-                  (e.pageYOffset || document.scrollTop || 0) -
-                  (document.clientTop || 0),
+                top: t.top + (e.pageYOffset || document.scrollTop || 0) - (document.clientTop || 0),
                 left:
-                  t.left +
-                  (e.pageXOffset || document.scrollLeft || 0) -
-                  (document.clientLeft || 0),
+                  t.left + (e.pageXOffset || document.scrollLeft || 0) - (document.clientLeft || 0),
               };
             },
             position: function() {
               function e() {
                 for (
                   var e = this.offsetParent || document;
-                  e &&
-                  'html' === !e.nodeType.toLowerCase &&
-                  'static' === e.style.position;
+                  e && 'html' === !e.nodeType.toLowerCase && 'static' === e.style.position;
 
                 )
                   e = e.offsetParent;
@@ -479,9 +441,7 @@ jQuery.Velocity
               var t = this[0],
                 e = e.apply(t),
                 a = this.offset(),
-                n = /^(?:body|html)$/i.test(e.nodeName)
-                  ? { top: 0, left: 0 }
-                  : r(e).offset();
+                n = /^(?:body|html)$/i.test(e.nodeName) ? { top: 0, left: 0 } : r(e).offset();
               return (
                 (a.top -= parseFloat(t.style.marginTop) || 0),
                 (a.left -= parseFloat(t.style.marginLeft) || 0),
@@ -498,9 +458,7 @@ jQuery.Velocity
           var n = {},
             o = n.hasOwnProperty,
             i = n.toString,
-            s = 'Boolean Number String Function Array Date RegExp Object Error'.split(
-              ' '
-            ),
+            s = 'Boolean Number String Function Array Date RegExp Object Error'.split(' '),
             l = 0;
           l < s.length;
           l++
@@ -525,10 +483,7 @@ jQuery.Velocity
           return a;
         }
         function o(e) {
-          return (
-            m.isWrapped(e) ? (e = [].slice.call(e)) : m.isNode(e) && (e = [e]),
-            e
-          );
+          return m.isWrapped(e) ? (e = [].slice.call(e)) : m.isNode(e) && (e = [e]), e;
         }
         function i(e) {
           var t = f.data(e, 'velocity');
@@ -571,10 +526,7 @@ jQuery.Velocity
             var o,
               i,
               s = 0;
-            do
-              (i = r + (n - r) / 2),
-                (o = l(i, e, a) - t),
-                o > 0 ? (n = i) : (r = i);
+            do (i = r + (n - r) / 2), (o = l(i, e, a) - t), o > 0 ? (n = i) : (r = i);
             while (Math.abs(o) > h && ++s < v);
             return i;
           }
@@ -598,29 +550,13 @@ jQuery.Velocity
             S = 'Float32Array' in t;
           if (4 !== arguments.length) return !1;
           for (var P = 0; 4 > P; ++P)
-            if (
-              'number' != typeof arguments[P] ||
-              isNaN(arguments[P]) ||
-              !isFinite(arguments[P])
-            )
+            if ('number' != typeof arguments[P] || isNaN(arguments[P]) || !isFinite(arguments[P]))
               return !1;
-          (e = Math.min(e, 1)),
-            (a = Math.min(a, 1)),
-            (e = Math.max(e, 0)),
-            (a = Math.max(a, 0));
+          (e = Math.min(e, 1)), (a = Math.min(a, 1)), (e = Math.max(e, 0)), (a = Math.max(a, 0));
           var w = S ? new Float32Array(b) : new Array(b),
             V = !1,
             C = function(t) {
-              return (
-                V || g(),
-                e === r && a === n
-                  ? t
-                  : 0 === t
-                  ? 0
-                  : 1 === t
-                  ? 1
-                  : l(d(t), r, n)
-              );
+              return V || g(), e === r && a === n ? t : 0 === t ? 0 : 1 === t ? 1 : l(d(t), r, n);
             };
           C.getControlPoints = function() {
             return [{ x: e, y: r }, { x: a, y: n }];
@@ -646,8 +582,7 @@ jQuery.Velocity
                     : m.isArray(e) && 4 === e.length
                     ? l.apply(null, e)
                     : !1),
-            r === !1 &&
-              (r = b.Easings[b.defaults.easing] ? b.defaults.easing : v),
+            r === !1 && (r = b.Easings[b.defaults.easing] ? b.defaults.easing : v),
             r
           );
         }
@@ -665,29 +600,14 @@ jQuery.Velocity
                   g = !!d,
                   y = null;
                 d || (d = b.State.calls[o][3] = t - 16);
-                for (
-                  var h = Math.min((t - d) / u.duration, 1),
-                    v = 0,
-                    x = l.length;
-                  x > v;
-                  v++
-                ) {
+                for (var h = Math.min((t - d) / u.duration, 1), v = 0, x = l.length; x > v; v++) {
                   var P = l[v],
                     V = P.element;
                   if (i(V)) {
                     var C = !1;
-                    if (
-                      u.display !== a &&
-                      null !== u.display &&
-                      'none' !== u.display
-                    ) {
+                    if (u.display !== a && null !== u.display && 'none' !== u.display) {
                       if ('flex' === u.display) {
-                        var T = [
-                          '-webkit-box',
-                          '-moz-box',
-                          '-ms-flexbox',
-                          '-webkit-flex',
-                        ];
+                        var T = ['-webkit-box', '-moz-box', '-ms-flexbox', '-webkit-flex'];
                         f.each(T, function(e, t) {
                           S.setPropertyValue(V, 'display', t);
                         });
@@ -701,16 +621,11 @@ jQuery.Velocity
                       if ('element' !== k) {
                         var A,
                           F = P[k],
-                          j = m.isString(F.easing)
-                            ? b.Easings[F.easing]
-                            : F.easing;
+                          j = m.isString(F.easing) ? b.Easings[F.easing] : F.easing;
                         if (1 === h) A = F.endValue;
                         else {
                           var E = F.endValue - F.startValue;
-                          if (
-                            ((A = F.startValue + E * j(h, u, E)),
-                            !g && A === F.currentValue)
-                          )
+                          if (((A = F.startValue + E * j(h, u, E)), !g && A === F.currentValue))
                             continue;
                         }
                         if (((F.currentValue = A), 'tween' === k)) y = A;
@@ -723,45 +638,29 @@ jQuery.Velocity
                           var L = S.setPropertyValue(
                             V,
                             k,
-                            F.currentValue +
-                              (0 === parseFloat(A) ? '' : F.unitType),
+                            F.currentValue + (0 === parseFloat(A) ? '' : F.unitType),
                             F.rootPropertyValue,
                             F.scrollData
                           );
                           S.Hooks.registered[k] &&
-                            (i(V).rootPropertyValueCache[H] = S.Normalizations
-                              .registered[H]
-                              ? S.Normalizations.registered[H](
-                                  'extract',
-                                  null,
-                                  L[1]
-                                )
+                            (i(V).rootPropertyValueCache[H] = S.Normalizations.registered[H]
+                              ? S.Normalizations.registered[H]('extract', null, L[1])
                               : L[1]),
                             'transform' === L[0] && (C = !0);
                         }
                       }
                     u.mobileHA &&
                       i(V).transformCache.translate3d === a &&
-                      ((i(V).transformCache.translate3d = '(0px, 0px, 0px)'),
-                      (C = !0)),
+                      ((i(V).transformCache.translate3d = '(0px, 0px, 0px)'), (C = !0)),
                       C && S.flushTransformCache(V);
                   }
                 }
-                u.display !== a &&
-                  'none' !== u.display &&
-                  (b.State.calls[o][2].display = !1),
+                u.display !== a && 'none' !== u.display && (b.State.calls[o][2].display = !1),
                   u.visibility !== a &&
                     'hidden' !== u.visibility &&
                     (b.State.calls[o][2].visibility = !1),
                   u.progress &&
-                    u.progress.call(
-                      s[1],
-                      s[1],
-                      h,
-                      Math.max(0, d + u.duration - t),
-                      d,
-                      y
-                    ),
+                    u.progress.call(s[1], s[1], h, Math.max(0, d + u.duration - t), d, y),
                   1 === h && p(o);
               }
           }
@@ -784,13 +683,10 @@ jQuery.Velocity
             if (
               (t ||
                 o.loop ||
-                ('none' === o.display &&
-                  S.setPropertyValue(p, 'display', o.display),
-                'hidden' === o.visibility &&
-                  S.setPropertyValue(p, 'visibility', o.visibility)),
+                ('none' === o.display && S.setPropertyValue(p, 'display', o.display),
+                'hidden' === o.visibility && S.setPropertyValue(p, 'visibility', o.visibility)),
               o.loop !== !0 &&
-                (f.queue(p)[1] === a ||
-                  !/\.velocityQueueEntryFlag/i.test(f.queue(p)[1])) &&
+                (f.queue(p)[1] === a || !/\.velocityQueueEntryFlag/i.test(f.queue(p)[1])) &&
                 i(p))
             ) {
               (i(p).isAnimating = !1), (i(p).rootPropertyValueCache = {});
@@ -802,8 +698,7 @@ jQuery.Velocity
                   new RegExp('^\\(' + r + '[^.]').test(n) &&
                   ((d = !0), delete i(p).transformCache[t]);
               }),
-                o.mobileHA &&
-                  ((d = !0), delete i(p).transformCache.translate3d),
+                o.mobileHA && ((d = !0), delete i(p).transformCache.translate3d),
                 d && S.flushTransformCache(p),
                 S.Values.removeClass(p, 'velocity-animating');
             }
@@ -837,10 +732,7 @@ jQuery.Velocity
               l = !0;
               break;
             }
-          l === !1 &&
-            ((b.State.isTicking = !1),
-            delete b.State.calls,
-            (b.State.calls = []));
+          l === !1 && ((b.State.isTicking = !1), delete b.State.calls, (b.State.calls = []));
         }
         var f,
           d = (function() {
@@ -848,8 +740,7 @@ jQuery.Velocity
             for (var e = 7; e > 4; e--) {
               var t = r.createElement('div');
               if (
-                ((t.innerHTML =
-                  '<!--[if IE ' + e + ']><span></span><![endif]-->'),
+                ((t.innerHTML = '<!--[if IE ' + e + ']><span></span><![endif]-->'),
                 t.getElementsByTagName('span').length)
               )
                 return (t = null), e;
@@ -896,8 +787,7 @@ jQuery.Velocity
                   Object.prototype.toString.call(e)
                 ) &&
                 e.length !== a &&
-                (0 === e.length ||
-                  ('object' == typeof e[0] && e[0].nodeType > 0))
+                (0 === e.length || ('object' == typeof e[0] && e[0].nodeType > 0))
               );
             },
             isWrapped: function(e) {
@@ -912,15 +802,8 @@ jQuery.Velocity
             },
           },
           y = !1;
-        if (
-          (e.fn && e.fn.jquery
-            ? ((f = e), (y = !0))
-            : (f = t.Velocity.Utilities),
-          8 >= d && !y)
-        )
-          throw new Error(
-            'Velocity: IE8 and below require jQuery to be loaded before Velocity.'
-          );
+        if ((e.fn && e.fn.jquery ? ((f = e), (y = !0)) : (f = t.Velocity.Utilities), 8 >= d && !y))
+          throw new Error('Velocity: IE8 and below require jQuery to be loaded before Velocity.');
         if (7 >= d) return void (jQuery.fn.velocity = jQuery.fn.animate);
         var h = 400,
           v = 'swing',
@@ -979,8 +862,7 @@ jQuery.Velocity
           ? ((b.State.scrollAnchor = t),
             (b.State.scrollPropertyLeft = 'pageXOffset'),
             (b.State.scrollPropertyTop = 'pageYOffset'))
-          : ((b.State.scrollAnchor =
-              r.documentElement || r.body.parentNode || r.body),
+          : ((b.State.scrollAnchor = r.documentElement || r.body.parentNode || r.body),
             (b.State.scrollPropertyLeft = 'scrollLeft'),
             (b.State.scrollPropertyTop = 'scrollTop'));
         var x = (function() {
@@ -1109,13 +991,7 @@ jQuery.Velocity
               'skewY',
               'rotateZ',
             ],
-            transforms3D: [
-              'transformPerspective',
-              'translateZ',
-              'scaleZ',
-              'rotateX',
-              'rotateY',
-            ],
+            transforms3D: ['transformPerspective', 'translateZ', 'scaleZ', 'rotateX', 'rotateY'],
           },
           Hooks: {
             templates: {
@@ -1129,12 +1005,8 @@ jQuery.Velocity
             registered: {},
             register: function() {
               for (var e = 0; e < S.Lists.colors.length; e++) {
-                var t =
-                  'color' === S.Lists.colors[e] ? '0 0 0 1' : '255 255 255 1';
-                S.Hooks.templates[S.Lists.colors[e]] = [
-                  'Red Green Blue Alpha',
-                  t,
-                ];
+                var t = 'color' === S.Lists.colors[e] ? '0 0 0 1' : '255 255 255 1';
+                S.Hooks.templates[S.Lists.colors[e]] = ['Red Green Blue Alpha', t];
               }
               var r, a, n;
               if (d)
@@ -1161,8 +1033,7 @@ jQuery.Velocity
             },
             cleanRootPropertyValue: function(e, t) {
               return (
-                S.RegEx.valueUnwrap.test(t) &&
-                  (t = t.match(S.RegEx.valueUnwrap)[1]),
+                S.RegEx.valueUnwrap.test(t) && (t = t.match(S.RegEx.valueUnwrap)[1]),
                 S.Values.isCSSNullValue(t) && (t = S.Hooks.templates[e][1]),
                 t
               );
@@ -1243,9 +1114,7 @@ jQuery.Velocity
                         (t.style.zoom = 1),
                         parseFloat(r) >= 1
                           ? ''
-                          : 'alpha(opacity=' +
-                            parseInt(100 * parseFloat(r), 10) +
-                            ')'
+                          : 'alpha(opacity=' + parseInt(100 * parseFloat(r), 10) + ')'
                       );
                   }
                 else
@@ -1262,9 +1131,7 @@ jQuery.Velocity
             register: function() {
               9 >= d ||
                 b.State.isGingerbread ||
-                (S.Lists.transformsBase = S.Lists.transformsBase.concat(
-                  S.Lists.transforms3D
-                ));
+                (S.Lists.transformsBase = S.Lists.transformsBase.concat(S.Lists.transforms3D));
               for (var e = 0; e < S.Lists.transformsBase.length; e++)
                 !(function() {
                   var t = S.Lists.transformsBase[e];
@@ -1286,10 +1153,7 @@ jQuery.Velocity
                             break;
                           case 'scal':
                           case 'scale':
-                            b.State.isAndroid &&
-                              i(r).transformCache[t] === a &&
-                              1 > n &&
-                              (n = 1),
+                            b.State.isAndroid && i(r).transformCache[t] === a && 1 > n && (n = 1),
                               (o = !/(\d)$/i.test(n));
                             break;
                           case 'skew':
@@ -1299,8 +1163,7 @@ jQuery.Velocity
                             o = !/(deg|\d)$/i.test(n);
                         }
                         return (
-                          o || (i(r).transformCache[t] = '(' + n + ')'),
-                          i(r).transformCache[t]
+                          o || (i(r).transformCache[t] = '(' + n + ')'), i(r).transformCache[t]
                         );
                     }
                   };
@@ -1328,17 +1191,14 @@ jQuery.Velocity
                           /^[A-z]+$/i.test(n)
                             ? (i = s[n] !== a ? s[n] : s.black)
                             : S.RegEx.isHex.test(n)
-                            ? (i =
-                                'rgb(' + S.Values.hexToRgb(n).join(' ') + ')')
+                            ? (i = 'rgb(' + S.Values.hexToRgb(n).join(' ') + ')')
                             : /^rgba?\(/i.test(n) || (i = s.black),
                             (o = (i || n)
                               .toString()
                               .match(S.RegEx.valueUnwrap)[1]
                               .replace(/,(\s+)?/g, ' '));
                         }
-                        return (
-                          8 >= d || 3 !== o.split(' ').length || (o += ' 1'), o
-                        );
+                        return 8 >= d || 3 !== o.split(' ').length || (o += ' 1'), o;
                       case 'inject':
                         return (
                           8 >= d
@@ -1350,9 +1210,7 @@ jQuery.Velocity
                             : 3 === n.split(' ').length && (n += ' 1'),
                           (8 >= d ? 'rgb' : 'rgba') +
                             '(' +
-                            n
-                              .replace(/\s+/g, ',')
-                              .replace(/\.(\d)+(?=,)/g, '') +
+                            n.replace(/\s+/g, ',').replace(/\.(\d)+(?=,)/g, '') +
                             ')'
                         );
                     }
@@ -1369,19 +1227,13 @@ jQuery.Velocity
             SVGAttribute: function(e) {
               var t = 'width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2';
               return (
-                (d || (b.State.isAndroid && !b.State.isChrome)) &&
-                  (t += '|transform'),
+                (d || (b.State.isAndroid && !b.State.isChrome)) && (t += '|transform'),
                 new RegExp('^(' + t + ')$', 'i').test(e)
               );
             },
             prefixCheck: function(e) {
-              if (b.State.prefixMatches[e])
-                return [b.State.prefixMatches[e], !0];
-              for (
-                var t = ['', 'Webkit', 'Moz', 'ms', 'O'], r = 0, a = t.length;
-                a > r;
-                r++
-              ) {
+              if (b.State.prefixMatches[e]) return [b.State.prefixMatches[e], !0];
+              for (var t = ['', 'Webkit', 'Moz', 'ms', 'O'], r = 0, a = t.length; a > r; r++) {
                 var n;
                 if (
                   ((n =
@@ -1408,16 +1260,11 @@ jQuery.Velocity
                   return t + t + r + r + a + a;
                 })),
                 (t = a.exec(e)),
-                t
-                  ? [parseInt(t[1], 16), parseInt(t[2], 16), parseInt(t[3], 16)]
-                  : [0, 0, 0]
+                t ? [parseInt(t[1], 16), parseInt(t[2], 16), parseInt(t[3], 16)] : [0, 0, 0]
               );
             },
             isCSSNullValue: function(e) {
-              return (
-                0 == e ||
-                /^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(e)
-              );
+              return 0 == e || /^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(e);
             },
             getUnitType: function(e) {
               return /^(rotate|skew)/i.test(e)
@@ -1455,10 +1302,7 @@ jQuery.Velocity
                 : (e.className = e.className
                     .toString()
                     .replace(
-                      new RegExp(
-                        '(^|\\s)' + t.split(' ').join('|') + '(\\s|$)',
-                        'gi'
-                      ),
+                      new RegExp('(^|\\s)' + t.split(' ').join('|') + '(\\s|$)', 'gi'),
                       ' '
                     ));
             },
@@ -1475,12 +1319,7 @@ jQuery.Velocity
                 if (
                   (/^(width|height)$/.test(r) &&
                     0 === S.getPropertyValue(e, 'display') &&
-                    ((u = !0),
-                    S.setPropertyValue(
-                      e,
-                      'display',
-                      S.Values.getDisplayType(e)
-                    )),
+                    ((u = !0), S.setPropertyValue(e, 'display', S.Values.getDisplayType(e))),
                   !o)
                 ) {
                   if (
@@ -1492,10 +1331,8 @@ jQuery.Velocity
                   ) {
                     var c =
                       e.offsetHeight -
-                      (parseFloat(S.getPropertyValue(e, 'borderTopWidth')) ||
-                        0) -
-                      (parseFloat(S.getPropertyValue(e, 'borderBottomWidth')) ||
-                        0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderTopWidth')) || 0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderBottomWidth')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingTop')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingBottom')) || 0);
                     return n(), c;
@@ -1509,10 +1346,8 @@ jQuery.Velocity
                   ) {
                     var p =
                       e.offsetWidth -
-                      (parseFloat(S.getPropertyValue(e, 'borderLeftWidth')) ||
-                        0) -
-                      (parseFloat(S.getPropertyValue(e, 'borderRightWidth')) ||
-                        0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderLeftWidth')) || 0) -
+                      (parseFloat(S.getPropertyValue(e, 'borderRightWidth')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingLeft')) || 0) -
                       (parseFloat(S.getPropertyValue(e, 'paddingRight')) || 0);
                     return n(), p;
@@ -1526,8 +1361,7 @@ jQuery.Velocity
                     ? i(e).computedStyle
                     : (i(e).computedStyle = t.getComputedStyle(e, null))),
                   'borderColor' === r && (r = 'borderTopColor'),
-                  (l =
-                    9 === d && 'filter' === r ? g.getPropertyValue(r) : g[r]),
+                  (l = 9 === d && 'filter' === r ? g.getPropertyValue(r) : g[r]),
                   ('' === l || null === l) && (l = e.style[r]),
                   n();
               }
@@ -1591,9 +1425,7 @@ jQuery.Velocity
               if (S.Hooks.registered[r]) {
                 var l = r,
                   u = S.Hooks.getRoot(r);
-                (n = n || S.getPropertyValue(e, u)),
-                  (a = S.Hooks.injectValue(l, a, n)),
-                  (r = u);
+                (n = n || S.getPropertyValue(e, u)), (a = S.Hooks.injectValue(l, a, n)), (r = u);
               }
               if (
                 (S.Normalizations.registered[r] &&
@@ -1605,10 +1437,7 @@ jQuery.Velocity
                 try {
                   e.style[s] = a;
                 } catch (c) {
-                  b.debug &&
-                    console.log(
-                      'Browser does not support [' + a + '] for [' + s + ']'
-                    );
+                  b.debug && console.log('Browser does not support [' + a + '] for [' + s + ']');
                 }
               else
                 i(e) && i(e).isSVG && S.Names.SVGAttribute(r)
@@ -1628,10 +1457,7 @@ jQuery.Velocity
                 translate: [t('translateX'), t('translateY')],
                 skewX: [t('skewX')],
                 skewY: [t('skewY')],
-                scale:
-                  1 !== t('scale')
-                    ? [t('scale'), t('scale')]
-                    : [t('scaleX'), t('scaleY')],
+                scale: 1 !== t('scale') ? [t('scale'), t('scale')] : [t('scaleX'), t('scaleY')],
                 rotate: [t('rotateZ'), 0, 0],
               };
               f.each(i(e).transformCache, function(e) {
@@ -1649,8 +1475,7 @@ jQuery.Velocity
                   (n = i(e).transformCache[t]),
                   'transformPerspective' === t
                     ? ((o = n), !0)
-                    : (9 === d && 'rotateZ' === t && (t = 'rotate'),
-                      void (r += t + n + ' '))
+                    : (9 === d && 'rotateZ' === t && (t = 'rotate'), void (r += t + n + ' '))
                 );
               }),
                 o && (r = 'perspective' + o + ' ' + r);
@@ -1692,10 +1517,8 @@ jQuery.Velocity
                       m.isFunction(e[1]) ||
                       S.RegEx.isHex.test(e[1])
                         ? (i = e[1])
-                        : ((m.isString(e[1]) && !S.RegEx.isHex.test(e[1])) ||
-                            m.isArray(e[1])) &&
-                          ((n = t ? e[1] : u(e[1], s.duration)),
-                          e[2] !== a && (i = e[2])))
+                        : ((m.isString(e[1]) && !S.RegEx.isHex.test(e[1])) || m.isArray(e[1])) &&
+                          ((n = t ? e[1] : u(e[1], s.duration)), e[2] !== a && (i = e[2])))
                     : (r = e),
                   t || (n = n || s.easing),
                   m.isFunction(r) && (r = r.call(o, V, w)),
@@ -1722,9 +1545,7 @@ jQuery.Velocity
                     position: S.getPropertyValue(o, 'position'),
                     fontSize: S.getPropertyValue(o, 'fontSize'),
                   },
-                  a =
-                    e.position === L.lastPosition &&
-                    e.myParent === L.lastParent,
+                  a = e.position === L.lastPosition && e.myParent === L.lastParent,
                   n = e.fontSize === L.lastFontSize;
                 (L.lastParent = e.myParent),
                   (L.lastPosition = e.position),
@@ -1741,52 +1562,37 @@ jQuery.Velocity
                     : r.createElement('div');
                   b.init(u),
                     e.myParent.appendChild(u),
-                    f.each(['overflow', 'overflowX', 'overflowY'], function(
-                      e,
-                      t
-                    ) {
+                    f.each(['overflow', 'overflowX', 'overflowY'], function(e, t) {
                       b.CSS.setPropertyValue(u, t, 'hidden');
                     }),
                     b.CSS.setPropertyValue(u, 'position', e.position),
                     b.CSS.setPropertyValue(u, 'fontSize', e.fontSize),
                     b.CSS.setPropertyValue(u, 'boxSizing', 'content-box'),
                     f.each(
-                      [
-                        'minWidth',
-                        'maxWidth',
-                        'width',
-                        'minHeight',
-                        'maxHeight',
-                        'height',
-                      ],
+                      ['minWidth', 'maxWidth', 'width', 'minHeight', 'maxHeight', 'height'],
                       function(e, t) {
                         b.CSS.setPropertyValue(u, t, s + '%');
                       }
                     ),
                     b.CSS.setPropertyValue(u, 'paddingLeft', s + 'em'),
                     (l.percentToPxWidth = L.lastPercentToPxWidth =
-                      (parseFloat(S.getPropertyValue(u, 'width', null, !0)) ||
-                        1) / s),
+                      (parseFloat(S.getPropertyValue(u, 'width', null, !0)) || 1) / s),
                     (l.percentToPxHeight = L.lastPercentToPxHeight =
-                      (parseFloat(S.getPropertyValue(u, 'height', null, !0)) ||
-                        1) / s),
+                      (parseFloat(S.getPropertyValue(u, 'height', null, !0)) || 1) / s),
                     (l.emToPx = L.lastEmToPx =
-                      (parseFloat(S.getPropertyValue(u, 'paddingLeft')) || 1) /
-                      s),
+                      (parseFloat(S.getPropertyValue(u, 'paddingLeft')) || 1) / s),
                     e.myParent.removeChild(u);
                 }
                 return (
                   null === L.remToPx &&
-                    (L.remToPx =
-                      parseFloat(S.getPropertyValue(r.body, 'fontSize')) || 16),
+                    (L.remToPx = parseFloat(S.getPropertyValue(r.body, 'fontSize')) || 16),
                   null === L.vwToPx &&
                     ((L.vwToPx = parseFloat(t.innerWidth) / 100),
                     (L.vhToPx = parseFloat(t.innerHeight) / 100)),
                   (l.remToPx = L.remToPx),
                   (l.vwToPx = L.vwToPx),
                   (l.vhToPx = L.vhToPx),
-                  b.debug >= 1 &&
-                    console.log('Unit ratios: ' + JSON.stringify(l), o),
+                  b.debug >= 1 && console.log('Unit ratios: ' + JSON.stringify(l), o),
                   l
                 );
               }
@@ -1813,9 +1619,7 @@ jQuery.Velocity
                   : ((P = b.State.scrollAnchor[b.State['scrollProperty' + F]]),
                     (C =
                       b.State.scrollAnchor[
-                        b.State[
-                          'scrollProperty' + ('Left' === F ? 'Top' : 'Left')
-                        ]
+                        b.State['scrollProperty' + ('Left' === F ? 'Top' : 'Left')]
                       ]),
                     (T = f(o).offset()[F.toLowerCase()] + j)),
                   (l = {
@@ -1834,13 +1638,11 @@ jQuery.Velocity
                     },
                     element: o,
                   }),
-                  b.debug &&
-                    console.log('tweensContainer (scroll): ', l.scroll, o);
+                  b.debug && console.log('tweensContainer (scroll): ', l.scroll, o);
               } else if ('reverse' === A) {
                 if (!i(o).tweensContainer) return void f.dequeue(o, s.queue);
                 'none' === i(o).opts.display && (i(o).opts.display = 'auto'),
-                  'hidden' === i(o).opts.visibility &&
-                    (i(o).opts.visibility = 'visible'),
+                  'hidden' === i(o).opts.visibility && (i(o).opts.visibility = 'visible'),
                   (i(o).opts.loop = !1),
                   (i(o).opts.begin = null),
                   (i(o).opts.complete = null),
@@ -1856,23 +1658,16 @@ jQuery.Velocity
                       m.isEmptyObject(v) || (E[H].easing = s.easing),
                       b.debug &&
                         console.log(
-                          'reverse tweensContainer (' +
-                            H +
-                            '): ' +
-                            JSON.stringify(E[H]),
+                          'reverse tweensContainer (' + H + '): ' + JSON.stringify(E[H]),
                           o
                         );
                   }
                 l = E;
               } else if ('start' === A) {
                 var E;
-                i(o).tweensContainer &&
-                  i(o).isAnimating === !0 &&
-                  (E = i(o).tweensContainer),
+                i(o).tweensContainer && i(o).isAnimating === !0 && (E = i(o).tweensContainer),
                   f.each(y, function(e, t) {
-                    if (
-                      RegExp('^' + S.Lists.colors.join('$|^') + '$').test(e)
-                    ) {
+                    if (RegExp('^' + S.Lists.colors.join('$|^') + '$').test(e)) {
                       var r = p(t, !0),
                         n = r[0],
                         o = r[1],
@@ -1887,9 +1682,7 @@ jQuery.Velocity
                           c++
                         ) {
                           var f = [l[c]];
-                          o && f.push(o),
-                            u !== a && f.push(u[c]),
-                            (y[e + s[c]] = f);
+                          o && f.push(o), u !== a && f.push(u[c]), (y[e + s[c]] = f);
                         }
                         delete y[e];
                       }
@@ -1909,9 +1702,7 @@ jQuery.Velocity
                     S.Names.prefixCheck(I)[1] !== !1 ||
                     S.Normalizations.registered[I] !== a
                   ) {
-                    ((s.display !== a &&
-                      null !== s.display &&
-                      'none' !== s.display) ||
+                    ((s.display !== a && null !== s.display && 'none' !== s.display) ||
                       (s.visibility !== a && 'hidden' !== s.visibility)) &&
                       /opacity|filter/.test(z) &&
                       !M &&
@@ -1922,8 +1713,7 @@ jQuery.Velocity
                           (B = i(o).rootPropertyValueCache[I]))
                         : S.Hooks.registered[z]
                         ? M === a
-                          ? ((B = S.getPropertyValue(o, I)),
-                            (M = S.getPropertyValue(o, z, B)))
+                          ? ((B = S.getPropertyValue(o, I)), (M = S.getPropertyValue(o, z, B)))
                           : (B = S.Hooks.templates[I][1])
                         : M === a && (M = S.getPropertyValue(o, z));
                     var W,
@@ -1946,8 +1736,7 @@ jQuery.Velocity
                           ? ((q /= 100), (G = 'em'))
                           : /^scale/.test(z)
                           ? ((q /= 100), (G = ''))
-                          : /(Red|Green|Blue)$/i.test(z) &&
-                            ((q = (q / 100) * 255), (G = ''))),
+                          : /(Red|Green|Blue)$/i.test(z) && ((q = (q / 100) * 255), (G = ''))),
                       /[\/*]/.test(D))
                     )
                       G = Y;
@@ -1956,19 +1745,14 @@ jQuery.Velocity
                       else {
                         n = n || h();
                         var Q =
-                          /margin|padding|left|right|width|text|word|letter/i.test(
-                            z
-                          ) ||
+                          /margin|padding|left|right|width|text|word|letter/i.test(z) ||
                           /X$/.test(z) ||
                           'x' === z
                             ? 'x'
                             : 'y';
                         switch (Y) {
                           case '%':
-                            M *=
-                              'x' === Q
-                                ? n.percentToPxWidth
-                                : n.percentToPxHeight;
+                            M *= 'x' === Q ? n.percentToPxWidth : n.percentToPxHeight;
                             break;
                           case 'px':
                             break;
@@ -1977,11 +1761,7 @@ jQuery.Velocity
                         }
                         switch (G) {
                           case '%':
-                            M *=
-                              1 /
-                              ('x' === Q
-                                ? n.percentToPxWidth
-                                : n.percentToPxHeight);
+                            M *= 1 / ('x' === Q ? n.percentToPxWidth : n.percentToPxHeight);
                             break;
                           case 'px':
                             break;
@@ -2011,18 +1791,10 @@ jQuery.Velocity
                       easing: $,
                     }),
                       b.debug &&
-                        console.log(
-                          'tweensContainer (' +
-                            z +
-                            '): ' +
-                            JSON.stringify(l[z]),
-                          o
-                        );
+                        console.log('tweensContainer (' + z + '): ' + JSON.stringify(l[z]), o);
                   } else
                     b.debug &&
-                      console.log(
-                        'Skipping [' + I + '] due to a lack of browser support.'
-                      );
+                      console.log('Skipping [' + I + '] due to a lack of browser support.');
                 }
                 l.element = o;
               }
@@ -2068,8 +1840,7 @@ jQuery.Velocity
             b.mock !== !1 &&
               (b.mock === !0
                 ? (s.duration = s.delay = 1)
-                : ((s.duration *= parseFloat(b.mock) || 1),
-                  (s.delay *= parseFloat(b.mock) || 1))),
+                : ((s.duration *= parseFloat(b.mock) || 1), (s.delay *= parseFloat(b.mock) || 1))),
               (s.easing = u(s.easing, s.duration)),
               s.begin && !m.isFunction(s.begin) && (s.begin = null),
               s.progress && !m.isFunction(s.progress) && (s.progress = null),
@@ -2077,13 +1848,11 @@ jQuery.Velocity
               s.display !== a &&
                 null !== s.display &&
                 ((s.display = s.display.toString().toLowerCase()),
-                'auto' === s.display &&
-                  (s.display = b.CSS.Values.getDisplayType(o))),
+                'auto' === s.display && (s.display = b.CSS.Values.getDisplayType(o))),
               s.visibility !== a &&
                 null !== s.visibility &&
                 (s.visibility = s.visibility.toString().toLowerCase()),
-              (s.mobileHA =
-                s.mobileHA && b.State.isMobile && !b.State.isGingerbread),
+              (s.mobileHA = s.mobileHA && b.State.isMobile && !b.State.isGingerbread),
               s.queue === !1
                 ? s.delay
                   ? setTimeout(e, s.delay)
@@ -2106,17 +1875,14 @@ jQuery.Velocity
             x =
               arguments[0] &&
               (arguments[0].p ||
-                (f.isPlainObject(arguments[0].properties) &&
-                  !arguments[0].properties.names) ||
+                (f.isPlainObject(arguments[0].properties) && !arguments[0].properties.names) ||
                 m.isString(arguments[0].properties));
           if (
             (m.isWrapped(this)
               ? ((s = !1), (d = 0), (g = this), (l = this))
               : ((s = !0),
                 (d = 1),
-                (g = x
-                  ? arguments[0].elements || arguments[0].e
-                  : arguments[0])),
+                (g = x ? arguments[0].elements || arguments[0].e : arguments[0])),
             (g = o(g)))
           ) {
             x
@@ -2130,8 +1896,7 @@ jQuery.Velocity
               v = {};
               for (var T = C; T < arguments.length; T++)
                 m.isArray(arguments[T]) ||
-                (!/^(fast|normal|slow)$/i.test(arguments[T]) &&
-                  !/^\d/.test(arguments[T]))
+                (!/^(fast|normal|slow)$/i.test(arguments[T]) && !/^\d/.test(arguments[T]))
                   ? m.isString(arguments[T]) || m.isArray(arguments[T])
                     ? (v.easing = arguments[T])
                     : m.isFunction(arguments[T]) && (v.complete = arguments[T])
@@ -2166,27 +1931,19 @@ jQuery.Velocity
                     t &&
                       f.each(t[1], function(r, n) {
                         var o = v === a ? '' : v;
-                        return o === !0 ||
-                          t[2].queue === o ||
-                          (v === a && t[2].queue === !1)
+                        return o === !0 || t[2].queue === o || (v === a && t[2].queue === !1)
                           ? void f.each(g, function(r, a) {
                               a === n &&
                                 ((v === !0 || m.isString(v)) &&
-                                  (f.each(
-                                    f.queue(a, m.isString(v) ? v : ''),
-                                    function(e, t) {
-                                      m.isFunction(t) && t(null, !0);
-                                    }
-                                  ),
+                                  (f.each(f.queue(a, m.isString(v) ? v : ''), function(e, t) {
+                                    m.isFunction(t) && t(null, !0);
+                                  }),
                                   f.queue(a, m.isString(v) ? v : '', [])),
                                 'stop' === y
                                   ? (i(a) &&
                                       i(a).tweensContainer &&
                                       o !== !1 &&
-                                      f.each(i(a).tweensContainer, function(
-                                        e,
-                                        t
-                                      ) {
+                                      f.each(i(a).tweensContainer, function(e, t) {
                                         t.endValue = t.currentValue;
                                       }),
                                     F.push(e))
@@ -2213,27 +1970,16 @@ jQuery.Velocity
                       f.each(g, function(e, t) {
                         parseFloat(j.stagger)
                           ? (j.delay = H + parseFloat(j.stagger) * e)
-                          : m.isFunction(j.stagger) &&
-                            (j.delay = H + j.stagger.call(t, e, w)),
+                          : m.isFunction(j.stagger) && (j.delay = H + j.stagger.call(t, e, w)),
                           j.drag &&
                             ((j.duration =
-                              parseFloat(E) ||
-                              (/^(callout|transition)/.test(y) ? 1e3 : h)),
+                              parseFloat(E) || (/^(callout|transition)/.test(y) ? 1e3 : h)),
                             (j.duration = Math.max(
-                              j.duration *
-                                (j.backwards ? 1 - e / w : (e + 1) / w),
+                              j.duration * (j.backwards ? 1 - e / w : (e + 1) / w),
                               0.75 * j.duration,
                               200
                             ))),
-                          b.Redirects[y].call(
-                            t,
-                            t,
-                            j || {},
-                            e,
-                            w,
-                            g,
-                            k.promise ? k : a
-                          );
+                          b.Redirects[y].call(t, t, j || {}, e, w, g, k.promise ? k : a);
                       }),
                       e()
                     );
@@ -2242,9 +1988,7 @@ jQuery.Velocity
                     'Velocity: First argument (' +
                     y +
                     ') was not a property map, a known action, or a registered redirect. Aborting.';
-                  return (
-                    k.promise ? k.rejecter(new Error(N)) : console.log(N), e()
-                  );
+                  return k.promise ? k.rejecter(new Error(N)) : console.log(N), e();
                 }
                 A = 'start';
             }
@@ -2293,8 +2037,7 @@ jQuery.Velocity
                 : (w = t.requestAnimationFrame || g);
             }),
           (e.Velocity = b),
-          e !== t &&
-            ((e.fn.velocity = P), (e.fn.velocity.defaults = b.defaults)),
+          e !== t && ((e.fn.velocity = P), (e.fn.velocity.defaults = b.defaults)),
           f.each(['Down', 'Up'], function(e, t) {
             b.Redirects['slide' + t] = function(e, r, n, o, i, s) {
               var l = f.extend({}, r),
@@ -2322,8 +2065,7 @@ jQuery.Velocity
                     var a = b.CSS.getPropertyValue(e, r);
                     p[r] = 'Down' === t ? [a, 0] : [0, a];
                   }
-                  (d.overflow = e.style.overflow),
-                    (e.style.overflow = 'hidden');
+                  (d.overflow = e.style.overflow), (e.style.overflow = 'hidden');
                 }),
                 (l.complete = function() {
                   for (var t in d) e.style[t] = d[t];
@@ -2409,12 +2151,7 @@ jQuery.Velocity
         }
         return n[i].exports;
       }
-      for (
-        var u = 'function' == typeof require && require, i = 0;
-        i < t.length;
-        i++
-      )
-        o(t[i]);
+      for (var u = 'function' == typeof require && require, i = 0; i < t.length; i++) o(t[i]);
       return o;
     }
     return r;
@@ -2555,9 +2292,7 @@ jQuery.Velocity
 
           // generators
           function hexString(rgb) {
-            return (
-              '#' + hexDouble(rgb[0]) + hexDouble(rgb[1]) + hexDouble(rgb[2])
-            );
+            return '#' + hexDouble(rgb[0]) + hexDouble(rgb[1]) + hexDouble(rgb[2]);
           }
 
           function rgbString(rgba, alpha) {
@@ -2571,17 +2306,7 @@ jQuery.Velocity
             if (alpha === undefined) {
               alpha = rgba[3] !== undefined ? rgba[3] : 1;
             }
-            return (
-              'rgba(' +
-              rgba[0] +
-              ', ' +
-              rgba[1] +
-              ', ' +
-              rgba[2] +
-              ', ' +
-              alpha +
-              ')'
-            );
+            return 'rgba(' + rgba[0] + ', ' + rgba[1] + ', ' + rgba[2] + ', ' + alpha + ')';
           }
 
           function percentString(rgba, alpha) {
@@ -2599,17 +2324,7 @@ jQuery.Velocity
             var r = Math.round((rgba[0] / 255) * 100),
               g = Math.round((rgba[1] / 255) * 100),
               b = Math.round((rgba[2] / 255) * 100);
-            return (
-              'rgba(' +
-              r +
-              '%, ' +
-              g +
-              '%, ' +
-              b +
-              '%, ' +
-              (alpha || rgba[3] || 1) +
-              ')'
-            );
+            return 'rgba(' + r + '%, ' + g + '%, ' + b + '%, ' + (alpha || rgba[3] || 1) + ')';
           }
 
           function hslString(hsla, alpha) {
@@ -2623,17 +2338,7 @@ jQuery.Velocity
             if (alpha === undefined) {
               alpha = hsla[3] !== undefined ? hsla[3] : 1;
             }
-            return (
-              'hsla(' +
-              hsla[0] +
-              ', ' +
-              hsla[1] +
-              '%, ' +
-              hsla[2] +
-              '%, ' +
-              alpha +
-              ')'
-            );
+            return 'hsla(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%, ' + alpha + ')';
           }
 
           // hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax
@@ -2866,10 +2571,7 @@ jQuery.Velocity
               var lum = [];
               for (var i = 0; i < rgb.length; i++) {
                 var chan = rgb[i] / 255;
-                lum[i] =
-                  chan <= 0.03928
-                    ? chan / 12.92
-                    : Math.pow((chan + 0.055) / 1.055, 2.4);
+                lum[i] = chan <= 0.03928 ? chan / 12.92 : Math.pow((chan + 0.055) / 1.055, 2.4);
               }
               return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
             },
@@ -3102,10 +2804,7 @@ jQuery.Velocity
               alpha = vals.alpha;
             }
 
-            values.alpha = Math.max(
-              0,
-              Math.min(1, alpha === undefined ? values.alpha : alpha)
-            );
+            values.alpha = Math.max(0, Math.min(1, alpha === undefined ? values.alpha : alpha));
 
             if (space === 'alpha') {
               return false;
@@ -3609,20 +3308,11 @@ jQuery.Velocity
             b = x * 0.0557 + y * -0.204 + z * 1.057;
 
             // assume sRGB
-            r =
-              r > 0.0031308
-                ? 1.055 * Math.pow(r, 1.0 / 2.4) - 0.055
-                : (r = r * 12.92);
+            r = r > 0.0031308 ? 1.055 * Math.pow(r, 1.0 / 2.4) - 0.055 : (r = r * 12.92);
 
-            g =
-              g > 0.0031308
-                ? 1.055 * Math.pow(g, 1.0 / 2.4) - 0.055
-                : (g = g * 12.92);
+            g = g > 0.0031308 ? 1.055 * Math.pow(g, 1.0 / 2.4) - 0.055 : (g = g * 12.92);
 
-            b =
-              b > 0.0031308
-                ? 1.055 * Math.pow(b, 1.0 / 2.4) - 0.055
-                : (b = b * 12.92);
+            b = b > 0.0031308 ? 1.055 * Math.pow(b, 1.0 / 2.4) - 0.055 : (b = b * 12.92);
 
             r = Math.min(Math.max(0, r), 1);
             g = Math.min(Math.max(0, g), 1);
@@ -3930,8 +3620,7 @@ jQuery.Velocity
             convert[func + 'Raw'] = (function(func) {
               // accept array or plain args
               return function(arg) {
-                if (typeof arg == 'number')
-                  arg = Array.prototype.slice.call(arguments);
+                if (typeof arg == 'number') arg = Array.prototype.slice.call(arguments);
                 return conversions[func](arg);
               };
             })(func);
@@ -3945,14 +3634,12 @@ jQuery.Velocity
 
             convert[from][to] = convert[func] = (function(func) {
               return function(arg) {
-                if (typeof arg == 'number')
-                  arg = Array.prototype.slice.call(arguments);
+                if (typeof arg == 'number') arg = Array.prototype.slice.call(arguments);
 
                 var val = conversions[func](arg);
                 if (typeof val == 'string' || val === undefined) return val; // keyword
 
-                for (var i = 0; i < val.length; i++)
-                  val[i] = Math.round(val[i]);
+                for (var i = 0; i < val.length; i++) val[i] = Math.round(val[i]);
                 return val;
               };
             })(func);
@@ -4522,10 +4209,7 @@ jQuery.Velocity
                   if (item.length > 0) {
                     if (item[0].yLabel) {
                       title = item[0].yLabel;
-                    } else if (
-                      data.labels.length > 0 &&
-                      item[0].index < data.labels.length
-                    ) {
+                    } else if (data.labels.length > 0 && item[0].index < data.labels.length) {
                       title = data.labels[item[0].index];
                     }
                   }
@@ -4534,8 +4218,7 @@ jQuery.Velocity
                 },
 
                 label: function(item, data) {
-                  var datasetLabel =
-                    data.datasets[item.datasetIndex].label || '';
+                  var datasetLabel = data.datasets[item.datasetIndex].label || '';
                   return datasetLabel + ': ' + item.xLabel;
                 },
               },
@@ -4639,10 +4322,7 @@ jQuery.Velocity
                 var me = this;
                 var meta;
 
-                Chart.DatasetController.prototype.initialize.apply(
-                  me,
-                  arguments
-                );
+                Chart.DatasetController.prototype.initialize.apply(me, arguments);
 
                 meta = me.getMeta();
                 meta.stack = me.getDataset().stack;
@@ -4719,24 +4399,12 @@ jQuery.Velocity
                 var horizontal = vscale.isHorizontal();
                 var ruler = me._ruler || me.getRuler();
                 var vpixels = me.calculateBarValuePixels(me.index, index);
-                var ipixels = me.calculateBarIndexPixels(
-                  me.index,
-                  index,
-                  ruler
-                );
+                var ipixels = me.calculateBarIndexPixels(me.index, index, ruler);
 
                 model.horizontal = horizontal;
                 model.base = reset ? base : vpixels.base;
-                model.x = horizontal
-                  ? reset
-                    ? base
-                    : vpixels.head
-                  : ipixels.center;
-                model.y = horizontal
-                  ? ipixels.center
-                  : reset
-                  ? base
-                  : vpixels.head;
+                model.x = horizontal ? (reset ? base : vpixels.head) : ipixels.center;
+                model.y = horizontal ? ipixels.center : reset ? base : vpixels.head;
                 model.height = horizontal ? ipixels.size : undefined;
                 model.width = horizontal ? undefined : ipixels.size;
               },
@@ -4780,8 +4448,7 @@ jQuery.Velocity
                 var chart = me.chart;
                 var scale = me.getIndexScale();
                 var stacked = scale.options.stacked;
-                var ilen =
-                  last === undefined ? chart.data.datasets.length : last + 1;
+                var ilen = last === undefined ? chart.data.datasets.length : last + 1;
                 var stacks = [];
                 var i, meta;
 
@@ -4793,8 +4460,7 @@ jQuery.Velocity
                     (stacked === false ||
                       (stacked === true && stacks.indexOf(meta.stack) === -1) ||
                       (stacked === undefined &&
-                        (meta.stack === undefined ||
-                          stacks.indexOf(meta.stack) === -1)))
+                        (meta.stack === undefined || stacks.indexOf(meta.stack) === -1)))
                   ) {
                     stacks.push(meta.stack);
                   }
@@ -4867,9 +4533,7 @@ jQuery.Velocity
                 var meta = me.getMeta();
                 var scale = me.getValueScale();
                 var datasets = chart.data.datasets;
-                var value = scale.getRightValue(
-                  datasets[datasetIndex].data[index]
-                );
+                var value = scale.getRightValue(datasets[datasetIndex].data[index]);
                 var stacked = scale.options.stacked;
                 var stack = meta.stack;
                 var start = 0;
@@ -4886,10 +4550,7 @@ jQuery.Velocity
                       chart.isDatasetVisible(i)
                     ) {
                       ivalue = scale.getRightValue(datasets[i].data[index]);
-                      if (
-                        (value < 0 && ivalue < 0) ||
-                        (value >= 0 && ivalue > 0)
-                      ) {
+                      if ((value < 0 && ivalue < 0) || (value >= 0 && ivalue > 0)) {
                         start += ivalue;
                       }
                     }
@@ -4919,12 +4580,8 @@ jQuery.Velocity
                     ? computeFlexCategoryTraits(index, ruler, options)
                     : computeFitCategoryTraits(index, ruler, options);
 
-                var stackIndex = me.getStackIndex(
-                  datasetIndex,
-                  me.getMeta().stack
-                );
-                var center =
-                  range.start + range.chunk * stackIndex + range.chunk / 2;
+                var stackIndex = me.getStackIndex(datasetIndex, me.getMeta().stack);
+                var center = range.start + range.chunk * stackIndex + range.chunk / 2;
                 var size = Math.min(
                   helpers.valueOrDefault(options.maxBarThickness, Infinity),
                   range.chunk * range.ratio
@@ -5015,10 +4672,8 @@ jQuery.Velocity
                   return '';
                 },
                 label: function(item, data) {
-                  var datasetLabel =
-                    data.datasets[item.datasetIndex].label || '';
-                  var dataPoint =
-                    data.datasets[item.datasetIndex].data[item.index];
+                  var datasetLabel = data.datasets[item.datasetIndex].label || '';
+                  var dataPoint = data.datasets[item.datasetIndex].data[item.index];
                   return (
                     datasetLabel +
                     ': (' +
@@ -5070,11 +4725,7 @@ jQuery.Velocity
 
                 var x = reset
                   ? xScale.getPixelForDecimal(0.5)
-                  : xScale.getPixelForValue(
-                      typeof data === 'object' ? data : NaN,
-                      index,
-                      dsIndex
-                    );
+                  : xScale.getPixelForValue(typeof data === 'object' ? data : NaN, index, dsIndex);
                 var y = reset
                   ? yScale.getBasePixel()
                   : yScale.getPixelForValue(data, index, dsIndex);
@@ -5165,21 +4816,12 @@ jQuery.Velocity
 
                 for (i = 0, ilen = keys.length; i < ilen; ++i) {
                   key = keys[i];
-                  values[key] = resolve(
-                    [custom[key], dataset[key], options[key]],
-                    context,
-                    index
-                  );
+                  values[key] = resolve([custom[key], dataset[key], options[key]], context, index);
                 }
 
                 // Custom radius resolution
                 values.radius = resolve(
-                  [
-                    custom.radius,
-                    data ? data.r : undefined,
-                    dataset.radius,
-                    options.radius,
-                  ],
+                  [custom.radius, data ? data.r : undefined, dataset.radius, options.radius],
                   context,
                   index
                 );
@@ -5247,25 +4889,13 @@ jQuery.Velocity
                       var arcOpts = chart.options.elements.arc;
                       var fill = custom.backgroundColor
                         ? custom.backgroundColor
-                        : valueAtIndexOrDefault(
-                            ds.backgroundColor,
-                            i,
-                            arcOpts.backgroundColor
-                          );
+                        : valueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
                       var stroke = custom.borderColor
                         ? custom.borderColor
-                        : valueAtIndexOrDefault(
-                            ds.borderColor,
-                            i,
-                            arcOpts.borderColor
-                          );
+                        : valueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
                       var bw = custom.borderWidth
                         ? custom.borderWidth
-                        : valueAtIndexOrDefault(
-                            ds.borderWidth,
-                            i,
-                            arcOpts.borderWidth
-                          );
+                        : valueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
 
                       return {
                         text: label,
@@ -5288,11 +4918,7 @@ jQuery.Velocity
                 var chart = this.chart;
                 var i, ilen, meta;
 
-                for (
-                  i = 0, ilen = (chart.data.datasets || []).length;
-                  i < ilen;
-                  ++i
-                ) {
+                for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
                   meta = chart.getDatasetMeta(i);
                   // toggle visibility of index if exists
                   if (meta.data[index]) {
@@ -5322,10 +4948,7 @@ jQuery.Velocity
                 label: function(tooltipItem, data) {
                   var dataLabel = data.labels[tooltipItem.index];
                   var value =
-                    ': ' +
-                    data.datasets[tooltipItem.datasetIndex].data[
-                      tooltipItem.index
-                    ];
+                    ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 
                   if (helpers.isArray(dataLabel)) {
                     // show value on first line of multiline label
@@ -5348,292 +4971,240 @@ jQuery.Velocity
           });
 
           module.exports = function(Chart) {
-            Chart.controllers.doughnut = Chart.controllers.pie = Chart.DatasetController.extend(
-              {
-                dataElementType: elements.Arc,
+            Chart.controllers.doughnut = Chart.controllers.pie = Chart.DatasetController.extend({
+              dataElementType: elements.Arc,
 
-                linkScales: helpers.noop,
+              linkScales: helpers.noop,
 
-                // Get index of the dataset in relation to the visible datasets. This allows determining the inner and outer radius correctly
-                getRingIndex: function(datasetIndex) {
-                  var ringIndex = 0;
+              // Get index of the dataset in relation to the visible datasets. This allows determining the inner and outer radius correctly
+              getRingIndex: function(datasetIndex) {
+                var ringIndex = 0;
 
-                  for (var j = 0; j < datasetIndex; ++j) {
-                    if (this.chart.isDatasetVisible(j)) {
-                      ++ringIndex;
-                    }
+                for (var j = 0; j < datasetIndex; ++j) {
+                  if (this.chart.isDatasetVisible(j)) {
+                    ++ringIndex;
+                  }
+                }
+
+                return ringIndex;
+              },
+
+              update: function(reset) {
+                var me = this;
+                var chart = me.chart;
+                var chartArea = chart.chartArea;
+                var opts = chart.options;
+                var arcOpts = opts.elements.arc;
+                var availableWidth = chartArea.right - chartArea.left - arcOpts.borderWidth;
+                var availableHeight = chartArea.bottom - chartArea.top - arcOpts.borderWidth;
+                var minSize = Math.min(availableWidth, availableHeight);
+                var offset = { x: 0, y: 0 };
+                var meta = me.getMeta();
+                var cutoutPercentage = opts.cutoutPercentage;
+                var circumference = opts.circumference;
+
+                // If the chart's circumference isn't a full circle, calculate minSize as a ratio of the width/height of the arc
+                if (circumference < Math.PI * 2.0) {
+                  var startAngle = opts.rotation % (Math.PI * 2.0);
+                  startAngle +=
+                    Math.PI * 2.0 * (startAngle >= Math.PI ? -1 : startAngle < -Math.PI ? 1 : 0);
+                  var endAngle = startAngle + circumference;
+                  var start = {
+                    x: Math.cos(startAngle),
+                    y: Math.sin(startAngle),
+                  };
+                  var end = { x: Math.cos(endAngle), y: Math.sin(endAngle) };
+                  var contains0 =
+                    (startAngle <= 0 && endAngle >= 0) ||
+                    (startAngle <= Math.PI * 2.0 && Math.PI * 2.0 <= endAngle);
+                  var contains90 =
+                    (startAngle <= Math.PI * 0.5 && Math.PI * 0.5 <= endAngle) ||
+                    (startAngle <= Math.PI * 2.5 && Math.PI * 2.5 <= endAngle);
+                  var contains180 =
+                    (startAngle <= -Math.PI && -Math.PI <= endAngle) ||
+                    (startAngle <= Math.PI && Math.PI <= endAngle);
+                  var contains270 =
+                    (startAngle <= -Math.PI * 0.5 && -Math.PI * 0.5 <= endAngle) ||
+                    (startAngle <= Math.PI * 1.5 && Math.PI * 1.5 <= endAngle);
+                  var cutout = cutoutPercentage / 100.0;
+                  var min = {
+                    x: contains180
+                      ? -1
+                      : Math.min(
+                          start.x * (start.x < 0 ? 1 : cutout),
+                          end.x * (end.x < 0 ? 1 : cutout)
+                        ),
+                    y: contains270
+                      ? -1
+                      : Math.min(
+                          start.y * (start.y < 0 ? 1 : cutout),
+                          end.y * (end.y < 0 ? 1 : cutout)
+                        ),
+                  };
+                  var max = {
+                    x: contains0
+                      ? 1
+                      : Math.max(
+                          start.x * (start.x > 0 ? 1 : cutout),
+                          end.x * (end.x > 0 ? 1 : cutout)
+                        ),
+                    y: contains90
+                      ? 1
+                      : Math.max(
+                          start.y * (start.y > 0 ? 1 : cutout),
+                          end.y * (end.y > 0 ? 1 : cutout)
+                        ),
+                  };
+                  var size = {
+                    width: (max.x - min.x) * 0.5,
+                    height: (max.y - min.y) * 0.5,
+                  };
+                  minSize = Math.min(availableWidth / size.width, availableHeight / size.height);
+                  offset = {
+                    x: (max.x + min.x) * -0.5,
+                    y: (max.y + min.y) * -0.5,
+                  };
+                }
+
+                chart.borderWidth = me.getMaxBorderWidth(meta.data);
+                chart.outerRadius = Math.max((minSize - chart.borderWidth) / 2, 0);
+                chart.innerRadius = Math.max(
+                  cutoutPercentage ? (chart.outerRadius / 100) * cutoutPercentage : 0,
+                  0
+                );
+                chart.radiusLength =
+                  (chart.outerRadius - chart.innerRadius) / chart.getVisibleDatasetCount();
+                chart.offsetX = offset.x * chart.outerRadius;
+                chart.offsetY = offset.y * chart.outerRadius;
+
+                meta.total = me.calculateTotal();
+
+                me.outerRadius = chart.outerRadius - chart.radiusLength * me.getRingIndex(me.index);
+                me.innerRadius = Math.max(me.outerRadius - chart.radiusLength, 0);
+
+                helpers.each(meta.data, function(arc, index) {
+                  me.updateElement(arc, index, reset);
+                });
+              },
+
+              updateElement: function(arc, index, reset) {
+                var me = this;
+                var chart = me.chart;
+                var chartArea = chart.chartArea;
+                var opts = chart.options;
+                var animationOpts = opts.animation;
+                var centerX = (chartArea.left + chartArea.right) / 2;
+                var centerY = (chartArea.top + chartArea.bottom) / 2;
+                var startAngle = opts.rotation; // non reset case handled later
+                var endAngle = opts.rotation; // non reset case handled later
+                var dataset = me.getDataset();
+                var circumference =
+                  reset && animationOpts.animateRotate
+                    ? 0
+                    : arc.hidden
+                    ? 0
+                    : me.calculateCircumference(dataset.data[index]) *
+                      (opts.circumference / (2.0 * Math.PI));
+                var innerRadius = reset && animationOpts.animateScale ? 0 : me.innerRadius;
+                var outerRadius = reset && animationOpts.animateScale ? 0 : me.outerRadius;
+                var valueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
+
+                helpers.extend(arc, {
+                  // Utility
+                  _datasetIndex: me.index,
+                  _index: index,
+
+                  // Desired view properties
+                  _model: {
+                    x: centerX + chart.offsetX,
+                    y: centerY + chart.offsetY,
+                    startAngle: startAngle,
+                    endAngle: endAngle,
+                    circumference: circumference,
+                    outerRadius: outerRadius,
+                    innerRadius: innerRadius,
+                    label: valueAtIndexOrDefault(dataset.label, index, chart.data.labels[index]),
+                  },
+                });
+
+                var model = arc._model;
+
+                // Resets the visual styles
+                var custom = arc.custom || {};
+                var valueOrDefault = helpers.valueAtIndexOrDefault;
+                var elementOpts = this.chart.options.elements.arc;
+                model.backgroundColor = custom.backgroundColor
+                  ? custom.backgroundColor
+                  : valueOrDefault(dataset.backgroundColor, index, elementOpts.backgroundColor);
+                model.borderColor = custom.borderColor
+                  ? custom.borderColor
+                  : valueOrDefault(dataset.borderColor, index, elementOpts.borderColor);
+                model.borderWidth = custom.borderWidth
+                  ? custom.borderWidth
+                  : valueOrDefault(dataset.borderWidth, index, elementOpts.borderWidth);
+
+                // Set correct angles if not resetting
+                if (!reset || !animationOpts.animateRotate) {
+                  if (index === 0) {
+                    model.startAngle = opts.rotation;
+                  } else {
+                    model.startAngle = me.getMeta().data[index - 1]._model.endAngle;
                   }
 
-                  return ringIndex;
-                },
+                  model.endAngle = model.startAngle + model.circumference;
+                }
 
-                update: function(reset) {
-                  var me = this;
-                  var chart = me.chart;
-                  var chartArea = chart.chartArea;
-                  var opts = chart.options;
-                  var arcOpts = opts.elements.arc;
-                  var availableWidth =
-                    chartArea.right - chartArea.left - arcOpts.borderWidth;
-                  var availableHeight =
-                    chartArea.bottom - chartArea.top - arcOpts.borderWidth;
-                  var minSize = Math.min(availableWidth, availableHeight);
-                  var offset = { x: 0, y: 0 };
-                  var meta = me.getMeta();
-                  var cutoutPercentage = opts.cutoutPercentage;
-                  var circumference = opts.circumference;
+                arc.pivot();
+              },
 
-                  // If the chart's circumference isn't a full circle, calculate minSize as a ratio of the width/height of the arc
-                  if (circumference < Math.PI * 2.0) {
-                    var startAngle = opts.rotation % (Math.PI * 2.0);
-                    startAngle +=
-                      Math.PI *
-                      2.0 *
-                      (startAngle >= Math.PI
-                        ? -1
-                        : startAngle < -Math.PI
-                        ? 1
-                        : 0);
-                    var endAngle = startAngle + circumference;
-                    var start = {
-                      x: Math.cos(startAngle),
-                      y: Math.sin(startAngle),
-                    };
-                    var end = { x: Math.cos(endAngle), y: Math.sin(endAngle) };
-                    var contains0 =
-                      (startAngle <= 0 && endAngle >= 0) ||
-                      (startAngle <= Math.PI * 2.0 &&
-                        Math.PI * 2.0 <= endAngle);
-                    var contains90 =
-                      (startAngle <= Math.PI * 0.5 &&
-                        Math.PI * 0.5 <= endAngle) ||
-                      (startAngle <= Math.PI * 2.5 &&
-                        Math.PI * 2.5 <= endAngle);
-                    var contains180 =
-                      (startAngle <= -Math.PI && -Math.PI <= endAngle) ||
-                      (startAngle <= Math.PI && Math.PI <= endAngle);
-                    var contains270 =
-                      (startAngle <= -Math.PI * 0.5 &&
-                        -Math.PI * 0.5 <= endAngle) ||
-                      (startAngle <= Math.PI * 1.5 &&
-                        Math.PI * 1.5 <= endAngle);
-                    var cutout = cutoutPercentage / 100.0;
-                    var min = {
-                      x: contains180
-                        ? -1
-                        : Math.min(
-                            start.x * (start.x < 0 ? 1 : cutout),
-                            end.x * (end.x < 0 ? 1 : cutout)
-                          ),
-                      y: contains270
-                        ? -1
-                        : Math.min(
-                            start.y * (start.y < 0 ? 1 : cutout),
-                            end.y * (end.y < 0 ? 1 : cutout)
-                          ),
-                    };
-                    var max = {
-                      x: contains0
-                        ? 1
-                        : Math.max(
-                            start.x * (start.x > 0 ? 1 : cutout),
-                            end.x * (end.x > 0 ? 1 : cutout)
-                          ),
-                      y: contains90
-                        ? 1
-                        : Math.max(
-                            start.y * (start.y > 0 ? 1 : cutout),
-                            end.y * (end.y > 0 ? 1 : cutout)
-                          ),
-                    };
-                    var size = {
-                      width: (max.x - min.x) * 0.5,
-                      height: (max.y - min.y) * 0.5,
-                    };
-                    minSize = Math.min(
-                      availableWidth / size.width,
-                      availableHeight / size.height
-                    );
-                    offset = {
-                      x: (max.x + min.x) * -0.5,
-                      y: (max.y + min.y) * -0.5,
-                    };
+              calculateTotal: function() {
+                var dataset = this.getDataset();
+                var meta = this.getMeta();
+                var total = 0;
+                var value;
+
+                helpers.each(meta.data, function(element, index) {
+                  value = dataset.data[index];
+                  if (!isNaN(value) && !element.hidden) {
+                    total += Math.abs(value);
                   }
+                });
 
-                  chart.borderWidth = me.getMaxBorderWidth(meta.data);
-                  chart.outerRadius = Math.max(
-                    (minSize - chart.borderWidth) / 2,
-                    0
-                  );
-                  chart.innerRadius = Math.max(
-                    cutoutPercentage
-                      ? (chart.outerRadius / 100) * cutoutPercentage
-                      : 0,
-                    0
-                  );
-                  chart.radiusLength =
-                    (chart.outerRadius - chart.innerRadius) /
-                    chart.getVisibleDatasetCount();
-                  chart.offsetX = offset.x * chart.outerRadius;
-                  chart.offsetY = offset.y * chart.outerRadius;
-
-                  meta.total = me.calculateTotal();
-
-                  me.outerRadius =
-                    chart.outerRadius -
-                    chart.radiusLength * me.getRingIndex(me.index);
-                  me.innerRadius = Math.max(
-                    me.outerRadius - chart.radiusLength,
-                    0
-                  );
-
-                  helpers.each(meta.data, function(arc, index) {
-                    me.updateElement(arc, index, reset);
-                  });
-                },
-
-                updateElement: function(arc, index, reset) {
-                  var me = this;
-                  var chart = me.chart;
-                  var chartArea = chart.chartArea;
-                  var opts = chart.options;
-                  var animationOpts = opts.animation;
-                  var centerX = (chartArea.left + chartArea.right) / 2;
-                  var centerY = (chartArea.top + chartArea.bottom) / 2;
-                  var startAngle = opts.rotation; // non reset case handled later
-                  var endAngle = opts.rotation; // non reset case handled later
-                  var dataset = me.getDataset();
-                  var circumference =
-                    reset && animationOpts.animateRotate
-                      ? 0
-                      : arc.hidden
-                      ? 0
-                      : me.calculateCircumference(dataset.data[index]) *
-                        (opts.circumference / (2.0 * Math.PI));
-                  var innerRadius =
-                    reset && animationOpts.animateScale ? 0 : me.innerRadius;
-                  var outerRadius =
-                    reset && animationOpts.animateScale ? 0 : me.outerRadius;
-                  var valueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
-
-                  helpers.extend(arc, {
-                    // Utility
-                    _datasetIndex: me.index,
-                    _index: index,
-
-                    // Desired view properties
-                    _model: {
-                      x: centerX + chart.offsetX,
-                      y: centerY + chart.offsetY,
-                      startAngle: startAngle,
-                      endAngle: endAngle,
-                      circumference: circumference,
-                      outerRadius: outerRadius,
-                      innerRadius: innerRadius,
-                      label: valueAtIndexOrDefault(
-                        dataset.label,
-                        index,
-                        chart.data.labels[index]
-                      ),
-                    },
-                  });
-
-                  var model = arc._model;
-
-                  // Resets the visual styles
-                  var custom = arc.custom || {};
-                  var valueOrDefault = helpers.valueAtIndexOrDefault;
-                  var elementOpts = this.chart.options.elements.arc;
-                  model.backgroundColor = custom.backgroundColor
-                    ? custom.backgroundColor
-                    : valueOrDefault(
-                        dataset.backgroundColor,
-                        index,
-                        elementOpts.backgroundColor
-                      );
-                  model.borderColor = custom.borderColor
-                    ? custom.borderColor
-                    : valueOrDefault(
-                        dataset.borderColor,
-                        index,
-                        elementOpts.borderColor
-                      );
-                  model.borderWidth = custom.borderWidth
-                    ? custom.borderWidth
-                    : valueOrDefault(
-                        dataset.borderWidth,
-                        index,
-                        elementOpts.borderWidth
-                      );
-
-                  // Set correct angles if not resetting
-                  if (!reset || !animationOpts.animateRotate) {
-                    if (index === 0) {
-                      model.startAngle = opts.rotation;
-                    } else {
-                      model.startAngle = me.getMeta().data[
-                        index - 1
-                      ]._model.endAngle;
-                    }
-
-                    model.endAngle = model.startAngle + model.circumference;
-                  }
-
-                  arc.pivot();
-                },
-
-                calculateTotal: function() {
-                  var dataset = this.getDataset();
-                  var meta = this.getMeta();
-                  var total = 0;
-                  var value;
-
-                  helpers.each(meta.data, function(element, index) {
-                    value = dataset.data[index];
-                    if (!isNaN(value) && !element.hidden) {
-                      total += Math.abs(value);
-                    }
-                  });
-
-                  /* if (total === 0) {
+                /* if (total === 0) {
 				total = NaN;
 			}*/
 
-                  return total;
-                },
+                return total;
+              },
 
-                calculateCircumference: function(value) {
-                  var total = this.getMeta().total;
-                  if (total > 0 && !isNaN(value)) {
-                    return Math.PI * 2.0 * (Math.abs(value) / total);
-                  }
-                  return 0;
-                },
+              calculateCircumference: function(value) {
+                var total = this.getMeta().total;
+                if (total > 0 && !isNaN(value)) {
+                  return Math.PI * 2.0 * (Math.abs(value) / total);
+                }
+                return 0;
+              },
 
-                // gets the max border or hover width to properly scale pie charts
-                getMaxBorderWidth: function(arcs) {
-                  var max = 0;
-                  var index = this.index;
-                  var length = arcs.length;
-                  var borderWidth;
-                  var hoverWidth;
+              // gets the max border or hover width to properly scale pie charts
+              getMaxBorderWidth: function(arcs) {
+                var max = 0;
+                var index = this.index;
+                var length = arcs.length;
+                var borderWidth;
+                var hoverWidth;
 
-                  for (var i = 0; i < length; i++) {
-                    borderWidth = arcs[i]._model
-                      ? arcs[i]._model.borderWidth
-                      : 0;
-                    hoverWidth = arcs[i]._chart
-                      ? arcs[i]._chart.config.data.datasets[index]
-                          .hoverBorderWidth
-                      : 0;
+                for (var i = 0; i < length; i++) {
+                  borderWidth = arcs[i]._model ? arcs[i]._model.borderWidth : 0;
+                  hoverWidth = arcs[i]._chart
+                    ? arcs[i]._chart.config.data.datasets[index].hoverBorderWidth
+                    : 0;
 
-                    max = borderWidth > max ? borderWidth : max;
-                    max = hoverWidth > max ? hoverWidth : max;
-                  }
-                  return max;
-                },
-              }
-            );
+                  max = borderWidth > max ? borderWidth : max;
+                  max = hoverWidth > max ? hoverWidth : max;
+                }
+                return max;
+              },
+            });
           };
         },
         { '26': 26, '41': 41, '46': 46 },
@@ -5672,10 +5243,7 @@ jQuery.Velocity
 
           module.exports = function(Chart) {
             function lineEnabled(dataset, options) {
-              return helpers.valueOrDefault(
-                dataset.showLine,
-                options.showLines
-              );
+              return helpers.valueOrDefault(dataset.showLine, options.showLines);
             }
 
             Chart.controllers.line = Chart.DatasetController.extend({
@@ -5700,10 +5268,7 @@ jQuery.Velocity
                   custom = line.custom || {};
 
                   // Compatibility: If the properties are defined with only the old name, use those values
-                  if (
-                    dataset.tension !== undefined &&
-                    dataset.lineTension === undefined
-                  ) {
+                  if (dataset.tension !== undefined && dataset.lineTension === undefined) {
                     dataset.lineTension = dataset.tension;
                   }
 
@@ -5718,19 +5283,13 @@ jQuery.Velocity
                     // The default behavior of lines is to break at null values, according
                     // to https://github.com/chartjs/Chart.js/issues/2435#issuecomment-216718158
                     // This option gives lines the ability to span gaps
-                    spanGaps: dataset.spanGaps
-                      ? dataset.spanGaps
-                      : options.spanGaps,
+                    spanGaps: dataset.spanGaps ? dataset.spanGaps : options.spanGaps,
                     tension: custom.tension
                       ? custom.tension
-                      : helpers.valueOrDefault(
-                          dataset.lineTension,
-                          lineElementOptions.tension
-                        ),
+                      : helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),
                     backgroundColor: custom.backgroundColor
                       ? custom.backgroundColor
-                      : dataset.backgroundColor ||
-                        lineElementOptions.backgroundColor,
+                      : dataset.backgroundColor || lineElementOptions.backgroundColor,
                     borderWidth: custom.borderWidth
                       ? custom.borderWidth
                       : dataset.borderWidth || lineElementOptions.borderWidth,
@@ -5739,19 +5298,16 @@ jQuery.Velocity
                       : dataset.borderColor || lineElementOptions.borderColor,
                     borderCapStyle: custom.borderCapStyle
                       ? custom.borderCapStyle
-                      : dataset.borderCapStyle ||
-                        lineElementOptions.borderCapStyle,
+                      : dataset.borderCapStyle || lineElementOptions.borderCapStyle,
                     borderDash: custom.borderDash
                       ? custom.borderDash
                       : dataset.borderDash || lineElementOptions.borderDash,
                     borderDashOffset: custom.borderDashOffset
                       ? custom.borderDashOffset
-                      : dataset.borderDashOffset ||
-                        lineElementOptions.borderDashOffset,
+                      : dataset.borderDashOffset || lineElementOptions.borderDashOffset,
                     borderJoinStyle: custom.borderJoinStyle
                       ? custom.borderJoinStyle
-                      : dataset.borderJoinStyle ||
-                        lineElementOptions.borderJoinStyle,
+                      : dataset.borderJoinStyle || lineElementOptions.borderJoinStyle,
                     fill: custom.fill
                       ? custom.fill
                       : dataset.fill !== undefined
@@ -5759,10 +5315,7 @@ jQuery.Velocity
                       : lineElementOptions.fill,
                     steppedLine: custom.steppedLine
                       ? custom.steppedLine
-                      : helpers.valueOrDefault(
-                          dataset.steppedLine,
-                          lineElementOptions.stepped
-                        ),
+                      : helpers.valueOrDefault(dataset.steppedLine, lineElementOptions.stepped),
                     cubicInterpolationMode: custom.cubicInterpolationMode
                       ? custom.cubicInterpolationMode
                       : helpers.valueOrDefault(
@@ -5790,8 +5343,7 @@ jQuery.Velocity
               },
 
               getPointBackgroundColor: function(point, index) {
-                var backgroundColor = this.chart.options.elements.point
-                  .backgroundColor;
+                var backgroundColor = this.chart.options.elements.point.backgroundColor;
                 var dataset = this.getDataset();
                 var custom = point.custom || {};
 
@@ -5886,16 +5438,10 @@ jQuery.Velocity
                 var x, y;
 
                 // Compatibility: If the properties are defined with only the old name, use those values
-                if (
-                  dataset.radius !== undefined &&
-                  dataset.pointRadius === undefined
-                ) {
+                if (dataset.radius !== undefined && dataset.pointRadius === undefined) {
                   dataset.pointRadius = dataset.radius;
                 }
-                if (
-                  dataset.hitRadius !== undefined &&
-                  dataset.pointHitRadius === undefined
-                ) {
+                if (dataset.hitRadius !== undefined && dataset.pointHitRadius === undefined) {
                   dataset.pointHitRadius = dataset.hitRadius;
                 }
 
@@ -5904,9 +5450,7 @@ jQuery.Velocity
                   index,
                   datasetIndex
                 );
-                y = reset
-                  ? yScale.getBasePixel()
-                  : me.calculatePointY(value, index, datasetIndex);
+                y = reset ? yScale.getBasePixel() : me.calculatePointY(value, index, datasetIndex);
 
                 // Utility
                 point._xScale = xScale;
@@ -5922,11 +5466,7 @@ jQuery.Velocity
                   // Appearance
                   radius:
                     custom.radius ||
-                    helpers.valueAtIndexOrDefault(
-                      dataset.pointRadius,
-                      index,
-                      pointOptions.radius
-                    ),
+                    helpers.valueAtIndexOrDefault(dataset.pointRadius, index, pointOptions.radius),
                   pointStyle:
                     custom.pointStyle ||
                     helpers.valueAtIndexOrDefault(
@@ -5938,12 +5478,8 @@ jQuery.Velocity
                   backgroundColor: me.getPointBackgroundColor(point, index),
                   borderColor: me.getPointBorderColor(point, index),
                   borderWidth: me.getPointBorderWidth(point, index),
-                  tension: meta.dataset._model
-                    ? meta.dataset._model.tension
-                    : 0,
-                  steppedLine: meta.dataset._model
-                    ? meta.dataset._model.steppedLine
-                    : false,
+                  tension: meta.dataset._model ? meta.dataset._model.tension : 0,
+                  steppedLine: meta.dataset._model ? meta.dataset._model.steppedLine : false,
                   // Tooltip
                   hitRadius:
                     custom.hitRadius ||
@@ -5973,9 +5509,7 @@ jQuery.Velocity
                       dsMeta.yAxisID === yScale.id &&
                       chart.isDatasetVisible(i)
                     ) {
-                      var stackedRightValue = Number(
-                        yScale.getRightValue(ds.data[index])
-                      );
+                      var stackedRightValue = Number(yScale.getRightValue(ds.data[index]));
                       if (stackedRightValue < 0) {
                         sumNeg += stackedRightValue || 0;
                       } else {
@@ -6208,25 +5742,13 @@ jQuery.Velocity
                       var arcOpts = chart.options.elements.arc;
                       var fill = custom.backgroundColor
                         ? custom.backgroundColor
-                        : valueAtIndexOrDefault(
-                            ds.backgroundColor,
-                            i,
-                            arcOpts.backgroundColor
-                          );
+                        : valueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
                       var stroke = custom.borderColor
                         ? custom.borderColor
-                        : valueAtIndexOrDefault(
-                            ds.borderColor,
-                            i,
-                            arcOpts.borderColor
-                          );
+                        : valueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
                       var bw = custom.borderWidth
                         ? custom.borderWidth
-                        : valueAtIndexOrDefault(
-                            ds.borderWidth,
-                            i,
-                            arcOpts.borderWidth
-                          );
+                        : valueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
 
                       return {
                         text: label,
@@ -6249,11 +5771,7 @@ jQuery.Velocity
                 var chart = this.chart;
                 var i, ilen, meta;
 
-                for (
-                  i = 0, ilen = (chart.data.datasets || []).length;
-                  i < ilen;
-                  ++i
-                ) {
+                for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
                   meta = chart.getDatasetMeta(i);
                   meta.data[index].hidden = !meta.data[index].hidden;
                 }
@@ -6320,22 +5838,15 @@ jQuery.Velocity
                   chartArea.bottom - chartArea.top
                 );
 
-                chart.outerRadius = Math.max(
-                  (minSize - arcOpts.borderWidth / 2) / 2,
-                  0
-                );
+                chart.outerRadius = Math.max((minSize - arcOpts.borderWidth / 2) / 2, 0);
                 chart.innerRadius = Math.max(
-                  opts.cutoutPercentage
-                    ? (chart.outerRadius / 100) * opts.cutoutPercentage
-                    : 1,
+                  opts.cutoutPercentage ? (chart.outerRadius / 100) * opts.cutoutPercentage : 1,
                   0
                 );
                 chart.radiusLength =
-                  (chart.outerRadius - chart.innerRadius) /
-                  chart.getVisibleDatasetCount();
+                  (chart.outerRadius - chart.innerRadius) / chart.getVisibleDatasetCount();
 
-                me.outerRadius =
-                  chart.outerRadius - chart.radiusLength * me.index;
+                me.outerRadius = chart.outerRadius - chart.radiusLength * me.index;
                 me.innerRadius = me.outerRadius - chart.radiusLength;
               },
 
@@ -6357,8 +5868,7 @@ jQuery.Velocity
                   ? 0
                   : scale.getDistanceFromCenterForValue(dataset.data[index]);
                 var startAngle = me._starts[index];
-                var endAngle =
-                  startAngle + (arc.hidden ? 0 : me._angles[index]);
+                var endAngle = startAngle + (arc.hidden ? 0 : me._angles[index]);
 
                 var resetRadius = animationOpts.animateScale
                   ? 0
@@ -6377,18 +5887,9 @@ jQuery.Velocity
                     innerRadius: 0,
                     outerRadius: reset ? resetRadius : distance,
                     startAngle:
-                      reset && animationOpts.animateRotate
-                        ? datasetStartAngle
-                        : startAngle,
-                    endAngle:
-                      reset && animationOpts.animateRotate
-                        ? datasetStartAngle
-                        : endAngle,
-                    label: helpers.valueAtIndexOrDefault(
-                      labels,
-                      index,
-                      labels[index]
-                    ),
+                      reset && animationOpts.animateRotate ? datasetStartAngle : startAngle,
+                    endAngle: reset && animationOpts.animateRotate ? datasetStartAngle : endAngle,
+                    label: helpers.valueAtIndexOrDefault(labels, index, labels[index]),
                   },
                 });
 
@@ -6400,25 +5901,13 @@ jQuery.Velocity
 
                 model.backgroundColor = custom.backgroundColor
                   ? custom.backgroundColor
-                  : valueOrDefault(
-                      dataset.backgroundColor,
-                      index,
-                      elementOpts.backgroundColor
-                    );
+                  : valueOrDefault(dataset.backgroundColor, index, elementOpts.backgroundColor);
                 model.borderColor = custom.borderColor
                   ? custom.borderColor
-                  : valueOrDefault(
-                      dataset.borderColor,
-                      index,
-                      elementOpts.borderColor
-                    );
+                  : valueOrDefault(dataset.borderColor, index, elementOpts.borderColor);
                 model.borderWidth = custom.borderWidth
                   ? custom.borderWidth
-                  : valueOrDefault(
-                      dataset.borderWidth,
-                      index,
-                      elementOpts.borderWidth
-                    );
+                  : valueOrDefault(dataset.borderWidth, index, elementOpts.borderWidth);
 
                 arc.pivot();
               },
@@ -6507,10 +5996,7 @@ jQuery.Velocity
                 var scale = me.chart.scale;
 
                 // Compatibility: If the properties are defined with only the old name, use those values
-                if (
-                  dataset.tension !== undefined &&
-                  dataset.lineTension === undefined
-                ) {
+                if (dataset.tension !== undefined && dataset.lineTension === undefined) {
                   dataset.lineTension = dataset.tension;
                 }
 
@@ -6526,14 +6012,10 @@ jQuery.Velocity
                     // Appearance
                     tension: custom.tension
                       ? custom.tension
-                      : helpers.valueOrDefault(
-                          dataset.lineTension,
-                          lineElementOptions.tension
-                        ),
+                      : helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),
                     backgroundColor: custom.backgroundColor
                       ? custom.backgroundColor
-                      : dataset.backgroundColor ||
-                        lineElementOptions.backgroundColor,
+                      : dataset.backgroundColor || lineElementOptions.backgroundColor,
                     borderWidth: custom.borderWidth
                       ? custom.borderWidth
                       : dataset.borderWidth || lineElementOptions.borderWidth,
@@ -6547,19 +6029,16 @@ jQuery.Velocity
                       : lineElementOptions.fill,
                     borderCapStyle: custom.borderCapStyle
                       ? custom.borderCapStyle
-                      : dataset.borderCapStyle ||
-                        lineElementOptions.borderCapStyle,
+                      : dataset.borderCapStyle || lineElementOptions.borderCapStyle,
                     borderDash: custom.borderDash
                       ? custom.borderDash
                       : dataset.borderDash || lineElementOptions.borderDash,
                     borderDashOffset: custom.borderDashOffset
                       ? custom.borderDashOffset
-                      : dataset.borderDashOffset ||
-                        lineElementOptions.borderDashOffset,
+                      : dataset.borderDashOffset || lineElementOptions.borderDashOffset,
                     borderJoinStyle: custom.borderJoinStyle
                       ? custom.borderJoinStyle
-                      : dataset.borderJoinStyle ||
-                        lineElementOptions.borderJoinStyle,
+                      : dataset.borderJoinStyle || lineElementOptions.borderJoinStyle,
                   },
                 });
 
@@ -6583,22 +6062,13 @@ jQuery.Velocity
                 var dataset = me.getDataset();
                 var scale = me.chart.scale;
                 var pointElementOptions = me.chart.options.elements.point;
-                var pointPosition = scale.getPointPositionForValue(
-                  index,
-                  dataset.data[index]
-                );
+                var pointPosition = scale.getPointPositionForValue(index, dataset.data[index]);
 
                 // Compatibility: If the properties are defined with only the old name, use those values
-                if (
-                  dataset.radius !== undefined &&
-                  dataset.pointRadius === undefined
-                ) {
+                if (dataset.radius !== undefined && dataset.pointRadius === undefined) {
                   dataset.pointRadius = dataset.radius;
                 }
-                if (
-                  dataset.hitRadius !== undefined &&
-                  dataset.pointHitRadius === undefined
-                ) {
+                if (dataset.hitRadius !== undefined && dataset.pointHitRadius === undefined) {
                   dataset.pointHitRadius = dataset.hitRadius;
                 }
 
@@ -6915,9 +6385,7 @@ jQuery.Velocity
             },
 
             cancelAnimation: function(chart) {
-              var index = helpers.findIndex(this.animations, function(
-                animation
-              ) {
+              var index = helpers.findIndex(this.animations, function(animation) {
                 return animation.chart === chart;
               });
 
@@ -6978,24 +6446,13 @@ jQuery.Velocity
                 chart = animation.chart;
 
                 animation.currentStep = (animation.currentStep || 0) + count;
-                animation.currentStep = Math.min(
-                  animation.currentStep,
-                  animation.numSteps
-                );
+                animation.currentStep = Math.min(animation.currentStep, animation.numSteps);
 
                 helpers.callback(animation.render, [chart, animation], chart);
-                helpers.callback(
-                  animation.onAnimationProgress,
-                  [animation],
-                  chart
-                );
+                helpers.callback(animation.onAnimationProgress, [animation], chart);
 
                 if (animation.currentStep >= animation.numSteps) {
-                  helpers.callback(
-                    animation.onAnimationComplete,
-                    [animation],
-                    chart
-                  );
+                  helpers.callback(animation.onAnimationComplete, [animation], chart);
                   chart.animating = false;
                   animations.splice(i, 1);
                 } else {
@@ -7192,23 +6649,17 @@ jQuery.Velocity
                   var me = this;
                   var options = me.options;
                   var canvas = me.canvas;
-                  var aspectRatio =
-                    (options.maintainAspectRatio && me.aspectRatio) || null;
+                  var aspectRatio = (options.maintainAspectRatio && me.aspectRatio) || null;
 
                   // the canvas render width and height will be casted to integers so make sure that
                   // the canvas display style uses the same integer values to avoid blurring effect.
 
                   // Set to 0 instead of canvas.size because the size defaults to 300x150 if the element is collapsed
-                  var newWidth = Math.max(
-                    0,
-                    Math.floor(helpers.getMaximumWidth(canvas))
-                  );
+                  var newWidth = Math.max(0, Math.floor(helpers.getMaximumWidth(canvas)));
                   var newHeight = Math.max(
                     0,
                     Math.floor(
-                      aspectRatio
-                        ? newWidth / aspectRatio
-                        : helpers.getMaximumHeight(canvas)
+                      aspectRatio ? newWidth / aspectRatio : helpers.getMaximumHeight(canvas)
                     )
                   );
 
@@ -7245,17 +6696,11 @@ jQuery.Velocity
                   var scalesOptions = options.scales || {};
                   var scaleOptions = options.scale;
 
-                  helpers.each(scalesOptions.xAxes, function(
-                    xAxisOptions,
-                    index
-                  ) {
+                  helpers.each(scalesOptions.xAxes, function(xAxisOptions, index) {
                     xAxisOptions.id = xAxisOptions.id || 'x-axis-' + index;
                   });
 
-                  helpers.each(scalesOptions.yAxes, function(
-                    yAxisOptions,
-                    index
-                  ) {
+                  helpers.each(scalesOptions.yAxes, function(yAxisOptions, index) {
                     yAxisOptions.id = yAxisOptions.id || 'y-axis-' + index;
                   });
 
@@ -7308,10 +6753,7 @@ jQuery.Velocity
                   helpers.each(items, function(item) {
                     var scaleOptions = item.options;
                     var id = scaleOptions.id;
-                    var scaleType = helpers.valueOrDefault(
-                      scaleOptions.type,
-                      item.dtype
-                    );
+                    var scaleType = helpers.valueOrDefault(scaleOptions.type, item.dtype);
 
                     if (
                       positionIsHorizontal(scaleOptions.position) !==
@@ -7328,9 +6770,7 @@ jQuery.Velocity
                       scale.ctx = me.ctx;
                       scale.chart = me;
                     } else {
-                      var scaleClass = scaleService.getScaleConstructor(
-                        scaleType
-                      );
+                      var scaleClass = scaleService.getScaleConstructor(scaleType);
                       if (!scaleClass) {
                         return;
                       }
@@ -7390,9 +6830,7 @@ jQuery.Velocity
                       } else {
                         var ControllerClass = Chart.controllers[meta.type];
                         if (ControllerClass === undefined) {
-                          throw new Error(
-                            '"' + meta.type + '" is not a chart type.'
-                          );
+                          throw new Error('"' + meta.type + '" is not a chart type.');
                         }
 
                         meta.controller = new ControllerClass(me, datasetIndex);
@@ -7459,9 +6897,7 @@ jQuery.Velocity
                   helpers.each(
                     me.data.datasets,
                     function(dataset, datasetIndex) {
-                      me.getDatasetMeta(
-                        datasetIndex
-                      ).controller.buildOrUpdateElements();
+                      me.getDatasetMeta(datasetIndex).controller.buildOrUpdateElements();
                     },
                     me
                   );
@@ -7536,11 +6972,7 @@ jQuery.Velocity
                     return;
                   }
 
-                  for (
-                    var i = 0, ilen = me.data.datasets.length;
-                    i < ilen;
-                    ++i
-                  ) {
+                  for (var i = 0, ilen = me.data.datasets.length; i < ilen; ++i) {
                     me.updateDataset(i);
                   }
 
@@ -7560,9 +6992,7 @@ jQuery.Velocity
                     index: index,
                   };
 
-                  if (
-                    plugins.notify(me, 'beforeDatasetUpdate', [args]) === false
-                  ) {
+                  if (plugins.notify(me, 'beforeDatasetUpdate', [args]) === false) {
                     return;
                   }
 
@@ -7602,25 +7032,18 @@ jQuery.Velocity
                   if (
                     animationOptions &&
                     ((typeof duration !== 'undefined' && duration !== 0) ||
-                      (typeof duration === 'undefined' &&
-                        animationOptions.duration !== 0))
+                      (typeof duration === 'undefined' && animationOptions.duration !== 0))
                   ) {
                     var animation = new Animation({
                       numSteps: (duration || animationOptions.duration) / 16.66, // 60 fps
                       easing: config.easing || animationOptions.easing,
 
                       render: function(chart, animationObject) {
-                        var easingFunction =
-                          helpers.easing.effects[animationObject.easing];
+                        var easingFunction = helpers.easing.effects[animationObject.easing];
                         var currentStep = animationObject.currentStep;
-                        var stepDecimal =
-                          currentStep / animationObject.numSteps;
+                        var stepDecimal = currentStep / animationObject.numSteps;
 
-                        chart.draw(
-                          easingFunction(stepDecimal),
-                          stepDecimal,
-                          currentStep
-                        );
+                        chart.draw(easingFunction(stepDecimal), stepDecimal, currentStep);
                       },
 
                       onAnimationProgress: animationOptions.onProgress,
@@ -7653,9 +7076,7 @@ jQuery.Velocity
                     return;
                   }
 
-                  if (
-                    plugins.notify(me, 'beforeDraw', [easingValue]) === false
-                  ) {
+                  if (plugins.notify(me, 'beforeDraw', [easingValue]) === false) {
                     return;
                   }
 
@@ -7684,11 +7105,7 @@ jQuery.Velocity
                 transition: function(easingValue) {
                   var me = this;
 
-                  for (
-                    var i = 0, ilen = (me.data.datasets || []).length;
-                    i < ilen;
-                    ++i
-                  ) {
+                  for (var i = 0, ilen = (me.data.datasets || []).length; i < ilen; ++i) {
                     if (me.isDatasetVisible(i)) {
                       me.getDatasetMeta(i).controller.transition(easingValue);
                     }
@@ -7705,19 +7122,12 @@ jQuery.Velocity
                 drawDatasets: function(easingValue) {
                   var me = this;
 
-                  if (
-                    plugins.notify(me, 'beforeDatasetsDraw', [easingValue]) ===
-                    false
-                  ) {
+                  if (plugins.notify(me, 'beforeDatasetsDraw', [easingValue]) === false) {
                     return;
                   }
 
                   // Draw datasets reversed to support proper line stacking
-                  for (
-                    var i = (me.data.datasets || []).length - 1;
-                    i >= 0;
-                    --i
-                  ) {
+                  for (var i = (me.data.datasets || []).length - 1; i >= 0; --i) {
                     if (me.isDatasetVisible(i)) {
                       me.drawDataset(i, easingValue);
                     }
@@ -7740,9 +7150,7 @@ jQuery.Velocity
                     easingValue: easingValue,
                   };
 
-                  if (
-                    plugins.notify(me, 'beforeDatasetDraw', [args]) === false
-                  ) {
+                  if (plugins.notify(me, 'beforeDatasetDraw', [args]) === false) {
                     return;
                   }
 
@@ -7764,9 +7172,7 @@ jQuery.Velocity
                     easingValue: easingValue,
                   };
 
-                  if (
-                    plugins.notify(me, 'beforeTooltipDraw', [args]) === false
-                  ) {
+                  if (plugins.notify(me, 'beforeTooltipDraw', [args]) === false) {
                     return;
                   }
 
@@ -7831,11 +7237,7 @@ jQuery.Velocity
 
                 getVisibleDatasetCount: function() {
                   var count = 0;
-                  for (
-                    var i = 0, ilen = this.data.datasets.length;
-                    i < ilen;
-                    ++i
-                  ) {
+                  for (var i = 0, ilen = this.data.datasets.length; i < ilen; ++i) {
                     if (this.isDatasetVisible(i)) {
                       count++;
                     }
@@ -7963,9 +7365,7 @@ jQuery.Velocity
                   for (i = 0, ilen = elements.length; i < ilen; ++i) {
                     element = elements[i];
                     if (element) {
-                      this.getDatasetMeta(element._datasetIndex).controller[
-                        method
-                      ](element);
+                      this.getDatasetMeta(element._datasetIndex).controller[method](element);
                     }
                   }
                 },
@@ -8038,11 +7438,7 @@ jQuery.Velocity
                   if (e.type === 'mouseout') {
                     me.active = [];
                   } else {
-                    me.active = me.getElementsAtEventForMode(
-                      e,
-                      hoverOptions.mode,
-                      hoverOptions
-                    );
+                    me.active = me.getElementsAtEventForMode(e, hoverOptions.mode, hoverOptions);
                   }
 
                   // Invoke onHover hook
@@ -8062,11 +7458,7 @@ jQuery.Velocity
 
                   // Remove styling for last active (even if it may still be active)
                   if (me.lastActive.length) {
-                    me.updateHoverStyle(
-                      me.lastActive,
-                      hoverOptions.mode,
-                      false
-                    );
+                    me.updateHoverStyle(me.lastActive, hoverOptions.mode, false);
                   }
 
                   // Built in hover styling
@@ -8136,8 +7528,7 @@ jQuery.Velocity
               });
 
               arrayEvents.forEach(function(key) {
-                var method =
-                  'onData' + key.charAt(0).toUpperCase() + key.slice(1);
+                var method = 'onData' + key.charAt(0).toUpperCase() + key.slice(1);
                 var base = array[key];
 
                 Object.defineProperty(array, key, {
@@ -8221,19 +7612,11 @@ jQuery.Velocity
                 var meta = me.getMeta();
                 var dataset = me.getDataset();
 
-                if (
-                  meta.xAxisID === null ||
-                  !(meta.xAxisID in me.chart.scales)
-                ) {
-                  meta.xAxisID =
-                    dataset.xAxisID || me.chart.options.scales.xAxes[0].id;
+                if (meta.xAxisID === null || !(meta.xAxisID in me.chart.scales)) {
+                  meta.xAxisID = dataset.xAxisID || me.chart.options.scales.xAxes[0].id;
                 }
-                if (
-                  meta.yAxisID === null ||
-                  !(meta.yAxisID in me.chart.scales)
-                ) {
-                  meta.yAxisID =
-                    dataset.yAxisID || me.chart.options.scales.yAxes[0].id;
+                if (meta.yAxisID === null || !(meta.yAxisID in me.chart.scales)) {
+                  meta.yAxisID = dataset.yAxisID || me.chart.options.scales.yAxes[0].id;
                 }
               },
 
@@ -8397,11 +7780,7 @@ jQuery.Velocity
                     );
                 model.borderWidth = custom.hoverBorderWidth
                   ? custom.hoverBorderWidth
-                  : valueOrDefault(
-                      dataset.hoverBorderWidth,
-                      index,
-                      model.borderWidth
-                    );
+                  : valueOrDefault(dataset.hoverBorderWidth, index, model.borderWidth);
               },
 
               /**
@@ -8434,10 +7813,7 @@ jQuery.Velocity
                * @private
                */
               onDataPush: function() {
-                this.insertElements(
-                  this.getDataset().data.length - 1,
-                  arguments.length
-                );
+                this.insertElements(this.getDataset().data.length - 1, arguments.length);
               },
 
               /**
@@ -8538,11 +7914,7 @@ jQuery.Velocity
                       continue;
                     }
                   }
-                } else if (
-                  type === 'number' &&
-                  isFinite(origin) &&
-                  isFinite(target)
-                ) {
+                } else if (type === 'number' && isFinite(origin) && isFinite(target)) {
                   view[key] = origin + (target - origin) * ease;
                   continue;
                 }
@@ -8605,10 +7977,7 @@ jQuery.Velocity
             },
 
             hasValue: function() {
-              return (
-                helpers.isNumber(this._model.x) &&
-                helpers.isNumber(this._model.y)
-              );
+              return helpers.isNumber(this._model.x) && helpers.isNumber(this._model.y);
             },
           });
 
@@ -8633,77 +8002,66 @@ jQuery.Velocity
             // -- Basic js utility methods
 
             helpers.configMerge = function(/* objects ... */) {
-              return helpers.merge(
-                helpers.clone(arguments[0]),
-                [].slice.call(arguments, 1),
-                {
-                  merger: function(key, target, source, options) {
-                    var tval = target[key] || {};
-                    var sval = source[key];
+              return helpers.merge(helpers.clone(arguments[0]), [].slice.call(arguments, 1), {
+                merger: function(key, target, source, options) {
+                  var tval = target[key] || {};
+                  var sval = source[key];
 
-                    if (key === 'scales') {
-                      // scale config merging is complex. Add our own function here for that
-                      target[key] = helpers.scaleMerge(tval, sval);
-                    } else if (key === 'scale') {
-                      // used in polar area & radar charts since there is only one scale
-                      target[key] = helpers.merge(tval, [
-                        scaleService.getScaleDefaults(sval.type),
-                        sval,
-                      ]);
-                    } else {
-                      helpers._merger(key, target, source, options);
-                    }
-                  },
-                }
-              );
+                  if (key === 'scales') {
+                    // scale config merging is complex. Add our own function here for that
+                    target[key] = helpers.scaleMerge(tval, sval);
+                  } else if (key === 'scale') {
+                    // used in polar area & radar charts since there is only one scale
+                    target[key] = helpers.merge(tval, [
+                      scaleService.getScaleDefaults(sval.type),
+                      sval,
+                    ]);
+                  } else {
+                    helpers._merger(key, target, source, options);
+                  }
+                },
+              });
             };
 
             helpers.scaleMerge = function(/* objects ... */) {
-              return helpers.merge(
-                helpers.clone(arguments[0]),
-                [].slice.call(arguments, 1),
-                {
-                  merger: function(key, target, source, options) {
-                    if (key === 'xAxes' || key === 'yAxes') {
-                      var slen = source[key].length;
-                      var i, type, scale;
+              return helpers.merge(helpers.clone(arguments[0]), [].slice.call(arguments, 1), {
+                merger: function(key, target, source, options) {
+                  if (key === 'xAxes' || key === 'yAxes') {
+                    var slen = source[key].length;
+                    var i, type, scale;
 
-                      if (!target[key]) {
-                        target[key] = [];
-                      }
-
-                      for (i = 0; i < slen; ++i) {
-                        scale = source[key][i];
-                        type = helpers.valueOrDefault(
-                          scale.type,
-                          key === 'xAxes' ? 'category' : 'linear'
-                        );
-
-                        if (i >= target[key].length) {
-                          target[key].push({});
-                        }
-
-                        if (
-                          !target[key][i].type ||
-                          (scale.type && scale.type !== target[key][i].type)
-                        ) {
-                          // new/untyped scale or type changed: let's apply the new defaults
-                          // then merge source scale to correctly overwrite the defaults.
-                          helpers.merge(target[key][i], [
-                            scaleService.getScaleDefaults(type),
-                            scale,
-                          ]);
-                        } else {
-                          // scales type are the same
-                          helpers.merge(target[key][i], scale);
-                        }
-                      }
-                    } else {
-                      helpers._merger(key, target, source, options);
+                    if (!target[key]) {
+                      target[key] = [];
                     }
-                  },
-                }
-              );
+
+                    for (i = 0; i < slen; ++i) {
+                      scale = source[key][i];
+                      type = helpers.valueOrDefault(
+                        scale.type,
+                        key === 'xAxes' ? 'category' : 'linear'
+                      );
+
+                      if (i >= target[key].length) {
+                        target[key].push({});
+                      }
+
+                      if (
+                        !target[key][i].type ||
+                        (scale.type && scale.type !== target[key][i].type)
+                      ) {
+                        // new/untyped scale or type changed: let's apply the new defaults
+                        // then merge source scale to correctly overwrite the defaults.
+                        helpers.merge(target[key][i], [scaleService.getScaleDefaults(type), scale]);
+                      } else {
+                        // scales type are the same
+                        helpers.merge(target[key][i], scale);
+                      }
+                    }
+                  } else {
+                    helpers._merger(key, target, source, options);
+                  }
+                },
+              });
             };
 
             helpers.where = function(collection, filterCallback) {
@@ -8733,11 +8091,7 @@ jQuery.Velocity
                   }
                   return -1;
                 };
-            helpers.findNextWhere = function(
-              arrayToSearch,
-              filterCallback,
-              startIndex
-            ) {
+            helpers.findNextWhere = function(arrayToSearch, filterCallback, startIndex) {
               // Default to start of the array
               if (helpers.isNullOrUndef(startIndex)) {
                 startIndex = -1;
@@ -8749,11 +8103,7 @@ jQuery.Velocity
                 }
               }
             };
-            helpers.findPreviousWhere = function(
-              arrayToSearch,
-              filterCallback,
-              startIndex
-            ) {
+            helpers.findPreviousWhere = function(arrayToSearch, filterCallback, startIndex) {
               // Default to end of the array
               if (helpers.isNullOrUndef(startIndex)) {
                 startIndex = arrayToSearch.length;
@@ -8844,19 +8194,12 @@ jQuery.Velocity
               };
             };
             helpers.distanceBetweenPoints = function(pt1, pt2) {
-              return Math.sqrt(
-                Math.pow(pt2.x - pt1.x, 2) + Math.pow(pt2.y - pt1.y, 2)
-              );
+              return Math.sqrt(Math.pow(pt2.x - pt1.x, 2) + Math.pow(pt2.y - pt1.y, 2));
             };
             helpers.aliasPixel = function(pixelWidth) {
               return pixelWidth % 2 === 0 ? 0 : 0.5;
             };
-            helpers.splineCurve = function(
-              firstPoint,
-              middlePoint,
-              afterPoint,
-              t
-            ) {
+            helpers.splineCurve = function(firstPoint, middlePoint, afterPoint, t) {
               // Props to Rob Spencer at scaled innovation for his post on splining between points
               // http://scaledinnovation.com/analytics/splines/aboutSplines.html
 
@@ -8867,12 +8210,10 @@ jQuery.Velocity
               var next = afterPoint.skip ? middlePoint : afterPoint;
 
               var d01 = Math.sqrt(
-                Math.pow(current.x - previous.x, 2) +
-                  Math.pow(current.y - previous.y, 2)
+                Math.pow(current.x - previous.x, 2) + Math.pow(current.y - previous.y, 2)
               );
               var d12 = Math.sqrt(
-                Math.pow(next.x - current.x, 2) +
-                  Math.pow(next.y - current.y, 2)
+                Math.pow(next.x - current.x, 2) + Math.pow(next.y - current.y, 2)
               );
 
               var s01 = d01 / (d01 + d12);
@@ -8921,16 +8262,14 @@ jQuery.Velocity
                 }
 
                 pointBefore = i > 0 ? pointsWithTangents[i - 1] : null;
-                pointAfter =
-                  i < pointsLen - 1 ? pointsWithTangents[i + 1] : null;
+                pointAfter = i < pointsLen - 1 ? pointsWithTangents[i + 1] : null;
                 if (pointAfter && !pointAfter.model.skip) {
                   var slopeDeltaX = pointAfter.model.x - pointCurrent.model.x;
 
                   // In the case of two points that appear at the same x pixel, slopeDeltaX is 0
                   pointCurrent.deltaK =
                     slopeDeltaX !== 0
-                      ? (pointAfter.model.y - pointCurrent.model.y) /
-                        slopeDeltaX
+                      ? (pointAfter.model.y - pointCurrent.model.y) / slopeDeltaX
                       : 0;
                 }
 
@@ -8938,14 +8277,10 @@ jQuery.Velocity
                   pointCurrent.mK = pointCurrent.deltaK;
                 } else if (!pointAfter || pointAfter.model.skip) {
                   pointCurrent.mK = pointBefore.deltaK;
-                } else if (
-                  this.sign(pointBefore.deltaK) !==
-                  this.sign(pointCurrent.deltaK)
-                ) {
+                } else if (this.sign(pointBefore.deltaK) !== this.sign(pointCurrent.deltaK)) {
                   pointCurrent.mK = 0;
                 } else {
-                  pointCurrent.mK =
-                    (pointBefore.deltaK + pointCurrent.deltaK) / 2;
+                  pointCurrent.mK = (pointBefore.deltaK + pointCurrent.deltaK) / 2;
                 }
               }
 
@@ -8958,9 +8293,7 @@ jQuery.Velocity
                   continue;
                 }
 
-                if (
-                  helpers.almostEquals(pointCurrent.deltaK, 0, this.EPSILON)
-                ) {
+                if (helpers.almostEquals(pointCurrent.deltaK, 0, this.EPSILON)) {
                   pointCurrent.mK = pointAfter.mK = 0;
                   continue;
                 }
@@ -8986,19 +8319,16 @@ jQuery.Velocity
                 }
 
                 pointBefore = i > 0 ? pointsWithTangents[i - 1] : null;
-                pointAfter =
-                  i < pointsLen - 1 ? pointsWithTangents[i + 1] : null;
+                pointAfter = i < pointsLen - 1 ? pointsWithTangents[i + 1] : null;
                 if (pointBefore && !pointBefore.model.skip) {
                   deltaX = (pointCurrent.model.x - pointBefore.model.x) / 3;
-                  pointCurrent.model.controlPointPreviousX =
-                    pointCurrent.model.x - deltaX;
+                  pointCurrent.model.controlPointPreviousX = pointCurrent.model.x - deltaX;
                   pointCurrent.model.controlPointPreviousY =
                     pointCurrent.model.y - deltaX * pointCurrent.mK;
                 }
                 if (pointAfter && !pointAfter.model.skip) {
                   deltaX = (pointAfter.model.x - pointCurrent.model.x) / 3;
-                  pointCurrent.model.controlPointNextX =
-                    pointCurrent.model.x + deltaX;
+                  pointCurrent.model.controlPointNextX = pointCurrent.model.x + deltaX;
                   pointCurrent.model.controlPointNextY =
                     pointCurrent.model.y + deltaX * pointCurrent.mK;
                 }
@@ -9006,9 +8336,7 @@ jQuery.Velocity
             };
             helpers.nextItem = function(collection, index, loop) {
               if (loop) {
-                return index >= collection.length - 1
-                  ? collection[0]
-                  : collection[index + 1];
+                return index >= collection.length - 1 ? collection[0] : collection[index + 1];
               }
               return index >= collection.length - 1
                 ? collection[collection.length - 1]
@@ -9016,9 +8344,7 @@ jQuery.Velocity
             };
             helpers.previousItem = function(collection, index, loop) {
               if (loop) {
-                return index <= 0
-                  ? collection[collection.length - 1]
-                  : collection[index - 1];
+                return index <= 0 ? collection[collection.length - 1] : collection[index - 1];
               }
               return index <= 0 ? collection[0] : collection[index - 1];
             };
@@ -9087,39 +8413,21 @@ jQuery.Velocity
               // Scale mouse coordinates into canvas coordinates
               // by following the pattern laid out by 'jerryj' in the comments of
               // http://www.html5canvastutorials.com/advanced/html5-canvas-mouse-coordinates/
-              var paddingLeft = parseFloat(
-                helpers.getStyle(canvas, 'padding-left')
-              );
-              var paddingTop = parseFloat(
-                helpers.getStyle(canvas, 'padding-top')
-              );
-              var paddingRight = parseFloat(
-                helpers.getStyle(canvas, 'padding-right')
-              );
-              var paddingBottom = parseFloat(
-                helpers.getStyle(canvas, 'padding-bottom')
-              );
-              var width =
-                boundingRect.right -
-                boundingRect.left -
-                paddingLeft -
-                paddingRight;
-              var height =
-                boundingRect.bottom -
-                boundingRect.top -
-                paddingTop -
-                paddingBottom;
+              var paddingLeft = parseFloat(helpers.getStyle(canvas, 'padding-left'));
+              var paddingTop = parseFloat(helpers.getStyle(canvas, 'padding-top'));
+              var paddingRight = parseFloat(helpers.getStyle(canvas, 'padding-right'));
+              var paddingBottom = parseFloat(helpers.getStyle(canvas, 'padding-bottom'));
+              var width = boundingRect.right - boundingRect.left - paddingLeft - paddingRight;
+              var height = boundingRect.bottom - boundingRect.top - paddingTop - paddingBottom;
 
               // We divide by the current device pixel ratio, because the canvas is scaled up by that amount in each direction. However
               // the backend model is in unscaled coordinates. Since we are going to deal with our model coordinates, we go back here
               mouseX = Math.round(
-                (((mouseX - boundingRect.left - paddingLeft) / width) *
-                  canvas.width) /
+                (((mouseX - boundingRect.left - paddingLeft) / width) * canvas.width) /
                   chart.currentDevicePixelRatio
               );
               mouseY = Math.round(
-                (((mouseY - boundingRect.top - paddingTop) / height) *
-                  canvas.height) /
+                (((mouseY - boundingRect.top - paddingTop) / height) * canvas.height) /
                   chart.currentDevicePixelRatio
               );
 
@@ -9137,8 +8445,7 @@ jQuery.Velocity
 
                 if (styleValue.indexOf('%') !== -1) {
                   // percentage * size in dimension
-                  valueInPixels =
-                    (valueInPixels / 100) * node.parentNode[parentProperty];
+                  valueInPixels = (valueInPixels / 100) * node.parentNode[parentProperty];
                 }
               } else {
                 valueInPixels = styleValue;
@@ -9160,36 +8467,20 @@ jQuery.Velocity
             // @param maxStyle : the style that defines the maximum for the direction we are using (maxWidth / maxHeight)
             // @param percentageProperty : property of parent to use when calculating width as a percentage
             // @see http://www.nathanaeljones.com/blog/2013/reading-max-width-cross-browser
-            function getConstraintDimension(
-              domNode,
-              maxStyle,
-              percentageProperty
-            ) {
+            function getConstraintDimension(domNode, maxStyle, percentageProperty) {
               var view = document.defaultView;
               var parentNode = helpers._getParentNode(domNode);
               var constrainedNode = view.getComputedStyle(domNode)[maxStyle];
-              var constrainedContainer = view.getComputedStyle(parentNode)[
-                maxStyle
-              ];
+              var constrainedContainer = view.getComputedStyle(parentNode)[maxStyle];
               var hasCNode = isConstrainedValue(constrainedNode);
               var hasCContainer = isConstrainedValue(constrainedContainer);
               var infinity = Number.POSITIVE_INFINITY;
 
               if (hasCNode || hasCContainer) {
                 return Math.min(
-                  hasCNode
-                    ? parseMaxStyle(
-                        constrainedNode,
-                        domNode,
-                        percentageProperty
-                      )
-                    : infinity,
+                  hasCNode ? parseMaxStyle(constrainedNode, domNode, percentageProperty) : infinity,
                   hasCContainer
-                    ? parseMaxStyle(
-                        constrainedContainer,
-                        parentNode,
-                        percentageProperty
-                      )
+                    ? parseMaxStyle(constrainedContainer, parentNode, percentageProperty)
                     : infinity
                 );
               }
@@ -9198,28 +8489,16 @@ jQuery.Velocity
             }
             // returns Number or undefined if no constraint
             helpers.getConstraintWidth = function(domNode) {
-              return getConstraintDimension(
-                domNode,
-                'max-width',
-                'clientWidth'
-              );
+              return getConstraintDimension(domNode, 'max-width', 'clientWidth');
             };
             // returns Number or undefined if no constraint
             helpers.getConstraintHeight = function(domNode) {
-              return getConstraintDimension(
-                domNode,
-                'max-height',
-                'clientHeight'
-              );
+              return getConstraintDimension(domNode, 'max-height', 'clientHeight');
             };
             /**
              * @private
              */
-            helpers._calculatePadding = function(
-              container,
-              padding,
-              parentDimension
-            ) {
+            helpers._calculatePadding = function(container, padding, parentDimension) {
               padding = helpers.getStyle(container, padding);
 
               return padding.indexOf('%') > -1
@@ -9243,16 +8522,8 @@ jQuery.Velocity
               }
 
               var clientWidth = container.clientWidth;
-              var paddingLeft = helpers._calculatePadding(
-                container,
-                'padding-left',
-                clientWidth
-              );
-              var paddingRight = helpers._calculatePadding(
-                container,
-                'padding-right',
-                clientWidth
-              );
+              var paddingLeft = helpers._calculatePadding(container, 'padding-left', clientWidth);
+              var paddingRight = helpers._calculatePadding(container, 'padding-right', clientWidth);
 
               var w = clientWidth - paddingLeft - paddingRight;
               var cw = helpers.getConstraintWidth(domNode);
@@ -9265,11 +8536,7 @@ jQuery.Velocity
               }
 
               var clientHeight = container.clientHeight;
-              var paddingTop = helpers._calculatePadding(
-                container,
-                'padding-top',
-                clientHeight
-              );
+              var paddingTop = helpers._calculatePadding(container, 'padding-top', clientHeight);
               var paddingBottom = helpers._calculatePadding(
                 container,
                 'padding-bottom',
@@ -9283,15 +8550,11 @@ jQuery.Velocity
             helpers.getStyle = function(el, property) {
               return el.currentStyle
                 ? el.currentStyle[property]
-                : document.defaultView
-                    .getComputedStyle(el, null)
-                    .getPropertyValue(property);
+                : document.defaultView.getComputedStyle(el, null).getPropertyValue(property);
             };
             helpers.retinaScale = function(chart, forceRatio) {
               var pixelRatio = (chart.currentDevicePixelRatio =
-                forceRatio ||
-                (typeof window !== 'undefined' && window.devicePixelRatio) ||
-                1);
+                forceRatio || (typeof window !== 'undefined' && window.devicePixelRatio) || 1);
               if (pixelRatio === 1) {
                 return;
               }
@@ -9331,11 +8594,7 @@ jQuery.Velocity
               var longest = 0;
               helpers.each(arrayOfThings, function(thing) {
                 // Undefined strings and arrays should not be measured
-                if (
-                  thing !== undefined &&
-                  thing !== null &&
-                  helpers.isArray(thing) !== true
-                ) {
+                if (thing !== undefined && thing !== null && helpers.isArray(thing) !== true) {
                   longest = helpers.measureText(ctx, data, gc, longest, thing);
                 } else if (helpers.isArray(thing)) {
                   // if it is an array lets measure each element
@@ -9347,13 +8606,7 @@ jQuery.Velocity
                       nestedThing !== null &&
                       !helpers.isArray(nestedThing)
                     ) {
-                      longest = helpers.measureText(
-                        ctx,
-                        data,
-                        gc,
-                        longest,
-                        nestedThing
-                      );
+                      longest = helpers.measureText(ctx, data, gc, longest, nestedThing);
                     }
                   });
                 }
@@ -9773,13 +9026,7 @@ jQuery.Velocity
             responsive: true,
             responsiveAnimationDuration: 0,
             maintainAspectRatio: true,
-            events: [
-              'mousemove',
-              'mouseout',
-              'click',
-              'touchstart',
-              'touchmove',
-            ],
+            events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
             hover: {
               onHover: null,
               mode: 'nearest',
@@ -9789,8 +9036,7 @@ jQuery.Velocity
             onClick: null,
             defaultColor: 'rgba(0,0,0,0.1)',
             defaultFontColor: '#666',
-            defaultFontFamily:
-              "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+            defaultFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
             defaultFontSize: 12,
             defaultFontStyle: 'normal',
             showLines: true,
@@ -10002,13 +9248,11 @@ jQuery.Velocity
 
               // Step 2
               var verticalBoxWidth =
-                (width - chartAreaWidth) /
-                (leftBoxes.length + rightBoxes.length);
+                (width - chartAreaWidth) / (leftBoxes.length + rightBoxes.length);
 
               // Step 3
               var horizontalBoxHeight =
-                (height - chartAreaHeight) /
-                (topBoxes.length + bottomBoxes.length);
+                (height - chartAreaHeight) / (topBoxes.length + bottomBoxes.length);
 
               // Step 4
               var maxChartAreaWidth = chartWidth;
@@ -10037,10 +9281,7 @@ jQuery.Velocity
                 });
               }
 
-              helpers.each(
-                leftBoxes.concat(rightBoxes, topBoxes, bottomBoxes),
-                getMinimumBoxSize
-              );
+              helpers.each(leftBoxes.concat(rightBoxes, topBoxes, bottomBoxes), getMinimumBoxSize);
 
               // If a horizontal box has padding, we move the left boxes over to avoid ugly charts (see issue #2478)
               var maxHorizontalLeftPadding = 0;
@@ -10048,33 +9289,19 @@ jQuery.Velocity
               var maxVerticalTopPadding = 0;
               var maxVerticalBottomPadding = 0;
 
-              helpers.each(topBoxes.concat(bottomBoxes), function(
-                horizontalBox
-              ) {
+              helpers.each(topBoxes.concat(bottomBoxes), function(horizontalBox) {
                 if (horizontalBox.getPadding) {
                   var boxPadding = horizontalBox.getPadding();
-                  maxHorizontalLeftPadding = Math.max(
-                    maxHorizontalLeftPadding,
-                    boxPadding.left
-                  );
-                  maxHorizontalRightPadding = Math.max(
-                    maxHorizontalRightPadding,
-                    boxPadding.right
-                  );
+                  maxHorizontalLeftPadding = Math.max(maxHorizontalLeftPadding, boxPadding.left);
+                  maxHorizontalRightPadding = Math.max(maxHorizontalRightPadding, boxPadding.right);
                 }
               });
 
               helpers.each(leftBoxes.concat(rightBoxes), function(verticalBox) {
                 if (verticalBox.getPadding) {
                   var boxPadding = verticalBox.getPadding();
-                  maxVerticalTopPadding = Math.max(
-                    maxVerticalTopPadding,
-                    boxPadding.top
-                  );
-                  maxVerticalBottomPadding = Math.max(
-                    maxVerticalBottomPadding,
-                    boxPadding.bottom
-                  );
+                  maxVerticalTopPadding = Math.max(maxVerticalTopPadding, boxPadding.top);
+                  maxVerticalBottomPadding = Math.max(maxVerticalBottomPadding, boxPadding.bottom);
                 }
               });
 
@@ -10088,23 +9315,15 @@ jQuery.Velocity
 
               // Function to fit a box
               function fitBox(box) {
-                var minBoxSize = helpers.findNextWhere(minBoxSizes, function(
-                  minBox
-                ) {
+                var minBoxSize = helpers.findNextWhere(minBoxSizes, function(minBox) {
                   return minBox.box === box;
                 });
 
                 if (minBoxSize) {
                   if (box.isHorizontal()) {
                     var scaleMargin = {
-                      left: Math.max(
-                        totalLeftBoxesWidth,
-                        maxHorizontalLeftPadding
-                      ),
-                      right: Math.max(
-                        totalRightBoxesWidth,
-                        maxHorizontalRightPadding
-                      ),
+                      left: Math.max(totalLeftBoxesWidth, maxHorizontalLeftPadding),
+                      right: Math.max(totalRightBoxesWidth, maxHorizontalRightPadding),
                       top: 0,
                       bottom: 0,
                     };
@@ -10146,9 +9365,7 @@ jQuery.Velocity
               });
 
               function finalFitVerticalBox(box) {
-                var minBoxSize = helpers.findNextWhere(minBoxSizes, function(
-                  minSize
-                ) {
+                var minBoxSize = helpers.findNextWhere(minBoxSizes, function(minSize) {
                   return minSize.box === box;
                 });
 
@@ -10160,11 +9377,7 @@ jQuery.Velocity
                 };
 
                 if (minBoxSize) {
-                  box.update(
-                    minBoxSize.minSize.width,
-                    maxChartAreaHeight,
-                    scaleMargin
-                  );
+                  box.update(minBoxSize.minSize.width, maxChartAreaHeight, scaleMargin);
                 }
               }
 
@@ -10193,20 +9406,11 @@ jQuery.Velocity
               });
 
               // We may be adding some padding to account for rotated x axis labels
-              var leftPaddingAddition = Math.max(
-                maxHorizontalLeftPadding - totalLeftBoxesWidth,
-                0
-              );
+              var leftPaddingAddition = Math.max(maxHorizontalLeftPadding - totalLeftBoxesWidth, 0);
               totalLeftBoxesWidth += leftPaddingAddition;
-              totalRightBoxesWidth += Math.max(
-                maxHorizontalRightPadding - totalRightBoxesWidth,
-                0
-              );
+              totalRightBoxesWidth += Math.max(maxHorizontalRightPadding - totalRightBoxesWidth, 0);
 
-              var topPaddingAddition = Math.max(
-                maxVerticalTopPadding - totalTopBoxesHeight,
-                0
-              );
+              var topPaddingAddition = Math.max(maxVerticalTopPadding - totalTopBoxesHeight, 0);
               totalTopBoxesHeight += topPaddingAddition;
               totalBottomBoxesHeight += Math.max(
                 maxVerticalBottomPadding - totalBottomBoxesHeight,
@@ -10216,10 +9420,8 @@ jQuery.Velocity
               // Figure out if our chart area changed. This would occur if the dataset layout label rotation
               // changed due to the application of the margins in step 6. Since we can only get bigger, this is safe to do
               // without calling `fit` again
-              var newMaxChartAreaHeight =
-                height - totalTopBoxesHeight - totalBottomBoxesHeight;
-              var newMaxChartAreaWidth =
-                width - totalLeftBoxesWidth - totalRightBoxesWidth;
+              var newMaxChartAreaHeight = height - totalTopBoxesHeight - totalBottomBoxesHeight;
+              var newMaxChartAreaWidth = width - totalLeftBoxesWidth - totalRightBoxesWidth;
 
               if (
                 newMaxChartAreaWidth !== maxChartAreaWidth ||
@@ -10441,30 +9643,28 @@ jQuery.Velocity
               var config = (chart && chart.config) || {};
               var options = (config.options && config.options.plugins) || {};
 
-              this._plugins
-                .concat(config.plugins || [])
-                .forEach(function(plugin) {
-                  var idx = plugins.indexOf(plugin);
-                  if (idx !== -1) {
-                    return;
-                  }
+              this._plugins.concat(config.plugins || []).forEach(function(plugin) {
+                var idx = plugins.indexOf(plugin);
+                if (idx !== -1) {
+                  return;
+                }
 
-                  var id = plugin.id;
-                  var opts = options[id];
-                  if (opts === false) {
-                    return;
-                  }
+                var id = plugin.id;
+                var opts = options[id];
+                if (opts === false) {
+                  return;
+                }
 
-                  if (opts === true) {
-                    opts = helpers.clone(defaults.global.plugins[id]);
-                  }
+                if (opts === true) {
+                  opts = helpers.clone(defaults.global.plugins[id]);
+                }
 
-                  plugins.push(plugin);
-                  descriptors.push({
-                    plugin: plugin,
-                    options: opts || {},
-                  });
+                plugins.push(plugin);
+                descriptors.push({
+                  plugin: plugin,
+                  options: opts || {},
                 });
+              });
 
               cache.descriptors = descriptors;
               cache.id = this._cacheId;
@@ -10797,18 +9997,9 @@ jQuery.Velocity
           function parseFontOptions(options) {
             var valueOrDefault = helpers.valueOrDefault;
             var globalDefaults = defaults.global;
-            var size = valueOrDefault(
-              options.fontSize,
-              globalDefaults.defaultFontSize
-            );
-            var style = valueOrDefault(
-              options.fontStyle,
-              globalDefaults.defaultFontStyle
-            );
-            var family = valueOrDefault(
-              options.fontFamily,
-              globalDefaults.defaultFontFamily
-            );
+            var size = valueOrDefault(options.fontSize, globalDefaults.defaultFontSize);
+            var style = valueOrDefault(options.fontStyle, globalDefaults.defaultFontStyle);
+            var family = valueOrDefault(options.fontFamily, globalDefaults.defaultFontFamily);
 
             return {
               size: size,
@@ -10821,10 +10012,7 @@ jQuery.Velocity
           function parseLineHeight(options) {
             return helpers.options.toLineHeight(
               helpers.valueOrDefault(options.lineHeight, 1.2),
-              helpers.valueOrDefault(
-                options.fontSize,
-                defaults.global.defaultFontSize
-              )
+              helpers.valueOrDefault(options.fontSize, defaults.global.defaultFontSize)
             );
           }
 
@@ -11028,18 +10216,13 @@ jQuery.Velocity
             },
 
             beforeTickToLabelConversion: function() {
-              helpers.callback(this.options.beforeTickToLabelConversion, [
-                this,
-              ]);
+              helpers.callback(this.options.beforeTickToLabelConversion, [this]);
             },
             convertTicksToLabels: function() {
               var me = this;
               // Convert ticks to strings
               var tickOpts = me.options.ticks;
-              me.ticks = me.ticks.map(
-                tickOpts.userCallback || tickOpts.callback,
-                this
-              );
+              me.ticks = me.ticks.map(tickOpts.userCallback || tickOpts.callback, this);
             },
             afterTickToLabelConversion: function() {
               helpers.callback(this.options.afterTickToLabelConversion, [this]);
@@ -11048,9 +10231,7 @@ jQuery.Velocity
             //
 
             beforeCalculateTickRotation: function() {
-              helpers.callback(this.options.beforeCalculateTickRotation, [
-                this,
-              ]);
+              helpers.callback(this.options.beforeCalculateTickRotation, [this]);
             },
             calculateTickRotation: function() {
               var me = this;
@@ -11076,14 +10257,10 @@ jQuery.Velocity
                 var cosRotation, sinRotation;
 
                 // Allow 3 pixels x2 padding either side for label readability
-                var tickWidth =
-                  me.getPixelForTick(1) - me.getPixelForTick(0) - 6;
+                var tickWidth = me.getPixelForTick(1) - me.getPixelForTick(0) - 6;
 
                 // Max label rotation can be set or default to 90 - also act as a loop counter
-                while (
-                  labelWidth > tickWidth &&
-                  labelRotation < tickOpts.maxRotation
-                ) {
+                while (labelWidth > tickWidth && labelRotation < tickOpts.maxRotation) {
                   var angleRadians = helpers.toRadians(labelRotation);
                   cosRotation = Math.cos(angleRadians);
                   sinRotation = Math.sin(angleRadians);
@@ -11137,14 +10314,12 @@ jQuery.Velocity
                   ? me.maxWidth - me.margins.left - me.margins.right
                   : me.maxWidth;
               } else {
-                minSize.width =
-                  display && gridLineOpts.drawTicks ? tickMarkLength : 0;
+                minSize.width = display && gridLineOpts.drawTicks ? tickMarkLength : 0;
               }
 
               // height
               if (isHorizontal) {
-                minSize.height =
-                  display && gridLineOpts.drawTicks ? tickMarkLength : 0;
+                minSize.height = display && gridLineOpts.drawTicks ? tickMarkLength : 0;
               } else {
                 minSize.height = me.maxHeight; // fill all the height
               }
@@ -11152,11 +10327,8 @@ jQuery.Velocity
               // Are we showing a title for the scale?
               if (scaleLabelOpts.display && display) {
                 var scaleLabelLineHeight = parseLineHeight(scaleLabelOpts);
-                var scaleLabelPadding = helpers.options.toPadding(
-                  scaleLabelOpts.padding
-                );
-                var deltaHeight =
-                  scaleLabelLineHeight + scaleLabelPadding.height;
+                var scaleLabelPadding = helpers.options.toPadding(scaleLabelOpts.padding);
+                var deltaHeight = scaleLabelLineHeight + scaleLabelPadding.height;
 
                 if (isHorizontal) {
                   minSize.height += deltaHeight;
@@ -11173,9 +10345,7 @@ jQuery.Velocity
                   labels,
                   me.longestTextCache
                 );
-                var tallestLabelHeightInLines = helpers.numberOfLabelLines(
-                  labels
-                );
+                var tallestLabelHeightInLines = helpers.numberOfLabelLines(labels);
                 var lineSpace = tickFont.size * 0.5;
                 var tickPadding = me.options.ticks.padding;
 
@@ -11200,11 +10370,7 @@ jQuery.Velocity
                   );
 
                   me.ctx.font = tickFont.font;
-                  var firstLabelWidth = computeTextSize(
-                    me.ctx,
-                    labels[0],
-                    tickFont.font
-                  );
+                  var firstLabelWidth = computeTextSize(me.ctx, labels[0], tickFont.font);
                   var lastLabelWidth = computeTextSize(
                     me.ctx,
                     labels[labels.length - 1],
@@ -11237,10 +10403,7 @@ jQuery.Velocity
                     largestTextWidth += tickPadding + lineSpace;
                   }
 
-                  minSize.width = Math.min(
-                    me.maxWidth,
-                    minSize.width + largestTextWidth
-                  );
+                  minSize.width = Math.min(me.maxWidth, minSize.width + largestTextWidth);
 
                   me.paddingTop = tickFont.size / 2;
                   me.paddingBottom = tickFont.size / 2;
@@ -11262,14 +10425,8 @@ jQuery.Velocity
               if (me.margins) {
                 me.paddingLeft = Math.max(me.paddingLeft - me.margins.left, 0);
                 me.paddingTop = Math.max(me.paddingTop - me.margins.top, 0);
-                me.paddingRight = Math.max(
-                  me.paddingRight - me.margins.right,
-                  0
-                );
-                me.paddingBottom = Math.max(
-                  me.paddingBottom - me.margins.bottom,
-                  0
-                );
+                me.paddingRight = Math.max(me.paddingRight - me.margins.right, 0);
+                me.paddingBottom = Math.max(me.paddingBottom - me.margins.bottom, 0);
               }
             },
 
@@ -11279,10 +10436,7 @@ jQuery.Velocity
 
             // Shared Methods
             isHorizontal: function() {
-              return (
-                this.options.position === 'top' ||
-                this.options.position === 'bottom'
-              );
+              return this.options.position === 'top' || this.options.position === 'bottom';
             },
             isFullWidth: function() {
               return this.options.fullWidth;
@@ -11345,8 +10499,7 @@ jQuery.Velocity
               var offset = me.options.offset;
               if (me.isHorizontal()) {
                 var innerWidth = me.width - (me.paddingLeft + me.paddingRight);
-                var tickWidth =
-                  innerWidth / Math.max(me._ticks.length - (offset ? 0 : 1), 1);
+                var tickWidth = innerWidth / Math.max(me._ticks.length - (offset ? 0 : 1), 1);
                 var pixel = tickWidth * index + me.paddingLeft;
 
                 if (offset) {
@@ -11391,13 +10544,7 @@ jQuery.Velocity
               var min = me.min;
               var max = me.max;
 
-              return me.beginAtZero
-                ? 0
-                : min < 0 && max < 0
-                ? max
-                : min > 0 && max > 0
-                ? min
-                : 0;
+              return me.beginAtZero ? 0 : min < 0 && max < 0 ? max : min > 0 && max > 0 ? min : 0;
             },
 
             /**
@@ -11426,15 +10573,13 @@ jQuery.Velocity
                 skipRatio = false;
 
                 if (
-                  (longestRotatedLabel + optionTicks.autoSkipPadding) *
-                    tickCount >
+                  (longestRotatedLabel + optionTicks.autoSkipPadding) * tickCount >
                   me.width - (me.paddingLeft + me.paddingRight)
                 ) {
                   skipRatio =
                     1 +
                     Math.floor(
-                      ((longestRotatedLabel + optionTicks.autoSkipPadding) *
-                        tickCount) /
+                      ((longestRotatedLabel + optionTicks.autoSkipPadding) * tickCount) /
                         (me.width - (me.paddingLeft + me.paddingRight))
                     );
                 }
@@ -11442,10 +10587,7 @@ jQuery.Velocity
                 // if they defined a max number of optionTicks,
                 // increase skipRatio until that number is met
                 if (maxTicks && tickCount > maxTicks) {
-                  skipRatio = Math.max(
-                    skipRatio,
-                    Math.floor(tickCount / maxTicks)
-                  );
+                  skipRatio = Math.max(skipRatio, Math.floor(tickCount / maxTicks));
                 }
               }
 
@@ -11484,9 +10626,7 @@ jQuery.Velocity
               var isRotated = me.labelRotation !== 0;
               var isHorizontal = me.isHorizontal();
 
-              var ticks = optionTicks.autoSkip
-                ? me._autoSkip(me.getTicks())
-                : me.getTicks();
+              var ticks = optionTicks.autoSkip ? me._autoSkip(me.getTicks()) : me.getTicks();
               var tickFontColor = helpers.valueOrDefault(
                 optionTicks.fontColor,
                 globalDefaults.defaultFontColor
@@ -11505,28 +10645,18 @@ jQuery.Velocity
                 globalDefaults.defaultFontColor
               );
               var scaleLabelFont = parseFontOptions(scaleLabel);
-              var scaleLabelPadding = helpers.options.toPadding(
-                scaleLabel.padding
-              );
+              var scaleLabelPadding = helpers.options.toPadding(scaleLabel.padding);
               var labelRotationRadians = helpers.toRadians(me.labelRotation);
 
               var itemsToDraw = [];
 
               var axisWidth = me.options.gridLines.lineWidth;
-              var xTickStart =
-                options.position === 'right'
-                  ? me.left
-                  : me.right - axisWidth - tl;
-              var xTickEnd =
-                options.position === 'right' ? me.left + tl : me.right;
+              var xTickStart = options.position === 'right' ? me.left : me.right - axisWidth - tl;
+              var xTickEnd = options.position === 'right' ? me.left + tl : me.right;
               var yTickStart =
-                options.position === 'bottom'
-                  ? me.top + axisWidth
-                  : me.bottom - tl - axisWidth;
+                options.position === 'bottom' ? me.top + axisWidth : me.bottom - tl - axisWidth;
               var yTickEnd =
-                options.position === 'bottom'
-                  ? me.top + axisWidth + tl
-                  : me.bottom + axisWidth;
+                options.position === 'bottom' ? me.top + axisWidth + tl : me.bottom + axisWidth;
 
               helpers.each(ticks, function(tick, index) {
                 // autoskipper skipped this tick (#4635)
@@ -11536,24 +10666,15 @@ jQuery.Velocity
 
                 var label = tick.label;
                 var lineWidth, lineColor, borderDash, borderDashOffset;
-                if (
-                  index === me.zeroLineIndex &&
-                  options.offset === gridLines.offsetGridLines
-                ) {
+                if (index === me.zeroLineIndex && options.offset === gridLines.offsetGridLines) {
                   // Draw the first index specially
                   lineWidth = gridLines.zeroLineWidth;
                   lineColor = gridLines.zeroLineColor;
                   borderDash = gridLines.zeroLineBorderDash;
                   borderDashOffset = gridLines.zeroLineBorderDashOffset;
                 } else {
-                  lineWidth = helpers.valueAtIndexOrDefault(
-                    gridLines.lineWidth,
-                    index
-                  );
-                  lineColor = helpers.valueAtIndexOrDefault(
-                    gridLines.color,
-                    index
-                  );
+                  lineWidth = helpers.valueAtIndexOrDefault(gridLines.lineWidth, index);
+                  lineColor = helpers.valueAtIndexOrDefault(gridLines.color, index);
                   borderDash = helpers.valueOrDefault(
                     gridLines.borderDash,
                     globalDefaults.borderDash
@@ -11614,9 +10735,7 @@ jQuery.Velocity
                     labelXOffset = tl + tickPadding;
                   }
 
-                  labelX = isLeft
-                    ? me.right - labelXOffset
-                    : me.left + labelXOffset;
+                  labelX = isLeft ? me.right - labelXOffset : me.left + labelXOffset;
 
                   var yLineValue = getLineValue(
                     me,
@@ -11692,12 +10811,8 @@ jQuery.Velocity
                   context.save();
                   context.translate(itemToDraw.labelX, itemToDraw.labelY);
                   context.rotate(itemToDraw.rotation);
-                  context.font = itemToDraw.major
-                    ? majorTickFont.font
-                    : tickFont.font;
-                  context.fillStyle = itemToDraw.major
-                    ? majorTickFontColor
-                    : tickFontColor;
+                  context.font = itemToDraw.major ? majorTickFont.font : tickFont.font;
+                  context.fillStyle = itemToDraw.major ? majorTickFontColor : tickFontColor;
                   context.textBaseline = itemToDraw.textBaseline;
                   context.textAlign = itemToDraw.textAlign;
 
@@ -11705,9 +10820,7 @@ jQuery.Velocity
                   if (helpers.isArray(label)) {
                     var lineCount = label.length;
                     var lineHeight = tickFont.size * 1.5;
-                    var y = me.isHorizontal()
-                      ? 0
-                      : (-lineHeight * (lineCount - 1)) / 2;
+                    var y = me.isHorizontal() ? 0 : (-lineHeight * (lineCount - 1)) / 2;
 
                     for (var i = 0; i < lineCount; ++i) {
                       // We just make sure the multiline element is a string here..
@@ -11757,14 +10870,8 @@ jQuery.Velocity
 
               if (gridLines.drawBorder) {
                 // Draw the line at the edge of the axis
-                context.lineWidth = helpers.valueAtIndexOrDefault(
-                  gridLines.lineWidth,
-                  0
-                );
-                context.strokeStyle = helpers.valueAtIndexOrDefault(
-                  gridLines.color,
-                  0
-                );
+                context.lineWidth = helpers.valueAtIndexOrDefault(gridLines.lineWidth, 0);
+                context.strokeStyle = helpers.valueAtIndexOrDefault(gridLines.color, 0);
                 var x1 = me.left;
                 var x2 = me.right + axisWidth;
                 var y1 = me.top;
@@ -11813,9 +10920,7 @@ jQuery.Velocity
               this.defaults[type] = helpers.clone(scaleDefaults);
             },
             getScaleConstructor: function(type) {
-              return this.constructors.hasOwnProperty(type)
-                ? this.constructors[type]
-                : undefined;
+              return this.constructors.hasOwnProperty(type) ? this.constructors[type] : undefined;
             },
             getScaleDefaults: function(type) {
               // Return the scale defaults merged with the global settings so that we always use the latest ones
@@ -11826,10 +10931,7 @@ jQuery.Velocity
             updateScaleDefaults: function(type, additions) {
               var me = this;
               if (me.defaults.hasOwnProperty(type)) {
-                me.defaults[type] = helpers.extend(
-                  me.defaults[type],
-                  additions
-                );
+                me.defaults[type] = helpers.extend(me.defaults[type], additions);
               }
             },
             addScalesToLayout: function(chart) {
@@ -11882,8 +10984,7 @@ jQuery.Velocity
                */
               linear: function(tickValue, index, ticks) {
                 // If we have lots of ticks, don't use the ones
-                var delta =
-                  ticks.length > 3 ? ticks[2] - ticks[1] : ticks[1] - ticks[0];
+                var delta = ticks.length > 3 ? ticks[2] - ticks[1] : ticks[1] - ticks[0];
 
                 // If we have a number like 2.5 as the delta, figure out how many decimal places we need
                 if (Math.abs(delta) > 1) {
@@ -11897,10 +10998,7 @@ jQuery.Velocity
                 var tickString = '';
 
                 if (tickValue !== 0) {
-                  var maxTick = Math.max(
-                    Math.abs(ticks[0]),
-                    Math.abs(ticks[ticks.length - 1])
-                  );
+                  var maxTick = Math.max(Math.abs(ticks[0]), Math.abs(ticks[ticks.length - 1]));
                   if (maxTick < 1e-4) {
                     // all ticks are small numbers; use scientific notation
                     var logTick = helpers.log10(Math.abs(tickValue));
@@ -11920,9 +11018,7 @@ jQuery.Velocity
               },
 
               logarithmic: function(tickValue, index, ticks) {
-                var remain =
-                  tickValue /
-                  Math.pow(10, Math.floor(helpers.log10(tickValue)));
+                var remain = tickValue / Math.pow(10, Math.floor(helpers.log10(tickValue)));
 
                 if (tickValue === 0) {
                   return '0';
@@ -12009,8 +11105,7 @@ jQuery.Velocity
                 // Args are: (tooltipItem, data)
                 beforeLabel: helpers.noop,
                 label: function(tooltipItem, data) {
-                  var label =
-                    data.datasets[tooltipItem.datasetIndex].label || '';
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
 
                   if (label) {
                     label += ': ';
@@ -12144,10 +11239,7 @@ jQuery.Velocity
            * @function
            */
           function splitNewlines(str) {
-            if (
-              (typeof str === 'string' || str instanceof String) &&
-              str.indexOf('\n') > -1
-            ) {
+            if ((typeof str === 'string' || str instanceof String) && str.indexOf('\n') > -1) {
               return str.split('\n');
             }
             return str;
@@ -12163,12 +11255,8 @@ jQuery.Velocity
             var datasetIndex = element._datasetIndex;
 
             return {
-              xLabel: xScale
-                ? xScale.getLabelForIndex(index, datasetIndex)
-                : '',
-              yLabel: yScale
-                ? yScale.getLabelForIndex(index, datasetIndex)
-                : '',
+              xLabel: xScale ? xScale.getLabelForIndex(index, datasetIndex) : '',
+              yLabel: yScale ? yScale.getLabelForIndex(index, datasetIndex) : '',
               index: index,
               datasetIndex: datasetIndex,
               x: element._model.x,
@@ -12268,15 +11356,9 @@ jQuery.Velocity
             // Count of all lines in the body
             var body = model.body;
             var combinedBodyLength = body.reduce(function(count, bodyItem) {
-              return (
-                count +
-                bodyItem.before.length +
-                bodyItem.lines.length +
-                bodyItem.after.length
-              );
+              return count + bodyItem.before.length + bodyItem.lines.length + bodyItem.after.length;
             }, 0);
-            combinedBodyLength +=
-              model.beforeBody.length + model.afterBody.length;
+            combinedBodyLength += model.beforeBody.length + model.afterBody.length;
 
             var titleLineCount = model.title.length;
             var footerLineCount = model.footer.length;
@@ -12285,27 +11367,18 @@ jQuery.Velocity
             var footerFontSize = model.footerFontSize;
 
             height += titleLineCount * titleFontSize; // Title Lines
-            height += titleLineCount
-              ? (titleLineCount - 1) * model.titleSpacing
-              : 0; // Title Line Spacing
+            height += titleLineCount ? (titleLineCount - 1) * model.titleSpacing : 0; // Title Line Spacing
             height += titleLineCount ? model.titleMarginBottom : 0; // Title's bottom Margin
             height += combinedBodyLength * bodyFontSize; // Body Lines
-            height += combinedBodyLength
-              ? (combinedBodyLength - 1) * model.bodySpacing
-              : 0; // Body Line Spacing
+            height += combinedBodyLength ? (combinedBodyLength - 1) * model.bodySpacing : 0; // Body Line Spacing
             height += footerLineCount ? model.footerMarginTop : 0; // Footer Margin
             height += footerLineCount * footerFontSize; // Footer Lines
-            height += footerLineCount
-              ? (footerLineCount - 1) * model.footerSpacing
-              : 0; // Footer Line Spacing
+            height += footerLineCount ? (footerLineCount - 1) * model.footerSpacing : 0; // Footer Line Spacing
 
             // Title width
             var widthPadding = 0;
             var maxLineWidth = function(line) {
-              width = Math.max(
-                width,
-                ctx.measureText(line).width + widthPadding
-              );
+              width = Math.max(width, ctx.measureText(line).width + widthPadding);
             };
 
             ctx.font = helpers.fontString(
@@ -12321,10 +11394,7 @@ jQuery.Velocity
               model._bodyFontStyle,
               model._bodyFontFamily
             );
-            helpers.each(
-              model.beforeBody.concat(model.afterBody),
-              maxLineWidth
-            );
+            helpers.each(model.beforeBody.concat(model.afterBody), maxLineWidth);
 
             // Body lines may include some extra width due to the color box
             widthPadding = model.displayColors ? bodyFontSize + 2 : 0;
@@ -12393,10 +11463,7 @@ jQuery.Velocity
             }
 
             olf = function(x) {
-              return (
-                x + size.width + model.caretSize + model.caretPadding >
-                chart.width
-              );
+              return x + size.width + model.caretSize + model.caretPadding > chart.width;
             };
             orf = function(x) {
               return x - size.width - model.caretSize - model.caretPadding < 0;
@@ -12537,19 +11604,12 @@ jQuery.Velocity
                 };
                 pushOrConcat(
                   bodyItem.before,
-                  splitNewlines(
-                    callbacks.beforeLabel.call(me, tooltipItem, data)
-                  )
+                  splitNewlines(callbacks.beforeLabel.call(me, tooltipItem, data))
                 );
-                pushOrConcat(
-                  bodyItem.lines,
-                  callbacks.label.call(me, tooltipItem, data)
-                );
+                pushOrConcat(bodyItem.lines, callbacks.label.call(me, tooltipItem, data));
                 pushOrConcat(
                   bodyItem.after,
-                  splitNewlines(
-                    callbacks.afterLabel.call(me, tooltipItem, data)
-                  )
+                  splitNewlines(callbacks.afterLabel.call(me, tooltipItem, data))
                 );
 
                 bodyItems.push(bodyItem);
@@ -12621,11 +11681,7 @@ jQuery.Velocity
 
                 var labelColors = [];
                 var labelTextColors = [];
-                tooltipPosition = positioners[opts.position].call(
-                  me,
-                  active,
-                  me._eventPosition
-                );
+                tooltipPosition = positioners[opts.position].call(me, active, me._eventPosition);
 
                 var tooltipItems = [];
                 for (i = 0, len = active.length; i < len; ++i) {
@@ -12648,15 +11704,9 @@ jQuery.Velocity
 
                 // Determine colors for boxes
                 helpers.each(tooltipItems, function(tooltipItem) {
-                  labelColors.push(
-                    opts.callbacks.labelColor.call(me, tooltipItem, me._chart)
-                  );
+                  labelColors.push(opts.callbacks.labelColor.call(me, tooltipItem, me._chart));
                   labelTextColors.push(
-                    opts.callbacks.labelTextColor.call(
-                      me,
-                      tooltipItem,
-                      me._chart
-                    )
+                    opts.callbacks.labelTextColor.call(me, tooltipItem, me._chart)
                   );
                 });
 
@@ -12681,12 +11731,7 @@ jQuery.Velocity
                 tooltipSize = getTooltipSize(this, model);
                 alignment = determineAlignment(this, tooltipSize);
                 // Final Size and Position
-                backgroundPoint = getBackgroundPoint(
-                  model,
-                  tooltipSize,
-                  alignment,
-                  me._chart
-                );
+                backgroundPoint = getBackgroundPoint(model, tooltipSize, alignment, me._chart);
               } else {
                 model.opacity = 0;
               }
@@ -12816,11 +11861,7 @@ jQuery.Velocity
 
               ctx.textAlign = vm._bodyAlign;
               ctx.textBaseline = 'top';
-              ctx.font = helpers.fontString(
-                bodyFontSize,
-                vm._bodyFontStyle,
-                vm._bodyFontFamily
-              );
+              ctx.font = helpers.fontString(bodyFontSize, vm._bodyFontStyle, vm._bodyFontFamily);
 
               // Before Body
               var xLinePadding = 0;
@@ -12846,31 +11887,17 @@ jQuery.Velocity
                   // Draw Legend-like boxes if needed
                   if (drawColorBoxes) {
                     // Fill a white rect so that colours merge nicely if the opacity is < 1
-                    ctx.fillStyle = mergeOpacity(
-                      vm.legendColorBackground,
-                      opacity
-                    );
+                    ctx.fillStyle = mergeOpacity(vm.legendColorBackground, opacity);
                     ctx.fillRect(pt.x, pt.y, bodyFontSize, bodyFontSize);
 
                     // Border
                     ctx.lineWidth = 1;
-                    ctx.strokeStyle = mergeOpacity(
-                      vm.labelColors[i].borderColor,
-                      opacity
-                    );
+                    ctx.strokeStyle = mergeOpacity(vm.labelColors[i].borderColor, opacity);
                     ctx.strokeRect(pt.x, pt.y, bodyFontSize, bodyFontSize);
 
                     // Inner square
-                    ctx.fillStyle = mergeOpacity(
-                      vm.labelColors[i].backgroundColor,
-                      opacity
-                    );
-                    ctx.fillRect(
-                      pt.x + 1,
-                      pt.y + 1,
-                      bodyFontSize - 2,
-                      bodyFontSize - 2
-                    );
+                    ctx.fillStyle = mergeOpacity(vm.labelColors[i].backgroundColor, opacity);
+                    ctx.fillRect(pt.x + 1, pt.y + 1, bodyFontSize - 2, bodyFontSize - 2);
                     ctx.fillStyle = textColor;
                   }
 
@@ -12934,12 +11961,7 @@ jQuery.Velocity
                 this.drawCaret(pt, tooltipSize);
               }
               ctx.lineTo(x + width, y + height - radius);
-              ctx.quadraticCurveTo(
-                x + width,
-                y + height,
-                x + width - radius,
-                y + height
-              );
+              ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
               if (yAlign === 'bottom') {
                 this.drawCaret(pt, tooltipSize);
               }
@@ -13023,11 +12045,7 @@ jQuery.Velocity
               if (e.type === 'mouseout') {
                 me._active = [];
               } else {
-                me._active = me._chart.getElementsAtEventForMode(
-                  e,
-                  options.mode,
-                  options
-                );
+                me._active = me._chart.getElementsAtEventForMode(e, options.mode, options);
               }
 
               // Remember Last Actives
@@ -13082,10 +12100,7 @@ jQuery.Velocity
               var vm = this._view;
 
               if (vm) {
-                return (
-                  Math.pow(mouseX - vm.x, 2) <
-                  Math.pow(vm.radius + vm.hoverRadius, 2)
-                );
+                return Math.pow(mouseX - vm.x, 2) < Math.pow(vm.radius + vm.hoverRadius, 2);
               }
               return false;
             },
@@ -13116,8 +12131,7 @@ jQuery.Velocity
 
                 // Check if within the range of the open/close angle
                 var betweenAngles = angle >= startAngle && angle <= endAngle;
-                var withinRadius =
-                  distance >= vm.innerRadius && distance <= vm.outerRadius;
+                var withinRadius = distance >= vm.innerRadius && distance <= vm.outerRadius;
 
                 return betweenAngles && withinRadius;
               }
@@ -13145,10 +12159,8 @@ jQuery.Velocity
 
             tooltipPosition: function() {
               var vm = this._view;
-              var centreAngle =
-                vm.startAngle + (vm.endAngle - vm.startAngle) / 2;
-              var rangeFromCentre =
-                (vm.outerRadius - vm.innerRadius) / 2 + vm.innerRadius;
+              var centreAngle = vm.startAngle + (vm.endAngle - vm.startAngle) / 2;
+              var rangeFromCentre = (vm.outerRadius - vm.innerRadius) / 2 + vm.innerRadius;
 
               return {
                 x: vm.x + Math.cos(centreAngle) * rangeFromCentre,
@@ -13230,23 +12242,16 @@ jQuery.Velocity
               ctx.save();
 
               // Stroke Line Options
-              ctx.lineCap =
-                vm.borderCapStyle || globalOptionLineElements.borderCapStyle;
+              ctx.lineCap = vm.borderCapStyle || globalOptionLineElements.borderCapStyle;
 
               // IE 9 and 10 do not support line dash
               if (ctx.setLineDash) {
-                ctx.setLineDash(
-                  vm.borderDash || globalOptionLineElements.borderDash
-                );
+                ctx.setLineDash(vm.borderDash || globalOptionLineElements.borderDash);
               }
 
-              ctx.lineDashOffset =
-                vm.borderDashOffset ||
-                globalOptionLineElements.borderDashOffset;
-              ctx.lineJoin =
-                vm.borderJoinStyle || globalOptionLineElements.borderJoinStyle;
-              ctx.lineWidth =
-                vm.borderWidth || globalOptionLineElements.borderWidth;
+              ctx.lineDashOffset = vm.borderDashOffset || globalOptionLineElements.borderDashOffset;
+              ctx.lineJoin = vm.borderJoinStyle || globalOptionLineElements.borderJoinStyle;
+              ctx.lineWidth = vm.borderWidth || globalOptionLineElements.borderWidth;
               ctx.strokeStyle = vm.borderColor || globalDefaults.defaultColor;
 
               // Stroke Line
@@ -13265,14 +12270,10 @@ jQuery.Velocity
                     lastDrawnIndex = index;
                   }
                 } else {
-                  previous =
-                    lastDrawnIndex === -1 ? previous : points[lastDrawnIndex];
+                  previous = lastDrawnIndex === -1 ? previous : points[lastDrawnIndex];
 
                   if (!currentVM.skip) {
-                    if (
-                      (lastDrawnIndex !== index - 1 && !spanGaps) ||
-                      lastDrawnIndex === -1
-                    ) {
+                    if ((lastDrawnIndex !== index - 1 && !spanGaps) || lastDrawnIndex === -1) {
                       // There was a gap and this is the first point after the gap
                       ctx.moveTo(currentVM.x, currentVM.y);
                     } else {
@@ -13319,16 +12320,12 @@ jQuery.Velocity
 
           function xRange(mouseX) {
             var vm = this._view;
-            return vm
-              ? Math.abs(mouseX - vm.x) < vm.radius + vm.hitRadius
-              : false;
+            return vm ? Math.abs(mouseX - vm.x) < vm.radius + vm.hitRadius : false;
           }
 
           function yRange(mouseY) {
             var vm = this._view;
-            return vm
-              ? Math.abs(mouseY - vm.y) < vm.radius + vm.hitRadius
-              : false;
+            return vm ? Math.abs(mouseY - vm.y) < vm.radius + vm.hitRadius : false;
           }
 
           module.exports = Element.extend({
@@ -13394,14 +12391,7 @@ jQuery.Velocity
                   defaults.global.elements.point.borderWidth
                 );
                 ctx.fillStyle = vm.backgroundColor || defaultColor;
-                helpers.canvas.drawPoint(
-                  ctx,
-                  pointStyle,
-                  radius,
-                  x,
-                  y,
-                  rotation
-                );
+                helpers.canvas.drawPoint(ctx, pointStyle, radius, x, y, rotation);
               }
             },
           });
@@ -13495,22 +12485,14 @@ jQuery.Velocity
               // adjust the sizes to fit if we're setting a stroke on the line
               if (borderWidth) {
                 // borderWidth shold be less than bar width and bar height.
-                var barSize = Math.min(
-                  Math.abs(left - right),
-                  Math.abs(top - bottom)
-                );
+                var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
                 borderWidth = borderWidth > barSize ? barSize : borderWidth;
                 var halfStroke = borderWidth / 2;
                 // Adjust borderWidth when bar top position is near vm.base(zero).
-                var borderLeft =
-                  left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
-                var borderRight =
-                  right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
-                var borderTop =
-                  top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
-                var borderBottom =
-                  bottom +
-                  (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
+                var borderLeft = left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
+                var borderRight = right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
+                var borderTop = top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
+                var borderBottom = bottom + (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
                 // not become a vertical line?
                 if (borderLeft !== borderRight) {
                   top = borderTop;
@@ -13531,12 +12513,7 @@ jQuery.Velocity
               // Corner points, from bottom-left to bottom-right clockwise
               // | 1 2 |
               // | 0 3 |
-              var corners = [
-                [left, bottom],
-                [left, top],
-                [right, top],
-                [right, bottom],
-              ];
+              var corners = [[left, bottom], [left, top], [right, top], [right, bottom]];
 
               // Find first (starting) corner with fallback to 'bottom'
               var borders = ['bottom', 'left', 'top', 'right'];
@@ -13688,11 +12665,7 @@ jQuery.Velocity
                 // NOTE(SB) `epsilon` helps to prevent minor artifacts appearing
                 // on Chrome when `r` is exactly half the height or the width.
                 var epsilon = 0.0000001;
-                var r = Math.min(
-                  radius,
-                  height / 2 - epsilon,
-                  width / 2 - epsilon
-                );
+                var r = Math.min(radius, height / 2 - epsilon, width / 2 - epsilon);
 
                 ctx.moveTo(x + r, y);
                 ctx.lineTo(x + width - r, y);
@@ -13716,10 +12689,7 @@ jQuery.Velocity
 
               if (style && typeof style === 'object') {
                 type = style.toString();
-                if (
-                  type === '[object HTMLImageElement]' ||
-                  type === '[object HTMLCanvasElement]'
-                ) {
+                if (type === '[object HTMLImageElement]' || type === '[object HTMLCanvasElement]') {
                   ctx.drawImage(
                     style,
                     x - style.width / 2,
@@ -13768,14 +12738,7 @@ jQuery.Velocity
                   // instead of `quadraticCurveTo` since it generates better results
                   // when rect is almost a circle. 0.425 (instead of 0.5) produces
                   // results visually closer to the previous impl.
-                  this.roundedRect(
-                    ctx,
-                    leftX,
-                    topY,
-                    sideSize,
-                    sideSize,
-                    radius * 0.425
-                  );
+                  this.roundedRect(ctx, leftX, topY, sideSize, sideSize, radius * 0.425);
                   break;
                 case 'rectRot':
                   size = (1 / Math.SQRT2) * radius;
@@ -13829,12 +12792,7 @@ jQuery.Velocity
             clipArea: function(ctx, area) {
               ctx.save();
               ctx.beginPath();
-              ctx.rect(
-                area.left,
-                area.top,
-                area.right - area.left,
-                area.bottom - area.top
-              );
+              ctx.rect(area.left, area.top, area.right - area.left, area.bottom - area.top);
               ctx.clip();
             },
 
@@ -13862,12 +12820,8 @@ jQuery.Velocity
               }
 
               ctx.bezierCurveTo(
-                flip
-                  ? previous.controlPointPreviousX
-                  : previous.controlPointNextX,
-                flip
-                  ? previous.controlPointPreviousY
-                  : previous.controlPointNextY,
+                flip ? previous.controlPointPreviousX : previous.controlPointNextX,
+                flip ? previous.controlPointPreviousY : previous.controlPointNextY,
                 flip ? target.controlPointNextX : target.controlPointPreviousX,
                 flip ? target.controlPointNextY : target.controlPointPreviousY,
                 target.x,
@@ -13945,9 +12899,7 @@ jQuery.Velocity
             isArray: Array.isArray
               ? Array.isArray
               : function(value) {
-                  return (
-                    Object.prototype.toString.call(value) === '[object Array]'
-                  );
+                  return Object.prototype.toString.call(value) === '[object Array]';
                 },
 
             /**
@@ -13957,10 +12909,7 @@ jQuery.Velocity
              * @since 2.7.0
              */
             isObject: function(value) {
-              return (
-                value !== null &&
-                Object.prototype.toString.call(value) === '[object Object]'
-              );
+              return value !== null && Object.prototype.toString.call(value) === '[object Object]';
             },
 
             /**
@@ -14406,11 +13355,7 @@ jQuery.Velocity
               } else {
                 s = (p / (2 * Math.PI)) * Math.asin(1 / a);
               }
-              return -(
-                a *
-                Math.pow(2, 10 * (t -= 1)) *
-                Math.sin(((t - s) * (2 * Math.PI)) / p)
-              );
+              return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin(((t - s) * (2 * Math.PI)) / p));
             },
 
             easeOutElastic: function(t) {
@@ -14432,12 +13377,7 @@ jQuery.Velocity
               } else {
                 s = (p / (2 * Math.PI)) * Math.asin(1 / a);
               }
-              return (
-                a *
-                  Math.pow(2, -10 * t) *
-                  Math.sin(((t - s) * (2 * Math.PI)) / p) +
-                1
-              );
+              return a * Math.pow(2, -10 * t) * Math.sin(((t - s) * (2 * Math.PI)) / p) + 1;
             },
 
             easeInOutElastic: function(t) {
@@ -14461,18 +13401,11 @@ jQuery.Velocity
               }
               if (t < 1) {
                 return (
-                  -0.5 *
-                  (a *
-                    Math.pow(2, 10 * (t -= 1)) *
-                    Math.sin(((t - s) * (2 * Math.PI)) / p))
+                  -0.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin(((t - s) * (2 * Math.PI)) / p))
                 );
               }
               return (
-                a *
-                  Math.pow(2, -10 * (t -= 1)) *
-                  Math.sin(((t - s) * (2 * Math.PI)) / p) *
-                  0.5 +
-                1
+                a * Math.pow(2, -10 * (t -= 1)) * Math.sin(((t - s) * (2 * Math.PI)) / p) * 0.5 + 1
               );
             },
             easeInBack: function(t) {
@@ -14555,9 +13488,7 @@ jQuery.Velocity
              * @since 2.7.0
              */
             toLineHeight: function(value, size) {
-              var matches = ('' + value).match(
-                /^(normal|(\d+(?:\.\d+)?)(px|em|%)?)$/
-              );
+              var matches = ('' + value).match(/^(normal|(\d+(?:\.\d+)?)(px|em|%)?)$/);
               if (!matches || matches[1] === 'normal') {
                 return size * 1.2;
               }
@@ -14683,10 +13614,7 @@ jQuery.Velocity
           var CSS_PREFIX = 'chartjs-';
           var CSS_RENDER_MONITOR = CSS_PREFIX + 'render-monitor';
           var CSS_RENDER_ANIMATION = CSS_PREFIX + 'render-animation';
-          var ANIMATION_START_EVENTS = [
-            'animationstart',
-            'webkitAnimationStart',
-          ];
+          var ANIMATION_START_EVENTS = ['animationstart', 'webkitAnimationStart'];
 
           /**
            * DOM event types -> Chart.js event types.
@@ -14763,8 +13691,7 @@ jQuery.Velocity
                 // If no explicit render height and style height, let's apply the aspect ratio,
                 // which one can be specified by the user but also by charts as default option
                 // (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
-                canvas.height =
-                  canvas.width / (config.options.aspectRatio || 2);
+                canvas.height = canvas.width / (config.options.aspectRatio || 2);
               } else {
                 var displayHeight = readUsedSize(canvas, 'height');
                 if (displayWidth !== undefined) {
@@ -14798,9 +13725,7 @@ jQuery.Velocity
 
           // Default passive to true as expected by Chrome for 'touchstart' and 'touchend' events.
           // https://github.com/chartjs/Chart.js/issues/4287
-          var eventListenerOptions = supportsEventListenerOptions
-            ? { passive: true }
-            : false;
+          var eventListenerOptions = supportsEventListenerOptions ? { passive: true } : false;
 
           function addEventListener(node, type, listener) {
             node.addEventListener(type, listener, eventListenerOptions);
@@ -15010,8 +13935,7 @@ jQuery.Velocity
              * Currently used by platform.js to select the proper implementation.
              * @private
              */
-            _enabled:
-              typeof window !== 'undefined' && typeof document !== 'undefined',
+            _enabled: typeof window !== 'undefined' && typeof document !== 'undefined',
 
             initialize: function() {
               var keyframes = 'from{opacity:0.99}to{opacity:1}';
@@ -15113,8 +14037,7 @@ jQuery.Velocity
                 return;
               }
 
-              var expando =
-                listener[EXPANDO_KEY] || (listener[EXPANDO_KEY] = {});
+              var expando = listener[EXPANDO_KEY] || (listener[EXPANDO_KEY] = {});
               var proxies = expando.proxies || (expando.proxies = {});
               var proxy = (proxies[chart.id + '_' + type] = function(event) {
                 listener(fromNativeEvent(event, chart));
@@ -15378,13 +14301,9 @@ jQuery.Velocity
             // controllers might still use it (e.g. the Smith chart).
 
             if (fill === 'start') {
-              target =
-                model.scaleBottom === undefined
-                  ? scale.bottom
-                  : model.scaleBottom;
+              target = model.scaleBottom === undefined ? scale.bottom : model.scaleBottom;
             } else if (fill === 'end') {
-              target =
-                model.scaleTop === undefined ? scale.top : model.scaleTop;
+              target = model.scaleTop === undefined ? scale.top : model.scaleTop;
             } else if (model.scaleZero !== undefined) {
               target = model.scaleZero;
             } else if (scale.getBasePosition) {
@@ -15615,8 +14534,7 @@ jQuery.Velocity
                 var meta = ci.getDatasetMeta(index);
 
                 // See controller.isDatasetVisible comment
-                meta.hidden =
-                  meta.hidden === null ? !ci.data.datasets[index].hidden : null;
+                meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
 
                 // We hid a dataset ... rerender the chart
                 ci.update();
@@ -15691,9 +14609,7 @@ jQuery.Velocity
            * @return {Number} width of the color box area
            */
           function getBoxWidth(labelOpts, fontSize) {
-            return labelOpts.usePointStyle
-              ? fontSize * Math.SQRT2
-              : labelOpts.boxWidth;
+            return labelOpts.usePointStyle ? fontSize * Math.SQRT2 : labelOpts.boxWidth;
           }
 
           /**
@@ -15785,9 +14701,7 @@ jQuery.Velocity
             buildLabels: function() {
               var me = this;
               var labelOpts = me.options.labels || {};
-              var legendItems =
-                helpers.callback(labelOpts.generateLabels, [me.chart], me) ||
-                [];
+              var legendItems = helpers.callback(labelOpts.generateLabels, [me.chart], me) || [];
 
               if (labelOpts.filter) {
                 legendItems = legendItems.filter(function(item) {
@@ -15816,23 +14730,13 @@ jQuery.Velocity
 
               var globalDefault = defaults.global;
               var valueOrDefault = helpers.valueOrDefault;
-              var fontSize = valueOrDefault(
-                labelOpts.fontSize,
-                globalDefault.defaultFontSize
-              );
-              var fontStyle = valueOrDefault(
-                labelOpts.fontStyle,
-                globalDefault.defaultFontStyle
-              );
+              var fontSize = valueOrDefault(labelOpts.fontSize, globalDefault.defaultFontSize);
+              var fontStyle = valueOrDefault(labelOpts.fontStyle, globalDefault.defaultFontStyle);
               var fontFamily = valueOrDefault(
                 labelOpts.fontFamily,
                 globalDefault.defaultFontFamily
               );
-              var labelFont = helpers.fontString(
-                fontSize,
-                fontStyle,
-                fontFamily
-              );
+              var labelFont = helpers.fontString(fontSize, fontStyle, fontFamily);
 
               // Reset hit boxes
               var hitboxes = (me.legendHitBoxes = []);
@@ -15857,26 +14761,16 @@ jQuery.Velocity
 
                   // Width of each line of legend boxes. Labels wrap onto multiple lines when there are too many to fit on one
                   var lineWidths = (me.lineWidths = [0]);
-                  var totalHeight = me.legendItems.length
-                    ? fontSize + labelOpts.padding
-                    : 0;
+                  var totalHeight = me.legendItems.length ? fontSize + labelOpts.padding : 0;
 
                   ctx.textAlign = 'left';
                   ctx.textBaseline = 'top';
 
                   helpers.each(me.legendItems, function(legendItem, i) {
                     var boxWidth = getBoxWidth(labelOpts, fontSize);
-                    var width =
-                      boxWidth +
-                      fontSize / 2 +
-                      ctx.measureText(legendItem.text).width;
+                    var width = boxWidth + fontSize / 2 + ctx.measureText(legendItem.text).width;
 
-                    if (
-                      lineWidths[lineWidths.length - 1] +
-                        width +
-                        labelOpts.padding >=
-                      me.width
-                    ) {
+                    if (lineWidths[lineWidths.length - 1] + width + labelOpts.padding >= me.width) {
                       totalHeight += fontSize + labelOpts.padding;
                       lineWidths[lineWidths.length] = me.left;
                     }
@@ -15889,8 +14783,7 @@ jQuery.Velocity
                       height: fontSize,
                     };
 
-                    lineWidths[lineWidths.length - 1] +=
-                      width + labelOpts.padding;
+                    lineWidths[lineWidths.length - 1] += width + labelOpts.padding;
                   });
 
                   minSize.height += totalHeight;
@@ -15905,9 +14798,7 @@ jQuery.Velocity
                   helpers.each(me.legendItems, function(legendItem, i) {
                     var boxWidth = getBoxWidth(labelOpts, fontSize);
                     var itemWidth =
-                      boxWidth +
-                      fontSize / 2 +
-                      ctx.measureText(legendItem.text).width;
+                      boxWidth + fontSize / 2 + ctx.measureText(legendItem.text).width;
 
                     // If too tall, go to new column
                     if (currentColHeight + itemHeight > minSize.height) {
@@ -15944,10 +14835,7 @@ jQuery.Velocity
 
             // Shared Methods
             isHorizontal: function() {
-              return (
-                this.options.position === 'top' ||
-                this.options.position === 'bottom'
-              );
+              return this.options.position === 'top' || this.options.position === 'bottom';
             },
 
             // Actually draw the legend on the canvas
@@ -15963,27 +14851,14 @@ jQuery.Velocity
               if (opts.display) {
                 var ctx = me.ctx;
                 var valueOrDefault = helpers.valueOrDefault;
-                var fontColor = valueOrDefault(
-                  labelOpts.fontColor,
-                  globalDefault.defaultFontColor
-                );
-                var fontSize = valueOrDefault(
-                  labelOpts.fontSize,
-                  globalDefault.defaultFontSize
-                );
-                var fontStyle = valueOrDefault(
-                  labelOpts.fontStyle,
-                  globalDefault.defaultFontStyle
-                );
+                var fontColor = valueOrDefault(labelOpts.fontColor, globalDefault.defaultFontColor);
+                var fontSize = valueOrDefault(labelOpts.fontSize, globalDefault.defaultFontSize);
+                var fontStyle = valueOrDefault(labelOpts.fontStyle, globalDefault.defaultFontStyle);
                 var fontFamily = valueOrDefault(
                   labelOpts.fontFamily,
                   globalDefault.defaultFontFamily
                 );
-                var labelFont = helpers.fontString(
-                  fontSize,
-                  fontStyle,
-                  fontFamily
-                );
+                var labelFont = helpers.fontString(fontSize, fontStyle, fontFamily);
                 var cursor;
 
                 // Canvas setup
@@ -16006,44 +14881,24 @@ jQuery.Velocity
                   // Set the ctx for the box
                   ctx.save();
 
-                  ctx.fillStyle = valueOrDefault(
-                    legendItem.fillStyle,
-                    globalDefault.defaultColor
-                  );
-                  ctx.lineCap = valueOrDefault(
-                    legendItem.lineCap,
-                    lineDefault.borderCapStyle
-                  );
+                  ctx.fillStyle = valueOrDefault(legendItem.fillStyle, globalDefault.defaultColor);
+                  ctx.lineCap = valueOrDefault(legendItem.lineCap, lineDefault.borderCapStyle);
                   ctx.lineDashOffset = valueOrDefault(
                     legendItem.lineDashOffset,
                     lineDefault.borderDashOffset
                   );
-                  ctx.lineJoin = valueOrDefault(
-                    legendItem.lineJoin,
-                    lineDefault.borderJoinStyle
-                  );
-                  ctx.lineWidth = valueOrDefault(
-                    legendItem.lineWidth,
-                    lineDefault.borderWidth
-                  );
+                  ctx.lineJoin = valueOrDefault(legendItem.lineJoin, lineDefault.borderJoinStyle);
+                  ctx.lineWidth = valueOrDefault(legendItem.lineWidth, lineDefault.borderWidth);
                   ctx.strokeStyle = valueOrDefault(
                     legendItem.strokeStyle,
                     globalDefault.defaultColor
                   );
                   var isLineWidthZero =
-                    valueOrDefault(
-                      legendItem.lineWidth,
-                      lineDefault.borderWidth
-                    ) === 0;
+                    valueOrDefault(legendItem.lineWidth, lineDefault.borderWidth) === 0;
 
                   if (ctx.setLineDash) {
                     // IE 9 and 10 do not support line dash
-                    ctx.setLineDash(
-                      valueOrDefault(
-                        legendItem.lineDash,
-                        lineDefault.borderDash
-                      )
-                    );
+                    ctx.setLineDash(valueOrDefault(legendItem.lineDash, lineDefault.borderDash));
                   }
 
                   if (opts.labels && opts.labels.usePointStyle) {
@@ -16055,13 +14910,7 @@ jQuery.Velocity
                     var centerY = y + offSet;
 
                     // Draw pointStyle as legend symbol
-                    helpers.canvas.drawPoint(
-                      ctx,
-                      legendItem.pointStyle,
-                      radius,
-                      centerX,
-                      centerY
-                    );
+                    helpers.canvas.drawPoint(ctx, legendItem.pointStyle, radius, centerX, centerY);
                   } else {
                     // Draw box as legend symbol
                     if (!isLineWidthZero) {
@@ -16116,12 +14965,10 @@ jQuery.Velocity
                     if (x + width >= legendWidth) {
                       y = cursor.y += itemHeight;
                       cursor.line++;
-                      x = cursor.x =
-                        me.left + (legendWidth - lineWidths[cursor.line]) / 2;
+                      x = cursor.x = me.left + (legendWidth - lineWidths[cursor.line]) / 2;
                     }
                   } else if (y + itemHeight > me.bottom) {
-                    x = cursor.x =
-                      x + me.columnWidths[cursor.line] + labelOpts.padding;
+                    x = cursor.x = x + me.columnWidths[cursor.line] + labelOpts.padding;
                     y = cursor.y = me.top + labelOpts.padding;
                     cursor.line++;
                   }
@@ -16171,12 +15018,7 @@ jQuery.Velocity
               var x = e.x;
               var y = e.y;
 
-              if (
-                x >= me.left &&
-                x <= me.right &&
-                y >= me.top &&
-                y <= me.bottom
-              ) {
+              if (x >= me.left && x <= me.right && y >= me.top && y <= me.bottom) {
                 // See if we are touching one of the dataset boxes
                 var lh = me.legendHitBoxes;
                 for (var i = 0; i < lh.length; ++i) {
@@ -16386,19 +15228,11 @@ jQuery.Velocity
               var valueOrDefault = helpers.valueOrDefault;
               var opts = me.options;
               var display = opts.display;
-              var fontSize = valueOrDefault(
-                opts.fontSize,
-                defaults.global.defaultFontSize
-              );
+              var fontSize = valueOrDefault(opts.fontSize, defaults.global.defaultFontSize);
               var minSize = me.minSize;
               var lineCount = helpers.isArray(opts.text) ? opts.text.length : 1;
-              var lineHeight = helpers.options.toLineHeight(
-                opts.lineHeight,
-                fontSize
-              );
-              var textSize = display
-                ? lineCount * lineHeight + opts.padding * 2
-                : 0;
+              var lineHeight = helpers.options.toLineHeight(opts.lineHeight, fontSize);
+              var textSize = display ? lineCount * lineHeight + opts.padding * 2 : 0;
 
               if (me.isHorizontal()) {
                 minSize.width = me.maxWidth; // fill all the width
@@ -16428,27 +15262,11 @@ jQuery.Velocity
               var globalDefaults = defaults.global;
 
               if (opts.display) {
-                var fontSize = valueOrDefault(
-                  opts.fontSize,
-                  globalDefaults.defaultFontSize
-                );
-                var fontStyle = valueOrDefault(
-                  opts.fontStyle,
-                  globalDefaults.defaultFontStyle
-                );
-                var fontFamily = valueOrDefault(
-                  opts.fontFamily,
-                  globalDefaults.defaultFontFamily
-                );
-                var titleFont = helpers.fontString(
-                  fontSize,
-                  fontStyle,
-                  fontFamily
-                );
-                var lineHeight = helpers.options.toLineHeight(
-                  opts.lineHeight,
-                  fontSize
-                );
+                var fontSize = valueOrDefault(opts.fontSize, globalDefaults.defaultFontSize);
+                var fontStyle = valueOrDefault(opts.fontStyle, globalDefaults.defaultFontStyle);
+                var fontFamily = valueOrDefault(opts.fontFamily, globalDefaults.defaultFontFamily);
+                var titleFont = helpers.fontString(fontSize, fontStyle, fontFamily);
+                var lineHeight = helpers.options.toLineHeight(opts.lineHeight, fontSize);
                 var offset = lineHeight / 2 + opts.padding;
                 var rotation = 0;
                 var top = me.top;
@@ -16457,10 +15275,7 @@ jQuery.Velocity
                 var right = me.right;
                 var maxWidth, titleX, titleY;
 
-                ctx.fillStyle = valueOrDefault(
-                  opts.fontColor,
-                  globalDefaults.defaultFontColor
-                ); // render in correct colour
+                ctx.fillStyle = valueOrDefault(opts.fontColor, globalDefaults.defaultFontColor); // render in correct colour
                 ctx.font = titleFont;
 
                 // Horizontal
@@ -16469,8 +15284,7 @@ jQuery.Velocity
                   titleY = top + offset;
                   maxWidth = right - left;
                 } else {
-                  titleX =
-                    opts.position === 'left' ? left + offset : right - offset;
+                  titleX = opts.position === 'left' ? left + offset : right - offset;
                   titleY = top + (bottom - top) / 2;
                   maxWidth = bottom - top;
                   rotation = Math.PI * (opts.position === 'left' ? -0.5 : 0.5);
@@ -16619,9 +15433,7 @@ jQuery.Velocity
                 var isHorizontal = me.isHorizontal();
 
                 if (data.yLabels && !isHorizontal) {
-                  return me.getRightValue(
-                    data.datasets[datasetIndex].data[index]
-                  );
+                  return me.getRightValue(data.datasets[datasetIndex].data[index]);
                 }
                 return me.ticks[index - me.minIndex];
               },
@@ -16631,10 +15443,7 @@ jQuery.Velocity
                 var me = this;
                 var offset = me.options.offset;
                 // 1 is added because we need the length but we have the indexes
-                var offsetAmt = Math.max(
-                  me.maxIndex + 1 - me.minIndex - (offset ? 0 : 1),
-                  1
-                );
+                var offsetAmt = Math.max(me.maxIndex + 1 - me.minIndex - (offset ? 0 : 1), 1);
 
                 // If value is a data object, then index is the index in the data array,
                 // not the index of the scale. We need to change that.
@@ -16642,10 +15451,7 @@ jQuery.Velocity
                 if (value !== undefined && value !== null) {
                   valueCategory = me.isHorizontal() ? value.x : value.y;
                 }
-                if (
-                  valueCategory !== undefined ||
-                  (value !== undefined && isNaN(index))
-                ) {
+                if (valueCategory !== undefined || (value !== undefined && isNaN(index))) {
                   var labels = me.getLabels();
                   value = valueCategory || value;
                   var idx = labels.indexOf(value);
@@ -16672,20 +15478,13 @@ jQuery.Velocity
                 return me.top + Math.round(heightOffset);
               },
               getPixelForTick: function(index) {
-                return this.getPixelForValue(
-                  this.ticks[index],
-                  index + this.minIndex,
-                  null
-                );
+                return this.getPixelForValue(this.ticks[index], index + this.minIndex, null);
               },
               getValueForPixel: function(pixel) {
                 var me = this;
                 var offset = me.options.offset;
                 var value;
-                var offsetAmt = Math.max(
-                  me._ticks.length - (offset ? 0 : 1),
-                  1
-                );
+                var offsetAmt = Math.max(me._ticks.length - (offset ? 0 : 1), 1);
                 var horz = me.isHorizontal();
                 var valueDimension = (horz ? me.width : me.height) / offsetAmt;
 
@@ -16708,11 +15507,7 @@ jQuery.Velocity
               },
             });
 
-            scaleService.registerScaleType(
-              'category',
-              DatasetScale,
-              defaultConfig
-            );
+            scaleService.registerScaleType('category', DatasetScale, defaultConfig);
           };
         },
         { '33': 33, '34': 34 },
@@ -16746,9 +15541,7 @@ jQuery.Velocity
                 var DEFAULT_MAX = 1;
 
                 function IDMatches(meta) {
-                  return isHorizontal
-                    ? meta.xAxisID === me.id
-                    : meta.yAxisID === me.id;
+                  return isHorizontal ? meta.xAxisID === me.id : meta.yAxisID === me.id;
                 }
 
                 // First Calculate the range
@@ -16781,9 +15574,7 @@ jQuery.Velocity
                     var key = [
                       meta.type,
                       // we have a separate stack for stack=undefined datasets when the opts.stacked is undefined
-                      opts.stacked === undefined && meta.stack === undefined
-                        ? datasetIndex
-                        : '',
+                      opts.stacked === undefined && meta.stack === undefined ? datasetIndex : '',
                       meta.stack,
                     ].join('.');
 
@@ -16798,10 +15589,7 @@ jQuery.Velocity
                     var positiveValues = valuesPerStack[key].positiveValues;
                     var negativeValues = valuesPerStack[key].negativeValues;
 
-                    if (
-                      chart.isDatasetVisible(datasetIndex) &&
-                      IDMatches(meta)
-                    ) {
+                    if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
                       helpers.each(dataset.data, function(rawValue, index) {
                         var value = +me.getRightValue(rawValue);
                         if (isNaN(value) || meta.data[index].hidden) {
@@ -16823,23 +15611,16 @@ jQuery.Velocity
                   });
 
                   helpers.each(valuesPerStack, function(valuesForType) {
-                    var values = valuesForType.positiveValues.concat(
-                      valuesForType.negativeValues
-                    );
+                    var values = valuesForType.positiveValues.concat(valuesForType.negativeValues);
                     var minVal = helpers.min(values);
                     var maxVal = helpers.max(values);
-                    me.min =
-                      me.min === null ? minVal : Math.min(me.min, minVal);
-                    me.max =
-                      me.max === null ? maxVal : Math.max(me.max, maxVal);
+                    me.min = me.min === null ? minVal : Math.min(me.min, minVal);
+                    me.max = me.max === null ? maxVal : Math.max(me.max, maxVal);
                   });
                 } else {
                   helpers.each(datasets, function(dataset, datasetIndex) {
                     var meta = chart.getDatasetMeta(datasetIndex);
-                    if (
-                      chart.isDatasetVisible(datasetIndex) &&
-                      IDMatches(meta)
-                    ) {
+                    if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
                       helpers.each(dataset.data, function(rawValue, index) {
                         var value = +me.getRightValue(rawValue);
                         if (isNaN(value) || meta.data[index].hidden) {
@@ -16862,10 +15643,8 @@ jQuery.Velocity
                   });
                 }
 
-                me.min =
-                  isFinite(me.min) && !isNaN(me.min) ? me.min : DEFAULT_MIN;
-                me.max =
-                  isFinite(me.max) && !isNaN(me.max) ? me.max : DEFAULT_MAX;
+                me.min = isFinite(me.min) && !isNaN(me.min) ? me.min : DEFAULT_MIN;
+                me.max = isFinite(me.max) && !isNaN(me.max) ? me.max : DEFAULT_MAX;
 
                 // Common base implementation to handle ticks.min, ticks.max, ticks.beginAtZero
                 this.handleTickRangeOptions();
@@ -16902,9 +15681,7 @@ jQuery.Velocity
                 }
               },
               getLabelForIndex: function(index, datasetIndex) {
-                return +this.getRightValue(
-                  this.chart.data.datasets[datasetIndex].data[index]
-                );
+                return +this.getRightValue(this.chart.data.datasets[datasetIndex].data[index]);
               },
               // Utils
               getPixelForValue: function(value) {
@@ -16920,8 +15697,7 @@ jQuery.Velocity
                 if (me.isHorizontal()) {
                   pixel = me.left + (me.width / range) * (rightValue - start);
                 } else {
-                  pixel =
-                    me.bottom - (me.height / range) * (rightValue - start);
+                  pixel = me.bottom - (me.height / range) * (rightValue - start);
                 }
                 return pixel;
               },
@@ -16929,9 +15705,7 @@ jQuery.Velocity
                 var me = this;
                 var isHorizontal = me.isHorizontal();
                 var innerDimension = isHorizontal ? me.width : me.height;
-                var offset =
-                  (isHorizontal ? pixel - me.left : me.bottom - pixel) /
-                  innerDimension;
+                var offset = (isHorizontal ? pixel - me.left : me.bottom - pixel) / innerDimension;
                 return me.start + (me.end - me.start) * offset;
               },
               getPixelForTick: function(index) {
@@ -16939,11 +15713,7 @@ jQuery.Velocity
               },
             });
 
-            scaleService.registerScaleType(
-              'linear',
-              LinearScale,
-              defaultConfig
-            );
+            scaleService.registerScaleType('linear', LinearScale, defaultConfig);
           };
         },
         { '26': 26, '34': 34, '35': 35, '46': 46 },
@@ -16974,14 +15744,8 @@ jQuery.Velocity
             if (generationOptions.stepSize && generationOptions.stepSize > 0) {
               spacing = generationOptions.stepSize;
             } else {
-              var niceRange = helpers.niceNum(
-                dataRange.max - dataRange.min,
-                false
-              );
-              spacing = helpers.niceNum(
-                niceRange / (generationOptions.maxTicks - 1),
-                true
-              );
+              var niceRange = helpers.niceNum(dataRange.max - dataRange.min, false);
+              spacing = helpers.niceNum(niceRange / (generationOptions.maxTicks - 1), true);
 
               precision = generationOptions.precision;
               if (precision !== undefined) {
@@ -17002,8 +15766,7 @@ jQuery.Velocity
               // If very close to our whole number, use it.
               if (
                 helpers.almostWhole(
-                  (generationOptions.max - generationOptions.min) /
-                    generationOptions.stepSize,
+                  (generationOptions.max - generationOptions.min) / generationOptions.stepSize,
                   spacing / 1000
                 )
               ) {
@@ -17014,13 +15777,7 @@ jQuery.Velocity
 
             var numSpaces = (niceMax - niceMin) / spacing;
             // If very close to our rounded value, use it.
-            if (
-              helpers.almostEquals(
-                numSpaces,
-                Math.round(numSpaces),
-                spacing / 1000
-              )
-            ) {
+            if (helpers.almostEquals(numSpaces, Math.round(numSpaces), spacing / 1000)) {
               numSpaces = Math.round(numSpaces);
             } else {
               numSpaces = Math.ceil(numSpaces);
@@ -17032,21 +15789,11 @@ jQuery.Velocity
               niceMin = Math.round(niceMin * precision) / precision;
               niceMax = Math.round(niceMax * precision) / precision;
             }
-            ticks.push(
-              generationOptions.min !== undefined
-                ? generationOptions.min
-                : niceMin
-            );
+            ticks.push(generationOptions.min !== undefined ? generationOptions.min : niceMin);
             for (var j = 1; j < numSpaces; ++j) {
-              ticks.push(
-                Math.round((niceMin + j * spacing) * precision) / precision
-              );
+              ticks.push(Math.round((niceMin + j * spacing) * precision) / precision);
             }
-            ticks.push(
-              generationOptions.max !== undefined
-                ? generationOptions.max
-                : niceMax
-            );
+            ticks.push(generationOptions.max !== undefined ? generationOptions.max : niceMax);
 
             return ticks;
           }
@@ -17083,12 +15830,8 @@ jQuery.Velocity
                   }
                 }
 
-                var setMin =
-                  tickOpts.min !== undefined ||
-                  tickOpts.suggestedMin !== undefined;
-                var setMax =
-                  tickOpts.max !== undefined ||
-                  tickOpts.suggestedMax !== undefined;
+                var setMin = tickOpts.min !== undefined || tickOpts.suggestedMin !== undefined;
+                var setMax = tickOpts.max !== undefined || tickOpts.suggestedMax !== undefined;
 
                 if (tickOpts.min !== undefined) {
                   me.min = tickOpts.min;
@@ -17152,15 +15895,9 @@ jQuery.Velocity
                   min: tickOpts.min,
                   max: tickOpts.max,
                   precision: tickOpts.precision,
-                  stepSize: helpers.valueOrDefault(
-                    tickOpts.fixedStepSize,
-                    tickOpts.stepSize
-                  ),
+                  stepSize: helpers.valueOrDefault(tickOpts.fixedStepSize, tickOpts.stepSize),
                 };
-                var ticks = (me.ticks = generateTicks(
-                  numericGeneratorOptions,
-                  me
-                ));
+                var ticks = (me.ticks = generateTicks(numericGeneratorOptions, me));
 
                 me.handleDirectionalChanges();
 
@@ -17220,16 +15957,12 @@ jQuery.Velocity
             );
 
             var endExp = Math.floor(helpers.log10(dataRange.max));
-            var endSignificand = Math.ceil(
-              dataRange.max / Math.pow(10, endExp)
-            );
+            var endSignificand = Math.ceil(dataRange.max / Math.pow(10, endExp));
             var exp, significand;
 
             if (tickVal === 0) {
               exp = Math.floor(helpers.log10(dataRange.minNotZero));
-              significand = Math.floor(
-                dataRange.minNotZero / Math.pow(10, exp)
-              );
+              significand = Math.floor(dataRange.minNotZero / Math.pow(10, exp));
 
               ticks.push(tickVal);
               tickVal = significand * Math.pow(10, exp);
@@ -17249,13 +15982,8 @@ jQuery.Velocity
                 precision = exp >= 0 ? 1 : precision;
               }
 
-              tickVal =
-                Math.round(significand * Math.pow(10, exp) * precision) /
-                precision;
-            } while (
-              exp < endExp ||
-              (exp === endExp && significand < endSignificand)
-            );
+              tickVal = Math.round(significand * Math.pow(10, exp) * precision) / precision;
+            } while (exp < endExp || (exp === endExp && significand < endSignificand));
 
             var lastTick = valueOrDefault(generationOptions.max, tickVal);
             ticks.push(lastTick);
@@ -17282,9 +16010,7 @@ jQuery.Velocity
                 var datasets = data.datasets;
                 var isHorizontal = me.isHorizontal();
                 function IDMatches(meta) {
-                  return isHorizontal
-                    ? meta.xAxisID === me.id
-                    : meta.yAxisID === me.id;
+                  return isHorizontal ? meta.xAxisID === me.id : meta.yAxisID === me.id;
                 }
 
                 // Calculate Range
@@ -17318,16 +16044,11 @@ jQuery.Velocity
                     var key = [
                       meta.type,
                       // we have a separate stack for stack=undefined datasets when the opts.stacked is undefined
-                      opts.stacked === undefined && meta.stack === undefined
-                        ? datasetIndex
-                        : '',
+                      opts.stacked === undefined && meta.stack === undefined ? datasetIndex : '',
                       meta.stack,
                     ].join('.');
 
-                    if (
-                      chart.isDatasetVisible(datasetIndex) &&
-                      IDMatches(meta)
-                    ) {
+                    if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
                       if (valuesPerStack[key] === undefined) {
                         valuesPerStack[key] = [];
                       }
@@ -17336,11 +16057,7 @@ jQuery.Velocity
                         var values = valuesPerStack[key];
                         var value = +me.getRightValue(rawValue);
                         // invalid, hidden and negative values are ignored
-                        if (
-                          isNaN(value) ||
-                          meta.data[index].hidden ||
-                          value < 0
-                        ) {
+                        if (isNaN(value) || meta.data[index].hidden || value < 0) {
                           return;
                         }
                         values[index] = values[index] || 0;
@@ -17353,27 +16070,18 @@ jQuery.Velocity
                     if (valuesForType.length > 0) {
                       var minVal = helpers.min(valuesForType);
                       var maxVal = helpers.max(valuesForType);
-                      me.min =
-                        me.min === null ? minVal : Math.min(me.min, minVal);
-                      me.max =
-                        me.max === null ? maxVal : Math.max(me.max, maxVal);
+                      me.min = me.min === null ? minVal : Math.min(me.min, minVal);
+                      me.max = me.max === null ? maxVal : Math.max(me.max, maxVal);
                     }
                   });
                 } else {
                   helpers.each(datasets, function(dataset, datasetIndex) {
                     var meta = chart.getDatasetMeta(datasetIndex);
-                    if (
-                      chart.isDatasetVisible(datasetIndex) &&
-                      IDMatches(meta)
-                    ) {
+                    if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
                       helpers.each(dataset.data, function(rawValue, index) {
                         var value = +me.getRightValue(rawValue);
                         // invalid, hidden and negative values are ignored
-                        if (
-                          isNaN(value) ||
-                          meta.data[index].hidden ||
-                          value < 0
-                        ) {
+                        if (isNaN(value) || meta.data[index].hidden || value < 0) {
                           return;
                         }
 
@@ -17389,10 +16097,7 @@ jQuery.Velocity
                           me.max = value;
                         }
 
-                        if (
-                          value !== 0 &&
-                          (me.minNotZero === null || value < me.minNotZero)
-                        ) {
+                        if (value !== 0 && (me.minNotZero === null || value < me.minNotZero)) {
                           me.minNotZero = value;
                         }
                       });
@@ -17416,14 +16121,8 @@ jQuery.Velocity
 
                 if (me.min === me.max) {
                   if (me.min !== 0 && me.min !== null) {
-                    me.min = Math.pow(
-                      10,
-                      Math.floor(helpers.log10(me.min)) - 1
-                    );
-                    me.max = Math.pow(
-                      10,
-                      Math.floor(helpers.log10(me.max)) + 1
-                    );
+                    me.min = Math.pow(10, Math.floor(helpers.log10(me.min)) - 1);
+                    me.max = Math.pow(10, Math.floor(helpers.log10(me.max)) + 1);
                   } else {
                     me.min = DEFAULT_MIN;
                     me.max = DEFAULT_MAX;
@@ -17442,10 +16141,7 @@ jQuery.Velocity
                   if (me.min > 0) {
                     me.minNotZero = me.min;
                   } else if (me.max < 1) {
-                    me.minNotZero = Math.pow(
-                      10,
-                      Math.floor(helpers.log10(me.max))
-                    );
+                    me.minNotZero = Math.pow(10, Math.floor(helpers.log10(me.max)));
                   } else {
                     me.minNotZero = DEFAULT_MIN;
                   }
@@ -17487,9 +16183,7 @@ jQuery.Velocity
               },
               // Get the correct tooltip label
               getLabelForIndex: function(index, datasetIndex) {
-                return +this.getRightValue(
-                  this.chart.data.datasets[datasetIndex].data[index]
-                );
+                return +this.getRightValue(this.chart.data.datasets[datasetIndex].data[index]);
               },
               getPixelForTick: function(index) {
                 return this.getPixelForValue(this.tickValues[index]);
@@ -17591,11 +16285,7 @@ jQuery.Velocity
               },
             });
 
-            scaleService.registerScaleType(
-              'logarithmic',
-              LogarithmicScale,
-              defaultConfig
-            );
+            scaleService.registerScaleType('logarithmic', LogarithmicScale, defaultConfig);
           };
         },
         { '33': 33, '34': 34, '35': 35, '46': 46 },
@@ -17695,9 +16385,7 @@ jQuery.Velocity
               if (helpers.isArray(label)) {
                 return {
                   w: helpers.longestText(ctx, ctx.font, label),
-                  h:
-                    label.length * fontSize +
-                    (label.length - 1) * 1.5 * fontSize,
+                  h: label.length * fontSize + (label.length - 1) * 1.5 * fontSize,
                 };
               }
 
@@ -17762,10 +16450,7 @@ jQuery.Velocity
 
               // Get maximum radius of the polygon. Either half the height (minus the text width) or half the width.
               // Use this to calculate the offset + change. - Make sure L/R protrusion is at least 0 to stop issues with centre points
-              var largestPossibleRadius = Math.min(
-                scale.height / 2,
-                scale.width / 2
-              );
+              var largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
               var furthestLimits = {
                 r: scale.width,
                 l: 0,
@@ -17780,34 +16465,15 @@ jQuery.Velocity
 
               var valueCount = getValueCount(scale);
               for (i = 0; i < valueCount; i++) {
-                pointPosition = scale.getPointPosition(
-                  i,
-                  largestPossibleRadius
-                );
-                textSize = measureLabelSize(
-                  scale.ctx,
-                  plFont.size,
-                  scale.pointLabels[i] || ''
-                );
+                pointPosition = scale.getPointPosition(i, largestPossibleRadius);
+                textSize = measureLabelSize(scale.ctx, plFont.size, scale.pointLabels[i] || '');
                 scale._pointLabelSizes[i] = textSize;
 
                 // Add quarter circle to make degree 0 mean top of circle
                 var angleRadians = scale.getIndexAngle(i);
                 var angle = helpers.toDegrees(angleRadians) % 360;
-                var hLimits = determineLimits(
-                  angle,
-                  pointPosition.x,
-                  textSize.w,
-                  0,
-                  180
-                );
-                var vLimits = determineLimits(
-                  angle,
-                  pointPosition.y,
-                  textSize.h,
-                  90,
-                  270
-                );
+                var hLimits = determineLimits(angle, pointPosition.x, textSize.w, 0, 180);
+                var vLimits = determineLimits(angle, pointPosition.y, textSize.h, 90, 270);
 
                 if (hLimits.start < furthestLimits.l) {
                   furthestLimits.l = hLimits.start;
@@ -17830,21 +16496,14 @@ jQuery.Velocity
                 }
               }
 
-              scale.setReductions(
-                largestPossibleRadius,
-                furthestLimits,
-                furthestAngles
-              );
+              scale.setReductions(largestPossibleRadius, furthestLimits, furthestAngles);
             }
 
             /**
              * Helper function to fit a radial linear scale with no point labels
              */
             function fit(scale) {
-              var largestPossibleRadius = Math.min(
-                scale.height / 2,
-                scale.width / 2
-              );
+              var largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
               scale.drawingArea = Math.round(largestPossibleRadius);
               scale.setCenterPoint(0, 0, 0, 0);
             }
@@ -17873,11 +16532,7 @@ jQuery.Velocity
               }
             }
 
-            function adjustPointPositionForLabelHeight(
-              angle,
-              textSize,
-              position
-            ) {
+            function adjustPointPositionForLabelHeight(angle, textSize, position) {
               if (angle === 90 || angle === 270) {
                 position.y -= textSize.h / 2;
               } else if (angle > 270 || angle < 90) {
@@ -17915,10 +16570,7 @@ jQuery.Velocity
 
                 if (pointLabelOpts.display) {
                   // Extra 3px out for some label spacing
-                  var pointLabelPosition = scale.getPointPosition(
-                    i,
-                    outerDistance + 5
-                  );
+                  var pointLabelPosition = scale.getPointPosition(i, outerDistance + 5);
 
                   // Keep this in loop since we may support array properties here
                   var pointLabelFontColor = helpers.valueAtIndexOrDefault(
@@ -17937,26 +16589,15 @@ jQuery.Velocity
                     scale._pointLabelSizes[i],
                     pointLabelPosition
                   );
-                  fillText(
-                    ctx,
-                    scale.pointLabels[i] || '',
-                    pointLabelPosition,
-                    plFont.size
-                  );
+                  fillText(ctx, scale.pointLabels[i] || '', pointLabelPosition, plFont.size);
                 }
               }
             }
 
             function drawRadiusLine(scale, gridLineOpts, radius, index) {
               var ctx = scale.ctx;
-              ctx.strokeStyle = helpers.valueAtIndexOrDefault(
-                gridLineOpts.color,
-                index - 1
-              );
-              ctx.lineWidth = helpers.valueAtIndexOrDefault(
-                gridLineOpts.lineWidth,
-                index - 1
-              );
+              ctx.strokeStyle = helpers.valueAtIndexOrDefault(gridLineOpts.color, index - 1);
+              ctx.lineWidth = helpers.valueAtIndexOrDefault(gridLineOpts.lineWidth, index - 1);
 
               if (scale.options.gridLines.circular) {
                 // Draw circular arcs between the points
@@ -18016,10 +16657,7 @@ jQuery.Velocity
                 var min = Number.POSITIVE_INFINITY;
                 var max = Number.NEGATIVE_INFINITY;
 
-                helpers.each(chart.data.datasets, function(
-                  dataset,
-                  datasetIndex
-                ) {
+                helpers.each(chart.data.datasets, function(dataset, datasetIndex) {
                   if (chart.isDatasetVisible(datasetIndex)) {
                     var meta = chart.getDatasetMeta(datasetIndex);
 
@@ -18058,15 +16696,10 @@ jQuery.Velocity
                 Chart.LinearScaleBase.prototype.convertTicksToLabels.call(me);
 
                 // Point labels
-                me.pointLabels = me.chart.data.labels.map(
-                  me.options.pointLabels.callback,
-                  me
-                );
+                me.pointLabels = me.chart.data.labels.map(me.options.pointLabels.callback, me);
               },
               getLabelForIndex: function(index, datasetIndex) {
-                return +this.getRightValue(
-                  this.chart.data.datasets[datasetIndex].data[index]
-                );
+                return +this.getRightValue(this.chart.data.datasets[datasetIndex].data[index]);
               },
               fit: function() {
                 if (this.options.pointLabels.display) {
@@ -18079,22 +16712,14 @@ jQuery.Velocity
                * Set radius reductions and determine new radius and center point
                * @private
                */
-              setReductions: function(
-                largestPossibleRadius,
-                furthestLimits,
-                furthestAngles
-              ) {
+              setReductions: function(largestPossibleRadius, furthestLimits, furthestAngles) {
                 var me = this;
-                var radiusReductionLeft =
-                  furthestLimits.l / Math.sin(furthestAngles.l);
+                var radiusReductionLeft = furthestLimits.l / Math.sin(furthestAngles.l);
                 var radiusReductionRight =
-                  Math.max(furthestLimits.r - me.width, 0) /
-                  Math.sin(furthestAngles.r);
-                var radiusReductionTop =
-                  -furthestLimits.t / Math.cos(furthestAngles.t);
+                  Math.max(furthestLimits.r - me.width, 0) / Math.sin(furthestAngles.r);
+                var radiusReductionTop = -furthestLimits.t / Math.cos(furthestAngles.t);
                 var radiusReductionBottom =
-                  -Math.max(furthestLimits.b - me.height, 0) /
-                  Math.cos(furthestAngles.b);
+                  -Math.max(furthestLimits.b - me.height, 0) / Math.cos(furthestAngles.b);
 
                 radiusReductionLeft = numberOrZero(radiusReductionLeft);
                 radiusReductionRight = numberOrZero(radiusReductionRight);
@@ -18103,12 +16728,10 @@ jQuery.Velocity
 
                 me.drawingArea = Math.min(
                   Math.round(
-                    largestPossibleRadius -
-                      (radiusReductionLeft + radiusReductionRight) / 2
+                    largestPossibleRadius - (radiusReductionLeft + radiusReductionRight) / 2
                   ),
                   Math.round(
-                    largestPossibleRadius -
-                      (radiusReductionTop + radiusReductionBottom) / 2
+                    largestPossibleRadius - (radiusReductionTop + radiusReductionBottom) / 2
                   )
                 );
                 me.setCenterPoint(
@@ -18118,12 +16741,7 @@ jQuery.Velocity
                   radiusReductionBottom
                 );
               },
-              setCenterPoint: function(
-                leftMovement,
-                rightMovement,
-                topMovement,
-                bottomMovement
-              ) {
+              setCenterPoint: function(leftMovement, rightMovement, topMovement, bottomMovement) {
                 var me = this;
                 var maxRight = me.width - rightMovement - me.drawingArea;
                 var maxLeft = leftMovement + me.drawingArea;
@@ -18164,19 +16782,12 @@ jQuery.Velocity
                 var me = this;
                 var thisAngle = me.getIndexAngle(index) - Math.PI / 2;
                 return {
-                  x:
-                    Math.round(Math.cos(thisAngle) * distanceFromCenter) +
-                    me.xCenter,
-                  y:
-                    Math.round(Math.sin(thisAngle) * distanceFromCenter) +
-                    me.yCenter,
+                  x: Math.round(Math.cos(thisAngle) * distanceFromCenter) + me.xCenter,
+                  y: Math.round(Math.sin(thisAngle) * distanceFromCenter) + me.yCenter,
                 };
               },
               getPointPositionForValue: function(index, value) {
-                return this.getPointPosition(
-                  index,
-                  this.getDistanceFromCenterForValue(value)
-                );
+                return this.getPointPosition(index, this.getDistanceFromCenterForValue(value));
               },
 
               getBasePosition: function() {
@@ -18186,13 +16797,7 @@ jQuery.Velocity
 
                 return me.getPointPositionForValue(
                   0,
-                  me.beginAtZero
-                    ? 0
-                    : min < 0 && max < 0
-                    ? max
-                    : min > 0 && max > 0
-                    ? min
-                    : 0
+                  me.beginAtZero ? 0 : min < 0 && max < 0 ? max : min > 0 && max > 0 ? min : 0
                 );
               },
 
@@ -18254,9 +16859,7 @@ jQuery.Velocity
                           ctx.fillStyle = tickOpts.backdropColor;
                           ctx.fillRect(
                             -labelWidth / 2 - tickOpts.backdropPaddingX,
-                            -yCenterOffset -
-                              tickFontSize / 2 -
-                              tickOpts.backdropPaddingY,
+                            -yCenterOffset - tickFontSize / 2 - tickOpts.backdropPaddingY,
                             labelWidth + tickOpts.backdropPaddingX * 2,
                             tickFontSize + tickOpts.backdropPaddingY * 2
                           );
@@ -18278,11 +16881,7 @@ jQuery.Velocity
               },
             });
 
-            scaleService.registerScaleType(
-              'radialLinear',
-              LinearRadialScale,
-              defaultConfig
-            );
+            scaleService.registerScaleType('radialLinear', LinearRadialScale, defaultConfig);
           };
         },
         { '26': 26, '34': 34, '35': 35, '46': 46 },
@@ -18461,16 +17060,8 @@ jQuery.Velocity
             var range = lookup(table, skey, sval);
 
             // Note: the lookup table ALWAYS contains at least 2 items (min and max)
-            var prev = !range.lo
-              ? table[0]
-              : !range.hi
-              ? table[table.length - 2]
-              : range.lo;
-            var next = !range.lo
-              ? table[1]
-              : !range.hi
-              ? table[table.length - 1]
-              : range.hi;
+            var prev = !range.lo ? table[0] : !range.hi ? table[table.length - 2] : range.lo;
+            var next = !range.lo ? table[1] : !range.hi ? table[table.length - 1] : range.hi;
 
             var span = next[skey] - prev[skey];
             var ratio = span ? (sval - prev[skey]) / span : 0;
@@ -18564,9 +17155,7 @@ jQuery.Velocity
 
             for (i = UNITS.indexOf(minUnit); i < ilen - 1; ++i) {
               interval = INTERVALS[UNITS[i]];
-              factor = interval.steps
-                ? interval.steps[interval.steps.length - 1]
-                : MAX_INTEGER;
+              factor = interval.steps ? interval.steps[interval.steps.length - 1] : MAX_INTEGER;
 
               if (
                 interval.common &&
@@ -18598,11 +17187,7 @@ jQuery.Velocity
           }
 
           function determineMajorUnit(unit) {
-            for (
-              var i = UNITS.indexOf(unit) + 1, ilen = UNITS.length;
-              i < ilen;
-              ++i
-            ) {
+            for (var i = UNITS.indexOf(unit) + 1, ilen = UNITS.length; i < ilen; ++i) {
               if (INTERVALS[UNITS[i]].common) {
                 return UNITS[i];
               }
@@ -18618,13 +17203,9 @@ jQuery.Velocity
           function generate(min, max, capacity, options) {
             var timeOpts = options.time;
             var minor =
-              timeOpts.unit ||
-              determineUnitForAutoTicks(timeOpts.minUnit, min, max, capacity);
+              timeOpts.unit || determineUnitForAutoTicks(timeOpts.minUnit, min, max, capacity);
             var major = determineMajorUnit(minor);
-            var stepSize = helpers.valueOrDefault(
-              timeOpts.stepSize,
-              timeOpts.unitStepSize
-            );
+            var stepSize = helpers.valueOrDefault(timeOpts.stepSize, timeOpts.unitStepSize);
             var weekday = minor === 'week' ? timeOpts.isoWeekday : false;
             var majorTicksEnabled = options.ticks.major.enabled;
             var interval = INTERVALS[minor];
@@ -18659,10 +17240,7 @@ jQuery.Velocity
               // we first aligned time on the previous `major` unit then add the number of full
               // stepSize there is between first and the previous major time.
               time.startOf(major);
-              time.add(
-                ~~((first - time) / (interval.size * stepSize)) * stepSize,
-                minor
-              );
+              time.add(~~((first - time) / (interval.size * stepSize)) * stepSize, minor);
             }
 
             for (; time < last; time.add(stepSize, minor)) {
@@ -18711,9 +17289,7 @@ jQuery.Velocity
 
             for (i = 0, ilen = values.length; i < ilen; ++i) {
               value = values[i];
-              major = majorUnit
-                ? value === +moment(value).startOf(majorUnit)
-                : false;
+              major = majorUnit ? value === +moment(value).startOf(majorUnit) : false;
 
               ticks.push({
                 value: value,
@@ -18867,11 +17443,7 @@ jQuery.Velocity
                 }
 
                 // Convert data to timestamps
-                for (
-                  i = 0, ilen = (chart.data.datasets || []).length;
-                  i < ilen;
-                  ++i
-                ) {
+                for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
                   if (chart.isDatasetVisible(i)) {
                     data = chart.data.datasets[i].data;
 
@@ -18946,12 +17518,7 @@ jQuery.Velocity
                     break;
                   case 'auto':
                   default:
-                    timestamps = generate(
-                      min,
-                      max,
-                      me.getLabelCapacity(min),
-                      options
-                    );
+                    timestamps = generate(min, max, me.getLabelCapacity(min), options);
                 }
 
                 if (options.bounds === 'ticks' && timestamps.length) {
@@ -18977,30 +17544,11 @@ jQuery.Velocity
                 // PRIVATE
                 me._unit =
                   timeOpts.unit ||
-                  determineUnitForFormatting(
-                    ticks,
-                    timeOpts.minUnit,
-                    me.min,
-                    me.max
-                  );
+                  determineUnitForFormatting(ticks, timeOpts.minUnit, me.min, me.max);
                 me._majorUnit = determineMajorUnit(me._unit);
-                me._table = buildLookupTable(
-                  me._timestamps.data,
-                  min,
-                  max,
-                  options.distribution
-                );
-                me._offsets = computeOffsets(
-                  me._table,
-                  ticks,
-                  min,
-                  max,
-                  options
-                );
-                me._labelFormat = determineLabelFormat(
-                  me._timestamps.data,
-                  timeOpts
-                );
+                me._table = buildLookupTable(me._timestamps.data, min, max, options.distribution);
+                me._offsets = computeOffsets(me._table, ticks, min, max, options);
+                me._labelFormat = determineLabelFormat(me._timestamps.data, timeOpts);
 
                 return ticksFromTimestamps(ticks, me._majorUnit);
               },
@@ -19009,19 +17557,14 @@ jQuery.Velocity
                 var me = this;
                 var data = me.chart.data;
                 var timeOpts = me.options.time;
-                var label =
-                  data.labels && index < data.labels.length
-                    ? data.labels[index]
-                    : '';
+                var label = data.labels && index < data.labels.length ? data.labels[index] : '';
                 var value = data.datasets[datasetIndex].data[index];
 
                 if (helpers.isObject(value)) {
                   label = me.getRightValue(value);
                 }
                 if (timeOpts.tooltipFormat) {
-                  return momentify(label, timeOpts).format(
-                    timeOpts.tooltipFormat
-                  );
+                  return momentify(label, timeOpts).format(timeOpts.tooltipFormat);
                 }
                 if (typeof label === 'string') {
                   return label;
@@ -19047,23 +17590,12 @@ jQuery.Velocity
                   .startOf(majorUnit)
                   .valueOf();
                 var majorTickOpts = options.ticks.major;
-                var major =
-                  majorTickOpts.enabled &&
-                  majorUnit &&
-                  majorFormat &&
-                  time === majorTime;
+                var major = majorTickOpts.enabled && majorUnit && majorFormat && time === majorTime;
                 var label = tick.format(
-                  formatOverride
-                    ? formatOverride
-                    : major
-                    ? majorFormat
-                    : minorFormat
+                  formatOverride ? formatOverride : major ? majorFormat : minorFormat
                 );
                 var tickOpts = major ? majorTickOpts : options.ticks.minor;
-                var formatter = helpers.valueOrDefault(
-                  tickOpts.callback,
-                  tickOpts.userCallback
-                );
+                var formatter = helpers.valueOrDefault(tickOpts.callback, tickOpts.userCallback);
 
                 return formatter ? formatter(label, index, ticks) : label;
               },
@@ -19073,9 +17605,7 @@ jQuery.Velocity
                 var i, ilen;
 
                 for (i = 0, ilen = ticks.length; i < ilen; ++i) {
-                  labels.push(
-                    this.tickFormatFunction(moment(ticks[i].value), i, ticks)
-                  );
+                  labels.push(this.tickFormatFunction(moment(ticks[i].value), i, ticks));
                 }
 
                 return labels;
@@ -19092,8 +17622,7 @@ jQuery.Velocity
 
                 return (
                   start +
-                  (size * (me._offsets.left + pos)) /
-                    (me._offsets.left + 1 + me._offsets.right)
+                  (size * (me._offsets.left + pos)) / (me._offsets.left + 1 + me._offsets.right)
                 );
               },
 
@@ -19126,8 +17655,7 @@ jQuery.Velocity
                 var size = me._horizontal ? me.width : me.height;
                 var start = me._horizontal ? me.left : me.top;
                 var pos =
-                  (size ? (pixel - start) / size : 0) *
-                    (me._offsets.left + 1 + me._offsets.left) -
+                  (size ? (pixel - start) / size : 0) * (me._offsets.left + 1 + me._offsets.left) -
                   me._offsets.right;
                 var time = interpolate(me._table, 'pos', pos, 'time');
 
@@ -19150,9 +17678,7 @@ jQuery.Velocity
                   defaults.global.defaultFontSize
                 );
 
-                return (
-                  tickLabelWidth * cosRotation + tickFontSize * sinRotation
-                );
+                return tickLabelWidth * cosRotation + tickFontSize * sinRotation;
               },
 
               /**
@@ -19210,10 +17736,8 @@ var WOW;
             }
 
             if (
-              (windowHeight + scroll - 100 > getOffset(this) &&
-                scroll < getOffset(this)) ||
-              (windowHeight + scroll - 100 >
-                getOffset(this) + $(this).height() &&
+              (windowHeight + scroll - 100 > getOffset(this) && scroll < getOffset(this)) ||
+              (windowHeight + scroll - 100 > getOffset(this) + $(this).height() &&
                 scroll < getOffset(this) + $(this).height()) ||
               (windowHeight + scroll == $(document).height() &&
                 getOffset(this) + 100 > $(document).height())
@@ -19303,10 +17827,8 @@ var WOW;
 
           $('.wow.animated').each(function() {
             if (
-              (windowHeight + scroll - 100 > getOffset(this) &&
-                scroll > getOffset(this) + 100) ||
-              (windowHeight + scroll - 100 < getOffset(this) &&
-                scroll < getOffset(this) + 100) ||
+              (windowHeight + scroll - 100 > getOffset(this) && scroll > getOffset(this) + 100) ||
+              (windowHeight + scroll - 100 < getOffset(this) && scroll < getOffset(this) + 100) ||
               getOffset(this) + $(this).height > $(document).height() - 100
             ) {
               $(this).removeClass('animated');
@@ -19344,8 +17866,7 @@ var WOW;
           var body = document.body;
           var docEl = document.documentElement;
 
-          var scrollTop =
-            window.pageYOffset || docEl.scrollTop || body.scrollTop;
+          var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
 
           var clientTop = docEl.clientTop || body.clientTop || 0;
 
@@ -19603,10 +18124,7 @@ var WOW;
       var parent = element.parentNode;
 
       // If input already have parent just pass through
-      if (
-        parent.tagName.toLowerCase() === 'span' &&
-        parent.classList.contains('waves-effect')
-      ) {
+      if (parent.tagName.toLowerCase() === 'span' && parent.classList.contains('waves-effect')) {
         return;
       }
 
@@ -19625,10 +18143,7 @@ var WOW;
       var parent = element.parentNode;
 
       // If input already have parent just pass through
-      if (
-        parent.tagName.toLowerCase() === 'i' &&
-        parent.classList.contains('waves-effect')
-      ) {
+      if (parent.tagName.toLowerCase() === 'i' && parent.classList.contains('waves-effect')) {
         return;
       }
 
@@ -19748,10 +18263,7 @@ var WOW;
     var target = e.target || e.srcElement;
 
     while (target.parentElement) {
-      if (
-        !(target instanceof SVGElement) &&
-        target.classList.contains('waves-effect')
-      ) {
+      if (!(target instanceof SVGElement) && target.classList.contains('waves-effect')) {
         element = target;
         break;
       }
@@ -20009,10 +18521,7 @@ var _this = void 0;
     var $labelAndIcon = $input.siblings('label, i');
     var hasValue = $input.val().length;
     var hasPlaceholder = $input.attr('placeholder');
-    var addOrRemove = ''.concat(
-      hasValue || hasPlaceholder ? 'add' : 'remove',
-      'Class'
-    );
+    var addOrRemove = ''.concat(hasValue || hasPlaceholder ? 'add' : 'remove', 'Class');
     $labelAndIcon[addOrRemove]('active');
   };
 
@@ -20062,10 +18571,7 @@ var _this = void 0;
       $hiddenDiv.html(content); // When textarea is hidden, width goes crazy.
       // Approximate with half of window size
 
-      $hiddenDiv.css(
-        'width',
-        $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2
-      );
+      $hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
       $textarea.css('height', $hiddenDiv.height());
     }
   };
@@ -20216,10 +18722,7 @@ $('body').on('hidden.bs.modal', '.modal', function() {
     var fileName = '';
 
     if ($files && $files.length > 1) {
-      fileName = ($this.attr('data-multiple-target') || '').replace(
-        '{target}',
-        $files.length
-      );
+      fileName = ($this.attr('data-multiple-target') || '').replace('{target}', $files.length);
     } else if (e.target.value) {
       fileName = e.target.value.split('\\').pop();
     }

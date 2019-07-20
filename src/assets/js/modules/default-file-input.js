@@ -8,10 +8,7 @@
     var fileName = '';
 
     if ($files && $files.length > 1) {
-      fileName = ($this.attr('data-multiple-target') || '').replace(
-        '{target}',
-        $files.length
-      );
+      fileName = ($this.attr('data-multiple-target') || '').replace('{target}', $files.length);
     } else if (e.target.value) {
       fileName = e.target.value.split('\\').pop();
     }

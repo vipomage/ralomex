@@ -5,11 +5,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
-    define([
-      'jquery',
-      'datatables.net-zf',
-      'datatables.net-responsive',
-    ], function($) {
+    define(['jquery', 'datatables.net-zf', 'datatables.net-responsive'], function($) {
       return factory($, window, document);
     });
   } else if (typeof exports === 'object') {
@@ -47,14 +43,8 @@
       } else {
         if (!update) {
           $('<div class="reveal-modal" data-reveal/>')
-            .append(
-              '<a class="close-reveal-modal" aria-label="Close">&#215;</a>'
-            )
-            .append(
-              options && options.header
-                ? '<h4>' + options.header(row) + '</h4>'
-                : null
-            )
+            .append('<a class="close-reveal-modal" aria-label="Close">&#215;</a>')
+            .append(options && options.header ? '<h4>' + options.header(row) + '</h4>' : null)
             .append(render())
             .appendTo('body')
             .foundation('reveal', 'open');

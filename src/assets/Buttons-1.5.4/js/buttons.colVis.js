@@ -109,9 +109,7 @@
         var curr = col.visible();
 
         col.visible(
-          conf.visibility !== undefined
-            ? conf.visibility
-            : !(curr.length ? curr[0] : false)
+          conf.visibility !== undefined ? conf.visibility : !(curr.length ? curr[0] : false)
         );
       },
       init: function(dt, button, conf) {
@@ -119,17 +117,10 @@
         button.attr('data-cv-idx', conf.columns);
 
         dt.on('column-visibility.dt' + conf.namespace, function(e, settings) {
-          if (
-            !settings.bDestroying &&
-            settings.nTable == dt.settings()[0].nTable
-          ) {
+          if (!settings.bDestroying && settings.nTable == dt.settings()[0].nTable) {
             that.active(dt.column(conf.columns).visible());
           }
-        }).on('column-reorder.dt' + conf.namespace, function(
-          e,
-          settings,
-          details
-        ) {
+        }).on('column-reorder.dt' + conf.namespace, function(e, settings, details) {
           // Don't rename buttons based on column name if the button
           // controls more than one column!
           if (dt.columns(conf.columns).count() !== 1) {
@@ -144,10 +135,7 @@
             .parent()
             .children('[data-cv-idx]')
             .sort(function(a, b) {
-              return (
-                a.getAttribute('data-cv-idx') * 1 -
-                b.getAttribute('data-cv-idx') * 1
-              );
+              return a.getAttribute('data-cv-idx') * 1 - b.getAttribute('data-cv-idx') * 1;
             })
             .appendTo(button.parent());
         });
@@ -155,9 +143,7 @@
         this.active(dt.column(conf.columns).visible());
       },
       destroy: function(dt, button, conf) {
-        dt.off('column-visibility.dt' + conf.namespace).off(
-          'column-reorder.dt' + conf.namespace
-        );
+        dt.off('column-visibility.dt' + conf.namespace).off('column-reorder.dt' + conf.namespace);
       },
 
       _columnText: function(dt, conf) {
@@ -201,9 +187,7 @@
           // Take into account that ColReorder might have disrupted our
           // indexes
           var idx =
-            dt.colReorder && dt.colReorder.transpose
-              ? dt.colReorder.transpose(i, 'toOriginal')
-              : i;
+            dt.colReorder && dt.colReorder.transpose ? dt.colReorder.transpose(i, 'toOriginal') : i;
 
           this.visible(conf._visOriginal[idx]);
         });

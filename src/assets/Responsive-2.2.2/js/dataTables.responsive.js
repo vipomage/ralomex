@@ -119,13 +119,7 @@
       opts.details = { type: 'inline' };
     }
 
-    this.c = $.extend(
-      true,
-      {},
-      Responsive.defaults,
-      DataTable.defaults.responsive,
-      opts
-    );
+    this.c = $.extend(true, {}, Responsive.defaults, DataTable.defaults.responsive, opts);
     settings.responsive = this;
     this._constructor();
   };
@@ -167,21 +161,21 @@
       // DataTables doesn't currently trigger an event when a row is added, so
       // we need to hook into its private API to enforce the hidden rows when
       // new data is added
-      dtPrivateSettings.oApi._fnCallbackReg(
-        dtPrivateSettings,
-        'aoRowCreatedCallback',
-        function(tr, data, idx) {
-          if ($.inArray(false, that.s.current) !== -1) {
-            $('>td, >th', tr).each(function(i) {
-              var idx = dt.column.index('toData', i);
+      dtPrivateSettings.oApi._fnCallbackReg(dtPrivateSettings, 'aoRowCreatedCallback', function(
+        tr,
+        data,
+        idx
+      ) {
+        if ($.inArray(false, that.s.current) !== -1) {
+          $('>td, >th', tr).each(function(i) {
+            var idx = dt.column.index('toData', i);
 
-              if (that.s.current[idx] === false) {
-                $(this).css('display', 'none');
-              }
-            });
-          }
+            if (that.s.current[idx] === false) {
+              $(this).css('display', 'none');
+            }
+          });
         }
-      );
+      });
 
       // Destroy event handler
       dt.on('destroy.dtr', function() {
@@ -376,11 +370,7 @@
       for (i = 0, ien = order.length; i < ien; i++) {
         var colIdx = order[i].columnIdx;
 
-        if (
-          display[colIdx] === '-' &&
-          !columns[colIdx].control &&
-          columns[colIdx].minWidth
-        ) {
+        if (display[colIdx] === '-' && !columns[colIdx].control && columns[colIdx].minWidth) {
           // Once we've found a column that won't fit we don't let any
           // others display either, or columns might disappear in the
           // middle of the table
@@ -542,19 +532,14 @@
             // Does this column have a class that matches this breakpoint?
             var brokenPoint = breakpoint.name.split('-');
             var re = new RegExp(
-              '(min\\-|max\\-|not\\-)?(' +
-                brokenPoint[0] +
-                ')(\\-[_a-zA-Z0-9])?'
+              '(min\\-|max\\-|not\\-)?(' + brokenPoint[0] + ')(\\-[_a-zA-Z0-9])?'
             );
             var match = className.match(re);
 
             if (match) {
               hasClass = true;
 
-              if (
-                match[2] === brokenPoint[0] &&
-                match[3] === '-' + brokenPoint[1]
-              ) {
+              if (match[2] === brokenPoint[0] && match[3] === '-' + brokenPoint[1]) {
                 // Class name matches breakpoint name fully
                 column(i, breakpoint.name, match[1], match[2] + match[3]);
               } else if (match[2] === brokenPoint[0] && !match[3]) {
@@ -592,12 +577,7 @@
         });
 
         if (res === true || res === false) {
-          $(dt.table().node()).triggerHandler('responsive-display.dt', [
-            dt,
-            row,
-            res,
-            update,
-          ]);
+          $(dt.table().node()).triggerHandler('responsive-display.dt', [dt, row, res, update]);
         }
       }
     },
@@ -634,62 +614,57 @@
       var selector = typeof target === 'string' ? target : 'td, th';
 
       // Click handler to show / hide the details rows when they are available
-      $(dt.table().body()).on(
-        'click.dtr mousedown.dtr mouseup.dtr',
-        selector,
-        function(e) {
-          // If the table is not collapsed (i.e. there is no hidden columns)
-          // then take no action
-          if (!$(dt.table().node()).hasClass('collapsed')) {
-            return;
-          }
+      $(dt.table().body()).on('click.dtr mousedown.dtr mouseup.dtr', selector, function(e) {
+        // If the table is not collapsed (i.e. there is no hidden columns)
+        // then take no action
+        if (!$(dt.table().node()).hasClass('collapsed')) {
+          return;
+        }
 
-          // Check that the row is actually a DataTable's controlled node
-          if (
-            $.inArray(
-              $(this)
-                .closest('tr')
-                .get(0),
-              dt
-                .rows()
-                .nodes()
-                .toArray()
-            ) === -1
-          ) {
-            return;
-          }
-
-          // For column index, we determine if we should act or not in the
-          // handler - otherwise it is already okay
-          if (typeof target === 'number') {
-            var targetIdx =
-              target < 0 ? dt.columns().eq(0).length + target : target;
-
-            if (dt.cell(this).index().column !== targetIdx) {
-              return;
-            }
-          }
-
-          // $().closest() includes itself in its check
-          var row = dt.row($(this).closest('tr'));
-
-          // Check event type to do an action
-          if (e.type === 'click') {
-            // The renderer is given as a function so the caller can execute it
-            // only when they need (i.e. if hiding there is no point is running
-            // the renderer)
-            that._detailsDisplay(row, false);
-          } else if (e.type === 'mousedown') {
-            // For mouse users, prevent the focus ring from showing
-            $(this).css('outline', 'none');
-          } else if (e.type === 'mouseup') {
-            // And then re-allow at the end of the click
+        // Check that the row is actually a DataTable's controlled node
+        if (
+          $.inArray(
             $(this)
-              .blur()
-              .css('outline', '');
+              .closest('tr')
+              .get(0),
+            dt
+              .rows()
+              .nodes()
+              .toArray()
+          ) === -1
+        ) {
+          return;
+        }
+
+        // For column index, we determine if we should act or not in the
+        // handler - otherwise it is already okay
+        if (typeof target === 'number') {
+          var targetIdx = target < 0 ? dt.columns().eq(0).length + target : target;
+
+          if (dt.cell(this).index().column !== targetIdx) {
+            return;
           }
         }
-      );
+
+        // $().closest() includes itself in its check
+        var row = dt.row($(this).closest('tr'));
+
+        // Check event type to do an action
+        if (e.type === 'click') {
+          // The renderer is given as a function so the caller can execute it
+          // only when they need (i.e. if hiding there is no point is running
+          // the renderer)
+          that._detailsDisplay(row, false);
+        } else if (e.type === 'mousedown') {
+          // For mouse users, prevent the focus ring from showing
+          $(this).css('outline', 'none');
+        } else if (e.type === 'mouseup') {
+          // And then re-allow at the end of the click
+          $(this)
+            .blur()
+            .css('outline', '');
+        }
+      });
     },
 
     /**
@@ -818,10 +793,7 @@
         this._redrawChildren();
 
         // Inform listeners of the change
-        $(dt.table().node()).trigger('responsive-resize.dt', [
-          dt,
-          this.s.current,
-        ]);
+        $(dt.table().node()).trigger('responsive-resize.dt', [dt, this.s.current]);
 
         // If no records, update the "No records" display element
         if (dt.page.info().recordsDisplay === 0) {
@@ -1124,11 +1096,9 @@
               $('<div class="dtr-modal-display"/>')
                 .append($('<div class="dtr-modal-content"/>').append(render()))
                 .append(
-                  $('<div class="dtr-modal-close">&times;</div>').click(
-                    function() {
-                      close();
-                    }
-                  )
+                  $('<div class="dtr-modal-close">&times;</div>').click(function() {
+                    close();
+                  })
                 )
             )
             .append(
@@ -1152,9 +1122,7 @@
         }
 
         if (options && options.header) {
-          $('div.dtr-modal-content').prepend(
-            '<h2>' + options.header(row) + '</h2>'
-          );
+          $('div.dtr-modal-content').prepend('<h2>' + options.header(row) + '</h2>');
         }
       };
     },
@@ -1271,9 +1239,7 @@
         }).join('');
 
         return data
-          ? $(
-              '<ul data-dtr-index="' + rowIdx + '" class="dtr-details"/>'
-            ).append(data)
+          ? $('<ul data-dtr-index="' + rowIdx + '" class="dtr-details"/>').append(data)
           : false;
       };
     },
@@ -1305,9 +1271,9 @@
           );
         }).join('');
 
-        return $(
-          '<table class="' + options.tableClass + ' dtr-details" width="100%"/>'
-        ).append(data);
+        return $('<table class="' + options.tableClass + ' dtr-details" width="100%"/>').append(
+          data
+        );
       };
     },
   };
@@ -1415,26 +1381,18 @@
   Api.register('responsive.hasHidden()', function() {
     var ctx = this.context[0];
 
-    return ctx._responsive
-      ? $.inArray(false, ctx._responsive.s.current) !== -1
-      : false;
+    return ctx._responsive ? $.inArray(false, ctx._responsive.s.current) !== -1 : false;
   });
 
-  Api.registerPlural(
-    'columns().responsiveHidden()',
-    'column().responsiveHidden()',
-    function() {
-      return this.iterator(
-        'column',
-        function(settings, column) {
-          return settings._responsive
-            ? settings._responsive.s.current[column]
-            : false;
-        },
-        1
-      );
-    }
-  );
+  Api.registerPlural('columns().responsiveHidden()', 'column().responsiveHidden()', function() {
+    return this.iterator(
+      'column',
+      function(settings, column) {
+        return settings._responsive ? settings._responsive.s.current[column] : false;
+      },
+      1
+    );
+  });
 
   /**
    * Version information

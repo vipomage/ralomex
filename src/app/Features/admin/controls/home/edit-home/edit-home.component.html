@@ -2,9 +2,7 @@
   <form
     *ngIf="homeElement"
     #form="ngForm"
-    (ngSubmit)="
-      editHomeElement(homeElementId, form.value).then((homeElement = null))
-    "
+    (ngSubmit)="editHomeElement(homeElementId, form.value).then((homeElement = null))"
   >
     <div class="form-group">
       <label for="heading">Заглавие</label>
@@ -46,18 +44,9 @@
   <div class="wrapper" *ngIf="elements">
     <div
       class="card-group"
-      *ngFor="
-        let elementsArr of (elements
-          | async
-          | keyValueFilter
-          | objectSplitToArray: 3)
-      "
+      *ngFor="let elementsArr of elements | async | keyValueFilter | objectSplitToArray: 3"
     >
-      <mdb-card
-        *ngFor="let element of elementsArr"
-        class="m-1"
-        id="{{ element.key }}"
-      >
+      <mdb-card *ngFor="let element of elementsArr" class="m-1" id="{{ element.key }}">
         <mdb-card-img
           *ngIf="element.value.image"
           src="{{ element.value.image }}"
@@ -74,12 +63,7 @@
         >
           Редактирай
         </button>
-        <button
-          (click)="deleteElement(element.key)"
-          mdbBtn
-          color="danger"
-          mdbWavesEffect
-        >
+        <button (click)="deleteElement(element.key)" mdbBtn color="danger" mdbWavesEffect>
           Изтрий
         </button>
       </mdb-card>

@@ -1,11 +1,7 @@
 // Buttons
 .btn {
   box-shadow: $z-depth-1;
-  @include button-size(
-    $btn-padding-y-basic,
-    $btn-padding-x-basic,
-    $btn-font-size-basic
-  );
+  @include button-size($btn-padding-y-basic, $btn-padding-x-basic, $btn-font-size-basic);
   transition: $btn-transition;
   margin: $btn-margin-basic;
   border: 0;
@@ -38,11 +34,7 @@
     }
   }
   &.btn-lg {
-    @include button-size(
-      $btn-padding-y-large,
-      $btn-padding-x-large,
-      $btn-font-size-large
-    );
+    @include button-size($btn-padding-y-large, $btn-padding-x-large, $btn-font-size-large);
     .fas,
     .fab,
     .far {
@@ -50,11 +42,7 @@
     }
   }
   &.btn-md {
-    @include button-size(
-      $btn-padding-y-medium,
-      $btn-padding-x-medium,
-      $btn-font-size-medium
-    );
+    @include button-size($btn-padding-y-medium, $btn-padding-x-medium, $btn-font-size-medium);
     .fas,
     .fab,
     .far {
@@ -62,11 +50,7 @@
     }
   }
   &.btn-sm {
-    @include button-size(
-      $btn-padding-y-small,
-      $btn-padding-x-small,
-      $btn-font-size-small
-    );
+    @include button-size($btn-padding-y-small, $btn-padding-x-small, $btn-font-size-small);
     .fas,
     .fab,
     .far {

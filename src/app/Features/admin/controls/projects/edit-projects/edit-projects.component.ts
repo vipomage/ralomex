@@ -22,9 +22,7 @@ export class EditProjectsComponent implements OnInit {
   };
 
   deleteElement = (elementId: string) => {
-    let confirm = window.confirm(
-      'Сигурни ли сте че искате да изтриете тази новина!'
-    );
+    let confirm = window.confirm('Сигурни ли сте че искате да изтриете тази новина!');
     if (confirm) {
       window.document.getElementById(elementId).remove();
       return this.db.AdminUtils.deleteElementById(elementId, 'projects');
@@ -46,8 +44,7 @@ export class EditProjectsComponent implements OnInit {
     if (this.imgService.images.length > 0) {
       formData.image = this.imgService.images[0];
     } else {
-      if (this.projectElement.image)
-        formData.image = this.projectElement.image as string;
+      if (this.projectElement.image) formData.image = this.projectElement.image as string;
     }
 
     return this.db.AdminUtils.updateElementById(id, 'projects', formData);

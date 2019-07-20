@@ -808,10 +808,7 @@ $ctbc: map-merge(
 );
 
 $switch-color-bg: $secondary-color !default;
-$switch-color-checked-lever-bg: desaturate(
-  lighten($secondary-color, 25%),
-  25%
-) !default;
+$switch-color-checked-lever-bg: desaturate(lighten($secondary-color, 25%), 25%) !default;
 $switch-color-unchecked-bg: #f1f1f1 !default;
 $switch-color-unchecked-lever-bg: #818181 !default;
 

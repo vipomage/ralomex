@@ -1,7 +1,4 @@
-import {
-  AngularFireUploadTask,
-  AngularFireStorage,
-} from 'angularfire2/storage';
+import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';

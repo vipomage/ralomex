@@ -12,11 +12,8 @@ import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 export class AuthService {
   user: Observable<firebase.User>;
   remember: boolean;
-  oAuthProvider:GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
-  constructor(
-    private toastR: ToastrService,
-    private firebaseAuth: AngularFireAuth
-  ) {
+  oAuthProvider: GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
+  constructor(private toastR: ToastrService, private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
   }
 
@@ -24,16 +21,14 @@ export class AuthService {
     firebase
       .auth()
       .setPersistence(
-        this.remember
-          ? firebase.auth.Auth.Persistence.NONE
-          : firebase.auth.Auth.Persistence.SESSION
+        this.remember ? firebase.auth.Auth.Persistence.NONE : firebase.auth.Auth.Persistence.SESSION
       )
       .then(() => {
         this.firebaseAuth.auth
           .signInWithPopup(this.oAuthProvider)
           .then(() => {
             console.log('Login Success');
-            this.toastR.success('Login Success')
+            this.toastR.success('Login Success');
           })
           .catch((err: ErrorEvent) => {
             console.log('Something went wrong:', err.message);
@@ -43,8 +38,6 @@ export class AuthService {
 
   logout() {
     // noinspection JSIgnoredPromiseFromCall
-    this.firebaseAuth.auth
-      .signOut()
-      .then(() => this.toastR.warning('Logout Success'));
+    this.firebaseAuth.auth.signOut().then(() => this.toastR.warning('Logout Success'));
   }
 }

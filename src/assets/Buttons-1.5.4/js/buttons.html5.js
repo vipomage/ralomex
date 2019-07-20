@@ -71,8 +71,7 @@
     // IE <10 is explicitly unsupported
     if (
       typeof view === 'undefined' ||
-      (typeof navigator !== 'undefined' &&
-        /MSIE [1-9]\./.test(navigator.userAgent))
+      (typeof navigator !== 'undefined' && /MSIE [1-9]\./.test(navigator.userAgent))
     ) {
       return;
     }
@@ -147,10 +146,7 @@
           force = type === force_saveable_type,
           object_url,
           dispatch_all = function() {
-            dispatch(
-              filesaver,
-              'writestart progress write writeend'.split(' ')
-            );
+            dispatch(filesaver, 'writestart progress write writeend'.split(' '));
           },
           // on any filesys errors revert to saving with object URLs
           fs_error = function() {
@@ -160,10 +156,7 @@
               reader.onloadend = function() {
                 var url = is_chrome_ios
                   ? reader.result
-                  : reader.result.replace(
-                      /^data:[^;]*;/,
-                      'data:attachment/file;'
-                    );
+                  : reader.result.replace(/^data:[^;]*;/, 'data:attachment/file;');
                 var popup = view.open(url, '_blank');
                 if (!popup) view.location.href = url;
                 url = undefined; // release reference before dispatching
@@ -210,11 +203,7 @@
       },
       FS_proto = FileSaver.prototype,
       saveAs = function(blob, name, no_auto_bom) {
-        return new FileSaver(
-          blob,
-          name || blob.name || 'download',
-          no_auto_bom
-        );
+        return new FileSaver(blob, name || blob.name || 'download', no_auto_bom);
       };
     // IE 10+ (native saveAs)
     if (typeof navigator !== 'undefined' && navigator.msSaveOrOpenBlob) {
@@ -272,11 +261,7 @@
    * @return {string}				Newline character
    */
   var _newLine = function(config) {
-    return config.newline
-      ? config.newline
-      : navigator.userAgent.match(/Windows/)
-      ? '\r\n'
-      : '\n';
+    return config.newline ? config.newline : navigator.userAgent.match(/Windows/) ? '\r\n' : '\n';
   };
 
   /**
@@ -305,9 +290,7 @@
         }
 
         s += boundary
-          ? boundary +
-            ('' + a[i]).replace(reBoundary, escapeChar + boundary) +
-            boundary
+          ? boundary + ('' + a[i]).replace(reBoundary, escapeChar + boundary) + boundary
           : a[i];
       }
 
@@ -315,8 +298,7 @@
     };
 
     var header = config.header ? join(data.header) + newLine : '';
-    var footer =
-      config.footer && data.footer ? newLine + join(data.footer) : '';
+    var footer = config.footer && data.footer ? newLine + join(data.footer) : '';
     var body = [];
 
     for (var i = 0, ien = data.body.length; i < ien; i++) {
@@ -391,9 +373,7 @@
       // drop attributes
       _ieExcel =
         _serialiser
-          .serializeToString(
-            $.parseXML(excelStrings['xl/worksheets/sheet1.xml'])
-          )
+          .serializeToString($.parseXML(excelStrings['xl/worksheets/sheet1.xml']))
           .indexOf('xmlns:r') === -1;
     }
 
@@ -424,9 +404,7 @@
           }
 
           for (i = 0, ien = attrs.length; i < ien; i++) {
-            var attr = val.createAttribute(
-              attrs[i].name.replace(':', '_dt_b_namespace_token_')
-            );
+            var attr = val.createAttribute(attrs[i].name.replace(':', '_dt_b_namespace_token_'));
             attr.value = attrs[i].value;
             worksheet.setAttributeNode(attr);
           }
@@ -438,8 +416,7 @@
         if (_ieExcel) {
           // IE doesn't include the XML declaration
           if (str.indexOf('<?xml') === -1) {
-            str =
-              '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' + str;
+            str = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' + str;
           }
 
           // Return namespace attributes to being as such
@@ -905,11 +882,7 @@
           '</span>'
       ).append(hiddenDiv);
 
-      dt.buttons.info(
-        dt.i18n('buttons.copyTitle', 'Copy to clipboard'),
-        message,
-        0
-      );
+      dt.buttons.info(dt.i18n('buttons.copyTitle', 'Copy to clipboard'), message, 0);
 
       // Select the text so when the user activates their system clipboard
       // it will copy that text
@@ -1000,11 +973,7 @@
         output = '\ufeff' + output;
       }
 
-      _saveAs(
-        new Blob([output], { type: 'text/csv' + charset }),
-        info.filename,
-        true
-      );
+      _saveAs(new Blob([output], { type: 'text/csv' + charset }), info.filename, true);
 
       this.processing(false);
     },
@@ -1036,10 +1005,7 @@
 
     available: function() {
       return (
-        window.FileReader !== undefined &&
-        _jsZip() !== undefined &&
-        !_isDuffSafari() &&
-        _serialiser
+        window.FileReader !== undefined && _jsZip() !== undefined && !_isDuffSafari() && _serialiser
       );
     },
 
@@ -1110,11 +1076,7 @@
             // TODO Need to provide the ability for the specials to say
             // if they are returning a string, since at the moment it is
             // assumed to be a number
-            if (
-              row[i].match &&
-              !row[i].match(/^0\d+/) &&
-              row[i].match(special.match)
-            ) {
+            if (row[i].match && !row[i].match(/^0\d+/) && row[i].match(special.match)) {
               var val = row[i].replace(/[^\d\.\-]/g, '');
 
               if (special.fmt) {
@@ -1136,9 +1098,7 @@
           if (!cell) {
             if (
               typeof row[i] === 'number' ||
-              (row[i].match &&
-                row[i].match(/^-?\d+(\.\d+)?$/) &&
-                !row[i].match(/^0\d+/))
+              (row[i].match && row[i].match(/^-?\d+(\.\d+)?$/) && !row[i].match(/^0\d+/))
             ) {
               // Detect numbers - don't match numbers with leading zeros
               // or a negative anywhere but the start
@@ -1153,10 +1113,7 @@
               // String output - replace non standard characters for text output
               var text = !originalContent.replace
                 ? originalContent
-                : originalContent.replace(
-                    /[\x00-\x09\x0B\x0C\x0E-\x1F\x7F-\x9F]/g,
-                    ''
-                  );
+                : originalContent.replace(/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F-\x9F]/g, '');
 
               cell = _createNode(rels, 'c', {
                 attr: {
@@ -1262,12 +1219,7 @@
       $('mergeCells', rels).before(
         _createNode(rels, 'autoFilter', {
           attr: {
-            ref:
-              'A' +
-              dataStartRow +
-              ':' +
-              createCellPos(data.header.length - 1) +
-              dataEndRow,
+            ref: 'A' + dataStartRow + ':' + createCellPos(data.header.length - 1) + dataEndRow,
           },
         })
       );
@@ -1310,8 +1262,7 @@
       var zip = new jszip();
       var zipConfig = {
         type: 'blob',
-        mimeType:
-          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       };
 
       _addToZip(zip, xlsx);

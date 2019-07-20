@@ -27,10 +27,7 @@ export class MdbEditableTableComponent {
           this.collection[id][property] = editField;
           this.changeExist = false;
           this.updatedRow.removeAttribute('style');
-          this.toastR.success(
-            `${property.toUpperCase()}: ${editField}`,
-            'Saved!'
-          );
+          this.toastR.success(`${property.toUpperCase()}: ${editField}`, 'Saved!');
         })
         .catch(e => console.log(e.message));
     }

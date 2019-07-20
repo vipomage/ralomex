@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { PipesModule } from './Tools/pipes/pipes.module';
 import { AdminModule } from './Features/admin/admin.module';
-import {ToastrModule} from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { routes } from './app-routes';
 
 import { NgModule } from '@angular/core';
@@ -50,7 +50,6 @@ import { AwardsComponent } from './Features/awards/awards.component';
 import { AboutComponent } from './Features/about/about.component';
 import { HomeComponent } from './Features/home/home.component';
 import { AppComponent } from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -87,7 +86,7 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes, { enableTracing: false}),
+    RouterModule.forRoot(routes, { enableTracing: false }),
     AngularFireModule.initializeApp(environment.firebase),
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(environment.toastr),

@@ -15,10 +15,8 @@
 
     <div
       class="table-row item"
-      *ngFor="let item of (data | keyValueFilter)"
-      routerLink="/product/{{ type }}/{{ category }}/{{ subCategory }}/{{
-        item.key
-      }}"
+      *ngFor="let item of data | keyValueFilter"
+      routerLink="/product/{{ type }}/{{ category }}/{{ subCategory }}/{{ item.key }}"
     >
       <div class="tg-sjuo table-cell model">{{ item.value.model }}</div>
       <div class="tg-sjuo table-cell">
