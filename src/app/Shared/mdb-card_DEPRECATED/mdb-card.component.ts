@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-mdb-card',
@@ -6,13 +6,10 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./mdb-card.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class MdbCardComponent implements OnInit {
+export class MdbCardComponent {
   @Input() type: string;
   @Input() category: string;
   @Input() heading: string;
   @Input() image: string;
   @Input() description: string;
-  constructor() {}
-
-  ngOnInit() {}
 }

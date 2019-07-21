@@ -20,76 +20,14 @@ import { EditProjectsComponent } from './controls/projects/edit-projects/edit-pr
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../Tools/pipes/pipes.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-editable-table.component';
-
-const routes: Routes = [
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      {
-        path: 'ploughs',
-        component: PloughControlsComponent,
-        outlet: 'admin',
-        children: [
-          { path: 'edit', component: EditPloughsComponent, outlet: 'controls' },
-          { path: 'add', component: AddPloughComponent, outlet: 'controls' },
-          {
-            path: 'addCategory',
-            component: AddCategoryComponent,
-            outlet: 'controls',
-          },
-        ],
-      },
-      {
-        path: 'home',
-        component: HomeControlsComponent,
-        outlet: 'admin',
-        children: [
-          { path: 'add', component: AddHomeComponent, outlet: 'controls' },
-          { path: 'edit', component: EditHomeComponent, outlet: 'controls' },
-        ],
-      },
-      {
-        path: 'awards',
-        component: AwardsControlsComponent,
-        outlet: 'admin',
-        children: [
-          { path: 'add', component: AddAwardsComponent, outlet: 'controls' },
-          { path: 'edit', component: EditAwardsComponent, outlet: 'controls' },
-        ],
-      },
-      {
-        path: 'news',
-        component: NewsControlComponent,
-        outlet: 'admin',
-        children: [
-          { path: 'add', component: AddNewsComponent, outlet: 'controls' },
-          { path: 'edit', component: EditNewsComponent, outlet: 'controls' },
-        ],
-      },
-      {
-        path: 'projects',
-        component: ProjectsControlComponent,
-        outlet: 'admin',
-        children: [
-          { path: 'add', component: AddProjectsComponent, outlet: 'controls' },
-          {
-            path: 'edit',
-            component: EditProjectsComponent,
-            outlet: 'controls',
-          },
-        ],
-      },
-    ],
-  },
-];
+import { adminRoutes } from './admin.routing';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(adminRoutes),
     MDBBootstrapModule.forRoot(),
     FormsModule,
     PipesModule,
