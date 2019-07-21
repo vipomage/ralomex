@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="category">Тип</label>
+  <label for="category">Категория</label>
   <select
     [disabled]="!categories"
     (change)="onCategoryChange($event.target.value)"
@@ -7,26 +7,26 @@
     name="Изберете Категория"
     id="category"
   >
-    <option disabled>Изберете Тип</option>
+    <option disabled>Изберете Категория</option>
     <option *ngFor="let category of categories">{{ category }}</option>
   </select>
-  <div *ngIf="subCategories">
-    <label for="subCat">Категория</label
+  <div *ngIf="series">
+    <label for="subCat">Серия</label
     ><select
-      [disabled]="!subCategories"
-      (change)="onSubCatChange($event.target.value)"
+      [disabled]="!series"
+      (change)="onSetChange($event.target.value)"
       class="form-control"
       name="subCat"
       id="subCat"
     >
-      <option disabled>Изберете Категория</option>
-      <option *ngFor="let subType of subCategories">{{ subType }}</option>
+      <option disabled>Изберете Серия</option>
+      <option *ngFor="let subType of series">{{ subType }}</option>
     </select>
   </div>
   <div *ngIf="ploughList">
     <app-mdb-editable-table
       [category]="category"
-      [subCategory]="subCategory"
+      [set]="set"
       [collection]="ploughList"
     ></app-mdb-editable-table>
   </div>

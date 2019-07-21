@@ -61,7 +61,7 @@
     "image" : "https://ralomex.com/Images/images/1(1).jpg",
     "types" : {
       "mounted" : {
-        "collection" : {
+        "series" : {
           "conventional" : {
             "collection" : {
               "-LWaasX8uBh4eEimrvts" : {
@@ -154,7 +154,7 @@
         "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-16595772014.jpg?alt=media&token=4af18799-94b6-476c-a1a2-bcae3173bb18"
       },
       "trailed" : {
-        "collection" : {
+        "series" : {
           "conventional" : {
             "collection" : {
               "-LWaasX8uBh4eEimrvts" : {
@@ -295,7 +295,7 @@
     "image" : "https://cdn.agriland.ie/uploads/2017/01/KV-2500-S-i-Plough-free.png-1024x683.png",
     "types" : {
       "mounted" : {
-        "collection" : {
+        "series" : {
           "servers" : {
             "description" : "loremdsadasd as dsa da",
             "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1563631065177_IMG_20190430_204534_926.jpg?alt=media&token=252c4d4c-b12d-4d4b-90e5-390a167e3382" ],
@@ -537,7 +537,7 @@
         "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547962993539_99892.jpg?alt=media&token=7c303044-3f94-4881-ab11-d47f119fa3c6"
       },
       "trailed" : {
-        "collection" : {
+        "series" : {
           "test cat" : {
             "collection" : {
               "-L_xASx3-Et0zQ1f8KCV" : {

@@ -7,39 +7,39 @@
         role="tablist"
         aria-multiselectable="false"
       >
-        <div class="card" *ngFor="let subCat of subCategories">
-          <div class="z-depth-1" role="tab" id="heading-{{subCat}}">
+        <div class="card" *ngFor="let set of series">
+          <div class="z-depth-1" role="tab" id="heading-{{set}}">
             <a
               data-toggle="collapse"
               data-parent="#accordion"
-              href="#{{ subCat }}"
+              href="#{{ set }}"
               aria-expanded="true"
-              [attr.aria-controls]="subCat"
+              [attr.aria-controls]="set"
             >
               <div class="series-wrapper row d-flex">
                 <div class="col-md-6">
-                  <h5 class="mb-0 text-uppercase series-heading">Series - {{ subCat }}</h5>
+                  <h5 class="mb-0 text-uppercase series-heading">Series - {{ set }}</h5>
                   <h4 class="series-description">
-                    {{ data[subCat].description }}
+                    {{ data[set].description }}
                   </h4>
                 </div>
                 <div class="col-md-6 background-image"
-                  [ngStyle]="{ backgroundImage: 'url(' + data[subCat].image + ')' }">
+                  [ngStyle]="{ backgroundImage: 'url(' + data[set].image + ')' }">
                 </div>
               </div>
             </a>
           </div>
 
           <div
-            id="{{ subCat }}"
+            id="{{ set }}"
             class="collapse"
             role="tabpanel"
-            [attr.aria-labelledby]="'heading-'+subCat"
+            [attr.aria-labelledby]="'heading-'+set"
             data-parent="#accordion"
           >
             <div class="card-body mb-1 rgba-grey-light white-text">
               <p>
-                {{ data[subCat] | json }}
+                {{ data[set] | json }}
               </p>
             </div>
           </div>

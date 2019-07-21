@@ -9,28 +9,28 @@ import { FireService } from '../../../../../Tools/services/fire.service';
 export class EditPloughsComponent implements OnInit {
   category: string;
   categories: string[];
-  subCategories: string[];
-  subCategory: string;
-  subCategoryData: string;
+  series: string[];
+  set: string;
+  setData: string;
   ploughList;
   data;
   constructor(private db: FireService) {}
 
   onCategoryChange = (selectValue: string) => {
-    this.subCategory = null;
-    this.subCategories = null;
+    this.set = null;
+    this.series = null;
     this.ploughList = null;
-
+    
     this.category = selectValue;
     this.db.getType('ploughs/types/' + selectValue).subscribe(res => {
-      this.data = res['collection'];
-      this.subCategories = Object.keys(res['collection']);
+      this.data = res['series'];
+      this.series = Object.keys(res['series']);
     });
   };
 
-  onSubCatChange = (selectValue: string) => {
-    this.subCategory = selectValue;
-    this.subCategoryData = this.data[this.subCategory];
+  onSetChange = (selectValue: string) => {
+    this.set = selectValue;
+    this.setData = this.data[this.set];
     this.ploughList = this.data[selectValue]['collection'];
   };
 

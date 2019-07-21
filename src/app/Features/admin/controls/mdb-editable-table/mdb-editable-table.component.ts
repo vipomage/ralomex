@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MdbEditableTableComponent {
   @Input() category: string;
-  @Input() subCategory: string;
+  @Input() set: string;
   @Input() collection;
   editField: string;
   changeExist: boolean = false;
@@ -22,7 +22,7 @@ export class MdbEditableTableComponent {
     let val = {};
     if (this.changeExist) {
       val[property] = editField;
-      this.db.PloughUtils.updatePlough(val, this.category, this.subCategory, id)
+      this.db.PloughUtils.updatePlough(val, this.category, this.set, id)
         .then(() => {
           this.collection[id][property] = editField;
           this.changeExist = false;
@@ -35,7 +35,7 @@ export class MdbEditableTableComponent {
 
   remove(id: any) {
     if (window.confirm('Сигурни ли сте че искате да изтриете този продукт?'))
-      this.db.PloughUtils.deletePlough(this.category, this.subCategory, id)
+      this.db.PloughUtils.deletePlough(this.category, this.set, id)
         .then(() => {
           this.toastR.info('Item Deleted!');
           delete this.collection[id];

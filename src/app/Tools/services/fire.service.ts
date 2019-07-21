@@ -62,26 +62,26 @@ export class FireService {
   };
 
   PloughUtils = {
-    getPlough: (category: string, subCategory: string, id: string): Observable<Plough> =>
-      this.getSingleItem('ploughs', category, subCategory, id),
+    getPlough: (category: string, series: string, id: string): Observable<Plough> =>
+      this.getSingleItem('ploughs', category, series, id),
 
     getPloughSubcategories: (category: string): Observable<Plough> =>
       this.getSubCategories('ploughs', category),
 
     getPloughTypes: () => this.getType('ploughs'),
 
-    deletePlough: (category: string, subCategory: string, id: string) =>
-      this.removeItem('ploughs', category, subCategory, id),
+    deletePlough: (category: string, series: string, id: string) =>
+      this.removeItem('ploughs', category, series, id),
 
-    addPlough: (data: Plough, category: string, subCategory: string) =>
-      this.addItem(data, 'ploughs', category, subCategory),
+    addPlough: (data: Plough, category: string, series: string) =>
+      this.addItem(data, 'ploughs', category, series),
 
-    updatePlough: (data, category: string, subCategory: string, id: string) =>
-      this.updateItem(data, 'ploughs', category, subCategory, id),
+    updatePlough: (data, category: string, series: string, id: string) =>
+      this.updateItem(data, 'ploughs', category, series, id),
 
-    getSubCategories: (category: string, subCategory: string): Observable<PloughCategory> =>
+    getCategorySet: (category: string, series: string): Observable<PloughCategory> =>
       this.http.get<PloughCategory>(
-        `${databaseUrl}/ploughs/types/${category}/collection/${subCategory}.json`
+        `${databaseUrl}/ploughs/types/${category}/series/${series}.json`
       ),
   };
 
@@ -93,30 +93,30 @@ export class FireService {
     };
   };
 
-  getSingleItem = (type: string, category: string, subCategory: string, id: string) =>
+  getSingleItem = (type: string, category: string, series: string, id: string) =>
     this.http.get<ProductIUnion>(
-      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection/`.toLocaleLowerCase() +
+      `${databaseUrl}/${type}/types/${category}/series/${series}/collection/`.toLocaleLowerCase() +
         `${id}.json`
     );
 
   getType = (type: string) => this.http.get(`${databaseUrl}/${type}.json`);
 
   getSubCategories = (type: string, category: string) =>
-    this.http.get<ProductIUnion>(`${databaseUrl}/${type}/types/${category}/collection.json`);
+    this.http.get<ProductIUnion>(`${databaseUrl}/${type}/types/${category}/series.json`);
 
-  getSubCategoryData = (type, category, subCategory) =>
+  getseriesData = (type, category, series) =>
     this.http.get(
-      `${databaseUrl}/${type}/types/${category}/collection/${subCategory}/collection.json`.toLocaleLowerCase()
+      `${databaseUrl}/${type}/types/${category}/series/${series}/collection.json`.toLocaleLowerCase()
     );
 
   addItem = (
     data: ProductIUnion,
     type: string,
     category: string,
-    subCategory: string
+    series: string
   ): ThenableReference =>
     this.db.database
-      .ref(`${type}/types/${category}/collection/${subCategory}/collection`)
+      .ref(`${type}/types/${category}/series/${series}/collection`)
       .push(data);
 
   addPloughCategory = (type: string, categoryDetails) =>
@@ -133,15 +133,15 @@ export class FireService {
     data: ProductIUnion,
     type: string,
     category: string,
-    subCategory: string,
+    series: string,
     id: string
   ) =>
     this.db.database
-      .ref(`${type}/types/${category}/collection/${subCategory}/collection/${id}`)
+      .ref(`${type}/types/${category}/series/${series}/collection/${id}`)
       .update(data);
 
-  removeItem = (type: string, category: string, subCategory: string, id: string) =>
+  removeItem = (type: string, category: string, series: string, id: string) =>
     this.db.database
-      .ref(`${type}/types/${category}/collection/${subCategory}/collection/${id}`)
+      .ref(`${type}/types/${category}/series/${series}/collection/${id}`)
       .remove();
 }
