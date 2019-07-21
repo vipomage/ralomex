@@ -10,8 +10,10 @@ import { Award } from '../interfaces/award';
 import { Injectable } from '@angular/core';
 import { News } from '../interfaces/news';
 import { Observable } from 'rxjs';
+import { PloughCategory } from '../interfaces/plough-category';
+import { CatalogProduct } from '../interfaces/catalogProduct';
 
-const databaseUrl: String = environment.firebase.databaseURL;
+const databaseUrl: string = environment.firebase.databaseURL;
 export type IUnion = Award | Project | News | HomeProduct;
 export type ProductIUnion = Plough;
 
@@ -76,6 +78,19 @@ export class FireService {
 
     updatePlough: (data, category: string, subCategory: string, id: string) =>
       this.updateItem(data, 'ploughs', category, subCategory, id),
+
+    getSubCategories: (category: string, subCategory: string): Observable<PloughCategory> =>
+      this.http.get<PloughCategory>(
+        `${databaseUrl}/ploughs/types/${category}/collection/${subCategory}.json`
+      ),
+  };
+
+  getCatalog = async ():Promise<CatalogProduct> => {
+    return {
+      ploughs: Object.keys(await this.http.get(`${databaseUrl}/ploughs/types.json`).toPromise()),
+      disks: Object.keys(await this.http.get(`${databaseUrl}/disks/types.json`).toPromise()),
+      // cultivators: Object.keys(await this.http.get(`${databaseUrl}/cultivators/types.json`).toPromise()),
+    };
   };
 
   getSingleItem = (type: string, category: string, subCategory: string, id: string) =>

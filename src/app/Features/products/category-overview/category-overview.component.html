@@ -1,0 +1,50 @@
+<div class="overview wrapper">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12 py-5">
+      <div
+        class="accordion md-accordion accordion-2"
+        id="accordion"
+        role="tablist"
+        aria-multiselectable="false"
+      >
+        <div class="card" *ngFor="let subCat of subCategories">
+          <div class="z-depth-1" role="tab" id="heading-{{subCat}}">
+            <a
+              data-toggle="collapse"
+              data-parent="#accordion"
+              href="#{{ subCat }}"
+              aria-expanded="true"
+              [attr.aria-controls]="subCat"
+            >
+              <div class="series-wrapper row d-flex">
+                <div class="col-md-6">
+                  <h5 class="mb-0 text-uppercase series-heading">Series - {{ subCat }}</h5>
+                  <h4 class="series-description">
+                    {{ data[subCat].description }}
+                  </h4>
+                </div>
+                <div class="col-md-6 background-image"
+                  [ngStyle]="{ backgroundImage: 'url(' + data[subCat].image + ')' }">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            id="{{ subCat }}"
+            class="collapse"
+            role="tabpanel"
+            [attr.aria-labelledby]="'heading-'+subCat"
+            data-parent="#accordion"
+          >
+            <div class="card-body mb-1 rgba-grey-light white-text">
+              <p>
+                {{ data[subCat] | json }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

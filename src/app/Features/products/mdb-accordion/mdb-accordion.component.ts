@@ -11,10 +11,8 @@ export class MdbAccordionComponent implements OnInit {
   @Input() type: string;
   @Input() category: string;
   subCategories: string[];
-
-  constructor() {}
-
+  
   ngOnInit() {
-    this.subCategories = Object.keys(this.data.collection);
+    this.subCategories = Object.keys(this.data);
   }
 }

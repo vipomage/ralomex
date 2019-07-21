@@ -3,12 +3,16 @@
 @import '~primeng/resources/themes/nova-light/theme.css';
 @import '~primeng/resources/primeng.min.css';
 @import '~font-awesome/css/font-awesome.css';
-@import 'assets/bootstrap-4.3.1-dist/css/bootstrap.min.css';
 @import "~ngx-toastr/toastr.css";
+@import 'assets/bootstrap-4.3.1-dist/css/bootstrap.min.css';
+
 html {
   overflow-y: scroll;
   color: #707777;
   background-color: #f0efea;
+}
+.capitalize{
+  text-transform: capitalize;
 }
 a {
   text-decoration: none;

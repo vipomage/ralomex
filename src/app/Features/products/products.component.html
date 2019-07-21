@@ -1,6 +1,6 @@
 <div class="container products-wrapper">
   <div class="row">
-    <div class="container category-wrapper">
+    <div *ngIf="catalog" class="container category-wrapper">
       <div class="row">
         <div class="col-lg-4 category">
           <div class="wrapper">
@@ -11,9 +11,8 @@
             <div class="overlay ploughs">
               <div>
                 <h1>Ploughs</h1>
-                <ul>
-                  <li [routerLink]="[{ outlets: { products: ['ploughs'] } }]"><a>Навесни</a></li>
-                  <li [routerLink]="[{ outlets: { products: ['ploughs'] } }]"><a>Прикачни</a></li>
+                <ul >
+                  <li class="capitalize" *ngFor="let productType of catalog.ploughs" [routerLink]="'overview/ploughs/'+productType">{{productType}}</li>
                 </ul>
               </div>
             </div>
@@ -26,8 +25,7 @@
               <div>
                 <h1>Disks</h1>
                 <ul>
-                  <li [routerLink]="[{ outlets: { products: ['disks'] } }]"><a>Навесни</a></li>
-                  <li [routerLink]="[{ outlets: { products: ['disks'] } }]"><a>Прикачни</a></li>
+                  <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/'+productType">{{productType}}</li>
                 </ul>
               </div>
             </div>

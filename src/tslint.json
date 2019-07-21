@@ -3,6 +3,10 @@
   "rules": {
     "directive-selector": [true, "attribute", "app", "camelCase"],
     "component-selector": [true, "element", "app", "kebab-case"],
-    "no-trailing-whitespace": false
+    "no-trailing-whitespace": false,
+    "typedef-whitespace": false,
+    "semicolon": false,
+    "one-line": false,
+    "no-debugger": false
   }
 }

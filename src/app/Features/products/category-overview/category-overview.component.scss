@@ -1,0 +1,30 @@
+div.card{
+  
+  
+  a{
+    text-underline: none;
+    text-decoration: none;
+    color: green;
+    
+    .series-wrapper{
+      
+      .series-heading{
+        padding: 12px;
+      }
+      
+      .series-description{
+        padding: 0 0 35px 30px;
+        font-size: 12px;
+        color: black;
+      }
+      
+      
+      div.background-image{
+        background-position: right;
+        background-repeat: no-repeat;
+    
+      }
+      
+    }
+  }
+}

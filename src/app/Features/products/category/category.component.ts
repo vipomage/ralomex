@@ -8,23 +8,17 @@ import { FireService } from '../../../Tools/services/fire.service';
 })
 export class CategoryComponent implements OnInit {
   @Input() category;
-  private _data;
-  private categories: string[];
+  data;
+  categories: string[];
 
   constructor(private db: FireService) {
     //todo FIX TYPE!
   }
 
-  public get data() {
-    return this._data;
-  }
-  public set data(newValue) {
-    this._data = newValue;
-  }
-
   ngOnInit() {
     this.db.getType(this.category).subscribe(response => {
       this.data = response;
+      debugger;
       this.categories = Object.keys(response['types']);
     });
   }

@@ -9,12 +9,14 @@ import { RollersComponent } from './rollers/rollers.component';
 import { DisksComponent } from './disks/disks.component';
 import { PartsComponent } from './parts/parts.component';
 import { ToolsComponent } from './tools/tools.component';
+import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 
 export const productsRouting: Routes = [
   {
     path: 'products',
-    component: ProductsComponent,
     children: [
+      { path: '', component: ProductsComponent },
+      { path: 'overview/:type/:category', component: CategoryOverviewComponent, pathMatch: 'full' },
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
       { path: 'cultivators', component: CultivatorsComponent, outlet: 'products' },
       { path: 'shredders', component: ShreddersComponent, outlet: 'products' },

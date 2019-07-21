@@ -21,13 +21,6 @@
     >
       <div class="container-fluid ">
         <div class="row sub-category" *ngFor="let subCat of subCategories; let i = index">
-          <!--<div class="col-lg-4">-->
-          <!--<img src="{{ data.collection[subCat].image }}" alt="" />-->
-          <!--</div>-->
-          <!--<div class="col-lg-8">-->
-          <!--<h2>{{ subCat }}</h2>-->
-          <!--<p>{{data.collection[subCat].description}}</p>-->
-          <!--</div>-->
           <app-mdb-section
             [index]="i"
             [type]="type"

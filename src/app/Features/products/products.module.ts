@@ -20,6 +20,7 @@ import { ProductsComponent } from './products.component';
 import { SharedModule } from '../../Shared/shared.module';
 import { CardsFreeModule } from 'angular-bootstrap-md';
 import { PipesModule } from '../../Tools/pipes/pipes.module';
+import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { PipesModule } from '../../Tools/pipes/pipes.module';
     SpecialComponent,
     SubcategoryComponent,
     ToolsComponent,
+    CategoryOverviewComponent,
   ],
   imports: [
     RouterModule.forChild(productsRouting),
