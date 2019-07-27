@@ -7,9 +7,8 @@ import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
 import { MdbNewsComponent } from './mdb-news/mdb-news.component';
 import { MdbSectionComponent } from './mdb-section/mdb-section.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CardsFreeModule, MDBBootstrapModule, MdbCardBodyComponent } from 'angular-bootstrap-md';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
-import { MdbCardComponent } from './mdb-card_DEPRECATED/mdb-card.component';
 
 @NgModule({
   declarations: [

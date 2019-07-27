@@ -1,75 +1,56 @@
-.nav-container {
-  .logo-container {
-    .row {
-      margin: 23px 35px 0 35px;
+$primaryGreen: #008f3e;
+
+nav.navbar {
+  background-color: $primaryGreen;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+
+  .navbar-brand {
+    h1 {
+      top: 15px;
+
+      span {
+        font-size: 24px;
+        top: -10px;
+      }
     }
+  }
+
+  .navbar-collapse {
+    background-color: white;
+    min-height: 75px;
+    border-radius: 0 0 0 150px;
+    align-items: flex-end;
+
+    @media screen and (max-width: 768px) {
+      border-radius: 15px 0 0 15px;
+    }
+
+    .nav-link {
+      font-size: 23px;
+      color: $primaryGreen;
+      font-weight: 700;
+      padding-left: 0;
+    }
+  }
+}
+.languages {
+  color: white;
+  font-size: 24px;
+  margin-top: -1px;
+  background-color: $primaryGreen;
+  align-items: baseline;
+  transition: 0.5s;
+  h5 {
+    padding: 0 5px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0;
 
     &:hover {
       cursor: pointer;
-    }
-
-    img {
-      height: 70px;
-      margin: 0 25px 0 0;
-    }
-
-    h1 {
-      font-size: 50px;
-      font-weight: 700;
-      color: white;
-      margin: auto 0;
-      text-transform: uppercase;
-
-      span.registered {
-        font-size: 25px;
-        vertical-align: super;
-      }
+      color: black;
     }
   }
-
-  .nav-link-wrapper .row {
-    background-color: white;
-    border-radius: 0 0 0 90px;
-    padding: 0 25px;
-    text-align: center;
-
-    a {
-      text-decoration: none;
-      color: #008f3e;
-      font-weight: 900;
-      font-size: 29px;
-      padding-top: 35px;
-      padding-bottom: 15px;
-
-      &:hover {
-        color: black;
-      }
-    }
-  }
-
-  div.languages {
-    color: white;
-    font-size: 24px;
-    padding-bottom: 10px;
-    .row {
-      justify-content: flex-end;
-
-      h1 {
-        font-weight: 700;
-        color: white;
-
-        &:last-child {
-          padding-right: 25px;
-        }
-
-        &:hover {
-          cursor: pointer;
-          color: black;
-        }
-      }
-    }
-  }
-
-  background-color: #008f3e;
-  margin: 0 auto;
 }

@@ -20,7 +20,7 @@ export class SubcategoryComponent implements OnInit {
     this.category = this.activeRoute.snapshot.params.category;
     this.subCategory = this.activeRoute.snapshot.params.subCategory;
     
-    this.db.getSubCategoryData(this.type, this.category, this.subCategory).subscribe(data => {
+    this.db.getseriesData(this.type, this.category, this.subCategory).subscribe(data => {
       this.data = data;
     });
   }
