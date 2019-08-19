@@ -9,24 +9,22 @@ import { FireService } from '../../../Tools/services/fire.service';
 })
 export class ProductComponent implements OnInit {
   private type: string;
+  private series: string;
   private category: string;
-  private subCategory: string;
   private id: string;
 
   public item;
 
   constructor(private route: ActivatedRoute, private db: FireService) {}
 
-  decode_utf8 = (s: string) => decodeURI(s);
-
-  ngOnInit() {
-    this.type = this.decode_utf8(this.route.snapshot.params.type);
-    this.category = this.decode_utf8(this.route.snapshot.params.category);
-    this.subCategory = this.decode_utf8(this.route.snapshot.params.subCategory);
+  async ngOnInit() {
+    this.type = this.route.snapshot.params.type;
+    this.category = this.route.snapshot.params.category;
+    this.series = this.route.snapshot.params.series;
     this.id = this.route.snapshot.params.id;
 
-    this.db
-      .getSingleItem(this.type, this.category, this.subCategory, this.id)
-      .subscribe(res => (this.item = res));
+    this.item = await this.db
+      .getSingleItem(this.type, this.category, this.series, this.id)
+      .toPromise();
   }
 }

@@ -18,12 +18,14 @@ import { SubcategoryComponent } from './subcategory/subcategory.component';
 import { ToolsComponent } from './tools/tools.component';
 import { ProductsComponent } from './products.component';
 import { SharedModule } from '../../Shared/shared.module';
-import { CardsFreeModule } from 'angular-bootstrap-md';
+import { CardsFreeModule, TableModule } from 'angular-bootstrap-md';
 import { PipesModule } from '../../Tools/pipes/pipes.module';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
+import { TablesComponent } from './tables/tables.component';
 
 @NgModule({
   declarations: [
+    TablesComponent,
     ProductsComponent,
     CategoryComponent,
     CultivatorsComponent,
@@ -47,6 +49,7 @@ import { CategoryOverviewComponent } from './category-overview/category-overview
     SharedModule,
     CardsFreeModule,
     PipesModule,
+    TableModule,
   ],
   exports: [
     ProductsComponent,

@@ -1,5 +1,5 @@
 <div class="mt-5 wrapper">
-  <form #ploughData="ngForm" (ngSubmit)="this.savePlough(ploughData.value, this.category)">
+  <form #ploughData="ngForm">
     <div class="form-group">
       <label for="category">Категория</label>
       <select
@@ -12,11 +12,11 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="subcategory">Подкатегория</label>
+      <label for="subcategory">Серия</label>
       <select
         (change)="onSubCategoryChange($event.target.value)"
         class="form-control"
-        name="Изберете  Подкатегория"
+        name="Изберете Серия"
         id="subcategory"
       >
         <option *ngFor="let subCategory of subCategories">{{ subCategory }}</option>
@@ -27,28 +27,44 @@
       <input required name="model" ngModel class="form-control" type="text" id="model" />
     </div>
     <div class="form-group">
-      <label for="width">Широчина</label>
-      <input required name="widthWork" ngModel class="form-control" type="text" id="width" />
-    </div>
-    <div class="form-group">
-      <label for="depth">Дълбочина</label>
-      <input required name="depthWork" ngModel class="form-control" type="text" id="depth" />
+      <label for="width">Брой Корпуси</label>
+      <input required name="workBodyCount" ngModel class="form-control" type="text" id="width" />
     </div>
     <div class="form-group">
       <label for="hp">Необх. HP</label>
       <input required name="reqHP" ngModel class="form-control" type="text" id="hp" />
     </div>
     <div class="form-group">
-      <label for="prod">Продуктивност</label>
-      <input required name="productivity" ngModel class="form-control" type="text" id="prod" />
+      <label for="mainBeam">Основна Греда</label>
+      <input required name="mainBeam" ngModel class="form-control" type="text" id="mainBeam" />
     </div>
     <div class="form-group">
-      <label for="speed">Скорост</label>
-      <input required name="speed" ngModel class="form-control" type="text" id="speed" />
+      <label for="bodiesDistance">Разс. м-у Корпусите</label>
+      <input required name="bodiesDistance" ngModel class="form-control" type="text" id="bodiesDistance" />
+    </div>
+    <div class="form-group">
+      <label for="widthWork">Р-на ширина на корпусите</label>
+      <input required name="widthWork" ngModel class="form-control" type="text" id="widthWork" />
     </div>
     <div class="form-group">
       <label for="clearance">Просвет</label>
       <input required name="clearance" ngModel class="form-control" type="text" id="clearance" />
+    </div>
+    <div class="form-group">
+      <label for="depthWork">Дълбочина</label>
+      <input required name="depthWork" ngModel class="form-control" type="text" id="depthWork" />
+    </div>
+    <div class="form-group">
+      <label for="transportSpeed">Транс.Скорост</label>
+      <input required name="transportSpeed" ngModel class="form-control" type="text" id="transportSpeed" />
+    </div>
+    <div class="form-group">
+      <label for="workSpeed">Раб.Скорост</label>
+      <input required name="workSpeed" ngModel class="form-control" type="text" id="workSpeed" />
+    </div>
+    <div class="form-group">
+      <label for="productivity">Производ.</label>
+      <input required name="productivity" ngModel class="form-control" type="text" id="productivity" />
     </div>
     <div class="form-group">
       <label for="weight">Тегло</label>
@@ -57,7 +73,6 @@
     <div class="form-group">
       <label for="description">Описание?</label>
       <input
-        required
         name="description"
         ngModel
         class="form-control"
@@ -68,7 +83,7 @@
     <div class="form-control-plaintext">
       <label for="catImage">Снимка</label>
       <input
-        required
+        
         (change)="startUpload($event.target.files)"
         [disabled]="this.imgService.preventEdit"
         name="image"
@@ -82,7 +97,7 @@
     <div class="form-group">
       <button
         [disabled]="!ploughData.valid || this.imgService.preventEdit"
-        type="submit"
+        (click)="this.savePlough(ploughData.value, this.category)"
         class="btn btn-primary"
       >
         Запази

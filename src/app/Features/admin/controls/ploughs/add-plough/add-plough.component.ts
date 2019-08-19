@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FireService } from '../../../../../Tools/services/fire.service';
 import { Plough } from '../../../../../Tools/interfaces/plough';
 import { ImageService } from '../../../../../Tools/services/image.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-plough',
@@ -15,7 +16,7 @@ export class AddPloughComponent implements OnInit {
   subCategory: string;
   images: string[] = this.imgService.images;
 
-  constructor(public db: FireService, public imgService: ImageService) {}
+  constructor(public db: FireService, public imgService: ImageService,private toastr:ToastrService) {}
 
   onCategoryChange = selectValue => {
     this.category = selectValue;
@@ -31,8 +32,12 @@ export class AddPloughComponent implements OnInit {
 
   savePlough = (data: Plough, category: string) => {
     data.image = this.images;
-    this.db.PloughUtils.addPlough(data, category, this.subCategory);
-    //todo notification
+    this.db.PloughUtils.addPlough(data, category, this.subCategory).then(()=>{
+      this.toastr.success('Добавен');
+    }).catch(e=>{
+      console.log(e);
+    });
+    
   };
 
   startUpload = event => this.imgService.startUpload(event);

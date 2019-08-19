@@ -61,7 +61,9 @@
     "image" : "https://ralomex.com/Images/images/1(1).jpg",
     "types" : {
       "mounted" : {
-        "collection" : {
+        "description" : "",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-16595772014.jpg?alt=media&token=4af18799-94b6-476c-a1a2-bcae3173bb18",
+        "series" : {
           "conventional" : {
             "collection" : {
               "-LWaasX8uBh4eEimrvts" : {
@@ -71,7 +73,7 @@
                 "productivity" : "16, 28, 21",
                 "reqHP" : "200, 250, 300",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "1880",
                 "widthWork" : "210, 240, 280"
               },
@@ -84,7 +86,7 @@
                 "productivity" : "18, 21, 23",
                 "reqHP" : "250, 300, 350",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "2415",
                 "widthWork" : "240, 280, 320"
               },
@@ -115,7 +117,7 @@
                 "productivity" : "16, 28, 21",
                 "reqHP" : "200, 250, 300",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "1880",
                 "widthWork" : "210, 240, 280"
               },
@@ -128,7 +130,7 @@
                 "productivity" : "18, 21, 23",
                 "reqHP" : "250, 300, 350",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "2415",
                 "widthWork" : "240, 280, 320"
               },
@@ -149,12 +151,11 @@
             "image" : "https://ralomex.com//AdminPanel//Images/prod-90402772014.jpg",
             "name" : "Обръщателни Плугове"
           }
-        },
-        "description" : "",
-        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-16595772014.jpg?alt=media&token=4af18799-94b6-476c-a1a2-bcae3173bb18"
+        }
       },
       "trailed" : {
-        "collection" : {
+        "description" : "",
+        "series" : {
           "conventional" : {
             "collection" : {
               "-LWaasX8uBh4eEimrvts" : {
@@ -164,7 +165,7 @@
                 "productivity" : "16,28,21",
                 "reqHP" : "200,250,300",
                 "speed" : "6 - 10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "1880",
                 "widthWork" : "210,240,280"
               },
@@ -177,7 +178,7 @@
                 "productivity" : "18,21,23",
                 "reqHP" : "250,300,350",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "2415",
                 "widthWork" : "240,280,320"
               },
@@ -208,7 +209,7 @@
                 "productivity" : "16,28,21",
                 "reqHP" : "200,250,300",
                 "speed" : "6 - 10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "1880",
                 "widthWork" : "210,240,280"
               },
@@ -221,7 +222,7 @@
                 "productivity" : "18,21,23",
                 "reqHP" : "250,300,350",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "2415",
                 "widthWork" : "240,280,320"
               },
@@ -243,8 +244,7 @@
             "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
             "name" : "Обръщателни Плугове"
           }
-        },
-        "description" : ""
+        }
       }
     }
   },
@@ -288,215 +288,35 @@
       "heading" : "Test News Element",
       "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550719127030_FooterSample.png?alt=media&token=44822fc9-7ee7-4bdb-a609-a0b8d1bf7e71",
       "timeStamp" : 1550717536339
-    },
-    "-LZj_R5ETE_QXvCH5QE5" : {
-      "content" : "dsadsa",
-      "heading" : "dasda",
-      "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/news%2F1551281537011_FooterSample.png?alt=media&token=b44f6843-f8a4-44e0-a233-db6127de8303",
-      "timeStamp" : 1551281539464
-    },
-    "History" : {
-      "fawefasdaqE3ASDSA" : {
-        "dd" : 12,
-        "dsad" : 12,
-        "sadas" : 12
-      }
     }
   },
   "ploughs" : {
-    "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа.",
+    "description" : "The ploughs are designed with 3 to 10 bodies and are suitable for pre-sowing ploughing to a depth of 18-25cm and deep ploughing up to 33-37cm for all type of soil, except rocky soils and terrains slopped up to 8 degrees.The PNR Series machines are of mounted type and those of PPR Series are of trailed type. The Typical features of the body of three plough are its semi-helicoidal shape, the presence of a protective plate of the landslide, a changeable shin piece, a trash board of the ploughs for deep ploughing and a safety shear component to protect against body overload. The design enables high speed operation and ploughing\tthe crop residues directly into the ground by over 95%. The ploughs are designed with high clearance of the frame that prevents plough clogging during operation.The working width of the body is adjustable to meet the agro-technical requirements for cultivation. The plough body may have a solid or lamellar mouldboard. At customer’s request the ploughs can be equipped with semi automatic or automatic safety devices.The ploughs of RALOMEX AD are of company’s own design. For some models the plough can be attached to the tractor for movement “in the open field” or “in the furrow”.",
     "image" : "https://cdn.agriland.ie/uploads/2017/01/KV-2500-S-i-Plough-free.png-1024x683.png",
     "types" : {
-      "навесен" : {
-        "collection" : {
-          "конвенционален" : {
+      "mounted" : {
+        "description" : "Mounted Ploughs",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547962993539_99892.jpg?alt=media&token=7c303044-3f94-4881-ab11-d47f119fa3c6",
+        "series" : {
+          "pnr" : {
             "collection" : {
               "-LZ1PP_iwk34wqgduXfc" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.3.20-28",
-                "productivity" : "4/5/6",
-                "reqHP" : "40 - 80",
-                "speed" : "6 - 9",
-                "weight" : "400",
-                "widthWork" : "60/72/84"
-              },
-              "-LZ1QaYvm-TN1XucGJhE" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.4.20-28",
-                "productivity" : "6/7/8",
-                "reqHP" : "60-90",
-                "speed" : "6 - 9",
-                "weight" : "500",
-                "widthWork" : "80/96/112"
-              },
-              "-LZ1Qszji-YvDyrxYVFE" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.5.20-28",
-                "productivity" : "7/9/10",
-                "reqHP" : "50-110",
-                "speed" : "6 - 9",
-                "weight" : "760",
-                "widthWork" : "80/96/112"
-              },
-              "-LZ1SmHhlxgGGL1Ehc9j" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.6.20-28",
-                "productivity" : "9/11/13",
-                "reqHP" : "100-130",
-                "speed" : "6 - 9",
-                "weight" : "840",
-                "widthWork" : "120/144/168"
-              },
-              "-LZ1T1Z5TREXshglWzIc" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.7.20-28",
-                "productivity" : "11/13/15",
-                "reqHP" : "140-170",
-                "speed" : "7 - 10",
-                "weight" : "900",
-                "widthWork" : "140/168/196"
-              },
-              "-LZ1TChEbHRJEVaBcKZ7" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.8.20-28",
-                "productivity" : "13/15/17",
-                "reqHP" : "140-170",
-                "speed" : "7 - 10",
-                "weight" : "1330",
-                "widthWork" : "160/192/224"
-              },
-              "-LZ1TOPXra1VgDDyEIlB" : {
-                "clearance" : "70",
-                "depthWork" : "15/22/25",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.10.20-28",
-                "productivity" : "15/18/21",
-                "reqHP" : "200-300",
-                "speed" : "7 - 10",
-                "weight" : "1750",
-                "widthWork" : "200/240/280"
-              },
-              "-LZ1Tu26eesSB57V9xbZ" : {
-                "clearance" : "75",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.3.30-40",
-                "productivity" : "5/7/9",
-                "reqHP" : "80-100",
-                "speed" : "6-9",
-                "weight" : "590",
-                "widthWork" : "90/105/120"
-              },
-              "-LZ1UA0f4wF3iq8niFoR" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.4.30-40",
-                "productivity" : "9/10.5/12",
-                "reqHP" : "100-150",
-                "speed" : "6-9",
-                "weight" : "800",
-                "widthWork" : "120/140/160"
-              },
-              "-LZ1UOiPxEcfYIxeo-OW" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ],
-                "model" : "PNR.5.30-40",
-                "productivity" : "11/13/15",
-                "reqHP" : "100-150",
-                "speed" : "6-10",
-                "weight" : "1240",
-                "widthWork" : "150/175/200"
-              },
-              "-LZ1X1vzH8fQPeSjVNtz" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550525673447_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=72bc4572-1793-4e60-b263-a03f5a4d61ea" ],
-                "model" : "PNR.6.30-40",
-                "productivity" : "14/16/18",
-                "reqHP" : "150/180/250",
-                "speed" : "6 - 10",
-                "weight" : "1650",
-                "widthWork" : "180/210/240"
-              },
-              "-LZ1XC7bmgbqsZ-aCE0f" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550525673447_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=72bc4572-1793-4e60-b263-a03f5a4d61ea" ],
-                "model" : "PNR.7.30-40",
-                "productivity" : "16/18/21",
-                "reqHP" : "200/250/300",
-                "speed" : "6 - 10",
-                "weight" : "1880",
-                "widthWork" : "210/240/280"
-              },
-              "-LZ1XMQTi5kZe-U3gWiy" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550525673447_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=72bc4572-1793-4e60-b263-a03f5a4d61ea" ],
-                "model" : "PNR.8.30-40",
-                "productivity" : "18/21/23",
-                "reqHP" : "250/300/350",
-                "speed" : "6 - 10",
-                "weight" : "2025",
-                "widthWork" : "240/280/320"
-              },
-              "-LZ1XTBNtRnZKNojCpbb" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550525673447_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=72bc4572-1793-4e60-b263-a03f5a4d61ea" ],
-                "model" : "PNR.9.30-40",
-                "productivity" : "22/26/30",
-                "reqHP" : "320/350/400",
-                "speed" : "6 - 10",
-                "weight" : "2650",
-                "widthWork" : "300/350/400"
-              },
-              "-LZ1XaOHrDAZGrAg0MqQ" : {
-                "clearance" : "85",
-                "depthWork" : "27/33/37",
-                "description" : "a",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550525673447_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=72bc4572-1793-4e60-b263-a03f5a4d61ea" ],
-                "model" : "PNR.10.30-40",
-                "productivity" : "22/26/30",
-                "reqHP" : "350/400/450",
-                "speed" : "6 - 10",
-                "weight" : "2835",
-                "widthWork" : "300/350/400"
+                "model": "PNR.3.20-28",
+                "workBodyCount":"3",
+                "mainBeam":"100x150",
+                "bodiesDistance":73,
+                "widthWork": "20/24/28",
+                "clearance": 70,
+                "weight": 400,
+                "reqHP": "40-80",
+                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ]
               }
             },
             "description" : "Плуговете са от седем до десет корпуса със регулируем захват Предназначени са за предсеитбена оран на дълбочина 18  5 см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса",
             "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fconventional.png?alt=media&token=c0098b1d-eb33-4466-85ea-98664fb91b2e",
             "name" : "Конвенционални Плугове"
           },
-          "обръщателен" : {
+          "kpm" : {
             "collection" : {
               "-LWaasX8uBh4eEimrvts" : {
                 "clearance" : "85",
@@ -505,7 +325,7 @@
                 "productivity" : "16,28,21",
                 "reqHP" : "200,250,300",
                 "speed" : "6 - 10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "1880",
                 "widthWork" : "210,240,280"
               },
@@ -518,7 +338,7 @@
                 "productivity" : "18,21,23",
                 "reqHP" : "250,300,350",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "2415",
                 "widthWork" : "240,280,320"
               },
@@ -540,62 +360,31 @@
             "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
             "name" : "Конвенционални Плугове"
           }
-        },
-        "description" : "",
-        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547962993539_99892.jpg?alt=media&token=7c303044-3f94-4881-ab11-d47f119fa3c6"
+        }
       },
-      "прикачен" : {
-        "collection" : {
-          "test cat" : {
-            "description" : "asdsadsa",
-            "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1551292083328_prod-74173772014.jpg?alt=media&token=850b015f-4db3-4536-ace0-ed17ce0de44f" ],
-            "name" : "Test Cat"
-          },
-          "конвенционален" : {
+      "trailed" : {
+        "description" : "Trailed Ploughs",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547962993539_99892.jpg?alt=media&token=7c303044-3f94-4881-ab11-d47f119fa3c6",
+        "series" : {
+          "pnr" : {
             "collection" : {
-              "-LWaasX8uBh4eEimrvts" : {
-                "clearance" : "85",
-                "depthWork" : "20 - 27,20 - 33,20 - 37",
-                "model" : "7.30-40",
-                "productivity" : "16,28,21",
-                "reqHP" : "200,250,300",
-                "speed" : "6 - 10",
-                "type" : "Навесен",
-                "weight" : "1880",
-                "widthWork" : "210,240,280"
-              },
-              "-LWanA1UtM9KLjEOv6E0" : {
-                "clearance" : "85",
-                "depthWork" : "20-27,20-33,20-37",
-                "description" : "",
-                "image" : "C:\\fakepath\\prod-74173772014.jpg",
-                "model" : "8.30-40",
-                "productivity" : "18,21,23",
-                "reqHP" : "250,300,350",
-                "speed" : "6-10",
-                "type" : "Навесен",
-                "weight" : "2415",
-                "widthWork" : "240,280,320"
-              },
-              "-LXdx8gLZtno8TcSMLmf" : {
-                "clearance" : "76",
-                "depthWork" : "50",
-                "description" : "",
-                "image" : "C:\\fakepath\\images.jpg",
-                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
-                "model" : "8.30-50",
-                "productivity" : "15",
-                "reqHP" : "300",
-                "speed" : "50`",
-                "weight" : "1500",
-                "widthWork" : "39"
+              "-LZ1PP_iwk34wqgduXfc" : {
+                "model": "PNR.3.20-28",
+                "workBodyCount":3,
+                "mainBeam":"100x150",
+                "bodiesDistance":73,
+                "widthWork": "20/24/28",
+                "clearance": 70,
+                "weight": 400,
+                "reqHP": "40-80",
+                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ]
               }
             },
-            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
+            "description" : "Плуговете са от седем до десет корпуса със регулируем захват Предназначени са за предсеитбена оран на дълбочина 18  5 см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fconventional.png?alt=media&token=c0098b1d-eb33-4466-85ea-98664fb91b2e",
             "name" : "Конвенционални Плугове"
           },
-          "обръщателен" : {
+          "ppr" : {
             "collection" : {
               "-LWaasX8uBh4eEimrvts" : {
                 "clearance" : "85",
@@ -604,7 +393,7 @@
                 "productivity" : "16,28,21",
                 "reqHP" : "200,250,300",
                 "speed" : "6 - 10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "1880",
                 "widthWork" : "210,240,280"
               },
@@ -612,12 +401,12 @@
                 "clearance" : "85",
                 "depthWork" : "20-27,20-33,20-37",
                 "description" : "",
-                "image" : "C:\\fakepath\\prod-74173772014.jpg",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
                 "model" : "8.30-40",
                 "productivity" : "18,21,23",
                 "reqHP" : "250,300,350",
                 "speed" : "6-10",
-                "type" : "Навесен",
+                "type" : "mounted",
                 "weight" : "2415",
                 "widthWork" : "240,280,320"
               },
@@ -626,7 +415,7 @@
                 "depthWork" : "50",
                 "description" : "",
                 "image" : "C:\\fakepath\\images.jpg",
-                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
                 "model" : "8.30-50",
                 "productivity" : "15",
                 "reqHP" : "300",
@@ -636,14 +425,677 @@
               }
             },
             "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
-            "name" : "Обръщателни Плугове"
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "pnro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "pro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "ppro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "kpm" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
           }
-        },
-        "description" : ""
+        }
+      },
+      "mounted-reversible" : {
+        "description" : "Mounted reversible ploughs",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547962993539_99892.jpg?alt=media&token=7c303044-3f94-4881-ab11-d47f119fa3c6",
+        "series" : {
+          "pnr" : {
+            "collection" : {
+              "-LZ1PP_iwk34wqgduXfc" : {
+                "model": "PNR.3.20-28",
+                "workBodyCount":3,
+                "mainBeam":"100x150",
+                "bodiesDistance":73,
+                "widthWork": "20/24/28",
+                "clearance": 70,
+                "weight": 400,
+                "reqHP": "40-80",
+                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ]
+              }
+            },
+            "description" : "Плуговете са от седем до десет корпуса със регулируем захват Предназначени са за предсеитбена оран на дълбочина 18  5 см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fconventional.png?alt=media&token=c0098b1d-eb33-4466-85ea-98664fb91b2e",
+            "name" : "Конвенционални Плугове"
+          },
+          "ppr" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "pnro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "pro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "ppro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "kpm" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          }
+        }
+      },
+      "trailed-reversible" : {
+        "description" : "Trailed reversible ploughs",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547962993539_99892.jpg?alt=media&token=7c303044-3f94-4881-ab11-d47f119fa3c6",
+        "series" : {
+          "pnr" : {
+            "collection" : {
+              "-LZ1PP_iwk34wqgduXfc" : {
+                "model": "PNR.3.20-28",
+                "workBodyCount":3,
+                "mainBeam":"100x150",
+                "bodiesDistance":73,
+                "widthWork": "20/24/28",
+                "clearance": 70,
+                "weight": 400,
+                "reqHP": "40-80",
+                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550523663971_65551454%5E51ED7AD3DDC8776C4AF6B473FBA35BBA49D7F49CFEB626BC11%5Epimgpsh_fullsize_distr.jpg?alt=media&token=d83996be-f750-4ef4-a871-a15a20664fd0" ]
+              }
+            },
+            "description" : "Плуговете са от седем до десет корпуса със регулируем захват Предназначени са за предсеитбена оран на дълбочина 18  5 см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fconventional.png?alt=media&token=c0098b1d-eb33-4466-85ea-98664fb91b2e",
+            "name" : "Конвенционални Плугове"
+          },
+          "ppr" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "pnro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "pro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "ppro" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          },
+          "kpm" : {
+            "collection" : {
+              "-LWaasX8uBh4eEimrvts" : {
+                "clearance" : "85",
+                "depthWork" : "20 - 27,20 - 33,20 - 37",
+                "model" : "7.30-40",
+                "productivity" : "16,28,21",
+                "reqHP" : "200,250,300",
+                "speed" : "6 - 10",
+                "type" : "mounted",
+                "weight" : "1880",
+                "widthWork" : "210,240,280"
+              },
+              "-LWanA1UtM9KLjEOv6E0" : {
+                "clearance" : "85",
+                "depthWork" : "20-27,20-33,20-37",
+                "description" : "",
+                "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+                "model" : "8.30-40",
+                "productivity" : "18,21,23",
+                "reqHP" : "250,300,350",
+                "speed" : "6-10",
+                "type" : "mounted",
+                "weight" : "2415",
+                "widthWork" : "240,280,320"
+              },
+              "-LXdx8gLZtno8TcSMLmf" : {
+                "clearance" : "76",
+                "depthWork" : "50",
+                "description" : "",
+                "image" : "C:\\fakepath\\images.jpg",
+                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91" ],
+                "model" : "8.30-50",
+                "productivity" : "15",
+                "reqHP" : "300",
+                "speed" : "50`",
+                "weight" : "1500",
+                "widthWork" : "39"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1550718986362_vikendi-vehicle-spawn-location.png?alt=media&token=bd730a1f-38ac-4f4d-afb3-d350afcc0f91",
+            "name" : "Конвенционални Плугове"
+          }
+        }
       }
     }
-  },
+    },
   "projects" : {
     "-LZth-OIRjQbNOks9_ta" : {
       "content" : "„Раломекс” АД сключи договор за безвъзмездна финансова помощ по открита процедура за конкурентен подбор на проекти с определен срок на кандидатстване BG161PO003-2.1.13 “Технологична модернизация в малки и средни предприятия”.\n\nНаименованието на проекта на фирмата по договор № BG161PO003-2.1.13-0443-С0001/27.07.2012 е „Въвеждане на иновативни технологии и продукти в „Раломекс” АД” и се реализира с финансовата подкрепа на Европейски съюз и Република България, Европейски фонд за регионално развитие, Оперативна програма „Развитие на конкурентоспособността на българската икономика 2007-2013”, Операция BG161PO003-2.1.13 “Технологична модернизация в малки и средни предприятия”",

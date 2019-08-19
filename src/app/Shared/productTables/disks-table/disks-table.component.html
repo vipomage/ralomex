@@ -1,0 +1,12 @@
+<table *ngIf="disksCategory" mdbTable hover="true">
+  <thead>
+  <tr>
+    <th class="text-capitalize" *ngFor="let header of headers" scope="col">{{ header.value }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr [routerLink]="set+'/'+item.key" *ngFor="let item of disksCategory[set].collection | keyValueFilter">
+    <td *ngFor="let header of headers">{{item.value[header.key]}}</td>
+  </tr>
+  </tbody>
+</table>

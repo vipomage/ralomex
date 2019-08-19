@@ -9,14 +9,14 @@
           alt="First slide"
         />
         <a
-          routerLink="/product/{{ product.value.href.slice(29) }}"
+          routerLink="/{{product.value.href}}"
           class="mask rgba-black-light waves-light"
           mdbWavesEffect
         >
         </a>
       </div>
       <div class="carousel-caption">
-        <a routerLink="/product/{{ product.value.href.slice(29) }}">
+        <a [href]=" product.value.href" target="_blank">
           <h3 class="h3-responsive">{{ product.value.heading }}</h3>
         </a>
       </div>

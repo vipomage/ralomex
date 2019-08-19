@@ -8,7 +8,9 @@ import { FireService } from '../../../Tools/services/fire.service';
   styleUrls: ['./category-overview.component.scss'],
 })
 export class CategoryOverviewComponent implements OnInit {
+  productType;
   series:string[];
+  headers:string[];
   data;
   constructor(private activeRoute: ActivatedRoute, private db: FireService) {}
 
@@ -16,5 +18,6 @@ export class CategoryOverviewComponent implements OnInit {
     const params = this.activeRoute.snapshot.params;
     this.data = await this.db.getSubCategories(params.type,params.category).toPromise();
     this.series = Object.keys(this.data);
+    this.productType = params.type;
   }
 }

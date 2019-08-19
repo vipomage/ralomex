@@ -1,105 +1,128 @@
-<div class="container products-wrapper">
-  <div class="row">
-    <div *ngIf="catalog" class="container category-wrapper">
-      <div class="row">
-        <div class="col-lg-4 category">
-          <div class="wrapper">
-            <img
-              src="../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg"
-              alt="Plough category image"
-            />
-            <div class="overlay ploughs">
-              <div>
-                <h1>Ploughs</h1>
-                <ul >
-                  <li class="capitalize" *ngFor="let productType of catalog.ploughs" [routerLink]="'overview/ploughs/'+productType">{{productType}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+<div *ngIf="catalog" class="container products-container my-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay ploughs">
+          <h1>Ploughs</h1>
+          <ul>
+            <li class="capitalize" *ngFor="let productType of catalog.ploughs" [routerLink]="'overview/ploughs/' + productType">
+              {{ productType }}
+            </li>
+          </ul>
         </div>
-        <div class="col-lg-4 category">
-          <div class="wrapper">
-            <img src="../../../assets/img/disk.jpeg" alt="Disks category image" />
-            <div class="overlay disks">
-              <div>
-                <h1>Disks</h1>
-                <ul>
-                  <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/'+productType">{{productType}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 category">
-          <div class="wrapper">
-            <img src="../../../assets/img/cultivators.jpg" alt="Cultivators category image" />
-            <div class="overlay cultivators">
-              <div>
-                <h1>Cultivators</h1>
-                <ul>
-                  <li [routerLink]="[{ outlets: { products: ['cultivators'] } }]">
-                    <a>Навесни</a>
-                  </li>
-                  <li [routerLink]="[{ outlets: { products: ['cultivators'] } }]">
-                    <a>Прикачни</a>
-                  </li>
-                  <li [routerLink]="[{ outlets: { products: ['cultivators'] } }]"><a>Окопни</a></li>
-                </ul>
-              </div>
-            </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay disks">
+          <div>
+            <h1>Disks</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4 category">
-          <div class="wrapper">
-            <a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['rippers'] } }]"
-              >Ripper Cultivators</a
-            >
-          </div>
-        </div>
-        <div class="col-md-4 category">
-          <div class="wrapper">
-            <a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['rollers'] } }]"
-              >Tillage Rollers</a
-            >
-          </div>
-        </div>
-        <div class="col-md-4 category">
-          <div class="wrapper">
-            <a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['shredders'] } }]"
-              >Shredders</a
-            >
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay cultivators">
+          <div>
+            <h1>Cultivators</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4 category">
-          <div class="wrapper">
-            <a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['special'] } }]"
-              >Special Purpose</a
-            >
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay rollers">
+          <div>
+            <h1>Tillage Rollers</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.rollers" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4 category">
-          <div class="wrapper">
-            <a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['parts'] } }]"
-              >Spare Parts</a
-            >
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay shredders">
+          <div>
+            <h1>Shredders</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.shredders" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4 category">
-          <div class="wrapper">
-            <a routerLinkActive="active" [routerLink]="[{ outlets: { products: ['tools'] } }]"
-              >Working Tools</a
-            >
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay cultivators">
+          <div>
+            <h1>Sprayers</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay special">
+          <div>
+            <h1>Special Purpose</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.special" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay cultivators">
+          <div>
+            <h1>Spare Parts</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.parts" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 category">
+      <div class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+        <div class="overlay cultivators">
+          <div>
+            <h1>Working Tools</h1>
+            <ul>
+              <li class="capitalize" *ngFor="let productType of catalog.tools" [routerLink]="'overview/disks/' + productType">
+                {{ productType }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <main>
-    <router-outlet name="products"> </router-outlet>
-  </main>
 </div>

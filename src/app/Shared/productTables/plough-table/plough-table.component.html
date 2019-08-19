@@ -1,0 +1,27 @@
+<table *ngIf="ploughCategory" mdbTable hover="true">
+  <thead class="p-2">
+  <tr class="headers">
+    <th class="text-capitalize">
+      <p class="font-weight-bold">{{ploughCategory[set].name}}</p>
+      <p>series <span class="text-uppercase">{{set}}</span></p>
+    </th>
+    <th><img src="../../../../assets/table-icons/workBodyCount.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/reqHp.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/mainBeam.png" alt=""></th>
+    <th class="scale-up"><img src="../../../../assets/table-icons/bodiesDistance.png" alt=""></th>
+    <th class="scale-up"><img src="../../../../assets/table-icons/widthWork.png" alt=""></th>
+    <th class="scale-up"><img src="../../../../assets/table-icons/clearance.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/depthWork.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/transportSpeed.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/workSpeed.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/productivity.png" alt=""></th>
+    <th><img src="../../../../assets/table-icons/weight.png" alt=""></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr [routerLink]="set+'/'+item.key"
+      *ngFor="let item of ploughCategory[set].collection | keyValueFilter">
+    <td class="text-center" *ngFor="let header of headers">{{item.value[header.key]}}</td>
+  </tr>
+  </tbody>
+</table>

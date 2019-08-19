@@ -10,12 +10,16 @@ import { DisksComponent } from './disks/disks.component';
 import { PartsComponent } from './parts/parts.component';
 import { ToolsComponent } from './tools/tools.component';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
+import { TablesComponent } from './tables/tables.component';
+import { ProductComponent } from './product/product.component';
 
 export const productsRouting: Routes = [
   {
     path: 'products',
     children: [
+      { path: 'test', component: TablesComponent},
       { path: '', component: ProductsComponent },
+      { path: 'overview/:type/:category/:series/:id', component: ProductComponent, pathMatch: 'full' },
       { path: 'overview/:type/:category', component: CategoryOverviewComponent, pathMatch: 'full' },
       { path: 'rippers', component: RippersComponent, outlet: 'products' },
       { path: 'cultivators', component: CultivatorsComponent, outlet: 'products' },
