@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  headers:{
+  headers: {
     disks: [
       { key: 'model', value: 'Model' },
       { key: 'diskCount', value: 'Disk count' },
@@ -33,6 +33,19 @@ export const environment = {
       { key: 'productivity', value: 'Productivity' },
       { key: 'weight', value: 'Weight' },
     ],
+    cultivators: [
+      { key: 'model', value: 'Model' },
+      { key: 'workBodyCount', value: 'Body count' },
+      { key: 'rowCount', value: 'Row count' },
+      { key: 'bodySpacing', value: 'Body spacing' },
+      { key: 'widthWork', value: 'Working Width' },
+      { key: 'transportWidth', value: 'Transporting Width' },
+      { key: 'bodyProtection', value: 'Protection' },
+      { key: 'depthWork', value: 'Working Depth' },
+      { key: 'transportSpeed', value: 'Transport Speed' },
+      { key: 'workSpeed', value: 'Work Speed' },
+      { key: 'weight', value: 'Weight' },
+    ],
   },
   firebase: {
     apiKey: 'AIzaSyBHMLRn7jsgPDKN3RYcK1LUexL_Ztjemwo',
@@ -57,4 +70,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+import 'zone.js/dist/zone-error'; // Included with Angular CLI.

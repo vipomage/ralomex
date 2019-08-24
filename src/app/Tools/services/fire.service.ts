@@ -9,12 +9,11 @@ import { PloughCategory } from '../interfaces/plough-category';
 import { CatalogProduct } from '../interfaces/catalogProduct';
 import { DatabaseSchema, DisksSchema, IUnion, PloughsSchema, ProductIUnion } from '../interfaces/DatabaseSchema';
 
-const databaseUrl: string = environment.firebase.databaseURL;
-
 @Injectable({
   providedIn: 'root',
 })
 export class FireService {
+  databaseUrl: string = environment.firebase.databaseURL;
   DATABASE: DatabaseSchema;
   productTypes: {
     disks: DisksSchema;
@@ -38,7 +37,7 @@ export class FireService {
 
     getElements: (
       elementType: 'awards' | 'news' | 'homeProducts' | 'projects'
-    ): Observable<IUnion> => this.http.get<IUnion>(`${databaseUrl}/${elementType}.json`),
+    ): Observable<IUnion> => this.http.get<IUnion>(`${this.databaseUrl}/${elementType}.json`),
 
     deleteElementById: (id: string, elementType: 'awards' | 'news' | 'homeProducts' | 'projects') =>
       this.db.database
@@ -81,7 +80,7 @@ export class FireService {
 
     getCategorySet: (category: string, series: string): Observable<PloughCategory> =>
       this.http.get<PloughCategory>(
-        `${databaseUrl}/ploughs/types/${category}/series/${series}.json`
+        `${this.databaseUrl}/ploughs/types/${category}/series/${series}.json`
       ),
   };
   
@@ -105,7 +104,7 @@ export class FireService {
   
     getCategorySet: (category: string, series: string): Observable<PloughCategory> =>
       this.http.get<PloughCategory>(
-        `${databaseUrl}/ploughs/types/${category}/series/${series}.json`
+        `${this.databaseUrl}/ploughs/types/${category}/series/${series}.json`
       ),
   };
 
@@ -124,31 +123,31 @@ export class FireService {
   }
 
   initDB():Promise<DatabaseSchema> {
-    return this.http.get<DatabaseSchema>(`${databaseUrl}/.json`).toPromise();
+    return this.http.get<DatabaseSchema>(`${this.databaseUrl}/.json`).toPromise();
   }
 
-  getCatalog = async (): Promise<CatalogProduct> => {
+  async getCatalog(): Promise<CatalogProduct> {
     return {
-      ploughs: Object.keys(await this.http.get(`${databaseUrl}/ploughs/types.json`).toPromise()),
-      disks: Object.keys(await this.http.get(`${databaseUrl}/disks/types.json`).toPromise()),
-      // cultivators: Object.keys(await this.http.get(`${databaseUrl}/cultivators/types.json`).toPromise()),
+      ploughs: Object.keys(await this.http.get(`${this.databaseUrl}/ploughs/types.json`).toPromise()),
+      disks: Object.keys(await this.http.get(`${this.databaseUrl}/disks/types.json`).toPromise()),
+      cultivators: Object.keys(await this.http.get(`${this.databaseUrl}/cultivators/types.json`).toPromise()),
     };
   };
 
   getSingleItem = (type: string, category: string, series: string, id: string) =>
     this.http.get<ProductIUnion>(
-      `${databaseUrl}/${type}/types/${category}/series/${series}/collection/`.toLocaleLowerCase() +
+      `${this.databaseUrl}/${type}/types/${category}/series/${series}/collection/`.toLocaleLowerCase() +
         `${id}.json`
     );
 
-  getType = (type: string) => this.http.get(`${databaseUrl}/${type}.json`);
+  getType = (type: string) => this.http.get(`${this.databaseUrl}/${type}.json`);
 
   getSubCategories = (type: string, category: string) =>
-    this.http.get<ProductIUnion>(`${databaseUrl}/${type}/types/${category}/series.json`);
+    this.http.get<ProductIUnion>(`${this.databaseUrl}/${type}/types/${category}/series.json`);
 
   getseriesData = (type, category, series) =>
     this.http.get(
-      `${databaseUrl}/${type}/types/${category}/series/${series}/collection.json`.toLocaleLowerCase()
+      `${this.databaseUrl}/${type}/types/${category}/series/${series}/collection.json`.toLocaleLowerCase()
     );
 
   addItem = (

@@ -56,6 +56,604 @@
       "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1551366971516_award3n.jpg?alt=media&token=092f5e9f-b22e-4e1d-a632-9ca183403fde"
     }
   },
+  "disks" : {
+    "description" : "Дисковите брани са предназначени за дисковане на стърнища с цел подмятане на\nпочвата или предсеитбена подготовка, дисковане на угари с цел раздробяване на буци и\nподравняване на полето, дисковане на ливади и пасища с цел подобряване аерацията на\nпочвата и почистване от къртичини.\nПолзва се на всички видове почви с изключение на влажни, лепкави и на такива, подложени\nна ветрова ерозия.\nџ\nџ\nџ\nЛагерното тяло на браните е с по два лагера и четири уплътнения|1|, което ги прави\nмного здрави и надежни.\nДисковите брани до 7 м. работна ширина са окомплектовани с подравнителен ротор\n„кух” тип, което изключва задръстването наротора|3|.\nДисковите брани са с\nнамалена дължина, като\nр а в н о в е с и е т о н а\nбмашината е подсигурено\nс допълнителни тежести|2|.\nПо този начин браната е с\nголяма маневреност.",
+    "image" : "https://ralomex.com/Images/images/1(1).jpg",
+    "types" : {
+      "mounted" : {
+        "description" : "",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-16595772014.jpg?alt=media&token=4af18799-94b6-476c-a1a2-bcae3173bb18",
+        "series" : {
+          "bdn" : {
+            "collection" : {
+              "-Ln3GPMCfQAFqiQsA06i" : {
+                "axisSize" : "35",
+                "diskCount" : "8+8",
+                "diskDiameter" : "510",
+                "diskWorkingDepth" : "15",
+                "model" : "1.6 X",
+                "productivity" : "8-16",
+                "reqHP" : "40-60",
+                "transportSpeed" : "20",
+                "transportWidth" : "1.7",
+                "weightWoRotors" : "580",
+                "workSpeed" : "5-10",
+                "workWidth" : "1.6"
+              },
+              "-Ln3GhRRW_Net9Q8c2aD" : {
+                "axisSize" : "35",
+                "diskCount" : "9+9",
+                "diskDiameter" : "510",
+                "diskWorkingDepth" : "15",
+                "model" : "1.8 /X/",
+                "productivity" : "9-18",
+                "reqHP" : "50-60",
+                "transportSpeed" : "20",
+                "transportWidth" : "1.9",
+                "weightWoRotors" : "800",
+                "workSpeed" : "5-10",
+                "workWidth" : "1.8"
+              },
+              "-Ln3GpajGEcgnSSSd0Bn" : {
+                "axisSize" : "35",
+                "diskCount" : "10+10",
+                "diskDiameter" : "510",
+                "diskWorkingDepth" : "15",
+                "model" : "2.0 /X/",
+                "productivity" : "10-20",
+                "reqHP" : "60-80",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.2",
+                "weightWoRotors" : "900",
+                "workSpeed" : "5-10",
+                "workWidth" : "2.0"
+              },
+              "-Ln3Gvy0EX4NBw9gCsJE" : {
+                "axisSize" : "35",
+                "diskCount" : "11+11",
+                "diskDiameter" : "510",
+                "diskWorkingDepth" : "15",
+                "model" : "2.2 /X/",
+                "productivity" : "11-22",
+                "reqHP" : "90-110",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.4",
+                "weightWoRotors" : "980",
+                "workSpeed" : "5-10",
+                "workWidth" : "2.2"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547949193120_most_beautiful_waterscapes-wallpaper-2560x1080.jpg?alt=media&token=c6936042-1dcd-4a4c-b0b6-905a4a865f04",
+            "name" : "Навесни"
+          },
+          "bdn-tg" : {
+            "collection" : {
+              "-Ln3Mx7sgrfeNdS05-8g" : {
+                "axisSize" : "n/a",
+                "diskCount" : "18",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "2 TG",
+                "productivity" : "12-25",
+                "reqHP" : "70-80",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.5",
+                "weightWoRotors" : "1150",
+                "workSpeed" : "6-12",
+                "workWidth" : "2"
+              },
+              "-Ln3NH4dtzEUExW-_tD7" : {
+                "axisSize" : "n/a",
+                "diskCount" : "22",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "2.5 TG",
+                "productivity" : "15-30",
+                "reqHP" : "80-90",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "1500",
+                "workSpeed" : "6-12",
+                "workWidth" : "2.5"
+              },
+              "-Ln3NPQevT98Q9e0lhs6" : {
+                "axisSize" : "n/a",
+                "diskCount" : "26",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "3 TG",
+                "productivity" : "18-35",
+                "reqHP" : "100-120",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "1900",
+                "workSpeed" : "6-12",
+                "workWidth" : "3"
+              },
+              "-Ln3NX6YXU75BT5nJK22" : {
+                "axisSize" : "n/a",
+                "diskCount" : "30",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "3.5 TG",
+                "productivity" : "20-40",
+                "reqHP" : "130-150",
+                "transportSpeed" : "20",
+                "transportWidth" : "4.0",
+                "weightWoRotors" : "2100",
+                "workSpeed" : "6-12",
+                "workWidth" : "3.5"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "image" : "https://ralomex.com//AdminPanel//Images/prod-90402772014.jpg",
+            "name" : "Обръщателни Плугове"
+          }
+        }
+      },
+      "trailed" : {
+        "description" : "",
+        "series" : {
+          "bdp" : {
+            "collection" : {
+              "-Ln3Hk0f6S-EHMvsjxFw" : {
+                "axisSize" : "40",
+                "diskCount" : "10+10",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "2.0 P",
+                "productivity" : "10-20",
+                "reqHP" : "60-80",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.4",
+                "weightWoRotors" : "1395/1700",
+                "workSpeed" : "5-10",
+                "workWidth" : "2.0"
+              },
+              "-Ln3HzOOOC0p9bgbqJqh" : {
+                "axisSize" : "40",
+                "diskCount" : "12+12",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "2.5 P",
+                "productivity" : "12-24",
+                "reqHP" : "80-90",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.8",
+                "weightWoRotors" : "1575/1940",
+                "workSpeed" : "5-10",
+                "workWidth" : "2.44"
+              },
+              "-Ln3IBSYgRWP5rFPDMTq" : {
+                "axisSize" : "40",
+                "diskCount" : "15+15",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "3.0 P",
+                "productivity" : "15-30",
+                "reqHP" : "95-110",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.4",
+                "weightWoRotors" : "1845/229",
+                "workSpeed" : "5-10",
+                "workWidth" : "3.1"
+              },
+              "-Ln3ILvruaPaSEQSc8Pu" : {
+                "axisSize" : "40",
+                "diskCount" : "16+16",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "3.3 P",
+                "productivity" : "16-32",
+                "reqHP" : "110-120",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.65",
+                "weightWoRotors" : "1970/2450",
+                "workSpeed" : "5-10",
+                "workWidth" : "3.3"
+              },
+              "-Ln3IWrmvRHkVf9DCnFr" : {
+                "axisSize" : "40",
+                "diskCount" : "17+17",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "3.5 P",
+                "productivity" : "18-36",
+                "reqHP" : "120-135",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.8",
+                "weightWoRotors" : "2070/2590",
+                "workSpeed" : "5-10",
+                "workWidth" : "3.5"
+              },
+              "-Ln3J7fLpxdSo6xoIH3t" : {
+                "axisSize" : "40",
+                "diskCount" : "18+18",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "3.8 P",
+                "productivity" : "19-38",
+                "reqHP" : "140-150",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.8",
+                "weightWoRotors" : "2690/3250",
+                "workSpeed" : "5-10",
+                "workWidth" : "3.8"
+              },
+              "-Ln3JRhGkHx3M3aYqeP0" : {
+                "axisSize" : "40",
+                "diskCount" : "20+20",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "4.2 P",
+                "productivity" : "21-41",
+                "reqHP" : "160-170",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.8",
+                "weightWoRotors" : "2780/3500",
+                "workSpeed" : "5-10",
+                "workWidth" : "4.2"
+              },
+              "-Ln3JY79-xLD-mTXmAmQ" : {
+                "axisSize" : "40",
+                "diskCount" : "22+22",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "4.5 P",
+                "productivity" : "22-44",
+                "reqHP" : "170-180",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.8",
+                "weightWoRotors" : "3150/3780",
+                "workSpeed" : "5-10",
+                "workWidth" : "4.5"
+              },
+              "-Ln3JkJaMHZComNTD2PG" : {
+                "axisSize" : "40",
+                "diskCount" : "24+24",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "5.0 P",
+                "productivity" : "25-50",
+                "reqHP" : "190-200",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "3745/4480",
+                "workSpeed" : "5-10",
+                "workWidth" : "4.95"
+              },
+              "-Ln3K7wPEAYdkQlJ_6qn" : {
+                "axisSize" : "40",
+                "diskCount" : "26+26",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "5.5 P",
+                "productivity" : "27-55",
+                "reqHP" : "220-250",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "3690/4760",
+                "workSpeed" : "5-10",
+                "workWidth" : "5.5"
+              },
+              "-Ln3KFXWOD6PF3jK8ns_" : {
+                "axisSize" : "40",
+                "diskCount" : "28+28",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "6.0 P",
+                "productivity" : "30-60",
+                "reqHP" : "250-260",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "4140/5000",
+                "workSpeed" : "5-10",
+                "workWidth" : "5.75"
+              },
+              "-Ln3KOlEUkgSZ4166yuP" : {
+                "axisSize" : "40",
+                "diskCount" : "34+34",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "7.0 P",
+                "productivity" : "35-70",
+                "reqHP" : "280-300",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "5320/6350",
+                "workSpeed" : "5-10",
+                "workWidth" : "7.0"
+              },
+              "-Ln3KX2VlOzyDdb4pcLU" : {
+                "axisSize" : "40",
+                "diskCount" : "38+38",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "8.0",
+                "productivity" : "40-80",
+                "reqHP" : "300-320",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "6000",
+                "workSpeed" : "5-10",
+                "workWidth" : "7.84"
+              },
+              "-Ln3KhsXG1bXwdfsQr_I" : {
+                "axisSize" : "40",
+                "diskCount" : "44+44",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "9.0",
+                "productivity" : "45-90",
+                "reqHP" : "320-340",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "6650",
+                "workSpeed" : "5-10",
+                "workWidth" : "8.78"
+              },
+              "-Ln3KrhGtnvHLZSRKFit" : {
+                "axisSize" : "40",
+                "diskCount" : "48+48",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "10",
+                "productivity" : "50-100",
+                "reqHP" : "340-400",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "7300",
+                "workSpeed" : "5-10",
+                "workWidth" : "9.6"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
+            "name" : "Конвенционални Плугове"
+          },
+          "bdp-pp" : {
+            "collection" : {
+              "-Ln3LgXLn2QvoJ7mv5Ns" : {
+                "axisSize" : "n/a",
+                "diskCount" : "8",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "1.9 PP",
+                "productivity" : "11-22",
+                "reqHP" : "70-80",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.2",
+                "weightWoRotors" : "2800",
+                "workSpeed" : "6-12",
+                "workWidth" : "1.9"
+              },
+              "-Ln3Lq77s259Fm-TGP58" : {
+                "axisSize" : "n/a",
+                "diskCount" : "12",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "2.8 PP",
+                "productivity" : "25-35",
+                "reqHP" : "90-120",
+                "transportSpeed" : "20",
+                "transportWidth" : "3",
+                "weightWoRotors" : "3200",
+                "workSpeed" : "6-12",
+                "workWidth" : "2.8"
+              },
+              "-Ln3LyzThbXOKs7g-75P" : {
+                "axisSize" : "n/a",
+                "diskCount" : "16",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "3.7 PP",
+                "productivity" : "22-40",
+                "reqHP" : "130-160",
+                "transportSpeed" : "20",
+                "transportWidth" : "3",
+                "weightWoRotors" : "3850",
+                "workSpeed" : "6-12",
+                "workWidth" : "3.7"
+              },
+              "-Ln3M5y-QVla-W9f0TzD" : {
+                "axisSize" : "n/a",
+                "diskCount" : "20",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "4.6 PP",
+                "productivity" : "30-50",
+                "reqHP" : "170-200",
+                "transportSpeed" : "20",
+                "transportWidth" : "3",
+                "weightWoRotors" : "4100",
+                "workSpeed" : "6-12",
+                "workWidth" : "4.6"
+              },
+              "-Ln3MHA_LLdpL1tSYUuv" : {
+                "axisSize" : "n/a",
+                "diskCount" : "24",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "5.6 PP",
+                "productivity" : "35-65",
+                "reqHP" : "220-250",
+                "transportSpeed" : "20",
+                "transportWidth" : "3",
+                "weightWoRotors" : "5500",
+                "workSpeed" : "6-12",
+                "workWidth" : "5.6"
+              },
+              "-Ln3MO_JRN_hADKJUXbz" : {
+                "axisSize" : "n/a",
+                "diskCount" : "28",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "6.5 PP",
+                "productivity" : "40-75",
+                "reqHP" : "280-320",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "6500",
+                "workSpeed" : "6-12",
+                "workWidth" : "6.5"
+              },
+              "-Ln3MWyrc447ZIm2RR0z" : {
+                "axisSize" : "n/a",
+                "diskCount" : "32",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "7.5 PP",
+                "productivity" : "45-85",
+                "reqHP" : "340-360",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "7900",
+                "workSpeed" : "6-12",
+                "workWidth" : "7.5"
+              },
+              "-Ln3Mah4wgUr78LhtBo7" : {
+                "axisSize" : "n/a",
+                "diskCount" : "36",
+                "diskDiameter" : "Ф 560/ Ф 610/*",
+                "diskWorkingDepth" : "15",
+                "model" : "8.5 PP",
+                "productivity" : "50-95",
+                "reqHP" : "360-400",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "9000",
+                "workSpeed" : "6-12",
+                "workWidth" : "8.5"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
+            "name" : "Обръщателни Плугове"
+          },
+          "bdp-tg" : {
+            "collection" : {
+              "-Ln3NnGpAgWJpz2t9xyz" : {
+                "axisSize" : "n/a",
+                "diskCount" : "36",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "4 TG",
+                "productivity" : "25-45",
+                "reqHP" : "160-180",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "3550",
+                "workSpeed" : "6-12",
+                "workWidth" : "4.2"
+              },
+              "-Ln3NwMdNSYR6NLHIh7I" : {
+                "axisSize" : "n/a",
+                "diskCount" : "40",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "4.5 TG",
+                "productivity" : "28-55",
+                "reqHP" : "190-210",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "4100",
+                "workSpeed" : "6-12",
+                "workWidth" : "4.7"
+              },
+              "-Ln3O49a53GuKY858sLA" : {
+                "axisSize" : "n/a",
+                "diskCount" : "46",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "5 TG",
+                "productivity" : "30-60",
+                "reqHP" : "220-250",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "4700",
+                "workSpeed" : "6-12",
+                "workWidth" : "5.2"
+              },
+              "-Ln3OEJEDUg9pPOc1oeT" : {
+                "axisSize" : "n/a",
+                "diskCount" : "50",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "5.5 TG",
+                "productivity" : "33-65",
+                "reqHP" : "250-270",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "5000",
+                "workSpeed" : "6-12",
+                "workWidth" : "5.7"
+              },
+              "-Ln3OL5RVn6W1iWogIL_" : {
+                "axisSize" : "n/a",
+                "diskCount" : "54",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "6 TG",
+                "productivity" : "35-70",
+                "reqHP" : "260-280",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.0",
+                "weightWoRotors" : "5700",
+                "workSpeed" : "6-12",
+                "workWidth" : "6.2"
+              },
+              "-Ln3OVGnDoky9hTTtHFY" : {
+                "axisSize" : "n/a",
+                "diskCount" : "62",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "7 TG",
+                "productivity" : "40-81",
+                "reqHP" : "320-350",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "6700",
+                "workSpeed" : "6-12",
+                "workWidth" : "7"
+              },
+              "-Ln3Od0rgvfOK2LvKLuW" : {
+                "axisSize" : "n/a",
+                "diskCount" : "70",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "8 TG",
+                "productivity" : "46-93",
+                "reqHP" : "350-370",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "7200",
+                "workSpeed" : "6-12",
+                "workWidth" : "8"
+              },
+              "-Ln3OiMDNkv-uS67PBFK" : {
+                "axisSize" : "n/a",
+                "diskCount" : "84",
+                "diskDiameter" : "Ф 560",
+                "diskWorkingDepth" : "15",
+                "model" : "9 TG",
+                "productivity" : "57-115",
+                "reqHP" : "380-400",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.5",
+                "weightWoRotors" : "8500",
+                "workSpeed" : "6-12",
+                "workWidth" : "10"
+              }
+            },
+            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
+            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
+            "name" : "Обръщателни Плугове"
+          }
+        }
+      }
+    }
+  },
   "homeProducts" : {
     "-LZ2fi5jsl3pvf4XdmzS" : {
       "heading" : "НАЙ Новия PNR.4.30-40 за Дълбока Оран",
@@ -946,242 +1544,64 @@
       }
     }
   },
-  "disks" : {
-    "description" : "Дисковите брани са предназначени за дисковане на стърнища с цел подмятане на\nпочвата или предсеитбена подготовка, дисковане на угари с цел раздробяване на буци и\nподравняване на полето, дисковане на ливади и пасища с цел подобряване аерацията на\nпочвата и почистване от къртичини.\nПолзва се на всички видове почви с изключение на влажни, лепкави и на такива, подложени\nна ветрова ерозия.\nџ\nџ\nџ\nЛагерното тяло на браните е с по два лагера и четири уплътнения|1|, което ги прави\nмного здрави и надежни.\nДисковите брани до 7 м. работна ширина са окомплектовани с подравнителен ротор\n„кух” тип, което изключва задръстването наротора|3|.\nДисковите брани са с\nнамалена дължина, като\nр а в н о в е с и е т о н а\nбмашината е подсигурено\nс допълнителни тежести|2|.\nПо този начин браната е с\nголяма маневреност.",
-    "image" : "https://ralomex.com/Images/images/1(1).jpg",
+  "cultivators" : {
+    "description" : "{{EDIT -Cultivators Description}}",
+    "image" : "EDIT-cultivators-imageUrl",
     "types" : {
       "mounted" : {
-        "description" : "",
-        "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-16595772014.jpg?alt=media&token=4af18799-94b6-476c-a1a2-bcae3173bb18",
+        "description" : "EDIT-CULTIVATORS-MOUNTED-DESCRIPTION",
+        "image" : "EDIT-CULTIVATORS-MOUNTED-imageUrl",
         "series" : {
-          "bdn" : {
-            "collection" : {
-              "-LWaasX8uBh4eEimrvts" : {
-                "clearance" : "85",
-                "depthWork" : "20-27, 20-33, 20-37",
-                "model" : "7.30-40",
-                "productivity" : "16, 28, 21",
-                "reqHP" : "200, 250, 300",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "1880",
-                "widthWork" : "210, 240, 280"
-              },
-              "-LWanA1UtM9KLjEOv6E0" : {
-                "clearance" : "85",
-                "depthWork" : "20-27, 20-33, 20-37",
-                "description" : "",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-71642192014.jpg?alt=media&token=9f5ee78e-a549-472d-ada5-25739bc9e022", "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2Fprod-74173772014.jpg?alt=media&token=2409c86e-c64f-4ca1-8f00-49005bd4d22b" ],
-                "model" : "8.30-40",
-                "productivity" : "18, 21, 23",
-                "reqHP" : "250, 300, 350",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "2415",
-                "widthWork" : "240, 280, 320"
-              },
-              "-LXdx8gLZtno8TcSMLmf" : {
-                "clearance" : "76",
-                "depthWork" : "50",
-                "description" : "",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
-                "model" : "8.30-50",
-                "productivity" : "15",
-                "reqHP" : "300",
-                "speed" : "50`",
-                "weight" : "1500",
-                "widthWork" : "39"
-              }
-            },
-            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1547949193120_most_beautiful_waterscapes-wallpaper-2560x1080.jpg?alt=media&token=c6936042-1dcd-4a4c-b0b6-905a4a865f04",
-            "name" : "Конвенционални Плугове"
+          "ksn" : {
+            "description" : "EDIT_KSN_SERIE_DESCRIPTION",
+            "image" : "EDIT-KSN-IMAGEURL",
+            "name" : "Навесни"
           },
-          "bdn-tg" : {
-            "collection" : {
-              "-LWaasX8uBh4eEimrvts" : {
-                "clearance" : "85",
-                "depthWork" : "20-27, 20-33, 20-37",
-                "description" : "",
-                "model" : "7.30-40",
-                "productivity" : "16, 28, 21",
-                "reqHP" : "200, 250, 300",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "1880",
-                "widthWork" : "210, 240, 280"
-              },
-              "-LWanA1UtM9KLjEOv6E0" : {
-                "clearance" : "85",
-                "depthWork" : "20-27, 20-33, 20-37",
-                "description" : "",
-                "image" : "C:\\fakepath\\prod-74173772014.jpg",
-                "model" : "8.30-40",
-                "productivity" : "18, 21, 23",
-                "reqHP" : "250, 300, 350",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "2415",
-                "widthWork" : "240, 280, 320"
-              },
-              "-LXdx8gLZtno8TcSMLmf" : {
-                "clearance" : "76",
-                "depthWork" : "50",
-                "description" : "",
-                "image" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
-                "model" : "8.30-50",
-                "productivity" : "15",
-                "reqHP" : "300",
-                "speed" : "50`",
-                "weight" : "1500",
-                "widthWork" : "39"
-              }
-            },
-            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "image" : "https://ralomex.com//AdminPanel//Images/prod-90402772014.jpg",
-            "name" : "Обръщателни Плугове"
+          "kk" : {
+            "description" : "EDIT_KK_SERIE_DESCRIPTION",
+            "image" : "EDIT-KK-IMAGEURL",
+            "name" : "Навесни"
+          },
+          "kov" : {
+            "description" : "EDIT_KOV_SERIE_DESCRIPTION",
+            "image" : "EDIT-KOV-IMAGEURL",
+            "name" : "Навесни"
+          },
+          "rn" : {
+            "description" : "EDIT_RN_SERIE_DESCRIPTION",
+            "image" : "EDIT-RN-IMAGEURL",
+            "name" : "Навесни"
           }
         }
       },
       "trailed" : {
-        "description" : "",
+        "description" : "TRAILED_CULTIVATORS DESCRIPTION",
+        "image": "TRAILED_CULTIVATORS_IMAGEURL",
         "series" : {
-          "bdp" : {
-            "collection" : {
-              "-LWaasX8uBh4eEimrvts" : {
-                "clearance" : "85",
-                "depthWork" : "20 - 27,20 - 33,20 - 37",
-                "model" : "7.30-40",
-                "productivity" : "16,28,21",
-                "reqHP" : "200,250,300",
-                "speed" : "6 - 10",
-                "type" : "mounted",
-                "weight" : "1880",
-                "widthWork" : "210,240,280"
-              },
-              "-LWanA1UtM9KLjEOv6E0" : {
-                "clearance" : "85",
-                "depthWork" : "20-27,20-33,20-37",
-                "description" : "",
-                "image" : "C:\\fakepath\\prod-74173772014.jpg",
-                "model" : "8.30-40",
-                "productivity" : "18,21,23",
-                "reqHP" : "250,300,350",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "2415",
-                "widthWork" : "240,280,320"
-              },
-              "-LXdx8gLZtno8TcSMLmf" : {
-                "clearance" : "76",
-                "depthWork" : "50",
-                "description" : "",
-                "image" : "C:\\fakepath\\images.jpg",
-                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
-                "model" : "8.30-50",
-                "productivity" : "15",
-                "reqHP" : "300",
-                "speed" : "50`",
-                "weight" : "1500",
-                "widthWork" : "39"
-              }
-            },
-            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
-            "name" : "Конвенционални Плугове"
+          "ksp" : {
+            "description" : "EDIT_KSP_SERIE_DESCRIPTION",
+            "image" : "EDIT-KSN-IMAGEURL",
+            "name" : "Прикачни"
           },
-          "bdp-pp" : {
-            "collection" : {
-              "-LWaasX8uBh4eEimrvts" : {
-                "clearance" : "85",
-                "depthWork" : "20 - 27,20 - 33,20 - 37",
-                "model" : "7.30-40",
-                "productivity" : "16,28,21",
-                "reqHP" : "200,250,300",
-                "speed" : "6 - 10",
-                "type" : "mounted",
-                "weight" : "1880",
-                "widthWork" : "210,240,280"
-              },
-              "-LWanA1UtM9KLjEOv6E0" : {
-                "clearance" : "85",
-                "depthWork" : "20-27,20-33,20-37",
-                "description" : "",
-                "image" : "C:\\fakepath\\prod-74173772014.jpg",
-                "model" : "8.30-40",
-                "productivity" : "18,21,23",
-                "reqHP" : "250,300,350",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "2415",
-                "widthWork" : "240,280,320"
-              },
-              "-LXdx8gLZtno8TcSMLmf" : {
-                "clearance" : "76",
-                "depthWork" : "50",
-                "description" : "",
-                "image" : "C:\\fakepath\\images.jpg",
-                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
-                "model" : "8.30-50",
-                "productivity" : "15",
-                "reqHP" : "300",
-                "speed" : "50`",
-                "weight" : "1500",
-                "widthWork" : "39"
-              }
-            },
-            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
-            "name" : "Обръщателни Плугове"
+          "kkp" : {
+            "description" : "EDIT_KKP_SERIE_DESCRIPTION",
+            "image" : "EDIT-KKP-IMAGEURL",
+            "name" : "Прикачни"
           },
-          "bdp-tg" : {
-            "collection" : {
-              "-LWaasX8uBh4eEimrvts" : {
-                "clearance" : "85",
-                "depthWork" : "20 - 27,20 - 33,20 - 37",
-                "model" : "7.30-40",
-                "productivity" : "16,28,21",
-                "reqHP" : "200,250,300",
-                "speed" : "6 - 10",
-                "type" : "mounted",
-                "weight" : "1880",
-                "widthWork" : "210,240,280"
-              },
-              "-LWanA1UtM9KLjEOv6E0" : {
-                "clearance" : "85",
-                "depthWork" : "20-27,20-33,20-37",
-                "description" : "",
-                "image" : "C:\\fakepath\\prod-74173772014.jpg",
-                "model" : "8.30-40",
-                "productivity" : "18,21,23",
-                "reqHP" : "250,300,350",
-                "speed" : "6-10",
-                "type" : "mounted",
-                "weight" : "2415",
-                "widthWork" : "240,280,320"
-              },
-              "-LXdx8gLZtno8TcSMLmf" : {
-                "clearance" : "76",
-                "depthWork" : "50",
-                "description" : "",
-                "image" : "C:\\fakepath\\images.jpg",
-                "images" : [ "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/images%2F1549039605223_images.jpg?alt=media&token=2f43d0b9-2a7c-4f9f-8b7d-b51662504600" ],
-                "model" : "8.30-50",
-                "productivity" : "15",
-                "reqHP" : "300",
-                "speed" : "50`",
-                "weight" : "1500",
-                "widthWork" : "39"
-              }
-            },
-            "description" : "Плуговете са три или четири корпусни, предназначени за дълбока оран до 33 - 37см на всички видове почви с изключение на каменистите, на терени с наклон до 8 градуса. Характерно за корпуса е неговия полувинтов контур, наличието на предпазна планка на пълзеца, гърда сменяема, ъглосним и срязващ се предпазен елемент при претоварване на корпуса. Всичко това позволява висока скорост на работа и закриване на растителните отпадъци с над 95%. Плуговете са конструирани с висок просвет под рамата, който не позволява задръстване на плуга по време на работа. Плужният корпус може да бъде с цяла или пластинчата дъска. Възможността за регулиране на работната ширина на корпса е: 30см. - 35см. - 40см. Конструкцията на плуга позволява, чрез напречен винт, прецизно регулиране на захвата на първият корпус в зависимост от работната ширина на корпуса и модела на трактора. Опорното колело позволява прецизно регулиране на дълбочината на работа при трактори без позиционна хидравлична система.",
-            "images" : [ "https://ralomex.com//AdminPanel//Images/showcase/showcasecategory-11.jpg" ],
-            "name" : "Обръщателни Плугове"
+          "rp" : {
+            "description" : "EDIT_RP_SERIE_DESCRIPTION",
+            "image" : "EDIT-RP-IMAGEURL",
+            "name" : "Прикачни"
           }
         }
       }
     }
   },
+  "rollers":{},
+  "shredders":{},
+  "special":{},
+  "parts":{},
+  "tools":{},
   "projects" : {
     "-LZth-OIRjQbNOks9_ta" : {
       "content" : "„Раломекс” АД сключи договор за безвъзмездна финансова помощ по открита процедура за конкурентен подбор на проекти с определен срок на кандидатстване BG161PO003-2.1.13 “Технологична модернизация в малки и средни предприятия”.\n\nНаименованието на проекта на фирмата по договор № BG161PO003-2.1.13-0443-С0001/27.07.2012 е „Въвеждане на иновативни технологии и продукти в „Раломекс” АД” и се реализира с финансовата подкрепа на Европейски съюз и Република България, Европейски фонд за регионално развитие, Оперативна програма „Развитие на конкурентоспособността на българската икономика 2007-2013”, Операция BG161PO003-2.1.13 “Технологична модернизация в малки и средни предприятия”",

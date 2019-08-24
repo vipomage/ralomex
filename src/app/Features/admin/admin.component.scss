@@ -1,3 +1,5 @@
+@import "./../../variables";
+
 #customBtn {
   display: inline-block;
   background: white;
@@ -36,13 +38,24 @@ span.buttonText {
   text-align: center;
   margin: 0 auto;
 }
-.nav,
-.secondary-nav {
+
+.products-nav,.secondary-nav{
   outline: 1px solid black;
   margin-bottom: 5px;
-}
-li.active {
-  font-weight: bold;
-  color: black;
-  text-decoration: underline;
+  
+  li a{
+    border-radius: 6px;
+    
+    &:hover{
+      cursor: pointer;
+      background: $primaryGreen;
+      color: white;
+    }
+  }
+  
+  li.active {
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+  }
 }
