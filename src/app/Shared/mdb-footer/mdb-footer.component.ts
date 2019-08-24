@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mdb-footer',
   templateUrl: './mdb-footer.component.html',
-  styleUrls: ['./mdb-footer.component.css'],
+  styleUrls: ['./mdb-footer.component.scss'],
 })
-export class MdbFooterComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class MdbFooterComponent {}

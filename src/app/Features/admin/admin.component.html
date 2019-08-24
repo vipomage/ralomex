@@ -23,14 +23,11 @@
               </button>
               <ul class="nav flex-column">
                 <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs'] } }]"
-                    >Плугове</a
-                  >
+<!--              <a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs'] } }]">Плугове</a>-->
+                  <a class="nav-link" (click)="showAddProductDialog('ploughs')">Плугове</a>
                 </li>
                 <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" [routerLink]="[{ outlets: { admin: ['disks'] } }]"
-                    >Дискови Брани</a
-                  >
+                  <a class="nav-link" (click)="showAddProductDialog('disks')">Дискови Брани</a>
                 </li>
                 <li routerLinkActive="active" class="nav-item">
                   <a class="nav-link" [routerLink]="[{ outlets: { admin: ['cultivators'] } }]"

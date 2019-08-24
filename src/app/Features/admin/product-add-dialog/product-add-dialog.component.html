@@ -1,0 +1,36 @@
+<div class="card container disk-dialog-container">
+  <div class="row card-body justify-content-center">
+    <mat-form-field class="col-3 mr-auto ml-auto">
+      <mat-label>Type</mat-label>
+      <mat-select class="text-capitalize" [value]="selectTypeFormControl.value" [formControl]="selectTypeFormControl">
+        <mat-option class="text-capitalize" [value]="type" *ngFor="let type of types">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-3" *ngIf="selectSeriesFormControl">
+      <mat-label>Serie</mat-label>
+      <mat-select class="text-capitalize" [value]="selectSeriesFormControl.value" [formControl]="selectSeriesFormControl">
+        <mat-option class="text-capitalize" [value]="serie" *ngFor="let serie of series">{{ serie }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox labelPosition="before" [formControl]="autoCloseControl">Auto Close ?</mat-checkbox>
+
+    <form class="row justify-content-center" [formGroup]="productFormGroup">
+      <mat-form-field class="col-3" *ngFor="let formControlName of headers[matDialogData.type]">
+        <input
+          autocomplete="new-password"
+          matInput
+          [placeholder]="formControlName.value"
+          [formControlName]="formControlName.key"
+          type="text"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+  <hr />
+  <div class="row p-0 m-0 justify-content-end">
+    <button class="btn btn-warning bnt-sm" (click)="closeDialog()">Close</button>
+    <button [disabled]="productFormGroup.invalid" class="btn btn-success btn-lg ml-auto" (click)="saveProduct()">Save</button>
+  </div>
+</div>

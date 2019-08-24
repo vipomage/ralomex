@@ -17,20 +17,29 @@ import { EditNewsComponent } from './controls/news/edit-news/edit-news.component
 import { ProjectsControlComponent } from './controls/projects/projects-control/projects-control.component';
 import { AddProjectsComponent } from './controls/projects/add-projects/add-projects.component';
 import { EditProjectsComponent } from './controls/projects/edit-projects/edit-projects.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from '../../Tools/pipes/pipes.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
 import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-editable-table.component';
 import { adminRoutes } from './admin.routing';
+import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
+import { MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 
 @NgModule({
+  entryComponents:[ProductAddDialog],
   imports: [
     CommonModule,
     RouterModule.forChild(adminRoutes),
     MDBBootstrapModule.forRoot(),
     FormsModule,
     PipesModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule,
   ],
   declarations: [
     AdminComponent,
@@ -51,6 +60,7 @@ import { adminRoutes } from './admin.routing';
     AddProjectsComponent,
     EditProjectsComponent,
     MdbEditableTableComponent,
+    ProductAddDialog,
   ],
   exports: [RouterModule],
 })

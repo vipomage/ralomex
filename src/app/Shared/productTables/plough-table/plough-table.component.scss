@@ -26,5 +26,9 @@ thead {
 tbody {
   tr{
     border-bottom: 2px solid $primaryGreen;
+    
+    &:hover{
+      cursor: pointer;
+    }
   }
 }

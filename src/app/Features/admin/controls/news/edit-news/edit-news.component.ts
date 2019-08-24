@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from '../../../../../Tools/interfaces/news';
-import { FireService, IUnion } from '../../../../../Tools/services/fire.service';
+import { FireService } from '../../../../../Tools/services/fire.service';
 import { ImageService } from '../../../../../Tools/services/image.service';
 import { Observable } from 'rxjs';
+import { IUnion } from '../../../../../Tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-edit-news',

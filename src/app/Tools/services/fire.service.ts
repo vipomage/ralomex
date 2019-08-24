@@ -1,26 +1,26 @@
 import ThenableReference = firebase.database.ThenableReference;
 import { AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../../../environments/environment';
-import { HomeProduct } from '../interfaces/home-product';
 import { HttpClient } from '@angular/common/http';
-import { Project } from '../interfaces/project';
-import { Plough } from '../interfaces/plough';
 import { AuthService } from './auth.service';
-import { Award } from '../interfaces/award';
 import { Injectable } from '@angular/core';
-import { News } from '../interfaces/news';
 import { Observable } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import { CatalogProduct } from '../interfaces/catalogProduct';
+import { DatabaseSchema, DisksSchema, IUnion, PloughsSchema, ProductIUnion } from '../interfaces/DatabaseSchema';
 
 const databaseUrl: string = environment.firebase.databaseURL;
-export type IUnion = Award | Project | News | HomeProduct;
-export type ProductIUnion = Plough;
 
 @Injectable({
   providedIn: 'root',
 })
 export class FireService {
+  DATABASE: DatabaseSchema;
+  productTypes: {
+    disks: DisksSchema;
+    ploughs: PloughsSchema;
+  };
+
   constructor(
     private auth: AuthService,
     private db: AngularFireDatabase,
@@ -62,10 +62,10 @@ export class FireService {
   };
 
   PloughUtils = {
-    getPlough: (category: string, series: string, id: string): Observable<Plough> =>
+    getPlough: (category: string, series: string, id: string): Observable<ProductIUnion> =>
       this.getSingleItem('ploughs', category, series, id),
 
-    getPloughSubcategories: (category: string): Observable<Plough> =>
+    getPloughSubcategories: (category: string): Observable<ProductIUnion> =>
       this.getSubCategories('ploughs', category),
 
     getPloughTypes: () => this.getType('ploughs'),
@@ -73,7 +73,7 @@ export class FireService {
     deletePlough: (category: string, series: string, id: string) =>
       this.removeItem('ploughs', category, series, id),
 
-    addPlough: (data: Plough, category: string, series: string) =>
+    addPlough: (data: ProductIUnion, category: string, series: string) =>
       this.addItem(data, 'ploughs', category, series),
 
     updatePlough: (data, category: string, series: string, id: string) =>
@@ -84,8 +84,50 @@ export class FireService {
         `${databaseUrl}/ploughs/types/${category}/series/${series}.json`
       ),
   };
+  
+  ProductUtils = {
+    getProduct: (product:string,category: string, series: string, id: string): Observable<ProductIUnion> =>
+      this.getSingleItem(product, category, series, id),
+    
+    addItem: (product:string,data: ProductIUnion, category: string, series: string) =>
+      this.addItem(data, product, category, series),
+  
+    getPloughSubcategories: (category: string): Observable<ProductIUnion> =>
+      this.getSubCategories('ploughs', category),
+  
+    getPloughTypes: () => this.getType('ploughs'),
+  
+    deletePlough: (category: string, series: string, id: string) =>
+      this.removeItem('ploughs', category, series, id),
+  
+    updatePlough: (data, category: string, series: string, id: string) =>
+      this.updateItem(data, 'ploughs', category, series, id),
+  
+    getCategorySet: (category: string, series: string): Observable<PloughCategory> =>
+      this.http.get<PloughCategory>(
+        `${databaseUrl}/ploughs/types/${category}/series/${series}.json`
+      ),
+  };
 
-  getCatalog = async ():Promise<CatalogProduct> => {
+  async initCategories() {
+    if (!this.DATABASE) {
+      this.DATABASE = await this.initDB();
+    }
+    const products = Object.keys(environment.headers);
+
+    const newObj = {};
+    products.map((productType: string) => {
+      newObj[productType] = this.DATABASE[productType];
+    });
+
+    this.productTypes = <{ disks: DisksSchema; ploughs: PloughsSchema }>newObj;
+  }
+
+  initDB():Promise<DatabaseSchema> {
+    return this.http.get<DatabaseSchema>(`${databaseUrl}/.json`).toPromise();
+  }
+
+  getCatalog = async (): Promise<CatalogProduct> => {
     return {
       ploughs: Object.keys(await this.http.get(`${databaseUrl}/ploughs/types.json`).toPromise()),
       disks: Object.keys(await this.http.get(`${databaseUrl}/disks/types.json`).toPromise()),
@@ -111,13 +153,11 @@ export class FireService {
 
   addItem = (
     data: ProductIUnion,
+    productType: string,
     type: string,
-    category: string,
     series: string
   ): ThenableReference =>
-    this.db.database
-      .ref(`${type}/types/${category}/series/${series}/collection`)
-      .push(data);
+    this.db.database.ref(`${productType}/types/${type}/series/${series}/collection`).push(data);
 
   addPloughCategory = (type: string, categoryDetails) =>
     this.db.database
@@ -129,19 +169,11 @@ export class FireService {
         name: categoryDetails.name,
       });
 
-  updateItem = (
-    data: ProductIUnion,
-    type: string,
-    category: string,
-    series: string,
-    id: string
-  ) =>
+  updateItem = (data: ProductIUnion, type: string, category: string, series: string, id: string) =>
     this.db.database
       .ref(`${type}/types/${category}/series/${series}/collection/${id}`)
       .update(data);
 
   removeItem = (type: string, category: string, series: string, id: string) =>
-    this.db.database
-      .ref(`${type}/types/${category}/series/${series}/collection/${id}`)
-      .remove();
+    this.db.database.ref(`${type}/types/${category}/series/${series}/collection/${id}`).remove();
 }
