@@ -3,12 +3,14 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { fromEvent, merge, Observable, of } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import { CatalogProduct } from '../interfaces/catalogProduct';
 import { DatabaseSchema, DisksSchema, IUnion, PloughsSchema, ProductIUnion } from '../interfaces/DatabaseSchema';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { config } from './config.service';
+import { mapTo } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -20,12 +22,31 @@ export class FireService {
     disks: DisksSchema;
     ploughs: PloughsSchema;
   };
-
+  online: Observable<boolean>;
+  internetStatus:boolean;
+  
   constructor(
     private auth: AuthService,
     private db: AngularFireDatabase,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+    private toastrService:ToastrService
+  ) {
+    this.online = merge(
+      of(navigator.onLine),
+      fromEvent(window, 'online').pipe(mapTo(true)),
+      fromEvent(window, 'offline').pipe(mapTo(false))
+    );
+    this.networkStatus();
+  }
+  
+  public networkStatus() {
+    this.online.subscribe(status=> {
+      if (!status){
+        this.toastrService.info('Lost internet connection');
+      }
+      this.internetStatus = status;
+    });
+  }
 
   AdminUtils = {
     addElement: (data: IUnion, dbLocation: 'awards' | 'news' | 'homeProducts' | 'projects') =>

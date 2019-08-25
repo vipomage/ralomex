@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
-import 'firebase/auth';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;

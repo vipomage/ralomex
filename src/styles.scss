@@ -10,6 +10,12 @@ html {
   color: #707777;
   background-color: #f0efea;
 }
+
+.disabled{
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
 .capitalize{
   text-transform: capitalize;
 }

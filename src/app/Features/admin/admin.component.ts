@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private dialog: MatDialog,
-    private fireService: FireService
+    public fireService: FireService
   ) {}
 
   async ngOnInit() {
