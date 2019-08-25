@@ -1,0 +1,72 @@
+@import '../../../variables';
+
+::ng-deep thead {
+  &.disks {
+    background-color: $primaryOrange;
+  }
+  &.ploughs {
+    background-color: $primaryGreen;
+  }
+  &.cultivators {
+    background-color: $primaryBlue;
+  }
+}
+::ng-deep .headers {
+  th {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    p {
+      margin: 0;
+    }
+
+    img {
+      height: 55px;
+      margin: 0 auto;
+      vertical-align: middle;
+    }
+
+    &.scale-up img {
+      transform: scale(1.2);
+    }
+  }
+}
+tbody {
+  tr {
+    border-bottom: 2px solid black;
+
+    &.disks {
+      border-color: $primaryOrange;
+    }
+    &.ploughs {
+      border-color: $primaryGreen;
+    }
+    &.cultivators {
+      border-color: $primaryBlue;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  td span {
+    &.transportSpeed::before {
+      content: 'max ';
+    }
+  }
+
+  td.hide {
+    display: none;
+  }
+}
+
+.spring {
+  height: 60px;
+  margin: -24px;
+  transform: rotate(90deg);
+}
+.bolt {
+  height: 40px;
+  margin: -24px;
+}

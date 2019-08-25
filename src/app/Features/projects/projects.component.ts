@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FireService } from '../../Tools/services/fire.service';
-import { IUnion } from '../../Tools/interfaces/DatabaseSchema';
+import { FireService } from '../../tools/services/fire.service';
+import { IUnion } from '../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-projects',

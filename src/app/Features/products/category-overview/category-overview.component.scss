@@ -1,28 +1,23 @@
-div.card{
-  
-  
-  a{
+div.card {
+  a {
     text-underline: none;
     text-decoration: none;
     color: green;
-    
-    .series-wrapper{
-      
-      .series-heading{
+
+    .series-wrapper {
+      .series-heading {
         padding: 10px;
       }
-      
-      .series-description{
+
+      .series-description {
         padding: 0 0 35px 30px;
         color: black;
       }
-      
-      div.background-image{
+
+      div.background-image {
         background-position: right;
         background-repeat: no-repeat;
-    
       }
-      
     }
   }
 }

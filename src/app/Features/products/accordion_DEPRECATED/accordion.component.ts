@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { PloughCategory } from '../../../Tools/interfaces/plough-category';
+import { PloughCategory } from '../../../tools/interfaces/plough-category';
 
 @Component({
   selector: 'app-accordion',

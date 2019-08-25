@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FireService } from '../../../../Tools/services/fire.service';
+import { FireService } from '../../../../tools/services/fire.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

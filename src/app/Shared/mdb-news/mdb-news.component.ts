@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { News } from '../../Tools/interfaces/news';
-import { FireService } from '../../Tools/services/fire.service';
+import { News } from '../../tools/interfaces/news';
+import { FireService } from '../../tools/services/fire.service';
 
 @Component({
   selector: 'app-mdb-news',

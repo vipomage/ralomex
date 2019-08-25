@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../../../../../Tools/services/image.service';
-import { FireService } from '../../../../../Tools/services/fire.service';
-import { Project } from '../../../../../Tools/interfaces/project';
+import { ImageService } from '../../../../../tools/services/image.service';
+import { FireService } from '../../../../../tools/services/fire.service';
+import { Project } from '../../../../../tools/interfaces/project';
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
 
 @Component({

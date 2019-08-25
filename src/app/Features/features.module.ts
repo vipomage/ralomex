@@ -9,7 +9,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { PipesModule } from '../Tools/pipes/pipes.module';
+import { PipesModule } from '../tools/pipes/pipes.module';
 import { CarouselModule } from 'angular-bootstrap-md';
 
 @NgModule({

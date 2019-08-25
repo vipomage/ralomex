@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../Tools/services/fire.service';
-import { CatalogProduct } from '../../Tools/interfaces/catalogProduct';
+import { FireService } from '../../tools/services/fire.service';
+import { CatalogProduct } from '../../tools/interfaces/catalogProduct';
 
 @Component({
   selector: 'app-products',

@@ -18,7 +18,7 @@ import { ProjectsControlComponent } from './controls/projects/projects-control/p
 import { AddProjectsComponent } from './controls/projects/add-projects/add-projects.component';
 import { EditProjectsComponent } from './controls/projects/edit-projects/edit-projects.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PipesModule } from '../../Tools/pipes/pipes.module';
+import { PipesModule } from '../../tools/pipes/pipes.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
 import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-editable-table.component';

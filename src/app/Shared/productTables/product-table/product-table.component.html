@@ -1,0 +1,21 @@
+<table *ngIf="data" mdbTable hover="true">
+  <disks-headers *ngIf="type === 'disks'" [set]="set" [name]="data[set].name"></disks-headers>
+  <ploughs-headers *ngIf="type === 'ploughs'" [set]="set" [name]="data[set].name"></ploughs-headers>
+  <cultivators-headers *ngIf="type === 'cultivators'" [set]="set" [name]="data[set].name"></cultivators-headers>
+  <tbody>
+    <tr [ngClass]="type" [routerLink]="set + '/' + item.key" *ngFor="let item of data[set].collection | keyValueFilter">
+      <td [ngClass]="item.value[header.key] === 'n/a' ? 'hide' : ''" class="text-center" *ngFor="let header of headers">
+        <span [ngClass]="header.key" *ngIf="item.value[header.key] !== 'bolt' && item.value[header.key] !== 'spring'">{{
+          item.value[header.key]
+        }}</span>
+        <img
+          class="bolt"
+          *ngIf="item.value[header.key] === 'bolt'"
+          src="../../../../assets/table-icons/threaded_bolt_T.png"
+          alt=""
+        />
+        <img class="spring" *ngIf="item.value[header.key] === 'spring'" src="../../../../assets/table-icons/spring.png" alt="" />
+      </td>
+    </tr>
+  </tbody>
+</table>

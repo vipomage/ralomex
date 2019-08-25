@@ -9,9 +9,11 @@ import { MdbSectionComponent } from './mdb-section/mdb-section.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
-import { PloughTableComponent } from './productTables/plough-table/plough-table.component';
-import { PipesModule } from '../Tools/pipes/pipes.module';
-import { DisksTableComponent } from './productTables/disks-table/disks-table.component';
+import { PipesModule } from '../tools/pipes/pipes.module';
+import { ProductTableComponent } from './productTables/product-table/product-table.component';
+import { ProductTableDisksHeadersComponent } from './productTables/headers/disk-headers/product-table-disks-headers.component';
+import { ProductTablePloughsHeadersComponent } from './productTables/headers/product-table-ploughs-headers/product-table-ploughs-headers.component';
+import { ProductTableCultivatorsHeadersComponent } from './productTables/headers/product-table-cultivators-headers/product-table-cultivators-headers.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { DisksTableComponent } from './productTables/disks-table/disks-table.com
     MdbNewsComponent,
     MdbSectionComponent,
     NavbarComponent,
-    PloughTableComponent,
-    DisksTableComponent,
+    ProductTableComponent,
+    ProductTableDisksHeadersComponent,
+    ProductTablePloughsHeadersComponent,
+    ProductTableCultivatorsHeadersComponent,
   ],
   exports: [
     HeaderComponent,
@@ -33,8 +37,8 @@ import { DisksTableComponent } from './productTables/disks-table/disks-table.com
     MdbNewsComponent,
     MdbSectionComponent,
     NavbarComponent,
-    PloughTableComponent,
-    DisksTableComponent,
+
+    ProductTableComponent,
   ],
   imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule],
 })

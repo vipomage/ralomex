@@ -19,8 +19,7 @@
 
           <div id="{{ set }}" class="collapse" role="tabpanel" [attr.aria-labelledby]="'heading-' + set" data-parent="#accordion">
             <div class="p-0 card-body mb-1 rgba-grey-light white-text">
-              <app-plough-table *ngIf="productType === 'ploughs'" [ploughCategory]="data" [set]="set"></app-plough-table>
-              <app-disks-table *ngIf="productType === 'disks'" [disksCategory]="data" [set]="set"></app-disks-table>
+              <app-product-table [type]="productType" [data]="data" [set]="set"></app-product-table>
             </div>
           </div>
         </div>

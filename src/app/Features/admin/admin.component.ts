@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../Tools/services/auth.service';
-import { FireService } from '../../Tools/services/fire.service';
-import {  MatDialog, MatDialogConfig } from '@angular/material';
+import { AuthService } from '../../tools/services/auth.service';
+import { FireService } from '../../tools/services/fire.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
 
 @Component({
@@ -13,23 +13,22 @@ export class AdminComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private dialog: MatDialog,
-    private fireService:FireService
+    private fireService: FireService
   ) {}
 
   async ngOnInit() {
     await this.fireService.initCategories();
   }
-  
-  showAddProductDialog(type:string){
+
+  showAddProductDialog(type: string) {
     const dialogConfig: MatDialogConfig = {
-      width:'900px',
-      closeOnNavigation:true,
-      hasBackdrop:true,
-      disableClose:true,
-      data:{type}
+      width: '900px',
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      disableClose: true,
+      data: { type },
     };
-    
-    this.dialog.open(ProductAddDialog,dialogConfig);
+
+    this.dialog.open(ProductAddDialog, dialogConfig);
   }
-  
 }

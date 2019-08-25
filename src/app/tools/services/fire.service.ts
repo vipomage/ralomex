@@ -1,5 +1,4 @@
 import ThenableReference = firebase.database.ThenableReference;
-import { AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
@@ -8,6 +7,8 @@ import { Observable } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import { CatalogProduct } from '../interfaces/catalogProduct';
 import { DatabaseSchema, DisksSchema, IUnion, PloughsSchema, ProductIUnion } from '../interfaces/DatabaseSchema';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { config } from './config.service';
 
 @Injectable({
   providedIn: 'root',
@@ -112,7 +113,7 @@ export class FireService {
     if (!this.DATABASE) {
       this.DATABASE = await this.initDB();
     }
-    const products = Object.keys(environment.headers);
+    const products = Object.keys(config.headers);
 
     const newObj = {};
     products.map((productType: string) => {

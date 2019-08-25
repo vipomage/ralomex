@@ -20,14 +20,16 @@ export interface DatabaseSchema {
 export interface Cultivator {
   model: string;
   workBodyCount: string;
-  rowCount: string;
+  reqHp:string;
   bodySpacing: string;
+  rowCount: string;
   widthWork: string;
   transportWidth: string;
   bodyProtection: string;
   depthWork: string;
   transportSpeed: string;
   workSpeed: string;
+  productivity:string;
   weight: string;
 }
 

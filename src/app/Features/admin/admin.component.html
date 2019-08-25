@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="user text-center">
       <div *ngIf="!(authService.user | async)" class="button-wrapper">
-        <div (click)="authService.googleOAuth()" id="gSignInWrapper">
+        <div (click)="authService.signIn()" id="gSignInWrapper">
           <div id="customBtn" class="customGPlusSignIn"><span class="icon"></span> <span class="buttonText">Google</span></div>
         </div>
       </div>

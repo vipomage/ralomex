@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../../Tools/services/fire.service';
-import { ImageService } from '../../../../../Tools/services/image.service';
+import { FireService } from '../../../../../tools/services/fire.service';
+import { ImageService } from '../../../../../tools/services/image.service';
 import { ToastrService } from 'ngx-toastr';
-import { Plough, PloughsSchema } from '../../../../../Tools/interfaces/DatabaseSchema';
+import { Plough, PloughsSchema } from '../../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-add-plough',

@@ -9,7 +9,6 @@ import { MdbAccordionComponent } from './mdb-accordion/mdb-accordion.component';
 import { PartsComponent } from './parts/parts.component';
 import { PloughsComponent } from './ploughs/ploughs.component';
 import { ProductComponent } from './product/product.component';
-import { ProductTableComponent } from './product-table/product-table.component';
 import { RippersComponent } from './rippers/rippers.component';
 import { RollersComponent } from './rollers/rollers.component';
 import { ShreddersComponent } from './shredders/shredders.component';
@@ -19,7 +18,7 @@ import { ToolsComponent } from './tools/tools.component';
 import { ProductsComponent } from './products.component';
 import { SharedModule } from '../../Shared/shared.module';
 import { CardsFreeModule, TableModule } from 'angular-bootstrap-md';
-import { PipesModule } from '../../Tools/pipes/pipes.module';
+import { PipesModule } from '../../tools/pipes/pipes.module';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 import { TablesComponent } from './tables/tables.component';
 
@@ -34,7 +33,6 @@ import { TablesComponent } from './tables/tables.component';
     PartsComponent,
     PloughsComponent,
     ProductComponent,
-    ProductTableComponent,
     RippersComponent,
     RollersComponent,
     ShreddersComponent,
@@ -60,7 +58,6 @@ import { TablesComponent } from './tables/tables.component';
     PartsComponent,
     PloughsComponent,
     ProductComponent,
-    ProductTableComponent,
     RippersComponent,
     RollersComponent,
     ShreddersComponent,

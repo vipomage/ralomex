@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FireService } from '../../../Tools/services/fire.service';
+import { FireService } from '../../../tools/services/fire.service';
 
 @Component({
   selector: 'app-product',

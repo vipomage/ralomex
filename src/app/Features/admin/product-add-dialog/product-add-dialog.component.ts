@@ -1,10 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { FireService } from '../../../Tools/services/fire.service';
-import { ProductIUnion } from '../../../Tools/interfaces/DatabaseSchema';
+import { FireService } from '../../../tools/services/fire.service';
+import { ProductIUnion } from '../../../tools/interfaces/DatabaseSchema';
 import { ToastrService } from 'ngx-toastr';
-import { environment } from '../../../../environments/environment';
+import { config } from '../../../tools/services/config.service';
 
 @Component({
   selector: 'app-product-add-dialog',
@@ -18,7 +18,7 @@ export class ProductAddDialog implements OnInit {
   selectTypeFormControl: FormControl;
   selectSeriesFormControl: FormControl;
 
-  headers = environment.headers;
+  headers = config.headers;
 
   types: string[];
   series: string[];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FireService } from '../../../../../Tools/services/fire.service';
-import { HomeProduct } from '../../../../../Tools/interfaces/home-product';
+import { FireService } from '../../../../../tools/services/fire.service';
+import { HomeProduct } from '../../../../../tools/interfaces/home-product';
 
 @Component({
   selector: 'app-add-home',
