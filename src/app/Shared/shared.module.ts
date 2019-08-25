@@ -14,6 +14,7 @@ import { ProductTableComponent } from './productTables/product-table/product-tab
 import { ProductTableDisksHeadersComponent } from './productTables/headers/disk-headers/product-table-disks-headers.component';
 import { ProductTablePloughsHeadersComponent } from './productTables/headers/product-table-ploughs-headers/product-table-ploughs-headers.component';
 import { ProductTableCultivatorsHeadersComponent } from './productTables/headers/product-table-cultivators-headers/product-table-cultivators-headers.component';
+import { ProductTableRollersHeadersComponent } from './productTables/headers/product-table-rollers-headers/product-table-rollers-headers.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProductTableCultivatorsHeadersComponent } from './productTables/headers
     ProductTableDisksHeadersComponent,
     ProductTablePloughsHeadersComponent,
     ProductTableCultivatorsHeadersComponent,
+    ProductTableRollersHeadersComponent,
   ],
   exports: [
     HeaderComponent,

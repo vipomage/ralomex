@@ -6,7 +6,13 @@ import { Injectable } from '@angular/core';
 import { fromEvent, merge, Observable, of } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import { CatalogProduct } from '../interfaces/catalogProduct';
-import { DatabaseSchema, DisksSchema, IUnion, PloughsSchema, ProductIUnion } from '../interfaces/DatabaseSchema';
+import {
+  DatabaseSchema,
+  DisksSchema,
+  IUnion,
+  PloughsSchema,
+  ProductIUnion,
+} from '../interfaces/DatabaseSchema';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { config } from './config.service';
 import { mapTo } from 'rxjs/operators';
@@ -23,13 +29,13 @@ export class FireService {
     ploughs: PloughsSchema;
   };
   online: Observable<boolean>;
-  internetStatus:boolean;
-  
+  internetStatus: boolean;
+
   constructor(
     private auth: AuthService,
     private db: AngularFireDatabase,
     private http: HttpClient,
-    private toastrService:ToastrService
+    private toastrService: ToastrService
   ) {
     this.online = merge(
       of(navigator.onLine),
@@ -38,10 +44,10 @@ export class FireService {
     );
     this.networkStatus();
   }
-  
+
   public networkStatus() {
-    this.online.subscribe(status=> {
-      if (!status){
+    this.online.subscribe(status => {
+      if (!status) {
         this.toastrService.info('Lost internet connection');
       }
       this.internetStatus = status;
@@ -105,25 +111,29 @@ export class FireService {
         `${this.databaseUrl}/ploughs/types/${category}/series/${series}.json`
       ),
   };
-  
+
   ProductUtils = {
-    getProduct: (product:string,category: string, series: string, id: string): Observable<ProductIUnion> =>
-      this.getSingleItem(product, category, series, id),
-    
-    addItem: (product:string,data: ProductIUnion, category: string, series: string) =>
+    getProduct: (
+      product: string,
+      category: string,
+      series: string,
+      id: string
+    ): Observable<ProductIUnion> => this.getSingleItem(product, category, series, id),
+
+    addItem: (product: string, data: ProductIUnion, category: string, series: string) =>
       this.addItem(data, product, category, series),
-  
+
     getPloughSubcategories: (category: string): Observable<ProductIUnion> =>
       this.getSubCategories('ploughs', category),
-  
+
     getPloughTypes: () => this.getType('ploughs'),
-  
+
     deletePlough: (category: string, series: string, id: string) =>
       this.removeItem('ploughs', category, series, id),
-  
+
     updatePlough: (data, category: string, series: string, id: string) =>
       this.updateItem(data, 'ploughs', category, series, id),
-  
+
     getCategorySet: (category: string, series: string): Observable<PloughCategory> =>
       this.http.get<PloughCategory>(
         `${this.databaseUrl}/ploughs/types/${category}/series/${series}.json`
@@ -144,22 +154,25 @@ export class FireService {
     this.productTypes = <{ disks: DisksSchema; ploughs: PloughsSchema }>newObj;
   }
 
-  initDB():Promise<DatabaseSchema> {
+  initDB(): Promise<DatabaseSchema> {
     return this.http.get<DatabaseSchema>(`${this.databaseUrl}/.json`).toPromise();
   }
 
-  async getCatalog(): Promise<CatalogProduct> {
-    return {
-      ploughs: Object.keys(await this.http.get(`${this.databaseUrl}/ploughs/types.json`).toPromise()),
-      disks: Object.keys(await this.http.get(`${this.databaseUrl}/disks/types.json`).toPromise()),
-      cultivators: Object.keys(await this.http.get(`${this.databaseUrl}/cultivators/types.json`).toPromise()),
-    };
-  };
+  async getCatalog() {
+    const cat = {};
+    Object.keys(config.headers).map(async productType => {
+      cat[productType] = Object.keys(
+        await this.http.get(`${this.databaseUrl}/${productType}/types.json`).toPromise()
+      );
+    });
+    return cat;
+  }
 
   getSingleItem = (type: string, category: string, series: string, id: string) =>
     this.http.get<ProductIUnion>(
-      `${this.databaseUrl}/${type}/types/${category}/series/${series}/collection/`.toLocaleLowerCase() +
-        `${id}.json`
+      `${
+        this.databaseUrl
+      }/${type}/types/${category}/series/${series}/collection/`.toLocaleLowerCase() + `${id}.json`
     );
 
   getType = (type: string) => this.http.get(`${this.databaseUrl}/${type}.json`);
@@ -169,7 +182,9 @@ export class FireService {
 
   getseriesData = (type, category, series) =>
     this.http.get(
-      `${this.databaseUrl}/${type}/types/${category}/series/${series}/collection.json`.toLocaleLowerCase()
+      `${
+        this.databaseUrl
+      }/${type}/types/${category}/series/${series}/collection.json`.toLocaleLowerCase()
     );
 
   addItem = (

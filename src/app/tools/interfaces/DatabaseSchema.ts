@@ -5,7 +5,7 @@ import { HomeProduct } from './home-product';
 
 export type IUnion = Award | Project | News | HomeProduct;
 
-export type ProductIUnion = Plough | Disk | Cultivator;
+export type ProductIUnion = Plough | Disk | Cultivator | Roller;
 
 export interface DatabaseSchema {
   awards: AwardsSchema;
@@ -14,13 +14,26 @@ export interface DatabaseSchema {
   ploughs: PloughsSchema;
   disks: DisksSchema;
   cultivators: CultivatorsSchema;
+  rollers:RollersSchema;
   projects: ProjectsSchema;
+}
+
+export interface Roller {
+  model: string;
+  reqHP: string;
+  depthWork: string;
+  widthWork: string;
+  transportWidth: string;
+  transportSpeed: string;
+  workSpeed: string;
+  productivity: string;
+  weight: string;
 }
 
 export interface Cultivator {
   model: string;
   workBodyCount: string;
-  reqHp:string;
+  reqHp: string;
   bodySpacing: string;
   rowCount: string;
   widthWork: string;
@@ -29,8 +42,22 @@ export interface Cultivator {
   depthWork: string;
   transportSpeed: string;
   workSpeed: string;
-  productivity:string;
+  productivity: string;
   weight: string;
+}
+
+export interface RollersSchema {
+  description: string;
+  image: string | string[];
+  types: {
+    [propName: string]: {
+      description: string;
+      image: string;
+      series: {
+        [propName: string]: Cultivator;
+      };
+    };
+  };
 }
 
 export interface CultivatorsSchema {

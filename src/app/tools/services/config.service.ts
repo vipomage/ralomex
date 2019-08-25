@@ -43,6 +43,17 @@ export const config = {
       { key: 'productivity', value: 'Productivity' },
       { key: 'weight', value: 'Weight' },
     ],
+    rollers: [
+      { key: 'model', value: 'Model' },
+      { key: 'reqHP', value: 'Required HP' },
+      { key: 'depthWork', value: 'Compacting Depth' },
+      { key: 'widthWork', value: 'Working Width' },
+      { key: 'transportWidth', value: 'Transporting Width' },
+      { key: 'transportSpeed', value: 'Transport Speed' },
+      { key: 'workSpeed', value: 'Work Speed' },
+      { key: 'productivity', value: 'Productivity' },
+      { key: 'weight', value: 'Weight' },
+    ],
   },
   toastr: {
     timeOut: 4000,

@@ -10,6 +10,9 @@
   &.cultivators {
     background-color: $primaryBlue;
   }
+  &.rollers {
+    background-color: $primaryPurple;
+  }
 }
 ::ng-deep .headers {
   th {
@@ -43,6 +46,9 @@ tbody {
     }
     &.cultivators {
       border-color: $primaryBlue;
+    }
+    &.rollers {
+      border-color: $primaryPurple;
     }
 
     &:hover {

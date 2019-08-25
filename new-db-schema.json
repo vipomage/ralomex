@@ -2685,5 +2685,96 @@
       "heading" : "ОПИК 2014-2020",
       "image" : "https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/projects%2F1551451496145_eu-project-5.jpg?alt=media&token=a338a281-50a6-40c6-920f-ebedbe8c2e35"
     }
+  },
+  "rollers" : {
+    "description" : "Дисковите брани са предназначени за дисковане на стърнища с цел подмятане на\nпочвата или предсеитбена подготовка, дисковане на угари с цел раздробяване на буци и\nподравняване на полето, дисковане на ливади и пасища с цел подобряване аерацията на\nпочвата и почистване от къртичини.\nПолзва се на всички видове почви с изключение на влажни, лепкави и на такива, подложени\nна ветрова ерозия.\nџ\nџ\nџ\nЛагерното тяло на браните е с по два лагера и четири уплътнения|1|, което ги прави\nмного здрави и надежни.\nДисковите брани до 7 м. работна ширина са окомплектовани с подравнителен ротор\n„кух” тип, което изключва задръстването наротора|3|.\nДисковите брани са с\nнамалена дължина, като\nр а в н о в е с и е т о н а\nбмашината е подсигурено\nс допълнителни тежести|2|.\nПо този начин браната е с\nголяма маневреност.",
+    "image" : "https://ralomex.com/Images/images/1(1).jpg",
+    "types" : {
+      "trailed" : {
+        "description" : "",
+        "series" : {
+          "vhd" : {
+            "collection" : {
+              "-Ln5hzxZ8HJU6AXIAEGD" : {
+                "depthWork" : "3-5",
+                "model" : "45",
+                "productivity" : "25-54",
+                "reqHP" : "60-80",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.25",
+                "weight" : "2200",
+                "widthWork" : "4.5",
+                "workSpeed" : "6-12"
+              },
+              "-Ln5i4AL2ejiec5qgd7b" : {
+                "depthWork" : "3-5",
+                "model" : "60",
+                "productivity" : "35-74",
+                "reqHP" : "90-120",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.25",
+                "weight" : "2900",
+                "widthWork" : "6",
+                "workSpeed" : "6-12"
+              },
+              "-Ln5iBni53M1L4XNt2Re" : {
+                "depthWork" : "3-5",
+                "model" : "80",
+                "productivity" : "46-96",
+                "reqHP" : "130-180",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.05",
+                "weight" : "3900",
+                "widthWork" : "8",
+                "workSpeed" : "6-12"
+              }
+            },
+            "description" : "ROLLERS_VHD_DESCRIPTION",
+            "images" : "ROLLERS_VHD_IMAGEURL",
+            "name" : "Прикачни"
+          },
+          "vhg" : {
+            "collection" : {
+              "-Ln5iJEWgRwKxr0VSzli" : {
+                "depthWork" : "3-5",
+                "model" : "45",
+                "productivity" : "25-54",
+                "reqHP" : "60-80",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.25",
+                "weight" : "2200",
+                "widthWork" : "4.5",
+                "workSpeed" : "6-12"
+              },
+              "-Ln5iNj52-rtsEJiOso9" : {
+                "depthWork" : "3-5",
+                "model" : "60",
+                "productivity" : "35-74",
+                "reqHP" : "90-120",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.25",
+                "weight" : "2900",
+                "widthWork" : "6",
+                "workSpeed" : "6-12"
+              },
+              "-Ln5iT8eFcR8Ftgf-N5G" : {
+                "depthWork" : "3-5",
+                "model" : "80",
+                "productivity" : "46-96",
+                "reqHP" : "130-180",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.05",
+                "weight" : "3900",
+                "widthWork" : "8",
+                "workSpeed" : "6-12"
+              }
+            },
+            "description" : "ROLLERS_VHG_DESCRIPTION",
+            "images" : "ROLLERS_VHG_IMAGEURL",
+            "name" : "Прикачни"
+          }
+        }
+      }
+    }
   }
 }
