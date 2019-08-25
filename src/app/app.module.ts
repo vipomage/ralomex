@@ -6,10 +6,8 @@ import { environment } from '../environments/environment';
 import { config } from './tools/services/config.service';
 import { CardsFreeModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http';
-import { AccordionModule } from 'primeng/accordion';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { TableModule } from 'primeng/table';
 import { PipesModule } from './tools/pipes/pipes.module';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -40,9 +38,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     CardsFreeModule,
     ToastrModule.forRoot(config.toastr),
     HttpClientModule,
-    AccordionModule,
     BrowserModule,
-    TableModule,
     FormsModule,
     PipesModule,
   ],
