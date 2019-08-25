@@ -9,14 +9,14 @@ import { FireService } from '../../../tools/services/fire.service';
 })
 export class CategoryOverviewComponent implements OnInit {
   productType;
-  series:string[];
-  headers:string[];
+  series: string[];
+  headers: string[];
   data;
   constructor(private activeRoute: ActivatedRoute, private db: FireService) {}
 
   async ngOnInit() {
     const params = this.activeRoute.snapshot.params;
-    this.data = await this.db.getSubCategories(params.type,params.category).toPromise();
+    this.data = await this.db.getSubCategories(params.type, params.category).toPromise();
     this.series = Object.keys(this.data);
     this.productType = params.type;
   }

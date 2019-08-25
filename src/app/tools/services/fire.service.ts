@@ -7,8 +7,10 @@ import { fromEvent, merge, Observable, of } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import {
   BaseSchemaModel,
-  DatabaseSchema, Disk,
-  IUnion, Plough,
+  DatabaseSchema,
+  Disk,
+  IUnion,
+  Plough,
   ProductIUnion,
 } from '../interfaces/DatabaseSchema';
 import { AngularFireDatabase } from '@angular/fire/database';

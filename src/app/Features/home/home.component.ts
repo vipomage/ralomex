@@ -7,13 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   public homeProducts = this.db.AdminUtils.getElements('homeProducts');
 
-  constructor(private db: FireService,private activeRoute:ActivatedRoute) {}
-  
+  constructor(private db: FireService, private activeRoute: ActivatedRoute) {}
+
   ngOnInit(): void {
     console.log(this.activeRoute);
   }
-  
 }

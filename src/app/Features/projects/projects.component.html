@@ -1,11 +1,6 @@
 <div class="container-fluid text-center">
   <div class="wrapper w-auto" *ngFor="let project of projects | async | keyValueFilter">
-    <a
-      class="btn btn-primary"
-      [attr.data-target]="'#modal-' + project.key"
-      data-toggle="modal"
-      type="button"
-    >
+    <a class="btn btn-primary" [attr.data-target]="'#modal-' + project.key" data-toggle="modal" type="button">
       {{ project.value.heading }}
     </a>
     <!-- Modal -->
@@ -40,9 +35,7 @@
 
           <!--Footer-->
           <div class="modal-footer text-center">
-            <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal"
-              >Затвори</a
-            >
+            <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Затвори</a>
           </div>
         </div>
         <!--/.Content-->

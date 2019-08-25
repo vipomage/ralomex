@@ -32,7 +32,11 @@
           <div>
             <h1>Cultivators</h1>
             <ul>
-              <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/cultivators/' + productType">
+              <li
+                class="capitalize"
+                *ngFor="let productType of catalog.disks"
+                [routerLink]="'overview/cultivators/' + productType"
+              >
                 {{ productType }}
               </li>
             </ul>
@@ -60,7 +64,11 @@
           <div>
             <h1>Shredders</h1>
             <ul>
-              <li class="capitalize" *ngFor="let productType of catalog.shredders" [routerLink]="'overview/shredders/' + productType">
+              <li
+                class="capitalize"
+                *ngFor="let productType of catalog.shredders"
+                [routerLink]="'overview/shredders/' + productType"
+              >
                 {{ productType }}
               </li>
             </ul>

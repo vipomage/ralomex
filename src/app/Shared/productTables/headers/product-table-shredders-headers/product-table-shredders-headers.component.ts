@@ -9,4 +9,3 @@ export class ProductTableShreddersHeadersComponent {
   @Input() name: string;
   @Input() set: string;
 }
-

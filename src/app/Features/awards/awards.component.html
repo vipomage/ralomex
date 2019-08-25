@@ -1,8 +1,5 @@
 <div *ngIf="awards | async" class="container-fluid">
-  <div
-    class="card-deck"
-    *ngFor="let awardsArray of awards | async | keyValueFilter | objectSplitToArray: 3"
-  >
+  <div class="card-deck" *ngFor="let awardsArray of awards | async | keyValueFilter | objectSplitToArray: 3">
     <div *ngFor="let award of awardsArray" class="card mb-3">
       <div class="view overlay">
         <img class="card-img-top" src="{{ award.value.image }}" alt="award image cap" />

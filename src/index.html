@@ -7,28 +7,25 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap&subset=cyrillic"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap&subset=cyrillic" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
     <style rel="stylesheet">
       .la-ball-scale-ripple,
       .la-ball-scale-ripple > div {
         position: relative;
         box-sizing: border-box;
-        }
+      }
       .la-ball-scale-ripple {
         display: block;
         font-size: 0;
         color: #008f3e;
         width: 30px;
-        margin:25% auto 0 auto;
+        margin: 25% auto 0 auto;
         height: 30px;
-        }
+      }
       .la-ball-scale-ripple.la-dark {
         color: #333;
-        }
+      }
       .la-ball-scale-ripple > div {
         display: inline-block;
         float: none;
@@ -40,68 +37,68 @@
         opacity: 0;
         -webkit-animation: 1s cubic-bezier(0.21, 0.53, 0.56, 0.8) infinite ball-scale-ripple;
         animation: 1s cubic-bezier(0.21, 0.53, 0.56, 0.8) infinite ball-scale-ripple;
-        }
+      }
       .la-ball-scale-ripple.la-sm {
         width: 16px;
         height: 16px;
-        }
+      }
       .la-ball-scale-ripple.la-sm > div {
         width: 16px;
         height: 16px;
         border-width: 1px;
-        }
+      }
       .la-ball-scale-ripple.la-2x {
         width: 64px;
         height: 64px;
-        }
+      }
       .la-ball-scale-ripple.la-2x > div {
         width: 64px;
         height: 64px;
         border-width: 4px;
-        }
+      }
       .la-ball-scale-ripple.la-3x {
         width: 96px;
         height: 96px;
-        }
+      }
       .la-ball-scale-ripple.la-3x > div {
         width: 96px;
         height: 96px;
         border-width: 6px;
-        }
+      }
       @-webkit-keyframes ball-scale-ripple {
         0% {
           opacity: 1;
           -webkit-transform: scale(0.1);
           transform: scale(0.1);
-          }
+        }
         70% {
           opacity: 0.65;
           -webkit-transform: scale(1);
           transform: scale(1);
-          }
+        }
         100% {
           opacity: 0;
-          }
         }
+      }
       @keyframes ball-scale-ripple {
         0% {
           opacity: 1;
           -webkit-transform: scale(0.1);
           transform: scale(0.1);
-          }
+        }
         70% {
           opacity: 0.65;
           -webkit-transform: scale(1);
           transform: scale(1);
-          }
+        }
         100% {
           opacity: 0;
-          }
         }
+      }
     </style>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
   <body>
     <app-root>
       <div class="la-ball-scale-ripple la-3x"><div></div></div>

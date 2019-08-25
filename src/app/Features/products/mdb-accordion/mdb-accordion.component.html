@@ -12,13 +12,7 @@
       </a>
     </div>
 
-    <div
-      id="collapse-{{ category }}"
-      class="collapse"
-      role="tabpanel"
-      aria-labelledby="headingOne1"
-      data-parent="#accordionEx"
-    >
+    <div id="collapse-{{ category }}" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
       <div class="container-fluid ">
         <div class="row sub-category" *ngFor="let subCat of subCategories; let i = index">
           <app-mdb-section

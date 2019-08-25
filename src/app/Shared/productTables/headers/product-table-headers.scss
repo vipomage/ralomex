@@ -1,4 +1,4 @@
-@import "./../../../variables";
+@import './../../../variables';
 
 :host {
   display: contents;
@@ -8,18 +8,17 @@
     width: 22%;
   }
 }
-.table th{
-  padding: .25rem;
-  vertical-align: middle!important;
-  
+.table th {
+  padding: 0.25rem;
+  vertical-align: middle !important;
 }
 
-@media screen and (max-width:$tableBreakPoint) {
+@media screen and (max-width: $tableBreakPoint) {
   thead {
     width: auto;
     display: inline-table;
-    
-    tr.headers{
+
+    tr.headers {
       display: grid;
     }
   }

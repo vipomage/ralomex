@@ -16,7 +16,11 @@ export class AddPloughComponent implements OnInit {
   subCategory: string;
   images: string[] = this.imgService.images;
 
-  constructor(public db: FireService, public imgService: ImageService,private toastr:ToastrService) {}
+  constructor(
+    public db: FireService,
+    public imgService: ImageService,
+    private toastr: ToastrService
+  ) {}
 
   onCategoryChange = selectValue => {
     this.category = selectValue;
@@ -32,12 +36,13 @@ export class AddPloughComponent implements OnInit {
 
   savePlough = (data: Plough, category: string) => {
     data.image = this.images;
-    this.db.PloughUtils.addPlough(data, category, this.subCategory).then(()=>{
-      this.toastr.success('Добавен');
-    }).catch(e=>{
-      console.log(e);
-    });
-    
+    this.db.PloughUtils.addPlough(data, category, this.subCategory)
+      .then(() => {
+        this.toastr.success('Добавен');
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 
   startUpload = event => this.imgService.startUpload(event);

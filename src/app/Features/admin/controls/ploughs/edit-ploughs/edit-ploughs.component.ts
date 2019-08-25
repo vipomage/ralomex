@@ -20,7 +20,7 @@ export class EditPloughsComponent implements OnInit {
     this.set = null;
     this.series = null;
     this.ploughList = null;
-    
+
     this.category = selectValue;
     this.db.getType('ploughs/types/' + selectValue).subscribe(res => {
       this.data = res['series'];

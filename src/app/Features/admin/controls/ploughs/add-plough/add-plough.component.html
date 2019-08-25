@@ -2,23 +2,13 @@
   <form #ploughData="ngForm">
     <div class="form-group">
       <label for="category">Категория</label>
-      <select
-        (change)="onCategoryChange($event.target.value)"
-        class="form-control"
-        name="Изберете Категория"
-        id="category"
-      >
+      <select (change)="onCategoryChange($event.target.value)" class="form-control" name="Изберете Категория" id="category">
         <option *ngFor="let category of categories">{{ category }}</option>
       </select>
     </div>
     <div class="form-group">
       <label for="subcategory">Серия</label>
-      <select
-        (change)="onSubCategoryChange($event.target.value)"
-        class="form-control"
-        name="Изберете Серия"
-        id="subcategory"
-      >
+      <select (change)="onSubCategoryChange($event.target.value)" class="form-control" name="Изберете Серия" id="subcategory">
         <option *ngFor="let subCategory of subCategories">{{ subCategory }}</option>
       </select>
     </div>
@@ -72,18 +62,11 @@
     </div>
     <div class="form-group">
       <label for="description">Описание?</label>
-      <input
-        name="description"
-        ngModel
-        class="form-control"
-        type="text"
-        id="description"
-      />
+      <input name="description" ngModel class="form-control" type="text" id="description" />
     </div>
     <div class="form-control-plaintext">
       <label for="catImage">Снимка</label>
       <input
-        
         (change)="startUpload($event.target.files)"
         [disabled]="this.imgService.preventEdit"
         name="image"

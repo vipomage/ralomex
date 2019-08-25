@@ -13,18 +13,16 @@ export class AuthService {
   public user: Observable<User>;
   remember: boolean;
   oAuthProvider: GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
-  
-  constructor(
-    private toastR: ToastrService,
-    private firebaseAuth: AngularFireAuth) {
+
+  constructor(private toastR: ToastrService, private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
   }
-  
+
   async signIn() {
-    const persistence = this.remember ?
-      firebase.auth.Auth.Persistence.NONE :
-      firebase.auth.Auth.Persistence.SESSION;
-    
+    const persistence = this.remember
+      ? firebase.auth.Auth.Persistence.NONE
+      : firebase.auth.Auth.Persistence.SESSION;
+
     try {
       await firebase.auth().setPersistence(persistence);
       await this.firebaseAuth.auth.signInWithPopup(this.oAuthProvider);
@@ -33,7 +31,7 @@ export class AuthService {
     }
     this.toastR.success('Login Success!');
   }
-  
+
   async logout() {
     await this.firebaseAuth.auth.signOut();
     this.toastR.warning('Logout Success');

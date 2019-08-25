@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FireService } from './tools/services/fire.service';
 import { environment } from '../environments/environment';
-import { config } from './tools/services/config.service'
+import { config } from './tools/services/config.service';
 import { CardsFreeModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';

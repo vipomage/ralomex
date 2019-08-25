@@ -12,22 +12,12 @@
   </select>
   <div *ngIf="series">
     <label for="subCat">Серия</label
-    ><select
-      [disabled]="!series"
-      (change)="onSetChange($event.target.value)"
-      class="form-control"
-      name="subCat"
-      id="subCat"
-    >
+    ><select [disabled]="!series" (change)="onSetChange($event.target.value)" class="form-control" name="subCat" id="subCat">
       <option disabled>Изберете Серия</option>
       <option *ngFor="let subType of series">{{ subType }}</option>
     </select>
   </div>
   <div *ngIf="ploughList">
-    <app-mdb-editable-table
-      [category]="category"
-      [set]="set"
-      [collection]="ploughList"
-    ></app-mdb-editable-table>
+    <app-mdb-editable-table [category]="category" [set]="set" [collection]="ploughList"></app-mdb-editable-table>
   </div>
 </div>

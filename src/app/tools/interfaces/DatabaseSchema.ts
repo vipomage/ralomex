@@ -3,21 +3,21 @@ import { Project } from './project';
 import { News } from './news';
 import { HomeProduct } from './home-product';
 
-export interface ConfigSchema{
-  headers: HeadersSchema,
-  toastr
+export interface ConfigSchema {
+  headers: HeadersSchema;
+  toastr;
 }
-export interface HeadersSchema{
-  disks:Header[],
-  ploughs:Header[],
-  cultivators:Header[],
-  rollers:Header[],
-  shredders:Header[],
-  sprayers:Header[]
+export interface HeadersSchema {
+  disks: Header[];
+  ploughs: Header[];
+  cultivators: Header[];
+  rollers: Header[];
+  shredders: Header[];
+  sprayers: Header[];
 }
 export interface Header {
-  key:string,
-  value:string
+  key: string;
+  value: string;
 }
 
 export type IUnion = Award | Project | News | HomeProduct;
@@ -34,10 +34,10 @@ export interface DatabaseSchema {
   cultivators: BaseSchemaModel<Cultivator>;
   rollers: BaseSchemaModel<Roller>;
   shredders: BaseSchemaModel<Shredder>;
-  sprayers: BaseSchemaModel<Sprayer>
+  sprayers: BaseSchemaModel<Sprayer>;
 }
 
-export interface BaseSchemaModel<T>{
+export interface BaseSchemaModel<T> {
   description: string;
   image: string;
   types: {
@@ -58,13 +58,13 @@ export interface BaseSchemaModel<T>{
   };
 }
 
-export interface Sprayer{
+export interface Sprayer {
   model: string;
-  tankCapacity:string,
-  widthWork:string,
-  fanDiameter:string,
-  sprayersCount:string,
-  pumpType:string,
+  tankCapacity: string;
+  widthWork: string;
+  fanDiameter: string;
+  sprayersCount: string;
+  pumpType: string;
 }
 
 export interface Shredder {

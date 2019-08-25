@@ -7,6 +7,5 @@ import { FireService } from '../../tools/services/fire.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(public fireService:FireService){
-  }
+  constructor(public fireService: FireService) {}
 }

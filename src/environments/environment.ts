@@ -11,7 +11,7 @@ export const environment = {
     projectId: 'ralomex-34693',
     storageBucket: 'ralomex-34693.appspot.com',
     messagingSenderId: '130489209852',
-  }
+  },
 };
 
 /*
