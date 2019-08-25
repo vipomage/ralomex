@@ -1,6 +1,8 @@
 @import '../../../variables';
 
 ::ng-deep thead {
+  vertical-align: unset !important;
+
   &.disks {
     background-color: $primaryOrange;
   }
@@ -10,8 +12,12 @@
   &.cultivators {
     background-color: $primaryBlue;
   }
-  &.rollers {
+  &.rollers,
+  &.shredders {
     background-color: $primaryPurple;
+  }
+  &.sprayers {
+    background-color: $primaryRed;
   }
 }
 ::ng-deep .headers {
@@ -19,14 +25,18 @@
     color: white;
     text-align: center;
     vertical-align: middle;
+    padding: 0.25rem;
+    height: 4rem;
+    width: 100px;
+
     p {
       margin: 0;
     }
 
     img {
-      height: 55px;
-      margin: 0 auto;
+      height: 2.5rem;
       vertical-align: middle;
+      margin: 8px auto;
     }
 
     &.scale-up img {
@@ -35,7 +45,14 @@
   }
 }
 tbody {
+  display: contents;
+  justify-content: start;
+  min-width: -webkit-fill-available;
+  overflow: scroll;
+  width: 14vh;
+
   tr {
+    width: inherit;
     border-bottom: 2px solid black;
 
     &.disks {
@@ -47,8 +64,21 @@ tbody {
     &.cultivators {
       border-color: $primaryBlue;
     }
-    &.rollers {
+    &.rollers,
+    &.shredders {
       border-color: $primaryPurple;
+    }
+    &.sprayers {
+      border-color: $primaryRed;
+    }
+
+    td {
+      height: 4rem;
+      width: 100px;
+  
+      &.model {
+        font-weight: 700;
+      }
     }
 
     &:hover {
@@ -67,12 +97,39 @@ tbody {
   }
 }
 
+.table td {
+  padding: 0.25rem;
+  vertical-align: middle !important;
+}
+
 .spring {
-  height: 60px;
-  margin: -24px;
+  height: 1rem;
   transform: rotate(90deg);
 }
 .bolt {
-  height: 40px;
-  margin: -24px;
+  height: 1rem;
+}
+
+@media screen and (max-width: $tableBreakPoint) {
+  table {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  tbody {
+    display: flex;
+    margin-right: 99px;
+
+    tr {
+      border-bottom: none;
+
+      td {
+        border-right: 1px solid;
+      }
+    }
+  }
+
+  .product-row {
+    display: grid;
+  }
 }

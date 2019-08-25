@@ -5,12 +5,10 @@ import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
 import { fromEvent, merge, Observable, of } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
-import { CatalogProduct } from '../interfaces/catalogProduct';
 import {
-  DatabaseSchema,
-  DisksSchema,
-  IUnion,
-  PloughsSchema,
+  BaseSchemaModel,
+  DatabaseSchema, Disk,
+  IUnion, Plough,
   ProductIUnion,
 } from '../interfaces/DatabaseSchema';
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -25,8 +23,8 @@ export class FireService {
   databaseUrl: string = environment.firebase.databaseURL;
   DATABASE: DatabaseSchema;
   productTypes: {
-    disks: DisksSchema;
-    ploughs: PloughsSchema;
+    disks: BaseSchemaModel<Disk>;
+    ploughs: BaseSchemaModel<Plough>;
   };
   online: Observable<boolean>;
   internetStatus: boolean;
@@ -151,7 +149,7 @@ export class FireService {
       newObj[productType] = this.DATABASE[productType];
     });
 
-    this.productTypes = <{ disks: DisksSchema; ploughs: PloughsSchema }>newObj;
+    this.productTypes = <{ disks: BaseSchemaModel<Disk>; ploughs: BaseSchemaModel<Plough> }>newObj;
   }
 
   initDB(): Promise<DatabaseSchema> {

@@ -11,10 +11,12 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
 import { PipesModule } from '../tools/pipes/pipes.module';
 import { ProductTableComponent } from './productTables/product-table/product-table.component';
-import { ProductTableDisksHeadersComponent } from './productTables/headers/disk-headers/product-table-disks-headers.component';
+import { ProductTableDisksHeadersComponent } from './productTables/headers/product-table-disk-headers/product-table-disks-headers.component';
 import { ProductTablePloughsHeadersComponent } from './productTables/headers/product-table-ploughs-headers/product-table-ploughs-headers.component';
 import { ProductTableCultivatorsHeadersComponent } from './productTables/headers/product-table-cultivators-headers/product-table-cultivators-headers.component';
 import { ProductTableRollersHeadersComponent } from './productTables/headers/product-table-rollers-headers/product-table-rollers-headers.component';
+import { ProductTableShreddersHeadersComponent } from './productTables/headers/product-table-shredders-headers/product-table-shredders-headers.component';
+import { ProductTableSprayersHeadersComponent } from './productTables/headers/product-table-sprayers-headers/product-table-sprayers-headers.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ProductTableRollersHeadersComponent } from './productTables/headers/pro
     ProductTablePloughsHeadersComponent,
     ProductTableCultivatorsHeadersComponent,
     ProductTableRollersHeadersComponent,
+    ProductTableShreddersHeadersComponent,
+    ProductTableSprayersHeadersComponent,
   ],
   exports: [
     HeaderComponent,

@@ -1,4 +1,6 @@
-export const config = {
+import { ConfigSchema } from '../interfaces/DatabaseSchema';
+
+export const config: ConfigSchema = {
   headers: {
     disks: [
       { key: 'model', value: 'Model' },
@@ -54,11 +56,29 @@ export const config = {
       { key: 'productivity', value: 'Productivity' },
       { key: 'weight', value: 'Weight' },
     ],
+    shredders: [
+      { key: 'model', value: 'Model' },
+      { key: 'shreddersCount', value: 'Shredders Count' },
+      { key: 'reqHp', value: 'Required HP' },
+      { key: 'workingWidth', value: 'Working Width' },
+      { key: 'transportWidth', value: 'Transporting Width' },
+      { key: 'transportSpeed', value: 'Transport Speed' },
+      { key: 'workSpeed', value: 'Work Speed' },
+      { key: 'productivity', value: 'Productivity' },
+      { key: 'weight', value: 'Weight' },
+    ],
+    sprayers: [
+      { key: 'model', value: 'Model' },
+      { key: 'tankCapacity', value: 'Tank Capacity' },
+      { key: 'widthWork', value: 'Working Width' },
+      { key: 'fanDiameter', value: 'Fan Diameter' },
+      { key: 'sprayersCount', value: 'Sprayers count' },
+      { key: 'pumpType', value: 'Pump Type' },
+    ],
   },
   toastr: {
     timeOut: 4000,
-    positionClass: 'toast-top-right',
-    maxOpened: 3,
-    newestOnTop: true,
+    disableTimeOut: false,
+    closeButton: false,
   },
 };

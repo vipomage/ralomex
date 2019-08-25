@@ -1,0 +1,15 @@
+<thead class="p-2 sprayers">
+  <tr class="headers">
+    <th class="text-capitalize">
+      <p class="font-weight-bold">{{ name }}</p>
+      <p>
+        series <span class="text-uppercase">{{ set }}</span>
+      </p>
+    </th>
+    <th><img src="../../../../../assets/table-icons/tankCapacity.png" alt="" /></th>
+    <th *ngIf="set === 'demetra'"><img src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
+    <th *ngIf="set === 'ralko'"><img src="../../../../../assets/table-icons/fanDiameter.png" alt="" /></th>
+    <th><img src="../../../../../assets/table-icons/sprayersCount.png" alt="" /></th>
+    <th><img src="../../../../../assets/table-icons/pumpType.png" alt="" /></th>
+  </tr>
+</thead>

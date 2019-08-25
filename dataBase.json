@@ -665,3 +665,29 @@
     }
   }
 }
+"sprayers": {
+"description" : "sprayers_DESCRIPTION",
+"image" : "sprayers_IMAGEURL",
+"types" : {
+"trailed" : {
+"description" : "TRAILEED_sprayers_DESCRIPTION",
+"series" : {
+"ralko" : {
+"description" : "sprayers_ralko_DESCRIPTION",
+"images" : "sprayers_ralko_IMAGEURL",
+"name" : "Прикачни"
+}
+}
+},
+"mounted" : {
+"description" : "MOUNTED_sprayers_DESCRIPTION",
+"series" : {
+"demetra" : {
+"description" : "sprayers_demetra_DESCRIPTION",
+"images" : "sprayers_demetra_IMAGEURL",
+"name" : "Навесни"
+}
+}
+}
+}
+}

@@ -1,3 +1,26 @@
+@import "./../../../variables";
+
 :host {
   display: contents;
+
+  @media screen and (max-width: $tableBreakPoint) {
+    margin: 0;
+    width: 22%;
+  }
+}
+.table th{
+  padding: .25rem;
+  vertical-align: middle!important;
+  
+}
+
+@media screen and (max-width:$tableBreakPoint) {
+  thead {
+    width: auto;
+    display: inline-table;
+    
+    tr.headers{
+      display: grid;
+    }
+  }
 }

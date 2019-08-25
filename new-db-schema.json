@@ -2776,5 +2776,174 @@
         }
       }
     }
+  },
+  "shredders" : {
+    "description" : "SHREEDDERS_DESCRIPTION",
+    "image" : "SHREDDERS-IMAGEURL",
+    "types" : {
+      "trailed" : {
+        "description" : "TRAILEED_SHREEDDERS_DESCRIPTION",
+        "series" : {
+          "sps" : {
+            "collection" : {
+              "-Ln84JaoDKddWj_xrmyE" : {
+                "model" : "45",
+                "productivity" : "25-54",
+                "reqHp" : "60-80",
+                "shreddersCount" : "100",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.25",
+                "weight" : "1900",
+                "workSpeed" : "6-12",
+                "workingWidth" : "4.5"
+              },
+              "-Ln84Nt-Wcld06M3vu5r" : {
+                "model" : "60",
+                "productivity" : "35-72",
+                "reqHp" : "90-120",
+                "shreddersCount" : "120",
+                "transportSpeed" : "20",
+                "transportWidth" : "2.25",
+                "weight" : "2550",
+                "workSpeed" : "6-12",
+                "workingWidth" : "6"
+              },
+              "-Ln84SdfLU7_0aw_lxBR" : {
+                "model" : "80",
+                "productivity" : "46-96",
+                "reqHp" : "130-180",
+                "shreddersCount" : "160",
+                "transportSpeed" : "20",
+                "transportWidth" : "3.05",
+                "weight" : "3400",
+                "workSpeed" : "6-12",
+                "workingWidth" : "8"
+              }
+            },
+            "description" : "SHREDDERS_SPS_DESCRIPTION",
+            "images" : "SHREDDERS_SPS_IMAGEURL",
+            "name" : "Прикачни"
+          }
+        }
+      }
+    }
+  },
+  "sprayers" : {
+    "description" : "sprayers_DESCRIPTION",
+    "image" : "sprayers_IMAGEURL",
+    "types" : {
+      "mounted" : {
+        "description" : "MOUNTED_sprayers_DESCRIPTION",
+        "series" : {
+          "demetra" : {
+            "collection" : {
+              "-Ln8EGpnZfQe0qpWqcOG" : {
+                "fanDiameter" : "n/a",
+                "model" : "612/ 612h",
+                "pumpType" : "20 bar, 110l/min",
+                "sprayersCount" : "24",
+                "tankCapacity" : "600",
+                "widthWork" : "12"
+              },
+              "-Ln8EM1Cpf55jAx5wmkW" : {
+                "fanDiameter" : "n/a",
+                "model" : "616/ 616h",
+                "pumpType" : "20 bar, 130l/min",
+                "sprayersCount" : "32",
+                "tankCapacity" : "600",
+                "widthWork" : "16"
+              },
+              "-Ln8ETFseKHRcYnGt45_" : {
+                "fanDiameter" : "n/a",
+                "model" : "812/ 812h",
+                "pumpType" : "20 bar, 110l/min",
+                "sprayersCount" : "32",
+                "tankCapacity" : "800",
+                "widthWork" : "12"
+              },
+              "-Ln8EX8rrXkdAcqnH9zU" : {
+                "fanDiameter" : "n/a",
+                "model" : "816/ 816h",
+                "pumpType" : "20 bar, 110l/min",
+                "sprayersCount" : "32",
+                "tankCapacity" : "800",
+                "widthWork" : "16"
+              },
+              "-Ln8Ebb71rEqHyLUPXFL" : {
+                "fanDiameter" : "n/a",
+                "model" : "1012/ 1012h",
+                "pumpType" : "20 bar, 110l/min",
+                "sprayersCount" : "24",
+                "tankCapacity" : "1000",
+                "widthWork" : "12"
+              },
+              "-Ln8EiC23bBPy3BKPtmf" : {
+                "fanDiameter" : "n/a",
+                "model" : "1016/ 1016h",
+                "pumpType" : "20 bar, 130l/min",
+                "sprayersCount" : "32",
+                "tankCapacity" : "1000",
+                "widthWork" : "16"
+              },
+              "-Ln8EnEBrinHYIBJM6iA" : {
+                "fanDiameter" : "n/a",
+                "model" : "1018/ 1018h",
+                "pumpType" : "20 bar, 168l/min",
+                "sprayersCount" : "36",
+                "tankCapacity" : "1000",
+                "widthWork" : "18"
+              },
+              "-Ln8Et1GC2aY5vMA0VFe" : {
+                "fanDiameter" : "n/a",
+                "model" : "1216/ 1216h",
+                "pumpType" : "20 bar, 130l/min",
+                "sprayersCount" : "32",
+                "tankCapacity" : "1200",
+                "widthWork" : "16"
+              },
+              "-Ln8Exl3hWYTeQRb8EMD" : {
+                "fanDiameter" : "n/a",
+                "model" : "1218/ 1218h",
+                "pumpType" : "20 bar, 168l/min",
+                "sprayersCount" : "36",
+                "tankCapacity" : "1200",
+                "widthWork" : "18"
+              }
+            },
+            "description" : "sprayers_demetra_DESCRIPTION",
+            "images" : "sprayers_demetra_IMAGEURL",
+            "name" : "Навесни"
+          }
+        }
+      },
+      "trailed" : {
+        "description" : "TRAILEED_sprayers_DESCRIPTION",
+        "series" : {
+          "ralko" : {
+            "collection" : {
+              "-Ln8DmWOWEUeWZPuYCGr" : {
+                "fanDiameter" : "Ф 800",
+                "model" : "612/ 612h",
+                "pumpType" : "40 bar, 110l/min",
+                "sprayersCount" : "7+7",
+                "tankCapacity" : "1000",
+                "widthWork" : "n/a"
+              },
+              "-Ln8Dzc-opUwmPa4KNyt" : {
+                "fanDiameter" : "Ф 900",
+                "model" : "616/ 616h",
+                "pumpType" : "40 bar, 130l/min",
+                "sprayersCount" : "9+9",
+                "tankCapacity" : "1500",
+                "widthWork" : "n/a"
+              }
+            },
+            "description" : "sprayers_ralko_DESCRIPTION",
+            "images" : "sprayers_ralko_IMAGEURL",
+            "name" : "Прикачни"
+          }
+        }
+      }
+    }
   }
 }
