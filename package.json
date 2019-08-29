@@ -1,12 +1,15 @@
 {
   "name": "ralo",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "cleanFolders": "rm -rf dist && rm -rf docs",
+    "copyDistToDocs": "mkdir docs && cp -r ./dist/ ./docs",
+    "deploy": "npm run cleanFolders && npm run build && npm run copyDistToDocs"
   },
   "private": true,
   "dependencies": {
