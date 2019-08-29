@@ -11,7 +11,7 @@ import {
   Disk,
   IUnion,
   Plough,
-  ProductIUnion,
+  ProductIUnion, TeamMember,
 } from '../interfaces/DatabaseSchema';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { config } from './config.service';
@@ -53,6 +53,11 @@ export class FireService {
       this.internetStatus = status;
     });
   }
+  
+  memberUtils = {
+    addMember: (memberData:TeamMember)=> this.db.database.ref('team').push(memberData),
+    getMembers: () => this.http.get<{[propName:string]:TeamMember}>(`${this.databaseUrl}/team.json`).toPromise()
+  };
 
   AdminUtils = {
     addElement: (data: IUnion, dbLocation: 'awards' | 'news' | 'homeProducts' | 'projects') =>

@@ -58,6 +58,9 @@
                 <li routerLinkActive="active" class="nav-item">
                   <a [routerLink]="[{ outlets: { admin: ['projects'] } }]" class="nav-link">Проекти</a>
                 </li>
+                <li routerLinkActive="active" class="nav-item">
+                  <a (click)="showMemberDialog()" class="nav-link">Екип</a>
+                </li>
               </ul>
             </nav>
           </div>

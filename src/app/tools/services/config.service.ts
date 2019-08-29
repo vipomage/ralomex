@@ -76,6 +76,16 @@ export const config: ConfigSchema = {
       { key: 'pumpType', value: 'Pump Type' },
     ],
   },
+  objectSchemas: {
+    teamMember: [
+      { key: 'name', value: 'Name' },
+      { key: 'description', value: 'Description' },
+      { key: 'duty', value: 'Duty' },
+      { key: 'email', value: 'E-Mail' },
+      { key: 'phone', value: 'Phone' },
+      { key: 'avatarUrl', value: 'Avatar' },
+    ],
+  },
   toastr: {
     timeOut: 4000,
     disableTimeOut: false,

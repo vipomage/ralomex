@@ -1,0 +1,10 @@
+<div *ngIf="teamMembers" class="container-fluid the-team-container p-5">
+  <div class="row">
+    
+    <div class="col-4 mt-3" *ngFor="let member of teamMembers | keyvalue">
+      <app-team-card [member]="member.value"></app-team-card>
+    </div>
+    
+  </div>
+</div>
+

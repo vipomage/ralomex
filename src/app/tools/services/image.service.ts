@@ -27,6 +27,24 @@ export class ImageService {
     this.preventEdit = !this.preventEdit;
   };
 
+  async uploadSingle(files: FileList, path: string = 'images'): Promise<string> {
+    const image = files.item(0);
+    let imageUrl: string;
+
+    if (image.type.split('/')[0] !== 'image') {
+      throw new TypeError('Unsupported File Type!');
+    }
+
+    const imageName = `${new Date().getTime()}_${image.name}`;
+    this.task = this.storage.upload(`${path}/${imageName}`, image);
+
+    imageUrl = await this.task.then(async data => {
+      return await data.ref.getDownloadURL();
+    });
+
+    return imageUrl;
+  }
+
   startUpload = (event: FileList) => {
     this.status = 'Uploading please wait!';
     this.disableFileUpload();

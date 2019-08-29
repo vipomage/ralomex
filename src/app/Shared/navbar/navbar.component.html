@@ -22,28 +22,44 @@
   <div class="collapse navbar-collapse" id="main-nav">
     <ul class="col navbar-nav d-flex justify-content-around pr-0 pl-4">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="products">Products</a>
+        <a class="nav-link text-capitalize" routerLink="products">products</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="news">News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="about">About Us</a>
+        <a class="nav-link text-capitalize" routerLink="news">news</a>
       </li>
       <li class="nav-item dropdown">
         <a
-          class="nav-link"
+          class="nav-link text-capitalize"
+          id="about-us-dropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          about us
+        </a>
+        <div class="dropdown-menu text-capitalize" aria-labelledby="about-us-dropdown">
+          <a class="dropdown-item text-capitalize" routerLink="about/еxpositions">expositions</a>
+          <a class="dropdown-item text-capitalize" routerLink="about/projects">projects</a>
+          <a class="dropdown-item text-capitalize" routerLink="about/history">history</a>
+          <a class="dropdown-item text-capitalize" routerLink="about/team">the team</a>
+          <a class="dropdown-item text-capitalize" routerLink="about/innovations">innovations</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link text-capitalize"
           id="contacts-dropdown"
           role="button"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Contacts
+          contacts
         </a>
         <div class="dropdown-menu" aria-labelledby="contacts-dropdown">
-          <a class="dropdown-item" routerLink="maps">Maps</a>
-          <a class="dropdown-item" routerLink="info">Info</a>
+          <a class="dropdown-item text-capitalize" routerLink="maps">maps</a>
+          <a class="dropdown-item text-capitalize" routerLink="info">info</a>
         </div>
       </li>
     </ul>

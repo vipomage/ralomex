@@ -1,0 +1,26 @@
+<div *ngIf="member" class="card card-product">
+  <div class="card-header card-header-image" data-header-animation="true">
+    <a>
+      <img class="img" [attr.src]="member.avatarUrl" />
+    </a>
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title">
+      <a>{{ member.name }}</a>
+    </h5>
+    <div class="card-description">
+      {{ member.description }}
+    </div>
+  </div>
+  <div class="card-footer text-center">
+    <div>
+      <h6 class="text-bold">{{ member.duty }}</h6>
+    </div>
+    <div class="stats">
+      <a class="mb-1" target="_blank" [attr.href]="'mailto:' + member.email">
+        <i class="fas fa-envelope mr-2"></i>{{ member.email }}</a
+      >
+      <a target="_blank" [attr.href]="'tel:' + member.phone"><i class="fas fa-phone mr-2"></i>{{ member.phone }}</a>
+    </div>
+  </div>
+</div>

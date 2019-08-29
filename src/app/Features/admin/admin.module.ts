@@ -31,9 +31,13 @@ import {
   MatInputModule,
   MatSelectModule,
 } from '@angular/material';
+import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
 
 @NgModule({
-  entryComponents: [ProductAddDialog],
+  entryComponents: [
+    ProductAddDialog,
+    TeamDialogComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(adminRoutes),
@@ -67,6 +71,7 @@ import {
     EditProjectsComponent,
     MdbEditableTableComponent,
     ProductAddDialog,
+    TeamDialogComponent,
   ],
   exports: [RouterModule],
 })

@@ -3,6 +3,7 @@ import { AuthService } from '../../tools/services/auth.service';
 import { FireService } from '../../tools/services/fire.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
+import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
 
 @Component({
   selector: 'app-admin',
@@ -30,5 +31,16 @@ export class AdminComponent implements OnInit {
     };
 
     this.dialog.open(ProductAddDialog, dialogConfig);
+  }
+  
+  showMemberDialog(){
+    const dialogConfig: MatDialogConfig = {
+      width: '600px',
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      disableClose: true,
+    };
+  
+    this.dialog.open(TeamDialogComponent, dialogConfig);
   }
 }

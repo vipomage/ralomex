@@ -1,0 +1,24 @@
+<div *ngIf="teamMemberFG" class="card container disk-dialog-container">
+  <div class="row card-body justify-content-center">
+    <form class="row justify-content-center" [formGroup]="teamMemberFG">
+      <div class="col-6 align-self-center" *ngFor="let inputField of inputFields">
+        <mat-form-field class="col" *ngIf="inputField.key !== 'avatarUrl'">
+          <input
+            autocomplete="new-password"
+            matInput
+            [placeholder]="inputField.value"
+            [formControlName]="inputField.key"
+            type="text"
+          />
+        </mat-form-field>
+        <input class="col" *ngIf="inputField.key === 'avatarUrl'" placeholder="avatarUrl" type="file" (change)="onFileChange($event)" />
+      </div>
+      
+    </form>
+  </div>
+  <hr />
+  <div class="row p-0 m-0 justify-content-end">
+    <button class="btn btn-warning bnt-sm" (click)="dialogRef.close()">Close</button>
+    <button [disabled]="teamMemberFG.invalid || uploading" class="btn btn-success btn-lg ml-auto" (click)="saveMember()">Save</button>
+  </div>
+</div>

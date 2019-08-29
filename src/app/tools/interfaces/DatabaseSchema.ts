@@ -5,6 +5,7 @@ import { HomeProduct } from './home-product';
 
 export interface ConfigSchema {
   headers: HeadersSchema;
+  objectSchemas;
   toastr;
 }
 export interface HeadersSchema {
@@ -35,6 +36,15 @@ export interface DatabaseSchema {
   rollers: BaseSchemaModel<Roller>;
   shredders: BaseSchemaModel<Shredder>;
   sprayers: BaseSchemaModel<Sprayer>;
+}
+
+export interface TeamMember {
+  name: string;
+  description: string;
+  duty: string;
+  email: string;
+  phone: string;
+  avatarUrl:string;
 }
 
 export interface BaseSchemaModel<T> {
