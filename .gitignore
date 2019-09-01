@@ -41,7 +41,7 @@ yarn-error.log
 testem.log
 /typings
 .firebaserc
-.firebase.json
+firebase.json
 
 
 # System Files
