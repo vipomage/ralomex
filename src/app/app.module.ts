@@ -21,11 +21,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    RouterModule.forRoot(applicationRouting, { enableTracing: false }),
+    RouterModule.forRoot(applicationRouting, { useHash: true, enableTracing: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
@@ -43,7 +44,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     PipesModule,
   ],
   bootstrap: [AppComponent],
-  providers: [FireService],
+  providers: [FireService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   exports: [RouterModule],
 })
 export class AppModule {}
