@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './mdb-footer.component.html',
   styleUrls: ['./mdb-footer.component.scss'],
 })
-export class MdbFooterComponent {}
+export class MdbFooterComponent {
+  currentYear: number = Date.now();
+}

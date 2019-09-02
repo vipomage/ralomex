@@ -1,34 +1,65 @@
 @import '../../variables';
 
 .page-footer {
-  border-radius: 10px 10px 0 0;
-  padding: 30px;
   color: white;
-  * {
-    background-color: $primaryGreen;
-  }
+  background-color: $primaryGreen;
 
+  .fas{
+    font-weight: 900;
+  }
+  
+  hr{
+    margin: 5px;
+  }
+  
+  
+  a,a:visited,a.active{
+    color: white;
+    text-decoration: underline;
+  }
+  
   .container-fluid {
     border-radius: 5px 5px 0 0;
+    background-color: inherit;
   }
   .footer-copyright {
     border-radius: 0 0 5px 5px;
+    background-color: inherit;
+  }
+  
+  .left-container{
+    
+    .google-maps-iframe{
+    
+    }
   }
 
-  li {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-    font-size: 30px;
+  div.middle-container {
+    
+    .transportation-wrapper{
+      
+    
+    
+    }
+  }
 
-    a {
-      color: white;
-      font-size: 50px;
-      margin: 10px;
-      line-height: 0.5rem;
+  div.right-container {
+    ul.social-links {
+      li {
+        display: inline-block;
+        text-align: center;
+        font-size: 30px;
 
-      &:hover {
-        color: black;
+        a {
+          color: white;
+          font-size: 50px;
+          margin: 10px;
+          line-height: 0.5rem;
+
+          &:hover {
+            color: black;
+          }
+        }
       }
     }
   }

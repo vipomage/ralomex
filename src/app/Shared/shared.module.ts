@@ -4,7 +4,6 @@ import { HeaderComponent } from './header/header.component';
 import { MdbCarouselComponent } from './mdb-carousel/mdb-carousel.component';
 import { MdbFooterComponent } from './mdb-footer/mdb-footer.component';
 import { MdbJumbotronComponent } from './mdb-jumbotron/mdb-jumbotron.component';
-import { MdbNewsComponent } from './mdb-news/mdb-news.component';
 import { MdbSectionComponent } from './mdb-section/mdb-section.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -24,7 +23,6 @@ import { ProductTableSprayersHeadersComponent } from './productTables/headers/pr
     MdbCarouselComponent,
     MdbFooterComponent,
     MdbJumbotronComponent,
-    MdbNewsComponent,
     MdbSectionComponent,
     NavbarComponent,
     ProductTableComponent,
@@ -40,7 +38,6 @@ import { ProductTableSprayersHeadersComponent } from './productTables/headers/pr
     MdbCarouselComponent,
     MdbFooterComponent,
     MdbJumbotronComponent,
-    MdbNewsComponent,
     MdbSectionComponent,
     NavbarComponent,
 

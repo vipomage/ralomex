@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SubcategoryComponent } from './products/subcategory/subcategory.component';
 import { ProjectsComponent } from './about-us/projects/projects.component';
-import { MdbNewsComponent } from '../Shared/mdb-news/mdb-news.component';
+import { NewsComponent } from './news/news.component';
 import { HistoryComponent } from './about-us/history/history.component';
 import { AwardsComponent } from './about-us/awards/awards.component';
 import { ProductComponent } from './products/product/product.component';
@@ -13,7 +13,7 @@ export const featureRoutes: Routes = [
   { path: 'product/:type/:category/:subCategory/:id', component: ProductComponent },
   { path: 'details/:type/:category/:subCategory', component: SubcategoryComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'news', component: MdbNewsComponent },
+  { path: 'news', component: NewsComponent },
   
   { path: 'about', children: [
       { path: 'projects', component: ProjectsComponent },

@@ -3,11 +3,11 @@ import { News } from '../../tools/interfaces/news';
 import { FireService } from '../../tools/services/fire.service';
 
 @Component({
-  selector: 'app-mdb-news',
-  templateUrl: './mdb-news.component.html',
-  styleUrls: ['./mdb-news.component.css'],
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.scss'],
 })
-export class MdbNewsComponent implements OnInit {
+export class NewsComponent implements OnInit {
   latestNewsElement: News;
   news: News[];
 

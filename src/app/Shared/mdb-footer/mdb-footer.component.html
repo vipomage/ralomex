@@ -1,35 +1,68 @@
-<footer class="page-footer success">
-  <div class="container-fluid text-center p-4 w-auto">
-    <div class="row">
-      <div class="col-md-4 mt-md-0 mt-3">
-        <h5 class="text-uppercase">Раломекс АД</h5>
+<footer class="page-footer success mt-2">
+  <div class="container-fluid text-center pt-4">
+    <div class="row d-md-flex flex-column flex-md-row justify-content-center">
+      <div class="col-10 col-md-4 mx-auto left-container">
+        <h5 class="text-uppercase">Ralomex</h5>
         <hr />
         <p>
           Раломекс АД е водещ производител в България на машини за основна обработка на почвата - плугове, култиватори и дискови
           брани.
         </p>
+        <iframe
+          class="col-10 mx-auto google-maps-iframe"
+          src="https://www.google.com/maps/embed/v1/place?q=ralomex&key=AIzaSyBuGBz0snhiFJGAyp-TFx7Q47FWkibXNRU"
+          [attr.height]="200"
+          [attr.frameborder]="0"
+          [attr.allowfullscreen]="true"
+          [attr.scrolling]="0"
+        ></iframe>
       </div>
-      <hr class="clearfix w-100 d-md-none pb-3" />
-      <div class="col-md-4 mb-md-0 mb-3">
-        <div class="wrapper">
-          <div>
-            <p>
-              <a href="https://goo.gl/maps/p1zB3fmtgRB2" target="_blank">
-                <i class="fas fa-map-marker-alt"></i> ул. Освобождение 3 <br />
-                Завет 7330 България</a
-              >
-            </p>
-            <hr />
-            <p>
-              <a target="_blank" href="mailto:order@ralomex.com"> <i class="fas fa-envelope"></i> order@ralomex.com</a>
-            </p>
-            <br />
-            <p><i class="fas fa-phone"></i> +359 889 385 523</p>
+      <div class="col-10 col-md-4 mx-auto middle-container my-4 mb-md-0 my-md-auto">
+        <div class="transportation-wrapper">
+          <div class="text-left d-flex">
+            <div class="col-4 offset-md-1 text-center">
+              <i class="display-4 fas fa-ship my-auto"></i>
+            </div>
+            <a class="my-auto" href="https://www.google.com/maps/search/ruse" target="_blank">River transport Ruse – 69 km.</a>
+          </div>
+          <hr />
+          <div class="text-left d-flex">
+            <div class="col-4 offset-md-1 text-center">
+              <i class="display-4 fas fa-anchor my-auto"></i>
+            </div>
+            <a class="my-auto" href="https://www.google.com/maps/search/varna" target="_blank">Sea port Варна – 168 km</a>
+          </div>
+          <hr />
+          <div class="text-left d-flex">
+            <div class="col-4 offset-md-1 text-center d-flex">
+              <i class="display-4 fas fa-subway m-auto"></i>
+            </div>
+            <ul class="list-unstyled text-left my-auto">
+              <li><a href="https://www.google.com/maps/search/isperih" target="_blank">Исперих – 16 km</a></li>
+              <li><a href="https://www.google.com/maps/search/razgrad" target="_blank">Разград – 36 km</a></li>
+              <li><a href="https://www.google.com/maps/search/shumen" target="_blank">Шумен – 85 km</a></li>
+              <li><a href="https://www.google.com/maps/search/ruse" target="_blank">Русе – 69 km</a></li>
+              <li><a href="https://www.google.com/maps/search/varna" target="_blank">Варна – 168 km</a></li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-md-0 mb-3">
-        <ul class="list-unstyled">
+      <div class="col-10 col-md-4 mx-auto right-container my-auto">
+        <div class="contacts d-flex flex-column mb-5">
+          <a class="mb-1" href="https://goo.gl/maps/p1zB3fmtgRB2" target="_blank">
+            <i class="fas fa-map-marker-alt mr-3"></i>
+            ул. Освобождение 3 Завет 7330 България
+          </a>
+          <a class="mb-1" target="_blank" href="mailto:order@ralomex.com">
+            <i class="fas fa-envelope mr-3"></i>
+            order@ralomex.com
+          </a>
+          <a class="mb-1" href="tel:+359889385523">
+            <i class="fas fa-phone mr-3"></i>
+            +359889385523
+          </a>
+        </div>
+        <ul class="list-unstyled social-links">
           <li>
             <a target="_blank" href="https://www.facebook.com/ralomex"><i class="fab fa-facebook-square"></i></a>
           </li>
@@ -49,7 +82,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-copyright text-center p-2 mb-3">
-    <p>© 2019 Copyright: <a href="https://ralomex.com">Ralomex.com</a></p>
+  <div class="footer-copyright text-center p-1">
+    <p class="m-0">© {{ currentYear | date: 'yyyy' }} Copyright: <a routerLink="/">Ralomex.com</a></p>
   </div>
 </footer>
