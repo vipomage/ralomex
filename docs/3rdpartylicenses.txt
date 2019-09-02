@@ -344,6 +344,9 @@ Apache-2.0
 @firebase/webchannel-wrapper
 Apache-2.0
 
+@kolkov/angular-editor
+MIT
+
 angular-bootstrap-md
 
 classlist.js
