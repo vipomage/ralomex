@@ -15,6 +15,7 @@ import { AboutInnovationsComponent } from './about-us/about-innovations/about-in
 import { MatButtonModule, MatTooltipModule } from '@angular/material';
 import { TeamCardComponent } from './about-us/the-team/team-card/team-card.component';
 import { NewsComponent } from './news/news.component';
+import { ExpositionsComponent } from './about-us/expositions/expositions.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewsComponent } from './news/news.component';
     TheTeamComponent,
     AboutInnovationsComponent,
     TeamCardComponent,
-    NewsComponent
+    NewsComponent,
+    ExpositionsComponent
   ],
   imports: [
     RouterModule.forChild(featureRoutes),

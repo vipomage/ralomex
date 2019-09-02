@@ -1,0 +1,6 @@
+<div class="container-fluid expositions-container">
+  <section >
+    <div class="exposition" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(previewData)"></div>
+    <hr>
+  </section>
+</div>

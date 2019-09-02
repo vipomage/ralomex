@@ -21,7 +21,8 @@ export interface Header {
   value: string;
 }
 
-export type IUnion = Award | Project | News | HomeProduct;
+export type IUnion = Award | Project | News | HomeProduct | Exposition;
+export type DbLocation = 'awards' | 'news' | 'homeProducts' | 'projects'| 'expositions';
 
 export type ProductIUnion = Plough | Disk | Cultivator | Roller | Shredder | Sprayer;
 
@@ -37,6 +38,11 @@ export interface DatabaseSchema {
   shredders: BaseSchemaModel<Shredder>;
   sprayers: BaseSchemaModel<Sprayer>;
 }
+
+export type Exposition = {
+  data:string;
+  timeStamp:number;
+};
 
 export interface TeamMember {
   name: string;

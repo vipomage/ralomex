@@ -4,6 +4,7 @@ import { FireService } from '../../tools/services/fire.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
 import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
+import { AdminExpositionsComponent } from './about/admin-expositions/admin-expositions.component';
 
 @Component({
   selector: 'app-admin',
@@ -42,5 +43,17 @@ export class AdminComponent implements OnInit {
     };
   
     this.dialog.open(TeamDialogComponent, dialogConfig);
+  }
+  
+  showExpoDialog(){
+    const dialogConfig: MatDialogConfig = {
+      minWidth:'90vw',
+      maxHeight:'90vh',
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      disableClose: true,
+    };
+  
+    this.dialog.open(AdminExpositionsComponent, dialogConfig);
   }
 }

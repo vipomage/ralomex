@@ -7,7 +7,7 @@ import { fromEvent, merge, Observable, of } from 'rxjs';
 import { PloughCategory } from '../interfaces/plough-category';
 import {
   BaseSchemaModel,
-  DatabaseSchema,
+  DatabaseSchema, DbLocation,
   Disk,
   IUnion,
   Plough,
@@ -60,19 +60,22 @@ export class FireService {
   };
 
   AdminUtils = {
-    addElement: (data: IUnion, dbLocation: 'awards' | 'news' | 'homeProducts' | 'projects') =>
+    addElement: (data: IUnion, dbLocation: DbLocation) =>
       this.db.database
         .ref(dbLocation)
         .push(data)
         .then(() => {
-          //Notification
-        }),
+          this.toastrService.success('Uploaded!');
+        }).catch(e=>{
+          console.log(e);
+          this.toastrService.error('Error Occurred')
+      }),
 
     getElements: (
-      elementType: 'awards' | 'news' | 'homeProducts' | 'projects'
+      elementType: DbLocation
     ): Observable<IUnion> => this.http.get<IUnion>(`${this.databaseUrl}/${elementType}.json`),
 
-    deleteElementById: (id: string, elementType: 'awards' | 'news' | 'homeProducts' | 'projects') =>
+    deleteElementById: (id: string, elementType: DbLocation) =>
       this.db.database
         .ref(`${elementType}/${id}`)
         .remove()

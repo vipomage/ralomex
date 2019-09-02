@@ -32,16 +32,22 @@ import {
   MatSelectModule,
 } from '@angular/material';
 import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
+import { AdminExpositionsComponent } from './about/admin-expositions/admin-expositions.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ExpoPreviewDialogComponent } from './about/admin-expositions/expo-preview-dialog/expo-preview-dialog.component';
 
 @NgModule({
   entryComponents: [
     ProductAddDialog,
-    TeamDialogComponent
+    TeamDialogComponent,
+    AdminExpositionsComponent,
+    ExpoPreviewDialogComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(adminRoutes),
     MDBBootstrapModule.forRoot(),
+    AngularEditorModule,
     FormsModule,
     PipesModule,
     MatDialogModule,
@@ -72,6 +78,8 @@ import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
     MdbEditableTableComponent,
     ProductAddDialog,
     TeamDialogComponent,
+    AdminExpositionsComponent,
+    ExpoPreviewDialogComponent,
   ],
   exports: [RouterModule],
 })

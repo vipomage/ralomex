@@ -1,0 +1,8 @@
+<div class="container-fluid admin-expositions-container" >
+  <angular-editor  [formControl]="expositionFormControl" [config]="editorConfig"></angular-editor>
+  <div class="py-1 px-3 row justify-content-between">
+    <button (click)="discard()" class="btn btn-warning text-capitalize">discard</button>
+    <button (click)="preview()" class="btn btn-warning text-capitalize">preview</button>
+    <button (click)="save()"    class="btn btn-success text-capitalize">save</button>
+  </div>
+</div>

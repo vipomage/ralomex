@@ -8,23 +8,22 @@ import { AwardsComponent } from './about-us/awards/awards.component';
 import { ProductComponent } from './products/product/product.component';
 import { TheTeamComponent } from './about-us/the-team/the-team.component';
 import { AboutInnovationsComponent } from './about-us/about-innovations/about-innovations.component';
+import { ExpositionsComponent } from './about-us/expositions/expositions.component';
 
 export const featureRoutes: Routes = [
   { path: 'product/:type/:category/:subCategory/:id', component: ProductComponent },
   { path: 'details/:type/:category/:subCategory', component: SubcategoryComponent },
   { path: 'home', component: HomeComponent },
   { path: 'news', component: NewsComponent },
-  
-  { path: 'about', children: [
+  {
+    path: 'about',
+    children: [
+      { path: 'expositions', component: ExpositionsComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'history', component: HistoryComponent },
-      { path: 'team',component:TheTeamComponent},
+      { path: 'team', component: TheTeamComponent },
       { path: 'awards', component: AwardsComponent },
       { path: 'innovations', component: AboutInnovationsComponent },
-    ] },
-  
+    ],
+  },
 ];
-// about/projects
-// about/history
-// about/team
-// about/innovations
