@@ -9,6 +9,7 @@ import { ProductComponent } from './products/product/product.component';
 import { TheTeamComponent } from './about-us/the-team/the-team.component';
 import { AboutInnovationsComponent } from './about-us/about-innovations/about-innovations.component';
 import { ExpositionsComponent } from './about-us/expositions/expositions.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 export const featureRoutes: Routes = [
   { path: 'product/:type/:category/:subCategory/:id', component: ProductComponent },
@@ -26,4 +27,5 @@ export const featureRoutes: Routes = [
       { path: 'innovations', component: AboutInnovationsComponent },
     ],
   },
+  { path: 'contacts', component: ContactsComponent },
 ];

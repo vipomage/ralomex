@@ -16,6 +16,7 @@ import { ProductTableCultivatorsHeadersComponent } from './productTables/headers
 import { ProductTableRollersHeadersComponent } from './productTables/headers/product-table-rollers-headers/product-table-rollers-headers.component';
 import { ProductTableShreddersHeadersComponent } from './productTables/headers/product-table-shredders-headers/product-table-shredders-headers.component';
 import { ProductTableSprayersHeadersComponent } from './productTables/headers/product-table-sprayers-headers/product-table-sprayers-headers.component';
+import { RalomexLogoComponent } from './ralomex-logo/ralomex-logo.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProductTableSprayersHeadersComponent } from './productTables/headers/pr
     ProductTableRollersHeadersComponent,
     ProductTableShreddersHeadersComponent,
     ProductTableSprayersHeadersComponent,
+    RalomexLogoComponent,
   ],
   exports: [
     HeaderComponent,

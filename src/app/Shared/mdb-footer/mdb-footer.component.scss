@@ -3,6 +3,15 @@
 .page-footer {
   color: white;
   background-color: $primaryGreen;
+  
+  ::ng-deep app-ralomex-logo{
+    svg.logo{
+      margin-bottom: 24px;
+    }
+    svg.text{
+      margin-bottom: -90px;
+    }
+  }
 
   .fas{
     font-weight: 900;
@@ -30,15 +39,6 @@
   .left-container{
     
     .google-maps-iframe{
-    
-    }
-  }
-
-  div.middle-container {
-    
-    .transportation-wrapper{
-      
-    
     
     }
   }

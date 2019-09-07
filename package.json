@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href https://erayismail.online",
-    "lint": "ng lint",
     "e2e": "ng e2e",
+    "lint": "ng lint",
+    "build": "ng build --prod --base-href https://erayismail.online",
     "cleanFolders": "rm -rf dist && rm -rf docs",
     "copyDistToDocs": "mkdir docs && cp -r ./dist/ ./docs",
     "deploy": "npm run cleanFolders && npm run build && npm run copyDistToDocs"

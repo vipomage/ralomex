@@ -1,5 +1,10 @@
-.home-wrapper {
-  margin-top: 0;
+.img-fluid {
+  background-size: cover;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+.carousel-indicators {
+  display: none;
 }
 ::ng-deep mdb-carousel-item{
   
@@ -11,10 +16,8 @@
     width: 450px;
     z-index: 10;
     padding: 20px 60px;
+    color: #fff;
     text-align: center;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 24px;
-    color: black;
   }
   
 }

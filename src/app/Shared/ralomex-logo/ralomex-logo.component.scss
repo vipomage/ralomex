@@ -1,0 +1,29 @@
+
+
+svg.logo {
+  width: 90px;
+  height: 90px;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+
+  .logo-fill {
+    fill: white;
+  }
+}
+svg.text {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  height: 140px;
+  width: 250px;
+  margin: -120px -16px -120px 0px;
+  
+  .text-fill{
+    fill: white;
+  }
+}

@@ -26,7 +26,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    RouterModule.forRoot(applicationRouting, { useHash: true, enableTracing: false }),
+    RouterModule.forRoot(applicationRouting, { useHash: true, enableTracing: false ,scrollPositionRestoration:'top'}),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,

@@ -2,9 +2,8 @@
   <p class="m-0 p-0">Offline :(</p>
 </div>
 <nav class="navbar navbar-expand-md navbar-dark">
-  <a class="navbar-brand d-flex row justify-content-center ml-auto align-items-end" routerLink="/">
-    <img src="../../../assets/img/logo.png" alt="Ralomex logo" />
-    <h1 class="col text-capitalize">раломекс <span class="registered col m-0 p-0">&reg;</span></h1>
+  <a class="navbar-brand d-flex row justify-content-center ml-auto align-items-end mb-5 mb-md-0" routerLink="/">
+    <app-ralomex-logo class="drop-shadow"></app-ralomex-logo>
   </a>
 
   <button
@@ -20,7 +19,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="col navbar-nav d-flex justify-content-around pr-0 pl-4">
+    <ul class="drop-shadow col navbar-nav d-flex justify-content-around pr-0 pl-4">
       <li class="nav-item active">
         <a class="nav-link text-capitalize" routerLink="products">products</a>
       </li>
@@ -46,27 +45,14 @@
           <a class="dropdown-item text-capitalize" routerLink="about/innovations">innovations</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link text-capitalize"
-          id="contacts-dropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          contacts
-        </a>
-        <div class="dropdown-menu" aria-labelledby="contacts-dropdown">
-          <a class="dropdown-item text-capitalize" routerLink="maps">maps</a>
-          <a class="dropdown-item text-capitalize" routerLink="info">info</a>
-        </div>
+      <li class="nav-item active">
+        <a class="nav-link text-capitalize" routerLink="contacts">contacts</a>
       </li>
     </ul>
   </div>
 </nav>
 <div class="row pr-4 justify-content-center justify-content-md-end justify-content-lg-end d-flex languages m-0">
-  <h5>ENG</h5>
+  <h5 class="drop-shadow">ENG</h5>
   /
-  <h5>BG</h5>
+  <h5 class="drop-shadow">BG</h5>
 </div>
