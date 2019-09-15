@@ -17,7 +17,6 @@ export class ProductsComponent implements OnInit {
     shredders: false,
     sprayers: false,
     special: false,
-    parts: false,
   };
 
   constructor(private readonly db: FireService) {}

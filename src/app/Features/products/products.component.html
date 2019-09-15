@@ -141,17 +141,15 @@
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
       <div
-        (click)="addActiveClass($event, 'parts')"
-        [class.active]="activeCategory.parts"
-        class="wrapper"
+        class="wrapper active"
         [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
       >
         <div class="overlay cultivators">
           <div>
             <h1>Spare Parts</h1>
             <ul>
-              <li class="capitalize" *ngFor="let productType of catalog.parts" [routerLink]="'overview/parts/' + productType">
-                {{ productType }}
+              <li class="capitalize" >
+                <a style="color: white" href="tel:+35984422126">+35984422126</a>
               </li>
             </ul>
           </div>
@@ -169,7 +167,7 @@
             <ul>
               <li>
                 <a type="file" target="_blank"
-                  href="https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/catalogs%2FKatalog%20Ralomex-2019.pdf?alt=media&token=e1e40ea7-44f8-4493-a86a-aad42d91a4dd"
+                  href="https://docs.google.com/uc?export=download&id=1nWGY-YjkB6jdQVyIhOGhclk20FOn_um8"
                   >Catalog 2019</a>
               </li>
             </ul>
