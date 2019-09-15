@@ -1,12 +1,15 @@
-<div *ngIf="awards | async" class="container-fluid">
-  <div class="card-deck" *ngFor="let awardsArray of awards | async | keyValueFilter | objectSplitToArray: 3">
-    <div *ngFor="let award of awardsArray" class="card mb-3">
-      <div class="view overlay">
-        <img class="card-img-top" src="{{ award.value.image }}" alt="award image cap" />
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">{{ award.value.heading }}</h4>
-        <p class="card-text">{{ award.value.content }}</p>
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-start py-3">
+    <div class="col-12 col-md-6 col-lg-4  mb-5"
+        *ngFor="let award of awards | async | keyValueFilter" >
+      <div class="card ">
+        <div class="view overlay">
+          <img class="card-img-top" src="{{ award.value.image }}" alt="award image cap" />
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ award.value.heading }}</h4>
+          <p class="card-text">{{ award.value.content }}</p>
+        </div>
       </div>
     </div>
   </div>
