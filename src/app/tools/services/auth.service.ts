@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
+import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 
 @Injectable({
   providedIn: 'root',

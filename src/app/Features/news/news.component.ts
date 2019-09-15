@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from '../../tools/interfaces/news';
 import { FireService } from '../../tools/services/fire.service';
-import { IUnion } from '../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-news',

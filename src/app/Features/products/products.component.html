@@ -1,14 +1,16 @@
 <div *ngIf="catalog" class="container products-container my-5">
   <div class="row d-flex justify-content-center">
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'ploughs')" [class.active]="activeCategory.ploughs"
-           class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'ploughs')"
+        [class.active]="activeCategory.ploughs"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay ploughs">
           <h1>Ploughs</h1>
           <ul>
-            <li class="capitalize"
-                *ngFor="let productType of catalog.ploughs"
-                [routerLink]="'overview/ploughs/' + productType">
+            <li class="capitalize" *ngFor="let productType of catalog.ploughs" [routerLink]="'overview/ploughs/' + productType">
               {{ productType }}
             </li>
           </ul>
@@ -16,16 +18,17 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'disks')" [class.active]="activeCategory.disks"
-           class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'disks')"
+        [class.active]="activeCategory.disks"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay disks">
           <div>
             <h1>Disks</h1>
             <ul>
-              <li
-                  class="capitalize"
-                  *ngFor="let productType of catalog.disks"
-                  [routerLink]="'overview/disks/' + productType">
+              <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/' + productType">
                 {{ productType }}
               </li>
             </ul>
@@ -34,8 +37,12 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'cultivators')" [class.active]="activeCategory.cultivators"
-          class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'cultivators')"
+        [class.active]="activeCategory.cultivators"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay cultivators">
           <div>
             <h1>Cultivators</h1>
@@ -43,7 +50,8 @@
               <li
                 class="capitalize"
                 *ngFor="let productType of catalog.disks"
-                [routerLink]="'overview/cultivators/' + productType">
+                [routerLink]="'overview/cultivators/' + productType"
+              >
                 {{ productType }}
               </li>
             </ul>
@@ -52,17 +60,18 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'rollers')" [class.active]="activeCategory.rollers"
-          class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'rollers')"
+        [class.active]="activeCategory.rollers"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay rollers">
           <div>
             <h1>Tillage Rollers</h1>
             <ul>
-              <li
-                  class="capitalize"
-                  *ngFor="let productType of catalog.rollers"
-                  [routerLink]="'overview/rollers/' + productType">
-                  {{ productType }}
+              <li class="capitalize" *ngFor="let productType of catalog.rollers" [routerLink]="'overview/rollers/' + productType">
+                {{ productType }}
               </li>
             </ul>
           </div>
@@ -70,15 +79,21 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'shredders')" [class.active]="activeCategory.shredders"
-          class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'shredders')"
+        [class.active]="activeCategory.shredders"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay shredders">
           <div>
             <h1>Shredders</h1>
             <ul>
-              <li class="capitalize"
-                  *ngFor="let productType of catalog.shredders"
-                  [routerLink]="'overview/shredders/' + productType">
+              <li
+                class="capitalize"
+                *ngFor="let productType of catalog.shredders"
+                [routerLink]="'overview/shredders/' + productType"
+              >
                 {{ productType }}
               </li>
             </ul>
@@ -87,15 +102,17 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'sprayers')" [class.active]="activeCategory.sprayers"
-          class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'sprayers')"
+        [class.active]="activeCategory.sprayers"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay sprayers">
           <div>
             <h1>Sprayers</h1>
             <ul>
-              <li class="capitalize"
-                  *ngFor="let productType of catalog.disks"
-                  [routerLink]="'overview/sprayers/' + productType">
+              <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/sprayers/' + productType">
                 {{ productType }}
               </li>
             </ul>
@@ -104,15 +121,17 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'special')" [class.active]="activeCategory.special"
-          class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'special')"
+        [class.active]="activeCategory.special"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay special">
           <div>
             <h1>Special Purpose</h1>
             <ul>
-              <li class="capitalize"
-                  *ngFor="let productType of catalog.special"
-                  [routerLink]="'overview/special/' + productType">
+              <li class="capitalize" *ngFor="let productType of catalog.special" [routerLink]="'overview/special/' + productType">
                 {{ productType }}
               </li>
             </ul>
@@ -121,15 +140,17 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div (click)="addActiveClass($event,'parts')" [class.active]="activeCategory.parts"
-           class="wrapper" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
+      <div
+        (click)="addActiveClass($event, 'parts')"
+        [class.active]="activeCategory.parts"
+        class="wrapper"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
         <div class="overlay cultivators">
           <div>
             <h1>Spare Parts</h1>
             <ul>
-              <li class="capitalize"
-                  *ngFor="let productType of catalog.parts"
-                  [routerLink]="'overview/parts/' + productType">
+              <li class="capitalize" *ngFor="let productType of catalog.parts" [routerLink]="'overview/parts/' + productType">
                 {{ productType }}
               </li>
             </ul>
@@ -138,15 +159,18 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
-      <div class="wrapper active" [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }">
-        <div class="overlay cultivators">
+      <div
+        class="wrapper active"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+      >
+        <div class="overlay ploughs">
           <div>
             <h1>Catalog</h1>
             <ul>
-              <li class="capitalize"
-                  *ngFor="let productType of catalog.tools"
-                  [routerLink]="'overview/tools/' + productType">
-                {{ productType }}
+              <li>
+                <a type="file" target="_blank"
+                  href="https://firebasestorage.googleapis.com/v0/b/ralomex-34693.appspot.com/o/catalogs%2FKatalog%20Ralomex-2019.pdf?alt=media&token=e1e40ea7-44f8-4493-a86a-aad42d91a4dd"
+                  >Catalog 2019</a>
               </li>
             </ul>
           </div>

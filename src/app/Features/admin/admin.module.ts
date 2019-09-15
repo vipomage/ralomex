@@ -24,13 +24,7 @@ import { RouterModule } from '@angular/router';
 import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-editable-table.component';
 import { adminRoutes } from './admin.routing';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
-import {
-  MatCheckboxModule,
-  MatDialogModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatSelectModule,
-} from '@angular/material';
+import { MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
 import { AdminExpositionsComponent } from './about/admin-expositions/admin-expositions.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';

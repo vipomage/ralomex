@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { HomeProduct } from '../../../../../tools/interfaces/home-product';
@@ -9,7 +9,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
   templateUrl: './edit-home.component.html',
   styleUrls: ['./edit-home.component.css'],
 })
-export class EditHomeComponent implements OnInit {
+export class EditHomeComponent {
   elements: Observable<IUnion> = this.db.AdminUtils.getElements('homeProducts');
   homeElementId: string;
   homeElement: HomeProduct;
@@ -40,6 +40,4 @@ export class EditHomeComponent implements OnInit {
       inline: 'nearest',
     });
   }
-
-  ngOnInit() {}
 }

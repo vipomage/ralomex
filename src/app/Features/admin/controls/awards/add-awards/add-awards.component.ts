@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Award } from '../../../../../tools/interfaces/award';
 import { FireService } from '../../../../../tools/services/fire.service';
@@ -9,7 +9,7 @@ import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
   templateUrl: './add-awards.component.html',
   styleUrls: ['./add-awards.component.css'],
 })
-export class AddAwardsComponent implements OnInit {
+export class AddAwardsComponent {
   image: string;
   preventEdit = this.imgService.preventEdit;
 
@@ -32,6 +32,4 @@ export class AddAwardsComponent implements OnInit {
       // clear Form
     });
   };
-
-  ngOnInit() {}
 }

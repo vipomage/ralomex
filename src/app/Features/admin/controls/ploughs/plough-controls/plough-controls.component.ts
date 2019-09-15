@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-plough-controls',
   templateUrl: './plough-controls.component.html',
   styleUrls: ['./plough-controls.component.css'],
 })
-export class PloughControlsComponent implements OnInit {
+export class PloughControlsComponent {
   category: string;
-
-  constructor() {}
-
-  ngOnInit() {}
 }

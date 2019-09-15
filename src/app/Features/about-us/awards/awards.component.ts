@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FireService } from '../../../tools/services/fire.service';
 
 @Component({
@@ -6,10 +6,8 @@ import { FireService } from '../../../tools/services/fire.service';
   templateUrl: './awards.component.html',
   styleUrls: ['./awards.component.css'],
 })
-export class AwardsComponent implements OnInit {
+export class AwardsComponent {
   awards = this.db.AdminUtils.getElements('awards');
 
   constructor(private db: FireService) {}
-
-  ngOnInit() {}
 }

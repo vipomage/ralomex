@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
-import { environment } from '../../../../../environments/environment.prod';
-import * as firebase from 'firebase';
 import { FireService } from '../../../../tools/services/fire.service';
 import { ExpoPreviewDialogComponent } from './expo-preview-dialog/expo-preview-dialog.component';
 

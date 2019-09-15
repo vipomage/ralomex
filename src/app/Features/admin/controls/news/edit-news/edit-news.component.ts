@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { News } from '../../../../../tools/interfaces/news';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
@@ -10,7 +10,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
   templateUrl: './edit-news.component.html',
   styleUrls: ['./edit-news.component.css'],
 })
-export class EditNewsComponent implements OnInit {
+export class EditNewsComponent {
   elements: Observable<IUnion> = this.db.AdminUtils.getElements('news');
   newsElementId: string;
   newsElement: News;
@@ -50,6 +50,4 @@ export class EditNewsComponent implements OnInit {
 
     return this.db.AdminUtils.updateElementById(id, 'news', formData);
   };
-
-  ngOnInit() {}
 }

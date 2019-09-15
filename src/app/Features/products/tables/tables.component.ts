@@ -14,8 +14,6 @@ export class TablesComponent implements OnInit {
   public tableData1: TableData;
   public tableData2: TableData;
 
-  constructor() {}
-
   ngOnInit() {
     this.tableData1 = {
       headerRow: ['ID', 'Name', 'Country', 'City', 'Salary'],

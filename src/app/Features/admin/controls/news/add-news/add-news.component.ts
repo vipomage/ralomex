@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { News } from '../../../../../tools/interfaces/news';
 import { FireService } from '../../../../../tools/services/fire.service';
@@ -9,7 +9,7 @@ import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
   templateUrl: './add-news.component.html',
   styleUrls: ['./add-news.component.css'],
 })
-export class AddNewsComponent implements OnInit {
+export class AddNewsComponent {
   image: string = this.imgService.downloadUrl;
   preventEdit = this.imgService.preventEdit;
 
@@ -33,6 +33,4 @@ export class AddNewsComponent implements OnInit {
       // clear Form
     });
   };
-
-  ngOnInit() {}
 }

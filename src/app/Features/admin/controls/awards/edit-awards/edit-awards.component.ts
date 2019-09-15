@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Award } from '../../../../../tools/interfaces/award';
@@ -10,7 +10,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
   templateUrl: './edit-awards.component.html',
   styleUrls: ['./edit-awards.component.css'],
 })
-export class EditAwardsComponent implements OnInit {
+export class EditAwardsComponent {
   constructor(private db: FireService, private imgService: ImageService) {}
 
   elements: Observable<IUnion> = this.db.AdminUtils.getElements('awards');
@@ -50,6 +50,4 @@ export class EditAwardsComponent implements OnInit {
 
     return this.db.AdminUtils.updateElementById(id, 'awards', formData);
   };
-
-  ngOnInit() {}
 }

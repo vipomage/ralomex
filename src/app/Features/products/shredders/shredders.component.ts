@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shredders.component.css'],
 })
 export class ShreddersComponent implements OnInit {
-  constructor() {}
 
   ngOnInit() {
     history.replaceState('', '', 'products/shredders');

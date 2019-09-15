@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { Project } from '../../../../../tools/interfaces/project';
@@ -9,7 +9,7 @@ import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
   templateUrl: './add-projects.component.html',
   styleUrls: ['./add-projects.component.css'],
 })
-export class AddProjectsComponent implements OnInit {
+export class AddProjectsComponent {
   constructor(public imgService: ImageService, private db: FireService) {}
 
   image: string;
@@ -36,6 +36,4 @@ export class AddProjectsComponent implements OnInit {
       // clear Form
     });
   };
-
-  ngOnInit() {}
 }

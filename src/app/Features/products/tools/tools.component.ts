@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tools.component.css'],
 })
 export class ToolsComponent implements OnInit {
-  constructor() {}
 
   ngOnInit() {
     history.replaceState('', '', 'products/tools');

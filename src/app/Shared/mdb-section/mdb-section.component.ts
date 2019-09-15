@@ -14,8 +14,7 @@ export class MdbSectionComponent implements OnInit {
   @Input() description: string;
 
   private _left: boolean;
-
-  constructor() {}
+  
 
   public get left() {
     return this._left;

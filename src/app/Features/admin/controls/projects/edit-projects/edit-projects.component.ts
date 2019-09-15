@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
   templateUrl: './edit-projects.component.html',
   styleUrls: ['./edit-projects.component.css'],
 })
-export class EditProjectsComponent implements OnInit {
+export class EditProjectsComponent {
   constructor(private db: FireService, private imgService: ImageService) {}
 
   elements: Observable<IUnion> = this.db.AdminUtils.getElements('projects');
@@ -50,6 +50,4 @@ export class EditProjectsComponent implements OnInit {
 
     return this.db.AdminUtils.updateElementById(id, 'projects', formData);
   };
-
-  ngOnInit() {}
 }

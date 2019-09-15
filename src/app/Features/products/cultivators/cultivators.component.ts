@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cultivators.component.css'],
 })
 export class CultivatorsComponent implements OnInit {
-  constructor() {}
 
   ngOnInit() {
     history.replaceState('', '', 'products/cultivators');
