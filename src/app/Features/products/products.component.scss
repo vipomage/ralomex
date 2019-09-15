@@ -52,7 +52,7 @@
         }
       }
     }
-    .wrapper:hover {
+    .wrapper:hover, .wrapper.active {
       .overlay {
         padding-top: 40px;
         top: 20px;

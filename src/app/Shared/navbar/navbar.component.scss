@@ -9,6 +9,7 @@ nav.navbar {
 
   .navbar-brand {
     top: 20px;
+    margin-right: 40px;
     position: relative;
 
     h1 {
@@ -26,7 +27,7 @@ nav.navbar {
     margin-bottom: -60px;
     top: -35px;
     height: 110px;
-    padding-left: 26px;
+    padding-left: 40px;
     position: relative;
     background-color: white;
     min-height: 75px;
@@ -36,6 +37,11 @@ nav.navbar {
     .dropdown-menu {
       padding: 0;
       left: -50px;
+      
+      .dropdown-item{
+        font-size: 20px;
+        padding: 8px 24px;
+      }
 
       .dropdown-item:hover {
         background-color: $primaryGreen;
@@ -44,7 +50,7 @@ nav.navbar {
     }
 
     .nav-link {
-      font-size: 2vw;
+      font-size: 25px;
       color: $primaryGreen;
       font-weight: 700;
       padding-left: 0;
@@ -69,7 +75,7 @@ nav.navbar {
     @media screen and (max-width: 1300px) {
     
       .nav-link {
-        font-size: 3vw;
+        //font-size: 3vw;
       }
     }
   }

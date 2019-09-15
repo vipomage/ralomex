@@ -24,7 +24,6 @@
   
   a,a:visited,a.active{
     color: white;
-    text-decoration: underline;
   }
   
   .container-fluid {
@@ -58,6 +57,10 @@
 
           &:hover {
             color: black;
+          }
+          
+          i{
+            font-size: 60px;
           }
         }
       }

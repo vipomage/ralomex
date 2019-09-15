@@ -3,7 +3,6 @@
 }
 img{
   max-width: 100%;
-  height: 350px;
   border-radius: 12px;
 }
 .stats{
@@ -19,11 +18,12 @@ img{
   border:none;
   background: none;
   text-align: center;
+  min-height: 280px;
 }
 
 .card-header-image{
   position: relative;
-  padding: 0;
+  padding: 0 26px;
   z-index: 1;
   margin-left: 15px;
   margin-right: 15px;

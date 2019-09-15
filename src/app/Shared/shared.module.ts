@@ -17,6 +17,7 @@ import { ProductTableRollersHeadersComponent } from './productTables/headers/pro
 import { ProductTableShreddersHeadersComponent } from './productTables/headers/product-table-shredders-headers/product-table-shredders-headers.component';
 import { ProductTableSprayersHeadersComponent } from './productTables/headers/product-table-sprayers-headers/product-table-sprayers-headers.component';
 import { RalomexLogoComponent } from './ralomex-logo/ralomex-logo.component';
+import { FixedContactPopupComponent } from './fixed-contact-popup/fixed-contact-popup.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RalomexLogoComponent } from './ralomex-logo/ralomex-logo.component';
     ProductTableShreddersHeadersComponent,
     ProductTableSprayersHeadersComponent,
     RalomexLogoComponent,
+    FixedContactPopupComponent,
   ],
   exports: [
     HeaderComponent,
@@ -42,8 +44,9 @@ import { RalomexLogoComponent } from './ralomex-logo/ralomex-logo.component';
     MdbJumbotronComponent,
     MdbSectionComponent,
     NavbarComponent,
-
+    
     ProductTableComponent,
+    FixedContactPopupComponent,
   ],
   imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule],
 })

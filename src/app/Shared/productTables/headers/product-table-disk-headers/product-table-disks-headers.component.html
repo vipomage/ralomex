@@ -26,6 +26,7 @@
     <th><img src="../../../../../assets/table-icons/transportSpeed.png" alt="" /></th>
     <th><img src="../../../../../assets/table-icons/workSpeed.png" alt="" /></th>
     <th><img src="../../../../../assets/table-icons/productivity.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/weightWithoutRotors.png" alt="" /></th>
+    <th *ngIf="set === 'bdp'"><img src="../../../../../assets/table-icons/weightWithoutRotors.png" alt="" /></th>
+    <th *ngIf="set !== 'bdp'"><img src="../../../../../assets/table-icons/weight.png" alt="" /></th>
   </tr>
 </thead>

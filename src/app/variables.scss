@@ -5,3 +5,15 @@ $primaryPurple: rgba(147, 112, 219, 0.9);
 $primaryRed: rgba(139, 0, 0, 0.9);
 
 $tableBreakPoint: 768px;
+
+@keyframes flashingDropShadow {
+  0% {
+    filter: drop-shadow(1px 1px 6px transparent);
+  }
+  50% {
+    filter: drop-shadow(1px 1px 6px white);
+  }
+  100% {
+    filter: drop-shadow(1px 1px 6px transparent);
+  }
+}
