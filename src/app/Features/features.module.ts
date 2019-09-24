@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { featureRoutes } from './features.routing';
 import { ProductsModule } from './products/products.module';
-import { AdminModule } from './admin/admin.module';
 import { AwardsComponent } from './about-us/awards/awards.component';
 import { HistoryComponent } from './about-us/history/history.component';
 import { HomeComponent } from './home/home.component';
@@ -35,7 +34,6 @@ import { ContactsComponent } from './contacts/contacts.component';
     RouterModule.forChild(featureRoutes),
     CommonModule,
     ProductsModule,
-    AdminModule,
     PipesModule,
     CarouselModule,
     MatButtonModule,

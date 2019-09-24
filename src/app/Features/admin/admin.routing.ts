@@ -19,7 +19,7 @@ import { EditProjectsComponent } from './controls/projects/edit-projects/edit-pr
 
 export const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     children: [
       {
