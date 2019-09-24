@@ -18,6 +18,8 @@ import { ProductTableShreddersHeadersComponent } from './productTables/headers/p
 import { ProductTableSprayersHeadersComponent } from './productTables/headers/product-table-sprayers-headers/product-table-sprayers-headers.component';
 import { RalomexLogoComponent } from './ralomex-logo/ralomex-logo.component';
 import { FixedContactPopupComponent } from './fixed-contact-popup/fixed-contact-popup.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppModule } from '../app.module';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,6 @@ import { FixedContactPopupComponent } from './fixed-contact-popup/fixed-contact-
     ProductTableComponent,
     FixedContactPopupComponent,
   ],
-  imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule],
+  imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule,TranslateModule],
 })
 export class SharedModule {}

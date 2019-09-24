@@ -21,6 +21,7 @@ import { CardsFreeModule, TableModule } from 'angular-bootstrap-md';
 import { PipesModule } from '../../tools/pipes/pipes.module';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 import { TablesComponent } from './tables/tables.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { TablesComponent } from './tables/tables.component';
     CardsFreeModule,
     PipesModule,
     TableModule,
+    TranslateModule,
   ],
   exports: [
     ProductsComponent,

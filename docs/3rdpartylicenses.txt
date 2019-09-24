@@ -347,6 +347,12 @@ Apache-2.0
 @kolkov/angular-editor
 MIT
 
+@ngx-translate/core
+MIT
+
+@ngx-translate/http-loader
+MIT
+
 angular-bootstrap-md
 
 classlist.js

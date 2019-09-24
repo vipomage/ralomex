@@ -8,10 +8,10 @@
         [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
       >
         <div class="overlay ploughs">
-          <h1>Ploughs</h1>
+          <h1 class="text-capitalize">{{'ploughs'|translate}}</h1>
           <ul>
             <li class="capitalize" *ngFor="let productType of catalog.ploughs" [routerLink]="'overview/ploughs/' + productType">
-              {{ productType }}
+              {{ productType |translate }}
             </li>
           </ul>
         </div>
@@ -26,10 +26,10 @@
       >
         <div class="overlay disks">
           <div>
-            <h1>Disks</h1>
+            <h1 class="text-capitalize">{{'disks'|translate}}</h1>
             <ul>
               <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/disks/' + productType">
-                {{ productType }}
+                {{ productType | translate }}
               </li>
             </ul>
           </div>
@@ -45,14 +45,14 @@
       >
         <div class="overlay cultivators">
           <div>
-            <h1>Cultivators</h1>
+            <h1 class="text-capitalize">{{'cultivators'|translate}}</h1>
             <ul>
               <li
                 class="capitalize"
                 *ngFor="let productType of catalog.disks"
                 [routerLink]="'overview/cultivators/' + productType"
               >
-                {{ productType }}
+                {{ productType |translate}}
               </li>
             </ul>
           </div>
@@ -68,10 +68,10 @@
       >
         <div class="overlay rollers">
           <div>
-            <h1>Tillage Rollers</h1>
+            <h1 class="text-capitalize">{{'tillage rollers'|translate}}</h1>
             <ul>
               <li class="capitalize" *ngFor="let productType of catalog.rollers" [routerLink]="'overview/rollers/' + productType">
-                {{ productType }}
+                {{ productType |translate}}
               </li>
             </ul>
           </div>
@@ -87,14 +87,14 @@
       >
         <div class="overlay shredders">
           <div>
-            <h1>Shredders</h1>
+            <h1 class="text-capitalize">{{'shredders'|translate}}</h1>
             <ul>
               <li
                 class="capitalize"
                 *ngFor="let productType of catalog.shredders"
                 [routerLink]="'overview/shredders/' + productType"
               >
-                {{ productType }}
+                {{ productType | translate}}
               </li>
             </ul>
           </div>
@@ -110,10 +110,10 @@
       >
         <div class="overlay sprayers">
           <div>
-            <h1>Sprayers</h1>
+            <h1 class="text-capitalize">{{'sprayers'| translate}}</h1>
             <ul>
               <li class="capitalize" *ngFor="let productType of catalog.disks" [routerLink]="'overview/sprayers/' + productType">
-                {{ productType }}
+                {{ productType |translate}}
               </li>
             </ul>
           </div>
@@ -129,10 +129,10 @@
       >
         <div class="overlay special">
           <div>
-            <h1>Special Purpose</h1>
+            <h1 class="text-capitalize">{{'special' | translate}}</h1>
             <ul>
               <li class="capitalize" *ngFor="let productType of catalog.special" [routerLink]="'overview/special/' + productType">
-                {{ productType }}
+                {{ productType | translate}}
               </li>
             </ul>
           </div>
@@ -146,7 +146,7 @@
       >
         <div class="overlay cultivators">
           <div>
-            <h1>Spare Parts</h1>
+            <h1 class="text-capitalize">{{'spare parts'|translate}}</h1>
             <ul>
               <li class="capitalize" >
                 <a style="color: white" href="tel:+35984422126">+35984422126</a>
@@ -163,7 +163,7 @@
       >
         <div class="overlay ploughs">
           <div>
-            <h1>Catalog</h1>
+            <h1 class="text-capitalize">{{'catalog'|translate}}</h1>
             <ul>
               <li>
                 <a type="file" target="_blank"

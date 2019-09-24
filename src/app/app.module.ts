@@ -5,7 +5,7 @@ import { FireService } from './tools/services/fire.service';
 import { environment } from '../environments/environment';
 import { config } from './tools/services/config.service';
 import { CardsFreeModule, MDBBootstrapModule } from 'angular-bootstrap-md';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from './tools/pipes/pipes.module';
@@ -22,11 +22,24 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    RouterModule.forRoot(applicationRouting, { useHash: true, enableTracing: false ,scrollPositionRestoration:'top'}),
+    RouterModule.forRoot(applicationRouting, {
+      useHash: true,
+      enableTracing: false,
+      scrollPositionRestoration: 'top',
+    }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
+        deps: [HttpClient],
+      },
+    }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
@@ -45,6 +58,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   ],
   bootstrap: [AppComponent],
   providers: [FireService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
-  exports: [RouterModule],
+  exports: [RouterModule,TranslateModule],
 })
 export class AppModule {}
