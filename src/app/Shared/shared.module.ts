@@ -19,7 +19,7 @@ import { ProductTableSprayersHeadersComponent } from './productTables/headers/pr
 import { RalomexLogoComponent } from './ralomex-logo/ralomex-logo.component';
 import { FixedContactPopupComponent } from './fixed-contact-popup/fixed-contact-popup.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppModule } from '../app.module';
+import { MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -46,10 +46,9 @@ import { AppModule } from '../app.module';
     MdbJumbotronComponent,
     MdbSectionComponent,
     NavbarComponent,
-    
     ProductTableComponent,
     FixedContactPopupComponent,
   ],
-  imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule,TranslateModule],
+  imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule, TranslateModule, MatTooltipModule],
 })
 export class SharedModule {}

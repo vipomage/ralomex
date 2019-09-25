@@ -4,10 +4,10 @@
       <p class="font-weight-bold">{{ name | translate }}</p>
       <p>{{'series' | translate}} <span class="text-uppercase">{{ set |translate}}</span></p>
     </th>
-    <th><img src="../../../../../assets/table-icons/tankCapacity.png" alt="" /></th>
-    <th *ngIf="set === 'demetra'"><img src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
-    <th *ngIf="set === 'ralko'"><img src="../../../../../assets/table-icons/fanDiameter.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/sprayersCount.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/pumpType.png" alt="" /></th>
+    <th><img matTooltipPosition="above" matTooltip="{{'tank capacity'|translate}}" src="../../../../../assets/table-icons/tankCapacity.png" alt="" /></th>
+    <th *ngIf="set === 'demetra'"><img  matTooltipPosition="above" matTooltip="{{'working width'|translate}}" src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
+    <th *ngIf="set === 'ralko'"><img matTooltipPosition="above" matTooltip="{{'fan diameter'|translate}}" src="../../../../../assets/table-icons/fanDiameter.png" alt="" /></th>
+    <th><img matTooltipPosition="above" matTooltip="{{'sprayers count'|translate}}" src="../../../../../assets/table-icons/sprayersCount.png" alt="" /></th>
+    <th><img matTooltipPosition="above" matTooltip="{{'pump type'|translate}}" src="../../../../../assets/table-icons/pumpType.png" alt="" /></th>
   </tr>
 </thead>

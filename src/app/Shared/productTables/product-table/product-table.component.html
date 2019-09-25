@@ -21,12 +21,13 @@
           {{item.value[header.key]}}
         </span>
         <img
+            matTooltipPosition="above" matTooltip="{{'bolt'|translate}}"
           class="bolt"
           *ngIf="item.value[header.key] === 'bolt'"
           src="../../../../assets/table-icons/threaded_bolt_T.png"
           alt=""
         />
-        <img class="spring" *ngIf="item.value[header.key] === 'spring'" src="../../../../assets/table-icons/spring.png" alt="" />
+        <img  matTooltipPosition="above" matTooltip="{{'spring'|translate}}" class="spring" *ngIf="item.value[header.key] === 'spring'" src="../../../../assets/table-icons/spring.png" alt="" />
       </td>
     </tr>
   </tbody>

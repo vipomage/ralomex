@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './fixed-contact-popup.component.html',
   styleUrls: ['./fixed-contact-popup.component.scss'],
 })
-export class FixedContactPopupComponent {}
+export class FixedContactPopupComponent {
+  isActive: boolean = false;
+  
+  setActive() {
+    this.isActive = !this.isActive;
+  }
+}

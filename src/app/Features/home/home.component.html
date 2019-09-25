@@ -1,5 +1,5 @@
 <div class="container-fluid home-container p-0">
-  <mdb-carousel [attr.interval]="4000" class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel interval="4000" class="carousel slide carousel-fade" [animation]="'fade'">
     <mdb-carousel-item class="active carousel-wrapper">
       <div class="landing-wrapper">
         <div class="background" [ngStyle]="{ backgroundImage: 'url(' + randomImage + ')' }"></div>
@@ -28,16 +28,16 @@
         </div>
       </div>
     </mdb-carousel-item>
-<!--    <mdb-carousel-item class="carousel-wrapper" *ngFor="let product of homeProducts | async | keyValueFilter">-->
-<!--      <div class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + product.value.image + ')' }">-->
-<!--        &lt;!&ndash;        <img (contextmenu)="onRightClick($event)" class="d-block w-100 h-100" src="{{ product.value.image }}" alt="First slide" />&ndash;&gt;-->
-<!--        <a routerLink="/{{ product.value.href }}" class="mask rgba-black-light waves-light" mdbWavesEffect> </a>-->
-<!--      </div>-->
-<!--      <div class="carousel-item-value caption col-10 col-md-8 col-lg-6 offset-1 offset-md-2 offset-lg-3">-->
-<!--        <a [href]="product.value.href" target="_blank">-->
-<!--          <h3 class="h3-responsive">{{ product.value.heading }}</h3>-->
-<!--        </a>-->
-<!--      </div>-->
-<!--    </mdb-carousel-item>-->
+    <mdb-carousel-item class="carousel-wrapper" *ngFor="let product of homeProducts | async | keyValueFilter">
+      <div class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + product.value.image + ')' }">
+        <!--        <img (contextmenu)="onRightClick($event)" class="d-block w-100 h-100" src="{{ product.value.image }}" alt="First slide" />-->
+        <a routerLink="/{{ product.value.href }}" class="mask rgba-black-light waves-light" mdbWavesEffect> </a>
+      </div>
+      <div class="carousel-item-value caption col-10 col-md-8 col-lg-6 offset-1 offset-md-2 offset-lg-3">
+        <a [href]="product.value.href" target="_blank">
+          <h3 class="h3-responsive">{{ product.value.heading }}</h3>
+        </a>
+      </div>
+    </mdb-carousel-item>
   </mdb-carousel>
 </div>

@@ -6,19 +6,101 @@
         series <span class="text-uppercase">{{ set }}</span>
       </p>
     </th>
-    <th><img src="../../../../../assets/table-icons/cultivatorsWorkBodyCount1.png" alt=""/></th>
-    <th><img src="../../../../../assets/table-icons/reqHp.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/cultivatorsBodySpacing1.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/cultivatorsRowCount1.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/transportWidth.png" alt="" /></th>
-    <th *ngIf="set !== 'kkp' && set !== 'kk'" class="scale-up">
-      <img src="../../../../../assets/table-icons/cultivatorsProtection.png" alt="" />
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working body count' | translate }}"
+        src="../../../../../assets/table-icons/cultivatorsWorkBodyCount1.png"
+        alt=""
+      />
     </th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/cultivatorsDepthWork1.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/transportSpeed.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/workSpeed.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/productivity.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/weight.png" alt="" /></th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'required horse power' | translate }}"
+        src="../../../../../assets/table-icons/reqHp.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'body spacing' | translate }}"
+        src="../../../../../assets/table-icons/cultivatorsBodySpacing1.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'row count' | translate }}"
+        src="../../../../../assets/table-icons/cultivatorsRowCount1.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working width' | translate }}"
+        src="../../../../../assets/table-icons/workingWidth.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport width' | translate }}"
+        src="../../../../../assets/table-icons/transportWidth.png"
+        alt=""
+      />
+    </th>
+    <th *ngIf="set !== 'kkp' && set !== 'kk'" class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'protection' | translate }}"
+        src="../../../../../assets/table-icons/cultivatorsProtection.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working depth' | translate }}"
+        src="../../../../../assets/table-icons/cultivatorsDepthWork1.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport speed' | translate }}"
+        src="../../../../../assets/table-icons/transportSpeed.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working speed' | translate }}"
+        src="../../../../../assets/table-icons/workSpeed.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'productivity' | translate }}"
+        src="../../../../../assets/table-icons/productivity.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'weight' | translate }}"
+        src="../../../../../assets/table-icons/weight.png"
+        alt=""
+      />
+    </th>
   </tr>
 </thead>

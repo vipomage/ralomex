@@ -2,29 +2,120 @@
   <tr class="headers">
     <th class="text-capitalize">
       <p class="font-weight-bold">{{ name | translate }}</p>
-      <p>{{'series' | translate}} <span class="text-uppercase">{{ set |translate}}</span></p>
+      <p>
+        {{ 'series' | translate }} <span class="text-uppercase">{{ set | translate }}</span>
+      </p>
     </th>
     <th>
       <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'disk count' | translate }}"
         *ngIf="set === 'bdn' || set === 'bdn-tg' || set === 'bdp-tg'"
         src="../../../../../assets/table-icons/diskCount.png"
         alt=""
       />
-      <img *ngIf="set === 'bdp-pp'" src="../../../../../assets/table-icons/diskCount2.png" alt="" />
-      <img *ngIf="set === 'bdp'" src="../../../../../assets/table-icons/diskCount2.png" alt="" />
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'disk count' | translate }}"
+        *ngIf="set === 'bdp-pp'"
+        src="../../../../../assets/table-icons/diskCount2.png"
+        alt=""
+      />
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'disk count' | translate }}"
+        *ngIf="set === 'bdp'"
+        src="../../../../../assets/table-icons/diskCount2.png"
+        alt=""
+      />
     </th>
-    <th><img src="../../../../../assets/table-icons/reqHp.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/diskDiameter.png" alt="" /></th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'required horse power' | translate }}"
+        src="../../../../../assets/table-icons/reqHp.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'disk diameter' | translate }}"
+        src="../../../../../assets/table-icons/diskDiameter.png"
+        alt=""
+      />
+    </th>
     <th *ngIf="set === 'bdn' || set === 'bdp'" class="scale-up">
-      <img src="../../../../../assets/table-icons/axisSize.png" alt="" />
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'axis size' | translate }}"
+        src="../../../../../assets/table-icons/axisSize.png"
+        alt=""
+      />
     </th>
-    <th><img src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/transportWidth.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/diskWorkingDepth.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/transportSpeed.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/workSpeed.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/productivity.png" alt="" /></th>
-    <th *ngIf="set === 'bdp'"><img src="../../../../../assets/table-icons/weightWithoutRotors.png" alt="" /></th>
-    <th *ngIf="set !== 'bdp'"><img src="../../../../../assets/table-icons/weight.png" alt="" /></th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working width' | translate }}"
+        src="../../../../../assets/table-icons/workingWidth.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport width' | translate }}"
+        src="../../../../../assets/table-icons/transportWidth.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working depth' | translate }}"
+        src="../../../../../assets/table-icons/diskWorkingDepth.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport speed' | translate }}"
+        src="../../../../../assets/table-icons/transportSpeed.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'operating speed' | translate }}"
+        src="../../../../../assets/table-icons/workSpeed.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'productivity' | translate }}"
+        src="../../../../../assets/table-icons/productivity.png"
+        alt=""
+      />
+    </th>
+    <th *ngIf="set === 'bdp'">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'weight without rotors' | translate }}"
+        src="../../../../../assets/table-icons/weightWithoutRotors.png"
+        alt=""
+      />
+    </th>
+    <th *ngIf="set !== 'bdp'">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'weight' | translate }}"
+        src="../../../../../assets/table-icons/weight.png"
+        alt=""
+      />
+    </th>
   </tr>
 </thead>

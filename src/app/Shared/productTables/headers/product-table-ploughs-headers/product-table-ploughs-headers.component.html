@@ -2,18 +2,97 @@
   <tr class="headers">
     <th class="text-capitalize">
       <p class="font-weight-bold">{{ name | translate }}</p>
-      <p>{{'series' | translate}} <span class="text-uppercase">{{ set |translate}}</span></p>
+      <p>
+        {{ 'series' | translate }} <span class="text-uppercase">{{ set | translate }}</span>
+      </p>
     </th>
-    <th><img src="../../../../../assets/table-icons/workBodyCount.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/reqHp.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/mainBeam.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/bodiesDistance.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/widthWork.png" alt="" /></th>
-    <th class="scale-up"><img src="../../../../../assets/table-icons/clearance.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/depthWork.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/transportSpeed.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/workSpeed.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/productivity.png" alt="" /></th>
-    <th><img src="../../../../../assets/table-icons/weight.png" alt="" /></th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'body count' | translate }}"
+        src="../../../../../assets/table-icons/workBodyCount.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'required horse power' | translate }}"
+        src="../../../../../assets/table-icons/reqHp.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'main beam dimensions' | translate }}"
+        src="../../../../../assets/table-icons/mainBeam.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'distance between bodies' | translate }}"
+        src="../../../../../assets/table-icons/bodiesDistance.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'body working width' | translate }}"
+        src="../../../../../assets/table-icons/widthWork.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up">
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'clearance' | translate }}"
+        src="../../../../../assets/table-icons/clearance.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'working depth' | translate }}"
+        src="../../../../../assets/table-icons/depthWork.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport speed' | translate }}"
+        src="../../../../../assets/table-icons/transportSpeed.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'operating speed' | translate }}"
+        src="../../../../../assets/table-icons/workSpeed.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'productivity' | translate }}"
+        src="../../../../../assets/table-icons/productivity.png"
+        alt=""
+      />
+    </th>
+    <th>
+      <img
+        matTooltipPosition="above"
+        matTooltip="{{ 'weight' | translate }}"
+        src="../../../../../assets/table-icons/weight.png"
+        alt=""
+      />
+    </th>
   </tr>
 </thead>
