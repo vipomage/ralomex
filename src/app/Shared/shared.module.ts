@@ -49,6 +49,13 @@ import { MatTooltipModule } from '@angular/material';
     ProductTableComponent,
     FixedContactPopupComponent,
   ],
-  imports: [CommonModule, MDBBootstrapModule, RouterModule, PipesModule, TranslateModule, MatTooltipModule],
+  imports: [
+    CommonModule,
+    MDBBootstrapModule,
+    RouterModule,
+    PipesModule,
+    TranslateModule,
+    MatTooltipModule,
+  ],
 })
 export class SharedModule {}
