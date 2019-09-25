@@ -3,6 +3,14 @@
   margin: 0 auto;
   padding: 20px 10px;
 }
+
+::ng-deep {
+  .carousel-indicators,a.carousel-control-next,a.carousel-control-prev{
+    filter:drop-shadow(2px 6px 5px black);
+    cursor: pointer;
+  }
+}
+
 .carousel-indicators {
   display: none;
 }

@@ -12,6 +12,7 @@ export const environment = {
     storageBucket: 'ralomex-34693.appspot.com',
     messagingSenderId: '130489209852',
   },
+  baseUrl:'/'
 };
 
 /*

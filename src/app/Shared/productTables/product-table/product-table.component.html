@@ -17,9 +17,9 @@
         class="text-center {{ header.key }}"
         *ngFor="let header of headers"
       >
-        <span [ngClass]="header.key" *ngIf="item.value[header.key] !== 'bolt' && item.value[header.key] !== 'spring'">{{
-          item.value[header.key]
-        }}</span>
+        <span [ngClass]="header.key" *ngIf="item.value[header.key] !== 'bolt' && item.value[header.key] !== 'spring'">
+          {{item.value[header.key]}}
+        </span>
         <img
           class="bolt"
           *ngIf="item.value[header.key] === 'bolt'"

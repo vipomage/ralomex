@@ -1,15 +1,43 @@
-<div class="container-fluid home-wrapper p-0">
-  <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-    <mdb-carousel-item *ngFor="let product of homeProducts | async | keyValueFilter">
-      <div class="view w-100">
-        <img (contextmenu)="onRightClick($event)" class="d-block w-100" src="{{ product.value.image }}" alt="First slide" />
-        <a routerLink="/{{ product.value.href }}" class="mask rgba-black-light waves-light" mdbWavesEffect> </a>
-      </div>
-      <div class="carousel-caption">
-        <a [href]="product.value.href" target="_blank">
-          <h3 class="h3-responsive">{{ product.value.heading }}</h3>
-        </a>
+<div class="container-fluid home-container p-0">
+  <mdb-carousel [attr.interval]="4000" class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item class="active carousel-wrapper">
+      <div class="landing-wrapper">
+        <div class="background" [ngStyle]="{ backgroundImage: 'url(' + randomImage + ')' }"></div>
+        <div class="ralomex-caption caption col-11 col-md-7 offset-sm-0 offset-md-2">
+          <h2 class="text-xl-left text-uppercase">Раломекс АД</h2>
+          <br />
+          <h5>
+            е машиностроително предприятие, което е наследник на Машиностроителния завод в гр.Завет създаден през 1976 г. Днес
+            компанията е със 100% частен капитал и произвежда машини за основна обработка на почвата – плугове, дискови брани,
+            култиватори, тракторни валяци, разрохквачи, пръскачки и специализирани селскостопански машини.
+          </h5>
+          <br />
+          <h4 class="text-success"><strong>Нашата Мисия</strong></h4>
+
+          <h5>
+            Устойчиво развитие и производство базирано на иновации и добри производствени практики с цел повишаване на
+            конкурентоспособността и удовлетвореността на клиентите.
+          </h5>
+          <br />
+          <h4 class="text-success"><strong>Нашата визия: Машини за модерно земеделие</strong></h4>
+          <h5>
+            “Раломекс” АД от 11.08.2005 год. Притежава сертификат за управление на качеството, издаден от TÜV Rheinland InterCert
+            Kft., а от 03.10.2008 год. Сертификат за система за управление на околната среда издаден от TÜV Rheinland InterCert
+            Kft.
+          </h5>
+        </div>
       </div>
     </mdb-carousel-item>
+<!--    <mdb-carousel-item class="carousel-wrapper" *ngFor="let product of homeProducts | async | keyValueFilter">-->
+<!--      <div class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + product.value.image + ')' }">-->
+<!--        &lt;!&ndash;        <img (contextmenu)="onRightClick($event)" class="d-block w-100 h-100" src="{{ product.value.image }}" alt="First slide" />&ndash;&gt;-->
+<!--        <a routerLink="/{{ product.value.href }}" class="mask rgba-black-light waves-light" mdbWavesEffect> </a>-->
+<!--      </div>-->
+<!--      <div class="carousel-item-value caption col-10 col-md-8 col-lg-6 offset-1 offset-md-2 offset-lg-3">-->
+<!--        <a [href]="product.value.href" target="_blank">-->
+<!--          <h3 class="h3-responsive">{{ product.value.heading }}</h3>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </mdb-carousel-item>-->
   </mdb-carousel>
 </div>

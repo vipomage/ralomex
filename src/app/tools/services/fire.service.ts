@@ -55,10 +55,13 @@ export class FireService {
       this.internetStatus = status;
     });
   }
-  
+
   memberUtils = {
-    addMember: (memberData:TeamMember)=> this.db.database.ref('team').push(memberData),
-    getMembers: () => this.http.get<{[propName:string]:TeamMember}>(`${this.databaseUrl}/team.json`).toPromise()
+    addMember: (memberData: TeamMember) => this.db.database.ref('team').push(memberData),
+    getMembers: () =>
+      this.http
+        .get<{ [propName: string]: TeamMember }>(`${this.databaseUrl}/team.json`)
+        .toPromise(),
   };
 
   AdminUtils = {
@@ -68,14 +71,14 @@ export class FireService {
         .push(data)
         .then(() => {
           this.toastrService.success('Uploaded!');
-        }).catch(e=>{
+        })
+        .catch(e => {
           console.log(e);
-          this.toastrService.error('Error Occurred')
-      }),
+          this.toastrService.error('Error Occurred');
+        }),
 
-    getElements: (
-      elementType: DbLocation
-    ): Observable<IUnion> => this.http.get<IUnion>(`${this.databaseUrl}/${elementType}.json`),
+    getElements: (elementType: DbLocation): Observable<IUnion> =>
+      this.http.get<IUnion>(`${this.databaseUrl}/${elementType}.json`),
 
     deleteElementById: (id: string, elementType: DbLocation) =>
       this.db.database
@@ -176,6 +179,14 @@ export class FireService {
       );
     });
     return cat;
+  }
+
+  async getProductDescriptionDetails(productType: string) {
+    return await this.http
+      .get<BaseSchemaModel<ProductIUnion>>(
+        `${this.databaseUrl}/${productType}.json`
+      )
+      .toPromise();
   }
 
   getSingleItem = (type: string, category: string, series: string, id: string) =>

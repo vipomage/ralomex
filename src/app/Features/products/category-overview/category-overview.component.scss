@@ -1,4 +1,31 @@
+.description-container {
+  .product-description {
+    p {
+      word-break: break-word;
+    }
+  }
+
+  div.background-image {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.accordion > .card:last-of-type {
+  border-bottom-width: 1px !important;
+}
+
 div.card {
+  border: 1px solid rgb(0, 0, 0, 0.125) !important;
+
+  &:first-of-type {
+    border-radius: 4px 4px 0 0 !important;
+  }
+
+  &:last-of-type {
+    border-radius: 0 0 4px 4px !important;
+  }
+
   a {
     text-underline: none;
     text-decoration: none;
@@ -7,16 +34,6 @@ div.card {
     .series-wrapper {
       .series-heading {
         padding: 10px;
-      }
-
-      .series-description {
-        padding: 0 0 35px 30px;
-        color: black;
-      }
-
-      div.background-image {
-        background-position: right;
-        background-repeat: no-repeat;
       }
     }
   }

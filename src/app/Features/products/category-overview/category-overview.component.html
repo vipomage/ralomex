@@ -1,22 +1,29 @@
-<div class="container-fluid overview wrapper">
+<div *ngIf="productData" class="container-fluid overview wrapper">
   <div class="row d-flex justify-content-center">
     <div class="col-md-12 py-5">
+      <h2 class="text-capitalize">{{ productType | translate }}</h2>
+      <div class="row container-fluid description-container">
+        <div class="col-7 product-description">
+          <p>{{ productData.description }}</p>
+        </div>
+        <div
+          *ngIf="!images"
+          class="col-5 background-image"
+          [ngStyle]="{ backgroundImage: 'url(' + productData.image + ')' }"
+        ></div>
+        <app-mdb-carousel class="col-5" *ngIf="images" [images]="images"></app-mdb-carousel>
+      </div>
       <div class="accordion md-accordion accordion-1" id="accordion" role="tablist" aria-multiselectable="false">
         <div class="card" *ngFor="let set of series">
           <div class="z-depth-1" role="tab" id="heading-{{ set }}">
             <a data-toggle="collapse" data-parent="#accordion" href="#{{ set }}" aria-expanded="true" [attr.aria-controls]="set">
               <div class="series-wrapper row d-flex">
                 <div class="col-md-6">
-                  <h4 class="mb-0 text-uppercase series-heading">Series - {{ set }}</h4>
-                  <p class="series-description">
-                    {{ data[set].description }}
-                  </p>
+                  <h4 class="pl-4 mb-0 text-capitalize series-heading">{{ 'series' | translate }} - <span class="text-uppercase">{{ set | translate }}</span></h4>
                 </div>
-                <div class="col-md-6 background-image" [ngStyle]="{ backgroundImage: 'url(' + data[set].image + ')' }"></div>
               </div>
             </a>
           </div>
-
           <div id="{{ set }}" class="collapse" role="tabpanel" [attr.aria-labelledby]="'heading-' + set" data-parent="#accordion">
             <div class="p-0 card-body mb-1 rgba-grey-light white-text">
               <app-product-table [type]="productType" [data]="data" [set]="set"></app-product-table>

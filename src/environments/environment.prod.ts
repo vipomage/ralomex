@@ -14,4 +14,5 @@ export const environment = {
     maxOpened: 3,
     newestOnTop: true,
   },
+  baseUrl:'https://erayismail.online'
 };

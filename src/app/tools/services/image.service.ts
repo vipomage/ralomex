@@ -9,13 +9,13 @@ import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
   providedIn: 'root',
 })
 export class ImageService {
-  public task: AngularFireUploadTask;
-  public status: string;
-  public preventEdit: boolean = false;
-  downloadUrl: string;
-  images: string[] = [];
   private percentage: Observable<number | undefined>;
   private snapshot: Observable<UploadTaskSnapshot | undefined>;
+  task: AngularFireUploadTask;
+  status: string;
+  preventEdit: boolean = false;
+  downloadUrl: string;
+  images: string[] = [];
 
   constructor(
     private auth: AuthService,

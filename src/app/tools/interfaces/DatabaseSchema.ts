@@ -31,12 +31,12 @@ export interface DatabaseSchema {
   homeProducts: HomeProductsSchema;
   news: NewsSchema;
   projects: ProjectsSchema;
-  ploughs: BaseSchemaModel<Plough>;
-  disks: BaseSchemaModel<Disk>;
+  ploughs:     BaseSchemaModel<Plough>;
+  disks:       BaseSchemaModel<Disk>;
   cultivators: BaseSchemaModel<Cultivator>;
-  rollers: BaseSchemaModel<Roller>;
-  shredders: BaseSchemaModel<Shredder>;
-  sprayers: BaseSchemaModel<Sprayer>;
+  rollers:     BaseSchemaModel<Roller>;
+  shredders:   BaseSchemaModel<Shredder>;
+  sprayers:    BaseSchemaModel<Sprayer>;
 }
 
 export type Exposition = {

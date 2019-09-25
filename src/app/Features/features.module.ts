@@ -8,7 +8,7 @@ import { HistoryComponent } from './about-us/history/history.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './about-us/projects/projects.component';
 import { PipesModule } from '../tools/pipes/pipes.module';
-import { CarouselModule } from 'angular-bootstrap-md';
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 import { TheTeamComponent } from './about-us/the-team/the-team.component';
 import { AboutInnovationsComponent } from './about-us/about-innovations/about-innovations.component';
 import { MatButtonModule, MatTooltipModule } from '@angular/material';
@@ -38,6 +38,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     CarouselModule,
     MatButtonModule,
     MatTooltipModule,
+    WavesModule,
   ],
 })
 export class FeaturesModule {}
