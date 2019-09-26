@@ -7,10 +7,11 @@ import { ProductComponent } from './product/product.component';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
 import { ProductsComponent } from './products.component';
 import { SharedModule } from '../../Shared/shared.module';
-import { CardsFreeModule, TableModule } from 'angular-bootstrap-md';
+import { CardsFreeModule, CarouselModule, TableModule } from 'angular-bootstrap-md';
 import { PipesModule } from '../../tools/pipes/pipes.module';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { TranslateModule } from '@ngx-translate/core';
     PipesModule,
     TableModule,
     TranslateModule,
+    CarouselModule,
+    MatTooltipModule,
   ],
   exports: [
     ProductsComponent,

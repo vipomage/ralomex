@@ -11,26 +11,6 @@
   z-index: 2;
 }
 
-::ng-deep mdb-carousel{
-  
-  .carousel-control-next-icon,.carousel-control-prev-icon{
-    width: 43px;
-    height: 43px;
-  }
-  
-  .carousel-control-next-icon,.carousel-control-prev-icon,.carousel-indicators{
-    filter: drop-shadow(2px 4px 6px black);
-    cursor: pointer;
-    
-    li{
-      height: 10px;
-      margin-right: 3px;
-      border-radius: 14px;
-      margin-left: 14px;
-    }
-  }
-}
-
 .carousel-wrapper{
   height: 1030px;
 }

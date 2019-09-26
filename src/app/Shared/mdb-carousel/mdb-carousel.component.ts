@@ -8,10 +8,12 @@ import { Component, Input } from '@angular/core';
 export class MdbCarouselComponent {
   @Input() public images: string[] | string;
 
-  isArray = val => Array.isArray(val);
+  isArray(val) {
+    return Array.isArray(val);
+  }
 
-  onRightClick = () => {
+  onRightClick(event) {
+    event.stopPropagation();
     return false;
-  };
-  
+  }
 }

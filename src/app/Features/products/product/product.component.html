@@ -1,52 +1,68 @@
-<div *ngIf="item" class="container-fluid">
-  <!--Section: Blog v.4-->
-  <section class="my-5">
-    <!--Grid row-->
+<div *ngIf="item" class="container-fluid product-container">
+  <div class="row justify-content-center">
     <div class="row">
-      <div class="col-md-12">
-        <!--Featured image-->
-        <mdb-card cascade="true" wider="true" reverse="true">
-          <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-            <app-mdb-carousel class="img-fluid" [images]="item.image"></app-mdb-carousel>
-          </div>
-
-          <!--Post data-->
-          <mdb-card-body cascade="true" class="text-center col-sm-10">
-            <h2>
-              <a class="font-weight-bold">Model: {{ item.model }}</a>
-            </h2>
-            <p class="text-capitalize">{{ category }}</p>
-
-            <div class="social-counters ">
-              <a mdbBtn class="waves-light" mdbWavesEffect>
-                <i class="fas fa-arrows-alt-v"></i> Working Depth <br />
-                <span class="d-md-inline-block">{{ item.depthWork }}</span>
-              </a>
-
-              <a mdbBtn class="btn-tw waves-light" mdbWavesEffect>
-                <i class="fas fa-tractor"></i> HP Required <br />
-                <span class="d-md-inline-block">{{ item.reqHP }}</span>
-              </a>
-
-              <a mdbBtn class="btn-gplus waves-light" mdbWavesEffect>
-                <i class="fas fa-running"></i> Speed <br />
-                <span class="d-md-inline-block">{{ item.speed }}+</span>
-              </a>
-
-              <a mdbBtn class="waves-light" mdbWavesEffect>
-                <i class="fas fa-weight-hanging"></i> Weight <br />
-                <span class="d-md-inline-block">{{ item.weight }}</span>
-              </a>
-            </div>
-          </mdb-card-body>
-          <!--Post data-->
-        </mdb-card>
-        <!--Excerpt-->
+      <mdb-carousel
+        *ngIf="item.image && isArray(item.image)"
+        interval="8000"
+        class="carousel slide carousel-fade"
+        [animation]="'fade'"
+      >
+        <mdb-carousel-item class="carousel-wrapper" *ngFor="let image of item.image; let isFirst = first">
+          <div class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + image + ')' }"></div>
+        </mdb-carousel-item>
+      </mdb-carousel>
+      <mdb-carousel *ngIf="!item.image || !isArray(item.image)" class="carousel carousel-fade">
+        <mdb-carousel-item class="carousel-wrapper">
+          <div *ngIf="item.image" class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + item.image + ')' }"></div>
+          <div *ngIf="!item.image" class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + randomImage + ')' }"></div>
+        </mdb-carousel-item>
+      </mdb-carousel>
+    </div>
+    <div class="row details-row m-0">
+      <div class="table-wrapper caption p-4" [ngClass]="type">
+        <table class="product-details">
+          <disks-headers *ngIf="type === 'disks'" [set]="series"></disks-headers>
+          <ploughs-headers *ngIf="type === 'ploughs'" [set]="series"></ploughs-headers>
+          <cultivators-headers *ngIf="type === 'cultivators'" [set]="series"></cultivators-headers>
+          <rollers-headers *ngIf="type === 'rollers'" [set]="series"></rollers-headers>
+          <shredders-headers *ngIf="type === 'shredders'" [set]="series"></shredders-headers>
+          <sprayers-headers *ngIf="type === 'sprayers'" [set]="series"></sprayers-headers>
+          <tbody>
+          <tr class="product-row" [ngClass]="type">
+            <td
+                [ngClass]="item[header.key] === 'n/a' ? 'hide' : ''"
+                class="text-center {{ header.key }}"
+                *ngFor="let header of headers"
+            >
+              <span [ngClass]="header.key" *ngIf="item[header.key] !== 'bolt' && item[header.key] !== 'spring'">
+                {{ item[ header.key ] }}
+              </span>
+              <img
+                  matTooltipPosition="above"
+                  matTooltip="{{ 'bolt' | translate }}"
+                  class="bolt"
+                  *ngIf="item[header.key] === 'bolt'"
+                  src="../../../../assets/table-icons/threaded_bolt_T.png"
+                  alt=""
+              />
+              <img
+                  matTooltipPosition="above"
+                  matTooltip="{{ 'spring' | translate }}"
+                  class="spring"
+                  *ngIf="item[header.key] === 'spring'"
+                  src="../../../../assets/table-icons/spring.png"
+                  alt=""
+              />
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-    <!--Grid row-->
-    <hr class="mb-5 mt-4" />
-  </section>
-  <!--Section: Blog v.4-->
+  </div>
+  <div id="preloader" *ngIf="item.image" [hidden]="true" class="preloader hidden disabled">
+    <div *ngFor="let image of item.image">
+      <img hidden async type="image" [src]="image" />
+    </div>
+  </div>
 </div>

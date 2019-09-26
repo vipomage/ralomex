@@ -42,6 +42,10 @@
     &.scale-up img {
       transform: scale(1.2);
     }
+    
+    &.scale-down img{
+      transform: scale(0.8);
+    }
   }
 }
 tbody {

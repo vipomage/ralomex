@@ -48,6 +48,12 @@ import { MatTooltipModule } from '@angular/material';
     NavbarComponent,
     ProductTableComponent,
     FixedContactPopupComponent,
+    ProductTableDisksHeadersComponent,
+    ProductTablePloughsHeadersComponent,
+    ProductTableCultivatorsHeadersComponent,
+    ProductTableRollersHeadersComponent,
+    ProductTableShreddersHeadersComponent,
+    ProductTableSprayersHeadersComponent,
   ],
   imports: [
     CommonModule,

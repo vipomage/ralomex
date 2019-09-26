@@ -11,6 +11,8 @@ html {
   overflow-y: scroll;
   color: #707777;
   background-color: #f0efea;
+  overflow-x: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 div.mat-tooltip{
   font-size: $tooltipFontSize;
@@ -41,6 +43,26 @@ body {
     text-transform: capitalize;
   }
 }
+
+
+  
+  .carousel-control-next-icon,.carousel-control-prev-icon{
+    width: 43px!important;
+    height: 43px!important;
+  }
+  
+  .carousel-control-next-icon,.carousel-control-prev-icon,.carousel-indicators{
+    filter: drop-shadow(2px 4px 6px black);
+    cursor: pointer;
+    
+    li{
+      height: 10px!important;
+      margin-right: 3px!important;
+      border-radius: 14px!important;
+      margin-left: 14px!important;
+    }
+  }
+
 
 .drop-shadow{
   filter: drop-shadow(1px 1px 1px rgba(0,0,0,.5));
