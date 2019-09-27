@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { News } from '../../../../../tools/interfaces/news';
 import { FireService } from '../../../../../tools/services/fire.service';
+import { DbLocation } from '../../../../../tools/interfaces/DatabaseSchema';
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
 
 @Component({
@@ -27,7 +28,7 @@ export class AddNewsComponent {
   saveNewsElement = (formData: News) => {
     formData.timeStamp = Date.now();
     formData.image = this.image;
-    this.db.AdminUtils.addElement(formData, 'news').then(() => {
+    this.db.AdminUtils.addElement(formData, DbLocation.NEWS).then(() => {
       //todo
       // saved notification
       // clear Form

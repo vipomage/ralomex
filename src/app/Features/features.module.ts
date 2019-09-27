@@ -16,8 +16,12 @@ import { TeamCardComponent } from './about-us/the-team/team-card/team-card.compo
 import { NewsComponent } from './news/news.component';
 import { ExpositionsComponent } from './about-us/expositions/expositions.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { CertificatesComponent } from './about-us/certificates/certificates.component';
+import { CertificateDialogComponent } from './about-us/certificates/certificate-dialog/certificate-dialog.component';
 
 @NgModule({
+  entryComponents: [CertificateDialogComponent],
   declarations: [
     AwardsComponent,
     HistoryComponent,
@@ -28,7 +32,9 @@ import { ContactsComponent } from './contacts/contacts.component';
     TeamCardComponent,
     NewsComponent,
     ExpositionsComponent,
-    ContactsComponent
+    ContactsComponent,
+    CertificatesComponent,
+    CertificateDialogComponent,
   ],
   imports: [
     RouterModule.forChild(featureRoutes),
@@ -39,6 +45,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     MatButtonModule,
     MatTooltipModule,
     WavesModule,
+    TranslateModule,
   ],
 })
 export class FeaturesModule {}

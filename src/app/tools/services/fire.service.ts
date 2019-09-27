@@ -9,7 +9,7 @@ import {
   BaseSchemaModel,
   DatabaseSchema,
   DbLocation,
-  Disk,
+  Disk, FirebaseResponseModel, Innovation,
   IUnion,
   Plough,
   ProductIUnion,
@@ -19,6 +19,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { config } from './config.service';
 import { mapTo } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
+import { Award } from '../interfaces/award';
+import { Project } from '../interfaces/project';
 
 @Injectable({
   providedIn: 'root',
@@ -77,8 +79,8 @@ export class FireService {
           this.toastrService.error('Error Occurred');
         }),
 
-    getElements: (elementType: DbLocation): Observable<IUnion> =>
-      this.http.get<IUnion>(`${this.databaseUrl}/${elementType}.json`),
+    getElements: (elementType: DbLocation): Observable<FirebaseResponseModel> =>
+      this.http.get<FirebaseResponseModel>(`${this.databaseUrl}/${elementType}.json`),
 
     deleteElementById: (id: string, elementType: DbLocation) =>
       this.db.database

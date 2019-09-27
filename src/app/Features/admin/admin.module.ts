@@ -29,13 +29,17 @@ import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
 import { AdminExpositionsComponent } from './about/admin-expositions/admin-expositions.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ExpoPreviewDialogComponent } from './about/admin-expositions/expo-preview-dialog/expo-preview-dialog.component';
+import { InnovationsDialogComponent } from './about/admin-expositions/innovations-dialog/innovations-dialog.component';
+import { AdminCertificateComponent } from './about/admin-certificate/admin-certificate.component';
 
 @NgModule({
   entryComponents: [
     ProductAddDialog,
     TeamDialogComponent,
     AdminExpositionsComponent,
-    ExpoPreviewDialogComponent
+    ExpoPreviewDialogComponent,
+    InnovationsDialogComponent,
+    AdminCertificateComponent
   ],
   imports: [
     CommonModule,
@@ -74,6 +78,8 @@ import { ExpoPreviewDialogComponent } from './about/admin-expositions/expo-previ
     TeamDialogComponent,
     AdminExpositionsComponent,
     ExpoPreviewDialogComponent,
+    InnovationsDialogComponent,
+    AdminCertificateComponent,
   ],
   exports: [RouterModule],
 })

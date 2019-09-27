@@ -3,7 +3,7 @@ import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Award } from '../../../../../tools/interfaces/award';
 import { Observable } from 'rxjs';
-import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
+import { DbLocation, FirebaseResponseModel } from '../../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-edit-awards',
@@ -13,7 +13,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
 export class EditAwardsComponent {
   constructor(private db: FireService, private imgService: ImageService) {}
 
-  elements: Observable<IUnion> = this.db.AdminUtils.getElements('awards');
+  elements: Observable<FirebaseResponseModel> = this.db.AdminUtils.getElements(DbLocation.AWARDS);
   awardElementId: string;
   awardElement: Award;
 
@@ -26,7 +26,7 @@ export class EditAwardsComponent {
     let confirm = window.confirm('Сигурни ли сте че искате да изтриете тази новина!');
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.AdminUtils.deleteElementById(elementId, 'awards');
+      return this.db.AdminUtils.deleteElementById(elementId, DbLocation.AWARDS);
     }
   };
 

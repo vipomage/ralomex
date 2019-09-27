@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { HomeProduct } from '../../../../../tools/interfaces/home-product';
+import { DbLocation } from '../../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-add-home',
@@ -11,6 +12,6 @@ export class AddHomeComponent {
   constructor(private db: FireService) {}
 
   saveHomeElement = (formData: HomeProduct) => {
-    this.db.AdminUtils.addElement(formData, 'homeProducts');
+    this.db.AdminUtils.addElement(formData, DbLocation.HOME_PRODUCTS);
   };
 }

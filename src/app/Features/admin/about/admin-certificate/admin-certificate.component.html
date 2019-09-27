@@ -1,0 +1,15 @@
+<div class="container justify-content-center" [formGroup]="certificateFormGroup">
+  <mat-form-field class="col-6">
+    <mat-label>Заглавие</mat-label>
+    <input formControlName="heading" matInput type="text" />
+  </mat-form-field>
+  <input class="row" (change)="fileFormControl.patchValue($event.target.files)" type="file" />
+  <mat-form-field class="col-12">
+    <mat-label>Описание</mat-label>
+    <input formControlName="description" matInput type="text" />
+  </mat-form-field>
+  <div class="row mt-2">
+    <button (click)="discard()" class="btn btn-warning text-capitalize">discard</button>
+    <button (click)="save()"    class="btn btn-success text-capitalize">save</button>
+  </div>
+</div>

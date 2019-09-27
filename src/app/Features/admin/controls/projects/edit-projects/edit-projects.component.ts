@@ -3,7 +3,7 @@ import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Observable } from 'rxjs';
 import { Project } from '../../../../../tools/interfaces/project';
-import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
+import { DbLocation, FirebaseResponseModel } from '../../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-edit-projects',
@@ -13,7 +13,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
 export class EditProjectsComponent {
   constructor(private db: FireService, private imgService: ImageService) {}
 
-  elements: Observable<IUnion> = this.db.AdminUtils.getElements('projects');
+  elements: Observable<FirebaseResponseModel> = this.db.AdminUtils.getElements(DbLocation.PROJECTS);
   projectElementId: string;
   projectElement: Project;
 
@@ -26,7 +26,7 @@ export class EditProjectsComponent {
     let confirm = window.confirm('Сигурни ли сте че искате да изтриете тази новина!');
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.AdminUtils.deleteElementById(elementId, 'projects');
+      return this.db.AdminUtils.deleteElementById(elementId, DbLocation.PROJECTS);
     }
   };
 

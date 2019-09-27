@@ -1,0 +1,20 @@
+<div class="container-fluid admin-expositions-container">
+  <angular-editor [formControl]="innovationsFormControl" [config]="editorConfig"></angular-editor>
+  <div class="col-12 py-2">
+    <mat-form-field class="col-8">
+      <mat-label>Заглавие</mat-label>
+      <input matInput [formControl]="headingFormControl" type="text">
+    </mat-form-field>
+    <input class="col-4" (change)="fileFormControl.patchValue($event.target.files)" type="file"/></div>
+  <hr class="m-1">
+  <div class="py-1 px-3 row justify-content-between">
+    <button (click)="discard()" class="btn btn-warning text-capitalize">discard</button>
+    <button
+      [disabled]="innovationsFormControl.invalid || fileFormControl.invalid || headingFormControl.invalid"
+      (click)="save()"
+      class="btn btn-success text-capitalize"
+    >
+      save
+    </button>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { Project } from '../../../../../tools/interfaces/project';
+import { DbLocation } from '../../../../../tools/interfaces/DatabaseSchema';
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
 
 @Component({
@@ -30,7 +31,7 @@ export class AddProjectsComponent {
     } else {
       delete formData.image;
     }
-    this.db.AdminUtils.addElement(formData, 'projects').then(() => {
+    this.db.AdminUtils.addElement(formData, DbLocation.PROJECTS).then(() => {
       //todo
       // saved notification
       // clear Form

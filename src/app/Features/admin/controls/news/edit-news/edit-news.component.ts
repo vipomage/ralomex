@@ -3,7 +3,7 @@ import { News } from '../../../../../tools/interfaces/news';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { ImageService } from '../../../../../tools/services/image.service';
 import { Observable } from 'rxjs';
-import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
+import { DbLocation, FirebaseResponseModel } from '../../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-edit-news',
@@ -11,7 +11,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
   styleUrls: ['./edit-news.component.css'],
 })
 export class EditNewsComponent {
-  elements: Observable<IUnion> = this.db.AdminUtils.getElements('news');
+  elements: Observable<FirebaseResponseModel> = this.db.AdminUtils.getElements(DbLocation.NEWS);
   newsElementId: string;
   newsElement: News;
 
@@ -26,7 +26,7 @@ export class EditNewsComponent {
     let confirm = window.confirm('Сигурни ли сте че искате да изтриете тази новина!');
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.AdminUtils.deleteElementById(elementId, 'news');
+      return this.db.AdminUtils.deleteElementById(elementId, DbLocation.NEWS);
     }
   };
 

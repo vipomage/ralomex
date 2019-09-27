@@ -5,6 +5,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
 import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
 import { AdminExpositionsComponent } from './about/admin-expositions/admin-expositions.component';
+import { InnovationsDialogComponent } from './about/admin-expositions/innovations-dialog/innovations-dialog.component';
+import { AdminCertificateComponent } from './about/admin-certificate/admin-certificate.component';
 
 @Component({
   selector: 'app-admin',
@@ -55,5 +57,29 @@ export class AdminComponent implements OnInit {
     };
   
     this.dialog.open(AdminExpositionsComponent, dialogConfig);
+  }
+  
+  showInnovationsDialog(){
+    const dialogConfig: MatDialogConfig = {
+      minWidth:'70vw',
+      maxHeight:'90vh',
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      disableClose: true,
+    };
+    
+    this.dialog.open(InnovationsDialogComponent, dialogConfig);
+  }
+  
+  showCertificateDialog(){
+    const dialogConfig: MatDialogConfig = {
+      minWidth:'50vw',
+      maxHeight:'90vh',
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      disableClose: true,
+    };
+    
+    this.dialog.open(AdminCertificateComponent,dialogConfig);
   }
 }

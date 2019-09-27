@@ -21,9 +21,21 @@ export interface Header {
   value: string;
 }
 
-export type IUnion = Award | Project | News | HomeProduct | Exposition;
-export type DbLocation = 'awards' | 'news' | 'homeProducts' | 'projects'| 'expositions';
+export interface FirebaseResponseModel {
+  [propName: string]: Award | Project | News | HomeProduct | Exposition | Innovation;
+}
 
+export type IUnion = Award | Project | News | HomeProduct | Exposition | Innovation;
+
+export enum DbLocation {
+  AWARDS = 'awards',
+  NEWS = 'news',
+  HOME_PRODUCTS = 'homeProducts',
+  PROJECTS = 'projects',
+  EXPOSITIONS = 'expositions',
+  INNOVATIONS = 'innovations',
+  CERTIFICATES = 'certificates'
+}
 export type ProductIUnion = Plough | Disk | Cultivator | Roller | Shredder | Sprayer;
 
 export interface DatabaseSchema {
@@ -31,18 +43,25 @@ export interface DatabaseSchema {
   homeProducts: HomeProductsSchema;
   news: NewsSchema;
   projects: ProjectsSchema;
-  ploughs:     BaseSchemaModel<Plough>;
-  disks:       BaseSchemaModel<Disk>;
+  ploughs: BaseSchemaModel<Plough>;
+  disks: BaseSchemaModel<Disk>;
   cultivators: BaseSchemaModel<Cultivator>;
-  rollers:     BaseSchemaModel<Roller>;
-  shredders:   BaseSchemaModel<Shredder>;
-  sprayers:    BaseSchemaModel<Sprayer>;
+  rollers: BaseSchemaModel<Roller>;
+  shredders: BaseSchemaModel<Shredder>;
+  sprayers: BaseSchemaModel<Sprayer>;
 }
 
-export type Exposition = {
-  data:string;
-  timeStamp:number;
-};
+export interface Innovation {
+  heading: string;
+  image: string;
+  data: string;
+  timeStamp: number;
+}
+
+export interface Exposition {
+  data: string;
+  timeStamp: number;
+}
 
 export interface TeamMember {
   name: string;
@@ -50,7 +69,7 @@ export interface TeamMember {
   duty: string;
   email: string;
   phone: string;
-  avatarUrl:string;
+  avatarUrl: string;
 }
 
 export interface BaseSchemaModel<T> {

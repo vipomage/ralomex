@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { FireService } from '../../../../tools/services/fire.service';
 import { ExpoPreviewDialogComponent } from './expo-preview-dialog/expo-preview-dialog.component';
+import { DbLocation } from '../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-admin-expositions',
@@ -38,6 +39,7 @@ export class AdminExpositionsComponent {
   };
   fb: FormBuilder = new FormBuilder();
   expositionFormControl = this.fb.control('');
+  
   constructor(
     private dialogRef: MatDialogRef<AdminExpositionsComponent>,
     private fireService: FireService,
@@ -59,7 +61,7 @@ export class AdminExpositionsComponent {
       now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
     await this.fireService.AdminUtils.addElement(
       { data: this.expositionFormControl.value, timeStamp: utc_timestamp },
-      'expositions'
+      DbLocation.EXPOSITIONS
     );
     this.dialogRef.close();
   }

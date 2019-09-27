@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FireService } from '../../../tools/services/fire.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DbLocation, FirebaseResponseModel } from '../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-expositions',
@@ -9,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   encapsulation:ViewEncapsulation.Emulated
 })
 export class ExpositionsComponent implements OnInit{
-  expositions;
+  expositions: FirebaseResponseModel;
   
   constructor(
     private fireService:FireService,
@@ -21,6 +22,6 @@ export class ExpositionsComponent implements OnInit{
   }
   
   async ngOnInit() {
-    this.expositions = await this.fireService.AdminUtils.getElements('expositions').toPromise();
+    this.expositions = await this.fireService.AdminUtils.getElements(DbLocation.EXPOSITIONS).toPromise();
   }
 }

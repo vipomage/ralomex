@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FireService } from '../../../tools/services/fire.service';
+import { DbLocation } from '../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-awards',
@@ -7,6 +8,6 @@ import { FireService } from '../../../tools/services/fire.service';
   styleUrls: ['./awards.component.css'],
 })
 export class AwardsComponent {
-  awards = this.db.AdminUtils.getElements('awards').toPromise();
+  awards = this.db.AdminUtils.getElements(DbLocation.AWARDS).toPromise();
   constructor(private db: FireService) {}
 }

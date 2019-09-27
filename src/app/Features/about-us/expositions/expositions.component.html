@@ -1,7 +1,7 @@
 <div *ngIf="expositions" class="container-fluid expositions-container">
-  <section *ngFor="let expo of expositions | keyvalue:sortByDate">
+  <section *ngFor="let expo of expositions | keyvalue : sortByDate">
     <div class="exposition" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(expo.value.data)"></div>
-    <p>Published on: <span class="text-info font-italic">{{expo.value.timeStamp|date:'dd MMMM yyyy'}}</span></p>
+    <p class="text-capitalize">{{'published on'|translate}}: <span class="text-info font-italic">{{expo.value.timeStamp|date:'dd MMMM yyyy'}}</span></p>
     <hr>
   </section>
 </div>

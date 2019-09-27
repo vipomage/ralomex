@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FireService } from '../../tools/services/fire.service';
+import { DbLocation } from '../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { FireService } from '../../tools/services/fire.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit{
-  public homeProducts =this.db.AdminUtils.getElements('homeProducts');
+  public homeProducts =this.db.AdminUtils.getElements(DbLocation.HOME_PRODUCTS);
   
   randomIndex:number = 0;
   images:string[] = [

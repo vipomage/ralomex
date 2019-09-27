@@ -24,6 +24,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,6 +47,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatDialogModule,
     FeaturesModule,
     SharedModule,
     MDBBootstrapModule.forRoot(),
@@ -58,6 +60,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   ],
   bootstrap: [AppComponent],
   providers: [FireService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
-  exports: [RouterModule,TranslateModule],
+  exports: [RouterModule],
 })
 export class AppModule {}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FireService } from '../../../../../tools/services/fire.service';
 import { HomeProduct } from '../../../../../tools/interfaces/home-product';
-import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
+import { DbLocation, FirebaseResponseModel } from '../../../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-edit-home',
@@ -10,7 +10,7 @@ import { IUnion } from '../../../../../tools/interfaces/DatabaseSchema';
   styleUrls: ['./edit-home.component.css'],
 })
 export class EditHomeComponent {
-  elements: Observable<IUnion> = this.db.AdminUtils.getElements('homeProducts');
+  elements: Observable<FirebaseResponseModel> = this.db.AdminUtils.getElements(DbLocation.HOME_PRODUCTS);
   homeElementId: string;
   homeElement: HomeProduct;
 
@@ -25,7 +25,7 @@ export class EditHomeComponent {
     let confirm = window.confirm('Сигурни ли сте че искате да изтриете този елемент');
     if (confirm) {
       window.document.getElementById(elementId).remove();
-      return this.db.AdminUtils.deleteElementById(elementId, 'homeProducts');
+      return this.db.AdminUtils.deleteElementById(elementId, DbLocation.HOME_PRODUCTS);
     }
   };
 

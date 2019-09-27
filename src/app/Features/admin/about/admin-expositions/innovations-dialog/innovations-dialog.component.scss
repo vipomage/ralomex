@@ -1,11 +1,10 @@
 ::ng-deep angular-editor {
   .angular-editor-toolbar {
-    position: fixed;
+    position: relative;
     z-index: 2;
   }
   .angular-editor-wrapper {
-    padding-top: 60px;
-
+    
     .angular-editor-placeholder {
       display: none !important;
     }
