@@ -1,13 +1,50 @@
 <thead class="p-2 sprayers">
   <tr class="headers">
     <th class="text-capitalize">
-      <p class="font-weight-bold">{{ name | translate }}</p>
-      <p>{{'series' | translate}} <span class="text-uppercase">{{ set |translate}}</span></p>
+<!--      <p class="font-weight-bold">{{ name | translate }}</p>-->
+      <p>
+        {{ 'series' | translate }} <span class="text-uppercase">{{ set | translate }}</span>
+      </p>
     </th>
-    <th><img matTooltipPosition="above" matTooltip="{{'tank capacity'|translate}}" src="../../../../../assets/table-icons/tankCapacity.png" alt="" /></th>
-    <th *ngIf="set === 'demetra'"><img  matTooltipPosition="above" matTooltip="{{'working width'|translate}}" src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
-    <th *ngIf="set === 'ralko'"><img matTooltipPosition="above" matTooltip="{{'fan diameter'|translate}}" src="../../../../../assets/table-icons/fanDiameter.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'sprayers count'|translate}}" src="../../../../../assets/table-icons/sprayersCount.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'pump type'|translate}}" src="../../../../../assets/table-icons/pumpType.png" alt="" /></th>
+    <th (click)="capacity.toggle()">
+      <img
+        #capacity=matTooltip
+        matTooltipPosition="above"
+        matTooltip="{{ 'tank capacity' | translate }}"
+        src="../../../../../assets/table-icons/tankCapacity.png"
+      />
+    </th>
+    <th *ngIf="set === 'demetra'" (click)="wWidth.toggle()">
+      <img
+        #wWidth=matTooltip
+        matTooltipPosition="above"
+        matTooltip="{{ 'working width' | translate }}"
+        src="../../../../../assets/table-icons/workingWidth.png"
+      />
+    </th>
+    <th *ngIf="set === 'ralko'" (click)="fan.toggle()">
+      <img
+        #fan=matTooltip
+        matTooltipPosition="above"
+        matTooltip="{{ 'fan diameter' | translate }}"
+        src="../../../../../assets/table-icons/fanDiameter.png"
+      />
+    </th>
+    <th (click)="sprayers.toggle()">
+      <img
+        #sprayers=matTooltip
+        matTooltipPosition="above"
+        matTooltip="{{ 'sprayers count' | translate }}"
+        src="../../../../../assets/table-icons/sprayersCount.png"
+      />
+    </th>
+    <th (click)="pump.toggle()">
+    <img
+      #pump=matTooltip
+        matTooltipPosition="above"
+        matTooltip="{{ 'pump type' | translate }}"
+        src="../../../../../assets/table-icons/pumpType.png"
+      />
+    </th>
   </tr>
 </thead>

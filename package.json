@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "e2e": "ng e2e",
     "lint": "ng lint",
+    "local-network": "ng serve --host=0.0.0.0",
     "build": "ng build --prod --base-href https://erayismail.online",
     "cleanFolders": "rm -rf dist && rm -rf docs",
     "renameDistToDocs": "cp ./src/CNAME ./dist && mv ./dist ./docs",

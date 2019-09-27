@@ -1,16 +1,16 @@
 <thead class="p-2 shredders">
   <tr class="headers">
     <th class="text-capitalize">
-      <p class="font-weight-bold">{{ name | translate }}</p>
+<!--      <p class="font-weight-bold">{{ name | translate }}</p>-->
       <p>{{'series' | translate}} <span class="text-uppercase">{{ set |translate}}</span></p>
     </th>
-    <th><img matTooltipPosition="above" matTooltip="{{'body count'|translate}}"  src="../../../../../assets/table-icons/shreddersCount.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'required horse power'|translate}}"  src="../../../../../assets/table-icons/reqHp.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'working width'|translate}}"  src="../../../../../assets/table-icons/workingWidth.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'transport width'|translate}}"  src="../../../../../assets/table-icons/transportWidth.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'transport speed'|translate}}"  src="../../../../../assets/table-icons/transportSpeed.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'operating speed'|translate}}"  src="../../../../../assets/table-icons/workSpeed.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'productivity'|translate}}"  src="../../../../../assets/table-icons/productivity.png" alt="" /></th>
-    <th><img matTooltipPosition="above" matTooltip="{{'weight'|translate}}"  src="../../../../../assets/table-icons/weight.png" alt="" /></th>
+    <th (click)="bodyCount.toggle()"><img #bodyCount=matTooltip matTooltipPosition="above" matTooltip="{{'body count'|translate}}"  src="../../../../../assets/table-icons/shreddersCount.png" /></th>
+    <th (click)="reqHp.toggle()"><img #reqHp=matTooltip matTooltipPosition="above" matTooltip="{{'required horse power'|translate}}"  src="../../../../../assets/table-icons/reqHp.png"/></th>
+    <th (click)="width.toggle()"><img #width=matTooltip matTooltipPosition="above" matTooltip="{{'working width'|translate}}"  src="../../../../../assets/table-icons/workingWidth.png"/></th>
+    <th (click)="trWidth.toggle()"><img #trWidth=matTooltip matTooltipPosition="above" matTooltip="{{'transport width'|translate}}"  src="../../../../../assets/table-icons/transportWidth.png"/></th>
+    <th (click)="trSpeed.toggle()"><img #trSpeed=matTooltip matTooltipPosition="above" matTooltip="{{'transport speed'|translate}}"  src="../../../../../assets/table-icons/transportSpeed.png"/></th>
+    <th (click)="opSpeed.toggle()"><img #opSpeed=matTooltip matTooltipPosition="above" matTooltip="{{'operating speed'|translate}}"  src="../../../../../assets/table-icons/workSpeed.png"/></th>
+    <th (click)="prod.toggle()"><img #prod=matTooltip matTooltipPosition="above" matTooltip="{{'productivity'|translate}}"  src="../../../../../assets/table-icons/productivity.png"/></th>
+    <th (click)="weight.toggle()"><img #weight=matTooltip matTooltipPosition="above" matTooltip="{{'weight'|translate}}"  src="../../../../../assets/table-icons/weight.png"/></th>
   </tr>
 </thead>

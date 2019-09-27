@@ -1,97 +1,97 @@
 <thead class="p-2 ploughs">
   <tr class="headers">
     <th class="text-capitalize">
-      <p class="font-weight-bold">{{ name | translate }}</p>
+<!--      <p class="font-weight-bold">{{ name | translate }}</p>-->
       <p>
         {{ 'series' | translate }} <span class="text-uppercase">{{ set | translate }}</span>
       </p>
     </th>
-    <th class="scale-down">
+    <th class="scale-down" (click)="bodyC.toggle()">
       <img
+        #bodyC=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'body count' | translate }}"
         src="../../../../../assets/table-icons/workBodyCount.png"
-        alt=""
       />
     </th>
-    <th>
+    <th (click)="reqHpTooltip.toggle()">
       <img
+        #reqHpTooltip=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'required horse power' | translate }}"
         src="../../../../../assets/table-icons/reqHp.png"
-        alt=""
       />
     </th>
-    <th>
+    <th (click)="dimensions.toggle()">
       <img
+        #dimensions=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'main beam dimensions' | translate }}"
         src="../../../../../assets/table-icons/mainBeam.png"
-        alt=""
       />
     </th>
-    <th class="scale-up">
+    <th class="scale-up" (click)="distanceBB.toggle()">
       <img
+        #distanceBB=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'distance between bodies' | translate }}"
         src="../../../../../assets/table-icons/bodiesDistance.png"
-        alt=""
       />
     </th>
-    <th class="scale-up">
+    <th class="scale-up" (click)="bwWidth.toggle()">
       <img
+        #bwWidth=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'body working width' | translate }}"
         src="../../../../../assets/table-icons/widthWork.png"
-        alt=""
       />
     </th>
-    <th class="scale-up">
+    <th class="scale-up" (click)="clearance.toggle()">
       <img
+        #clearance=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'clearance' | translate }}"
         src="../../../../../assets/table-icons/clearance.png"
-        alt=""
       />
     </th>
-    <th class="scale-down">
+    <th class="scale-down" (click)="workingDepth.toggle()">
       <img
+        #workingDepth=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'working depth' | translate }}"
         src="../../../../../assets/table-icons/depthWork.png"
-        alt=""
       />
     </th>
-    <th>
+    <th (click)="transSpeed.toggle()">
       <img
+        #transSpeed=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'transport speed' | translate }}"
         src="../../../../../assets/table-icons/transportSpeed.png"
-        alt=""
       />
     </th>
-    <th>
+    <th (click)="opSpeed.toggle()">
       <img
+        #opSpeed=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'operating speed' | translate }}"
         src="../../../../../assets/table-icons/workSpeed.png"
-        alt=""
       />
     </th>
-    <th>
+    <th (click)="prod.toggle()">
       <img
+        #prod=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'productivity' | translate }}"
         src="../../../../../assets/table-icons/productivity.png"
-        alt=""
       />
     </th>
-    <th>
+    <th (click)="weight.toggle()">
       <img
+        #weight=matTooltip
         matTooltipPosition="above"
         matTooltip="{{ 'weight' | translate }}"
         src="../../../../../assets/table-icons/weight.png"
-        alt=""
       />
     </th>
   </tr>

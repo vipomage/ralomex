@@ -2,6 +2,12 @@
   position: relative;
   margin-top: 0;
 }
+::ng-deep mdb-carousel{
+  div.carousel.slide.carousel-fade{
+    touch-action: inherit!important;
+  }
+  
+}
 
 .caption {
   position: absolute;
