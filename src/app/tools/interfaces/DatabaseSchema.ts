@@ -100,6 +100,7 @@ export interface Sprayer {
   fanDiameter: string;
   sprayersCount: string;
   pumpType: string;
+  image: string | string[];
 }
 
 export interface Shredder {
@@ -112,6 +113,7 @@ export interface Shredder {
   workSpeed: string;
   productivity: string;
   weight: string;
+  image: string | string[];
 }
 
 export interface Roller {
@@ -124,6 +126,7 @@ export interface Roller {
   workSpeed: string;
   productivity: string;
   weight: string;
+  image: string | string[];
 }
 
 export interface Cultivator {
@@ -140,6 +143,7 @@ export interface Cultivator {
   workSpeed: string;
   productivity: string;
   weight: string;
+  image: string | string[];
 }
 
 export interface Plough {
