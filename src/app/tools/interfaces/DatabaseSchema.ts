@@ -147,7 +147,7 @@ export interface Plough {
   clearance: string;
   depthWork: string;
   description: string;
-  image: string | string[];
+  image?: string | string[];
   mainBeam: string;
   model: string;
   productivity: string;
@@ -161,6 +161,7 @@ export interface Plough {
 
 export interface Disk {
   model: string;
+  image?: string | string[];
   diskCount: string;
   reqHP: string;
   diskDiameter: string;
