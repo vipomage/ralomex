@@ -64,6 +64,9 @@ body {
 .drop-shadow {
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
 }
+.drop-shadow-less{
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+}
 
 .disabled {
   filter: grayscale(1);

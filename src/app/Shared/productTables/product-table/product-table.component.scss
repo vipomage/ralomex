@@ -39,11 +39,11 @@
       margin: 8px auto;
     }
 
-    &.scale-up img {
+    &.scale-up img, img.scale-up {
       transform: scale(1.2);
     }
     
-    &.scale-down img{
+    &.scale-down img, img.scale-down {
       transform: scale(0.8);
     }
   }

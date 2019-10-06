@@ -13,8 +13,24 @@
       matTooltip="{{ 'disk count' | translate }}"
     >
       <img *ngIf="set === 'bdn' || set === 'bdn-tg' || set === 'bdp-tg'" src="../../../../../assets/table-icons/diskCount.png" />
-      <img *ngIf="set === 'bdp-pp'" src="../../../../../assets/table-icons/diskCount2.png" />
+      <img *ngIf="set === 'bdp-pp'" src="../../../../../assets/table-icons/diskCountBdpp.png" />
       <img *ngIf="set === 'bdp'" src="../../../../../assets/table-icons/diskCount2.png" />
+    </th>
+    <th *ngIf="set !== 'bdp-pp'" (click)="diameterTooltip.toggle()">
+      <img
+        #diameterTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'disk diameter' | translate }}"
+        src="../../../../../assets/table-icons/diskDiameter.png"
+      />
+    </th>
+    <th *ngIf="set === 'bdp-pp'" (click)="diameterTooltip.toggle()">
+      <img
+        #diameterTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'disk diameter' | translate }}"
+        src="../../../../../assets/table-icons/diskDiameterBdpp.png"
+      />
     </th>
     <th (click)="reqHpTooltip.toggle()">
       <img
@@ -22,14 +38,6 @@
         matTooltipPosition="above"
         matTooltip="{{ 'required horse power' | translate }}"
         src="../../../../../assets/table-icons/reqHp.png"
-      />
-    </th>
-    <th (click)="diameterTooltip.toggle()">
-      <img
-        #diameterTooltip="matTooltip"
-        matTooltipPosition="above"
-        matTooltip="{{ 'disk diameter' | translate }}"
-        src="../../../../../assets/table-icons/diskDiameter.png"
       />
     </th>
     <th *ngIf="set === 'bdn' || set === 'bdp'" class="scale-up" (click)="axisSizeTooltip.toggle()">

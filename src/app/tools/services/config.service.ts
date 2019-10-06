@@ -5,8 +5,8 @@ export const config: ConfigSchema = {
     disks: [
       { key: 'model', value: 'Model' },
       { key: 'diskCount', value: 'Disk count' },
-      { key: 'reqHP', value: 'Required HP' },
       { key: 'diskDiameter', value: 'Disk Diameter' },
+      { key: 'reqHP', value: 'Required HP' },
       { key: 'axisSize', value: 'Axis Size' },
       { key: 'workWidth', value: 'Working Width' },
       { key: 'transportWidth', value: 'Transporting Width' },

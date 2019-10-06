@@ -9,7 +9,6 @@ div.popover.popup-container {
   color: white;
   position: fixed;
   transition: ease-in-out 0.5s;
-  border: 1px solid white;
   animation: flashingDropShadow 3s infinite;
 
   &:hover,

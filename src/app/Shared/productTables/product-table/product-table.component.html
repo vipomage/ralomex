@@ -1,6 +1,6 @@
 <table *ngIf="data" mdbTable hover="true">
-  <disks-headers *ngIf="type === 'disks'" [set]="set" [name]="data[set].name"></disks-headers>
   <ploughs-headers *ngIf="type === 'ploughs'" [set]="set" [name]="data[set].name"></ploughs-headers>
+  <disks-headers *ngIf="type === 'disks'" [set]="set" [name]="data[set].name"></disks-headers>
   <cultivators-headers *ngIf="type === 'cultivators'" [set]="set" [name]="data[set].name"></cultivators-headers>
   <rollers-headers *ngIf="type === 'rollers'" [set]="set" [name]="data[set].name"></rollers-headers>
   <shredders-headers *ngIf="type === 'shredders'" [set]="set" [name]="data[set].name"></shredders-headers>
