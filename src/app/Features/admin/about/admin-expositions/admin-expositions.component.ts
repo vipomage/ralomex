@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { FireService } from '../../../../tools/services/fire.service';
 import { ExpoPreviewDialogComponent } from './expo-preview-dialog/expo-preview-dialog.component';
 import { DbLocation } from '../../../../tools/interfaces/DatabaseSchema';
+import { ImageService } from '../../../../tools/services/image.service';
 
 @Component({
   selector: 'app-admin-expositions',
@@ -39,11 +40,15 @@ export class AdminExpositionsComponent {
   };
   fb: FormBuilder = new FormBuilder();
   expositionFormControl = this.fb.control('');
+  fileFormControl = new FormControl('');
+  headingFormControl = new FormControl('',[Validators.required]);
+  @ViewChild('editorComponent',{static: false}) editorComponent;
   
   constructor(
     private dialogRef: MatDialogRef<AdminExpositionsComponent>,
     private fireService: FireService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private imageService:ImageService
   ) {}
 
   discard() {
@@ -51,16 +56,30 @@ export class AdminExpositionsComponent {
       this.dialogRef.close();
     }
   }
-
+  
+  async uploadImage(fileList: FileList) {
+    return await this.imageService.uploadSingle(fileList, 'expositions');
+  }
+  
   async save() {
+    this.fileFormControl.patchValue({
+      imageUrl: await this.uploadImage(this.fileFormControl.value),
+    });
+    
     this.expositionFormControl.patchValue(
       this.expositionFormControl.value.toString().replace('<script>', '!!FORBIDDEN TAG BY USER!!')
     );
     const now = new Date;
     const utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() ,
       now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+  
     await this.fireService.AdminUtils.addElement(
-      { data: this.expositionFormControl.value, timeStamp: utc_timestamp },
+      {
+        heading: this.headingFormControl.value,
+        data: this.expositionFormControl.value,
+        excerpt: this.editorComponent.textArea.nativeElement.innerText.replace('\n',' ').slice(0,85),
+        timeStamp: utc_timestamp,
+        image:this.fileFormControl.value.imageUrl },
       DbLocation.EXPOSITIONS
     );
     this.dialogRef.close();

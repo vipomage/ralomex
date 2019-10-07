@@ -6,7 +6,8 @@
         <div class="col-md-7 col-12 product-description">
           <p>{{ productData.description }}</p>
         </div>
-        <div class="col-md-5 col-12 background-image"
+        <div
+          class="col-md-5 col-12 background-image"
           *ngIf="!images"
           [ngStyle]="{ backgroundImage: 'url(' + productData.image + ')' }"
         ></div>
@@ -16,10 +17,20 @@
         <div class="card" *ngFor="let set of series">
           <div class="z-depth-1" role="tab" id="heading-{{ set }}">
             <a data-toggle="collapse" data-parent="#accordion" href="#{{ set }}" aria-expanded="true" [attr.aria-controls]="set">
-              <h4 class="pl-4 mb-0 text-capitalize series-heading text-center text-md-left">{{ 'series' | translate }} - <span class="text-uppercase">{{ set | translate }}</span></h4>
+              <h4 class="pl-4 mb-0 text-capitalize series-heading text-center text-md-left">
+                {{ 'series' | translate }} - <span class="text-uppercase">{{ set | translate }}</span>
+              </h4>
             </a>
           </div>
-          <div id="{{ set }}" class="collapse" role="tabpanel" [attr.aria-labelledby]="'heading-' + set" data-parent="#accordion">
+          <div
+            #element
+            id="{{ set }}"
+            [class.show]="selectedSet === set"
+            class="collapse"
+            role="tabpanel"
+            [attr.aria-labelledby]="'heading-' + set"
+            data-parent="#accordion"
+          >
             <div class="p-0 card-body mb-1 rgba-grey-light white-text">
               <app-product-table [type]="productType" [data]="data" [set]="set"></app-product-table>
             </div>

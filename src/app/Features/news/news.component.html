@@ -1,19 +1,16 @@
 <div class="container-fluid">
   <section *ngIf="latestNewsElement" class="magazine-section my-5">
-    <h1 class="h1-responsive font-weight-bold text-center my-5">Новини</h1>
+    <h1 class="h1-responsive font-weight-bold text-center my-5 text-capitalize">{{ 'news' | translate }}</h1>
     <div class="row">
       <div *ngIf="latestNewsElement.image" class="col-lg-6 col-md-12">
-        <div class="single-news mb-lg-0 mb-4">
+        <div (click)="showDialog(latestNewsElement)" class="single-news mb-lg-0 mb-4">
           <div class="view overlay rounded z-depth-1-half mb-4">
             <img class="img-fluid" src="{{ latestNewsElement.image }}" alt="Latest news image" />
-            <a routerLink=""> <div class="mask rgba-white-slight"></div> </a>
           </div>
           <div class="news-data d-flex justify-content-between">
-            <a routerLink="" class="deep-orange-text">
-              <h4 class="font-weight-bold h4-responsive">
-                {{ latestNewsElement.heading }}
-              </h4>
-            </a>
+            <h4 class="font-weight-bold h4-responsive">
+              {{ latestNewsElement.heading }}
+            </h4>
             <p class="font-weight-bold dark-grey-text">
               <i class="fas fa-clock-o pr-2"></i>{{ latestNewsElement.timeStamp | date }}
             </p>
@@ -24,13 +21,11 @@
         </div>
       </div>
       <div *ngIf="!latestNewsElement.image" class="col-lg-6 col-md-12">
-        <div class="single-news mb-lg-0 mb-4">
+        <div (click)="showDialog(latestNewsElement)" class="single-news mb-lg-0 mb-4">
           <div class="news-data d-flex justify-content-between">
-            <a routerLink="" class="deep-orange-text">
-              <h4 class="font-weight-bold h4-responsive">
-                {{ latestNewsElement.heading }}
-              </h4>
-            </a>
+            <h4 class="font-weight-bold h4-responsive">
+              {{ latestNewsElement.heading }}
+            </h4>
             <p class="font-weight-bold dark-grey-text">
               <i class="fas fa-clock-o pr-2"></i>{{ latestNewsElement.timeStamp | date }}
             </p>
@@ -41,14 +36,11 @@
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
-        <div *ngFor="let newsElement of news" class="single-news mb-4">
+        <div *ngFor="let newsElement of news" (click)="showDialog(latestNewsElement)" class="single-news mb-4">
           <div class="row">
             <div class="col-md-3">
               <div class="view overlay rounded z-depth-1 mb-4">
                 <img class="img-fluid" src="{{ newsElement.image }}" alt="Sample image" />
-                <a routerLink="">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
               </div>
             </div>
             <div class="col-md-9">
@@ -57,9 +49,9 @@
               </p>
               <div class="d-flex justify-content-between">
                 <div class="col-11 pl-0 mb-3">
-                  <a routerLink="" class="dark-grey-text">
+                  <p class="dark-grey-text">
                     {{ newsElement.content.slice(0, 160) }}
-                  </a>
+                  </p>
                 </div>
                 <a><i class="fas fa-angle-double-right"></i></a>
               </div>

@@ -1,0 +1,12 @@
+<div *ngIf="expo" class="container-fluid expositions-container">
+  <section class="d-flex flex-column p-5 justify-content-center">
+    <h2 class="mb-5 text-center">{{ expo.heading }}</h2>
+    <img class="w-100 mb-5" [attr.src]="expo.image" alt="" />
+    <div class="exposition" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(expo.data)"></div>
+    <p class="text-capitalize mt-3">
+      {{ 'published on' | translate }}:
+      <span class="text-info font-italic">{{ expo.timeStamp | date: 'dd MMMM yyyy' }}</span>
+    </p>
+    <hr />
+  </section>
+</div>

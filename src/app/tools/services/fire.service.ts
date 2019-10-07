@@ -9,7 +9,7 @@ import {
   BaseSchemaModel,
   DatabaseSchema,
   DbLocation,
-  Disk, FirebaseResponseModel, Innovation,
+  Disk, Exposition, FirebaseResponseModel, Innovation,
   IUnion,
   Plough,
   ProductIUnion,
@@ -102,6 +102,10 @@ export class FireService {
           //Notification
         }),
   };
+  
+  getSingleExpo(id:string): Observable<Exposition>{
+    return this.http.get<Exposition>(`${this.databaseUrl}/expositions/${id}.json`)
+  }
 
   PloughUtils = {
     getPlough: (category: string, series: string, id: string): Observable<ProductIUnion> =>

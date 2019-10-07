@@ -1,14 +1,15 @@
 <div class="container-fluid">
   <app-certificates class="row m-3 d-flex flex-column"></app-certificates>
-  
-  <section class="row m-3 d-flex flex-column"
-           *ngFor="let innovation of innovations | async | keyvalue: sortByDate;let isOdd = odd">
+
+  <section
+    class="row m-3 d-flex flex-column"
+    *ngFor="let innovation of innovations | async | keyvalue: sortByDate; let isOdd = odd"
+  >
     <h2 class="row text-capitalize p-2">{{ innovation.value.heading }}</h2>
     <div [class.flex-row-reverse]="isOdd" class="row d-flex">
-      <div class="col-6 content p-5" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(innovation.value.data)"></div>
-      <div class="col-6 image" [ngStyle]="{ backgroundImage: 'url(' + innovation.value.image + ')' }"></div>
+      <div class="col-12 col-md-6 content p-5" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(innovation.value.data)"></div>
+      <div class="col-12 col-md-6 image" [ngStyle]="{ backgroundImage: 'url(' + innovation.value.image + ')' }"></div>
     </div>
     <hr />
   </section>
-  
 </div>

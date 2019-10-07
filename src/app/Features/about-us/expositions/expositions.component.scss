@@ -1,9 +1,15 @@
-.exposition{
-  ::ng-deep{
-    
-    img{
-      width: 100%;
-    }
+.single-news {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+img {
+  border-radius: 0.25rem !important;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.exposition:hover{
+  cursor: pointer;
+  img{
+    box-shadow: 0 0 20px 0 black;
   }
-  
 }

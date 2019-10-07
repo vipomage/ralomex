@@ -14,6 +14,7 @@ export const productsRouting: Routes = [
         pathMatch: 'full',
       },
       { path: 'overview/:type/:category', component: CategoryOverviewComponent, pathMatch: 'full' },
+      { path: 'overview/:type/:category/:set', component: CategoryOverviewComponent },
     ],
   },
 ];

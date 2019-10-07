@@ -1,7 +1,51 @@
-<div *ngIf="expositions" class="container-fluid expositions-container">
-  <section *ngFor="let expo of expositions | keyvalue : sortByDate">
-    <div class="exposition" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(expo.value.data)"></div>
-    <p class="text-capitalize">{{'published on'|translate}}: <span class="text-info font-italic">{{expo.value.timeStamp|date:'dd MMMM yyyy'}}</span></p>
-    <hr>
+<div class="container-fluid">
+  <section class="magazine-section my-5">
+    <h1 class="h1-responsive font-weight-bold text-center my-5 text-capitalize">{{ 'expositions' | translate }}</h1>
+    <div class="row">
+      <div class="col-lg-6 col-md-12" [routerLink]="singleExpo.id" *ngFor="let singleExpo of expositions | slice: 0:1" >
+        <div class="mb-lg-0 mb-4 exposition">
+          <div class="view overlay rounded z-depth-1-half mb-4 d-flex justify-content-center">
+            <img class="img-fluid" src="{{ singleExpo.image }}" alt="Latest news image" />
+          </div>
+          <div class="news-data d-flex justify-content-between">
+            <h5 class="font-weight-bold h4-responsive">
+              {{ singleExpo.heading }}
+            </h5>
+            <p class="font-weight-bold text-info col-auto">
+              <i class="fas fa-clock-o pr-2"></i>{{ singleExpo.timeStamp | date }}
+            </p>
+          </div>
+          <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4 text-truncate">
+            {{ singleExpo.excerpt }}
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div [routerLink]="expo.id" *ngFor="let expo of expositions | slice: 1" class="mb-4 exposition">
+          <div class="row">
+            <div class="col-md-3 my-auto">
+              <div class="view overlay rounded z-depth-1 mb-4">
+                <img class="img-fluid" src="{{ expo.image }}" alt="Sample image" />
+              </div>
+            </div>
+            <div class="col-md-9">
+              <p class="font-weight-bold text-info">
+                {{ expo.timeStamp | date }}
+              </p>
+              <h5>{{ expo.heading }}</h5>
+              <div class="d-flex justify-content-between">
+                <div class="col-11 pl-0 mb-3">
+                  <p class="dark-grey-text text-truncate">
+                    {{ expo.excerpt }}
+                  </p>
+                </div>
+                <a><i class="fas fa-angle-double-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr class="m-0">
+        </div>
+      </div>
+    </div>
   </section>
 </div>

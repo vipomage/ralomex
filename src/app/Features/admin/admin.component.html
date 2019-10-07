@@ -1,6 +1,6 @@
 <div [ngClass]="!(fireService.online | async) ? 'disabled' : ''" class="container-fluid">
   <div class="col-md-12">
-    <div class="user text-center">
+    <div class="user text-center m-5">
       <div *ngIf="!(authService.user | async)" class="button-wrapper">
         <div (click)="authService.signIn()" id="gSignInWrapper">
           <div id="customBtn" class="customGPlusSignIn"><span class="icon"></span> <span class="buttonText">Google</span></div>

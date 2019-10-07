@@ -19,9 +19,11 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CertificatesComponent } from './about-us/certificates/certificates.component';
 import { CertificateDialogComponent } from './about-us/certificates/certificate-dialog/certificate-dialog.component';
+import { ExpoFullComponent } from './about-us/expositions/expo-full/expo-full.component';
+import { NewsDialogComponent } from './news/news-dialog/news-dialog.component';
 
 @NgModule({
-  entryComponents: [CertificateDialogComponent],
+  entryComponents: [CertificateDialogComponent,NewsDialogComponent],
   declarations: [
     AwardsComponent,
     HistoryComponent,
@@ -35,6 +37,8 @@ import { CertificateDialogComponent } from './about-us/certificates/certificate-
     ContactsComponent,
     CertificatesComponent,
     CertificateDialogComponent,
+    ExpoFullComponent,
+    NewsDialogComponent,
   ],
   imports: [
     RouterModule.forChild(featureRoutes),

@@ -32,7 +32,8 @@ import { MatDialogModule } from '@angular/material';
     RouterModule.forRoot(applicationRouting, {
       useHash: true,
       enableTracing: false,
-      scrollPositionRestoration: 'top',
+      scrollPositionRestoration: 'enabled',
+      relativeLinkResolution: 'corrected',
     }),
     TranslateModule.forRoot({
       loader: {

@@ -1,0 +1,19 @@
+<div (click)="dialogRef.close()" class="single-news mb-lg-0 mb-4">
+  <div class="view overlay rounded z-depth-1-half mb-4">
+    <img *ngIf="dialogData.image" class="img-fluid w-100" src="{{ dialogData.image }}" alt="Latest news image" />
+    <a routerLink=""> <div class="mask rgba-white-slight"></div> </a>
+  </div>
+  <div class="news-data d-flex justify-content-between">
+    <a routerLink="" class="deep-orange-text">
+      <h4 class="font-weight-bold h4-responsive">
+        {{ dialogData.heading }}
+      </h4>
+    </a>
+  </div>
+  <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">
+    {{ dialogData.content }}
+  </p>
+  <p class="font-weight-bold dark-grey-text">
+    <i class="fas fa-clock-o pr-2"></i>{{ dialogData.timeStamp | date }}
+  </p>
+</div>

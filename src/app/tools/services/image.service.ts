@@ -28,6 +28,9 @@ export class ImageService {
   };
 
   async uploadSingle(files: FileList, path: string = 'images'): Promise<string> {
+    if (!files){
+      return null
+    }
     const image = files.item(0);
     let imageUrl: string;
 

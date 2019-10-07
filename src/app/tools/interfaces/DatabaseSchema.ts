@@ -59,6 +59,9 @@ export interface Innovation {
 }
 
 export interface Exposition {
+  heading:string;
+  excerpt:string;
+  image:string;
   data: string;
   timeStamp: number;
 }
