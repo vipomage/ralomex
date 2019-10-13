@@ -96,7 +96,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+@angular/material/button
+
+@angular/material/checkbox
+
+@angular/material/core
+
 @angular/material/dialog
+
+@angular/material/form-field
+
+@angular/material/progress-bar
+
+@angular/material/select
+
+@angular/material/tabs
 
 @angular/material/tooltip
 
@@ -335,6 +349,9 @@ Apache-2.0
 
 @firebase/webchannel-wrapper
 Apache-2.0
+
+@kolkov/angular-editor
+MIT
 
 @ngx-translate/core
 MIT

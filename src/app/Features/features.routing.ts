@@ -30,5 +30,5 @@ export const featureRoutes: Routes = [
     ],
   },
   { path: 'contacts', component: ContactsComponent },
-  { path: 'admin', loadChildren: async () => (await import('./admin/admin.module')).AdminModule },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
 ];
