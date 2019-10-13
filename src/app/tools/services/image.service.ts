@@ -3,12 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+
 import UploadTaskSnapshot = firebase.storage.UploadTaskSnapshot;
+import { Reference } from '@angular/fire/storage/interfaces';
+declare var ImageCompressor: any;
 
 @Injectable({
   providedIn: 'root',
 })
 export class ImageService {
+  compressor = new ImageCompressor();
   private percentage: Observable<number | undefined>;
   private snapshot: Observable<UploadTaskSnapshot | undefined>;
   task: AngularFireUploadTask;
@@ -16,50 +20,55 @@ export class ImageService {
   preventEdit: boolean = false;
   downloadUrl: string;
   images: string[] = [];
+  progress: number = 0;
 
   constructor(private auth: AuthService, private http: HttpClient, private storage: AngularFireStorage) {}
 
-  disableFileUpload = (): void => {
+  disableFileUpload(): void {
     this.preventEdit = !this.preventEdit;
-  };
+  }
 
   async uploadSingle(files: FileList, path: string = 'images'): Promise<string> {
-    if (!files) {
-      return null;
-    }
+    if (!files) return null;
+
     const image = files.item(0);
-    let imageUrl: string;
+    const compressedFiles = await this.compressFiles(files);
 
     if (image.type.split('/')[0] !== 'image') {
       throw new TypeError('Unsupported File Type!');
     }
   
-    const imageName = `${new Date().toDateString().split(' ').join('-')}_1`;
-    this.task = this.storage.upload(`${path}/${imageName}`, image);
-
-    imageUrl = await this.task.then(async data => {
-      return await data.ref.getDownloadURL();
-    });
-
-    return imageUrl;
+    const imageName = `${new Date().toJSON()}`;
+    const task = this.storage.upload(`${path}/${imageName}`, compressedFiles[0]);
+    task.percentageChanges().subscribe((percentage: number) => (this.progress = percentage));
+    return await this.getDownloadUrl(task);
   }
 
-  async uploadMultiple(files: FileList, path: string = 'images'): Promise<string[]> {
+  async uploadMultiple(
+    files: FileList,
+    path: string = 'images',
+    deleteOld?: string | string[]
+  ): Promise<string[]> {
     if (!files) return null;
+    if (deleteOld) this.deleteImages(deleteOld);
     
     const uploadedImagesUrl = [];
-    for (let i = 0; i < files.length; i++) {
-      const image = files.item(i);
+    const compressedFiles = await this.compressFiles(files);
+
+    for (let i = 0; i < compressedFiles.length; i++) {
+      const image = compressedFiles[i];
 
       if (image.type.split('/')[0] !== 'image') {
         throw new TypeError('Unsupported File Type!');
       }
-      const imageName = `${new Date().toDateString().split(' ').join('-')}_${i}`;
+      const imageName = `${new Date().toJSON()}_${i}`;
       const task = this.storage.upload(`${path}/${imageName}`, image);
+      task.percentageChanges().subscribe((percentage: number) => (this.progress = percentage));
       const imageUrl = await this.getDownloadUrl(task);
 
       uploadedImagesUrl.push(imageUrl);
     }
+    
     return uploadedImagesUrl;
   }
 
@@ -67,6 +76,17 @@ export class ImageService {
     return await task.then(async data => {
       return await data.ref.getDownloadURL();
     });
+  }
+
+  async compressFiles(files: FileList): Promise<Blob[]> {
+    const promises: Promise<Blob>[] = [];
+
+    for (let i = 0; i < files.length; ++i) {
+      const file = files[i];
+      promises.push(this.compressor.compress(file, { quality: 0.8 }));
+    }
+
+    return await Promise.all(promises).then((convertedFiles: Blob[]) => convertedFiles);
   }
 
   startUpload = (event: FileList) => {
@@ -121,4 +141,17 @@ export class ImageService {
     const path = `${location}/${date}_${file.name}`;
     return this.storage.upload(path, file);
   };
+
+  async deleteImages(imageUrls: string | string[]): Promise<any> {
+    const promises: Promise<any>[] = [];
+    if (Array.isArray(imageUrls)) {
+      imageUrls.map(imageUrl => {
+        promises.push(this.storage.storage.refFromURL(imageUrl).delete());
+      });
+    } else {
+      promises.push(this.storage.storage.refFromURL(imageUrls).delete());
+    }
+
+    return await Promise.all(promises);
+  }
 }

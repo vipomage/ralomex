@@ -80,7 +80,7 @@ export interface TeamMember {
 
 export interface BaseSchemaModel<T> {
   description: string;
-  image: string;
+  images: string[];
   types: {
     [propName: string]: {
       description: string;
@@ -100,18 +100,17 @@ export interface BaseSchemaModel<T> {
 }
 
 export interface Sprayer {
-  images?: string | string[];
+  images?: string[];
   model: string;
   tankCapacity: string;
   widthWork: string;
   fanDiameter: string;
   sprayersCount: string;
   pumpType: string;
-  image: string | string[];
 }
 
 export interface Shredder {
-  images?: string | string[];
+   images?: string[];
   model: string;
   shreddersCount: string;
   reqHp: string;
@@ -121,11 +120,10 @@ export interface Shredder {
   workSpeed: string;
   productivity: string;
   weight: string;
-  image: string | string[];
 }
 
 export interface Roller {
-  images?: string | string[];
+   images?: string[];
   model: string;
   reqHP: string;
   depthWork: string;
@@ -135,11 +133,10 @@ export interface Roller {
   workSpeed: string;
   productivity: string;
   weight: string;
-  image: string | string[];
 }
 
 export interface Cultivator {
-  images?: string | string[];
+   images?: string[];
   model: string;
   workBodyCount: string;
   reqHp: string;
@@ -153,14 +150,13 @@ export interface Cultivator {
   workSpeed: string;
   productivity: string;
   weight: string;
-  image: string | string[];
 }
 
 export interface Plough {
   bodiesDistance: string;
   clearance: string;
   depthWork: string;
-  images?: string | string[];
+   images?: string[];
   mainBeam: string;
   model: string;
   productivity: string;
@@ -174,7 +170,7 @@ export interface Plough {
 
 export interface Disk {
   model: string;
-  images?: string | string[];
+   images?: string[];
   diskCount: string;
   reqHP: string;
   diskDiameter: string;

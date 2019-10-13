@@ -13,6 +13,7 @@ export class MdbCarouselComponent {
   }
 
   onRightClick(event) {
+    event.preventDefault();
     event.stopPropagation();
     return false;
   }

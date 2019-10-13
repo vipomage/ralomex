@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row image-container">
+    <img class="col-3" style="width: 100%" [attr.src]="domSanitizer.bypassSecurityTrustResourceUrl(image)" *ngFor="let image of images">
+  </div>
+  <div class="row justify-content-center">
+    <input (change)="imagesFormControl.patchValue($event.target.files)" accept="image/jpeg,image/webp,image/jpg"  type="file" multiple="true">
+  </div>
+  <div class="row my-2">
+    <mat-progress-bar mode="determinate" [value]="imageService.progress"></mat-progress-bar>
+  </div>
+  <div class="row justify-content-around">
+    <button mat-raised-button (click)="dialogRef.close()" class="btn btn-warning btn-lg">Откажи</button>
+    <button mat-raised-button [disabled]="imagesFormControl.invalid || disableSubmit" (click)="submit()" class="btn btn-success btn-lg">Запази</button>
+  </div>
+</div>

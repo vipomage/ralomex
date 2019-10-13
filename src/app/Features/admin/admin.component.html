@@ -11,34 +11,54 @@
       Logout
     </button>
     <mat-tab-group *ngIf="fireService.DATABASE">
-      
       <mat-tab label="Плугове">
         <app-admin-edit-item
-            (addProductEmits)="showAddProductDialog($event)"
-            (editProductEmits)="showEditProductDialog($event)"
-            [productType]="ProductTypes.PLOUGHS"
-            [category]="fireService.DATABASE.ploughs">
+          (addProductEmits)="showAddProductDialog($event)"
+          (editProductEmits)="showEditProductDialog($event)"
+          [productType]="ProductTypes.PLOUGHS"
+          [category]="fireService.DATABASE.ploughs"
+        >
         </app-admin-edit-item>
       </mat-tab>
-      
+
       <mat-tab label="Дискови Бр.">
-        <app-admin-edit-item [productType]="ProductTypes.DISKS" [category]="fireService.DATABASE.disks"></app-admin-edit-item>
+        <app-admin-edit-item
+          (editProductEmits)="showEditProductDialog($event)"
+          [productType]="ProductTypes.DISKS"
+          [category]="fireService.DATABASE.disks"
+        ></app-admin-edit-item>
       </mat-tab>
 
       <mat-tab label="Култиватори">
-        <app-admin-edit-item [productType]="ProductTypes.CULTIVATORS" [category]="fireService.DATABASE.cultivators"></app-admin-edit-item>
+        <app-admin-edit-item
+          (editProductEmits)="showEditProductDialog($event)"
+          [productType]="ProductTypes.CULTIVATORS"
+          [category]="fireService.DATABASE.cultivators"
+        ></app-admin-edit-item>
       </mat-tab>
 
       <mat-tab label="Валяци">
-        <app-admin-edit-item [productType]="ProductTypes.ROLLERS" [category]="fireService.DATABASE.rollers"></app-admin-edit-item>
+        <app-admin-edit-item
+          (editProductEmits)="showEditProductDialog($event)"
+          [productType]="ProductTypes.ROLLERS"
+          [category]="fireService.DATABASE.rollers"
+        ></app-admin-edit-item>
       </mat-tab>
 
       <mat-tab label="Раздробители">
-        <app-admin-edit-item [productType]="ProductTypes.SHREDDERS" [category]="fireService.DATABASE.shredders"></app-admin-edit-item>
+        <app-admin-edit-item
+          (editProductEmits)="showEditProductDialog($event)"
+          [productType]="ProductTypes.SHREDDERS"
+          [category]="fireService.DATABASE.shredders"
+        ></app-admin-edit-item>
       </mat-tab>
 
       <mat-tab label="Пръскачки">
-        <app-admin-edit-item [productType]="ProductTypes.SPRAYERS" [category]="fireService.DATABASE.sprayers"></app-admin-edit-item>
+        <app-admin-edit-item
+          (editProductEmits)="showEditProductDialog($event)"
+          [productType]="ProductTypes.SPRAYERS"
+          [category]="fireService.DATABASE.sprayers"
+        ></app-admin-edit-item>
       </mat-tab>
 
       <mat-tab label="Специализирани">

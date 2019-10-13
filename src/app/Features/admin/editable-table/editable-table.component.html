@@ -20,8 +20,8 @@
             <mat-option [value]="'spring'">spring</mat-option>
           </mat-select>
       </td>
-      <td *ngIf="item.value.image">{{item.value.image.length}}</td>
-      <td class="missing-images" *ngIf="!item.value.image">Няма Снимки</td>
+      <td class="text-center" *ngIf="item.value.images">{{item.value.images.length}}</td>
+      <td class="missing-images" *ngIf="!item.value.images">Няма Снимки</td>
     </tr>
   </tbody>
 </table>

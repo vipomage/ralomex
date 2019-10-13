@@ -107,10 +107,10 @@
 }
 
 .view-container {
-  height: 800px;
-  width: 100vw;
+  height: 900px;
+  width: calc(100vw + 15px);
   overflow-x: hidden;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }

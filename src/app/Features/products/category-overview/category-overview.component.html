@@ -6,12 +6,7 @@
         <div class="col-md-7 col-12 product-description">
           <p>{{ productData.description }}</p>
         </div>
-        <div
-          class="col-md-5 col-12 background-image"
-          *ngIf="!images"
-          [ngStyle]="{ backgroundImage: 'url(' + productData.image + ')' }"
-        ></div>
-        <app-mdb-carousel class="col-5" *ngIf="images" [images]="images"></app-mdb-carousel>
+        <app-mdb-carousel class="col-md-5 col-12" *ngIf="productData.images" [images]="productData.images"></app-mdb-carousel>
       </div>
       <div class="accordion md-accordion accordion-1" id="accordion" role="tablist" aria-multiselectable="false">
         <div class="card" *ngFor="let set of series">

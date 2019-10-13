@@ -35,7 +35,7 @@ export class AddPloughComponent implements OnInit {
   };
 
   savePlough = (data: Plough, category: string) => {
-    data.image = this.images;
+    data.images = this.images;
     this.db.PloughUtils.addPlough(data, category, this.subCategory)
       .then(() => {
         this.toastr.success('Добавен');

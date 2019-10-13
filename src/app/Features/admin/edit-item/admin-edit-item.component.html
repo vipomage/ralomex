@@ -1,10 +1,23 @@
 <div class="container-fluid p-0 justify-content-center mt-2">
   <!--  Description and Image-->
   <div class="row m-auto">
-    <mat-form-field class="col-6">
-      <textarea matInput rows="20" [formControl]="categoryDescription" placeholder="Описание"></textarea>
-    </mat-form-field>
-    <div class="col-6"><img style="width: 100%" [attr.src]="category.image" alt="Product category image" /></div>
+    <div class="col-6">
+      <h3 class="text-center">Описание</h3>
+      <mat-form-field class="container-fluid">
+        <textarea matInput rows="20" [formControl]="categoryDescription"></textarea>
+      </mat-form-field>
+      <div class="row">
+        <button mat-raised-button *ngIf="descriptionChanged" (click)="saveDescription()" class="btn-success btn-lg mx-auto">Запази</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <h3 class="text-center">Снимки на тази категория</h3>
+      <div class="row justify-content-around my-2">
+        <button mat-raised-button (click)="editImageDialog(true)"  class="btn btn-warning btn-lg">Замени</button>
+        <button mat-raised-button (click)="editImageDialog(false)" class="btn btn-primary btn-lg">Добави</button>
+      </div>
+      <app-mdb-carousel *ngIf="category.images" [images]="category.images"></app-mdb-carousel>
+    </div>
   </div>
   <!--  DropDowns-->
   <div class="row m-auto col-8 justify-content-center">

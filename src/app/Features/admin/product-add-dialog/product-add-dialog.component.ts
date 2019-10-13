@@ -15,6 +15,7 @@ import { ImageService } from '../../../tools/services/image.service';
 export class ProductAddDialog implements OnInit {
   fb: FormBuilder = new FormBuilder();
   autoCloseControl: FormControl = this.fb.control(true, [Validators.required]);
+  replaceOld:FormControl = this.fb.control(false)
   productFormGroup: FormGroup;
   selectTypeFormControl: FormControl;
   selectSeriesFormControl: FormControl;
@@ -39,7 +40,7 @@ export class ProductAddDialog implements OnInit {
     private dialogRef: MatDialogRef<ProductAddDialog>,
     private fireService: FireService,
     private toastrService: ToastrService,
-    private imageService: ImageService
+    public imageService: ImageService
   ) {}
 
   initProductFormGroup(productType: string): FormGroup {
@@ -69,9 +70,9 @@ export class ProductAddDialog implements OnInit {
   async saveProduct() {
     this.disableSubmit = true;
     const uploadedImageUrls = await this.uploadImages(this.fileFormControl.value);
-  
-    this.productFormGroup.patchValue({images: uploadedImageUrls});
-    
+
+    this.productFormGroup.patchValue({ images: uploadedImageUrls });
+
     let productData: ProductIUnion = this.productFormGroup.value;
     await this.fireService.addItem(
       productData,
@@ -88,10 +89,16 @@ export class ProductAddDialog implements OnInit {
 
   async updateProduct() {
     this.disableSubmit = true;
-    const uploadedImageUrls = await this.uploadImages(this.fileFormControl.value);
+    let uploadedImageUrls = await this.uploadImages(
+      this.fileFormControl.value,
+      this.replaceOld.value);
+  
+    if (!this.replaceOld.value && this.matDialogData.itemData.images){
+      uploadedImageUrls = [...uploadedImageUrls,...this.matDialogData.itemData.images]
+    }
     
-    this.productFormGroup.patchValue({images: uploadedImageUrls});
-    
+    this.productFormGroup.patchValue({ images: uploadedImageUrls });
+
     await this.fireService.updateItem(
       this.productFormGroup.value,
       this.matDialogData.productType,
@@ -114,11 +121,12 @@ export class ProductAddDialog implements OnInit {
     this.disableSubmit = false;
   }
 
-  async uploadImages(fileList: FileList) {
-    const { productType, productCategory, productSeries, itemId } = this.matDialogData;
+  async uploadImages(fileList: FileList,replaceOld:boolean = false) {
+    const { productType, productCategory, productSeries, itemId,itemData } = this.matDialogData;
     return await this.imageService.uploadMultiple(
       fileList,
-      `products/${productType}/${productCategory}/${productSeries}/${itemId}-${this.matDialogData.itemData.model}`
+      `products/${productType}/${productCategory}/${productSeries}/${itemId}-${this.matDialogData.itemData.model}`,
+      replaceOld ? itemData.images : null
     );
   }
 
@@ -126,7 +134,7 @@ export class ProductAddDialog implements OnInit {
     const productType = this.matDialogData.productType;
 
     this.productFormGroup = this.initProductFormGroup(productType);
-    this.productFormGroup.addControl('images',new FormControl([]));
+    this.productFormGroup.addControl('images', new FormControl([]));
 
     this.types = Object.keys(this.fireService.productTypes[productType].types);
 

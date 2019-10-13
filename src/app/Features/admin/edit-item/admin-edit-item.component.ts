@@ -6,6 +6,9 @@ import {
   ProductIUnion,
 } from '../../../tools/interfaces/DatabaseSchema';
 import { FireService } from '../../../tools/services/fire.service';
+import { ImageService } from '../../../tools/services/image.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { AddImageDialogComponent } from '../add-image-dialog/add-image-dialog.component';
 
 @Component({
   selector: 'app-admin-edit-item',
@@ -21,9 +24,11 @@ export class AdminEditItemComponent implements OnInit {
   collection: { [propName: string]: ProductIUnion };
   addProductEmits: EventEmitter<ProductTypes> = new EventEmitter<ProductTypes>();
   @Output() editProductEmits: EventEmitter<any> = new EventEmitter();
+  descriptionChanged:boolean = false;
 
   constructor(
-    public fireService: FireService
+    public fireService: FireService,
+    private matDialog: MatDialog
   ) {}
   
   emitEdit(updateObj: {
@@ -35,6 +40,27 @@ export class AdminEditItemComponent implements OnInit {
   }) {
     this.editProductEmits.emit({productCategory:this.selectedType.value,...updateObj});
   }
+  
+  saveDescription(){
+    //
+  }
+  
+  editImageDialog(replace:boolean = false){
+    const config:MatDialogConfig = {
+      maxWidth:'80vw',
+      closeOnNavigation:true,
+      hasBackdrop:true,
+      data:{
+        replace,
+        productType:this.productType,
+        oldImages:this.category.images
+      }
+    };
+    
+    this.matDialog.open(AddImageDialogComponent,config);
+  }
+  
+  addImageDialog() {}
 
   ngOnInit() {
     this.categoryDescription.patchValue(this.category.description);
@@ -49,5 +75,9 @@ export class AdminEditItemComponent implements OnInit {
         this.collection = this.category.types[this.selectedType.value].series[series].collection;
       }
     });
+    
+    this.categoryDescription.valueChanges.subscribe(()=>{
+      this.descriptionChanged = true;
+    })
   }
 }

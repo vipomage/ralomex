@@ -15,6 +15,7 @@ import {
   IUnion,
   Plough,
   ProductIUnion,
+  ProductTypes,
   TeamMember,
 } from '../interfaces/DatabaseSchema';
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -183,39 +184,51 @@ export class FireService {
       .toPromise();
   }
 
-  getSingleItem = (type: string, category: string, series: string, id: string) =>
-    this.http.get<ProductIUnion>(
+  getSingleItem(type: string, category: string, series: string, id: string){
+    return this.http.get<ProductIUnion>(
       `${this.databaseUrl}/${type}/types/${category}/series/${series}/collection/`.toLocaleLowerCase() +
-        `${id}.json`
+      `${id}.json`
     );
-
+  }
+  
   getType(type: string) {
     return this.http.get(`${this.databaseUrl}/${type}.json`);
   }
 
-  getSubCategories = (type: string, category: string) =>
-    this.http.get<ProductIUnion>(`${this.databaseUrl}/${type}/types/${category}/series.json`);
+  getSubCategories(type: string, category: string){
+    return this.http.get<ProductIUnion>(`${this.databaseUrl}/${type}/types/${category}/series.json`);
+  }
 
-  getseriesData = (type, category, series) =>
-    this.http.get(
+  getseriesData(type, category, series){
+    return this.http.get(
       `${this.databaseUrl}/${type}/types/${category}/series/${series}/collection.json`.toLocaleLowerCase()
     );
+  }
+  
 
   addItem(data: ProductIUnion, productType: string, type: string, series: string): ThenableReference {
     return this.db.database.ref(`${productType}/types/${type}/series/${series}/collection`).push(data);
   }
 
-  addPloughCategory = (type: string, categoryDetails) =>
-    this.db.database.ref(`ploughs/types/${type}/collection/${categoryDetails.name.toLowerCase()}`).set({
+  addPloughCategory(type: string, categoryDetails){
+    return this.db.database.ref(`ploughs/types/${type}/collection/${categoryDetails.name.toLowerCase()}`).set({
       collection: [],
       description: categoryDetails.description,
       image: categoryDetails.image,
       name: categoryDetails.name,
     });
+  }
+  
+  updateProductTypeDetails(productType: ProductTypes, data: { images?: string[]; description?: string }) {
+    return this.db.database.ref(productType).update(data);
+  }
 
-  updateItem = (data: ProductIUnion, type: string, category: string, series: string, id: string) =>
-    this.db.database.ref(`${type}/types/${category}/series/${series}/collection/${id}`).update(data);
-
-  removeItem = (type: string, category: string, series: string, id: string) =>
-    this.db.database.ref(`${type}/types/${category}/series/${series}/collection/${id}`).remove();
+  updateItem(data: ProductIUnion, type: string, category: string, series: string, id: string) {
+    return this.db.database.ref(`${type}/types/${category}/series/${series}/collection/${id}`).update(data);
+  }
+  
+  removeItem(type: string, category: string, series: string, id: string) {
+    return this.db.database.ref(`${type}/types/${category}/series/${series}/collection/${id}`).remove();
+  }
+  
 }

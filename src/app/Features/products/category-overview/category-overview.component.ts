@@ -36,11 +36,7 @@ export class CategoryOverviewComponent implements OnInit {
     } else {
       return await this.router.navigate(['/']);
     }
-
-    // Check if image prop is array to display carousel instead of single picture
-    if (Array.isArray(this.productData.image)) {
-      this.images = this.productData.image;
-    }
+    
 
     this.series = Object.keys(this.data);
 

@@ -25,10 +25,11 @@ import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-edi
 import { adminRoutes } from './admin.routing';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
 import {
+  MatButtonModule,
   MatCheckboxModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatInputModule,
+  MatInputModule, MatProgressBarModule,
   MatSelectModule,
   MatTabsModule, MatTooltipModule,
 } from '@angular/material';
@@ -42,6 +43,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AdminEditItemComponent } from './edit-item/admin-edit-item.component';
 import { EditableTableComponent } from './editable-table/editable-table.component';
 import { SharedModule } from '../../Shared/shared.module';
+import { AddImageDialogComponent } from './add-image-dialog/add-image-dialog.component';
 
 @NgModule({
   entryComponents: [
@@ -51,6 +53,7 @@ import { SharedModule } from '../../Shared/shared.module';
     ExpoPreviewDialogComponent,
     InnovationsDialogComponent,
     AdminCertificateComponent,
+    AddImageDialogComponent
   ],
   imports: [
     CommonModule,
@@ -69,6 +72,8 @@ import { SharedModule } from '../../Shared/shared.module';
     TranslateModule,
     SharedModule,
     MatTooltipModule,
+    MatProgressBarModule,
+    MatButtonModule,
   ],
   declarations: [
     AdminComponent,
@@ -97,6 +102,7 @@ import { SharedModule } from '../../Shared/shared.module';
     AdminCertificateComponent,
     AdminEditItemComponent,
     EditableTableComponent,
+    AddImageDialogComponent,
   ],
   exports: [RouterModule],
 })
