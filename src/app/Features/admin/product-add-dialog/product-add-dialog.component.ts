@@ -5,6 +5,7 @@ import { FireService } from '../../../tools/services/fire.service';
 import { ProductIUnion, ProductTypes } from '../../../tools/interfaces/DatabaseSchema';
 import { ToastrService } from 'ngx-toastr';
 import { config } from '../../../tools/services/config.service';
+import { ImageService } from '../../../tools/services/image.service';
 
 @Component({
   selector: 'app-product-add-dialog',
@@ -17,7 +18,9 @@ export class ProductAddDialog implements OnInit {
   productFormGroup: FormGroup;
   selectTypeFormControl: FormControl;
   selectSeriesFormControl: FormControl;
+  fileFormControl = new FormControl('');
   isUpdate: boolean = false;
+  disableSubmit: boolean = false;
 
   headers = config.headers;
 
@@ -35,7 +38,8 @@ export class ProductAddDialog implements OnInit {
     },
     private dialogRef: MatDialogRef<ProductAddDialog>,
     private fireService: FireService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private imageService: ImageService
   ) {}
 
   initProductFormGroup(productType: string): FormGroup {
@@ -63,6 +67,11 @@ export class ProductAddDialog implements OnInit {
   }
 
   async saveProduct() {
+    this.disableSubmit = true;
+    const uploadedImageUrls = await this.uploadImages(this.fileFormControl.value);
+  
+    this.productFormGroup.patchValue({images: uploadedImageUrls});
+    
     let productData: ProductIUnion = this.productFormGroup.value;
     await this.fireService.addItem(
       productData,
@@ -74,9 +83,15 @@ export class ProductAddDialog implements OnInit {
     if (this.autoCloseControl.value) {
       this.closeDialog();
     }
+    this.disableSubmit = false;
   }
 
   async updateProduct() {
+    this.disableSubmit = true;
+    const uploadedImageUrls = await this.uploadImages(this.fileFormControl.value);
+    
+    this.productFormGroup.patchValue({images: uploadedImageUrls});
+    
     await this.fireService.updateItem(
       this.productFormGroup.value,
       this.matDialogData.productType,
@@ -85,23 +100,33 @@ export class ProductAddDialog implements OnInit {
       this.matDialogData.itemId
     );
     //Local UI Update
-    this.fireService
-      .DATABASE[this.matDialogData.productType]
-      .types[this.matDialogData.productCategory]
-      .series[this.matDialogData.productSeries]
-      .collection[this.matDialogData.itemId] = this.productFormGroup.value;
+    this.fireService.DATABASE[this.matDialogData.productType].types[
+      this.matDialogData.productCategory
+    ].series[this.matDialogData.productSeries].collection[
+      this.matDialogData.itemId
+    ] = this.productFormGroup.value;
 
     this.toastrService.success('Saved');
 
     if (this.autoCloseControl.value) {
       this.closeDialog();
     }
+    this.disableSubmit = false;
+  }
+
+  async uploadImages(fileList: FileList) {
+    const { productType, productCategory, productSeries, itemId } = this.matDialogData;
+    return await this.imageService.uploadMultiple(
+      fileList,
+      `products/${productType}/${productCategory}/${productSeries}/${itemId}-${this.matDialogData.itemData.model}`
+    );
   }
 
   ngOnInit() {
     const productType = this.matDialogData.productType;
 
     this.productFormGroup = this.initProductFormGroup(productType);
+    this.productFormGroup.addControl('images',new FormControl([]));
 
     this.types = Object.keys(this.fireService.productTypes[productType].types);
 
@@ -122,7 +147,7 @@ export class ProductAddDialog implements OnInit {
       this.selectSeriesFormControl.disable();
       this.selectTypeFormControl.disable();
 
-      this.productFormGroup = this.fb.group(this.matDialogData.itemData);
+      this.productFormGroup.patchValue(this.matDialogData.itemData);
       this.isUpdate = true;
     }
 

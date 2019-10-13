@@ -17,19 +17,15 @@ export class ImageService {
   downloadUrl: string;
   images: string[] = [];
 
-  constructor(
-    private auth: AuthService,
-    private http: HttpClient,
-    private storage: AngularFireStorage
-  ) {}
+  constructor(private auth: AuthService, private http: HttpClient, private storage: AngularFireStorage) {}
 
   disableFileUpload = (): void => {
     this.preventEdit = !this.preventEdit;
   };
 
   async uploadSingle(files: FileList, path: string = 'images'): Promise<string> {
-    if (!files){
-      return null
+    if (!files) {
+      return null;
     }
     const image = files.item(0);
     let imageUrl: string;
@@ -37,8 +33,8 @@ export class ImageService {
     if (image.type.split('/')[0] !== 'image') {
       throw new TypeError('Unsupported File Type!');
     }
-
-    const imageName = `${new Date().getTime()}_${image.name}`;
+  
+    const imageName = `${new Date().toDateString().split(' ').join('-')}_1`;
     this.task = this.storage.upload(`${path}/${imageName}`, image);
 
     imageUrl = await this.task.then(async data => {
@@ -46,6 +42,31 @@ export class ImageService {
     });
 
     return imageUrl;
+  }
+
+  async uploadMultiple(files: FileList, path: string = 'images'): Promise<string[]> {
+    if (!files) return null;
+    
+    const uploadedImagesUrl = [];
+    for (let i = 0; i < files.length; i++) {
+      const image = files.item(i);
+
+      if (image.type.split('/')[0] !== 'image') {
+        throw new TypeError('Unsupported File Type!');
+      }
+      const imageName = `${new Date().toDateString().split(' ').join('-')}_${i}`;
+      const task = this.storage.upload(`${path}/${imageName}`, image);
+      const imageUrl = await this.getDownloadUrl(task);
+
+      uploadedImagesUrl.push(imageUrl);
+    }
+    return uploadedImagesUrl;
+  }
+
+  async getDownloadUrl(task: AngularFireUploadTask) {
+    return await task.then(async data => {
+      return await data.ref.getDownloadURL();
+    });
   }
 
   startUpload = (event: FileList) => {

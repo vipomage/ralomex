@@ -100,6 +100,7 @@ export interface BaseSchemaModel<T> {
 }
 
 export interface Sprayer {
+  images?: string | string[];
   model: string;
   tankCapacity: string;
   widthWork: string;
@@ -110,6 +111,7 @@ export interface Sprayer {
 }
 
 export interface Shredder {
+  images?: string | string[];
   model: string;
   shreddersCount: string;
   reqHp: string;
@@ -123,6 +125,7 @@ export interface Shredder {
 }
 
 export interface Roller {
+  images?: string | string[];
   model: string;
   reqHP: string;
   depthWork: string;
@@ -136,6 +139,7 @@ export interface Roller {
 }
 
 export interface Cultivator {
+  images?: string | string[];
   model: string;
   workBodyCount: string;
   reqHp: string;
@@ -156,8 +160,7 @@ export interface Plough {
   bodiesDistance: string;
   clearance: string;
   depthWork: string;
-  description: string;
-  image?: string | string[];
+  images?: string | string[];
   mainBeam: string;
   model: string;
   productivity: string;
@@ -171,7 +174,7 @@ export interface Plough {
 
 export interface Disk {
   model: string;
-  image?: string | string[];
+  images?: string | string[];
   diskCount: string;
   reqHP: string;
   diskDiameter: string;

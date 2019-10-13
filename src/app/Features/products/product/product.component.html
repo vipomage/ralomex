@@ -1,20 +1,16 @@
 <div *ngIf="item" class="container-fluid product-container">
   <div class="row justify-content-center">
     <div class="row">
-      <mdb-carousel
-        *ngIf="item.image && isArray(item.image)"
-        interval="8000"
+      <mdb-carousel *ngIf="item.images" interval="8000"
         class="carousel slide carousel-fade"
-        [animation]="'fade'"
-      >
-        <mdb-carousel-item class="carousel-wrapper" *ngFor="let image of item.image; let isFirst = first">
+        [animation]="'fade'">
+        <mdb-carousel-item class="carousel-wrapper" *ngFor="let image of item.images">
           <div class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + image + ')' }"></div>
         </mdb-carousel-item>
       </mdb-carousel>
-      <mdb-carousel *ngIf="!item.image || !isArray(item.image)" class="carousel carousel-fade">
+      <mdb-carousel *ngIf="!item.images" class="carousel carousel-fade">
         <mdb-carousel-item class="carousel-wrapper">
-          <div *ngIf="item.image" class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + item.image + ')' }"></div>
-          <div *ngIf="!item.image" class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + randomImage + ')' }"></div>
+          <div *ngIf="!item.images" style="background-size: cover" class="view view-container" [ngStyle]="{ backgroundImage: 'url(' + randomImage + ')' }"></div>
         </mdb-carousel-item>
       </mdb-carousel>
     </div>
@@ -60,8 +56,8 @@
       </div>
     </div>
   </div>
-  <div id="preloader" *ngIf="item.image" [hidden]="true" class="preloader hidden disabled">
-    <div *ngFor="let image of item.image">
+  <div id="preloader" *ngIf="item.images" [hidden]="true" class="preloader hidden disabled">
+    <div *ngFor="let image of item.images">
       <img hidden async type="image" [src]="image" />
     </div>
   </div>

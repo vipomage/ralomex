@@ -33,8 +33,6 @@ export class ProductComponent implements OnInit {
   
   constructor(private route: ActivatedRoute, private db: FireService) {}
   
-  
-
   async ngOnInit() {
     this.type = this.route.snapshot.params.type;
     this.category = this.route.snapshot.params.category;

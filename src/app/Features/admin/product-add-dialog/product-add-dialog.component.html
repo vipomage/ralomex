@@ -28,10 +28,11 @@
       </mat-form-field>
     </form>
   </div>
+  <input class="row" [multiple]="true" (change)="fileFormControl.patchValue($event.target.files)" type="file" />
   <hr />
   <div class="row p-0 m-0 justify-content-end">
     <button class="btn btn-warning bnt-sm" (click)="closeDialog()">Close</button>
-    <button *ngIf="!isUpdate" [disabled]="productFormGroup.invalid" class="btn btn-success btn-lg ml-auto" (click)="saveProduct()">Save</button>
-    <button *ngIf="isUpdate" [disabled]="productFormGroup.invalid" class="btn btn-success btn-lg ml-auto" (click)="updateProduct()">Update</button>
+    <button *ngIf="!isUpdate" [disabled]="productFormGroup.invalid || disableSubmit" class="btn btn-success btn-lg ml-auto" (click)="saveProduct()">Save</button>
+    <button *ngIf="isUpdate" [disabled]="productFormGroup.invalid || disableSubmit" class="btn btn-success btn-lg ml-auto" (click)="updateProduct()">Update</button>
   </div>
 </div>
