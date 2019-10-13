@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { config } from '../../../tools/services/config.service';
+import { Header } from '../../../tools/interfaces/DatabaseSchema';
 
 @Component({
   selector: 'app-product-table',
@@ -11,7 +12,7 @@ export class ProductTableComponent implements OnInit {
   @Input() data;
   @Input() set;
 
-  headers: [{ key: string; value: string }];
+  headers: Header[];
 
   ngOnInit(): void {
     this.headers = config.headers[this.type];

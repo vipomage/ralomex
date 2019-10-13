@@ -2,26 +2,26 @@
   <div class="row card-body justify-content-center">
     <mat-form-field class="col-3 mr-auto ml-auto">
       <mat-label>Type</mat-label>
-      <mat-select class="text-capitalize" [value]="selectTypeFormControl.value" [formControl]="selectTypeFormControl">
-        <mat-option class="text-capitalize" [value]="type" *ngFor="let type of types">{{ type }}</mat-option>
+      <mat-select class="text-capitalize" [value]="selectTypeFormControl.value | translate" [formControl]="selectTypeFormControl">
+        <mat-option class="text-capitalize" [value]="type" *ngFor="let type of types">{{ type | translate}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field class="col-3" *ngIf="selectSeriesFormControl">
       <mat-label>Serie</mat-label>
-      <mat-select class="text-capitalize" [value]="selectSeriesFormControl.value" [formControl]="selectSeriesFormControl">
-        <mat-option class="text-capitalize" [value]="serie" *ngFor="let serie of series">{{ serie }}</mat-option>
+      <mat-select class="text-uppercase" [value]="selectSeriesFormControl.value" [formControl]="selectSeriesFormControl">
+        <mat-option class="text-uppercase" [value]="serie" *ngFor="let serie of series">{{ serie }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-checkbox labelPosition="before" [formControl]="autoCloseControl">Auto Close ?</mat-checkbox>
 
     <form class="row justify-content-center" [formGroup]="productFormGroup">
-      <mat-form-field class="col-3" *ngFor="let formControlName of headers[matDialogData.type]">
+      <mat-form-field class="col-3" *ngFor="let formControlName of headers[matDialogData.productType]">
         <input
           autocomplete="new-password"
           matInput
-          [placeholder]="formControlName.value"
+          [placeholder]="formControlName.value | translate"
           [formControlName]="formControlName.key"
           type="text"
         />
@@ -31,6 +31,7 @@
   <hr />
   <div class="row p-0 m-0 justify-content-end">
     <button class="btn btn-warning bnt-sm" (click)="closeDialog()">Close</button>
-    <button [disabled]="productFormGroup.invalid" class="btn btn-success btn-lg ml-auto" (click)="saveProduct()">Save</button>
+    <button *ngIf="!isUpdate" [disabled]="productFormGroup.invalid" class="btn btn-success btn-lg ml-auto" (click)="saveProduct()">Save</button>
+    <button *ngIf="isUpdate" [disabled]="productFormGroup.invalid" class="btn btn-success btn-lg ml-auto" (click)="updateProduct()">Update</button>
   </div>
 </div>

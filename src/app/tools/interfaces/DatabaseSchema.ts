@@ -3,26 +3,29 @@ import { Project } from './project';
 import { News } from './news';
 import { HomeProduct } from './home-product';
 
+export enum ProductTypes {
+  PLOUGHS = 'ploughs',
+  DISKS = 'disks',
+  SPRAYERS = 'sprayers',
+  SHREDDERS = 'shredders',
+  ROLLERS = 'rollers',
+  CULTIVATORS = 'cultivators',
+}
+
 export interface ConfigSchema {
   headers: HeadersSchema;
   objectSchemas;
   toastr;
 }
-export interface HeadersSchema {
-  disks: Header[];
-  ploughs: Header[];
-  cultivators: Header[];
-  rollers: Header[];
-  shredders: Header[];
-  sprayers: Header[];
-}
+export type HeadersSchema = {[key in ProductTypes]: Header[]}
+
 export interface Header {
   key: string;
   value: string;
 }
 
 export interface FirebaseResponseModel {
-  [propName: string]: Award | Project | News | HomeProduct | Exposition | Innovation;
+  [propName: string]: IUnion;
 }
 
 export type IUnion = Award | Project | News | HomeProduct | Exposition | Innovation;
@@ -34,7 +37,7 @@ export enum DbLocation {
   PROJECTS = 'projects',
   EXPOSITIONS = 'expositions',
   INNOVATIONS = 'innovations',
-  CERTIFICATES = 'certificates'
+  CERTIFICATES = 'certificates',
 }
 export type ProductIUnion = Plough | Disk | Cultivator | Roller | Shredder | Sprayer;
 
@@ -59,9 +62,9 @@ export interface Innovation {
 }
 
 export interface Exposition {
-  heading:string;
-  excerpt:string;
-  image:string;
+  heading: string;
+  excerpt: string;
+  image: string;
   data: string;
   timeStamp: number;
 }

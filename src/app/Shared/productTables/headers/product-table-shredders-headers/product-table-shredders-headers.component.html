@@ -12,5 +12,6 @@
     <th (click)="opSpeed.toggle()"><img #opSpeed=matTooltip matTooltipPosition="above" matTooltip="{{'operating speed'|translate}}"  src="../../../../../assets/table-icons/workSpeed.png"/></th>
     <th (click)="prod.toggle()"><img #prod=matTooltip matTooltipPosition="above" matTooltip="{{'productivity'|translate}}"  src="../../../../../assets/table-icons/productivity.png"/></th>
     <th (click)="weight.toggle()"><img #weight=matTooltip matTooltipPosition="above" matTooltip="{{'weight'|translate}}"  src="../../../../../assets/table-icons/weight.png"/></th>
+    <th *ngIf="admin"><i class="fa fa-camera fa-3x" aria-hidden="true"></i></th>
   </tr>
 </thead>

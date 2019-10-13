@@ -1,0 +1,143 @@
+@import '../../../variables';
+
+table {
+  width: 100%;
+}
+
+::ng-deep thead {
+  vertical-align: unset !important;
+
+  &.disks {
+    background-color: $primaryOrange;
+  }
+  &.ploughs {
+    background-color: $primaryGreen;
+  }
+  &.cultivators {
+    background-color: $primaryBlue;
+  }
+  &.rollers,
+  &.shredders {
+    background-color: $primaryPurple;
+  }
+  &.sprayers {
+    background-color: $primaryRed;
+  }
+}
+::ng-deep .headers {
+  th {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.25rem;
+    height: 4rem;
+    width: 100px;
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      height: 2.5rem;
+      vertical-align: middle;
+      margin: 8px auto;
+    }
+
+    &.scale-up img,
+    img.scale-up {
+      transform: scale(1.2);
+    }
+
+    &.scale-down img,
+    img.scale-down {
+      transform: scale(0.8);
+    }
+  }
+}
+tbody {
+  display: contents;
+  justify-content: start;
+  min-width: -webkit-fill-available;
+  overflow: scroll;
+  width: 14vh;
+
+  tr {
+    width: inherit;
+    border-bottom: 2px solid black;
+
+    &.disks {
+      border-color: $primaryOrange;
+    }
+    &.ploughs {
+      border-color: $primaryGreen;
+    }
+    &.cultivators {
+      border-color: $primaryBlue;
+    }
+    &.rollers,
+    &.shredders {
+      border-color: $primaryPurple;
+    }
+    &.sprayers {
+      border-color: $primaryRed;
+    }
+
+    td {
+      width: 100px;
+
+      &.model {
+        font-weight: 700;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(15, 157, 88, 0.71);
+    }
+  }
+
+  td.hide {
+    display: none;
+  }
+
+  td.missing-images {
+    text-align: left;
+    font-size: 12px;
+    color: red;
+  }
+}
+
+.table td {
+  vertical-align: middle !important;
+}
+
+.spring {
+  height: 1rem;
+}
+.bolt {
+  height: 1rem;
+}
+
+@media screen and (max-width: $tableBreakPoint) {
+  table {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  tbody {
+    display: flex;
+    margin-right: 99px;
+
+    tr {
+      border-bottom: none;
+
+      td {
+        border-right: 1px solid;
+      }
+    }
+  }
+
+  .product-row {
+    display: grid;
+  }
+}

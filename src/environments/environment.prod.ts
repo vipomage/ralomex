@@ -1,12 +1,13 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyBHMLRn7jsgPDKN3RYcK1LUexL_Ztjemwo',
+    apiKey: 'AIzaSyBuGBz0snhiFJGAyp-TFx7Q47FWkibXNRU',
     authDomain: 'ralomex-34693.firebaseapp.com',
     databaseURL: 'https://ralomex-34693.firebaseio.com',
     projectId: 'ralomex-34693',
     storageBucket: 'ralomex-34693.appspot.com',
     messagingSenderId: '130489209852',
+    appId: '1:130489209852:web:c0acec0ebfd00ce9169879',
   },
   toastr: {
     timeOut: 4000,
@@ -14,5 +15,5 @@ export const environment = {
     maxOpened: 3,
     newestOnTop: true,
   },
-  baseUrl:'https://erayismail.online'
+  baseUrl: 'https://erayismail.online',
 };

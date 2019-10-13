@@ -20,14 +20,14 @@ div.mat-tooltip {
 
 html,
 body {
-  height: 100%;
+  //height: 100%;
   font-size: 14px;
-  margin: 0;
+  //margin: 0;
   font-family: 'Roboto', sans-serif;
 
-  * {
-    margin: 0 auto;
-  }
+  //* {
+  //  margin: 0 auto;
+  //}
 
   .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
     background-color: #67a065;

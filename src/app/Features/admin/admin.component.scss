@@ -1,5 +1,13 @@
 @import './../../variables';
 
+.logout-button {
+  position: absolute;
+  top: 98px;
+  padding: 2px;
+  right: 125px;
+  z-index: 100;
+}
+
 #customBtn {
   display: inline-block;
   background: white;
@@ -9,54 +17,66 @@
   border: thin solid #888;
   box-shadow: 1px 1px 1px grey;
   white-space: nowrap;
-}
-#customBtn:hover {
-  cursor: pointer;
-}
-span.label {
-  font-family: serif;
-  font-weight: normal;
-}
-span.icon {
-  background: url('../../../assets/img/g-normal.png') transparent 5px 50% no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 42px;
-  height: 42px;
-}
-span.buttonText {
-  display: inline-block;
-  vertical-align: middle;
-  padding-left: 42px;
-  padding-right: 42px;
-  font-size: 14px;
-  font-weight: bold;
-  /* Use the Roboto font that is loaded in the <head> */
-  font-family: 'Roboto', sans-serif;
-}
-.admin-wrapper {
-  text-align: center;
-  margin: 0 auto;
-}
 
-.products-nav,
-.secondary-nav {
-  outline: 1px solid black;
-  margin-bottom: 5px;
-
-  li a {
-    border-radius: 6px;
-
-    &:hover {
-      cursor: pointer;
-      background: $primaryGreen;
-      color: white;
-    }
+  span.label {
+    font-family: serif;
+    font-weight: normal;
   }
 
-  li.active {
+  span.icon {
+    background: url('../../../assets/img/g-normal.png') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+  }
+
+  span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 42px;
+    padding-right: 42px;
+    font-size: 14px;
     font-weight: bold;
-    color: black;
-    text-decoration: underline;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
+
+::ng-deep mat-tab-header .mat-tab-label{
+  height: 30px;
+  padding: 0 7px;
+  min-width: 100px;
+  text-align: center;
+  justify-content: space-around;
+}
+
+//.admin-wrapper {
+//  text-align: center;
+//  margin: 0 auto;
+//}
+//
+//.products-nav,
+//.secondary-nav {
+//  outline: 1px solid black;
+//  margin-bottom: 5px;
+//
+//  li a {
+//    border-radius: 6px;
+//
+//    &:hover {
+//      cursor: pointer;
+//      background: $primaryGreen;
+//      color: white;
+//    }
+//  }
+//
+//  li.active {
+//    font-weight: bold;
+//    color: black;
+//    text-decoration: underline;
+//  }
+//}

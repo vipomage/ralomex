@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FireService } from '../../../tools/services/fire.service';
-import { ProductIUnion } from '../../../tools/interfaces/DatabaseSchema';
+import { ProductIUnion, ProductTypes } from '../../../tools/interfaces/DatabaseSchema';
 import { ToastrService } from 'ngx-toastr';
 import { config } from '../../../tools/services/config.service';
 
@@ -13,10 +13,11 @@ import { config } from '../../../tools/services/config.service';
 })
 export class ProductAddDialog implements OnInit {
   fb: FormBuilder = new FormBuilder();
-  autoCloseControl: FormControl = this.fb.control(false, [Validators.required]);
+  autoCloseControl: FormControl = this.fb.control(true, [Validators.required]);
   productFormGroup: FormGroup;
   selectTypeFormControl: FormControl;
   selectSeriesFormControl: FormControl;
+  isUpdate: boolean = false;
 
   headers = config.headers;
 
@@ -24,7 +25,14 @@ export class ProductAddDialog implements OnInit {
   series: string[];
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public matDialogData: { type: string },
+    @Inject(MAT_DIALOG_DATA)
+    public matDialogData: {
+      productType: ProductTypes;
+      productCategory: string;
+      productSeries?: string;
+      itemId?: string;
+      itemData?: ProductIUnion;
+    },
     private dialogRef: MatDialogRef<ProductAddDialog>,
     private fireService: FireService,
     private toastrService: ToastrService
@@ -58,7 +66,7 @@ export class ProductAddDialog implements OnInit {
     let productData: ProductIUnion = this.productFormGroup.value;
     await this.fireService.addItem(
       productData,
-      this.matDialogData.type,
+      this.matDialogData.productType,
       this.selectTypeFormControl.value,
       this.selectSeriesFormControl.value
     );
@@ -68,14 +76,57 @@ export class ProductAddDialog implements OnInit {
     }
   }
 
+  async updateProduct() {
+    await this.fireService.updateItem(
+      this.productFormGroup.value,
+      this.matDialogData.productType,
+      this.matDialogData.productCategory,
+      this.matDialogData.productSeries,
+      this.matDialogData.itemId
+    );
+    //Local UI Update
+    this.fireService
+      .DATABASE[this.matDialogData.productType]
+      .types[this.matDialogData.productCategory]
+      .series[this.matDialogData.productSeries]
+      .collection[this.matDialogData.itemId] = this.productFormGroup.value;
+
+    this.toastrService.success('Saved');
+
+    if (this.autoCloseControl.value) {
+      this.closeDialog();
+    }
+  }
+
   ngOnInit() {
-    const productType = this.matDialogData.type;
+    const productType = this.matDialogData.productType;
 
     this.productFormGroup = this.initProductFormGroup(productType);
 
     this.types = Object.keys(this.fireService.productTypes[productType].types);
 
-    if (this.types) {
+    if (
+      this.matDialogData.itemId &&
+      this.matDialogData.productType &&
+      this.matDialogData.productCategory &&
+      this.matDialogData.productSeries &&
+      this.matDialogData.itemData
+    ) {
+      this.selectTypeFormControl = this.fb.control(this.matDialogData.productCategory);
+      this.selectSeriesFormControl = this.initSeriesSelectFormControl(
+        this.matDialogData.productType,
+        this.selectTypeFormControl.value
+      );
+      this.selectSeriesFormControl.patchValue(this.matDialogData.productSeries);
+
+      this.selectSeriesFormControl.disable();
+      this.selectTypeFormControl.disable();
+
+      this.productFormGroup = this.fb.group(this.matDialogData.itemData);
+      this.isUpdate = true;
+    }
+
+    if (this.types && !this.isUpdate) {
       this.selectTypeFormControl = this.initProductTypeSelectFormControl(this.types[0]);
       this.selectSeriesFormControl = this.initSeriesSelectFormControl(
         productType,

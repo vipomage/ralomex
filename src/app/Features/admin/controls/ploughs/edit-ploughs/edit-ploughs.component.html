@@ -8,7 +8,7 @@
     id="category"
   >
     <option disabled>Изберете Категория</option>
-    <option *ngFor="let category of categories">{{ category }}</option>
+    <option *ngFor="let category of categories">{{ category | translate }}</option>
   </select>
   <div *ngIf="series">
     <label for="subCat">Серия</label
@@ -18,6 +18,6 @@
     </select>
   </div>
   <div *ngIf="ploughList">
-    <app-mdb-editable-table [category]="category" [set]="set" [collection]="ploughList"></app-mdb-editable-table>
+    <app-mdb-editable-table [type]="category" [series]="set" [collection]="ploughList"></app-mdb-editable-table>
   </div>
 </div>

@@ -1,0 +1,38 @@
+<div class="container-fluid p-0 justify-content-center mt-2">
+  <!--  Description and Image-->
+  <div class="row m-auto">
+    <mat-form-field class="col-6">
+      <textarea matInput rows="20" [formControl]="categoryDescription" placeholder="Описание"></textarea>
+    </mat-form-field>
+    <div class="col-6"><img style="width: 100%" [attr.src]="category.image" alt="Product category image" /></div>
+  </div>
+  <!--  DropDowns-->
+  <div class="row m-auto col-8 justify-content-center">
+    <div class="col-4 mr-3">
+      <mat-form-field class="type">
+        <mat-label>Тип</mat-label>
+        <mat-select [formControl]="selectedType">
+          <mat-option *ngFor="let type of category.types | keyvalue" [value]="type.key">{{ type.key | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="series" *ngIf="selectedType.valid">
+        <mat-label>Серия</mat-label>
+        <mat-select [formControl]="selectedSeries">
+          <mat-option *ngFor="let series of category.types[selectedType.value]['series'] | keyvalue" [value]="series.key">{{
+            series.key | translate
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <!--  ProductTable-->
+  <app-editable-table
+    *ngIf="selectedSeries.valid"
+    [type]="productType"
+    [set]="selectedSeries.value"
+    [collection]="fireService.DATABASE[productType].types[selectedType.value].series[selectedSeries.value].collection"
+    (itemUpdate)="emitEdit($event)"
+  ></app-editable-table>
+</div>

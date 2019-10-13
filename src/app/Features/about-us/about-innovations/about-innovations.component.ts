@@ -13,7 +13,10 @@ export class AboutInnovationsComponent {
     DbLocation.INNOVATIONS
   ).toPromise();
 
-  constructor(private fireService: FireService, public domSanitizer: DomSanitizer) {}
+  constructor(
+    private fireService: FireService,
+    public domSanitizer: DomSanitizer
+  ) {}
 
   sortByDate(a, b) {
     return b.value.timeStamp - a.value.timeStamp;

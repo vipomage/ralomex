@@ -1,4 +1,5 @@
-<div [class.active]="isActive" (click)="setActive()" class="row popover d-flex flex-row popup-container drop-shadow">
+<div *ngIf="!router.url.endsWith('admin')"
+     [class.active]="isActive" (click)="setActive()" class="row popover d-flex flex-row popup-container drop-shadow">
   <div class="phone-icon col-3">
     <i class="fa fa-phone drop-shadow" aria-hidden="true"></i>
   </div>

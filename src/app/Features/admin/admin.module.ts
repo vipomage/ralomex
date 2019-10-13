@@ -24,13 +24,24 @@ import { RouterModule } from '@angular/router';
 import { MdbEditableTableComponent } from './controls/mdb-editable-table/mdb-editable-table.component';
 import { adminRoutes } from './admin.routing';
 import { ProductAddDialog } from './product-add-dialog/product-add-dialog.component';
-import { MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {
+  MatCheckboxModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatTabsModule, MatTooltipModule,
+} from '@angular/material';
 import { TeamDialogComponent } from './about/team-dialog/team-dialog.component';
 import { AdminExpositionsComponent } from './about/admin-expositions/admin-expositions.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ExpoPreviewDialogComponent } from './about/admin-expositions/expo-preview-dialog/expo-preview-dialog.component';
 import { InnovationsDialogComponent } from './about/admin-expositions/innovations-dialog/innovations-dialog.component';
 import { AdminCertificateComponent } from './about/admin-certificate/admin-certificate.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { AdminEditItemComponent } from './edit-item/admin-edit-item.component';
+import { EditableTableComponent } from './editable-table/editable-table.component';
+import { SharedModule } from '../../Shared/shared.module';
 
 @NgModule({
   entryComponents: [
@@ -39,7 +50,7 @@ import { AdminCertificateComponent } from './about/admin-certificate/admin-certi
     AdminExpositionsComponent,
     ExpoPreviewDialogComponent,
     InnovationsDialogComponent,
-    AdminCertificateComponent
+    AdminCertificateComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +65,10 @@ import { AdminCertificateComponent } from './about/admin-certificate/admin-certi
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatTabsModule,
+    TranslateModule,
+    SharedModule,
+    MatTooltipModule,
   ],
   declarations: [
     AdminComponent,
@@ -80,6 +95,8 @@ import { AdminCertificateComponent } from './about/admin-certificate/admin-certi
     ExpoPreviewDialogComponent,
     InnovationsDialogComponent,
     AdminCertificateComponent,
+    AdminEditItemComponent,
+    EditableTableComponent,
   ],
   exports: [RouterModule],
 })

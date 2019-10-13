@@ -1,85 +1,127 @@
-<div [ngClass]="!(fireService.online | async) ? 'disabled' : ''" class="container-fluid">
-  <div class="col-md-12">
-    <div class="user text-center m-5">
-      <div *ngIf="!(authService.user | async)" class="button-wrapper">
-        <div (click)="authService.signIn()" id="gSignInWrapper">
-          <div id="customBtn" class="customGPlusSignIn"><span class="icon"></span> <span class="buttonText">Google</span></div>
-        </div>
+<div [class.disabled]="!(fireService.online | async)" class="container-fluid p-0">
+  <div *ngIf="!(authService.user | async)" class="user text-center m-5">
+    <div class="button-wrapper">
+      <div (click)="authService.signIn()" id="gSignInWrapper">
+        <div id="customBtn" class="customGPlusSignIn"><span class="icon"></span> <span class="buttonText">Google</span></div>
       </div>
     </div>
-    <div *ngIf="authService.user | async">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2">
-            <nav>
-              <button class="btn btn-warning" (click)="authService.logout()" *ngIf="authService.user | async">
-                Logout
-              </button>
-              <ul class="nav flex-column products-nav">
-                <li routerLinkActive="active" class="nav-item">
-                  <!--              <a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs'] } }]">Плугове</a>-->
-                  <a class="nav-link" (click)="showAddProductDialog('ploughs')">Плугове</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" (click)="showAddProductDialog('disks')">Дискови Брани</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" (click)="showAddProductDialog('cultivators')">Култиватори</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" (click)="showAddProductDialog('rollers')">Валяци</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" (click)="showAddProductDialog('shredders')">Раздробители</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" (click)="showAddProductDialog('sprayers')">Пръскачки</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a class="nav-link" (click)="showAddProductDialog('special')">Специализирани</a>
-                </li>
-                <!--                <li routerLinkActive="active" class="nav-item">-->
-                <!--                  <a class="nav-link" (click)="showAddProductDialog('parts')">Резервни Части</a>-->
-                <!--                </li>-->
-                <!--                <li routerLinkActive="active" class="nav-item">-->
-                <!--                  <a class="nav-link" (click)="showAddProductDialog('tools')">Работни Органи</a>-->
-                <!--                </li>-->
-              </ul>
-              <ul class="secondary-nav">
-                <li routerLinkActive="active" class="nav-item">
-                  <a [routerLink]="[{ outlets: { admin: ['home'] } }]" class="nav-link">Начални Ел.</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a [routerLink]="[{ outlets: { admin: ['news'] } }]" class="nav-link">Новини</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a [routerLink]="[{ outlets: { admin: ['awards'] } }]" class="nav-link">Награди</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a [routerLink]="[{ outlets: { admin: ['projects'] } }]" class="nav-link">Проекти</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a (click)="showMemberDialog()" class="nav-link">Екип</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a (click)="showExpoDialog()" class="nav-link">Изложби</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a (click)="showInnovationsDialog()" class="nav-link">Инновации</a>
-                </li>
-                <li routerLinkActive="active" class="nav-item">
-                  <a (click)="showCertificateDialog()" class="nav-link">Сертификати</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-md-10 text-center">
-            <div class="container-fluid pl-1">
-              <router-outlet class="admin-router" name="admin"></router-outlet>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div *ngIf="authService.user | async">
+    <button class="btn btn-warning logout-button" (click)="authService.logout()">
+      Logout
+    </button>
+    <mat-tab-group *ngIf="fireService.DATABASE">
+      
+      <mat-tab label="Плугове">
+        <app-admin-edit-item
+            (addProductEmits)="showAddProductDialog($event)"
+            (editProductEmits)="showEditProductDialog($event)"
+            [productType]="ProductTypes.PLOUGHS"
+            [category]="fireService.DATABASE.ploughs">
+        </app-admin-edit-item>
+      </mat-tab>
+      
+      <mat-tab label="Дискови Бр.">
+        <app-admin-edit-item [productType]="ProductTypes.DISKS" [category]="fireService.DATABASE.disks"></app-admin-edit-item>
+      </mat-tab>
+
+      <mat-tab label="Култиватори">
+        <app-admin-edit-item [productType]="ProductTypes.CULTIVATORS" [category]="fireService.DATABASE.cultivators"></app-admin-edit-item>
+      </mat-tab>
+
+      <mat-tab label="Валяци">
+        <app-admin-edit-item [productType]="ProductTypes.ROLLERS" [category]="fireService.DATABASE.rollers"></app-admin-edit-item>
+      </mat-tab>
+
+      <mat-tab label="Раздробители">
+        <app-admin-edit-item [productType]="ProductTypes.SHREDDERS" [category]="fireService.DATABASE.shredders"></app-admin-edit-item>
+      </mat-tab>
+
+      <mat-tab label="Пръскачки">
+        <app-admin-edit-item [productType]="ProductTypes.SPRAYERS" [category]="fireService.DATABASE.sprayers"></app-admin-edit-item>
+      </mat-tab>
+
+      <mat-tab label="Специализирани">
+        <!--          <app-admin-edit-item [category]="fireService.DATABASE.special"></app-admin-edit-item>-->
+      </mat-tab>
+
+      <mat-tab label="Новини"> Content 3</mat-tab>
+
+      <mat-tab label="Награди"> Content 3</mat-tab>
+
+      <mat-tab label="Проекти"> Content 3</mat-tab>
+
+      <mat-tab label="Екип"> Content 3</mat-tab>
+
+      <mat-tab label="Изложби"> Content 3</mat-tab>
+
+      <mat-tab label="Инновации"> Content 3</mat-tab>
+
+      <mat-tab label="Сертификати"> Content 3</mat-tab>
+    </mat-tab-group>
+    <!--        <div class="row">-->
+    <!--          <div class="col-md-2">-->
+    <!--            <nav>-->
+    <!--              <button class="btn btn-warning" (click)="authService.logout()" *ngIf="authService.user | async">-->
+    <!--                Logout-->
+    <!--              </button>-->
+    <!--              <ul class="nav flex-column products-nav">-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  &lt;!&ndash;              <a class="nav-link" [routerLink]="[{ outlets: { admin: ['ploughs'] } }]">Плугове</a>&ndash;&gt;-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('ploughs')">Плугове</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('disks')">Дискови Брани</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('cultivators')">Култиватори</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('rollers')">Валяци</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('shredders')">Раздробители</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('sprayers')">Пръскачки</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a class="nav-link" (click)="showAddProductDialog('special')">Специализирани</a>-->
+    <!--                </li>-->
+    <!--              </ul>-->
+    <!--              <ul class="secondary-nav">-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a [routerLink]="[{ outlets: { admin: ['home'] } }]" class="nav-link">Начални Ел.</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a [routerLink]="[{ outlets: { admin: ['news'] } }]" class="nav-link">Новини</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a [routerLink]="[{ outlets: { admin: ['awards'] } }]" class="nav-link">Награди</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a [routerLink]="[{ outlets: { admin: ['projects'] } }]" class="nav-link">Проекти</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a (click)="showMemberDialog()" class="nav-link">Екип</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a (click)="showExpoDialog()" class="nav-link">Изложби</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a (click)="showInnovationsDialog()" class="nav-link">Инновации</a>-->
+    <!--                </li>-->
+    <!--                <li routerLinkActive="active" class="nav-item">-->
+    <!--                  <a (click)="showCertificateDialog()" class="nav-link">Сертификати</a>-->
+    <!--                </li>-->
+    <!--              </ul>-->
+    <!--            </nav>-->
+    <!--          </div>-->
+    <!--          <div class="col-md-10 text-center">-->
+    <!--            <div class="container-fluid pl-1">-->
+    <!--              <router-outlet class="admin-router" name="admin"></router-outlet>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
   </div>
 </div>

@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class ProductTableCultivatorsHeadersComponent {
   @Input() name: string;
   @Input() set: string;
+  @Input() admin: boolean = false;
 }

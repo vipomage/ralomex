@@ -1,0 +1,27 @@
+<table *ngIf="collection">
+  <ploughs-headers *ngIf="type === ProductTypes.PLOUGHS" [set]="set" [admin]="true"></ploughs-headers>
+  <disks-headers *ngIf="type === ProductTypes.DISKS" [admin]="true" [set]="set" ></disks-headers>
+  <cultivators-headers *ngIf="type === ProductTypes.CULTIVATORS" [admin]="true" [set]="set" ></cultivators-headers>
+  <rollers-headers *ngIf="type === ProductTypes.ROLLERS" [admin]="true" [set]="set"></rollers-headers>
+  <shredders-headers *ngIf="type === ProductTypes.SHREDDERS" [admin]="true" [set]="set" ></shredders-headers>
+  <sprayers-headers *ngIf="type === ProductTypes.SPRAYERS" [admin]="true" [set]="set"></sprayers-headers>
+  <tbody>
+    <tr class="product-row" [ngClass]="type"
+      *ngFor="let item of collection | keyvalue"
+        (click)="emitItemId(item.key, item.value)">
+      <td class="text-center {{ header.key }}"
+        [ngClass]="item.value[header.key] === 'n/a' ? 'hide' : ''"
+        *ngFor="let header of headers">
+          <span [ngClass]="header.key" *ngIf="item.value[header.key] !== 'bolt' && item.value[header.key] !== 'spring'">
+            {{ item.value[header.key] }}
+          </span>
+          <mat-select [value]="item.value[header.key]" *ngIf="item.value[header.key] === 'bolt' || item.value[header.key] === 'spring'">
+            <mat-option [value]="'bolt'">bolt</mat-option>
+            <mat-option [value]="'spring'">spring</mat-option>
+          </mat-select>
+      </td>
+      <td *ngIf="item.value.image">{{item.value.image.length}}</td>
+      <td class="missing-images" *ngIf="!item.value.image">Няма Снимки</td>
+    </tr>
+  </tbody>
+</table>
