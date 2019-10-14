@@ -5,7 +5,7 @@
         (click)="addActiveClass($event, 'ploughs')"
         [class.active]="activeCategory.ploughs"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/PPRO.6.30-40.jpg)' }"
       >
         <div class="overlay ploughs">
           <h1 class="text-capitalize">{{'ploughs'|translate}}</h1>
@@ -22,7 +22,7 @@
         (click)="addActiveClass($event, 'disks')"
         [class.active]="activeCategory.disks"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/1.jpg)' }"
       >
         <div class="overlay disks">
           <div>
@@ -41,7 +41,7 @@
         (click)="addActiveClass($event, 'cultivators')"
         [class.active]="activeCategory.cultivators"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/3.jpg)' }"
       >
         <div class="overlay cultivators">
           <div>
@@ -64,7 +64,7 @@
         (click)="addActiveClass($event, 'rollers')"
         [class.active]="activeCategory.rollers"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/4.jpg)' }"
       >
         <div class="overlay rollers">
           <div>
@@ -83,7 +83,7 @@
         (click)="addActiveClass($event, 'shredders')"
         [class.active]="activeCategory.shredders"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/5.jpg)' }"
       >
         <div class="overlay shredders">
           <div>
@@ -106,7 +106,7 @@
         (click)="addActiveClass($event, 'sprayers')"
         [class.active]="activeCategory.sprayers"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/6.jpg)' }"
       >
         <div class="overlay sprayers">
           <div>
@@ -122,18 +122,18 @@
     </div>
     <div class="col-12 col-md-6 col-lg-4 category">
       <div
+        style="cursor: pointer"
         (click)="addActiveClass($event, 'special')"
+        [routerLink]="'specials'"
         [class.active]="activeCategory.special"
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/7.jpg)' }"
       >
-        <div class="overlay special">
-          <div>
+        <div class="overlay sprayers">
+          <div >
             <h1 class="text-capitalize">{{'special' | translate}}</h1>
             <ul>
-              <li class="capitalize" *ngFor="let productType of catalog.special" [routerLink]="'overview/special/' + productType">
-                {{ productType | translate}}
-              </li>
+              <p style="color: white">Вижте нашите специализирани машини</p>
             </ul>
           </div>
         </div>
@@ -142,14 +142,14 @@
     <div class="col-12 col-md-6 col-lg-4 category">
       <div
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/8.jpg)' }"
       >
         <div class="overlay cultivators">
           <div>
             <h1 class="text-capitalize">{{'spare parts'|translate}}</h1>
             <ul>
               <li class="capitalize" >
-                <a style="color: white" href="tel:+35984422126">+35984422126</a>
+                <a style="color: white" href="tel:+359889638054">+359889638054</a>
               </li>
             </ul>
           </div>
@@ -159,7 +159,7 @@
     <div class="col-12 col-md-6 col-lg-4 category">
       <div
         class="wrapper"
-        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/Kv_2500_S_iPlough_4787_kvg_large-1.jpg)' }"
+        [ngStyle]="{ backgroundImage: 'url(../../../assets/img/products-overlays/9.jpg)' }"
       >
         <div class="overlay ploughs">
           <div>

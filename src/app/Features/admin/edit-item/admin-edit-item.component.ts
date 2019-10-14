@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import {
-  BaseSchemaModel,
-  ProductTypes,
-  ProductIUnion,
-} from '../../../tools/interfaces/DatabaseSchema';
+import { BaseSchemaModel, ProductTypes, ProductIUnion } from '../../../tools/interfaces/DatabaseSchema';
 import { FireService } from '../../../tools/services/fire.service';
 import { ImageService } from '../../../tools/services/image.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
@@ -22,44 +18,45 @@ export class AdminEditItemComponent implements OnInit {
   selectedSeries: FormControl = new FormControl('', [Validators.required]);
   categoryDescription: FormControl = new FormControl('');
   collection: { [propName: string]: ProductIUnion };
-  addProductEmits: EventEmitter<ProductTypes> = new EventEmitter<ProductTypes>();
+  @Output() addProductEmits: EventEmitter<ProductTypes> = new EventEmitter<ProductTypes>();
   @Output() editProductEmits: EventEmitter<any> = new EventEmitter();
-  descriptionChanged:boolean = false;
+  descriptionChanged: boolean = false;
 
-  constructor(
-    public fireService: FireService,
-    private matDialog: MatDialog
-  ) {}
-  
+  constructor(public fireService: FireService, private matDialog: MatDialog) {}
+
   emitEdit(updateObj: {
     productType: ProductTypes;
-    productCategory:string,
+    productCategory: string;
     productSeries: string;
     itemId: string;
     itemData: ProductIUnion;
   }) {
-    this.editProductEmits.emit({productCategory:this.selectedType.value,...updateObj});
+    this.editProductEmits.emit({ productCategory: this.selectedType.value, ...updateObj });
   }
-  
-  saveDescription(){
+
+  emitAdd() {
+    this.addProductEmits.emit(this.productType);
+  }
+
+  saveDescription() {
     //
   }
-  
-  editImageDialog(replace:boolean = false){
-    const config:MatDialogConfig = {
-      maxWidth:'80vw',
-      closeOnNavigation:true,
-      hasBackdrop:true,
-      data:{
+
+  editImageDialog(replace: boolean = false) {
+    const config: MatDialogConfig = {
+      maxWidth: '80vw',
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      data: {
         replace,
-        productType:this.productType,
-        oldImages:this.category.images
-      }
+        productType: this.productType,
+        oldImages: this.category.images,
+      },
     };
-    
-    this.matDialog.open(AddImageDialogComponent,config);
+
+    this.matDialog.open(AddImageDialogComponent, config);
   }
-  
+
   addImageDialog() {}
 
   ngOnInit() {
@@ -75,9 +72,9 @@ export class AdminEditItemComponent implements OnInit {
         this.collection = this.category.types[this.selectedType.value].series[series].collection;
       }
     });
-    
-    this.categoryDescription.valueChanges.subscribe(()=>{
+
+    this.categoryDescription.valueChanges.subscribe(() => {
       this.descriptionChanged = true;
-    })
+    });
   }
 }

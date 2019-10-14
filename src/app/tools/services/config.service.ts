@@ -34,6 +34,8 @@ export const config: ConfigSchema = {
       { key: 'model', value: 'Model' },
       { key: 'workBodyCount', value: 'Body count' },
       { key: 'reqHP', value: 'Required HP' },
+      { key: 'betweenRowDistance', value: 'Row clearance' },
+      { key: 'clearance', value: 'Clearance' },
       { key: 'bodySpacing', value: 'Body spacing' },
       { key: 'rowCount', value: 'Row count' },
       { key: 'widthWork', value: 'Working Width' },

@@ -8,10 +8,12 @@
       border-radius: 15px;
       height: 100%;
       min-height: 250px;
-      background-position: center;
-      background-size: cover;
+      background-position: top;
+      background-size: contain;
       background-repeat: no-repeat;
-      box-shadow: 1px 1px 20px 0;
+      background-position-y: top;
+      box-shadow: 1px 1px 5px 0;
+      background-color: white;
 
       .overlay {
         border-radius: 0 0 15px 15px;
@@ -22,10 +24,12 @@
         right: 20px;
         transition: 0.5s ease;
         overflow: hidden;
+        color: white;
 
         h1 {
           font-size: 1.5rem;
           margin: 5px auto;
+          font-weight: 400;
         }
 
         ul {

@@ -12,6 +12,7 @@ import { PipesModule } from '../../tools/pipes/pipes.module';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material';
+import { SpecialsPageComponent } from './specials-page/specials-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatTooltipModule } from '@angular/material';
     ProductComponent,
     SubcategoryComponent,
     CategoryOverviewComponent,
+    SpecialsPageComponent,
   ],
   imports: [
     RouterModule.forChild(productsRouting),

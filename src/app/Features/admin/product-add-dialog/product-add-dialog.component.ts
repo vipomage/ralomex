@@ -89,12 +89,18 @@ export class ProductAddDialog implements OnInit {
 
   async updateProduct() {
     this.disableSubmit = true;
-    let uploadedImageUrls = await this.uploadImages(
-      this.fileFormControl.value,
-      this.replaceOld.value);
+    let uploadedImageUrls;
+    
+    if (this.fileFormControl.value){
+      uploadedImageUrls = await this.uploadImages(
+        this.fileFormControl.value,
+        this.replaceOld.value);
   
-    if (!this.replaceOld.value && this.matDialogData.itemData.images){
-      uploadedImageUrls = [...uploadedImageUrls,...this.matDialogData.itemData.images]
+      if (!this.replaceOld.value && this.matDialogData.itemData.images){
+        uploadedImageUrls = [...uploadedImageUrls,...this.matDialogData.itemData.images]
+      }
+    } else {
+      this.productFormGroup.get(['images']).disable();
     }
     
     this.productFormGroup.patchValue({ images: uploadedImageUrls });
@@ -122,12 +128,25 @@ export class ProductAddDialog implements OnInit {
   }
 
   async uploadImages(fileList: FileList,replaceOld:boolean = false) {
-    const { productType, productCategory, productSeries, itemId,itemData } = this.matDialogData;
-    return await this.imageService.uploadMultiple(
-      fileList,
-      `products/${productType}/${productCategory}/${productSeries}/${itemId}-${this.matDialogData.itemData.model}`,
-      replaceOld ? itemData.images : null
-    );
+    if (this.isUpdate){
+      const { productType, productCategory, productSeries, itemId,itemData } = this.matDialogData;
+      return await this.imageService.uploadMultiple(
+        fileList,
+        `products/${productType}/${productCategory}/${productSeries}/${itemId}-${itemData.model}`,
+        replaceOld ? itemData.images : null
+      );
+    }else{
+      const productType = this.matDialogData.productType;
+      const productCategory = this.selectTypeFormControl.value;
+      const productSeries = this.selectSeriesFormControl.value;
+      const itemData = {model:this.productFormGroup.value.model};
+      
+      return await this.imageService.uploadMultiple(
+        fileList,
+        `products/${productType}/${productCategory}/${productSeries}/insert-${itemData.model}`,
+      );
+    }
+    
   }
 
   ngOnInit() {

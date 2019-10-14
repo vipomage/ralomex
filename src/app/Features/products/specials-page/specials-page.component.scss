@@ -1,0 +1,51 @@
+@import './src/app/variables.scss';
+
+section.podemnik {
+  color: rgb(169, 49, 41);
+  margin-bottom: 150px;
+  
+  h1{
+    font-weight: 500;
+    
+    span{
+      font-weight: 200;
+    }
+  }
+  
+  div.background-image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 550px;
+    background-position: center;
+  }
+  
+  p{
+    font-size: 16px;
+    white-space: normal;
+  }
+}
+section.promo,section.products,section.combimax{
+  background-color: rgb(169, 49, 41);
+  color: white;
+}
+
+section.combimax{
+  padding-bottom: 100px;
+  
+  h1:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+section.products{
+  text-align: center;
+  
+  div img{
+    border-radius: 16px;
+  }
+  div h2{
+    font-weight: 400;
+    font-size: 18px;
+    
+  }
+}

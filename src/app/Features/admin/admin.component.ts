@@ -25,11 +25,7 @@ export class AdminComponent implements OnInit {
   ProductTypes = ProductTypes;
   activeTabIndex: number = 0;
 
-  constructor(
-    public authService: AuthService,
-    private dialog: MatDialog,
-    public fireService: FireService
-  ) {}
+  constructor(public authService: AuthService, private dialog: MatDialog, public fireService: FireService) {}
 
   setActiveTab(index: number) {
     if (index >= 0) {
@@ -42,7 +38,7 @@ export class AdminComponent implements OnInit {
   }
 
   showAddProductDialog(productType: ProductTypes) {
-    this.dialog.open(ProductAddDialog, { data: productType, ...this.productDialogConfig });
+    this.dialog.open(ProductAddDialog, { data: { productType }, ...this.productDialogConfig });
   }
 
   showEditProductDialog(event: {
@@ -52,8 +48,7 @@ export class AdminComponent implements OnInit {
     itemId: string;
     itemData: ProductIUnion;
   }) {
-    this.dialog
-      .open(ProductAddDialog, { data: event, ...this.productDialogConfig })
+    this.dialog.open(ProductAddDialog, { data: event, ...this.productDialogConfig });
   }
 
   showMemberDialog() {

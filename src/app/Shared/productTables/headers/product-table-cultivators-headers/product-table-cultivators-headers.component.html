@@ -1,50 +1,68 @@
-<thead class="p-2 cultivators">
+<thead *ngIf="set !== 'kombimax'" class="p-2 cultivators">
   <tr class="headers">
     <th class="text-capitalize">
-<!--      <p class="font-weight-bold">{{ name | translate }}</p>-->
+      <!--      <p class="font-weight-bold">{{ name | translate }}</p>-->
       <p>
         {{ 'series' | translate }} <span class="text-uppercase">{{ set | translate }}</span>
       </p>
     </th>
-    <th (click)="bodyCountTooltip.toggle()">
+    <th *ngIf="set !== 'kov'" (click)="bodyCountTooltip.toggle()">
       <img
-        #bodyCountTooltip=matTooltip
+        #bodyCountTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'working body count' | translate }}"
         src="../../../../../assets/table-icons/cultivatorsWorkBodyCount1.png"
         alt=""
       />
     </th>
+    <th *ngIf="set === 'kov'" (click)="bodyCountTooltip.toggle()">
+      <img
+        #bodyCountTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'section count' | translate }}"
+        src="../../../../../assets/table-icons/sectionCount.png"
+        alt=""
+      />
+    </th>
     <th (click)="reqHpTooltip.toggle()">
-    <img
-      #reqHpTooltip=matTooltip
+      <img
+        #reqHpTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'required horse power' | translate }}"
         src="../../../../../assets/table-icons/reqHp.png"
         alt=""
       />
     </th>
-    <th class="scale-up" (click)="bodySpacingTooltip.toggle()">
+    <th *ngIf="set === 'kov'" (click)="reqHpTooltip.toggle()">
       <img
-        #bodySpacingTooltip=matTooltip
+        #reqHpTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'distance between rows' | translate }}"
+        src="../../../../../assets/table-icons/betweenRowDistance.png"
+        alt=""
+      />
+    </th>
+    <th *ngIf="set !== 'kov'" class="scale-up" (click)="bodySpacingTooltip.toggle()">
+      <img
+        #bodySpacingTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'body spacing' | translate }}"
         src="../../../../../assets/table-icons/cultivatorsBodySpacing1.png"
         alt=""
       />
     </th>
-    <th class="scale-up" (click)="rowCountTooltip.toggle()">
+    <th *ngIf="set !== 'kov'" class="scale-up" (click)="rowCountTooltip.toggle()">
       <img
-        #rowCountTooltip=matTooltip
+        #rowCountTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'row count' | translate }}"
         src="../../../../../assets/table-icons/cultivatorsRowCount1.png"
         alt=""
       />
     </th>
-    <th class="scale-up" (click)="workingWidthTooltip.toggle()">
+    <th *ngIf="set !== 'kov'" class="scale-up" (click)="workingWidthTooltip.toggle()">
       <img
-        #workingWidthTooltip=matTooltip
+        #workingWidthTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'working width' | translate }}"
         src="../../../../../assets/table-icons/workingWidth.png"
@@ -53,34 +71,43 @@
     </th>
     <th class="scale-up" (click)="widthTooltip.toggle()">
       <img
-        #widthTooltip=matTooltip
+        #widthTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'transport width' | translate }}"
         src="../../../../../assets/table-icons/transportWidth.png"
         alt=""
       />
     </th>
-    <th *ngIf="set !== 'kkp' && set !== 'kk'" class="scale-up" (click)="protectionTooltip.toggle()">
+    <th *ngIf="set !== 'kkp' && set !== 'kk' && set !== 'kov'" class="scale-up" (click)="protectionTooltip.toggle()">
       <img
-        #protectionTooltip=matTooltip
+        #protectionTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'protection' | translate }}"
         src="../../../../../assets/table-icons/cultivatorsProtection.png"
         alt=""
       />
     </th>
-    <th class="scale-up" (click)="depthTooltip.toggle()">
+    <th *ngIf="set !== 'kov'" class="scale-up" (click)="depthTooltip.toggle()">
       <img
-        #depthTooltip=matTooltip
+        #depthTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'working depth' | translate }}"
         src="../../../../../assets/table-icons/cultivatorsDepthWork1.png"
         alt=""
       />
     </th>
+    <th *ngIf="set === 'kov'" class="scale-up" (click)="depthTooltip.toggle()">
+      <img
+        #depthTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'working depth' | translate }}"
+        src="../../../../../assets/table-icons/Dalbochinanarabota.png"
+        alt=""
+      />
+    </th>
     <th (click)="transportSpeedTooltip.toggle()">
       <img
-        #transportSpeedTooltip=matTooltip
+        #transportSpeedTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'transport speed' | translate }}"
         src="../../../../../assets/table-icons/transportSpeed.png"
@@ -89,16 +116,16 @@
     </th>
     <th (click)="workSpeedTooltip.toggle()">
       <img
-        #workSpeedTooltip=matTooltip
+        #workSpeedTooltip="matTooltip"
         matTooltipPosition="above"
-        matTooltip="{{ 'working speed' | translate }}"
+        matTooltip="{{ 'operating speed' | translate }}"
         src="../../../../../assets/table-icons/workSpeed.png"
         alt=""
       />
     </th>
-    <th (click)="productivityTooltip.toggle()">
+    <th *ngIf="set !== 'kov'" (click)="productivityTooltip.toggle()">
       <img
-        #productivityTooltip=matTooltip
+        #productivityTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'productivity' | translate }}"
         src="../../../../../assets/table-icons/productivity.png"
@@ -107,7 +134,83 @@
     </th>
     <th (click)="weightTooltip.toggle()">
       <img
-        #weightTooltip=matTooltip
+        #weightTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'weight' | translate }}"
+        src="../../../../../assets/table-icons/weight.png"
+        alt=""
+      />
+    </th>
+    <th *ngIf="admin">
+      <i class="fa fa-camera fa-3x" aria-hidden="true"></i>
+    </th>
+  </tr>
+</thead>
+<thead *ngIf="set === 'kombimax'" class="p-2 sprayers">
+  <tr *ngIf="set === 'kombimax'" class="headers">
+    <th class="text-capitalize">
+      <!--      <p class="font-weight-bold">{{ name | translate }}</p>-->
+      <p>
+        {{ 'series' | translate }} <span class="text-uppercase">{{ set | translate }}</span>
+      </p>
+    </th>
+    <th (click)="reqHpTooltip.toggle()">
+      <img
+        #reqHpTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'required horse power' | translate }}"
+        src="../../../../../assets/table-icons/reqHp.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up" (click)="workingWidthTooltip.toggle()">
+      <img
+        #workingWidthTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'clearance' | translate }}"
+        src="../../../../../assets/table-icons/Prosvet%20pod-ramata.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up" (click)="workingWidthTooltip.toggle()">
+      <img
+        #workingWidthTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'working width' | translate }}"
+        src="../../../../../assets/table-icons/workingWidth.png"
+        alt=""
+      />
+    </th>
+    <th class="scale-up" (click)="widthTooltip.toggle()">
+      <img
+        #widthTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport width' | translate }}"
+        src="../../../../../assets/table-icons/transportWidth.png"
+        alt=""
+      />
+    </th>
+    <th (click)="transportSpeedTooltip.toggle()">
+      <img
+        #transportSpeedTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'transport speed' | translate }}"
+        src="../../../../../assets/table-icons/transportSpeed.png"
+        alt=""
+      />
+    </th>
+    <th (click)="workSpeedTooltip.toggle()">
+      <img
+        #workSpeedTooltip="matTooltip"
+        matTooltipPosition="above"
+        matTooltip="{{ 'operating speed' | translate }}"
+        src="../../../../../assets/table-icons/workSpeed.png"
+        alt=""
+      />
+    </th>
+    <th (click)="weightTooltip.toggle()">
+      <img
+        #weightTooltip="matTooltip"
         matTooltipPosition="above"
         matTooltip="{{ 'weight' | translate }}"
         src="../../../../../assets/table-icons/weight.png"

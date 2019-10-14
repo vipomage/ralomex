@@ -21,8 +21,9 @@
         </app-admin-edit-item>
       </mat-tab>
 
-      <mat-tab label="Дискови Бр.">
+      <mat-tab label="Брани">
         <app-admin-edit-item
+          (addProductEmits)="showAddProductDialog($event)"
           (editProductEmits)="showEditProductDialog($event)"
           [productType]="ProductTypes.DISKS"
           [category]="fireService.DATABASE.disks"
@@ -31,6 +32,7 @@
 
       <mat-tab label="Култиватори">
         <app-admin-edit-item
+          (addProductEmits)="showAddProductDialog($event)"
           (editProductEmits)="showEditProductDialog($event)"
           [productType]="ProductTypes.CULTIVATORS"
           [category]="fireService.DATABASE.cultivators"
@@ -39,14 +41,16 @@
 
       <mat-tab label="Валяци">
         <app-admin-edit-item
+          (addProductEmits)="showAddProductDialog($event)"
           (editProductEmits)="showEditProductDialog($event)"
           [productType]="ProductTypes.ROLLERS"
           [category]="fireService.DATABASE.rollers"
         ></app-admin-edit-item>
       </mat-tab>
 
-      <mat-tab label="Раздробители">
+      <mat-tab label="Разрохквачи">
         <app-admin-edit-item
+          (addProductEmits)="showAddProductDialog($event)"
           (editProductEmits)="showEditProductDialog($event)"
           [productType]="ProductTypes.SHREDDERS"
           [category]="fireService.DATABASE.shredders"
@@ -55,6 +59,7 @@
 
       <mat-tab label="Пръскачки">
         <app-admin-edit-item
+          (addProductEmits)="showAddProductDialog($event)"
           (editProductEmits)="showEditProductDialog($event)"
           [productType]="ProductTypes.SPRAYERS"
           [category]="fireService.DATABASE.sprayers"
@@ -113,9 +118,9 @@
     <!--                <li routerLinkActive="active" class="nav-item">-->
     <!--                  <a [routerLink]="[{ outlets: { admin: ['home'] } }]" class="nav-link">Начални Ел.</a>-->
     <!--                </li>-->
-    <!--                <li routerLinkActive="active" class="nav-item">-->
-    <!--                  <a [routerLink]="[{ outlets: { admin: ['news'] } }]" class="nav-link">Новини</a>-->
-    <!--                </li>-->
+                    <li routerLinkActive="active" class="nav-item">
+                      <a [routerLink]="[{ outlets: { admin: ['news'] } }]" class="nav-link">Новини</a>
+                    </li>
     <!--                <li routerLinkActive="active" class="nav-item">-->
     <!--                  <a [routerLink]="[{ outlets: { admin: ['awards'] } }]" class="nav-link">Награди</a>-->
     <!--                </li>-->
@@ -145,3 +150,4 @@
     <!--        </div>-->
   </div>
 </div>
+<app-add-news></app-add-news>
