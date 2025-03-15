@@ -13,12 +13,14 @@ div.image{
   height: 200px;
   width: 100%;
   background-position: center;
-  
+  transition: all .5s;
+  transform: scale(1);
+
   &:hover{
     transform: scale(1.2);
     border-radius: 4px;
     cursor: zoom-in;
     z-index: 5;
-    transition: ease-in-out .5s;
+
   }
 }

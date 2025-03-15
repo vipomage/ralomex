@@ -21,7 +21,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatDialogModule } from '@angular/material';
@@ -29,12 +29,7 @@ import { MatDialogModule } from '@angular/material';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    RouterModule.forRoot(applicationRouting, {
-      useHash: true,
-      enableTracing: false,
-      scrollPositionRestoration: 'enabled',
-      relativeLinkResolution: 'corrected',
-    }),
+    RouterModule.forRoot(applicationRouting),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -60,7 +55,7 @@ import { MatDialogModule } from '@angular/material';
     PipesModule,
   ],
   bootstrap: [AppComponent],
-  providers: [FireService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [FireService, { provide: LocationStrategy, useClass: PathLocationStrategy }],
   exports: [RouterModule],
 })
 export class AppModule {}

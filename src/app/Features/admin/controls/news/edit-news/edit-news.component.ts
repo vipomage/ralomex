@@ -15,7 +15,7 @@ export class EditNewsComponent {
   newsElementId: string;
   newsElement: News;
 
-  constructor(private db: FireService, private imgService: ImageService) {}
+  constructor(public db: FireService, public imgService: ImageService) {}
 
   setElement = (id: string, element: News): void => {
     this.newsElementId = id;

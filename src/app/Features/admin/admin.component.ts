@@ -22,7 +22,8 @@ export class AdminComponent implements OnInit {
     disableClose: true,
   };
 
-  ProductTypes = ProductTypes;
+  protected readonly ProductTypes = ProductTypes;
+
   activeTabIndex: number = 0;
 
   constructor(public authService: AuthService, private dialog: MatDialog, public fireService: FireService) {}

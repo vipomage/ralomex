@@ -1,27 +1,36 @@
-svg.logo {
-  width: 90px;
-  height: 90px;
-  shape-rendering: geometricPrecision;
-  text-rendering: geometricPrecision;
-  image-rendering: optimizeQuality;
-  fill-rule: evenodd;
-  clip-rule: evenodd;
+.wrapper {
+  transform: scale(0.9);
 
-  .logo-fill {
-    fill: white;
+  @media (max-width: 768px) {
+    transform: scale(0.7);
   }
-}
-svg.text {
-  shape-rendering: geometricPrecision;
-  text-rendering: geometricPrecision;
-  image-rendering: optimizeQuality;
-  fill-rule: evenodd;
-  clip-rule: evenodd;
-  height: 120px;
-  width: 310px;
-  margin: -124px -40px -124px 0px;
 
-  .text-fill {
-    fill: white;
+  svg.logo {
+    width: 90px;
+    height: 90px;
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+
+    .logo-fill {
+      fill: white;
+    }
   }
+  svg.text {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    height: 120px;
+    width: 310px;
+    margin: -124px -40px -124px 0px;
+
+    .text-fill {
+      fill: white;
+    }
+  }
+
 }

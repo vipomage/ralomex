@@ -27,6 +27,7 @@ export class AuthService {
       await firebase.auth().setPersistence(persistence);
       await this.firebaseAuth.auth.signInWithPopup(this.oAuthProvider);
     } catch (e) {
+      console.log(e);
       this.toastR.error('Something Went Wrong!');
     }
     this.toastR.success('Login Success!');

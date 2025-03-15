@@ -10,6 +10,12 @@ export class FixedContactPopupComponent {
   isActive: boolean = false;
 
   constructor(public router: Router) {}
+  
+  setOff() {
+    if (this.isActive) {
+      this.isActive = false;
+    }
+  }
 
   setActive() {
     this.isActive = !this.isActive;
