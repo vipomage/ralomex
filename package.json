@@ -9,7 +9,7 @@
     "build": "ng build --prod --base-href https://erayismail.online",
     "build-final": "ng build --prod --base-href https://Ralomex.com",
     "cleanFolders": "rm -rf dist && rm -rf docs",
-    "renameDistToDocs": "cp ./src/404.md ./dist && cp ./src/CNAME ./dist && cp ./src/robots.txt ./dist && mv ./dist ./docs",
+    "renameDistToDocs": "cp ./src/CNAME ./dist && cp ./src/robots.txt ./dist && mv ./dist ./docs && cp ./docs/index.html ./docs/404.html",
     "deploy": "npm run cleanFolders && npm run build && npm run renameDistToDocs",
     "deploy-final": "npm run cleanFolders && npm run build-final && npm run renameDistToDocs"
   },
